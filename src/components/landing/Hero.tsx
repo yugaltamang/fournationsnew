@@ -189,7 +189,7 @@ const Hero = () => (
 
     {/* The Outcome — highlighted editorial banner */}
     <div className="container relative mt-20">
-      <div className="relative bg-foreground text-background p-8 md:p-12 shadow-[10px_10px_0_0_hsl(var(--primary))] border border-foreground">
+      <div className="relative bg-primary text-primary-foreground p-8 md:p-12 shadow-[10px_10px_0_0_hsl(var(--foreground))] border border-foreground">
         <div className="absolute -top-3 left-8 bg-primary text-primary-foreground px-3 py-1 font-mono text-[10px] uppercase tracking-[0.25em]">
           ◉ The Outcome
         </div>
