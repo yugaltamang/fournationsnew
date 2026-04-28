@@ -41,11 +41,10 @@ const Nav = () => {
             <a
               key={l.href}
               href={l.href}
-              className="group relative flex items-center gap-2 px-4 py-2 transition-colors hover:text-background"
+              className="group relative flex items-center gap-2 px-4 py-2 transition-colors hover:bg-secondary"
             >
-              <span className="absolute inset-0 mu-hero-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0" />
-              <span className="relative z-10 font-mono text-[10px] text-muted-foreground group-hover:text-background/80">/{l.num}</span>
-              <span className="relative z-10">{l.label}</span>
+              <span className="font-mono text-[10px] text-muted-foreground group-hover:text-foreground transition-colors">/{l.num}</span>
+              <span className="group-hover:text-foreground transition-colors">{l.label}</span>
             </a>
           ))}
         </nav>
