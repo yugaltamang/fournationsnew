@@ -58,7 +58,7 @@ const Nations = () => (
           <div className="tag-pill mb-6">◉ The Journey</div>
           <h2 className="font-display text-5xl md:text-7xl leading-[0.95] max-w-3xl text-balance">
             Four nations.<br />
-            <em className="italic text-primary not-italic">Four markets.</em><br />
+            <em className="italic mu-hero-gradient-text not-italic">Four markets.</em><br />
             One global operator.
           </h2>
         </div>

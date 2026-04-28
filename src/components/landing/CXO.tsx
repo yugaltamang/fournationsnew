@@ -47,7 +47,7 @@ const CXO = () => (
       <div className="max-w-3xl mb-20">
         <div className="tag-pill mb-6">◉ Why This Programme</div>
         <h2 className="font-display text-5xl md:text-6xl leading-[0.95] mb-8 text-balance">
-          Hands-on learning for <em className="italic text-primary not-italic">real business impact.</em>
+          Hands-on learning for <em className="italic mu-hero-gradient-text not-italic">real business impact.</em>
         </h2>
         <p className="text-muted-foreground max-w-xl">
           Direct execution over passive learning. Every term, every country, every session is engineered to build real skills and real outcomes — not slide decks.
