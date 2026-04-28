@@ -37,7 +37,7 @@ const Hero = () => (
         </div>
 
         <svg
-          viewBox="60 40 480 360"
+          viewBox="20 0 560 500"
           className="absolute inset-0 w-full h-full"
           role="img"
           aria-label="World map plotting India, Hong Kong, London and Dubai"
