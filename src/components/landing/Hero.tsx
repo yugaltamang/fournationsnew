@@ -187,17 +187,22 @@ const Hero = () => (
       </div>
     </div>
 
-    {/* The Outcome — full-width editorial banner */}
+    {/* The Outcome — highlighted editorial banner */}
     <div className="container relative mt-20">
-      <div className="border-t border-border pt-8 grid md:grid-cols-12 gap-6 items-end">
-        <div className="md:col-span-3">
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">The Outcome</div>
-          <div className="font-mono text-[10px] uppercase tracking-widest text-primary mt-2">/ Cohort 2026</div>
+      <div className="relative bg-foreground text-background p-8 md:p-12 shadow-[10px_10px_0_0_hsl(var(--primary))] border border-foreground">
+        <div className="absolute -top-3 left-8 bg-primary text-primary-foreground px-3 py-1 font-mono text-[10px] uppercase tracking-[0.25em]">
+          ◉ The Outcome
         </div>
-        <div className="md:col-span-9">
-          <p className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-balance">
-            A professional who is fluent in <em className="italic mu-hero-gradient-text not-italic">four economies</em>, not one.
-          </p>
+        <div className="grid md:grid-cols-12 gap-6 items-center">
+          <div className="md:col-span-3">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] opacity-60">/ Cohort 2026</div>
+            <div className="font-mono text-[10px] uppercase tracking-widest text-primary mt-2">You walk away as →</div>
+          </div>
+          <div className="md:col-span-9">
+            <p className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-balance">
+              A professional who is fluent in <em className="italic mu-hero-gradient-text not-italic">four economies</em>, not one.
+            </p>
+          </div>
         </div>
       </div>
     </div>
