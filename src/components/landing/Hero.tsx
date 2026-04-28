@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero-leader-2.jpg";
+// Hero now showcases an editorial world map plotting the 4 nations
 
 const Hero = () => (
   <section className="relative pt-32 pb-20 overflow-hidden">
