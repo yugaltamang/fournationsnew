@@ -9,12 +9,12 @@ const Hero = () => (
     {/* Atlas map — blended into the right side of the hero */}
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden md:block w-[68%] lg:w-[58%] xl:w-[52%]"
+      className="pointer-events-none absolute inset-y-0 right-0 hidden md:block w-[78%] lg:w-[68%] xl:w-[62%]"
       style={{
         maskImage:
-          "radial-gradient(ellipse 90% 75% at 75% 50%, black 35%, transparent 78%)",
+          "radial-gradient(ellipse 85% 80% at 55% 50%, black 50%, transparent 88%)",
         WebkitMaskImage:
-          "radial-gradient(ellipse 90% 75% at 75% 50%, black 35%, transparent 78%)",
+          "radial-gradient(ellipse 85% 80% at 55% 50%, black 50%, transparent 88%)",
       }}
     >
       <div className="relative w-full h-full">
