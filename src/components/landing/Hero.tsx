@@ -1,4 +1,5 @@
 // Hero showcases iconic monuments for the 4 cohort cities
+import outcomeBg from "@/assets/outcome-bg.jpg";
 
 const Hero = () => (
   <section className="relative pt-32 pb-20 overflow-hidden">
