@@ -186,13 +186,7 @@ const Hero = () => (
         </div>
       </div>
 
-      {/* Floating overlays anchored to the right (over blended map) */}
-      <div className="hidden lg:block lg:col-span-5 relative min-h-[520px]">
-        <div className="absolute bottom-4 right-0 bg-background/85 backdrop-blur border border-border text-foreground p-5 max-w-[280px] shadow-bold">
-          <div className="font-mono text-xs uppercase tracking-widest mb-1 text-muted-foreground">The Outcome</div>
-          <div className="font-display text-xl leading-tight">A professional who is fluent in four economies, not one.</div>
-        </div>
-      </div>
+      <div className="hidden lg:block lg:col-span-5" />
     </div>
   </section>
 );
