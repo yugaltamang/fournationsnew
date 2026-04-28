@@ -119,28 +119,25 @@ const Hero = () => (
                 <line x1="0" x2="600" y1="440" y2="440" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeDasharray="2 4" opacity="0.7" />
               </g>
 
-              {/* Real-world geographic continent silhouettes */}
-              <g>
-                {/* Soft fill base */}
+              {/* Real-world geographic continent silhouettes — subtle */}
+              <g opacity="0.55">
                 <path
                   d={WORLD_PATH}
                   fill="hsl(var(--foreground))"
-                  fillOpacity="0.10"
+                  fillOpacity="0.04"
                   fillRule="evenodd"
                 />
-                {/* Dotted overlay for editorial texture */}
                 <path
                   d={WORLD_PATH}
                   fill="url(#dots)"
                   fillRule="evenodd"
                 />
-                {/* Coastline stroke */}
                 <path
                   d={WORLD_PATH}
                   fill="none"
                   stroke="hsl(var(--foreground))"
-                  strokeOpacity="0.45"
-                  strokeWidth="0.6"
+                  strokeOpacity="0.18"
+                  strokeWidth="0.4"
                   strokeLinejoin="round"
                 />
               </g>
