@@ -99,8 +99,8 @@ const Hero = () => (
                   <stop offset="60%" stopColor="#F7D544" stopOpacity="0.08" />
                   <stop offset="100%" stopColor="#F7D544" stopOpacity="0" />
                 </radialGradient>
-                <pattern id="dots" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
-                  <circle cx="1" cy="1" r="0.7" fill="hsl(var(--foreground))" opacity="0.22" />
+                <pattern id="dots" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
+                  <circle cx="1" cy="1" r="0.9" fill="hsl(var(--foreground))" opacity="0.55" />
                 </pattern>
                 <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="1.2" />
