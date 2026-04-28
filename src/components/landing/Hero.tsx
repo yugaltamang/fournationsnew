@@ -61,9 +61,9 @@ const Hero = () => (
 
         <div className="grid md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-7">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] opacity-60 mb-3">/ Cohort 2026 · You walk away as →</div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] opacity-60 mb-3">/ Cohort 2026 · The Graduate</div>
             <p className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-balance">
-              A professional who is fluent in <em className="not-italic underline decoration-2 underline-offset-4">four economies</em>, not one.
+              Read four <em className="not-italic underline decoration-2 underline-offset-4">markets</em>. Speak four <em className="not-italic underline decoration-2 underline-offset-4">cultures</em>. Lead in any room — Delhi to Dubai.
             </p>
           </div>
 
