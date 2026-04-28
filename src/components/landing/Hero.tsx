@@ -1,5 +1,4 @@
-// Hero now showcases an editorial world map plotting the 4 nations
-import { WORLD_PATH } from "./worldMapPath";
+// Hero showcases iconic monuments for the 4 cohort cities
 
 const Hero = () => (
   <section className="relative pt-32 pb-20 overflow-hidden">
