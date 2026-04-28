@@ -51,18 +51,18 @@ const nations = [
 ];
 
 const Nations = () => (
-  <section id="nations" className="py-32 relative">
+  <section id="nations" className="py-20 md:py-32 relative">
     <div className="container">
-      <div className="flex items-end justify-between gap-8 mb-16 flex-wrap">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8 mb-12 md:mb-16">
         <div>
-          <div className="tag-pill mb-6">◉ The Journey</div>
-          <h2 className="font-display text-5xl md:text-7xl leading-[0.95] max-w-3xl text-balance">
+          <div className="tag-pill mb-4 sm:mb-6">◉ The Journey</div>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl leading-[0.95] max-w-3xl text-balance">
             Four nations.<br />
             <em className="italic mu-hero-gradient-text not-italic">Four markets.</em><br />
             One global operator.
           </h2>
         </div>
-        <p className="max-w-sm text-muted-foreground">
+        <p className="md:max-w-sm text-sm sm:text-base text-muted-foreground">
           The journey is sequential, not symbolic. Build in India. Read Asia from Hong Kong. Raise capital in London. Bridge the world from Dubai. Each stop adds a market, a culture and a professional muscle you cannot acquire from a textbook.
         </p>
       </div>
@@ -80,9 +80,9 @@ const Nations = () => (
 
       <div className="grid gap-6">
         {nations.map((n, i) => (
-          <article key={n.n} className={`group grid md:grid-cols-12 gap-6 border border-border p-6 hover:border-primary transition-colors ${i % 2 ? 'md:[&>*:first-child]:order-2' : ''}`}>
+          <article key={n.n} className={`group grid md:grid-cols-12 gap-6 border border-border p-4 sm:p-6 hover:border-primary transition-colors ${i % 2 ? 'md:[&>*:first-child]:order-2' : ''}`}>
             <div className="md:col-span-5 relative overflow-hidden group/img">
-              <img src={n.img} alt={n.country} loading="lazy" className={`w-full h-72 md:h-full object-cover grayscale ${n.n !== "04" ? "group-hover:grayscale-0" : ""} hover:scale-105 transition-all duration-700`} />
+              <img src={n.img} alt={n.country} loading="lazy" className={`w-full h-56 sm:h-72 md:h-full object-cover grayscale ${n.n !== "04" ? "group-hover:grayscale-0" : ""} hover:scale-105 transition-all duration-700`} />
               <div className="absolute top-4 left-4 bg-background/80 backdrop-blur px-3 py-1 font-mono text-xs uppercase tracking-widest">
                 {n.n} / 04
               </div>
@@ -94,21 +94,21 @@ const Nations = () => (
             </div>
             <div className="md:col-span-7 flex flex-col justify-between gap-6">
               <div>
-                <div className="flex items-baseline justify-between gap-4 mb-4">
+                <div className="flex items-baseline justify-between gap-3 sm:gap-4 mb-4 flex-wrap">
                   <div>
-                    <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{n.city}</div>
-                    <h3 className="font-display text-4xl md:text-5xl mt-1">{n.country}</h3>
+                    <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">{n.city}</div>
+                    <h3 className="font-display text-3xl sm:text-4xl md:text-5xl mt-1">{n.country}</h3>
                   </div>
                   <div className="text-right">
                     <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Partner</div>
-                    <div className="font-display text-base text-primary mt-1">{n.partner}</div>
+                    <div className="font-display text-sm sm:text-base text-primary mt-1">{n.partner}</div>
                   </div>
                 </div>
-                <p className="font-display text-2xl md:text-3xl italic text-foreground/90 leading-snug mb-4">"{n.title}"</p>
-                <p className="text-muted-foreground leading-relaxed mb-4">{n.desc}</p>
-                <div className="bg-primary text-primary-foreground p-5 -mx-1 shadow-[6px_6px_0_0_hsl(var(--foreground))]">
+                <p className="font-display text-xl sm:text-2xl md:text-3xl italic text-foreground/90 leading-snug mb-4">"{n.title}"</p>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">{n.desc}</p>
+                <div className="bg-primary text-primary-foreground p-4 sm:p-5 -mx-1 shadow-[6px_6px_0_0_hsl(var(--foreground))]">
                   <div className="font-mono text-[10px] uppercase tracking-widest opacity-80 mb-2">You walk away able to →</div>
-                  <div className="font-display text-xl md:text-2xl leading-snug">{n.outcome}</div>
+                  <div className="font-display text-lg sm:text-xl md:text-2xl leading-snug">{n.outcome}</div>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 pt-4 border-t border-border">

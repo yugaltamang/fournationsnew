@@ -6,11 +6,11 @@ const outcomes = [
 ];
 
 const Outcomes = () => (
-  <section id="outcomes" className="py-32">
+  <section id="outcomes" className="py-20 md:py-32">
     <div className="container">
-      <div className="max-w-4xl mb-16">
-        <div className="tag-pill mb-6">◉ Outcomes</div>
-        <h2 className="font-display text-5xl md:text-7xl leading-[0.95] text-balance">
+      <div className="max-w-4xl mb-12 md:mb-16">
+        <div className="tag-pill mb-4 sm:mb-6">◉ Outcomes</div>
+        <h2 className="font-display text-4xl sm:text-5xl md:text-7xl leading-[0.95] text-balance">
           What you walk away with.<br />
           <em className="italic text-primary not-italic">(A passport that does work.)</em>
         </h2>
@@ -18,12 +18,12 @@ const Outcomes = () => (
 
       <div className="grid md:grid-cols-2 gap-px bg-border">
         {outcomes.map((o) => (
-          <div key={o.n} className="bg-background p-10 group hover:bg-secondary/40 transition-colors">
-            <div className="flex items-start gap-6">
-              <span className="font-display text-6xl text-primary leading-none">{o.n}</span>
+          <div key={o.n} className="bg-background p-6 sm:p-10 group hover:bg-secondary/40 transition-colors">
+            <div className="flex items-start gap-4 sm:gap-6">
+              <span className="font-display text-5xl sm:text-6xl text-primary leading-none">{o.n}</span>
               <div>
-                <h3 className="font-display text-3xl mb-3">{o.t}</h3>
-                <p className="text-muted-foreground leading-relaxed">{o.d}</p>
+                <h3 className="font-display text-2xl sm:text-3xl mb-2 sm:mb-3">{o.t}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{o.d}</p>
               </div>
             </div>
           </div>
