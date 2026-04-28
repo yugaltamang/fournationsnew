@@ -12,12 +12,15 @@ const Hero = () => (
           <span className="tag-pill hidden sm:inline-flex">Post Graduate Program</span>
         </div>
 
-        <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.9] font-medium text-balance">
+        <h1 className="font-display text-[clamp(2.75rem,6.5vw,6rem)] leading-[0.95] font-medium text-balance">
           One <em className="italic mu-hero-gradient-text not-italic font-normal">degree.</em>
           <br />
-          Four <span className="font-mono text-[0.5em] align-top text-muted-foreground">/04</span> cities.
+          Four <span className="font-mono text-[0.4em] align-top text-muted-foreground">/04</span> cities.
           <br />
-          Infinite reasons to say <span className="mu-hero-underline">"when I was in Hong Kong…"</span>
+          <span className="block mt-4 text-[0.6em] leading-[1.15] text-foreground/90 font-normal italic">
+            Infinite reasons to say<br />
+            <span className="not-italic font-medium">"when I was in <span className="mu-hero-underline whitespace-nowrap">Hong Kong</span>…"</span>
+          </span>
         </h1>
 
         <p className="mt-10 max-w-xl text-lg text-muted-foreground leading-relaxed">

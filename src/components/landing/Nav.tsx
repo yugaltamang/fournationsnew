@@ -41,7 +41,7 @@ const Nav = () => {
             <a
               key={l.href}
               href={l.href}
-              className="group relative flex items-center gap-2 px-4 py-2 transition-colors hover:bg-secondary"
+              className="group relative flex items-center gap-2 px-4 py-2 whitespace-nowrap transition-colors hover:bg-secondary"
             >
               <span className="font-mono text-[10px] text-muted-foreground group-hover:text-foreground transition-colors">/{l.num}</span>
               <span className="group-hover:text-foreground transition-colors">{l.label}</span>
