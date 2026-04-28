@@ -99,8 +99,8 @@ const Hero = () => (
                   <stop offset="60%" stopColor="#F7D544" stopOpacity="0.08" />
                   <stop offset="100%" stopColor="#F7D544" stopOpacity="0" />
                 </radialGradient>
-                <pattern id="dots" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
-                  <circle cx="1" cy="1" r="0.9" fill="hsl(var(--foreground))" opacity="0.55" />
+                <pattern id="dots" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+                  <circle cx="1" cy="1" r="0.6" fill="hsl(var(--foreground))" opacity="0.22" />
                 </pattern>
                 <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="1.2" />
@@ -119,28 +119,25 @@ const Hero = () => (
                 <line x1="0" x2="600" y1="440" y2="440" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeDasharray="2 4" opacity="0.7" />
               </g>
 
-              {/* Real-world geographic continent silhouettes */}
-              <g>
-                {/* Soft fill base */}
+              {/* Real-world geographic continent silhouettes — subtle */}
+              <g opacity="0.55">
                 <path
                   d={WORLD_PATH}
                   fill="hsl(var(--foreground))"
-                  fillOpacity="0.10"
+                  fillOpacity="0.04"
                   fillRule="evenodd"
                 />
-                {/* Dotted overlay for editorial texture */}
                 <path
                   d={WORLD_PATH}
                   fill="url(#dots)"
                   fillRule="evenodd"
                 />
-                {/* Coastline stroke */}
                 <path
                   d={WORLD_PATH}
                   fill="none"
                   stroke="hsl(var(--foreground))"
-                  strokeOpacity="0.45"
-                  strokeWidth="0.6"
+                  strokeOpacity="0.18"
+                  strokeWidth="0.4"
                   strokeLinejoin="round"
                 />
               </g>
