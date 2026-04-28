@@ -181,9 +181,6 @@ const Hero = () => (
 
       {/* Floating overlays anchored to the right (over blended map) */}
       <div className="hidden lg:block lg:col-span-5 relative min-h-[520px]">
-        <div className="absolute top-4 right-0 border border-primary bg-background/70 backdrop-blur px-4 py-2 font-mono text-[11px] uppercase tracking-widest">
-          ◉ India → HK → London → Dubai
-        </div>
         <div className="absolute bottom-4 right-0 bg-background/85 backdrop-blur border border-border text-foreground p-5 max-w-[280px] shadow-bold">
           <div className="font-mono text-xs uppercase tracking-widest mb-1 text-muted-foreground">The Outcome</div>
           <div className="font-display text-xl leading-tight">A professional who is fluent in four economies, not one.</div>
