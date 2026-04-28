@@ -9,12 +9,12 @@ const Hero = () => (
     {/* Atlas map — blended into the right side of the hero */}
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden md:block w-[78%] lg:w-[68%] xl:w-[62%]"
+      className="pointer-events-none absolute inset-0 hidden md:block opacity-90"
       style={{
         maskImage:
-          "radial-gradient(ellipse 90% 70% at 55% 50%, black 60%, transparent 95%)",
+          "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.3) 30%, black 60%, black 100%)",
         WebkitMaskImage:
-          "radial-gradient(ellipse 90% 70% at 55% 50%, black 60%, transparent 95%)",
+          "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.3) 30%, black 60%, black 100%)",
       }}
     >
       <div className="relative w-full h-full">
@@ -23,7 +23,7 @@ const Hero = () => (
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 70% 55% at 70% 45%, hsl(40 84% 58% / 0.10), transparent 70%)",
+              "radial-gradient(ellipse 55% 50% at 72% 45%, hsl(40 84% 58% / 0.12), transparent 75%)",
           }}
         />
 
@@ -41,7 +41,7 @@ const Hero = () => (
           className="absolute inset-0 w-full h-full"
           role="img"
           aria-label="World map plotting India, Hong Kong, London and Dubai"
-          preserveAspectRatio="xMidYMid meet"
+          preserveAspectRatio="xMaxYMid slice"
         >
           <defs>
             <linearGradient id="muLineBg" x1="0" y1="0" x2="1" y2="0">
