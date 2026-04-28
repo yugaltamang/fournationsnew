@@ -184,6 +184,7 @@ const Hero = () => (
             </div>
           ))}
         </div>
+      </div>
     </div>
 
     {/* The Outcome — full-width editorial banner */}
