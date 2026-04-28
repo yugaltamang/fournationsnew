@@ -285,16 +285,6 @@ const Hero = () => (
             ◉ India → HK → London → Dubai
           </div>
         </div>
-
-          <div className="absolute inset-x-0 bottom-0 h-2 mu-hero-gradient" />
-          <div className="absolute -bottom-6 -left-6 bg-background border border-border text-foreground p-5 max-w-[260px] shadow-bold">
-            <div className="font-mono text-xs uppercase tracking-widest mb-1 text-muted-foreground">The Outcome</div>
-            <div className="font-display text-xl leading-tight">A professional who is fluent in four economies, not one.</div>
-          </div>
-          <div className="absolute -top-4 -right-4 border border-primary bg-background/80 backdrop-blur px-4 py-2 font-mono text-xs uppercase tracking-widest">
-            ◉ India → HK → London → Dubai
-          </div>
-        </div>
       </div>
     </div>
   </section>
