@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import muLogo from "@/assets/mu-logo.svg";
 
 const links = [
   { href: "#nations", label: "The Journey", num: "01" },
@@ -25,13 +26,14 @@ const Nav = () => {
       <div className="container flex items-center justify-between h-20">
         {/* Logo */}
         <a href="#" className="group flex items-center gap-3">
-          <span className="relative flex items-center justify-center w-9 h-9 border border-border group-hover:border-transparent transition-colors">
-            <span className="absolute inset-0 mu-hero-gradient opacity-0 group-hover:opacity-100 transition-opacity" />
-            <span className="relative font-display italic text-lg leading-none group-hover:text-background transition-colors">M</span>
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-lg font-medium tracking-tight">Masters'Union</span>
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground mt-1">PG · Global Business</span>
+          <img
+            src={muLogo}
+            alt="Masters' Union"
+            className="h-8 md:h-9 w-auto invert"
+          />
+          <span className="hidden sm:flex flex-col leading-none border-l border-border pl-3">
+            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">PG · Global Business</span>
+            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-primary mt-1">4 Nations</span>
           </span>
         </a>
 
