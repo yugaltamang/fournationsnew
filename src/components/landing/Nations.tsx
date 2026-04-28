@@ -1,48 +1,52 @@
 import india from "@/assets/nation-india.jpg";
-import london from "@/assets/nation-london.jpg";
-import china from "@/assets/nation-china.jpg";
 import hk from "@/assets/nation-hongkong.jpg";
+import london from "@/assets/nation-london.jpg";
+import dubai from "@/assets/nation-dubai.jpg";
 
 const nations = [
   {
     n: "01",
     country: "India",
-    city: "Delhi NCR · Jalandhar",
+    city: "Delhi NCR · Gurugram",
+    partner: "Masters' Union Campus",
     img: india,
-    title: "Build it from zero.",
-    desc: "Walk the floors of ITC, Dixon, NIVEA & Sonalika. Validate ideas in Chandni Chowk. Pitch to Razorpay & Pine Labs.",
-    tags: ["Finance & FinTech", "Product & AI", "GTM & Sales", "Operations", "Leadership"],
-    hours: 108,
+    title: "Build the foundation.",
+    desc: "Your operating base. Read P&Ls, ship products, run GTM sprints and pitch to founders of Razorpay, Zomato, Nykaa & Lenskart. Walk the floors of ITC, Dixon, NIVEA and Sonalika. You leave India having already done the work — not having only studied it.",
+    outcome: "Operate a venture end-to-end: finance, product, GTM, ops & leadership.",
+    tags: ["Finance & FinTech", "Product & AI", "Sales & GTM", "Operations", "Leadership"],
   },
   {
     n: "02",
-    country: "United Kingdom",
-    city: "London",
-    img: london,
-    title: "Command global capital.",
-    desc: "Decode how PE/VC funds, M&A and luxury brands operate at the world's financial capital. Build your creator monetization playbook.",
-    tags: ["Global Capital", "Strategy & Tech", "Luxury & Brand", "Experience Economy"],
-    hours: 90,
+    country: "Hong Kong",
+    city: "Central · Greater Bay Area",
+    partner: "CUHK Business School",
+    img: hk,
+    title: "Read the East.",
+    desc: "Asia's capital gateway. Sessions at CUHK Business School, trading floors at HKEX & HSBC, and a Greater Bay Area sprint into Shenzhen's hardware ecosystem. Decode how Asian capital, manufacturing and platforms actually move.",
+    outcome: "Navigate Asian capital markets, supply chains and cross-border deals.",
+    tags: ["Global Finance", "Asia Strategy", "Supply Chain", "FinTech"],
   },
   {
     n: "03",
-    country: "China",
-    city: "Shanghai · Beijing",
-    img: china,
-    title: "Decode the world's factory.",
-    desc: "How China leapfrogged the West in platforms, manufacturing and AI. Inside Alibaba, ByteDance, Tencent & SenseTime.",
-    tags: ["Digital Platforms", "Supply Chain", "Data & AI", "Cross-Cultural"],
-    hours: 60,
+    country: "United Kingdom",
+    city: "London",
+    partner: "Imperial College London",
+    img: london,
+    title: "Command global capital.",
+    desc: "Imperial College London — innovation, deep tech and entrepreneurship at one of the world's top business schools. Decode PE/VC, M&A, luxury brand strategy and the creator-economy playbooks shaping the West.",
+    outcome: "Pitch, raise and scale a venture at global capital standards.",
+    tags: ["Capital Markets", "Tech & Innovation", "Luxury & Brand", "Strategy"],
   },
   {
     n: "04",
-    country: "Hong Kong SAR",
-    city: "Central · GBA",
-    img: hk,
-    title: "Where East meets capital.",
-    desc: "Trade desks at HKEX & HSBC. CUHK FinTech seminars. Greater Bay Area market-entry sprint.",
-    tags: ["FinTech", "Market Entry", "GBA Strategy"],
-    hours: 30,
+    country: "Dubai",
+    city: "DIFC · UAE",
+    partner: "Optional Immersion",
+    img: dubai,
+    title: "Operate at the crossroads.",
+    desc: "Optional finale in the world's fastest-growing business hub. Inside DIFC, family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets.",
+    outcome: "Position yourself for MENA opportunities, family offices & global mobility.",
+    tags: ["MENA Markets", "Family Office", "Free Zones", "Global Mobility"],
   },
 ];
 
@@ -51,16 +55,27 @@ const Nations = () => (
     <div className="container">
       <div className="flex items-end justify-between gap-8 mb-16 flex-wrap">
         <div>
-          <div className="tag-pill mb-6">◉ The Geography of Mastery</div>
+          <div className="tag-pill mb-6">◉ The Journey</div>
           <h2 className="font-display text-5xl md:text-7xl leading-[0.95] max-w-3xl text-balance">
             Four nations.<br />
-            <em className="italic text-primary not-italic">One operating system</em><br />
-            for global builders.
+            <em className="italic text-primary not-italic">Four markets.</em><br />
+            One global operator.
           </h2>
         </div>
         <p className="max-w-sm text-muted-foreground">
-          Each country teaches a different muscle. India for execution. London for capital. China for scale. Hong Kong for arbitrage. You graduate fluent in all four.
+          The journey is sequential, not symbolic. Build in India. Read Asia from Hong Kong. Raise capital in London. Bridge the world from Dubai. Each stop adds a market, a culture and a professional muscle you cannot acquire from a textbook.
         </p>
+      </div>
+
+      {/* Journey strip */}
+      <div className="hidden md:flex items-center gap-3 mb-12 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+        <span className="text-primary">India</span>
+        <span>→</span>
+        <span className="text-primary">Hong Kong · CUHK</span>
+        <span>→</span>
+        <span className="text-primary">London · Imperial</span>
+        <span>→</span>
+        <span>Dubai (optional)</span>
       </div>
 
       <div className="grid gap-6">
@@ -71,6 +86,11 @@ const Nations = () => (
               <div className="absolute top-4 left-4 bg-background/80 backdrop-blur px-3 py-1 font-mono text-xs uppercase tracking-widest">
                 {n.n} / 04
               </div>
+              {n.n === "04" && (
+                <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 font-mono text-[10px] uppercase tracking-widest">
+                  Optional
+                </div>
+              )}
             </div>
             <div className="md:col-span-7 flex flex-col justify-between gap-6">
               <div>
@@ -80,12 +100,16 @@ const Nations = () => (
                     <h3 className="font-display text-4xl md:text-5xl mt-1">{n.country}</h3>
                   </div>
                   <div className="text-right">
-                    <div className="font-display text-3xl text-primary">{n.hours}h</div>
-                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">contact</div>
+                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Partner</div>
+                    <div className="font-display text-base text-primary mt-1">{n.partner}</div>
                   </div>
                 </div>
                 <p className="font-display text-2xl md:text-3xl italic text-foreground/90 leading-snug mb-4">"{n.title}"</p>
-                <p className="text-muted-foreground leading-relaxed">{n.desc}</p>
+                <p className="text-muted-foreground leading-relaxed mb-4">{n.desc}</p>
+                <div className="border-l-2 border-primary pl-4 py-1">
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">You walk away able to →</div>
+                  <div className="font-display text-lg text-foreground">{n.outcome}</div>
+                </div>
               </div>
               <div className="flex flex-wrap gap-2 pt-4 border-t border-border">
                 {n.tags.map((t) => (
