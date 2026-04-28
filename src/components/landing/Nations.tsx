@@ -82,7 +82,7 @@ const Nations = () => (
         {nations.map((n, i) => (
           <article key={n.n} className={`group grid md:grid-cols-12 gap-6 border border-border p-6 hover:border-primary transition-colors ${i % 2 ? 'md:[&>*:first-child]:order-2' : ''}`}>
             <div className="md:col-span-5 relative overflow-hidden group/img">
-              <img src={n.img} alt={n.country} loading="lazy" className="w-full h-72 md:h-full object-cover grayscale group-hover:grayscale-0 hover:grayscale-0 hover:scale-105 transition-all duration-700" />
+              <img src={n.img} alt={n.country} loading="lazy" className={`w-full h-72 md:h-full object-cover grayscale ${n.n !== "04" ? "group-hover:grayscale-0" : ""} hover:scale-105 transition-all duration-700`} />
               <div className="absolute top-4 left-4 bg-background/80 backdrop-blur px-3 py-1 font-mono text-xs uppercase tracking-widest">
                 {n.n} / 04
               </div>
