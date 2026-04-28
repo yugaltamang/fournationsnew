@@ -1,21 +1,72 @@
-const Nav = () => (
-  <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/40">
-    <div className="container flex items-center justify-between h-16">
-      <a href="#" className="flex items-center gap-2 font-display text-xl font-semibold tracking-tight">
-        <span className="inline-block w-2 h-2 bg-primary animate-blink" />
-        Masters'Union
-      </a>
-      <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#nations" className="hover:text-primary transition-colors">The Journey</a>
-        <a href="#curriculum" className="hover:text-primary transition-colors">Curriculum</a>
-        <a href="#faculty" className="hover:text-primary transition-colors">CXO Network</a>
-        <a href="#outcomes" className="hover:text-primary transition-colors">Outcomes</a>
-      </nav>
-      <a href="#apply" className="bg-primary text-primary-foreground px-5 py-2 text-sm font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors">
-        Apply →
-      </a>
-    </div>
-  </header>
-);
+import { useEffect, useState } from "react";
+
+const links = [
+  { href: "#nations", label: "The Journey", num: "01" },
+  { href: "#curriculum", label: "Curriculum", num: "02" },
+  { href: "#faculty", label: "Why This", num: "03" },
+  { href: "#outcomes", label: "Outcomes", num: "04" },
+];
+
+const Nav = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl bg-background/80 border-b border-border/60" : "bg-transparent border-b border-transparent"}`}>
+      {/* Top hairline gradient */}
+      <div className="mu-hero-divider w-full opacity-80" />
+
+      <div className="container flex items-center justify-between h-20">
+        {/* Logo */}
+        <a href="#" className="group flex items-center gap-3">
+          <span className="relative flex items-center justify-center w-9 h-9 border border-border group-hover:border-transparent transition-colors">
+            <span className="absolute inset-0 mu-hero-gradient opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span className="relative font-display italic text-lg leading-none group-hover:text-background transition-colors">M</span>
+          </span>
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-lg font-medium tracking-tight">Masters'Union</span>
+            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground mt-1">PG · Global Business</span>
+          </span>
+        </a>
+
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-1 text-sm font-medium border border-border/60 px-2 py-1.5 backdrop-blur">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="group relative flex items-center gap-2 px-4 py-2 transition-colors hover:text-background"
+            >
+              <span className="absolute inset-0 mu-hero-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0" />
+              <span className="relative z-10 font-mono text-[10px] text-muted-foreground group-hover:text-background/80">/{l.num}</span>
+              <span className="relative z-10">{l.label}</span>
+            </a>
+          ))}
+        </nav>
+
+        {/* Right cluster */}
+        <div className="flex items-center gap-3">
+          <a href="#" className="hidden md:inline-flex font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
+            Brochure ↓
+          </a>
+          <a
+            href="#apply"
+            className="group relative inline-flex items-center gap-2 px-5 py-3 font-bold uppercase tracking-wider text-xs overflow-hidden border border-foreground"
+          >
+            <span className="absolute inset-0 mu-hero-gradient transition-transform duration-500 group-hover:scale-110" />
+            <span className="relative z-10 text-background">Apply Now</span>
+            <span className="relative z-10 text-background group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+};
 
 export default Nav;
