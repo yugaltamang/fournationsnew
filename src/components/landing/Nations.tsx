@@ -106,9 +106,9 @@ const Nations = () => (
                 </div>
                 <p className="font-display text-2xl md:text-3xl italic text-foreground/90 leading-snug mb-4">"{n.title}"</p>
                 <p className="text-muted-foreground leading-relaxed mb-4">{n.desc}</p>
-                <div className="border-l-2 border-primary pl-4 py-1">
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">You walk away able to →</div>
-                  <div className="font-display text-lg text-foreground">{n.outcome}</div>
+                <div className="bg-primary text-primary-foreground p-5 -mx-1 shadow-[6px_6px_0_0_hsl(var(--foreground))]">
+                  <div className="font-mono text-[10px] uppercase tracking-widest opacity-80 mb-2">You walk away able to →</div>
+                  <div className="font-display text-xl md:text-2xl leading-snug">{n.outcome}</div>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 pt-4 border-t border-border">
