@@ -1,16 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Nav from "@/components/landing/Nav";
+import Hero from "@/components/landing/Hero";
+import Marquee from "@/components/landing/Marquee";
+import Nations from "@/components/landing/Nations";
+import Curriculum from "@/components/landing/Curriculum";
+import Immersions from "@/components/landing/Immersions";
+import CXO from "@/components/landing/CXO";
+import Outcomes from "@/components/landing/Outcomes";
+import FAQ from "@/components/landing/FAQ";
+import Apply from "@/components/landing/Apply";
+import Footer from "@/components/landing/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
-};
-
-const Index = PlaceholderIndex;
+const Index = () => (
+  <main className="min-h-screen bg-background text-foreground">
+    <Nav />
+    <Hero />
+    <Marquee />
+    <section id="program">
+      <Nations />
+    </section>
+    <Curriculum />
+    <Immersions />
+    <CXO />
+    <Outcomes />
+    <FAQ />
+    <Apply />
+    <Footer />
+  </main>
+);
 
 export default Index;

@@ -1,0 +1,45 @@
+const Apply = () => (
+  <section id="apply" className="py-32 relative overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
+    <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
+
+    <div className="container relative">
+      <div className="max-w-5xl mx-auto text-center">
+        <div className="tag-pill mb-8 mx-auto">◉ Cohort 2026 · Limited Seats</div>
+        <h2 className="font-display text-[clamp(3rem,9vw,8rem)] leading-[0.9] mb-10 text-balance">
+          The world is a <em className="italic text-primary not-italic">classroom.</em><br />
+          Step into it.
+        </h2>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
+          Applications close in <strong className="text-primary font-mono">42 days</strong>. Cohorts are capped at 60 builders.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <a href="#" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-10 py-6 font-bold uppercase tracking-wider text-base hover:shadow-bold transition-all">
+            Apply Now
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+          <a href="#" className="inline-flex items-center justify-center gap-3 border border-border px-10 py-6 font-bold uppercase tracking-wider text-base hover:border-primary hover:text-primary transition-colors">
+            Talk to Admissions
+          </a>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border max-w-3xl mx-auto">
+          {[
+            { l: "Application", v: "Online · 15 min" },
+            { l: "Decision", v: "Within 14 days" },
+            { l: "Cohort size", v: "60 builders" },
+            { l: "Start", v: "Aug 2026" },
+          ].map((s) => (
+            <div key={s.l} className="bg-background p-5">
+              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">{s.l}</div>
+              <div className="font-display text-lg">{s.v}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export default Apply;
