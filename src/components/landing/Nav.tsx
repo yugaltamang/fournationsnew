@@ -26,7 +26,7 @@ const Nav = () => {
   }, [open]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || open ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-transparent border-b border-transparent"}`}>
+    <header className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || open ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-transparent border-b border-transparent"}`}>
       <div className="mu-hero-divider w-full opacity-80" />
 
       <div className="container flex items-center justify-between h-16 md:h-20">
