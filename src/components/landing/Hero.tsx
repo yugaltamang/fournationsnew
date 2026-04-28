@@ -147,37 +147,37 @@ const Hero = () => (
 
               {/* Halos behind plotted nations */}
               <g>
-                <circle cx="252" cy="248" r="50" fill="url(#muHalo)" />
-                <circle cx="368" cy="350" r="50" fill="url(#muHalo)" />
-                <circle cx="412" cy="356" r="50" fill="url(#muHalo)" />
-                <circle cx="478" cy="320" r="50" fill="url(#muHalo)" />
+                <circle cx="88" cy="84" r="46" fill="url(#muHalo)" />
+                <circle cx="283" cy="294" r="46" fill="url(#muHalo)" />
+                <circle cx="361" cy="267" r="46" fill="url(#muHalo)" />
+                <circle cx="491" cy="318" r="46" fill="url(#muHalo)" />
               </g>
 
               {/* Great-circle arcs — sequential journey */}
               <g fill="none" stroke="url(#muLine)">
                 {/* India → Hong Kong */}
-                <path d="M412,356 Q455,300 478,320" strokeWidth="1.4" strokeDasharray="3 5" />
+                <path d="M361,267 Q440,240 491,318" strokeWidth="1.6" strokeDasharray="3 5" />
                 {/* Hong Kong → London */}
-                <path d="M478,320 Q360,140 252,248" strokeWidth="1.4" strokeDasharray="3 5" />
+                <path d="M491,318 Q300,40 88,84" strokeWidth="1.6" strokeDasharray="3 5" />
                 {/* London → Dubai */}
-                <path d="M252,248 Q310,280 368,350" strokeWidth="1.4" strokeDasharray="3 5" />
+                <path d="M88,84 Q160,150 283,294" strokeWidth="1.6" strokeDasharray="3 5" />
                 {/* Dubai → India (return / loop) */}
-                <path d="M368,350 Q390,360 412,356" strokeWidth="1" strokeDasharray="2 4" opacity="0.55" />
+                <path d="M283,294 Q322,275 361,267" strokeWidth="1.1" strokeDasharray="2 4" opacity="0.6" />
 
                 {/* Glow underlay */}
-                <g filter="url(#soft)" opacity="0.35">
-                  <path d="M412,356 Q455,300 478,320" strokeWidth="3" />
-                  <path d="M478,320 Q360,140 252,248" strokeWidth="3" />
-                  <path d="M252,248 Q310,280 368,350" strokeWidth="3" />
+                <g filter="url(#soft)" opacity="0.4">
+                  <path d="M361,267 Q440,240 491,318" strokeWidth="3" />
+                  <path d="M491,318 Q300,40 88,84" strokeWidth="3" />
+                  <path d="M88,84 Q160,150 283,294" strokeWidth="3" />
                 </g>
               </g>
 
               {/* Plotted nations — order matters for label spacing */}
               {[
-                { x: 252, y: 248, n: "03", label: "London", sub: "Imperial College", coord: "51°N 0°W", anchor: "start", lx: 14, ly: -14 },
-                { x: 478, y: 320, n: "02", label: "Hong Kong", sub: "CUHK Business School", coord: "22°N 114°E", anchor: "end", lx: -14, ly: -14 },
-                { x: 368, y: 350, n: "04", label: "Dubai", sub: "DIFC · Optional", coord: "25°N 55°E", anchor: "end", lx: -14, ly: 22 },
-                { x: 412, y: 356, n: "01", label: "India", sub: "Delhi NCR", coord: "28°N 77°E", anchor: "start", lx: 14, ly: 22 },
+                { x: 88, y: 84, n: "03", label: "London", sub: "Imperial College", coord: "51°N 0°W", anchor: "start" as const, lx: 14, ly: 22 },
+                { x: 491, y: 318, n: "02", label: "Hong Kong", sub: "CUHK Business School", coord: "22°N 114°E", anchor: "end" as const, lx: -14, ly: 22 },
+                { x: 283, y: 294, n: "04", label: "Dubai", sub: "DIFC · Optional", coord: "25°N 55°E", anchor: "end" as const, lx: -14, ly: -14 },
+                { x: 361, y: 267, n: "01", label: "India", sub: "Delhi NCR", coord: "28°N 77°E", anchor: "start" as const, lx: 14, ly: -14 },
               ].map((p) => {
                 const tx = p.x + p.lx;
                 const ty = p.y + p.ly;
