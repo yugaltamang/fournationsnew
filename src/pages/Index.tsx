@@ -9,6 +9,7 @@ import Outcomes from "@/components/landing/Outcomes";
 import FAQ from "@/components/landing/FAQ";
 import Apply from "@/components/landing/Apply";
 import Footer from "@/components/landing/Footer";
+import MobileBottomBar from "@/components/landing/MobileBottomBar";
 
 const Index = () => (
   <main className="min-h-screen bg-background text-foreground">
@@ -25,6 +26,7 @@ const Index = () => (
     <FAQ />
     <Apply />
     <Footer />
+    <MobileBottomBar />
   </main>
 );
 
