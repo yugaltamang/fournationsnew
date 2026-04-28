@@ -184,13 +184,19 @@ const Hero = () => (
             </div>
           ))}
         </div>
-      </div>
+    </div>
 
-      {/* Floating overlays anchored to the right (over blended map) */}
-      <div className="hidden lg:block lg:col-span-5 relative min-h-[520px]">
-        <div className="absolute bottom-4 right-0 bg-background/85 backdrop-blur border border-border text-foreground p-5 max-w-[280px] shadow-bold">
-          <div className="font-mono text-xs uppercase tracking-widest mb-1 text-muted-foreground">The Outcome</div>
-          <div className="font-display text-xl leading-tight">A professional who is fluent in four economies, not one.</div>
+    {/* The Outcome — full-width editorial banner */}
+    <div className="container relative mt-20">
+      <div className="border-t border-border pt-8 grid md:grid-cols-12 gap-6 items-end">
+        <div className="md:col-span-3">
+          <div className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">The Outcome</div>
+          <div className="font-mono text-[10px] uppercase tracking-widest text-primary mt-2">/ Cohort 2026</div>
+        </div>
+        <div className="md:col-span-9">
+          <p className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-balance">
+            A professional who is fluent in <em className="italic mu-hero-gradient-text not-italic">four economies</em>, not one.
+          </p>
         </div>
       </div>
     </div>
