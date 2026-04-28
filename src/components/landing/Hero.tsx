@@ -1,4 +1,5 @@
 // Hero now showcases an editorial world map plotting the 4 nations
+import { WORLD_PATH } from "./worldMapPath";
 
 const Hero = () => (
   <section className="relative pt-32 pb-20 overflow-hidden">
