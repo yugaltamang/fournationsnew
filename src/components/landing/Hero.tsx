@@ -13,15 +13,15 @@ const Hero = () => (
         </div>
 
         <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.9] font-medium text-balance">
-          Don't <em className="italic text-primary not-italic font-normal">study</em> business.
+          Your <em className="italic text-primary not-italic font-normal">classroom</em>
           <br />
-          Build it. <span className="font-mono text-[0.5em] align-top text-muted-foreground">/04</span>
+          is the <span className="font-mono text-[0.5em] align-top text-muted-foreground">/world</span>
           <br />
-          Across <span className="underline decoration-primary decoration-[6px] underline-offset-[10px]">4 nations.</span>
+          across <span className="underline decoration-primary decoration-[6px] underline-offset-[10px]">4 nations.</span>
         </h1>
 
         <p className="mt-10 max-w-xl text-lg text-muted-foreground leading-relaxed">
-          The <strong className="text-foreground">PG in Global Business & Entrepreneurship</strong> takes you inside the boardrooms, factories and capital markets of <strong className="text-foreground">India, the UK, China & Hong Kong</strong>. 100+ industry immersions. 10+ CXO masterclasses. Zero textbook theory.
+          The <strong className="text-foreground">PG in Global Business & Entrepreneurship</strong> drops you straight into the boardrooms of <strong className="text-foreground">Mumbai</strong>, the trading floors of <strong className="text-foreground">London</strong>, the factories of <strong className="text-foreground">Shenzhen</strong> and the capital markets of <strong className="text-foreground">Hong Kong</strong>. Built with operators, not academics — so you graduate having already done the work.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4">
