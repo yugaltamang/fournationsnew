@@ -70,22 +70,16 @@ const Hero = () => (
       <div className="lg:col-span-7 animate-fade-up">
         <div className="flex items-center gap-3 mb-8">
           <span className="tag-pill"><span className="w-1.5 h-1.5 bg-primary rounded-full" />Cohort 2026 · Applications Open</span>
-          <span className="tag-pill hidden sm:inline-flex">Post Graduate Program</span>
         </div>
 
         <h1 className="font-display text-[clamp(2.75rem,6.5vw,6rem)] leading-[0.95] font-medium text-balance">
           One <em className="italic mu-hero-gradient-text not-italic font-normal">degree.</em>
           <br />
-          Four <span className="font-mono text-[0.4em] align-top text-muted-foreground">/04</span> cities.
-          <br />
-          <span className="block mt-4 text-[0.6em] leading-[1.15] text-foreground/90 font-normal italic">
-            Infinite reasons to say<br />
-            <span className="not-italic font-medium">"when I was in <span className="mu-hero-underline whitespace-nowrap">Hong Kong</span>…"</span>
-          </span>
+          Four cities.
         </h1>
 
-        <p className="mt-10 max-w-xl text-lg text-muted-foreground leading-relaxed">
-          A Post Graduate program that moves with you across <strong className="text-foreground">India</strong>, <strong className="text-foreground">Hong Kong</strong> (CUHK), <strong className="text-foreground">London</strong> (Imperial College) and an optional <strong className="text-foreground">Dubai</strong> finale. Four nations, four cultures, four markets — one operator who can read all of them.
+        <p className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed">
+          A Post Graduate program that moves with you across <strong className="text-foreground">India</strong>, <strong className="text-foreground">Hong Kong</strong> (CUHK), <strong className="text-foreground">London</strong> (Imperial College) and an optional <strong className="text-foreground">Dubai</strong> finale.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -100,8 +94,8 @@ const Hero = () => (
 
         <div className="mt-14 grid grid-cols-3 gap-6 max-w-lg border-t border-border pt-8">
           {[
-            { n: "4", l: "Nations · Cultures · Markets" },
-            { n: "2", l: "Global University Partners" },
+            { n: "4", l: "Nations" },
+            { n: "2", l: "Global Partners" },
             { n: "10+", l: "CXO Masterclasses" },
           ].map((s) => (
             <div key={s.l}>
@@ -112,13 +106,7 @@ const Hero = () => (
         </div>
       </div>
 
-      {/* Floating overlays anchored to the right (over blended map) */}
-      <div className="hidden lg:block lg:col-span-5 relative min-h-[520px]">
-        <div className="absolute bottom-4 right-0 bg-background/85 backdrop-blur border border-border text-foreground p-5 max-w-[280px] shadow-bold">
-          <div className="font-mono text-xs uppercase tracking-widest mb-1 text-muted-foreground">The Outcome</div>
-          <div className="font-display text-xl leading-tight">A professional who is fluent in four economies, not one.</div>
-        </div>
-      </div>
+      <div className="hidden lg:block lg:col-span-5 relative min-h-[480px]" />
     </div>
   </section>
 );
