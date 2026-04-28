@@ -13,11 +13,11 @@ const Hero = () => (
         </div>
 
         <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.9] font-medium text-balance">
-          Graduate as a <em className="italic text-primary not-italic font-normal">global</em>
+          Graduate as a <em className="italic mu-hero-gradient-text not-italic font-normal">global</em>
           <br />
           professional <span className="font-mono text-[0.5em] align-top text-muted-foreground">/not</span>
           <br />
-          a <span className="underline decoration-primary decoration-[6px] underline-offset-[10px]">local hire.</span>
+          a <span className="mu-hero-underline">local hire.</span>
         </h1>
 
         <p className="mt-10 max-w-xl text-lg text-muted-foreground leading-relaxed">
@@ -57,9 +57,10 @@ const Hero = () => (
             height={1620}
             className="w-full aspect-[3/4] object-cover grayscale"
           />
-          <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-5 max-w-[260px] shadow-bold">
-            <div className="font-mono text-xs uppercase tracking-widest mb-1">The Outcome</div>
-            <div className="font-display text-xl leading-tight">A professional who is fluent in four economies, not one.</div>
+          <div className="absolute inset-x-0 bottom-0 h-2 mu-hero-gradient" />
+          <div className="absolute -bottom-6 -left-6 mu-hero-gradient text-foreground p-5 max-w-[260px] shadow-bold">
+            <div className="font-mono text-xs uppercase tracking-widest mb-1 text-foreground/80">The Outcome</div>
+            <div className="font-display text-xl leading-tight text-background">A professional who is fluent in four economies, not one.</div>
           </div>
           <div className="absolute -top-4 -right-4 border border-primary bg-background/80 backdrop-blur px-4 py-2 font-mono text-xs uppercase tracking-widest">
             ◉ India → HK → London → Dubai

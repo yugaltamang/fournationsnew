@@ -7,9 +7,10 @@ const Apply = () => (
       <div className="max-w-5xl mx-auto text-center">
         <div className="tag-pill mb-8 mx-auto">◉ Cohort 2026 · Limited Seats</div>
         <h2 className="font-display text-[clamp(3rem,9vw,8rem)] leading-[0.9] mb-10 text-balance">
-          Four nations are <em className="italic text-primary not-italic">waiting.</em><br />
+          Four nations are <em className="italic mu-hero-gradient-text not-italic">waiting.</em><br />
           Step into the journey.
         </h2>
+        <div className="mu-hero-divider w-24 mx-auto mb-10" />
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
           Applications close in <strong className="text-primary font-mono">42 days</strong>. Cohorts are capped at 60 builders to protect the immersion experience.
         </p>
