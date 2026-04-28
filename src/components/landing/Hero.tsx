@@ -41,7 +41,7 @@ const Hero = () => (
           className="absolute inset-0 w-full h-full"
           role="img"
           aria-label="World map plotting India, Hong Kong, London and Dubai"
-          preserveAspectRatio="xMidYMid meet"
+          preserveAspectRatio="xMaxYMid slice"
         >
           <defs>
             <linearGradient id="muLineBg" x1="0" y1="0" x2="1" y2="0">
