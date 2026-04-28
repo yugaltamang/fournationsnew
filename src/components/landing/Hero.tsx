@@ -13,11 +13,11 @@ const Hero = () => (
         </div>
 
         <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.9] font-medium text-balance">
-          The world doesn't <br />
-          hire <span className="font-mono text-[0.5em] align-top text-muted-foreground">/from</span> one city
+          One <em className="italic mu-hero-gradient-text not-italic font-normal">degree.</em>
           <br />
-          anymore.<br />
-          Be <em className="italic mu-hero-gradient-text not-italic font-normal">built</em> for <span className="mu-hero-underline">all of it.</span>
+          Four <span className="font-mono text-[0.5em] align-top text-muted-foreground">/04</span> cities.
+          <br />
+          Infinite reasons to say <span className="mu-hero-underline">"when I was in Hong Kong…"</span>
         </h1>
 
         <p className="mt-10 max-w-xl text-lg text-muted-foreground leading-relaxed">
