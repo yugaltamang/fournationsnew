@@ -12,9 +12,9 @@ const Hero = () => (
       className="pointer-events-none absolute inset-y-0 right-0 hidden md:block w-[78%] lg:w-[68%] xl:w-[62%]"
       style={{
         maskImage:
-          "radial-gradient(ellipse 85% 80% at 55% 50%, black 50%, transparent 88%)",
+          "radial-gradient(ellipse 90% 70% at 55% 50%, black 60%, transparent 95%)",
         WebkitMaskImage:
-          "radial-gradient(ellipse 85% 80% at 55% 50%, black 50%, transparent 88%)",
+          "radial-gradient(ellipse 90% 70% at 55% 50%, black 60%, transparent 95%)",
       }}
     >
       <div className="relative w-full h-full">
@@ -37,7 +37,7 @@ const Hero = () => (
         </div>
 
         <svg
-          viewBox="0 0 600 800"
+          viewBox="60 40 480 360"
           className="absolute inset-0 w-full h-full"
           role="img"
           aria-label="World map plotting India, Hong Kong, London and Dubai"
