@@ -1,7 +1,7 @@
 // Hero showcases iconic monuments for the 4 cohort cities
 
 const Hero = () => (
-  <section className="relative pt-32 pb-20 overflow-hidden">
+  <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
 
@@ -142,12 +142,12 @@ const Hero = () => (
 
     <div className="container relative grid lg:grid-cols-12 gap-10 items-end">
       <div className="lg:col-span-7 animate-fade-up">
-        <div className="flex items-center gap-3 mb-8">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
           <span className="tag-pill"><span className="w-1.5 h-1.5 bg-primary rounded-full" />Cohort 2026 · Applications Open</span>
           <span className="tag-pill hidden sm:inline-flex">Post Graduate Program</span>
         </div>
 
-        <h1 className="font-display text-[clamp(2.75rem,6.5vw,6rem)] leading-[0.95] font-medium text-balance">
+        <h1 className="font-display text-[clamp(2.25rem,8vw,6rem)] leading-[0.95] font-medium text-balance">
           One <em className="italic mu-hero-gradient-text not-italic font-normal">degree.</em>
           <br />
           Four <span className="font-mono text-[0.4em] align-top text-muted-foreground">/04</span> cities.
@@ -158,29 +158,29 @@ const Hero = () => (
           </span>
         </h1>
 
-        <p className="mt-10 max-w-xl text-lg text-muted-foreground leading-relaxed">
+        <p className="mt-8 sm:mt-10 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
           A Post Graduate program that moves with you across <strong className="text-foreground">India</strong>, <strong className="text-foreground">Hong Kong</strong> (CUHK), <strong className="text-foreground">London</strong> (Imperial College) and an optional <strong className="text-foreground">Dubai</strong> finale. Four nations, four cultures, four markets — one operator who can read all of them.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-4">
-          <a href="#apply" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-5 font-bold uppercase tracking-wider text-sm hover:shadow-bold transition-all">
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <a href="#apply" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 sm:px-8 py-4 sm:py-5 font-bold uppercase tracking-wider text-sm hover:shadow-bold transition-all">
             Apply Now
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
-          <a href="#nations" className="inline-flex items-center justify-center gap-3 border border-border px-8 py-5 font-bold uppercase tracking-wider text-sm hover:border-primary hover:text-primary transition-colors">
+          <a href="#nations" className="inline-flex items-center justify-center gap-3 border border-border px-6 sm:px-8 py-4 sm:py-5 font-bold uppercase tracking-wider text-sm hover:border-primary hover:text-primary transition-colors">
             See the Journey
           </a>
         </div>
 
-        <div className="mt-14 grid grid-cols-3 gap-6 max-w-lg border-t border-border pt-8">
+        <div className="mt-12 sm:mt-14 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg border-t border-border pt-6 sm:pt-8">
           {[
             { n: "4", l: "Nations · Cultures · Markets" },
             { n: "2", l: "Global University Partners" },
             { n: "10+", l: "CXO Masterclasses" },
           ].map((s) => (
             <div key={s.l}>
-              <div className="font-display text-4xl md:text-5xl font-medium">{s.n}</div>
-              <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">{s.l}</div>
+              <div className="font-display text-3xl sm:text-4xl md:text-5xl font-medium">{s.n}</div>
+              <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mt-1 leading-tight">{s.l}</div>
             </div>
           ))}
         </div>

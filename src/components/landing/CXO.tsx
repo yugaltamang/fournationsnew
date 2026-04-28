@@ -42,42 +42,42 @@ const pillars = [
 ];
 
 const CXO = () => (
-  <section id="faculty" className="py-32 relative overflow-hidden">
+  <section id="faculty" className="py-20 md:py-32 relative overflow-hidden">
     <div className="container">
-      <div className="max-w-3xl mb-20">
-        <div className="tag-pill mb-6">◉ Why This Programme</div>
-        <h2 className="font-display text-5xl md:text-6xl leading-[0.95] mb-8 text-balance">
+      <div className="max-w-3xl mb-12 md:mb-20">
+        <div className="tag-pill mb-4 sm:mb-6">◉ Why This Programme</div>
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-6 sm:mb-8 text-balance">
           Hands-on learning for <em className="italic mu-hero-gradient-text not-italic">real business impact.</em>
         </h2>
-        <p className="text-muted-foreground max-w-xl">
+        <p className="text-muted-foreground max-w-xl text-sm sm:text-base">
           Direct execution over passive learning. Every term, every country, every session is engineered to build real skills and real outcomes — not slide decks.
         </p>
       </div>
 
-      <div className="space-y-24">
+      <div className="space-y-16 md:space-y-24">
         {pillars.map((p, i) => (
-          <div key={i} className={`grid lg:grid-cols-12 gap-10 items-center ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+          <div key={i} className={`grid lg:grid-cols-12 gap-8 md:gap-10 items-center ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
             <div className="lg:col-span-5">
               <div className="relative">
                 <img src={p.image} alt={p.tag} loading="lazy" className="w-full aspect-[4/5] object-cover grayscale" />
-                <div className="absolute -bottom-5 -left-5 bg-foreground text-background px-4 py-2 font-mono text-xs uppercase tracking-widest">
+                <div className="absolute -bottom-4 -left-2 sm:-bottom-5 sm:-left-5 bg-foreground text-background px-3 sm:px-4 py-1.5 sm:py-2 font-mono text-[10px] sm:text-xs uppercase tracking-widest">
                   /{String(i + 1).padStart(2, '0')} · {p.tag}
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-7">
-              <div className="font-mono text-xs uppercase tracking-widest text-primary mb-4">{p.tag}</div>
-              <h3 className="font-display text-4xl md:text-5xl leading-[1] mb-6 text-balance">
+              <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3 sm:mb-4">{p.tag}</div>
+              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1] mb-5 sm:mb-6 text-balance">
                 {p.title} <em className="italic text-primary not-italic">{p.titleEm}</em>
               </h3>
-              <p className="text-muted-foreground mb-8 max-w-xl">{p.body}</p>
+              <p className="text-muted-foreground mb-6 sm:mb-8 max-w-xl text-sm sm:text-base">{p.body}</p>
 
               <div className="border-t border-border">
                 {p.points.map((pt, j) => (
-                  <div key={j} className="grid grid-cols-12 gap-4 py-5 border-b border-border">
-                    <div className="col-span-1 font-mono text-xs text-primary pt-1">/{String(j + 1).padStart(2, '0')}</div>
-                    <div className="col-span-11 text-lg text-foreground/90">{pt}</div>
+                  <div key={j} className="grid grid-cols-12 gap-3 sm:gap-4 py-4 sm:py-5 border-b border-border">
+                    <div className="col-span-2 sm:col-span-1 font-mono text-xs text-primary pt-1">/{String(j + 1).padStart(2, '0')}</div>
+                    <div className="col-span-10 sm:col-span-11 text-base sm:text-lg text-foreground/90">{pt}</div>
                   </div>
                 ))}
               </div>

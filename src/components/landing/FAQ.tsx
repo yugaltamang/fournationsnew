@@ -14,11 +14,11 @@ const FAQ = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-32 bg-secondary/20 border-y border-border">
+    <section className="py-20 md:py-32 bg-secondary/20 border-y border-border">
       <div className="container max-w-4xl">
-        <div className="text-center mb-16">
-          <div className="tag-pill mb-6">◉ FAQ</div>
-          <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">Questions, answered.</h2>
+        <div className="text-center mb-12 md:mb-16">
+          <div className="tag-pill mb-4 sm:mb-6">◉ FAQ</div>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95]">Questions, answered.</h2>
         </div>
 
         <div className="border-t border-border">
@@ -26,12 +26,12 @@ const FAQ = () => {
             const isOpen = open === i;
             return (
               <div key={i} className="border-b border-border">
-                <button onClick={() => setOpen(isOpen ? null : i)} className="w-full flex items-center justify-between gap-6 py-6 text-left">
-                  <span className="font-display text-xl md:text-2xl">{f.q}</span>
-                  <span className={`font-display text-3xl text-primary transition-transform shrink-0 ${isOpen ? 'rotate-45' : ''}`}>+</span>
+                <button onClick={() => setOpen(isOpen ? null : i)} className="w-full flex items-center justify-between gap-4 sm:gap-6 py-5 sm:py-6 text-left">
+                  <span className="font-display text-lg sm:text-xl md:text-2xl">{f.q}</span>
+                  <span className={`font-display text-2xl sm:text-3xl text-primary transition-transform shrink-0 ${isOpen ? 'rotate-45' : ''}`}>+</span>
                 </button>
                 {isOpen && (
-                  <p className="pb-6 pr-10 text-muted-foreground leading-relaxed animate-fade-up">{f.a}</p>
+                  <p className="pb-6 pr-4 sm:pr-10 text-sm sm:text-base text-muted-foreground leading-relaxed animate-fade-up">{f.a}</p>
                 )}
               </div>
             );

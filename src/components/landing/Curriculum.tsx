@@ -75,12 +75,12 @@ const Curriculum = () => {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="curriculum" className="py-32 bg-secondary/20 border-y border-border">
+    <section id="curriculum" className="py-20 md:py-32 bg-secondary/20 border-y border-border">
       <div className="container">
-        <div className="grid lg:grid-cols-12 gap-12">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12">
           <div className="lg:col-span-4 lg:sticky lg:top-24 self-start">
-            <div className="tag-pill mb-6">◉ The Curriculum</div>
-            <h2 className="font-display text-5xl md:text-6xl leading-[0.95] mb-6 text-balance">
+            <div className="tag-pill mb-4 sm:mb-6">◉ The Curriculum</div>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-6 text-balance">
               5 muscles.<br />
               <em className="italic text-primary not-italic">Built</em> across <em className="italic">4 markets.</em>
             </h2>
@@ -104,19 +104,19 @@ const Curriculum = () => {
               const isOpen = open === i;
               return (
                 <div key={c.code} className={`border ${isOpen ? 'border-primary bg-background' : 'border-border bg-background/40'} transition-colors`}>
-                  <button onClick={() => setOpen(isOpen ? -1 : i)} className="w-full flex items-center justify-between gap-6 p-6 text-left">
-                    <div className="flex items-center gap-6 min-w-0">
-                      <span className="font-mono text-xs text-primary shrink-0">/{String(i + 1).padStart(2, '0')}</span>
+                  <button onClick={() => setOpen(isOpen ? -1 : i)} className="w-full flex items-center justify-between gap-4 sm:gap-6 p-4 sm:p-6 text-left">
+                    <div className="flex items-center gap-4 sm:gap-6 min-w-0">
+                      <span className="font-mono text-xs text-primary shrink-0 hidden sm:inline">/{String(i + 1).padStart(2, '0')}</span>
                       <div className="min-w-0">
                         <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{c.code}</div>
-                        <h3 className="font-display text-2xl md:text-3xl mt-0.5">{c.title}</h3>
+                        <h3 className="font-display text-xl sm:text-2xl md:text-3xl mt-0.5">{c.title}</h3>
                       </div>
                     </div>
-                    <span className={`font-display text-3xl shrink-0 transition-transform ${isOpen ? 'rotate-45 text-primary' : ''}`}>+</span>
+                    <span className={`font-display text-2xl sm:text-3xl shrink-0 transition-transform ${isOpen ? 'rotate-45 text-primary' : ''}`}>+</span>
                   </button>
                   {isOpen && (
-                    <div className="px-6 pb-8 pt-2 animate-fade-up">
-                      <p className="font-display italic text-xl text-primary mb-6">"{c.q}"</p>
+                    <div className="px-4 sm:px-6 pb-6 sm:pb-8 pt-2 animate-fade-up">
+                      <p className="font-display italic text-lg sm:text-xl text-primary mb-6">"{c.q}"</p>
                       <ul className="space-y-2 mb-6">
                         {c.modules.map((m) => (
                           <li key={m} className="flex gap-3 text-foreground/80">
