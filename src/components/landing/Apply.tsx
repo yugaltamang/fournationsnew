@@ -7,11 +7,11 @@ const Apply = () => (
       <div className="max-w-5xl mx-auto text-center">
         <div className="tag-pill mb-8 mx-auto">◉ Cohort 2026 · Limited Seats</div>
         <h2 className="font-display text-[clamp(3rem,9vw,8rem)] leading-[0.9] mb-10 text-balance">
-          The world is a <em className="italic text-primary not-italic">classroom.</em><br />
-          Step into it.
+          Four nations are <em className="italic text-primary not-italic">waiting.</em><br />
+          Step into the journey.
         </h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-          Applications close in <strong className="text-primary font-mono">42 days</strong>. Cohorts are capped at 60 builders.
+          Applications close in <strong className="text-primary font-mono">42 days</strong>. Cohorts are capped at 60 builders to protect the immersion experience.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
@@ -26,14 +26,14 @@ const Apply = () => (
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border max-w-3xl mx-auto">
           {[
-            { l: "Application", v: "Online · 15 min" },
+            { l: "Journey", v: "India → HK → London → Dubai" },
             { l: "Decision", v: "Within 14 days" },
             { l: "Cohort size", v: "60 builders" },
             { l: "Start", v: "Aug 2026" },
           ].map((s) => (
             <div key={s.l} className="bg-background p-5">
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">{s.l}</div>
-              <div className="font-display text-lg">{s.v}</div>
+              <div className="font-display text-base">{s.v}</div>
             </div>
           ))}
         </div>

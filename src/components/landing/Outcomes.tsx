@@ -1,8 +1,8 @@
 const outcomes = [
-  { n: "01", t: "Launch your venture", d: "Walk in with an idea, walk out with a brand, GTM, financial model and first 100 customers." },
-  { n: "02", t: "Run a P&L by Day 1", d: "Read balance sheets, build forecasts and pitch to PE/VC investors with conviction." },
-  { n: "03", t: "Operate globally", d: "Decode India's distribution, London's capital, China's manufacturing and HK's gateway to Asia." },
-  { n: "04", t: "Network that compounds", d: "10+ CXO sessions, 20+ industry visits, peers from across the world. Your warm intros for life." },
+  { n: "01", t: "Operate across four markets", d: "Read Indian distribution, Asian capital, European brand and MENA family-office economics — and switch contexts without missing a beat." },
+  { n: "02", t: "A network in four cultures", d: "Peers, faculty and CXOs from CUHK, Imperial College London, Indian unicorns and DIFC. Warm intros that compound for life." },
+  { n: "03", t: "Cultural fluency as a moat", d: "Negotiate, hire, sell and lead across India, Asia, Europe and MENA. The skill nobody learns in a classroom — and everybody hires for." },
+  { n: "04", t: "A global career, not a local job", d: "Walk out positioned for cross-border roles, founder paths, family-office mandates or global P&L responsibility — wherever the opportunity is." },
 ];
 
 const Outcomes = () => (
@@ -12,7 +12,7 @@ const Outcomes = () => (
         <div className="tag-pill mb-6">◉ Outcomes</div>
         <h2 className="font-display text-5xl md:text-7xl leading-[0.95] text-balance">
           What you walk away with.<br />
-          <em className="italic text-primary not-italic">(Not just a certificate.)</em>
+          <em className="italic text-primary not-italic">(A passport that does work.)</em>
         </h2>
       </div>
 

@@ -1,12 +1,13 @@
 import { useState } from "react";
 
 const faqs = [
-  { q: "Who is this program for?", a: "Working professionals (3–8 years exp) looking for global exposure and a CXO network, plus ambitious early-career professionals who want to build or scale ventures across India, UK, China and Hong Kong." },
-  { q: "What is the duration of the program?", a: "12 months total — broken into in-person modules across the 4 nations with industry immersions, CXO masterclasses and applied projects." },
-  { q: "Do I need to quit my job?", a: "No. The format is designed to be cohort-based and modular. International immersions are scheduled in concentrated windows so you can plan around your work commitments." },
-  { q: "What's the admissions process?", a: "Application → Profile review → Interview with the admissions committee → Offer. Decisions typically within 14 days of interview." },
+  { q: "Who is this program for?", a: "Ambitious early-career professionals and working professionals (3–8 years exp) who want a global career — not a local one. Future founders, P&L owners, family-office operators and cross-border leaders." },
+  { q: "What's the journey across the 4 nations?", a: "You begin in India (Masters' Union, Delhi NCR), travel to Hong Kong for modules at CUHK Business School, then to London for modules at Imperial College London, and finish with an optional immersion in Dubai (DIFC)." },
+  { q: "Is Dubai mandatory?", a: "No. Dubai is an optional fourth-nation finale designed for learners who want exposure to MENA markets, family offices and the Asia–Europe capital corridor." },
+  { q: "What are the academic partnerships?", a: "Modules in Hong Kong are delivered in partnership with CUHK Business School, and modules in London are delivered in partnership with Imperial College London — two of the world's top-ranked institutions." },
+  { q: "Do I need to quit my job?", a: "No. International immersions are scheduled in concentrated windows so professionals can plan around work. The program is built for cohort-based, on-ground learning." },
+  { q: "What certification do I receive?", a: "A Post Graduate Certification from Masters' Union, alongside co-branded certificates from international partner institutions for each nation immersion you complete." },
   { q: "Is there a scholarship or financial aid?", a: "Yes. Merit-based scholarships and EMI options are available. Speak to admissions for a personalized financial plan." },
-  { q: "Will I get a degree or certificate?", a: "You will receive a Post Graduate Certification from Masters' Union along with co-branded certificates from international partner institutions for each country immersion." },
 ];
 
 const FAQ = () => {

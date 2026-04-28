@@ -1,16 +1,16 @@
 import cxoImg from "@/assets/cxo-masterclass.jpg";
 
 const sessions = [
-  { q: "How do founders design financially resilient companies before they ever raise external capital?", from: "Accel / Blume Ventures" },
-  { q: "How do investors evaluate businesses beyond financial statements?", from: "Sequoia / Lightspeed" },
-  { q: "How do great products get built — and what makes them scalable?", from: "Zoho / Freshworks" },
-  { q: "How are technology and product decisions shaping the next decade?", from: "Fractal / Yellow.ai" },
-  { q: "What makes some brands win customer trust while others struggle?", from: "Mamaearth / Boat" },
-  { q: "How do brands scale while maintaining authenticity?", from: "Nykaa / Lenskart" },
-  { q: "Why do some organizations execute flawlessly at scale?", from: "Delhivery / Shiprocket" },
-  { q: "How do companies build resilient supply chains?", from: "Reliance Retail / Flipkart" },
-  { q: "What separates leaders who build lasting organizations?", from: "Zomato / Swiggy" },
-  { q: "How do founders scale themselves as their companies scale?", from: "Ola / Urban Company" },
+  { q: "How do founders design financially resilient companies before they ever raise external capital?", from: "India · Founder CXO" },
+  { q: "How do Asian capital markets price risk differently from the West?", from: "Hong Kong · HKEX / HSBC" },
+  { q: "How does a deep-tech idea become a fundable global venture?", from: "London · Imperial Faculty" },
+  { q: "How do family offices in MENA decide where capital flows next?", from: "Dubai · DIFC Investor" },
+  { q: "How do great products get built — and what makes them scalable?", from: "India · Product CXO" },
+  { q: "How do you negotiate across four cultures without losing the deal?", from: "Hong Kong · GBA Operator" },
+  { q: "What separates global brands from regional ones?", from: "London · Luxury Brand CMO" },
+  { q: "How do supply chains stay resilient through geopolitical shifts?", from: "Hong Kong · Shenzhen GBA" },
+  { q: "What makes a leader credible across continents?", from: "India · Founder/CEO" },
+  { q: "How do you scale yourself as your company crosses borders?", from: "London · Global Operator" },
 ];
 
 const CXO = () => (
@@ -21,8 +21,8 @@ const CXO = () => (
           <div className="relative">
             <img src={cxoImg} alt="CXO masterclass" loading="lazy" className="w-full aspect-[4/5] object-cover grayscale" />
             <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 max-w-[260px]">
-              <div className="font-mono text-xs uppercase tracking-widest mb-2">10+ Sessions</div>
-              <div className="font-display text-2xl leading-tight">No theatre. Just the questions you'd actually ask.</div>
+              <div className="font-mono text-xs uppercase tracking-widest mb-2">10+ Sessions · 4 Nations</div>
+              <div className="font-display text-2xl leading-tight">The questions you'd actually ask — answered on the ground.</div>
             </div>
           </div>
         </div>
@@ -30,10 +30,10 @@ const CXO = () => (
         <div className="lg:col-span-7">
           <div className="tag-pill mb-6">◉ CXO Masterclasses</div>
           <h2 className="font-display text-5xl md:text-6xl leading-[0.95] mb-8 text-balance">
-            Sit across the table from <em className="italic text-primary not-italic">the people who built the companies</em> you read about.
+            Sit across the table from <em className="italic text-primary not-italic">operators in every market</em> you'll work in.
           </h2>
           <p className="text-muted-foreground mb-10 max-w-xl">
-            Closed-door, off-record, intimate. CXOs from Razorpay, Nykaa, Lenskart, Zomato, Mamaearth, Flipkart and more — answering the questions that don't make it into the press release.
+            Closed-door, off-record, intimate. Founders and CXOs in India, capital allocators in Hong Kong, faculty and global operators at Imperial London, and family offices in Dubai. Same format everywhere — the questions that don't make it into the press release.
           </p>
 
           <div className="space-y-1 border-t border-border">

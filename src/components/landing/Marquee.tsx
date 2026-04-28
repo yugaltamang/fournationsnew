@@ -1,15 +1,16 @@
 const items = [
-  "ITC", "Razorpay", "Pine Labs", "Dixon Technologies", "Honda", "NIVEA",
-  "Sonalika Tractors", "Mercedes-Benz", "Blue Tokai", "Mamaearth", "Boat",
+  "CUHK Business School", "Imperial College London", "DIFC Dubai",
+  "ITC", "Razorpay", "Pine Labs", "Dixon", "Honda", "NIVEA",
+  "Sonalika", "Mercedes-Benz", "Blue Tokai", "Mamaearth", "Boat",
   "Nykaa", "Lenskart", "Delhivery", "Flipkart", "Ola", "Swiggy", "Zomato",
-  "HSBC", "HKEX", "Alibaba", "ByteDance", "Tencent", "SenseTime", "LVMH",
+  "HSBC", "HKEX", "LVMH",
 ];
 
 const Marquee = () => (
   <section className="border-y border-border bg-secondary/30 py-6 overflow-hidden">
     <div className="flex items-center gap-12 marquee-mask">
       <span className="shrink-0 font-mono text-xs uppercase tracking-widest text-muted-foreground pl-4">
-        Industry partners →
+        University & Industry Partners →
       </span>
       <div className="flex gap-12 ticker shrink-0">
         {[...items, ...items].map((b, i) => (
