@@ -58,11 +58,10 @@ const Nav = () => {
           </a>
           <a
             href="#apply"
-            className="group relative inline-flex items-center gap-2 px-5 py-3 font-bold uppercase tracking-wider text-xs overflow-hidden border border-foreground"
+            className="group relative inline-flex items-center gap-2 px-5 py-3 font-bold uppercase tracking-wider text-xs overflow-hidden border border-primary bg-primary hover:bg-primary/90 transition-colors"
           >
-            <span className="absolute inset-0 mu-hero-gradient transition-transform duration-500 group-hover:scale-110" />
-            <span className="relative z-10 text-background">Apply Now</span>
-            <span className="relative z-10 text-background group-hover:translate-x-1 transition-transform">→</span>
+            <span className="relative z-10 text-primary-foreground">Apply Now</span>
+            <span className="relative z-10 text-primary-foreground group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
       </div>
