@@ -1,4 +1,5 @@
 // Hero now showcases an editorial world map plotting the 4 nations
+import { WORLD_PATH } from "./worldMapPath";
 
 const Hero = () => (
   <section className="relative pt-32 pb-20 overflow-hidden">
@@ -98,8 +99,8 @@ const Hero = () => (
                   <stop offset="60%" stopColor="#F7D544" stopOpacity="0.08" />
                   <stop offset="100%" stopColor="#F7D544" stopOpacity="0" />
                 </radialGradient>
-                <pattern id="dots" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
-                  <circle cx="1" cy="1" r="0.7" fill="hsl(var(--foreground))" opacity="0.22" />
+                <pattern id="dots" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
+                  <circle cx="1" cy="1" r="0.9" fill="hsl(var(--foreground))" opacity="0.55" />
                 </pattern>
                 <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="1.2" />
@@ -118,63 +119,65 @@ const Hero = () => (
                 <line x1="0" x2="600" y1="440" y2="440" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeDasharray="2 4" opacity="0.7" />
               </g>
 
-              {/* Continent silhouettes — refined dotted landmasses (equirectangular feel) */}
-              <g fill="url(#dots)">
-                {/* North America */}
-                <path d="M30,200 Q60,170 110,180 Q160,185 175,225 Q180,260 155,290 Q130,315 95,310 Q55,300 35,265 Q20,235 30,200 Z" />
-                {/* South America */}
-                <path d="M140,360 Q165,355 175,385 Q180,425 165,475 Q150,520 130,535 Q110,530 105,495 Q105,455 115,415 Q125,378 140,360 Z" />
-                {/* Europe */}
-                <path d="M250,250 Q275,235 305,245 Q325,255 320,275 Q310,295 285,295 Q260,295 245,280 Q240,265 250,250 Z" />
-                {/* Africa */}
-                <path d="M270,310 Q310,300 335,320 Q350,355 340,400 Q325,450 300,475 Q275,485 260,455 Q250,415 252,375 Q258,335 270,310 Z" />
-                {/* Middle East / Arabia */}
-                <path d="M335,320 Q360,315 375,335 Q380,360 365,375 Q345,380 335,365 Q328,345 335,320 Z" />
-                {/* India / South Asia */}
-                <path d="M395,310 Q420,305 432,330 Q438,360 425,385 Q412,398 400,385 Q388,365 388,340 Q388,322 395,310 Z" />
-                {/* China / East Asia */}
-                <path d="M430,260 Q470,250 500,270 Q515,295 505,320 Q485,340 455,338 Q425,332 420,310 Q418,285 430,260 Z" />
-                {/* Southeast Asia */}
-                <path d="M465,355 Q485,350 495,370 Q495,395 478,405 Q458,405 452,388 Q450,370 465,355 Z" />
-                {/* Australia */}
-                <path d="M495,520 Q535,510 555,530 Q560,555 540,570 Q510,575 495,560 Q485,540 495,520 Z" />
-                {/* UK isle */}
-                <path d="M243,238 Q252,232 258,242 Q258,252 250,256 Q241,254 240,247 Q240,241 243,238 Z" />
+              {/* Real-world geographic continent silhouettes */}
+              <g>
+                {/* Soft fill base */}
+                <path
+                  d={WORLD_PATH}
+                  fill="hsl(var(--foreground))"
+                  fillOpacity="0.10"
+                  fillRule="evenodd"
+                />
+                {/* Dotted overlay for editorial texture */}
+                <path
+                  d={WORLD_PATH}
+                  fill="url(#dots)"
+                  fillRule="evenodd"
+                />
+                {/* Coastline stroke */}
+                <path
+                  d={WORLD_PATH}
+                  fill="none"
+                  stroke="hsl(var(--foreground))"
+                  strokeOpacity="0.45"
+                  strokeWidth="0.6"
+                  strokeLinejoin="round"
+                />
               </g>
 
               {/* Halos behind plotted nations */}
               <g>
-                <circle cx="252" cy="248" r="50" fill="url(#muHalo)" />
-                <circle cx="368" cy="350" r="50" fill="url(#muHalo)" />
-                <circle cx="412" cy="356" r="50" fill="url(#muHalo)" />
-                <circle cx="478" cy="320" r="50" fill="url(#muHalo)" />
+                <circle cx="88" cy="84" r="46" fill="url(#muHalo)" />
+                <circle cx="283" cy="294" r="46" fill="url(#muHalo)" />
+                <circle cx="361" cy="267" r="46" fill="url(#muHalo)" />
+                <circle cx="491" cy="318" r="46" fill="url(#muHalo)" />
               </g>
 
               {/* Great-circle arcs — sequential journey */}
               <g fill="none" stroke="url(#muLine)">
                 {/* India → Hong Kong */}
-                <path d="M412,356 Q455,300 478,320" strokeWidth="1.4" strokeDasharray="3 5" />
+                <path d="M361,267 Q440,240 491,318" strokeWidth="1.6" strokeDasharray="3 5" />
                 {/* Hong Kong → London */}
-                <path d="M478,320 Q360,140 252,248" strokeWidth="1.4" strokeDasharray="3 5" />
+                <path d="M491,318 Q300,40 88,84" strokeWidth="1.6" strokeDasharray="3 5" />
                 {/* London → Dubai */}
-                <path d="M252,248 Q310,280 368,350" strokeWidth="1.4" strokeDasharray="3 5" />
+                <path d="M88,84 Q160,150 283,294" strokeWidth="1.6" strokeDasharray="3 5" />
                 {/* Dubai → India (return / loop) */}
-                <path d="M368,350 Q390,360 412,356" strokeWidth="1" strokeDasharray="2 4" opacity="0.55" />
+                <path d="M283,294 Q322,275 361,267" strokeWidth="1.1" strokeDasharray="2 4" opacity="0.6" />
 
                 {/* Glow underlay */}
-                <g filter="url(#soft)" opacity="0.35">
-                  <path d="M412,356 Q455,300 478,320" strokeWidth="3" />
-                  <path d="M478,320 Q360,140 252,248" strokeWidth="3" />
-                  <path d="M252,248 Q310,280 368,350" strokeWidth="3" />
+                <g filter="url(#soft)" opacity="0.4">
+                  <path d="M361,267 Q440,240 491,318" strokeWidth="3" />
+                  <path d="M491,318 Q300,40 88,84" strokeWidth="3" />
+                  <path d="M88,84 Q160,150 283,294" strokeWidth="3" />
                 </g>
               </g>
 
               {/* Plotted nations — order matters for label spacing */}
               {[
-                { x: 252, y: 248, n: "03", label: "London", sub: "Imperial College", coord: "51°N 0°W", anchor: "start", lx: 14, ly: -14 },
-                { x: 478, y: 320, n: "02", label: "Hong Kong", sub: "CUHK Business School", coord: "22°N 114°E", anchor: "end", lx: -14, ly: -14 },
-                { x: 368, y: 350, n: "04", label: "Dubai", sub: "DIFC · Optional", coord: "25°N 55°E", anchor: "end", lx: -14, ly: 22 },
-                { x: 412, y: 356, n: "01", label: "India", sub: "Delhi NCR", coord: "28°N 77°E", anchor: "start", lx: 14, ly: 22 },
+                { x: 88, y: 84, n: "03", label: "London", sub: "Imperial College", coord: "51°N 0°W", anchor: "start" as const, lx: 14, ly: 22 },
+                { x: 491, y: 318, n: "02", label: "Hong Kong", sub: "CUHK Business School", coord: "22°N 114°E", anchor: "end" as const, lx: -14, ly: 22 },
+                { x: 283, y: 294, n: "04", label: "Dubai", sub: "DIFC · Optional", coord: "25°N 55°E", anchor: "end" as const, lx: -14, ly: -14 },
+                { x: 361, y: 267, n: "01", label: "India", sub: "Delhi NCR", coord: "28°N 77°E", anchor: "start" as const, lx: 14, ly: -14 },
               ].map((p) => {
                 const tx = p.x + p.lx;
                 const ty = p.y + p.ly;
