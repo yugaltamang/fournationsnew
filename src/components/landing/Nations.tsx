@@ -233,7 +233,7 @@ const Nations = () => {
               }`}
               style={{
                 transitionProperty: "transform, opacity, filter",
-                transitionDuration: "1000ms",
+                transitionDuration: "2500ms",
                 transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)",
                 transform: flipped
                   ? "translateX(-105%) rotateY(-34deg) rotateZ(-1.5deg) scale(0.96)"
@@ -373,7 +373,7 @@ const Nations = () => {
               }`}
               style={{
                 transitionProperty: "opacity, transform, max-height",
-                transitionDuration: "800ms",
+                transitionDuration: "2000ms",
                 transitionTimingFunction: "ease-out",
               }}
               aria-hidden={!flipped}
