@@ -32,90 +32,111 @@ const partners = [
 ];
 
 const Immersions = () => (
-  <section className="py-16 sm:py-20 md:py-28 bg-secondary/20 border-y border-border relative overflow-hidden">
-    {/* Ambient background glow */}
+  <section className="py-16 sm:py-20 md:py-28 relative overflow-hidden">
+    {/* Ambient backdrop */}
     <div
-      className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full opacity-[0.06] blur-3xl pointer-events-none"
+      aria-hidden
+      className="pointer-events-none absolute inset-0 opacity-[0.05]"
+      style={{
+        backgroundImage:
+          "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+        backgroundSize: "72px 72px",
+      }}
+    />
+    <div
+      aria-hidden
+      className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-[0.06] blur-3xl pointer-events-none"
       style={{
         background:
-          "radial-gradient(circle, #39B5D7 0%, #F7D544 50%, transparent 70%)",
+          "radial-gradient(circle, #F7D544 0%, #39B5D7 50%, transparent 70%)",
       }}
     />
 
     <div className="container relative">
-      {/* Header */}
-      <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-12 md:mb-16 pb-8 md:pb-10 border-b border-border">
-        <div className="md:col-span-8">
-          <div className="flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-primary mb-4 sm:mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Academic Partnerships
-          </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance">
-            Two of the world's{" "}
-            <em className="italic mu-hero-gradient-text not-italic">
-              great universities.
-            </em>{" "}
-            One cohort.
-          </h2>
+      {/* Editorial Header */}
+      <div className="max-w-4xl mb-14 md:mb-20">
+        <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-6">
+          <span className="w-8 h-px bg-primary" />
+          <span>Academic Partnerships</span>
+          <span className="text-muted-foreground/50">/ 02 Institutions</span>
         </div>
-        <div className="md:col-span-4">
-          <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-            You don't just visit Hong Kong and London — you study at their flagship institutions and leave with two globally recognised credentials.
-          </p>
-        </div>
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance mb-6">
+          Two of the world's{" "}
+          <em className="italic mu-hero-gradient-text not-italic">top universities.</em>{" "}
+          One cohort.
+        </h2>
+        <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl">
+          You don't just visit Hong Kong and London — you study at their flagship institutions and leave with two globally recognised credentials.
+        </p>
       </div>
 
-      {/* Partner cards */}
-      <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-        {partners.map((p) => (
+      {/* Partner cards — vertical editorial layout */}
+      <div className="space-y-8 md:space-y-12">
+        {partners.map((p, idx) => (
           <article
             key={p.name}
-            className="group relative overflow-hidden border border-border bg-[hsl(0,0%,6%)] hover:border-primary/40 transition-colors duration-500"
+            className="group relative grid md:grid-cols-12 gap-6 md:gap-10 items-center"
           >
-            {/* Hover glow */}
-            <div
-              className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full opacity-0 group-hover:opacity-25 blur-3xl pointer-events-none transition-opacity duration-700"
-              style={{
-                background:
-                  "radial-gradient(circle, #F7D544 0%, #E38330 50%, transparent 70%)",
-              }}
-            />
+            {/* Index marker rail */}
+            <div className="hidden md:flex md:col-span-1 flex-col items-center gap-3 self-stretch">
+              <div className="font-display text-3xl mu-hero-gradient-text leading-none">
+                0{idx + 1}
+              </div>
+              <div className="w-px flex-1 bg-gradient-to-b from-primary/60 via-border to-transparent" />
+            </div>
 
-            {/* Image */}
-            <div className="relative overflow-hidden aspect-square bg-background">
-              <img
-                src={p.image}
-                alt={p.name}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-contain p-0 group-hover:scale-105 transition-transform duration-700"
-              />
-              {/* Tag chip */}
-              <div className="absolute top-4 left-4 sm:top-5 sm:left-5 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-widest z-10">
-                {p.tag}
+            {/* Image panel */}
+            <div className={`md:col-span-5 ${idx % 2 === 1 ? "md:order-3" : ""}`}>
+              <div className="relative aspect-square bg-[hsl(0,0%,6%)] border border-border overflow-hidden group-hover:border-primary/40 transition-colors duration-500">
+                {/* Hover glow */}
+                <div
+                  className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full opacity-0 group-hover:opacity-30 blur-3xl pointer-events-none transition-opacity duration-700"
+                  style={{
+                    background:
+                      "radial-gradient(circle, #F7D544 0%, #E38330 50%, transparent 70%)",
+                  }}
+                />
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="relative w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                />
+                {/* Term tag */}
+                <div className="absolute top-4 left-4 sm:top-5 sm:left-5 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-widest z-10">
+                  {p.tag}
+                </div>
+                {/* Corner mark */}
+                <div className="absolute bottom-4 right-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70 z-10">
+                  Cert · Awarded
+                </div>
               </div>
             </div>
 
-            {/* Content */}
-            <div className="relative p-6 sm:p-8 md:p-10">
-              <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-primary mb-3">
-                {p.name}
+            {/* Content panel */}
+            <div className="md:col-span-6 space-y-5">
+              <div>
+                <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-primary mb-3">
+                  {p.name}
+                </div>
+                <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-balance">
+                  {p.headline}
+                </h3>
               </div>
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1] mb-4 sm:mb-5 text-balance">
-                {p.headline}
-              </h3>
-              <p className="text-muted-foreground mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed">
+
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-xl">
                 {p.body}
               </p>
 
-              {/* Stats grid */}
-              <div className="grid grid-cols-2 gap-px bg-border mb-6">
+              {/* Stats row */}
+              <div className="grid grid-cols-4 gap-px bg-border border border-border">
                 {p.stats.map((s) => (
-                  <div key={s.l} className="bg-[hsl(0,0%,6%)] p-4">
-                    <div className="font-display text-2xl sm:text-3xl mu-hero-gradient-text leading-none">
+                  <div key={s.l} className="bg-background p-3 sm:p-4">
+                    <div className="font-display text-xl sm:text-2xl md:text-3xl mu-hero-gradient-text leading-none">
                       {s.v}
                     </div>
-                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-2 leading-tight">
+                    <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mt-2 leading-tight">
                       {s.l}
                     </div>
                   </div>
@@ -123,13 +144,11 @@ const Immersions = () => (
               </div>
 
               {/* Footer link */}
-              <div className="flex items-center justify-between pt-5 border-t border-border">
-                <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  Certificate Awarded
-                </div>
+              <div className="flex items-center gap-3 pt-2 text-primary font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] group-hover:gap-4 transition-all">
+                <span>Explore the partnership</span>
                 <ArrowUpRight
-                  size={18}
-                  className="text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                  size={16}
+                  className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
                 />
               </div>
             </div>
