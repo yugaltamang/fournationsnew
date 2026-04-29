@@ -295,59 +295,59 @@ const Nations = () => {
                   </div>
                 </div>
 
-                {/* CTA: View Curriculum — editorial ticket */}
+                {/* CTA: View Curriculum — newspaper masthead */}
                 <button
                   onClick={() => setCurriculumOpen(true)}
-                  className="group relative w-full text-left border border-border bg-[hsl(0,0%,4%)] hover:border-primary transition-all duration-500 overflow-hidden"
+                  className="group relative w-full text-left bg-[hsl(0,0%,97%)] text-[hsl(0,0%,8%)] border border-border hover:border-foreground transition-colors duration-300 overflow-hidden"
                 >
-                  {/* hover sweep */}
-                  <div className="absolute inset-0 bg-primary translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-                  {/* perforation line */}
-                  <div
-                    aria-hidden
-                    className="absolute top-1/2 left-0 right-0 h-px opacity-30 group-hover:opacity-0 transition-opacity"
-                    style={{
-                      backgroundImage:
-                        "repeating-linear-gradient(90deg, hsl(var(--border)) 0 6px, transparent 6px 12px)",
-                    }}
-                  />
+                  {/* Top dateline rule */}
+                  <div className="flex items-center justify-between gap-3 px-5 sm:px-8 pt-4 pb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[hsl(0,0%,30%)] border-b border-[hsl(0,0%,80%)]">
+                    <span>Vol. {n.n} · {n.term}</span>
+                    <span className="hidden sm:inline">{n.coords}</span>
+                    <span>The Curriculum Edition</span>
+                  </div>
 
-                  <div className="relative flex items-stretch">
-                    {/* Stub */}
-                    <div className="flex flex-col items-center justify-center px-4 sm:px-6 py-6 border-r border-border group-hover:border-primary-foreground/20 transition-colors">
-                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground group-hover:text-primary-foreground/70 transition-colors">
-                        Pass
-                      </div>
-                      <div className="text-3xl mt-1 leading-none">{n.flag}</div>
-                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] mt-1 text-muted-foreground group-hover:text-primary-foreground/70 transition-colors">
-                        {n.n}/04
-                      </div>
+                  {/* Double rule */}
+                  <div className="h-px bg-[hsl(0,0%,15%)] mx-5 sm:mx-8 mt-1" />
+
+                  {/* Masthead */}
+                  <div className="px-5 sm:px-8 pt-4 pb-3 text-center">
+                    <h4
+                      className="font-display text-[clamp(2.5rem,8vw,5.5rem)] leading-[0.9] tracking-tight text-[hsl(0,0%,6%)]"
+                      style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+                    >
+                      The {n.country} Times
+                    </h4>
+                  </div>
+
+                  <div className="h-px bg-[hsl(0,0%,15%)] mx-5 sm:mx-8" />
+                  <div className="h-[3px] bg-[hsl(0,0%,15%)] mx-5 sm:mx-8 mt-[2px]" />
+
+                  {/* Sub-headline grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 px-5 sm:px-8 py-5 divide-y sm:divide-y-0 sm:divide-x divide-[hsl(0,0%,80%)]">
+                    <div className="sm:pr-5 py-2 sm:py-0">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-[hsl(0,0%,40%)] mb-1">Headline</div>
+                      <div className="font-display text-base leading-snug italic">"{n.title}"</div>
                     </div>
-
-                    {/* Body */}
-                    <div className="flex-1 px-5 sm:px-7 py-5 sm:py-6 min-w-0 group-hover:text-primary-foreground transition-colors">
-                      <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary group-hover:text-primary-foreground/80 transition-colors mb-1.5 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary group-hover:bg-primary-foreground animate-pulse" />
-                        Open Curriculum
-                      </div>
-                      <div className="font-display text-xl sm:text-2xl md:text-3xl leading-tight">
-                        {n.country}
-                        <span className="text-muted-foreground group-hover:text-primary-foreground/60 italic font-normal"> — full term breakdown</span>
-                      </div>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground group-hover:text-primary-foreground/70 transition-colors mt-3 flex flex-wrap gap-x-3 gap-y-1">
-                        <span>In Class</span><span className="opacity-40">·</span>
-                        <span>Out Class</span><span className="opacity-40">·</span>
-                        <span>Business</span><span className="opacity-40">·</span>
-                        <span>Cultural</span>
-                      </div>
+                    <div className="sm:px-5 py-2 sm:py-0">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-[hsl(0,0%,40%)] mb-1">Sections</div>
+                      <div className="text-sm leading-snug">In Class · Out Class · Business · Cultural</div>
                     </div>
+                    <div className="sm:pl-5 py-2 sm:py-0">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-[hsl(0,0%,40%)] mb-1">Filed by</div>
+                      <div className="text-sm leading-snug">{n.partner}</div>
+                    </div>
+                  </div>
 
-                    {/* Arrow stub */}
-                    <div className="flex items-center justify-center px-5 sm:px-7 border-l border-border group-hover:border-primary-foreground/20 transition-colors">
-                      <div className="relative w-10 h-10 flex items-center justify-center">
-                        <div className="absolute inset-0 border border-border group-hover:border-primary-foreground/40 group-hover:rotate-45 transition-transform duration-500" />
-                        <span className="relative font-display text-2xl group-hover:text-primary-foreground group-hover:translate-x-0.5 transition-all">→</span>
-                      </div>
+                  {/* Read more bar */}
+                  <div className="flex items-center justify-between gap-4 px-5 sm:px-8 py-4 border-t border-[hsl(0,0%,15%)] bg-primary text-primary-foreground">
+                    <div className="flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
+                      Read the full edition
+                    </div>
+                    <div className="flex items-center gap-3 font-display text-base sm:text-lg italic">
+                      Continued inside
+                      <span className="font-display text-2xl not-italic group-hover:translate-x-1 transition-transform">→</span>
                     </div>
                   </div>
                 </button>
