@@ -83,8 +83,13 @@ const nations: Nation[] = [
 
 const Nations = () => {
   const [active, setActive] = useState(0);
-  const [curriculumOpen, setCurriculumOpen] = useState(false);
+  const [flipped, setFlipped] = useState(false);
   const n = nations[active];
+
+  const handleSetActive = (i: number) => {
+    setFlipped(false);
+    setActive(i);
+  };
 
   return (
     <section
