@@ -30,7 +30,7 @@ const ApplyBento = () => (
             Cohort 04 · Now Accepting
           </div>
           <div className="hidden sm:block font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            Aug 2026 · 60 Seats
+            Aug 2026 · Cohort 04
           </div>
         </div>
 
@@ -48,7 +48,7 @@ const ApplyBento = () => (
               </em>
             </h3>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
-              60 builders. Four nations. One audacious year.
+              Four nations. One audacious year.
             </p>
           </div>
 

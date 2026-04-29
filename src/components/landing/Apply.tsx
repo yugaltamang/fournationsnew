@@ -5,14 +5,14 @@ const Apply = () => (
 
     <div className="container relative">
       <div className="max-w-5xl mx-auto text-center">
-        <div className="tag-pill mb-6 sm:mb-8 mx-auto">◉ Cohort 2026 · Limited Seats</div>
+        
         <h2 className="font-display text-[clamp(2rem,8vw,8rem)] leading-[0.9] mb-6 sm:mb-10 text-balance break-words">
           Four nations are <em className="italic mu-hero-gradient-text not-italic">waiting.</em><br />
           Step into the journey.
         </h2>
         <div className="mu-hero-divider w-24 mx-auto mb-8 sm:mb-10" />
         <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 sm:mb-12">
-          Applications close in <strong className="text-primary font-mono">42 days</strong>. Cohorts are capped at 60 builders to protect the immersion experience.
+          Applications close in <strong className="text-primary font-mono">42 days</strong>. A focused cohort to protect the immersion experience.
         </p>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
@@ -25,11 +25,10 @@ const Apply = () => (
           </a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border max-w-3xl mx-auto">
+        <div className="grid grid-cols-3 gap-px bg-border max-w-3xl mx-auto">
           {[
             { l: "Journey", v: "India → HK → London → Dubai" },
             { l: "Decision", v: "Within 14 days" },
-            { l: "Cohort size", v: "60 builders" },
             { l: "Start", v: "Aug 2026" },
           ].map((s) => (
             <div key={s.l} className="bg-background p-4 sm:p-5">
