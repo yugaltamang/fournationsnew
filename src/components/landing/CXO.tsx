@@ -1,12 +1,12 @@
+import globeImg from "@/assets/four-nations-globe.png";
 import cxoImg from "@/assets/cxo-masterclass.webp";
-import nationHk from "@/assets/nation-hongkong.webp";
 import immersionImg from "@/assets/immersion-factory.webp";
 import { ArrowUpRight } from "lucide-react";
 
 const pillars = [
   {
     tag: "Global Exposure",
-    image: cxoImg,
+    image: globeImg,
     title: "Four countries.",
     titleEm: "One cohort.",
     body: "Live and build across India, Hong Kong, London and Dubai — four of the world's most dynamic business ecosystems.",
