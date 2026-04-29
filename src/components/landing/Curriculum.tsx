@@ -282,7 +282,7 @@ const Curriculum = () => {
                       <p className="font-display italic text-lg sm:text-xl text-primary mb-6">"{c.q}"</p>
 
                       {/* Tabs */}
-                      <div className="flex flex-wrap gap-1 border-b border-border mb-6">
+                      <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-1 border-b border-border mb-6">
                         {tabMeta.map((t) => {
                           const active = tab === t.key;
                           return (
