@@ -48,8 +48,10 @@ const pillars = [
   },
 ];
 
+const SKEW = 8; // degrees
+
 const CXO = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(1);
 
   return (
     <section
@@ -66,17 +68,10 @@ const CXO = () => {
           backgroundSize: "96px 96px",
         }}
       />
-      <div
-        className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full opacity-[0.08] blur-3xl pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, #F7D544 0%, #E38330 40%, transparent 70%)",
-        }}
-      />
 
       <div className="container relative py-14 sm:py-16 md:py-20">
         {/* Header */}
-        <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-12 md:mb-16 pb-6 border-b border-border">
+        <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-10 md:mb-14 pb-6 border-b border-border">
           <div className="md:col-span-8">
             <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-4">
               <span className="w-8 h-px bg-primary" />
@@ -92,147 +87,120 @@ const CXO = () => {
           </div>
           <div className="md:col-span-4">
             <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              Direct execution over passive learning. Every term, every country, every session is engineered to build real skills — not slide decks.
+              Hover a panel to expand it. Three pillars, one cohort, zero filler.
             </p>
           </div>
         </div>
 
-        {/* Radial badge orbits */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-10">
+        {/* Diagonal split panels — desktop */}
+        <div
+          className="hidden md:flex relative w-full h-[640px] gap-2"
+          onMouseLeave={() => setActive(1)}
+        >
           {pillars.map((p, i) => {
             const isActive = active === i;
             return (
-              <article
+              <div
                 key={i}
                 onMouseEnter={() => setActive(i)}
-                onFocus={() => setActive(i)}
-                tabIndex={0}
-                className="group relative outline-none"
+                className="relative h-full overflow-hidden cursor-pointer transition-[flex] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] border border-border"
+                style={{
+                  flex: isActive ? 5 : 1.5,
+                  clipPath:
+                    i === 0
+                      ? `polygon(0 0, 100% 0, calc(100% - ${SKEW * 8}px) 100%, 0 100%)`
+                      : i === pillars.length - 1
+                      ? `polygon(${SKEW * 8}px 0, 100% 0, 100% 100%, 0 100%)`
+                      : `polygon(${SKEW * 8}px 0, 100% 0, calc(100% - ${SKEW * 8}px) 100%, 0 100%)`,
+                  marginLeft: i === 0 ? 0 : -SKEW * 4,
+                }}
               >
-                {/* Orbit container */}
-                <div className="relative aspect-square mx-auto max-w-[420px]">
-                  {/* Outer dashed orbit */}
-                  <div
-                    className={`absolute inset-0 rounded-full border border-dashed transition-all duration-700 ${
-                      isActive
-                        ? "border-primary/60 rotate-[20deg]"
-                        : "border-border rotate-0"
-                    }`}
-                  />
-                  {/* Mid solid orbit */}
-                  <div
-                    className={`absolute inset-[8%] rounded-full border transition-all duration-700 ${
-                      isActive ? "border-primary/40" : "border-border/60"
-                    }`}
-                  />
-                  {/* Tick marks around outer orbit */}
-                  {Array.from({ length: 12 }).map((_, k) => (
-                    <div
-                      key={k}
-                      className={`absolute left-1/2 top-0 h-2 w-px origin-[50%_50vmin] transition-colors duration-500 ${
-                        isActive ? "bg-primary/70" : "bg-border"
-                      }`}
-                      style={{
-                        transform: `translateX(-50%) rotate(${k * 30}deg) translateY(-2px)`,
-                        transformOrigin: "50% 50%",
-                        height: "100%",
-                      }}
-                    >
-                      <div
-                        className={`mx-auto w-px transition-colors duration-500 ${
-                          isActive ? "bg-primary/70" : "bg-border"
-                        }`}
-                        style={{ height: "8px" }}
-                      />
-                    </div>
-                  ))}
+                {/* Image */}
+                <img
+                  src={p.image}
+                  alt={p.tag}
+                  loading="lazy"
+                  decoding="async"
+                  className={`absolute inset-0 w-full h-full transition-transform duration-[1200ms] ease-out ${
+                    p.fit === "contain" ? "object-contain p-10 bg-[hsl(0,0%,6%)]" : "object-cover"
+                  } ${isActive ? "scale-105" : "scale-110 grayscale"}`}
+                />
 
-                  {/* Center badge — image disc */}
-                  <div className="absolute inset-[18%] rounded-full overflow-hidden bg-[hsl(0,0%,6%)] border border-border shadow-2xl">
-                    {/* Glow */}
-                    <div
-                      className={`absolute -inset-4 rounded-full blur-2xl transition-opacity duration-700 ${
-                        isActive ? "opacity-50" : "opacity-0"
-                      }`}
-                      style={{
-                        background:
-                          "radial-gradient(circle, #F7D544 0%, #E38330 50%, transparent 70%)",
-                      }}
-                    />
-                    <img
-                      src={p.image}
-                      alt={p.tag}
-                      loading="lazy"
-                      decoding="async"
-                      className={`relative w-full h-full transition-transform duration-700 ${
-                        p.fit === "contain" ? "object-contain p-5" : "object-cover"
-                      } ${isActive ? "scale-105" : "scale-100"}`}
-                    />
-                  </div>
+                {/* Dark overlay */}
+                <div
+                  className={`absolute inset-0 transition-opacity duration-700 ${
+                    isActive
+                      ? "bg-gradient-to-t from-background via-background/70 to-background/20"
+                      : "bg-background/80"
+                  }`}
+                />
 
-                  {/* Folio numeral chip — top */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background border border-border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground">
-                    /0{i + 1}
-                  </div>
+                {/* Accent bar — only active */}
+                <div
+                  className={`absolute left-0 top-0 h-full w-[3px] mu-hero-gradient transition-opacity duration-500 ${
+                    isActive ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{ marginLeft: SKEW * 8 }}
+                />
 
-                  {/* Tag chip — bottom */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">
+                {/* Folio numeral — always visible */}
+                <div className="absolute top-6 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/80">
+                  /0{i + 1}
+                </div>
+
+                {/* Collapsed state — vertical tag */}
+                <div
+                  className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+                    isActive ? "opacity-0 pointer-events-none" : "opacity-100"
+                  }`}
+                >
+                  <div className="font-mono text-[11px] uppercase tracking-[0.4em] text-foreground whitespace-nowrap [writing-mode:vertical-rl] rotate-180">
                     {p.tag}
                   </div>
+                </div>
 
-                  {/* Orbiting stat — top right */}
-                  <div className="absolute top-[8%] right-[2%] flex items-baseline gap-1.5 bg-background border border-border px-2.5 py-1.5">
-                    <span className="font-display text-xl mu-hero-gradient-text leading-none">
+                {/* Expanded content */}
+                <div
+                  className={`absolute inset-0 flex flex-col justify-end p-8 lg:p-12 transition-all duration-700 ${
+                    isActive
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-6 pointer-events-none"
+                  }`}
+                >
+                  {/* Top meta */}
+                  <div className="absolute top-6 left-8 lg:left-12 flex items-center gap-3">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary px-2 py-1 border border-primary/40">
+                      {p.tag}
+                    </span>
+                  </div>
+
+                  {/* Stat — top right */}
+                  <div className="absolute top-6 right-8 lg:right-16 flex items-baseline gap-2">
+                    <span className="font-display text-5xl lg:text-6xl mu-hero-gradient-text leading-none">
                       {p.stat.value}
                     </span>
-                    <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                       {p.stat.label}
                     </span>
                   </div>
 
-                  {/* Orbiting point chips — left/bottom-left/right */}
-                  {p.points.map((pt, j) => {
-                    const positions = [
-                      "top-1/2 -left-2 -translate-y-1/2 -translate-x-full",
-                      "bottom-[8%] left-[2%] translate-x-0",
-                      "top-1/2 -right-2 -translate-y-1/2 translate-x-full",
-                    ];
-                    return (
-                      <div
-                        key={j}
-                        className={`hidden lg:flex absolute ${positions[j]} items-center gap-1.5 bg-background/95 backdrop-blur border border-border px-2 py-1 max-w-[140px]`}
-                      >
-                        <span className="font-mono text-[8px] text-primary shrink-0">
-                          §{i + 1}.{j + 1}
-                        </span>
-                        <span className="font-mono text-[9px] uppercase tracking-wider text-foreground/80 leading-tight">
-                          {pt}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Title + body below */}
-                <div className="mt-10 text-center max-w-sm mx-auto">
-                  <h3 className="font-display text-2xl sm:text-3xl leading-[0.95] text-balance mb-3">
+                  <h3 className="font-display text-3xl lg:text-5xl leading-[0.95] text-balance mb-4 max-w-xl">
                     {p.title}{" "}
                     <em className="italic mu-hero-gradient-text not-italic">
                       {p.titleEm}
                     </em>
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed max-w-md mb-6">
                     {p.body}
                   </p>
 
-                  {/* Mobile/tablet point list */}
-                  <ul className="lg:hidden mt-4 pt-4 border-t border-border space-y-1.5 text-left">
+                  <ul className="space-y-2 max-w-md border-t border-border/60 pt-4">
                     {p.points.map((pt, j) => (
                       <li
                         key={j}
-                        className="flex items-baseline gap-2 text-[12px] text-foreground/80 leading-snug"
+                        className="flex items-baseline gap-3 text-[12px] lg:text-sm text-foreground/85 leading-snug"
                       >
-                        <span className="font-mono text-[9px] text-primary shrink-0">
+                        <span className="font-mono text-[10px] text-primary shrink-0">
                           §{i + 1}.{j + 1}
                         </span>
                         <span>{pt}</span>
@@ -240,9 +208,72 @@ const CXO = () => {
                     ))}
                   </ul>
                 </div>
-              </article>
+              </div>
             );
           })}
+        </div>
+
+        {/* Mobile — stacked panels */}
+        <div className="md:hidden space-y-4">
+          {pillars.map((p, i) => (
+            <article
+              key={i}
+              className="relative overflow-hidden border border-border h-[420px]"
+            >
+              <img
+                src={p.image}
+                alt={p.tag}
+                loading="lazy"
+                decoding="async"
+                className={`absolute inset-0 w-full h-full ${
+                  p.fit === "contain" ? "object-contain p-6 bg-[hsl(0,0%,6%)]" : "object-cover"
+                }`}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
+
+              <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary px-2 py-1 border border-primary/40">
+                  {p.tag}
+                </span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+                  /0{i + 1}
+                </span>
+              </div>
+
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <div className="flex items-baseline gap-2 mb-3">
+                  <span className="font-display text-4xl mu-hero-gradient-text leading-none">
+                    {p.stat.value}
+                  </span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    {p.stat.label}
+                  </span>
+                </div>
+                <h3 className="font-display text-2xl leading-[0.95] text-balance mb-2">
+                  {p.title}{" "}
+                  <em className="italic mu-hero-gradient-text not-italic">
+                    {p.titleEm}
+                  </em>
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                  {p.body}
+                </p>
+                <ul className="space-y-1.5 border-t border-border/60 pt-3">
+                  {p.points.map((pt, j) => (
+                    <li
+                      key={j}
+                      className="flex items-baseline gap-2 text-[11px] text-foreground/85 leading-snug"
+                    >
+                      <span className="font-mono text-[9px] text-primary shrink-0">
+                        §{i + 1}.{j + 1}
+                      </span>
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
