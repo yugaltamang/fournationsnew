@@ -295,19 +295,62 @@ const Nations = () => {
                   </div>
                 </div>
 
-                {/* CTA: View Curriculum */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                  <button
-                    onClick={() => setCurriculumOpen(true)}
-                    className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 sm:px-8 py-4 font-bold uppercase tracking-wider text-xs sm:text-sm hover:shadow-bold transition-all"
-                  >
-                    View {n.country} Curriculum
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </button>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground self-center">
-                    In Class · Out Class · Business · Cultural
-                  </span>
-                </div>
+                {/* CTA: View Curriculum — editorial ticket */}
+                <button
+                  onClick={() => setCurriculumOpen(true)}
+                  className="group relative w-full text-left border border-border bg-[hsl(0,0%,4%)] hover:border-primary transition-all duration-500 overflow-hidden"
+                >
+                  {/* hover sweep */}
+                  <div className="absolute inset-0 bg-primary translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+                  {/* perforation line */}
+                  <div
+                    aria-hidden
+                    className="absolute top-1/2 left-0 right-0 h-px opacity-30 group-hover:opacity-0 transition-opacity"
+                    style={{
+                      backgroundImage:
+                        "repeating-linear-gradient(90deg, hsl(var(--border)) 0 6px, transparent 6px 12px)",
+                    }}
+                  />
+
+                  <div className="relative flex items-stretch">
+                    {/* Stub */}
+                    <div className="flex flex-col items-center justify-center px-4 sm:px-6 py-6 border-r border-border group-hover:border-primary-foreground/20 transition-colors">
+                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-muted-foreground group-hover:text-primary-foreground/70 transition-colors">
+                        Pass
+                      </div>
+                      <div className="text-3xl mt-1 leading-none">{n.flag}</div>
+                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] mt-1 text-muted-foreground group-hover:text-primary-foreground/70 transition-colors">
+                        {n.n}/04
+                      </div>
+                    </div>
+
+                    {/* Body */}
+                    <div className="flex-1 px-5 sm:px-7 py-5 sm:py-6 min-w-0 group-hover:text-primary-foreground transition-colors">
+                      <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary group-hover:text-primary-foreground/80 transition-colors mb-1.5 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary group-hover:bg-primary-foreground animate-pulse" />
+                        Open Curriculum
+                      </div>
+                      <div className="font-display text-xl sm:text-2xl md:text-3xl leading-tight">
+                        {n.country}
+                        <span className="text-muted-foreground group-hover:text-primary-foreground/60 italic font-normal"> — full term breakdown</span>
+                      </div>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground group-hover:text-primary-foreground/70 transition-colors mt-3 flex flex-wrap gap-x-3 gap-y-1">
+                        <span>In Class</span><span className="opacity-40">·</span>
+                        <span>Out Class</span><span className="opacity-40">·</span>
+                        <span>Business</span><span className="opacity-40">·</span>
+                        <span>Cultural</span>
+                      </div>
+                    </div>
+
+                    {/* Arrow stub */}
+                    <div className="flex items-center justify-center px-5 sm:px-7 border-l border-border group-hover:border-primary-foreground/20 transition-colors">
+                      <div className="relative w-10 h-10 flex items-center justify-center">
+                        <div className="absolute inset-0 border border-border group-hover:border-primary-foreground/40 group-hover:rotate-45 transition-transform duration-500" />
+                        <span className="relative font-display text-2xl group-hover:text-primary-foreground group-hover:translate-x-0.5 transition-all">→</span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
               </div>
             </article>
           </div>
