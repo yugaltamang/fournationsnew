@@ -82,17 +82,23 @@ const Immersions = () => (
             />
 
             {/* Image */}
-            <div className="relative overflow-hidden aspect-[4/3]">
+            <div className="relative overflow-hidden aspect-[4/3] bg-[hsl(0,0%,6%)]">
               <img
                 src={p.image}
                 alt={p.name}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                className="w-full h-full object-cover mix-blend-screen opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
+                style={{
+                  maskImage:
+                    "radial-gradient(ellipse 80% 75% at 50% 50%, black 55%, transparent 100%)",
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse 80% 75% at 50% 50%, black 55%, transparent 100%)",
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,6%)] via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,6%)] via-transparent to-transparent opacity-70 pointer-events-none" />
               {/* Tag chip */}
-              <div className="absolute top-4 left-4 sm:top-5 sm:left-5 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-widest">
+              <div className="absolute top-4 left-4 sm:top-5 sm:left-5 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-widest z-10">
                 {p.tag}
               </div>
             </div>
