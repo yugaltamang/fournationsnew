@@ -14,7 +14,7 @@ const FAQ = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-20 md:py-32 bg-secondary/20 border-y border-border">
+    <section className="py-16 sm:py-20 md:py-32 bg-secondary/20 border-y border-border">
       <div className="container max-w-4xl">
         <div className="text-center mb-12 md:mb-16">
           <div className="tag-pill mb-4 sm:mb-6">◉ FAQ</div>

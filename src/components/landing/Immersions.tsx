@@ -32,7 +32,7 @@ const partners = [
 ];
 
 const Immersions = () => (
-  <section className="py-16 sm:py-20 md:py-28 relative overflow-hidden">
+  <section className="py-14 sm:py-20 md:py-28 relative overflow-hidden">
     {/* Ambient backdrop */}
     <div
       aria-hidden
@@ -130,10 +130,10 @@ const Immersions = () => (
               </p>
 
               {/* Stats row */}
-              <div className="grid grid-cols-4 gap-px bg-border border border-border">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-border border border-border">
                 {p.stats.map((s) => (
-                  <div key={s.l} className="bg-background p-3 sm:p-4">
-                    <div className="font-display text-xl sm:text-2xl md:text-3xl mu-hero-gradient-text leading-none">
+                  <div key={s.l} className="bg-background p-3 sm:p-4 min-w-0">
+                    <div className="font-display text-xl sm:text-2xl md:text-3xl mu-hero-gradient-text leading-none break-words">
                       {s.v}
                     </div>
                     <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mt-2 leading-tight">

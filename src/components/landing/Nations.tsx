@@ -87,7 +87,7 @@ const Nations = () => {
   return (
     <section
       id="nations"
-      className="py-20 md:py-32 relative overflow-hidden"
+      className="py-16 sm:py-20 md:py-32 relative overflow-hidden"
     >
       {/* Ambient grid backdrop */}
       <div
@@ -226,7 +226,7 @@ const Nations = () => {
                     <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mb-2">
                       {n.term} · {n.city}
                     </div>
-                    <h3 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight break-words">
+                    <h3 className="font-display text-[clamp(2.25rem,9vw,7rem)] leading-[0.9] tracking-tight break-words">
                       {n.country}
                     </h3>
                   </div>

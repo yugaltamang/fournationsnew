@@ -236,7 +236,7 @@ const Curriculum = () => {
   const [activeTab, setActiveTab] = useState<Record<number, TabKey>>({});
 
   return (
-    <section id="curriculum" className="py-20 md:py-32 bg-secondary/20 border-y border-border">
+    <section id="curriculum" className="py-16 sm:py-20 md:py-32 bg-secondary/20 border-y border-border">
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12">
           <div className="lg:col-span-4 lg:sticky lg:top-24 self-start">
@@ -282,17 +282,17 @@ const Curriculum = () => {
                       <p className="font-display italic text-lg sm:text-xl text-primary mb-6">"{c.q}"</p>
 
                       {/* Tabs */}
-                      <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-1 border-b border-border mb-6">
+                      <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-1 border-b border-border mb-6">
                         {tabMeta.map((t) => {
                           const active = tab === t.key;
                           return (
                             <button
                               key={t.key}
                               onClick={() => setActiveTab((prev) => ({ ...prev, [i]: t.key }))}
-                              className={`relative px-3 sm:px-4 py-2.5 text-left transition-colors ${active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
+                              className={`relative px-2.5 sm:px-4 py-2.5 text-left transition-colors ${active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
                             >
-                              <div className="font-display text-sm sm:text-base leading-tight">{t.label}</div>
-                              <div className="font-mono text-[9px] uppercase tracking-widest mt-0.5 opacity-70">{t.sub}</div>
+                              <div className="font-display text-[13px] sm:text-base leading-tight">{t.label}</div>
+                              <div className="font-mono text-[9px] uppercase tracking-widest mt-0.5 opacity-70 leading-tight">{t.sub}</div>
                               {active && <span className="absolute left-0 right-0 -bottom-px h-0.5 bg-primary" />}
                             </button>
                           );

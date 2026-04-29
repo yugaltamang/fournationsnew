@@ -1,12 +1,12 @@
 const Apply = () => (
-  <section id="apply" className="py-20 md:py-32 relative overflow-hidden">
+  <section id="apply" className="py-16 sm:py-20 md:py-32 relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
 
     <div className="container relative">
       <div className="max-w-5xl mx-auto text-center">
         <div className="tag-pill mb-6 sm:mb-8 mx-auto">◉ Cohort 2026 · Limited Seats</div>
-        <h2 className="font-display text-[clamp(2rem,9vw,8rem)] leading-[0.9] mb-8 sm:mb-10 text-balance break-words">
+        <h2 className="font-display text-[clamp(2rem,8vw,8rem)] leading-[0.9] mb-6 sm:mb-10 text-balance break-words">
           Four nations are <em className="italic mu-hero-gradient-text not-italic">waiting.</em><br />
           Step into the journey.
         </h2>
