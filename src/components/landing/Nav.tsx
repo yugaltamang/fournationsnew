@@ -27,62 +27,26 @@ const Nav = () => {
 
   return (
     <>
-    {/* Mobile / tablet header — logo only */}
-    <header className={`lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-transparent border-b border-transparent"}`}>
-      <div className="container flex items-center justify-center h-16 md:h-20">
-        <a href="#" className="flex items-center">
-          <img src={muLogo} alt="Masters' Union" className="h-9 md:h-10 w-auto invert" />
+    {/* Mobile / tablet header */}
+    <header className={`lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-background/40 backdrop-blur-sm border-b border-transparent"}`}>
+      <div className="container flex items-center justify-between h-14 sm:h-16">
+        <a href="#" className="flex items-center gap-2 min-w-0" onClick={() => setOpen(false)}>
+          <img src={muLogo} alt="Masters' Union" className="h-7 sm:h-8 w-auto invert shrink-0" />
         </a>
-      </div>
-    </header>
-
-    <header className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-transparent border-b border-transparent"}`}>
-      <div className="mu-hero-divider w-full opacity-80" />
-
-      <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="group flex items-center gap-3 min-w-0" onClick={() => setOpen(false)}>
-          <img
-            src={muLogo}
-            alt="Masters' Union"
-            className="h-5 md:h-7 w-auto invert shrink-0"
-          />
-          <span className="hidden sm:flex flex-col leading-none border-l border-border pl-3">
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">PG · Global Business</span>
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-primary mt-1">4 Nations</span>
-          </span>
-        </a>
-
-        <nav className="hidden lg:flex items-center gap-1 text-sm font-medium border border-border/60 px-2 py-1.5 backdrop-blur">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="group relative flex items-center gap-2 px-4 py-2 whitespace-nowrap transition-colors hover:bg-secondary"
-            >
-              <span className="font-mono text-[10px] text-muted-foreground group-hover:text-foreground transition-colors">/{l.num}</span>
-              <span className="group-hover:text-foreground transition-colors">{l.label}</span>
-            </a>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-2 sm:gap-3">
-          <a href="#" className="hidden md:inline-flex font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
-            Brochure ↓
-          </a>
+        <div className="flex items-center gap-2">
           <a
             href="#apply"
             onClick={() => setOpen(false)}
-            className="group relative hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 font-bold uppercase tracking-wider text-xs overflow-hidden border border-primary bg-primary hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-2 font-bold uppercase tracking-wider text-[11px] bg-primary text-primary-foreground"
           >
-            <span className="relative z-10 text-primary-foreground">Apply Now</span>
-            <span className="relative z-10 text-primary-foreground group-hover:translate-x-1 transition-transform">→</span>
+            Apply <span aria-hidden>→</span>
           </a>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-border/60 hover:border-primary transition-colors"
+            className="inline-flex items-center justify-center w-10 h-10 border border-border/60 hover:border-primary transition-colors"
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -91,8 +55,8 @@ const Nav = () => {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl animate-fade-up">
-          <nav className="container py-6 flex flex-col gap-1">
+        <div className="border-t border-border bg-background/95 backdrop-blur-xl animate-fade-up max-h-[calc(100vh-3.5rem)] overflow-y-auto">
+          <nav className="container py-5 flex flex-col gap-1">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -117,6 +81,51 @@ const Nav = () => {
           </nav>
         </div>
       )}
+    </header>
+
+    {/* Desktop header */}
+    <header className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-transparent border-b border-transparent"}`}>
+      <div className="mu-hero-divider w-full opacity-80" />
+
+      <div className="container flex items-center justify-between h-16 md:h-20">
+        <a href="#" className="group flex items-center gap-3 min-w-0">
+          <img
+            src={muLogo}
+            alt="Masters' Union"
+            className="h-5 md:h-7 w-auto invert shrink-0"
+          />
+          <span className="hidden sm:flex flex-col leading-none border-l border-border pl-3">
+            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">PG · Global Business</span>
+            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-primary mt-1">4 Nations</span>
+          </span>
+        </a>
+
+        <nav className="flex items-center gap-1 text-sm font-medium border border-border/60 px-2 py-1.5 backdrop-blur">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="group relative flex items-center gap-2 px-4 py-2 whitespace-nowrap transition-colors hover:bg-secondary"
+            >
+              <span className="font-mono text-[10px] text-muted-foreground group-hover:text-foreground transition-colors">/{l.num}</span>
+              <span className="group-hover:text-foreground transition-colors">{l.label}</span>
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <a href="#" className="inline-flex font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
+            Brochure ↓
+          </a>
+          <a
+            href="#apply"
+            className="group relative inline-flex items-center gap-2 px-5 py-3 font-bold uppercase tracking-wider text-xs overflow-hidden border border-primary bg-primary hover:bg-primary/90 transition-colors"
+          >
+            <span className="relative z-10 text-primary-foreground">Apply Now</span>
+            <span className="relative z-10 text-primary-foreground group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
     </header>
     </>
   );
