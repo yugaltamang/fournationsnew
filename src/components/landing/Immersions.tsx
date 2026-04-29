@@ -143,14 +143,6 @@ const Immersions = () => (
                 ))}
               </div>
 
-              {/* Footer link */}
-              <div className="flex items-center gap-3 pt-2 text-primary font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] group-hover:gap-4 transition-all">
-                <span>Explore the partnership</span>
-                <ArrowUpRight
-                  size={16}
-                  className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                />
-              </div>
             </div>
           </article>
         ))}
