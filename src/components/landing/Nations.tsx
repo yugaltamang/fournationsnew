@@ -321,7 +321,7 @@ const Nations = () => {
               </div>
 
               {/* Body */}
-              <div className="p-5 sm:p-8 md:p-10 space-y-6">
+              <div className="p-4 sm:p-8 md:p-10 space-y-5 sm:space-y-6">
                 <p className="font-display text-2xl sm:text-3xl md:text-4xl italic text-foreground/90 leading-snug">
                   "{n.title}"
                 </p>
