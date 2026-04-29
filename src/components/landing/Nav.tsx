@@ -26,6 +26,16 @@ const Nav = () => {
   }, [open]);
 
   return (
+    <>
+    {/* Mobile / tablet header — logo only */}
+    <header className={`lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-transparent border-b border-transparent"}`}>
+      <div className="container flex items-center justify-center h-14 md:h-16">
+        <a href="#" className="flex items-center">
+          <img src={muLogo} alt="Masters' Union" className="h-7 md:h-8 w-auto invert" />
+        </a>
+      </div>
+    </header>
+
     <header className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || open ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-transparent border-b border-transparent"}`}>
       <div className="mu-hero-divider w-full opacity-80" />
 
@@ -108,6 +118,7 @@ const Nav = () => {
         </div>
       )}
     </header>
+    </>
   );
 };
 
