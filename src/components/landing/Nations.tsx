@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import india from "@/assets/nation-india.jpg";
 import hk from "@/assets/nation-hongkong.jpg";
 import london from "@/assets/nation-london.jpg";
@@ -82,27 +82,12 @@ const nations: Nation[] = [
 
 const Nations = () => {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const sectionRef = useRef<HTMLElement | null>(null);
-
-  // Auto-advance when section is in view and not paused
-  useEffect(() => {
-    if (paused) return;
-    const id = setInterval(() => {
-      setActive((a) => (a + 1) % nations.length);
-    }, 6000);
-    return () => clearInterval(id);
-  }, [paused]);
-
   const n = nations[active];
 
   return (
     <section
       id="nations"
-      ref={sectionRef}
       className="py-20 md:py-32 relative overflow-hidden"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
     >
       {/* Ambient grid backdrop */}
       <div
@@ -149,7 +134,7 @@ const Nations = () => {
               {i < nations.length - 1 && <span className="text-muted-foreground/50">→</span>}
             </div>
           ))}
-          <span className="ml-auto text-muted-foreground/70">Auto-cycling · hover to pause</span>
+          <span className="ml-auto text-muted-foreground/70">Click any stop to explore</span>
         </div>
 
         {/* Main feature board */}
@@ -201,14 +186,6 @@ const Nations = () => {
                       →
                     </div>
                   </div>
-                  {/* Active progress bar */}
-                  {isActive && !paused && (
-                    <span
-                      key={`bar-${active}`}
-                      className="absolute left-0 bottom-0 h-0.5 bg-primary-foreground/70 origin-left animate-[journeyProgress_6000ms_linear_forwards]"
-                      style={{ width: "100%" }}
-                    />
-                  )}
                 </button>
               );
             })}
@@ -292,14 +269,6 @@ const Nations = () => {
           </div>
         </div>
       </div>
-
-      {/* keyframes for the active progress bar */}
-      <style>{`
-        @keyframes journeyProgress {
-          from { transform: scaleX(0); }
-          to { transform: scaleX(1); }
-        }
-      `}</style>
     </section>
   );
 };
