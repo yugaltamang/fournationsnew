@@ -8,6 +8,7 @@ import Immersions from "@/components/landing/Immersions";
 import CXO from "@/components/landing/CXO";
 import Outcomes from "@/components/landing/Outcomes";
 import FAQ from "@/components/landing/FAQ";
+import Admissions from "@/components/landing/Admissions";
 import Apply from "@/components/landing/Apply";
 import Footer from "@/components/landing/Footer";
 import MobileBottomBar from "@/components/landing/MobileBottomBar";
@@ -25,6 +26,7 @@ const Index = () => (
     <Immersions />
     <CXO />
     <Outcomes />
+    <Admissions />
     <FAQ />
     <Apply />
     <Footer />
