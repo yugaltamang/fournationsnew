@@ -199,8 +199,11 @@ const Nations = () => {
           </div>
 
           {/* Right: feature panel with magazine page-turn */}
-          <div className="lg:col-span-8 order-1 lg:order-2 order-1 lg:order-2" style={{ perspective: "2600px" }}>
-            <div className="relative w-full" style={{ transformStyle: "preserve-3d" }}>
+          <div className="lg:col-span-8 order-1 lg:order-2">
+            <div
+              className="relative w-full [perspective:2600px]"
+              style={{ transformStyle: "preserve-3d" }}
+            >
             {/* Spine shadow on the left edge */}
             <div
               aria-hidden
@@ -212,14 +215,28 @@ const Nations = () => {
             />
             <article
               key={n.country}
-              className="relative border border-border bg-background animate-fade-up origin-left transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] z-20"
+              className={`relative border border-border bg-background z-20 origin-left transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+                flipped ? "pointer-events-none" : ""
+              }`}
               style={{
-                transform: flipped ? "rotateY(-172deg)" : "rotateY(0deg)",
+                transform: flipped ? "rotateY(-118deg)" : "rotateY(0deg)",
+                transformOrigin: "left center",
+                transformStyle: "preserve-3d",
+                willChange: "transform",
                 boxShadow: flipped
-                  ? "-30px 20px 60px -10px hsl(0 0% 0% / 0.6)"
+                  ? "-34px 24px 70px -14px hsl(0 0% 0% / 0.65)"
                   : "0 10px 30px -10px hsl(0 0% 0% / 0.3)",
               }}
             >
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-40 opacity-0 transition-opacity duration-500"
+                style={{
+                  opacity: flipped ? 1 : 0,
+                  background:
+                    "linear-gradient(90deg, hsl(var(--background) / 0.7) 0%, transparent 28%, hsl(var(--foreground) / 0.08) 62%, transparent 100%)",
+                }}
+              />
               {/* Hero image with country mark overlay */}
               <div className="relative overflow-hidden">
                 <img
