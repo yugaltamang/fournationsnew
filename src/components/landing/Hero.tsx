@@ -27,12 +27,9 @@ const Hero = () => (
         />
 
         {/* Top chrome */}
-        <div className="absolute top-28 right-8 z-20 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground text-right space-y-1">
-          <div>Atlas / Cohort 2026</div>
-          <div className="text-primary flex items-center justify-end gap-1.5">
-            <span className="inline-block w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-            Four Cities · One Cohort
-          </div>
+        <div className="absolute top-28 right-8 z-20 font-mono text-[10px] uppercase tracking-[0.25em] text-primary text-right flex items-center justify-end gap-1.5">
+          <span className="inline-block w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
+          Four Cities · One Cohort
         </div>
 
         {/* Monument grid */}
@@ -144,22 +141,16 @@ const Hero = () => (
       <div className="lg:col-span-7 animate-fade-up">
         <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
           <span className="tag-pill"><span className="w-1.5 h-1.5 bg-primary rounded-full" />Cohort 2026 · Applications Open</span>
-          <span className="tag-pill hidden sm:inline-flex">Post Graduate Program</span>
         </div>
 
         <h1 className="font-display text-[clamp(2.25rem,8vw,6rem)] leading-[0.95] font-medium text-balance">
           One <em className="italic mu-hero-gradient-text not-italic font-normal">degree.</em>
           <br />
           Four <span className="font-mono text-[0.4em] align-top text-muted-foreground">/04</span> cities.
-          <br />
-          <span className="block mt-4 text-[0.6em] leading-[1.15] text-foreground/90 font-normal italic">
-            Infinite reasons to say<br />
-            <span className="not-italic font-medium">"when I was in <span className="mu-hero-underline whitespace-nowrap">Hong Kong</span>…"</span>
-          </span>
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-          A Post Graduate program that moves with you across <strong className="text-foreground">India</strong>, <strong className="text-foreground">Hong Kong</strong> (CUHK), <strong className="text-foreground">London</strong> (Imperial College) and an optional <strong className="text-foreground">Dubai</strong> finale. Four nations, four cultures, four markets — one operator who can read all of them.
+          A Post Graduate program across <strong className="text-foreground">India</strong>, <strong className="text-foreground">Hong Kong</strong> (CUHK), <strong className="text-foreground">London</strong> (Imperial College) — with an optional <strong className="text-foreground">Dubai</strong> finale.
         </p>
 
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
