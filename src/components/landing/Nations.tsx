@@ -3,6 +3,8 @@ import india from "@/assets/nation-india.webp";
 import hk from "@/assets/nation-hongkong.webp";
 import london from "@/assets/nation-london.webp";
 import dubai from "@/assets/nation-dubai.webp";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { TermRow, terms as curriculumTerms } from "./Curriculum";
 
 type Nation = {
   n: string;
