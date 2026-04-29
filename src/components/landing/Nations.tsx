@@ -133,7 +133,7 @@ const Nations = () => {
           {nations.map((it, i) => (
             <div key={it.country} className="flex items-center gap-3">
               <button
-                onClick={() => setActive(i)}
+                onClick={() => handleSetActive(i)}
                 className={`transition-colors ${i === active ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
               >
                 {it.country}{it.optional ? " (opt)" : ""}
@@ -153,7 +153,7 @@ const Nations = () => {
               return (
                 <button
                   key={it.country}
-                  onClick={() => setActive(i)}
+                  onClick={() => handleSetActive(i)}
                   className={`group relative w-full text-left border transition-all duration-500 ${
                     isActive
                       ? "border-primary bg-primary text-primary-foreground shadow-[6px_6px_0_0_hsl(var(--foreground))]"
