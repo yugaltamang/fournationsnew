@@ -1,7 +1,6 @@
 import Nav from "@/components/landing/Nav";
 import Hero from "@/components/landing/Hero";
 import Marquee from "@/components/landing/Marquee";
-import Nations from "@/components/landing/Nations";
 import Curriculum from "@/components/landing/Curriculum";
 import ApplyBento from "@/components/landing/ApplyBento";
 import Immersions from "@/components/landing/Immersions";
@@ -18,9 +17,8 @@ const Index = () => (
     <Hero />
     <Marquee />
     <section id="program">
-      <Nations />
+      <Curriculum />
     </section>
-    <Curriculum />
     <ApplyBento />
     <Immersions />
     <CXO />
