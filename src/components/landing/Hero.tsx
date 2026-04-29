@@ -52,7 +52,7 @@ const Hero = () => (
         <h1 className="font-display text-[clamp(2.25rem,9vw,6rem)] leading-[0.95] font-medium text-balance break-words">
           One <em className="italic mu-hero-gradient-text not-italic font-normal">degree.</em>
           <br />
-          Four <span className="font-mono text-[0.4em] align-top text-muted-foreground">/04</span> cities.
+          Four <span className="font-mono text-[0.4em] align-top text-muted-foreground">/04</span> countries.
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
@@ -71,7 +71,7 @@ const Hero = () => (
 
         <div className="mt-10 sm:mt-14 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-5 sm:gap-6 max-w-2xl border-t border-border pt-6 sm:pt-8">
           {[
-            { n: "9+1", l: "Months · Optional Dubai" },
+            { n: "9", l: "Months · +1 Week Optional Dubai" },
             { n: "4", l: "Nations · Cultures · Markets" },
             { n: "2", l: "Global University Partners" },
             { n: "10+", l: "CXO Masterclasses" },
