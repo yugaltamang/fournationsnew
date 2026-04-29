@@ -65,18 +65,24 @@ const ApplyBento = () => (
               />
             </a>
 
-            <div className="grid grid-cols-2 gap-px bg-border">
+            <div className="grid grid-cols-3 gap-px bg-border">
               <div className="bg-[hsl(0,0%,6%)] p-3">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                  Apply By
+                  Deadline
                 </div>
-                <div className="font-display text-lg sm:text-xl">June 30</div>
+                <div className="font-display text-base sm:text-lg">7 Aug 2026</div>
               </div>
               <div className="bg-[hsl(0,0%,6%)] p-3">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                  Hear Back
+                  Interviews
                 </div>
-                <div className="font-display text-lg sm:text-xl">2 Weeks</div>
+                <div className="font-display text-base sm:text-lg">Jul – Sep 2026</div>
+              </div>
+              <div className="bg-[hsl(0,0%,6%)] p-3">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                  Fee
+                </div>
+                <div className="font-display text-base sm:text-lg">INR 500</div>
               </div>
             </div>
           </div>
