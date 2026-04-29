@@ -11,35 +11,31 @@ const CITIES = [
 
 const FourCitiesMap = () => (
   <svg
-    viewBox="-200 -100 1200 800"
+    viewBox="420 170 360 200"
     className="w-full h-full"
     xmlns="http://www.w3.org/2000/svg"
     aria-label="Four cities: Mumbai, Hong Kong, London, Dubai"
   >
-    {/* Continents — subtle dotted/faint fill */}
+    {/* Continents — subtle */}
     <path
       d={WORLD_PATH}
-      fill="hsl(40 8% 65% / 0.18)"
-      stroke="hsl(40 8% 65% / 0.25)"
-      strokeWidth="0.5"
+      fill="hsl(40 8% 65% / 0.16)"
+      stroke="hsl(40 8% 65% / 0.28)"
+      strokeWidth="0.4"
     />
 
     {/* City pins */}
     {CITIES.map((c) => (
       <g key={c.name}>
-        {/* Soft glow */}
-        <circle cx={c.x} cy={c.y} r="14" fill="hsl(40 84% 58% / 0.18)" />
-        {/* Dot */}
-        <circle cx={c.x} cy={c.y} r="4.5" fill="hsl(40 84% 58%)" />
-        {/* Label */}
+        <circle cx={c.x} cy={c.y} r="6" fill="hsl(40 84% 58% / 0.22)" />
+        <circle cx={c.x} cy={c.y} r="2" fill="hsl(40 84% 58%)" />
         <text
-          x={c.x + 10}
-          y={c.y - 8}
+          x={c.x + 5}
+          y={c.y - 4}
           fill="hsl(40 20% 96%)"
-          fontSize="14"
+          fontSize="6"
           fontFamily="'JetBrains Mono', monospace"
-          letterSpacing="2"
-          style={{ textTransform: "uppercase" }}
+          letterSpacing="1"
         >
           {c.name.toUpperCase()}
         </text>
