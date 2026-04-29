@@ -21,7 +21,7 @@ const Index = () => (
     <section id="program">
       <Nations />
     </section>
-    <Curriculum />
+    
     <ApplyBento />
     <Immersions />
     <CXO />
