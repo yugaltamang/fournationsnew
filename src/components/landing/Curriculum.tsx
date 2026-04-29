@@ -268,7 +268,7 @@ const CulturalPanelView = ({ data }: { data: CulturalPanel }) => (
       <div className="tag-pill mb-4">{data.chip}</div>
       <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-balance">
         {data.title.split("\n").map((l, i) => (
-          <span key={i}>{i > 0 && <br />}{i > 0 ? <em className="italic mu-hero-gradient-text not-italic">{l}</em> : l}</span>
+          <span key={i}>{i > 0 && <br />}{l}</span>
         ))}
       </h3>
       <p className="text-muted-foreground leading-relaxed mt-4">{data.body}</p>
