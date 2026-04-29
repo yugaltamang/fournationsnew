@@ -411,7 +411,7 @@ const Nations = () => {
                     "linear-gradient(90deg, hsl(0 0% 0% / 0.35) 0%, transparent 100%)",
                 }}
               />
-              <div className="sticky top-0 z-10 flex items-center justify-between gap-4 px-5 sm:px-8 py-4 border-b border-border bg-background/95 backdrop-blur">
+              <div className="sticky top-0 z-10 flex items-center justify-between gap-3 px-4 sm:px-8 py-3 sm:py-4 border-b border-border bg-background/95 backdrop-blur">
                 <div className="min-w-0">
                   <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
                     Curriculum · {n.term}
