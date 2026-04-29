@@ -82,7 +82,7 @@ const Immersions = () => (
             />
 
             {/* Image */}
-            <div className="relative overflow-hidden aspect-[4/3] bg-[hsl(0,0%,6%)]">
+            <div className="relative overflow-hidden aspect-[4/3]">
               <img
                 src={p.image}
                 alt={p.name}
