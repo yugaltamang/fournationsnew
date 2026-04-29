@@ -778,6 +778,10 @@ const Curriculum = () => {
     setOpen(0);
   };
 
+  // Reusable warm gradient (green → yellow → orange) — matches reference accents
+  const accentGradient =
+    "linear-gradient(91deg, #2BA84A -6%, #F7D544 50%, #E38330 110%)";
+
   return (
     <section
       id="curriculum"
@@ -797,27 +801,23 @@ const Curriculum = () => {
         }}
       />
 
-      <div className="container relative">
-        {/* Section header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-10 md:mb-14">
-          <div>
-            <div className="tag-pill mb-4 sm:mb-6">◉ The Journey · The Curriculum</div>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-balance">
-              Four nations.<br />
-              <em className="italic mu-hero-gradient-text not-italic">Four classrooms.</em><br />
-              One global operator.
-            </h2>
-          </div>
-          <p className="md:max-w-sm text-sm sm:text-base text-muted-foreground">
-            Every term has its own home. In each country you experience all four layers of learning — <strong className="text-foreground">In Class</strong>, <strong className="text-foreground">Out Class</strong>, <strong className="text-foreground">Business Immersions</strong> and <strong className="text-foreground">Cultural Immersion</strong>.
-          </p>
+      <div className="container relative max-w-6xl">
+        {/* 1. Section header */}
+        <div className="mb-8 sm:mb-10">
+          <div className="tag-pill mb-4 sm:mb-6">◉ The Curriculum</div>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] max-w-4xl text-balance">
+            A curriculum crafted for the next{" "}
+            <em className="italic mu-hero-gradient-text not-italic">
+              generation of global leaders.
+            </em>
+          </h2>
         </div>
 
-        {/* Country tabs */}
+        {/* 2. Country tabs — horizontal pills */}
         <div
           role="tablist"
           aria-label="Curriculum by country"
-          className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-6"
+          className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8"
         >
           {geographies.map((g, i) => {
             const isActive = i === geoIdx;
@@ -827,43 +827,36 @@ const Curriculum = () => {
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => handleGeoChange(i)}
-                className={`group relative border text-left p-3 sm:p-4 transition-all ${
+                className={`relative inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 border rounded-full transition-all ${
                   isActive
-                    ? "border-primary bg-primary text-primary-foreground shadow-[4px_4px_0_0_hsl(var(--foreground))]"
-                    : "border-border bg-background/40 hover:border-foreground/40 hover:bg-background/70"
+                    ? "border-transparent text-foreground shadow-[0_4px_20px_-8px_rgba(247,213,68,0.6)]"
+                    : "border-border bg-background/60 hover:border-foreground/40 text-foreground"
                 }`}
+                style={isActive ? { background: accentGradient } : undefined}
               >
-                <div className="flex items-center gap-2">
-                  <span className="text-xl leading-none">{g.flag}</span>
-                  <span className="font-display text-base sm:text-lg leading-tight truncate">
-                    {g.country}
+                <span className="text-base leading-none">{g.flag}</span>
+                <span className="font-display text-sm sm:text-base leading-none whitespace-nowrap">
+                  {g.term.split(" · ")[0]} · {g.country}
+                </span>
+                {g.partner && g.partner !== "Optional Immersion" && (
+                  <span
+                    className={`hidden sm:inline font-mono text-[10px] uppercase tracking-widest ${
+                      isActive ? "opacity-80" : "text-muted-foreground"
+                    }`}
+                  >
+                    ({g.partner.split(" ")[0]}
+                    {g.partner.includes("CUHK") ? ")" : ")"}
                   </span>
-                  {g.optional && (
-                    <span
-                      className={`ml-auto font-mono text-[9px] uppercase tracking-widest px-1.5 py-0.5 border ${
-                        isActive
-                          ? "border-primary-foreground/40"
-                          : "border-border text-muted-foreground"
-                      }`}
-                    >
-                      Opt
-                    </span>
-                  )}
-                </div>
-                <div
-                  className={`font-mono text-[9px] uppercase tracking-widest mt-1.5 leading-tight ${
-                    isActive ? "opacity-80" : "text-muted-foreground"
-                  }`}
-                >
-                  {g.term}
-                </div>
-                <div
-                  className={`font-mono text-[9px] uppercase tracking-widest mt-0.5 leading-tight truncate ${
-                    isActive ? "opacity-70" : "text-muted-foreground/70"
-                  }`}
-                >
-                  {g.partner}
-                </div>
+                )}
+                {g.optional && (
+                  <span
+                    className={`font-mono text-[9px] uppercase tracking-widest ${
+                      isActive ? "opacity-80" : "text-muted-foreground"
+                    }`}
+                  >
+                    (Optional)
+                  </span>
+                )}
               </button>
             );
           })}
@@ -871,84 +864,32 @@ const Curriculum = () => {
 
         {/* Animated geography panel */}
         <div key={geo.key} className="animate-fade-up">
-          {/* Term hero — image + text */}
-          <div className="grid lg:grid-cols-12 gap-4 lg:gap-6 mb-6">
-            {/* Image */}
-            <div className="lg:col-span-5 relative overflow-hidden border border-border bg-background min-h-[220px]">
-              <img
-                src={geo.image}
-                alt={`${geo.country} — ${geo.partner}`}
-                loading="lazy"
-                decoding="async"
-                className="absolute inset-0 w-full h-full object-cover grayscale-[0.3]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
-              <div className="absolute top-0 inset-x-0 flex items-center justify-between gap-3 p-4">
-                <div className="bg-background/80 backdrop-blur px-2.5 py-1 font-mono text-[9px] uppercase tracking-widest border border-border">
-                  {String(geoIdx + 1).padStart(2, "0")} / 04 · {geo.coords}
-                </div>
-                {geo.optional && (
-                  <div className="bg-primary text-primary-foreground px-2.5 py-1 font-mono text-[9px] uppercase tracking-widest">
-                    Optional
-                  </div>
-                )}
-              </div>
-              <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                  {geo.city}
-                </div>
-                <div className="font-display text-3xl sm:text-4xl leading-none">{geo.country}</div>
-              </div>
+          {/* 3. Learning outcome banner — gradient */}
+          <div
+            className="relative overflow-hidden rounded-xl p-5 sm:p-7 mb-6 sm:mb-8 flex items-start gap-4 sm:gap-6"
+            style={{ background: accentGradient }}
+          >
+            <div className="text-4xl sm:text-5xl leading-none shrink-0">
+              {geo.flag}
             </div>
-
-            {/* Outcome banner + intro */}
-            <div className="lg:col-span-7 flex flex-col gap-4">
-              <div
-                className="relative p-px"
-                style={{
-                  background:
-                    "linear-gradient(91deg, #39B5D7 -6.14%, #F7D544 47.02%, #E38330 99.71%)",
-                }}
-              >
-                <div className="relative overflow-hidden bg-[hsl(0,0%,5%)] p-5 sm:p-6">
-                  <div
-                    className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-30 blur-3xl pointer-events-none"
-                    style={{
-                      background:
-                        "radial-gradient(circle, #E38330 0%, #F7D544 40%, transparent 70%)",
-                    }}
-                  />
-                  <div className="relative">
-                    <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] mb-2 text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                      <span className="mu-hero-gradient-text font-bold">Learning Outcome</span>
-                    </div>
-                    <div className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-foreground mb-2">
-                      {geo.headlineOutcome}
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {geo.outcomeDesc}
-                    </p>
-                  </div>
-                </div>
+            <div className="min-w-0">
+              <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-foreground/70 mb-1.5">
+                Learning Outcome
               </div>
-
-              <div className="border border-border bg-background p-5 sm:p-6">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">
-                  {geo.term} · {geo.partner}
-                </div>
-                <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">
-                  {geo.intro}
-                </p>
+              <div className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-foreground mb-2">
+                {geo.headlineOutcome}
               </div>
+              <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">
+                {geo.outcomeDesc}
+              </p>
             </div>
           </div>
 
-          {/* Sub-tabs: In Class / Out Class / Business Immersions / Cultural */}
+          {/* 4. Sub-tabs */}
           <div
             role="tablist"
             aria-label="Learning layers"
-            className="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-4"
+            className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-10"
           >
             {tabMeta.map((t) => {
               const active = tab === t.key;
@@ -958,26 +899,61 @@ const Curriculum = () => {
                   role="tab"
                   aria-selected={active}
                   onClick={() => setTab(t.key)}
-                  className={`text-left p-3 border transition-colors ${
+                  className={`px-4 sm:px-5 py-2.5 border rounded-md font-display text-sm sm:text-base leading-none transition-all ${
                     active
-                      ? "border-foreground bg-foreground text-background"
-                      : "border-border bg-background/40 hover:border-foreground/40 text-foreground"
+                      ? "border-transparent text-foreground shadow-[0_4px_16px_-8px_rgba(247,213,68,0.5)]"
+                      : "border-border bg-background/60 hover:border-foreground/40 text-foreground"
                   }`}
+                  style={active ? { background: accentGradient } : undefined}
                 >
-                  <div className="font-display text-sm sm:text-base leading-tight">{t.label}</div>
-                  <div
-                    className={`font-mono text-[9px] uppercase tracking-widest mt-1 leading-tight ${
-                      active ? "opacity-80" : "text-muted-foreground"
-                    }`}
-                  >
-                    {t.sub}
-                  </div>
+                  {t.label}
                 </button>
               );
             })}
           </div>
 
-          {/* Modules list — each card shows the active sub-tab content */}
+          {/* 5. Term description block — left text, right image */}
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center mb-10 sm:mb-12">
+            <div>
+              <div className="inline-flex items-center font-mono text-[10px] uppercase tracking-widest text-foreground border border-border rounded-full px-3 py-1.5 mb-5">
+                <span
+                  className="w-1.5 h-1.5 rounded-full mr-2"
+                  style={{ background: accentGradient }}
+                />
+                {geo.term.replace("Term ", "Term ").toUpperCase()} ·{" "}
+                {geo.country.toUpperCase()}
+              </div>
+              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-tight mb-5">
+                {geo.term.split(" · ")[0]} —{" "}
+                <em className="italic">{geo.country}</em>
+              </h3>
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                {geo.intro}
+              </p>
+            </div>
+            <div className="relative overflow-hidden rounded-xl border border-border aspect-[4/3] lg:aspect-[5/4] bg-background">
+              <img
+                src={geo.image}
+                alt={`${geo.country} — ${geo.partner}`}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 flex items-end justify-between gap-3">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-foreground/90 bg-background/70 backdrop-blur px-2.5 py-1 rounded">
+                  {String(geoIdx + 1).padStart(2, "0")} / 04 · {geo.coords}
+                </div>
+                {geo.optional && (
+                  <div className="bg-primary text-primary-foreground px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest rounded">
+                    Optional
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* 6. Modules — full-width accordion list */}
           <div className="space-y-3">
             {geo.modules.map((c, i) => {
               const isOpen = open === i;
@@ -985,71 +961,118 @@ const Curriculum = () => {
               return (
                 <div
                   key={`${geo.key}-${c.code}`}
-                  className={`border ${
-                    isOpen ? "border-primary bg-background" : "border-border bg-background/40"
-                  } transition-colors`}
+                  className="relative rounded-xl"
+                  style={
+                    isOpen
+                      ? { padding: "1px", background: accentGradient }
+                      : undefined
+                  }
                 >
-                  <button
-                    onClick={() => setOpen(isOpen ? -1 : i)}
-                    className="w-full flex items-center justify-between gap-4 sm:gap-6 p-4 sm:p-6 text-left"
+                  <div
+                    className={`rounded-[inherit] bg-background ${
+                      isOpen ? "" : "border border-border"
+                    } transition-colors`}
                   >
-                    <div className="flex items-center gap-4 sm:gap-6 min-w-0">
-                      <span className="font-mono text-xs text-primary shrink-0 hidden sm:inline">
-                        /{String(i + 1).padStart(2, "0")}
-                      </span>
-                      <div className="min-w-0">
-                        <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                          {c.code} · {geo.country}
-                        </div>
-                        <h3 className="font-display text-xl sm:text-2xl md:text-3xl mt-0.5">
-                          {c.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <span
-                      className={`font-display text-2xl sm:text-3xl shrink-0 transition-transform ${
-                        isOpen ? "rotate-45 text-primary" : ""
-                      }`}
+                    <button
+                      onClick={() => setOpen(isOpen ? -1 : i)}
+                      className="w-full flex items-center gap-4 sm:gap-6 p-4 sm:p-5 text-left"
                     >
-                      +
-                    </span>
-                  </button>
-                  {isOpen && (
-                    <div className="px-4 sm:px-6 pb-6 sm:pb-8 pt-2 animate-fade-up">
-                      <p className="font-display italic text-lg sm:text-xl text-primary mb-5">
-                        "{c.q}"
-                      </p>
-
-                      <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">
-                        {tabContent.heading}
-                      </div>
-                      <ul className="space-y-2 mb-6">
-                        {tabContent.items.map((m) => (
-                          <li key={m} className="flex gap-3 text-foreground/80">
-                            <span className="text-primary font-mono text-xs mt-1.5">▸</span>
-                            <span>{m}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-border">
-                        <div>
-                          <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                            Taught In
-                          </div>
-                          <div className="text-sm">
-                            {geo.flag} {geo.country} · {geo.partner}
-                          </div>
+                      <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground border border-border rounded px-2 py-1 shrink-0">
+                        {c.code}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <div
+                          className="font-display text-sm sm:text-base font-semibold uppercase tracking-wide leading-tight"
+                          style={{
+                            background: accentGradient,
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                          }}
+                        >
+                          {c.title}
                         </div>
-                        <div>
-                          <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                            Outcome
-                          </div>
-                          <div className="font-display text-base text-primary">{c.outcome}</div>
+                        <div className="text-sm sm:text-base text-foreground mt-1 leading-snug">
+                          {c.q}
                         </div>
                       </div>
-                    </div>
-                  )}
+                      <span
+                        className={`shrink-0 text-muted-foreground transition-transform ${
+                          isOpen ? "rotate-180 text-foreground" : ""
+                        }`}
+                        aria-hidden
+                      >
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </span>
+                    </button>
+
+                    {isOpen && (
+                      <div className="px-4 sm:px-5 pb-5 sm:pb-6 pt-1 animate-fade-up">
+                        <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3 pl-12 sm:pl-16">
+                          {tabContent.heading}
+                        </div>
+                        <ul className="space-y-2.5 pl-12 sm:pl-16">
+                          {tabContent.items.map((m) => (
+                            <li
+                              key={m}
+                              className="flex gap-3 text-sm sm:text-base text-foreground/85 leading-relaxed"
+                            >
+                              <span
+                                className="font-mono text-sm shrink-0"
+                                style={{
+                                  background: accentGradient,
+                                  WebkitBackgroundClip: "text",
+                                  WebkitTextFillColor: "transparent",
+                                  backgroundClip: "text",
+                                }}
+                              >
+                                →
+                              </span>
+                              <span>{m}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        <div className="mt-5 ml-12 sm:ml-16 pt-4 border-t border-border grid sm:grid-cols-2 gap-4">
+                          <div>
+                            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                              Taught In
+                            </div>
+                            <div className="text-sm">
+                              {geo.flag} {geo.country} · {geo.partner}
+                            </div>
+                          </div>
+                          <div>
+                            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                              Outcome
+                            </div>
+                            <div
+                              className="font-display text-base"
+                              style={{
+                                background: accentGradient,
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent",
+                                backgroundClip: "text",
+                              }}
+                            >
+                              {c.outcome}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               );
             })}
