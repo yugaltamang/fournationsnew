@@ -211,43 +211,45 @@ const Nations = () => {
             })}
           </div>
 
-          {/* Right: feature panel with magazine page-turn */}
+          {/* Right: feature panel with book-style page sweep */}
           <div ref={panelRef} className="lg:col-span-8 order-1 lg:order-2 scroll-mt-24">
             <div
-              className="relative w-full [perspective:2600px]"
+              className="relative grid w-full overflow-visible [perspective:2200px]"
               style={{ transformStyle: "preserve-3d" }}
             >
             {/* Spine shadow on the left edge */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-y-0 left-0 w-6 z-30"
+              className="pointer-events-none absolute inset-y-0 left-0 w-6 z-40"
               style={{
                 background:
-                  "linear-gradient(90deg, hsl(0 0% 0% / 0.45) 0%, hsl(0 0% 0% / 0.15) 40%, transparent 100%)",
+                  "linear-gradient(90deg, hsl(var(--foreground) / 0.22) 0%, hsl(var(--foreground) / 0.08) 42%, transparent 100%)",
               }}
             />
             <article
               key={n.country}
-              className={`relative border border-border bg-background z-20 origin-left transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+              className={`col-start-1 row-start-1 relative border border-border bg-background z-30 origin-left transition-[transform,opacity,filter] duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 flipped ? "pointer-events-none" : ""
               }`}
               style={{
-                transform: flipped ? "rotateY(-118deg)" : "rotateY(0deg)",
+                transform: flipped
+                  ? "translateX(-105%) rotateY(-34deg) rotateZ(-1.5deg) scale(0.96)"
+                  : "translateX(0) rotateY(0deg) rotateZ(0deg) scale(1)",
                 transformOrigin: "left center",
                 transformStyle: "preserve-3d",
                 willChange: "transform",
-                boxShadow: flipped
-                  ? "-34px 24px 70px -14px hsl(0 0% 0% / 0.65)"
-                  : "0 10px 30px -10px hsl(0 0% 0% / 0.3)",
+                opacity: flipped ? 0 : 1,
+                filter: flipped ? "blur(0.4px)" : "blur(0px)",
+                boxShadow: "0 10px 30px -10px hsl(var(--foreground) / 0.28)",
               }}
             >
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 z-40 opacity-0 transition-opacity duration-500"
+                className="pointer-events-none absolute inset-0 z-40 transition-opacity duration-500"
                 style={{
                   opacity: flipped ? 1 : 0,
                   background:
-                    "linear-gradient(90deg, hsl(var(--background) / 0.7) 0%, transparent 28%, hsl(var(--foreground) / 0.08) 62%, transparent 100%)",
+                    "linear-gradient(90deg, hsl(var(--background) / 0.88) 0%, transparent 34%, hsl(var(--foreground) / 0.16) 78%, hsl(var(--background) / 0.72) 100%)",
                 }}
               />
               {/* Hero image with country mark overlay */}
@@ -359,10 +361,12 @@ const Nations = () => {
               </div>
             </article>
 
-            {/* Underneath page: curriculum (revealed as front peels) */}
+            {/* Underneath page: curriculum (revealed after the page sweep) */}
             <article
-              className={`absolute inset-0 border border-border bg-background overflow-y-auto z-10 transition-opacity duration-500 ${
-                flipped ? "opacity-100 delay-300 pointer-events-auto" : "opacity-0 pointer-events-none"
+              className={`col-start-1 row-start-1 border border-border bg-background z-10 transition-[opacity,transform,max-height] duration-700 ease-out ${
+                flipped
+                  ? "opacity-100 translate-y-0 max-h-[6000px] pointer-events-auto delay-150"
+                  : "opacity-0 translate-y-5 max-h-0 overflow-hidden pointer-events-none"
               }`}
               aria-hidden={!flipped}
             >
