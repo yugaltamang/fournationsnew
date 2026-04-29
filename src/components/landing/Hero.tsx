@@ -31,12 +31,13 @@ const Hero = () => (
         <img
           src={heroCollage}
           alt=""
-          className="absolute inset-y-8 right-12 lg:right-20 xl:right-28 h-[85%] w-full object-contain object-right mix-blend-screen"
+          className="absolute inset-y-8 right-12 lg:right-20 xl:right-28 h-[85%] w-full object-contain object-right opacity-90"
           style={{
             maskImage:
               "linear-gradient(to right, transparent 0%, black 30%, black 100%)",
             WebkitMaskImage:
               "linear-gradient(to right, transparent 0%, black 30%, black 100%)",
+            filter: "grayscale(0.2) contrast(1.05)",
           }}
         />
       </div>
