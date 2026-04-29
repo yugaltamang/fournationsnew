@@ -7,14 +7,15 @@ const items = [
 ];
 
 const Row = () => (
-  <div className="flex shrink-0 items-center gap-12 pr-12">
+  <div className="flex shrink-0 items-center gap-8 sm:gap-12 pr-8 sm:pr-12">
     {items.map((b, i) => (
-      <span key={i} className="flex items-center gap-12 font-display text-lg sm:text-2xl text-foreground/80 whitespace-nowrap">
+      <span key={i} className="flex items-center gap-8 sm:gap-12 font-display text-base sm:text-2xl text-foreground/80 whitespace-nowrap">
         {b}
         <span className="w-1 h-1 rounded-full bg-primary/60 shrink-0" />
       </span>
     ))}
   </div>
+
 );
 
 const Marquee = () => (

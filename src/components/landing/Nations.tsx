@@ -279,30 +279,30 @@ const Nations = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent" />
 
                 {/* Top meta strip */}
-                <div className="absolute top-0 inset-x-0 flex items-center justify-between gap-3 p-4 sm:p-6">
-                  <div className="bg-background/80 backdrop-blur px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest border border-border">
+                <div className="absolute top-0 inset-x-0 flex items-start justify-between gap-2 p-3 sm:p-6">
+                  <div className="bg-background/80 backdrop-blur px-2.5 py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest border border-border max-w-[55%] truncate">
                     {n.n} / 04 · {n.coords}
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 justify-end">
                     {n.optional && (
-                      <div className="bg-primary text-primary-foreground px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest">
-                        Optional Immersion
+                      <div className="bg-primary text-primary-foreground px-2.5 py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest">
+                        Optional
                       </div>
                     )}
                     <button
                       onClick={openCurriculum}
-                      className="group inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest border border-primary transition-colors"
+                      className="group inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-2 sm:py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest border border-primary transition-colors min-h-[36px]"
                     >
-                      View Curriculum
+                      <span className="hidden sm:inline">View </span>Curriculum
                       <span className="font-display text-sm group-hover:translate-x-0.5 transition-transform">→</span>
                     </button>
-
                   </div>
                 </div>
 
 
+
                 {/* Country mark */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 md:p-10 flex items-end justify-between gap-4">
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 md:p-10 flex items-end justify-between gap-3 sm:gap-4">
                   <div className="min-w-0">
                     <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mb-2">
                       {n.term} · {n.city}
@@ -321,7 +321,7 @@ const Nations = () => {
               </div>
 
               {/* Body */}
-              <div className="p-5 sm:p-8 md:p-10 space-y-6">
+              <div className="p-4 sm:p-8 md:p-10 space-y-5 sm:space-y-6">
                 <p className="font-display text-2xl sm:text-3xl md:text-4xl italic text-foreground/90 leading-snug">
                   "{n.title}"
                 </p>
@@ -411,7 +411,7 @@ const Nations = () => {
                     "linear-gradient(90deg, hsl(0 0% 0% / 0.35) 0%, transparent 100%)",
                 }}
               />
-              <div className="sticky top-0 z-10 flex items-center justify-between gap-4 px-5 sm:px-8 py-4 border-b border-border bg-background/95 backdrop-blur">
+              <div className="sticky top-0 z-10 flex items-center justify-between gap-3 px-4 sm:px-8 py-3 sm:py-4 border-b border-border bg-background/95 backdrop-blur">
                 <div className="min-w-0">
                   <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
                     Curriculum · {n.term}
@@ -431,12 +431,13 @@ const Nations = () => {
               <div className="pb-12">
                 {term && (
                   <div>
-                    <div className="px-6 sm:px-12 lg:px-16 pt-8">
+                    <div className="px-4 sm:px-12 lg:px-16 pt-6 sm:pt-8">
 
                       {/* Tabs */}
                       {tabs.length > 0 && (
-                        <div className="mb-10 border-b border-border">
-                          <div className="flex flex-wrap -mb-px">
+                        <div className="mb-8 sm:mb-10 border-b border-border -mx-6 sm:mx-0 overflow-x-auto scrollbar-none">
+                          <div className="flex -mb-px px-6 sm:px-0 min-w-max sm:min-w-0 sm:flex-wrap">
+
                             {tabs.map((tab) => {
                               const isActive = activeTab === tab.id || (!tabs.find((t) => t.id === activeTab) && tab.id === tabs[0].id);
                               return (
@@ -470,7 +471,7 @@ const Nations = () => {
                                 <img
                                   src={term.academic.hero.img}
                                   alt={term.academic.hero.title}
-                                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                  loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
                                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
@@ -508,7 +509,7 @@ const Nations = () => {
                                 <img
                                   src={term.outclass.hero.img}
                                   alt={term.outclass.hero.title}
-                                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                  loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
                                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
@@ -561,7 +562,7 @@ const Nations = () => {
                                       <img
                                         src={card.img}
                                         alt={card.title}
-                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                       />
                                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                                       <div className="absolute top-3 left-3">
@@ -609,14 +610,14 @@ const Nations = () => {
                                   <img
                                     src={term.cultural.imgs[0]}
                                     alt=""
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                   />
                                 </div>
                                 <div className="relative overflow-hidden group">
                                   <img
                                     src={term.cultural.imgs[1]}
                                     alt=""
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                   />
                                 </div>
                               </div>
