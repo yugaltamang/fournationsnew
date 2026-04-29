@@ -12,12 +12,12 @@ const Hero = () => (
       className="pointer-events-none absolute inset-y-0 right-0 hidden md:block md:w-[55%] lg:w-[50%] xl:w-[46%]"
     >
       <div className="relative w-full h-full">
-        {/* Soft warm glow behind */}
+        {/* Warm glow behind */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 65% 55% at 60% 45%, hsl(40 84% 58% / 0.08), transparent 70%)",
+              "radial-gradient(ellipse 70% 60% at 60% 45%, hsl(40 84% 58% / 0.18), transparent 75%)",
           }}
         />
 
@@ -31,14 +31,12 @@ const Hero = () => (
         <img
           src={heroCollage}
           alt=""
-          className="absolute inset-0 w-full h-full object-contain object-right opacity-80 mix-blend-luminosity"
+          className="absolute inset-0 w-full h-full object-contain object-right mix-blend-screen"
           style={{
             maskImage:
-              "linear-gradient(to right, transparent 0%, black 25%, black 100%), radial-gradient(ellipse 90% 95% at 65% 50%, black 60%, transparent 100%)",
+              "linear-gradient(to right, transparent 0%, black 18%, black 100%)",
             WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 25%, black 100%), radial-gradient(ellipse 90% 95% at 65% 50%, black 60%, transparent 100%)",
-            maskComposite: "intersect",
-            WebkitMaskComposite: "source-in",
+              "linear-gradient(to right, transparent 0%, black 18%, black 100%)",
           }}
         />
       </div>
