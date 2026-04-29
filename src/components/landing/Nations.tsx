@@ -279,26 +279,26 @@ const Nations = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent" />
 
                 {/* Top meta strip */}
-                <div className="absolute top-0 inset-x-0 flex items-center justify-between gap-3 p-4 sm:p-6">
-                  <div className="bg-background/80 backdrop-blur px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest border border-border">
+                <div className="absolute top-0 inset-x-0 flex items-start justify-between gap-2 p-3 sm:p-6">
+                  <div className="bg-background/80 backdrop-blur px-2.5 py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest border border-border max-w-[55%] truncate">
                     {n.n} / 04 · {n.coords}
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 justify-end">
                     {n.optional && (
-                      <div className="bg-primary text-primary-foreground px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest">
-                        Optional Immersion
+                      <div className="bg-primary text-primary-foreground px-2.5 py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest">
+                        Optional
                       </div>
                     )}
                     <button
                       onClick={openCurriculum}
-                      className="group inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest border border-primary transition-colors"
+                      className="group inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-2 sm:py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest border border-primary transition-colors min-h-[36px]"
                     >
-                      View Curriculum
+                      <span className="hidden sm:inline">View </span>Curriculum
                       <span className="font-display text-sm group-hover:translate-x-0.5 transition-transform">→</span>
                     </button>
-
                   </div>
                 </div>
+
 
 
                 {/* Country mark */}
