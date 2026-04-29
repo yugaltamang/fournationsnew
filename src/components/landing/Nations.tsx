@@ -199,8 +199,8 @@ const Nations = () => {
           </div>
 
           {/* Right: feature panel with magazine page-turn */}
-          <div className="lg:col-span-8 order-1 lg:order-2 [perspective:2600px]">
-            <div className="relative w-full">
+          <div className="lg:col-span-8 order-1 lg:order-2 order-1 lg:order-2" style={{ perspective: "2600px" }}>
+            <div className="relative w-full" style={{ transformStyle: "preserve-3d" }}>
             {/* Spine shadow on the left edge */}
             <div
               aria-hidden
