@@ -12,10 +12,11 @@ const Nav = () => {
   }, []);
 
   const links = [
-    { href: "#nations", label: "The Journey", num: "01" },
-    { href: "#curriculum", label: "Curriculum", num: "02" },
-    { href: "#faculty", label: "Why This", num: "03" },
-    { href: "#outcomes", label: "Outcomes", num: "04" },
+    { href: "#nations", label: "Journey", num: "01" },
+    { href: "#faculty", label: "Why This", num: "02" },
+    { href: "#outcomes", label: "Outcomes", num: "03" },
+    { href: "#admissions", label: "Admissions", num: "04" },
+    { href: "#faq", label: "FAQ", num: "05" },
   ];
 
   return (
