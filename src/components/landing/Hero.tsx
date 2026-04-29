@@ -9,7 +9,7 @@ const Hero = () => (
     {/* Monument collage — blended into the right side of the hero */}
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden md:block md:w-[60%] lg:w-[58%] xl:w-[55%]"
+      className="pointer-events-none absolute inset-y-0 right-0 hidden lg:block lg:w-[58%] xl:w-[55%]"
     >
       <div className="relative w-full h-full">
         {/* Warm glow behind */}
