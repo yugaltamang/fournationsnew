@@ -44,7 +44,7 @@ const Nav = () => {
           <img
             src={muLogo}
             alt="Masters' Union"
-            className="h-7 md:h-9 w-auto invert shrink-0"
+            className="h-5 md:h-7 w-auto invert shrink-0"
           />
           <span className="hidden sm:flex flex-col leading-none border-l border-border pl-3">
             <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">PG · Global Business</span>
