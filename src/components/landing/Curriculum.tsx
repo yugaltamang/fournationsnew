@@ -341,33 +341,41 @@ const Curriculum = () => {
           })}
         </div>
 
-        {/* Outcome banner */}
-        <div className="p-6 md:p-8 mb-4 flex flex-col sm:flex-row items-start sm:items-center gap-5 border border-border" style={{ background: term.bannerGrad }}>
-          <div className="text-5xl">{term.bannerFlag}</div>
-          <div>
-            <div className="font-mono text-[10px] uppercase tracking-widest text-white/80 mb-1.5">{term.outcomeLabel}</div>
-            <div className="font-display text-2xl sm:text-3xl text-white leading-tight">{term.outcome}</div>
-            <div className="text-sm text-white/80 mt-1.5 leading-relaxed max-w-2xl">{term.outcomeSub}</div>
+        {/* Outcome banner — editorial dark with MU signature gradient accent */}
+        <div className="relative mb-4 border border-border bg-[hsl(0,0%,6%)] overflow-hidden">
+          <div className="mu-hero-divider w-full" />
+          <div className="absolute inset-0 pointer-events-none opacity-[0.07]" style={{ background: "radial-gradient(ellipse 60% 80% at 0% 50%, hsl(40 84% 58%), transparent 70%)" }} />
+          <div className="relative p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <div className="text-5xl shrink-0 grayscale-0">{term.bannerFlag}</div>
+            <div className="hidden sm:block w-px self-stretch bg-border" />
+            <div className="min-w-0">
+              <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-1.5">{term.outcomeLabel}</div>
+              <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
+                <em className="italic mu-hero-gradient-text not-italic">{term.outcome}</em>
+              </div>
+              <div className="text-sm text-muted-foreground mt-2 leading-relaxed max-w-2xl">{term.outcomeSub}</div>
+            </div>
           </div>
         </div>
 
         {/* Dubai special block */}
         {term.isDubai && (
-          <div className="border border-border bg-background p-8 md:p-12 flex flex-col sm:flex-row items-start gap-6">
-            <div className="text-6xl">🇦🇪</div>
-            <div>
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl mb-2">
-                Dubai — 1 Week Immersion <span className="text-muted-foreground/60 font-sans text-sm">(Optional)</span>
-              </h3>
-              <ul className="text-muted-foreground leading-relaxed max-w-2xl flex flex-col gap-2 mt-3">
-                <li className="flex items-start gap-2"><span className="text-primary mt-1 shrink-0">▸</span><span><strong className="text-foreground">Meet the operators</strong> building at global scale — in person, not on a panel</span></li>
-                <li className="flex items-start gap-2"><span className="text-primary mt-1 shrink-0">▸</span><span>See how <strong className="text-foreground">capital, real estate, and venture</strong> actually work in one ecosystem</span></li>
-                <li className="flex items-start gap-2"><span className="text-primary mt-1 shrink-0">▸</span><span>A city built in <strong className="text-foreground">50 years</strong> the world is still catching up to</span></li>
-                <li className="flex items-start gap-2"><span className="text-primary mt-1 shrink-0">▸</span><span>The optional week <strong className="text-foreground">most people regret skipping</strong></span></li>
-              </ul>
-              <span className="inline-block mt-5 font-mono text-[10px] uppercase tracking-widest text-primary border border-primary/40 bg-primary/10 px-3 py-1.5">
-                1 Week · Optional Immersion
-              </span>
+          <div className="relative border border-border bg-[hsl(0,0%,6%)] overflow-hidden">
+            <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{ background: "radial-gradient(ellipse 50% 70% at 100% 0%, #E38330, transparent 70%)" }} />
+            <div className="relative p-8 md:p-12 flex flex-col sm:flex-row items-start gap-6">
+              <div className="text-6xl shrink-0">🇦🇪</div>
+              <div>
+                <div className="tag-pill mb-4"><span className="w-1.5 h-1.5 bg-primary rounded-full" />Optional · 1 Week</div>
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1.05] text-balance">
+                  Dubai — <em className="italic mu-hero-gradient-text not-italic">1 Week Immersion.</em>
+                </h3>
+                <ul className="text-muted-foreground leading-relaxed max-w-2xl flex flex-col gap-2.5 mt-5">
+                  <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span><strong className="text-foreground">Meet the operators</strong> building at global scale — in person, not on a panel</span></li>
+                  <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span>See how <strong className="text-foreground">capital, real estate, and venture</strong> actually work in one ecosystem</span></li>
+                  <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span>A city built in <strong className="text-foreground">50 years</strong> the world is still catching up to</span></li>
+                  <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span>The optional week <strong className="text-foreground">most people regret skipping</strong></span></li>
+                </ul>
+              </div>
             </div>
           </div>
         )}
