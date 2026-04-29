@@ -84,6 +84,7 @@ const nations: Nation[] = [
 
 const Nations = () => {
   const [active, setActive] = useState(0);
+  const [curriculumOpen, setCurriculumOpen] = useState(false);
   const n = nations[active];
 
   return (
