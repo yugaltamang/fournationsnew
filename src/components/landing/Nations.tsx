@@ -430,16 +430,6 @@ const Nations = () => {
               <div className="pb-12">
                 {term && (
                   <div>
-                    {/* Hero banner with nation image */}
-                    <div className="relative h-56 sm:h-72 overflow-hidden">
-                      <img
-                        src={n.img}
-                        alt={n.country}
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
-                    </div>
-
                     <div className="px-6 sm:px-12 lg:px-16 pt-8">
 
                       {/* Tabs */}
