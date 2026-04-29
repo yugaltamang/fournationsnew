@@ -98,13 +98,13 @@ const CXO = () => (
 
               <div className={`grid md:grid-cols-12 ${reversed ? "md:[&>*:first-child]:order-2" : ""}`}>
                 {/* Image side */}
-                <div className="relative md:col-span-5 overflow-hidden">
+                <div className={`relative md:col-span-5 overflow-hidden ${i === 0 ? "bg-[hsl(0,0%,6%)] flex items-center justify-center" : ""}`}>
                   <img
                     src={p.image}
                     alt={p.tag}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full min-h-[260px] sm:min-h-[340px] md:min-h-[460px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    className={`w-full h-full min-h-[260px] sm:min-h-[340px] md:min-h-[460px] ${i === 0 ? "object-contain p-6" : "object-cover grayscale group-hover:grayscale-0"} group-hover:scale-105 transition-all duration-700`}
                   />
                   {/* Number badge */}
                   <div className="absolute top-4 left-4 sm:top-5 sm:left-5 font-display text-5xl sm:text-6xl md:text-7xl text-foreground leading-none mix-blend-difference">
