@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 
 const ApplyBento = () => (
-  <section className="relative py-16 sm:py-20 md:py-28" id="apply-bento">
+  <section className="relative py-10 sm:py-12 md:py-16" id="apply-bento">
     <div className="container">
       <div className="relative overflow-hidden border border-border bg-[hsl(0,0%,6%)]">
         {/* Ambient gradient glow */}
@@ -35,13 +35,13 @@ const ApplyBento = () => (
         </div>
 
         {/* Main content */}
-        <div className="relative grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 px-6 sm:px-10 md:px-14 py-10 sm:py-14 md:py-20">
+        <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center px-6 sm:px-10 md:px-14 py-8 sm:py-10 md:py-12">
           {/* Left: editorial copy */}
           <div className="md:col-span-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-5">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
               ◉ The Application
             </div>
-            <h3 className="font-display text-[clamp(1.75rem,5vw,3.75rem)] leading-[0.95] text-balance mb-5 sm:mb-6">
+            <h3 className="font-display text-[clamp(1.5rem,4vw,2.75rem)] leading-[1] text-balance mb-3">
               Every seat you don't claim,{" "}
               <em className="italic mu-hero-gradient-text not-italic">
                 someone else will.
@@ -53,10 +53,10 @@ const ApplyBento = () => (
           </div>
 
           {/* Right: CTA + stats */}
-          <div className="md:col-span-4 flex flex-col justify-between gap-8">
+          <div className="md:col-span-4 flex flex-col gap-4">
             <a
               href="#apply"
-              className="group relative inline-flex items-center justify-between gap-4 bg-primary text-primary-foreground px-6 py-5 font-bold uppercase tracking-wider text-sm hover:shadow-bold transition-all w-full"
+              className="group relative inline-flex items-center justify-between gap-4 bg-primary text-primary-foreground px-6 py-4 font-bold uppercase tracking-wider text-sm hover:shadow-bold transition-all w-full"
             >
               <span>Begin Application</span>
               <ArrowRight
@@ -66,17 +66,17 @@ const ApplyBento = () => (
             </a>
 
             <div className="grid grid-cols-2 gap-px bg-border">
-              <div className="bg-[hsl(0,0%,6%)] p-4">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1.5">
+              <div className="bg-[hsl(0,0%,6%)] p-3">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
                   Apply By
                 </div>
-                <div className="font-display text-2xl">June 30</div>
+                <div className="font-display text-lg sm:text-xl">June 30</div>
               </div>
-              <div className="bg-[hsl(0,0%,6%)] p-4">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1.5">
+              <div className="bg-[hsl(0,0%,6%)] p-3">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
                   Hear Back
                 </div>
-                <div className="font-display text-2xl">2 Weeks</div>
+                <div className="font-display text-lg sm:text-xl">2 Weeks</div>
               </div>
             </div>
           </div>
