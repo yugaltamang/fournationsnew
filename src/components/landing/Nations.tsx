@@ -439,16 +439,15 @@ const Nations = () => {
 
                       {/* Tabs */}
                       {tabs.length > 0 && (
-                        <div className="mb-8 sm:mb-10 border-b border-border -mx-6 sm:mx-0 overflow-x-auto scrollbar-none">
-                          <div className="flex -mb-px px-6 sm:px-0 min-w-max sm:min-w-0 sm:flex-wrap">
-
+                        <div className="mb-8 sm:mb-10 border-b border-border">
+                          <div className="grid grid-cols-2 sm:flex sm:flex-wrap -mb-px">
                             {tabs.map((tab) => {
                               const isActive = activeTab === tab.id || (!tabs.find((t) => t.id === activeTab) && tab.id === tabs[0].id);
                               return (
                                 <button
                                   key={tab.id}
                                   onClick={() => setActiveTab(tab.id)}
-                                  className={`relative px-4 sm:px-5 py-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.25em] transition-colors ${
+                                  className={`relative px-3 sm:px-5 py-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] transition-colors text-left leading-tight min-h-[44px] border-b sm:border-b-0 border-border/50 ${
                                     isActive
                                       ? "text-foreground"
                                       : "text-muted-foreground hover:text-foreground"
