@@ -1,8 +1,8 @@
 import { useState } from "react";
-import india from "@/assets/nation-india.jpg";
-import hk from "@/assets/nation-hongkong.jpg";
-import london from "@/assets/nation-london.jpg";
-import dubai from "@/assets/nation-dubai.jpg";
+import india from "@/assets/nation-india.webp";
+import hk from "@/assets/nation-hongkong.webp";
+import london from "@/assets/nation-london.webp";
+import dubai from "@/assets/nation-dubai.webp";
 
 type Nation = {
   n: string;
@@ -202,7 +202,7 @@ const Nations = () => {
                 <img
                   src={n.img}
                   alt={n.country}
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="w-full h-64 sm:h-80 md:h-[440px] object-cover grayscale-[0.4] transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />

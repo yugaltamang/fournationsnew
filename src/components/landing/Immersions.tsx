@@ -1,4 +1,4 @@
-import factory from "@/assets/immersion-factory.jpg";
+import factory from "@/assets/immersion-factory.webp";
 
 const stats = [
   { n: "4", l: "Cultural Immersions" },
@@ -12,7 +12,7 @@ const Immersions = () => (
     <div className="container">
       <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
         <div className="relative">
-          <img src={factory} alt="Students inside a global business immersion" loading="lazy" className="w-full aspect-[4/3] object-cover grayscale" />
+          <img src={factory} alt="Students inside a global business immersion" loading="lazy" decoding="async" className="w-full aspect-[4/3] object-cover grayscale" />
           <div className="absolute top-6 left-6 font-mono text-xs uppercase tracking-widest bg-background/80 backdrop-blur px-3 py-2">
             ◉ Industry & Cultural Immersion
           </div>
