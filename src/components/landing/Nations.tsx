@@ -283,12 +283,22 @@ const Nations = () => {
                   <div className="bg-background/80 backdrop-blur px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest border border-border">
                     {n.n} / 04 · {n.coords}
                   </div>
-                  {n.optional && (
-                    <div className="bg-primary text-primary-foreground px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest">
-                      Optional Immersion
-                    </div>
-                  )}
+                  <div className="flex items-center gap-2">
+                    {n.optional && (
+                      <div className="bg-primary text-primary-foreground px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest">
+                        Optional Immersion
+                      </div>
+                    )}
+                    <button
+                      onClick={openCurriculum}
+                      className="group inline-flex items-center gap-2 bg-background/80 hover:bg-primary hover:text-primary-foreground backdrop-blur px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest border border-border transition-colors"
+                    >
+                      View Curriculum
+                      <span className="font-display text-sm group-hover:translate-x-0.5 transition-transform">→</span>
+                    </button>
+                  </div>
                 </div>
+
 
                 {/* Country mark */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 md:p-10 flex items-end justify-between gap-4">
@@ -363,7 +373,7 @@ const Nations = () => {
                 </div>
 
                 {/* CTA: simple text link to flip */}
-                <div className="pt-2">
+                <div className="pt-2 flex justify-end">
                   <button
                     onClick={openCurriculum}
                     className="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-foreground hover:text-primary transition-colors"
@@ -373,6 +383,7 @@ const Nations = () => {
                     <span className="font-display text-lg group-hover:translate-x-1 transition-transform">→</span>
                   </button>
                 </div>
+
               </div>
             </article>
 
