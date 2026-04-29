@@ -92,29 +92,27 @@ const Nations = () => (
                 </div>
               )}
             </div>
-            <div className="md:col-span-7 flex flex-col justify-between gap-6">
-              <div>
-                <div className="flex items-baseline justify-between gap-3 sm:gap-4 mb-4 flex-wrap">
-                  <div>
-                    <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">{n.city}</div>
-                    <h3 className="font-display text-3xl sm:text-4xl md:text-5xl mt-1">{n.country}</h3>
-                  </div>
-                  <div className="text-right">
-                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Partner</div>
-                    <div className="font-display text-sm sm:text-base text-primary mt-1">{n.partner}</div>
-                  </div>
+            <div className="md:col-span-7 flex flex-col gap-4">
+              <div className="flex items-baseline justify-between gap-3 sm:gap-4 flex-wrap">
+                <div>
+                  <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">{n.city}</div>
+                  <h3 className="font-display text-3xl sm:text-4xl md:text-5xl mt-1">{n.country}</h3>
                 </div>
-                <p className="font-display text-xl sm:text-2xl md:text-3xl italic text-foreground/90 leading-snug mb-4">"{n.title}"</p>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">{n.desc}</p>
-                <div className="bg-primary text-primary-foreground p-4 sm:p-5 -mx-1 shadow-[6px_6px_0_0_hsl(var(--foreground))]">
-                  <div className="font-mono text-[10px] uppercase tracking-widest opacity-80 mb-2">You walk away able to →</div>
-                  <div className="font-display text-lg sm:text-xl md:text-2xl leading-snug">{n.outcome}</div>
+                <div className="text-right">
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Partner</div>
+                  <div className="font-display text-sm sm:text-base text-primary mt-1">{n.partner}</div>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2 pt-4 border-t border-border">
+              <p className="font-display text-xl sm:text-2xl md:text-3xl italic text-foreground/90 leading-snug">"{n.title}"</p>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{n.desc}</p>
+              <div className="flex flex-wrap gap-2 pt-3 border-t border-border">
                 {n.tags.map((t) => (
                   <span key={t} className="tag-pill">{t}</span>
                 ))}
+              </div>
+              <div className="bg-primary text-primary-foreground p-4 sm:p-5 -mx-1 mt-auto shadow-[6px_6px_0_0_hsl(var(--foreground))]">
+                <div className="font-mono text-[10px] uppercase tracking-widest opacity-80 mb-2">You walk away able to →</div>
+                <div className="font-display text-base sm:text-lg md:text-xl leading-snug">{n.outcome}</div>
               </div>
             </div>
           </article>
