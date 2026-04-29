@@ -1,5 +1,5 @@
-import imperialImg from "@/assets/imperial-london.webp";
-import cuhkImg from "@/assets/cuhk-hongkong.webp";
+import imperialImg from "@/assets/imperial-london.png";
+import cuhkImg from "@/assets/cuhk-hongkong.png";
 import { ArrowUpRight } from "lucide-react";
 
 const partners = [
@@ -88,15 +88,8 @@ const Immersions = () => (
                 alt={p.name}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover mix-blend-screen opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
-                style={{
-                  maskImage:
-                    "radial-gradient(ellipse 80% 75% at 50% 50%, black 55%, transparent 100%)",
-                  WebkitMaskImage:
-                    "radial-gradient(ellipse 80% 75% at 50% 50%, black 55%, transparent 100%)",
-                }}
+                className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,6%)] via-transparent to-transparent opacity-70 pointer-events-none" />
               {/* Tag chip */}
               <div className="absolute top-4 left-4 sm:top-5 sm:left-5 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-widest z-10">
                 {p.tag}
