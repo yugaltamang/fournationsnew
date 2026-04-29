@@ -236,7 +236,7 @@ const Curriculum = () => {
   const [activeTab, setActiveTab] = useState<Record<number, TabKey>>({});
 
   return (
-    <section id="curriculum" className="py-20 md:py-32 bg-secondary/20 border-y border-border">
+    <section id="curriculum" className="py-16 sm:py-20 md:py-32 bg-secondary/20 border-y border-border">
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12">
           <div className="lg:col-span-4 lg:sticky lg:top-24 self-start">
