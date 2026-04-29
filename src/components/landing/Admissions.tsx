@@ -11,81 +11,130 @@ const steps = [
 ];
 
 const Admissions = () => (
-  <section id="admissions" className="py-16 sm:py-20 md:py-32 border-t border-border">
+  <section id="admissions" className="relative py-16 sm:py-20 md:py-28">
     <div className="container">
-      <div className="max-w-3xl mb-12 md:mb-16">
-        <div className="tag-pill mb-4 sm:mb-6">◉ Admissions</div>
-        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-4">
-          What we look for in <em className="italic text-muted-foreground not-italic">every applicant.</em>
-        </h2>
-        <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
-          A rigorous selection process to ensure every participant is ready to build, lead and grow alongside a world-class cohort.
-        </p>
-      </div>
+      <div className="relative overflow-hidden border border-border bg-[hsl(0,0%,6%)]">
+        {/* Ambient gradient glows */}
+        <div
+          className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full opacity-30 blur-3xl pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle, #E38330 0%, #F7D544 40%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute -bottom-40 -right-40 w-[460px] h-[460px] rounded-full opacity-20 blur-3xl pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle, #39B5D7 0%, transparent 70%)",
+          }}
+        />
 
-      {/* Criteria */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border mb-16 md:mb-20">
-        {criteria.map((c) => (
-          <div key={c.n} className="bg-background p-6 sm:p-8">
-            <div className="font-mono text-xs text-primary mb-4">{c.n}.</div>
-            <div className="font-display text-xl sm:text-2xl mb-3">{c.t}</div>
-            <p className="text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+        {/* Editorial grid */}
+        <div className="absolute inset-0 editorial-grid opacity-[0.07] pointer-events-none" />
+
+        {/* Top meta strip */}
+        <div className="relative flex items-center justify-between border-b border-border/60 px-6 sm:px-10 py-3">
+          <div className="flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            Admissions · Round 01 Active
           </div>
-        ))}
-      </div>
-
-      {/* Timeline table */}
-      <div className="mb-16 md:mb-20">
-        <div className="flex items-baseline justify-between mb-6 flex-wrap gap-2">
-          <h3 className="font-display text-2xl sm:text-3xl">Timeline & Process — Cohort 2026</h3>
-          <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">Round 01</span>
-        </div>
-        <div className="border border-border overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead className="bg-secondary/30">
-              <tr className="text-left">
-                {["Round", "Application Deadline", "Interviews", "Fee", "Status"].map((h) => (
-                  <th key={h} className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground p-4 border-b border-border">{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="p-4 font-display text-base">Round 1</td>
-                <td className="p-4 font-mono">7 Aug 2026</td>
-                <td className="p-4 font-mono">Jul – Sep 2026</td>
-                <td className="p-4 font-mono">INR 500</td>
-                <td className="p-4">
-                  <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-primary">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Active
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* Process steps */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        {steps.map((s, i) => (
-          <div key={s.n} className="relative">
-            <div className="font-mono text-xs text-muted-foreground mb-3">{s.n} / 03</div>
-            <div className="h-px w-full bg-border mb-5" />
-            <div className="font-display text-xl sm:text-2xl mb-3">{s.t}</div>
-            <p className="text-sm text-muted-foreground leading-relaxed">{s.d}</p>
-            {i < steps.length - 1 && (
-              <div className="hidden md:block absolute top-3 -right-4 font-mono text-primary">→</div>
-            )}
+          <div className="hidden sm:block font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            Deadline · 7 Aug 2026
           </div>
-        ))}
-      </div>
+        </div>
 
-      <div className="mt-12 md:mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <a href="#apply" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-5 font-bold uppercase tracking-wider text-sm hover:shadow-bold transition-all">
-          Apply Now <span className="group-hover:translate-x-1 transition-transform">→</span>
-        </a>
-        <p className="text-xs sm:text-sm text-muted-foreground font-mono">Decision within 4 weeks of application deadline.</p>
+        {/* Header */}
+        <div className="relative px-6 sm:px-10 md:px-14 pt-8 sm:pt-10 md:pt-12 pb-6 md:pb-8">
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
+            ◉ Selection
+          </div>
+          <h2 className="font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[1] text-balance mb-3 max-w-3xl">
+            What we look for in{" "}
+            <em className="italic mu-hero-gradient-text not-italic">
+              every applicant.
+            </em>
+          </h2>
+          <p className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
+            A rigorous selection process to ensure every participant is ready to build, lead and grow alongside a world-class cohort.
+          </p>
+        </div>
+
+        {/* Criteria grid */}
+        <div className="relative px-6 sm:px-10 md:px-14 pb-8 md:pb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+            {criteria.map((c) => (
+              <div key={c.n} className="bg-[hsl(0,0%,6%)] p-5 sm:p-6">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-3">{c.n} / 03</div>
+                <div className="font-display text-lg sm:text-xl mb-2">{c.t}</div>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Timeline strip */}
+        <div className="relative border-y border-border/60 bg-background/20">
+          <div className="px-6 sm:px-10 md:px-14 py-5 flex items-center justify-between flex-wrap gap-4">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+              Cohort 2026 · Timeline
+            </div>
+            <div className="flex items-center gap-6 sm:gap-10 flex-wrap">
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Deadline</div>
+                <div className="font-display text-base sm:text-lg">7 Aug 2026</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Interviews</div>
+                <div className="font-display text-base sm:text-lg">Jul – Sep 2026</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Fee</div>
+                <div className="font-display text-base sm:text-lg">INR 500</div>
+              </div>
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Status</div>
+                <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-primary">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" /> Active
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Process steps */}
+        <div className="relative px-6 sm:px-10 md:px-14 py-8 md:py-10">
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-5">
+            ◉ Process
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {steps.map((s, i) => (
+              <div key={s.n} className="relative">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">{s.n} / 03</div>
+                <div className="h-px w-full bg-border mb-4" />
+                <div className="font-display text-lg sm:text-xl mb-2">{s.t}</div>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+                {i < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-2 -right-4 font-mono text-primary">→</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom CTA strip */}
+        <div className="relative border-t border-border/60 px-6 sm:px-10 md:px-14 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="text-xs sm:text-sm text-muted-foreground font-mono">
+            Decision within 4 weeks of application deadline.
+          </p>
+          <a
+            href="#apply"
+            className="group inline-flex items-center justify-between gap-4 bg-primary text-primary-foreground px-6 py-4 font-bold uppercase tracking-wider text-sm hover:shadow-bold transition-all"
+          >
+            <span>Apply Now</span>
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
