@@ -2,7 +2,7 @@
 import heroCollage from "@/assets/hero-collage.png";
 
 const Hero = () => (
-  <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
+  <section className="relative pt-24 sm:pt-32 pb-14 sm:pb-20 overflow-hidden">
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
 
@@ -49,7 +49,7 @@ const Hero = () => (
           <span className="tag-pill"><span className="w-1.5 h-1.5 bg-primary rounded-full" />Cohort 2026 · Applications Open</span>
         </div>
 
-        <h1 className="font-display text-[clamp(2rem,8vw,6rem)] leading-[0.95] font-medium text-balance break-words">
+        <h1 className="font-display text-[clamp(2.25rem,9vw,6rem)] leading-[0.95] font-medium text-balance break-words">
           One <em className="italic mu-hero-gradient-text not-italic font-normal">degree.</em>
           <br />
           Four <span className="font-mono text-[0.4em] align-top text-muted-foreground">/04</span> cities.
@@ -69,16 +69,16 @@ const Hero = () => (
           </a>
         </div>
 
-        <div className="mt-12 sm:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-2xl border-t border-border pt-6 sm:pt-8">
+        <div className="mt-10 sm:mt-14 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-5 sm:gap-6 max-w-2xl border-t border-border pt-6 sm:pt-8">
           {[
             { n: "9+1", l: "Months · Optional Dubai" },
             { n: "4", l: "Nations · Cultures · Markets" },
             { n: "2", l: "Global University Partners" },
             { n: "10+", l: "CXO Masterclasses" },
           ].map((s) => (
-            <div key={s.l}>
-              <div className="font-display text-3xl sm:text-4xl md:text-5xl font-medium">{s.n}</div>
-              <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mt-1 leading-tight">{s.l}</div>
+            <div key={s.l} className="min-w-0">
+              <div className="font-display text-3xl sm:text-4xl md:text-5xl font-medium leading-none">{s.n}</div>
+              <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mt-2 leading-tight">{s.l}</div>
             </div>
           ))}
         </div>
