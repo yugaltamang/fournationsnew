@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import india from "@/assets/nation-india.webp";
 import hk from "@/assets/nation-hongkong.webp";
 import london from "@/assets/nation-london.webp";
@@ -84,6 +84,7 @@ const nations: Nation[] = [
 const Nations = () => {
   const [active, setActive] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
   const n = nations[active];
   const term = curriculumTerms[active];
   const curriculumSections = term
@@ -96,6 +97,11 @@ const Nations = () => {
   const handleSetActive = (i: number) => {
     setFlipped(false);
     setActive(i);
+  };
+
+  const openCurriculum = () => {
+    panelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.setTimeout(() => setFlipped(true), 180);
   };
 
   return (
@@ -206,7 +212,7 @@ const Nations = () => {
           </div>
 
           {/* Right: feature panel with magazine page-turn */}
-          <div className="lg:col-span-8 order-1 lg:order-2">
+          <div ref={panelRef} className="lg:col-span-8 order-1 lg:order-2 scroll-mt-24">
             <div
               className="relative w-full [perspective:2600px]"
               style={{ transformStyle: "preserve-3d" }}
@@ -342,7 +348,7 @@ const Nations = () => {
                 {/* CTA: simple text link to flip */}
                 <div className="pt-2">
                   <button
-                    onClick={() => setFlipped(true)}
+                    onClick={openCurriculum}
                     className="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-foreground hover:text-primary transition-colors"
                   >
                     <span className="w-8 h-px bg-foreground group-hover:bg-primary group-hover:w-12 transition-all" />
