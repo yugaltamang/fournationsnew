@@ -12,12 +12,12 @@ const Hero = () => (
       className="pointer-events-none absolute inset-y-0 right-0 hidden lg:block lg:w-[58%] xl:w-[55%]"
     >
       <div className="relative w-full h-full">
-        {/* Warm glow behind */}
+        {/* Warm glow behind to lift the collage off the dark bg */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 70% 60% at 60% 45%, hsl(40 84% 58% / 0.18), transparent 75%)",
+              "radial-gradient(ellipse 65% 55% at 60% 50%, hsl(40 84% 58% / 0.22), transparent 75%)",
           }}
         />
 
@@ -27,17 +27,18 @@ const Hero = () => (
           Four Cities · One Cohort
         </div>
 
-        {/* Collage image */}
+        {/* Collage image — transparent PNG, blended into dark hero */}
         <img
           src={heroCollage}
           alt=""
-          className="absolute inset-y-8 right-12 lg:right-20 xl:right-28 h-[85%] w-full object-contain object-right opacity-90"
+          className="absolute inset-y-8 right-8 lg:right-16 xl:right-24 h-[88%] w-full object-contain object-right"
           style={{
             maskImage:
-              "linear-gradient(to right, transparent 0%, black 30%, black 100%)",
+              "linear-gradient(to right, transparent 0%, black 18%, black 100%)",
             WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 30%, black 100%)",
-            filter: "grayscale(0.2) contrast(1.05)",
+              "linear-gradient(to right, transparent 0%, black 18%, black 100%)",
+            filter:
+              "saturate(1.15) contrast(1.05) drop-shadow(0 18px 40px hsl(40 84% 58% / 0.25))",
           }}
         />
       </div>
