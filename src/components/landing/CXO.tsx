@@ -1,7 +1,6 @@
 import globeImg from "@/assets/four-nations-globe.png";
 import cxoImg from "@/assets/cxo-masterclass.webp";
 import immersionImg from "@/assets/immersion-factory.webp";
-import { ArrowUpRight } from "lucide-react";
 
 const pillars = [
   {
@@ -49,19 +48,22 @@ const pillars = [
 ];
 
 const CXO = () => (
-  <section id="faculty" className="py-16 sm:py-20 md:py-28 relative overflow-hidden bg-secondary/20 border-y border-border">
-    {/* Ambient background */}
+  <section
+    id="faculty"
+    className="py-16 sm:py-20 md:py-32 relative overflow-hidden bg-secondary/20 border-y border-border"
+  >
+    {/* Ambient backdrop */}
     <div
       aria-hidden
       className="pointer-events-none absolute inset-0 opacity-[0.05]"
       style={{
         backgroundImage:
           "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
-        backgroundSize: "72px 72px",
+        backgroundSize: "96px 96px",
       }}
     />
     <div
-      className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.07] blur-3xl pointer-events-none"
+      className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full opacity-[0.08] blur-3xl pointer-events-none"
       style={{
         background:
           "radial-gradient(circle, #F7D544 0%, #E38330 40%, transparent 70%)",
@@ -69,120 +71,115 @@ const CXO = () => (
     />
 
     <div className="container relative">
-      {/* Editorial Header */}
-      <div className="max-w-4xl mb-14 md:mb-20">
-        <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-6">
-          <span className="w-8 h-px bg-primary" />
-          <span>Why This Programme</span>
-          <span className="text-muted-foreground/50">/ 03 Pillars</span>
+      {/* Manifesto Header */}
+      <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-16 md:mb-24 pb-8 md:pb-12 border-b-2 border-foreground">
+        <div className="md:col-span-8">
+          <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-6">
+            <span className="w-8 h-px bg-primary" />
+            <span>Why This Programme</span>
+          </div>
+          <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] text-balance">
+            Hands-on learning for{" "}
+            <em className="italic mu-hero-gradient-text not-italic">
+              real business impact.
+            </em>
+          </h2>
         </div>
-        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance mb-6">
-          Hands-on learning for{" "}
-          <em className="italic mu-hero-gradient-text not-italic">
-            real business impact.
-          </em>
-        </h2>
-        <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl">
-          Direct execution over passive learning. Every term, every country, every session is engineered to build real skills and real outcomes — not slide decks.
-        </p>
+        <div className="md:col-span-4">
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+            The Manifesto
+          </div>
+          <p className="text-foreground/80 text-base sm:text-lg leading-snug font-display italic">
+            Direct execution over passive learning. Real skills, real outcomes — not slide decks.
+          </p>
+        </div>
       </div>
 
-      {/* Pillars — alternating editorial layout */}
-      <div className="space-y-8 md:space-y-12">
+      {/* Numbered Manifesto Pillars */}
+      <div className="space-y-0 divide-y-2 divide-foreground/10">
         {pillars.map((p, i) => (
           <article
             key={i}
-            className="group relative grid md:grid-cols-12 gap-6 md:gap-10 items-center"
+            className="group relative grid md:grid-cols-12 gap-4 md:gap-8 py-10 md:py-16 hover:bg-background/40 transition-colors duration-500 -mx-4 sm:-mx-6 px-4 sm:px-6"
           >
-            {/* Index marker rail */}
-            <div className="hidden md:flex md:col-span-1 flex-col items-center gap-3 self-stretch">
-              <div className="font-display text-3xl mu-hero-gradient-text leading-none">
-                0{i + 1}
+            {/* Giant numeral */}
+            <div className="md:col-span-3 flex md:block items-center gap-4">
+              <div className="font-display text-[6rem] sm:text-[8rem] md:text-[12rem] lg:text-[14rem] leading-[0.8] mu-hero-gradient-text tracking-tighter group-hover:translate-x-1 transition-transform duration-500">
+                {String(i + 1).padStart(2, "0")}
               </div>
-              <div className="w-px flex-1 bg-gradient-to-b from-primary/60 via-border to-transparent" />
+              <div className="md:mt-4 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary">
+                {p.tag}
+              </div>
             </div>
 
-            {/* Image panel — alternates side */}
-            <div className={`md:col-span-5 ${i % 2 === 1 ? "md:order-3" : ""}`}>
-              <div className="relative aspect-square bg-[hsl(0,0%,6%)] border border-border overflow-hidden group-hover:border-primary/40 transition-colors duration-500">
-                {/* Hover glow */}
-                <div
-                  className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full opacity-0 group-hover:opacity-30 blur-3xl pointer-events-none transition-opacity duration-700"
-                  style={{
-                    background:
-                      "radial-gradient(circle, #F7D544 0%, #E38330 50%, transparent 70%)",
-                  }}
-                />
+            {/* Headline + body */}
+            <div className="md:col-span-6 space-y-5 md:pl-6 md:border-l-2 md:border-foreground/15">
+              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-balance">
+                {p.title}{" "}
+                <em className="italic mu-hero-gradient-text not-italic">
+                  {p.titleEm}
+                </em>
+              </h3>
+
+              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-xl">
+                {p.body}
+              </p>
+
+              {/* Points as inline manifesto lines */}
+              <ul className="space-y-2 pt-3">
+                {p.points.map((pt, j) => (
+                  <li
+                    key={j}
+                    className="flex items-baseline gap-3 font-mono text-xs sm:text-sm text-foreground/75 uppercase tracking-wider"
+                  >
+                    <span className="text-primary font-semibold shrink-0">
+                      §{i + 1}.{j + 1}
+                    </span>
+                    <span className="normal-case font-sans tracking-normal text-foreground/80 text-sm sm:text-base">
+                      {pt}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Inline stat */}
+              <div className="flex items-baseline gap-3 pt-4">
+                <div className="font-display text-4xl sm:text-5xl mu-hero-gradient-text leading-none">
+                  {p.stat.value}
+                </div>
+                <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">
+                  {p.stat.label}
+                </div>
+              </div>
+            </div>
+
+            {/* Accent thumbnail */}
+            <div className="md:col-span-3 md:flex hidden items-start justify-end">
+              <div className="relative w-full max-w-[220px] aspect-square bg-[hsl(0,0%,6%)] border border-border overflow-hidden group-hover:border-primary/50 transition-colors duration-500">
                 <img
                   src={p.image}
                   alt={p.tag}
                   loading="lazy"
                   decoding="async"
-                  className={`relative w-full h-full ${
+                  className={`w-full h-full ${
                     p.fit === "contain"
-                      ? "object-contain p-6"
+                      ? "object-contain p-3"
                       : "object-cover grayscale group-hover:grayscale-0"
                   } group-hover:scale-105 transition-all duration-700`}
                 />
-                {/* Tag chip */}
-                <div className="absolute top-4 left-4 sm:top-5 sm:left-5 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-widest z-10">
-                  {p.tag}
-                </div>
-                {/* Corner mark */}
-                <div className="absolute bottom-4 right-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70 z-10">
-                  Pillar /0{i + 1}
-                </div>
-              </div>
-            </div>
-
-            {/* Content panel */}
-            <div className="md:col-span-6 space-y-5">
-              <div>
-                <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-balance">
-                  {p.title}{" "}
-                  <em className="italic mu-hero-gradient-text not-italic">
-                    {p.titleEm}
-                  </em>
-                </h3>
-              </div>
-
-              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-xl">
-                {p.body}
-              </p>
-
-              {/* Points list */}
-              <ul className="space-y-2.5 sm:space-y-3 border-t border-border pt-5">
-                {p.points.map((pt, j) => (
-                  <li
-                    key={j}
-                    className="flex items-start gap-3 text-sm sm:text-base text-foreground/85"
-                  >
-                    <ArrowUpRight
-                      size={16}
-                      className="text-primary mt-1 shrink-0"
-                    />
-                    <span>{pt}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Footer stat strip */}
-              <div className="flex items-end justify-between pt-4 border-t border-border">
-                <div className="flex items-baseline gap-3">
-                  <div className="font-display text-3xl sm:text-4xl mu-hero-gradient-text leading-none">
-                    {p.stat.value}
-                  </div>
-                  <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground">
-                    {p.stat.label}
-                  </div>
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                  /0{i + 1} · 0{pillars.length}
+                <div className="absolute bottom-2 right-2 font-mono text-[9px] uppercase tracking-widest text-muted-foreground/80 bg-background/70 backdrop-blur px-1.5 py-0.5">
+                  /0{i + 1}
                 </div>
               </div>
             </div>
           </article>
         ))}
+      </div>
+
+      {/* Footer signature */}
+      <div className="flex flex-wrap items-center justify-between gap-4 pt-10 mt-10 border-t-2 border-foreground/10 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-muted-foreground">
+        <span>End of Manifesto</span>
+        <span>Three Pillars · One Cohort · Nine Months</span>
       </div>
     </div>
   </section>
