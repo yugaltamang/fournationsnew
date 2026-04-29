@@ -435,8 +435,9 @@ const Nations = () => {
 
                       {/* Tabs */}
                       {tabs.length > 0 && (
-                        <div className="mb-10 border-b border-border">
-                          <div className="flex flex-wrap -mb-px">
+                        <div className="mb-8 sm:mb-10 border-b border-border -mx-6 sm:mx-0 overflow-x-auto scrollbar-none">
+                          <div className="flex -mb-px px-6 sm:px-0 min-w-max sm:min-w-0 sm:flex-wrap">
+
                             {tabs.map((tab) => {
                               const isActive = activeTab === tab.id || (!tabs.find((t) => t.id === activeTab) && tab.id === tabs[0].id);
                               return (
