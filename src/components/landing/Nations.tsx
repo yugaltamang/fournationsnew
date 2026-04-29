@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import india from "@/assets/nation-india.webp";
 import hk from "@/assets/nation-hongkong.webp";
 import london from "@/assets/nation-london.webp";
 import dubai from "@/assets/nation-dubai.webp";
-import { TermRow, terms as curriculumTerms } from "./Curriculum";
+import { terms as curriculumTerms } from "./Curriculum";
 
 type Nation = {
   n: string;
@@ -84,11 +84,24 @@ const nations: Nation[] = [
 const Nations = () => {
   const [active, setActive] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
   const n = nations[active];
+  const term = curriculumTerms[active];
+  const curriculumSections = term
+    ? [
+        { label: term.academic.label || "In Class", items: term.academic.items },
+        { label: term.outclass.label || "Out Class", items: term.outclass.items },
+      ].filter((section) => section.items.length > 0)
+    : [];
 
   const handleSetActive = (i: number) => {
     setFlipped(false);
     setActive(i);
+  };
+
+  const openCurriculum = () => {
+    panelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.setTimeout(() => setFlipped(true), 180);
   };
 
   return (
@@ -199,8 +212,11 @@ const Nations = () => {
           </div>
 
           {/* Right: feature panel with magazine page-turn */}
-          <div className="lg:col-span-8 order-1 lg:order-2 order-1 lg:order-2" style={{ perspective: "2600px" }}>
-            <div className="relative w-full" style={{ transformStyle: "preserve-3d" }}>
+          <div ref={panelRef} className="lg:col-span-8 order-1 lg:order-2 scroll-mt-24">
+            <div
+              className="relative w-full [perspective:2600px]"
+              style={{ transformStyle: "preserve-3d" }}
+            >
             {/* Spine shadow on the left edge */}
             <div
               aria-hidden
@@ -212,14 +228,28 @@ const Nations = () => {
             />
             <article
               key={n.country}
-              className="relative border border-border bg-background animate-fade-up origin-left transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] z-20"
+              className={`relative border border-border bg-background z-20 origin-left transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+                flipped ? "pointer-events-none" : ""
+              }`}
               style={{
-                transform: flipped ? "rotateY(-172deg)" : "rotateY(0deg)",
+                transform: flipped ? "rotateY(-118deg)" : "rotateY(0deg)",
+                transformOrigin: "left center",
+                transformStyle: "preserve-3d",
+                willChange: "transform",
                 boxShadow: flipped
-                  ? "-30px 20px 60px -10px hsl(0 0% 0% / 0.6)"
+                  ? "-34px 24px 70px -14px hsl(0 0% 0% / 0.65)"
                   : "0 10px 30px -10px hsl(0 0% 0% / 0.3)",
               }}
             >
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-40 opacity-0 transition-opacity duration-500"
+                style={{
+                  opacity: flipped ? 1 : 0,
+                  background:
+                    "linear-gradient(90deg, hsl(var(--background) / 0.7) 0%, transparent 28%, hsl(var(--foreground) / 0.08) 62%, transparent 100%)",
+                }}
+              />
               {/* Hero image with country mark overlay */}
               <div className="relative overflow-hidden">
                 <img
@@ -318,7 +348,7 @@ const Nations = () => {
                 {/* CTA: simple text link to flip */}
                 <div className="pt-2">
                   <button
-                    onClick={() => setFlipped(true)}
+                    onClick={openCurriculum}
                     className="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-foreground hover:text-primary transition-colors"
                   >
                     <span className="w-8 h-px bg-foreground group-hover:bg-primary group-hover:w-12 transition-all" />
@@ -362,9 +392,55 @@ const Nations = () => {
                   Back
                 </button>
               </div>
-              <div className="px-2 sm:px-4 py-4">
-                {curriculumTerms[active] && (
-                  <TermRow term={curriculumTerms[active]} index={active} />
+              <div className="px-5 sm:px-8 py-6 sm:py-8 space-y-6">
+                {term && (
+                  <>
+                    <div className="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-6 border-b border-border pb-6">
+                      <div className="text-5xl leading-none">{term.bannerFlag}</div>
+                      <div>
+                        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+                          {term.outcomeLabel}
+                        </div>
+                        <h4 className="font-display text-2xl sm:text-4xl leading-tight mb-2">
+                          {term.outcome}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {term.outcomeSub}
+                        </p>
+                      </div>
+                    </div>
+
+                    {curriculumSections.length > 0 ? (
+                      <div className="grid md:grid-cols-2 gap-4">
+                        {curriculumSections.map((section) => (
+                          <div key={section.label} className="border border-border bg-secondary/20">
+                            <div className="border-b border-border px-4 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
+                              {section.label}
+                            </div>
+                            <div className="divide-y divide-border">
+                              {section.items.map((item) => (
+                                <div key={`${section.label}-${item.num}`} className="p-4">
+                                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                                    {item.code || item.num}
+                                  </div>
+                                  <div className="font-display text-base sm:text-lg leading-snug">
+                                    {item.title}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="border border-border bg-secondary/20 p-5">
+                        <div className="tag-pill mb-4">Optional · 1 Week Immersion</div>
+                        <p className="text-muted-foreground leading-relaxed">
+                          Experience a city built on speed and capital through DIFC, JAFZA, family offices and global operators.
+                        </p>
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             </article>
