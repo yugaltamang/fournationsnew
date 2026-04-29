@@ -228,7 +228,7 @@ const Nations = () => {
             />
             <article
               key={n.country}
-              className={`col-start-1 row-start-1 relative border border-border bg-background z-30 origin-left transition-[transform,opacity,filter] duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`col-start-1 row-start-1 relative border border-border bg-background z-30 origin-left transition-[transform,opacity,filter] duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 flipped ? "pointer-events-none" : ""
               }`}
               style={{
@@ -363,7 +363,7 @@ const Nations = () => {
 
             {/* Underneath page: curriculum (revealed after the page sweep) */}
             <article
-              className={`col-start-1 row-start-1 border border-border bg-background z-10 transition-[opacity,transform,max-height] duration-700 ease-out ${
+              className={`col-start-1 row-start-1 border border-border bg-background z-10 transition-[opacity,transform,max-height] duration-[1600ms] ease-out ${
                 flipped
                   ? "opacity-100 translate-y-0 max-h-[6000px] pointer-events-auto delay-150"
                   : "opacity-0 translate-y-5 max-h-0 overflow-hidden pointer-events-none"
