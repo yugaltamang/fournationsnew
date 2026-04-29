@@ -1,6 +1,6 @@
 import imperialImg from "@/assets/imperial-london.png";
 import cuhkImg from "@/assets/cuhk-hongkong.png";
-import { ArrowUpRight } from "lucide-react";
+
 
 const partners = [
   {
