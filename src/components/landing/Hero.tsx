@@ -71,9 +71,9 @@ const Hero = () => (
 
         <div className="mt-10 sm:mt-14 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-5 sm:gap-6 max-w-2xl border-t border-border pt-6 sm:pt-8">
           {[
-            { n: "9", l: "Months · +1 Week Optional Dubai" },
+            { n: "9", l: "Months · Core Program" },
+            { n: "1", l: "Week · Optional Dubai" },
             { n: "4", l: "Nations · Cultures · Markets" },
-            { n: "2", l: "Global University Partners" },
             { n: "10+", l: "CXO Masterclasses" },
           ].map((s) => (
             <div key={s.l} className="min-w-0">
