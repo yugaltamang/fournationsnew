@@ -198,15 +198,27 @@ const Nations = () => {
             })}
           </div>
 
-          {/* Right: feature panel with 3D flip */}
-          <div className="lg:col-span-8 order-1 lg:order-2 [perspective:2400px]">
+          {/* Right: feature panel with magazine page-turn */}
+          <div className="lg:col-span-8 order-1 lg:order-2 [perspective:2600px]">
+            <div className="relative w-full">
+            {/* Spine shadow on the left edge */}
             <div
-              className="relative w-full transition-transform duration-700 [transform-style:preserve-3d]"
-              style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
-            >
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 left-0 w-6 z-30"
+              style={{
+                background:
+                  "linear-gradient(90deg, hsl(0 0% 0% / 0.45) 0%, hsl(0 0% 0% / 0.15) 40%, transparent 100%)",
+              }}
+            />
             <article
               key={n.country}
-              className="relative border border-border bg-background animate-fade-up [backface-visibility:hidden]"
+              className="relative border border-border bg-background animate-fade-up origin-left transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] [transform-style:preserve-3d] [backface-visibility:hidden] z-20"
+              style={{
+                transform: flipped ? "rotateY(-172deg)" : "rotateY(0deg)",
+                boxShadow: flipped
+                  ? "-30px 20px 60px -10px hsl(0 0% 0% / 0.6)"
+                  : "0 10px 30px -10px hsl(0 0% 0% / 0.3)",
+              }}
             >
               {/* Hero image with country mark overlay */}
               <div className="relative overflow-hidden">
@@ -317,12 +329,22 @@ const Nations = () => {
               </div>
             </article>
 
-            {/* Back face: curriculum */}
+            {/* Underneath page: curriculum (revealed as front peels) */}
             <article
-              className="absolute inset-0 border border-border bg-background [backface-visibility:hidden] overflow-y-auto"
-              style={{ transform: "rotateY(180deg)" }}
+              className={`absolute inset-0 border border-border bg-background overflow-y-auto z-10 transition-opacity duration-500 ${
+                flipped ? "opacity-100 delay-300 pointer-events-auto" : "opacity-0 pointer-events-none"
+              }`}
               aria-hidden={!flipped}
             >
+              {/* inner spine shading on the left edge of the back page */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-y-0 left-0 w-8"
+                style={{
+                  background:
+                    "linear-gradient(90deg, hsl(0 0% 0% / 0.35) 0%, transparent 100%)",
+                }}
+              />
               <div className="sticky top-0 z-10 flex items-center justify-between gap-4 px-5 sm:px-8 py-4 border-b border-border bg-background/95 backdrop-blur">
                 <div className="min-w-0">
                   <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
