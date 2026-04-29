@@ -42,9 +42,9 @@ const ApplyBento = () => (
               ◉ The Application
             </div>
             <h3 className="font-display text-[clamp(1.75rem,5vw,3.75rem)] leading-[0.95] text-balance mb-5 sm:mb-6">
-              Stop reading about the world.{" "}
+              Every seat you don't claim,{" "}
               <em className="italic mu-hero-gradient-text not-italic">
-                Go build in it.
+                someone else will.
               </em>
             </h3>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
