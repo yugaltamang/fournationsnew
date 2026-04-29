@@ -411,27 +411,112 @@ const Nations = () => {
                     </div>
 
                     {curriculumSections.length > 0 ? (
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {curriculumSections.map((section) => (
-                          <div key={section.label} className="border border-border bg-secondary/20">
-                            <div className="border-b border-border px-4 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
-                              {section.label}
+                      <>
+                        <div className="grid md:grid-cols-2 gap-4">
+                          {curriculumSections.map((section) => (
+                            <div key={section.label} className="border border-border bg-secondary/20">
+                              <div className="border-b border-border px-4 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
+                                {section.label}
+                              </div>
+                              <div className="divide-y divide-border">
+                                {section.items.map((item) => (
+                                  <div key={`${section.label}-${item.num}`} className="p-4">
+                                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                                      {item.code || item.num}
+                                    </div>
+                                    <div className="font-display text-base sm:text-lg leading-snug">
+                                      {item.title}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
                             </div>
-                            <div className="divide-y divide-border">
-                              {section.items.map((item) => (
-                                <div key={`${section.label}-${item.num}`} className="p-4">
-                                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                                    {item.code || item.num}
-                                  </div>
-                                  <div className="font-display text-base sm:text-lg leading-snug">
-                                    {item.title}
-                                  </div>
+                          ))}
+                        </div>
+
+                        {term.immersions && (
+                          <div className="border border-border bg-secondary/20">
+                            <div className="border-b border-border px-4 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
+                              Business Immersions
+                            </div>
+                            <div className="p-4 sm:p-5 space-y-4">
+                              <div>
+                                <h5 className="font-display text-base sm:text-lg leading-snug mb-1">
+                                  {term.immersions.header.title}
+                                </h5>
+                                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                                  {term.immersions.header.body}
+                                </p>
+                              </div>
+                              {term.immersions.cards.length > 0 && (
+                                <div className="grid sm:grid-cols-2 gap-3">
+                                  {term.immersions.cards.map((card) => (
+                                    <div key={card.title} className="border border-border bg-background p-3">
+                                      <div className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground mb-1">
+                                        {card.cat}
+                                      </div>
+                                      <div className="font-display text-sm sm:text-base leading-snug mb-1">
+                                        {card.title}
+                                      </div>
+                                      <p className="text-xs text-muted-foreground leading-relaxed">
+                                        {card.desc}
+                                      </p>
+                                    </div>
+                                  ))}
                                 </div>
-                              ))}
+                              )}
+                              {term.immersions.header.note && (
+                                <div className="border-l-2 border-primary pl-3">
+                                  <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-1">
+                                    {term.immersions.header.note.title}
+                                  </div>
+                                  <p className="text-xs text-muted-foreground leading-relaxed">
+                                    {term.immersions.header.note.desc}
+                                  </p>
+                                </div>
+                              )}
                             </div>
                           </div>
-                        ))}
-                      </div>
+                        )}
+
+                        {term.cultural && (
+                          <div className="border border-border bg-secondary/20">
+                            <div className="border-b border-border px-4 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
+                              {term.cultural.chip || "Cultural Immersion"}
+                            </div>
+                            <div className="p-4 sm:p-5 space-y-4">
+                              <div>
+                                <h5 className="font-display text-base sm:text-lg leading-snug mb-1">
+                                  {term.cultural.title}
+                                </h5>
+                                <p
+                                  className="text-xs sm:text-sm text-muted-foreground leading-relaxed"
+                                  dangerouslySetInnerHTML={{ __html: term.cultural.body }}
+                                />
+                              </div>
+                              {term.cultural.cards.length > 0 && (
+                                <div className="grid sm:grid-cols-2 gap-3">
+                                  {term.cultural.cards.map((card) => (
+                                    <div key={card.name} className="border border-border bg-background p-3">
+                                      <div className="font-display text-sm sm:text-base leading-snug mb-1">
+                                        {card.name}
+                                      </div>
+                                      <p className="text-xs text-muted-foreground leading-relaxed">
+                                        {card.desc}
+                                      </p>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                              {term.cultural.note && (
+                                <p className="text-xs italic text-muted-foreground leading-relaxed">
+                                  {term.cultural.note}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </>
                     ) : (
                       <div className="border border-border bg-secondary/20 p-5">
                         <div className="tag-pill mb-4">Optional · 1 Week Immersion</div>
