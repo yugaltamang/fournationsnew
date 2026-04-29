@@ -28,7 +28,7 @@ const Index = () => (
     <Outcomes />
     <Admissions />
     <FAQ />
-    <Apply />
+    
     <Footer />
     <MobileBottomBar />
   </main>
