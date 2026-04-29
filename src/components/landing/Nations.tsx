@@ -438,20 +438,9 @@ const Nations = () => {
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
-                      <div className="absolute inset-x-0 bottom-0 px-6 sm:px-12 lg:px-16 pb-6">
-                        <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-2">
-                          {term.outcomeLabel}
-                        </div>
-                        <h4 className="font-display text-3xl sm:text-5xl leading-[1.05] tracking-tight text-foreground max-w-3xl">
-                          {term.outcome}
-                        </h4>
-                      </div>
                     </div>
 
                     <div className="px-6 sm:px-12 lg:px-16 pt-8">
-                      <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-10">
-                        {term.outcomeSub}
-                      </p>
 
                       {/* Tabs */}
                       {tabs.length > 0 && (
