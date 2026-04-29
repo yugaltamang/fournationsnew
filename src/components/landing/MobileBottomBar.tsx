@@ -1,118 +1,103 @@
 import { useEffect, useState } from "react";
-import { Map, BookOpen, Sparkles, Trophy, Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight, Map, BookOpen, Sparkles, Trophy, FileText, Users } from "lucide-react";
 
-const links = [
-  { href: "#nations", label: "Journey", num: "01", icon: Map },
-  { href: "#curriculum", label: "Curriculum", num: "02", icon: BookOpen },
-  { href: "#faculty", label: "Why", num: "03", icon: Sparkles },
-  { href: "#outcomes", label: "Outcomes", num: "04", icon: Trophy },
+const navItems = [
+  { label: "Journey", href: "#nations", icon: Map },
+  { label: "Curriculum", href: "#curriculum", icon: BookOpen },
+  { label: "Why This", href: "#faculty", icon: Sparkles },
+  { label: "Outcomes", href: "#outcomes", icon: Trophy },
+  { label: "FAQ", href: "#faq", icon: FileText },
+  { label: "Apply", href: "#apply", icon: Users },
 ];
 
 const MobileBottomBar = () => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    document.body.style.overflow = isOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
-  }, [open]);
+  }, [isOpen]);
+
+  const scrollTo = (href: string) => {
+    setIsOpen(false);
+    const el = document.querySelector(href);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 20;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
 
   return (
-    <>
+    <div className="lg:hidden">
       {/* Spacer so content isn't hidden behind the fixed bar */}
-      <div aria-hidden="true" className="lg:hidden h-20" />
+      <div aria-hidden="true" className="h-[60px]" />
 
-      {/* Drawer (opens upward from bottom bar) */}
-      {open && (
-        <>
+      {/* Slide-up panel */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-40"
+          onClick={() => setIsOpen(false)}
+          role="dialog"
+          aria-label="Site navigation"
+        >
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm animate-fade-up" />
           <div
-            className="lg:hidden fixed inset-0 z-40 bg-background/70 backdrop-blur-sm animate-fade-up"
-            onClick={() => setOpen(false)}
-            aria-hidden
-          />
-          <div
-            className="lg:hidden fixed left-0 right-0 z-40 border-t border-border bg-background/95 backdrop-blur-xl animate-fade-up max-h-[70vh] overflow-y-auto"
-            style={{ bottom: "calc(env(safe-area-inset-bottom) + 4.25rem)" }}
-            role="dialog"
-            aria-label="Site navigation"
+            className="absolute left-0 right-0 bg-background/98 backdrop-blur-xl border-t border-border animate-fade-up max-h-[70vh] overflow-y-auto"
+            style={{ bottom: "calc(env(safe-area-inset-bottom) + 60px)" }}
+            onClick={(e) => e.stopPropagation()}
           >
-            <nav className="container py-5 flex flex-col gap-1">
-              {links.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="flex items-center justify-between gap-4 px-4 py-4 border border-border/60 hover:border-primary hover:bg-secondary transition-colors"
-                >
-                  <span className="font-display text-lg">{l.label}</span>
-                  <span className="font-mono text-[10px] text-muted-foreground">/{l.num}</span>
-                </a>
-              ))}
-              <a
-                href="#apply"
-                onClick={() => setOpen(false)}
-                className="mt-3 inline-flex items-center justify-center gap-2 px-5 py-4 font-bold uppercase tracking-wider text-xs border border-primary bg-primary text-primary-foreground"
-              >
-                Apply Now <span>→</span>
-              </a>
-              <a
-                href="#"
-                onClick={() => setOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 font-mono text-[11px] uppercase tracking-widest text-muted-foreground border border-border"
-              >
-                Brochure ↓
-              </a>
+            <nav className="grid grid-cols-3 gap-px bg-border">
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <button
+                    key={item.href}
+                    onClick={() => scrollTo(item.href)}
+                    className="flex flex-col items-center gap-1.5 bg-background text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:bg-secondary/60 active:bg-secondary transition-all py-4 px-2 active:scale-95"
+                  >
+                    <Icon className="w-4 h-4 opacity-60 shrink-0" strokeWidth={1.5} />
+                    <span className="tracking-wide">{item.label}</span>
+                  </button>
+                );
+              })}
             </nav>
           </div>
-        </>
+        </div>
       )}
 
-      {/* Sticky bottom bar */}
+      {/* Fixed bottom bar */}
       <div
-        className="lg:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-xl"
+        className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-t border-border"
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
         <div className="mu-hero-divider w-full opacity-80" />
-        <nav className="grid grid-cols-5 items-stretch">
-          {/* Hamburger trigger */}
+        <div className="flex items-center justify-between px-4 sm:px-5 py-2.5 sm:py-3">
           <button
             type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            className={`flex flex-col items-center justify-center gap-1 py-2.5 transition-colors ${
-              open ? "text-primary bg-secondary/60" : "text-muted-foreground hover:text-primary active:bg-secondary/60"
-            }`}
+            onClick={() => setIsOpen((v) => !v)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            className="flex items-center gap-2 text-foreground hover:text-primary transition-all py-1 active:scale-95"
           >
-            {open ? <X className="w-4 h-4" strokeWidth={1.5} /> : <Menu className="w-4 h-4" strokeWidth={1.5} />}
-            <span className="font-mono text-[9px] uppercase tracking-[0.15em]">{open ? "Close" : "Menu"}</span>
+            <span className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center border border-border">
+              {isOpen ? <X size={16} /> : <Menu size={16} />}
+            </span>
+            <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] font-semibold">
+              {isOpen ? "Close" : "Menu"}
+            </span>
           </button>
-
-          {links.slice(0, 3).map((l) => {
-            const Icon = l.icon;
-            return (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="flex flex-col items-center justify-center gap-1 py-2.5 text-muted-foreground hover:text-primary active:bg-secondary/60 transition-colors"
-              >
-                <Icon className="w-4 h-4" strokeWidth={1.5} />
-                <span className="font-mono text-[9px] uppercase tracking-[0.15em]">{l.label}</span>
-              </a>
-            );
-          })}
 
           <a
             href="#apply"
-            onClick={() => setOpen(false)}
-            className="group flex flex-col items-center justify-center gap-1 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            onClick={() => setIsOpen(false)}
+            className="inline-flex items-center gap-1.5 px-4 sm:px-5 h-9 rounded-lg bg-primary text-primary-foreground text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-primary/90 active:scale-95 transition-all"
           >
-            <span className="font-bold uppercase text-[11px] tracking-wider leading-none">Apply</span>
-            <span className="font-mono text-[9px] uppercase tracking-[0.15em] opacity-80 group-hover:translate-x-0.5 transition-transform">Now →</span>
+            Apply Now
+            <ArrowUpRight size={13} />
           </a>
-        </nav>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
