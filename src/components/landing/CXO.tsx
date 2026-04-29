@@ -59,7 +59,7 @@ const CXO = () => (
           <div key={i} className={`grid md:grid-cols-12 gap-8 md:gap-10 items-center ${i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''}`}>
             <div className="md:col-span-5">
               <div className="relative mb-6 sm:mb-0">
-                <img src={p.image} alt={p.tag} loading="lazy" className="w-full aspect-[4/5] object-cover grayscale" />
+                <img src={p.image} alt={p.tag} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover grayscale" />
                 <div className="absolute -bottom-4 left-2 sm:-bottom-5 sm:-left-5 bg-foreground text-background px-3 sm:px-4 py-1.5 sm:py-2 font-mono text-[10px] sm:text-xs uppercase tracking-widest">
                   /{String(i + 1).padStart(2, '0')} · {p.tag}
                 </div>
