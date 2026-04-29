@@ -13,17 +13,26 @@ const steps = [
 const Admissions = () => (
   <section id="admissions" className="relative py-16 sm:py-20 md:py-28">
     <div className="container">
-      <div className="relative overflow-hidden border border-border bg-[hsl(0,0%,6%)]">
-        {/* Ambient gradient glows */}
+      <div
+        className="relative overflow-hidden border-2 border-primary/40 bg-[hsl(0,0%,6%)]"
+        style={{
+          boxShadow:
+            "0 30px 80px -20px hsl(40 84% 58% / 0.25), 0 0 0 1px hsl(40 84% 58% / 0.15)",
+        }}
+      >
+        {/* Gradient top bar */}
+        <div className="mu-hero-divider w-full" />
+
+        {/* Ambient gradient glows — boosted */}
         <div
-          className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full opacity-30 blur-3xl pointer-events-none"
+          className="absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full opacity-50 blur-3xl pointer-events-none"
           style={{
             background:
               "radial-gradient(circle, #E38330 0%, #F7D544 40%, transparent 70%)",
           }}
         />
         <div
-          className="absolute -bottom-40 -right-40 w-[460px] h-[460px] rounded-full opacity-20 blur-3xl pointer-events-none"
+          className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full opacity-35 blur-3xl pointer-events-none"
           style={{
             background:
               "radial-gradient(circle, #39B5D7 0%, transparent 70%)",
@@ -31,33 +40,34 @@ const Admissions = () => (
         />
 
         {/* Editorial grid */}
-        <div className="absolute inset-0 editorial-grid opacity-[0.07] pointer-events-none" />
+        <div className="absolute inset-0 editorial-grid opacity-[0.08] pointer-events-none" />
 
         {/* Top meta strip */}
-        <div className="relative flex items-center justify-between border-b border-border/60 px-6 sm:px-10 py-3">
-          <div className="flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Admissions · Round 01 Active
+        <div className="relative flex items-center justify-between border-b border-primary/30 px-6 sm:px-10 py-3 bg-primary/5">
+          <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] font-bold">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
+            Round 01 · Now Open
           </div>
-          <div className="hidden sm:block font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            Deadline · 7 Aug 2026
+          <div className="hidden sm:flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground">
+            <span className="text-muted-foreground">Deadline ·</span>
+            <span className="text-primary font-bold">7 Aug 2026</span>
           </div>
         </div>
 
         {/* Header */}
-        <div className="relative px-6 sm:px-10 md:px-14 pt-8 sm:pt-10 md:pt-12 pb-6 md:pb-8">
-          <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-3">
+        <div className="relative px-6 sm:px-10 md:px-14 pt-10 sm:pt-12 md:pt-16 pb-6 md:pb-8">
+          <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-4">
             <span className="w-8 h-px bg-primary" />
-            <span>Admissions / Selection</span>
+            <span className="font-bold">Admissions / Selection</span>
             <span className="text-muted-foreground/50">/ 03 Criteria</span>
           </div>
-          <h2 className="font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[1] text-balance mb-3 max-w-3xl">
+          <h2 className="font-display text-[clamp(2.25rem,6vw,4rem)] leading-[0.95] text-balance mb-4 max-w-3xl">
             What we look for in{" "}
             <em className="italic mu-hero-gradient-text not-italic">
               every applicant.
             </em>
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
             A rigorous selection process to ensure every participant is ready to build, lead and grow alongside a world-class cohort.
           </p>
         </div>
