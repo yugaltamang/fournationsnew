@@ -84,6 +84,7 @@ const nations: Nation[] = [
 const Nations = () => {
   const [active, setActive] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>("in-class");
   const panelRef = useRef<HTMLDivElement>(null);
   const n = nations[active];
   const term = curriculumTerms[active];
@@ -94,10 +95,21 @@ const Nations = () => {
       ].filter((section) => section.items.length > 0)
     : [];
 
+  const tabs = term
+    ? [
+        term.academic.items.length > 0 && { id: "in-class", label: term.academic.label || "In Class" },
+        term.outclass.items.length > 0 && { id: "out-class", label: term.outclass.label || "Out Class" },
+        term.immersions && { id: "business", label: "Business Immersions" },
+        term.cultural && { id: "cultural", label: term.cultural.chip || "Cultural Immersion" },
+      ].filter(Boolean) as { id: string; label: string }[]
+    : [];
+
   const handleSetActive = (i: number) => {
     setFlipped(false);
     setActive(i);
+    setActiveTab("in-class");
   };
+
 
   const openCurriculum = () => {
     panelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
