@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+
 
 /* ─── data types ─── */
 interface AccItem { num: string; code?: string; title: string; rows: string[]; topics?: string }
@@ -398,27 +400,166 @@ const TermRow = ({ term, index }: { term: Term; index: number }) => {
   );
 };
 
+/* ─── Pillar metadata for matrix ─── */
+type PillarKey = "in" | "out" | "biz" | "cul";
+const pillarMeta: { key: PillarKey; label: string; short: string }[] = [
+  { key: "in",  label: "In Class",            short: "Core academic modules" },
+  { key: "out", label: "Out Class",           short: "Applied field projects" },
+  { key: "biz", label: "Business Immersions", short: "Company visits" },
+  { key: "cul", label: "Cultural Immersion",  short: "City & culture experiences" },
+];
+
+const getCellSummary = (term: Term, key: PillarKey): { count: string; preview: string } | null => {
+  if (term.isDubai) return null;
+  switch (key) {
+    case "in":  return { count: `${term.academic.items.length} modules`, preview: term.academic.items.slice(0, 2).map(i => i.code || i.title).join(" · ") };
+    case "out": return { count: `${term.outclass.items.length} sessions`, preview: term.outclass.items[0]?.title.replace(/^How (to|do you) /i, "") || "" };
+    case "biz": return term.immersions ? { count: `${term.immersions.cards.length} sectors`, preview: term.immersions.cards.map(c => c.cat).slice(0, 2).join(" · ") } : null;
+    case "cul": return term.cultural ? { count: `${term.cultural.cards.length} experiences`, preview: term.cultural.cards.map(c => c.name).slice(0, 2).join(" · ") } : null;
+  }
+};
+
+const renderPillar = (term: Term, key: PillarKey) => {
+  switch (key) {
+    case "in":  return <AcademicPanel panel={term.academic} />;
+    case "out": return <AcademicPanel panel={term.outclass} />;
+    case "biz": return term.immersions ? <ImmersionPanelView data={term.immersions} /> : null;
+    case "cul": return term.cultural ? <CulturalPanelView data={term.cultural} /> : null;
+  }
+};
+
 /* ─── Main component ─── */
 const Curriculum = () => {
+  const [open, setOpen] = useState<{ termId: number; key: PillarKey } | null>(null);
+  const activeTerm = open ? terms.find(t => t.id === open.termId) : null;
+
   return (
     <section id="curriculum" className="py-16 sm:py-20 md:py-32 bg-secondary/20 border-y border-border">
       <div className="container">
         {/* Header */}
-        <div className="max-w-3xl mb-10 md:mb-14">
+        <div className="max-w-3xl mb-8 md:mb-12">
           <div className="tag-pill mb-4 sm:mb-6">◉ The Curriculum</div>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95] text-balance">
-            A curriculum crafted for the next<br />
-            <em className="italic text-primary not-italic">generation of global leaders.</em>
+            Four nations.<br />
+            <em className="italic text-primary not-italic">Sixteen learning systems.</em>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-5 max-w-2xl">
-            Four nations. Four distinct learning systems — In Class, Out Class, Business Immersion, Cultural Immersion. Scroll through each term below.
+            Every term · every pillar · one matrix. Tap any cell to expand the full curriculum for that block.
           </p>
         </div>
 
-        {/* Stacked term sections */}
-        <div>
-          {terms.map((t, i) => <TermRow key={t.id} term={t} index={i} />)}
+        {/* Matrix */}
+        <div className="border border-border bg-[hsl(0,0%,6%)] overflow-x-auto">
+          <div className="min-w-[860px]">
+            {/* Header row */}
+            <div className="grid grid-cols-[200px_repeat(4,1fr)] border-b border-border">
+              <div className="p-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground border-r border-border">
+                Term / Pillar
+              </div>
+              {pillarMeta.map((p, i) => (
+                <div key={p.key} className={`p-4 ${i < pillarMeta.length - 1 ? "border-r border-border" : ""}`}>
+                  <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-1">0{i + 1}</div>
+                  <div className="font-display text-sm text-foreground leading-tight">{p.label}</div>
+                  <div className="font-mono text-[10px] text-muted-foreground mt-1">{p.short}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Term rows */}
+            {terms.map((t, ti) => (
+              <div key={t.id} className={`grid grid-cols-[200px_repeat(4,1fr)] ${ti < terms.length - 1 ? "border-b border-border" : ""}`}>
+                {/* Term identity */}
+                <div className="p-4 border-r border-border bg-background/20 flex flex-col justify-between min-h-[120px]">
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-1">
+                      Term 0{ti + 1}{t.isDubai && " · Opt"}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl">{t.bannerFlag}</span>
+                      <div className="font-display text-base text-foreground leading-tight">
+                        {t.label.replace(/^Term \d+ · /, "")}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="font-mono text-[10px] text-muted-foreground leading-snug mt-2">
+                    {t.outcome}
+                  </div>
+                </div>
+
+                {/* Pillar cells */}
+                {pillarMeta.map((p, pi) => {
+                  const cell = getCellSummary(t, p.key);
+                  const disabled = !cell;
+                  return (
+                    <button
+                      key={p.key}
+                      onClick={() => !disabled && setOpen({ termId: t.id, key: p.key })}
+                      disabled={disabled}
+                      className={`group relative p-4 text-left transition-all min-h-[120px] flex flex-col justify-between ${
+                        pi < pillarMeta.length - 1 ? "border-r border-border" : ""
+                      } ${
+                        disabled
+                          ? "opacity-30 cursor-not-allowed"
+                          : "hover:bg-foreground hover:text-background"
+                      }`}
+                    >
+                      {cell ? (
+                        <>
+                          <div className="font-mono text-[10px] uppercase tracking-widest text-primary group-hover:text-background mb-1">
+                            {cell.count}
+                          </div>
+                          <div className="font-display text-xs text-muted-foreground group-hover:text-background/70 leading-snug line-clamp-3">
+                            {cell.preview}
+                          </div>
+                          <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground/50 group-hover:text-background mt-2 flex items-center gap-1">
+                            View <span className="group-hover:translate-x-1 transition-transform">→</span>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground self-center mx-auto">— N/A —</div>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Footer hint */}
+        <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+          Click any cell to open full detail
+        </div>
+
+        {/* Slide-over detail sheet */}
+        <Sheet open={!!open} onOpenChange={(o) => !o && setOpen(null)}>
+          <SheetContent side="right" className="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl overflow-y-auto bg-background border-l border-border p-0">
+            {activeTerm && open && (
+              <>
+                <SheetHeader className="sticky top-0 z-10 bg-background border-b border-border px-6 py-5 flex-row items-center justify-between space-y-0">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className="text-2xl">{activeTerm.bannerFlag}</span>
+                    <div className="min-w-0">
+                      <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-0.5">
+                        Term 0{terms.findIndex(t => t.id === activeTerm.id) + 1} · {pillarMeta.find(p => p.key === open.key)?.label}
+                      </div>
+                      <SheetTitle className="font-display text-lg text-foreground text-left truncate">
+                        {activeTerm.label.replace(/^Term \d+ · /, "")}
+                      </SheetTitle>
+                    </div>
+                  </div>
+                  <button onClick={() => setOpen(null)} className="p-2 hover:bg-secondary/50 transition-colors">
+                    <X size={18} />
+                  </button>
+                </SheetHeader>
+                <div className="p-6 md:p-8">
+                  {renderPillar(activeTerm, open.key)}
+                </div>
+              </>
+            )}
+          </SheetContent>
+        </Sheet>
       </div>
     </section>
   );
