@@ -46,8 +46,10 @@ const Admissions = () => (
 
         {/* Header */}
         <div className="relative px-6 sm:px-10 md:px-14 pt-8 sm:pt-10 md:pt-12 pb-6 md:pb-8">
-          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
-            ◉ Selection
+          <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-3">
+            <span className="w-8 h-px bg-primary" />
+            <span>Admissions / Selection</span>
+            <span className="text-muted-foreground/50">/ 03 Criteria</span>
           </div>
           <h2 className="font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[1] text-balance mb-3 max-w-3xl">
             What we look for in{" "}

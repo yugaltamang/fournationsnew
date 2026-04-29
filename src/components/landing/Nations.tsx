@@ -141,7 +141,11 @@ const Nations = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-10 md:mb-14">
           <div>
-            <div className="tag-pill mb-4 sm:mb-6">◉ The Journey</div>
+            <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-4 sm:mb-6">
+              <span className="w-8 h-px bg-primary" />
+              <span>The Journey / Curriculum</span>
+              <span className="text-muted-foreground/50">/ 04 Nations</span>
+            </div>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-balance">
               Four nations.<br />
               <em className="italic mu-hero-gradient-text not-italic">Four markets.</em><br />
