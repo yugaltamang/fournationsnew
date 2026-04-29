@@ -19,7 +19,7 @@ const pillars = [
   },
   {
     tag: "CXO Sessions",
-    image: nationHk,
+    image: immersionImg,
     title: "Learn from leaders",
     titleEm: "across every industry.",
     body: "The faculty isn't academic — it's the people actively running businesses. MDs, founders and senior executives lead sessions as live conversations.",
