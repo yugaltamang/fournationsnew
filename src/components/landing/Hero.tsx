@@ -172,8 +172,9 @@ const Hero = () => (
           </a>
         </div>
 
-        <div className="mt-12 sm:mt-14 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg border-t border-border pt-6 sm:pt-8">
+        <div className="mt-12 sm:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-2xl border-t border-border pt-6 sm:pt-8">
           {[
+            { n: "9+1", l: "Months · Optional Dubai" },
             { n: "4", l: "Nations · Cultures · Markets" },
             { n: "2", l: "Global University Partners" },
             { n: "10+", l: "CXO Masterclasses" },
