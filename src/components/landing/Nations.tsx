@@ -416,140 +416,184 @@ const Nations = () => {
                   Back
                 </button>
               </div>
-              <div className="px-5 sm:px-8 py-6 sm:py-8 space-y-6">
+              <div className="px-6 sm:px-12 lg:px-16 py-8 sm:py-12">
                 {term && (
-                  <>
-                    <div className="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-6 border-b border-border pb-6">
-                      <div className="text-5xl leading-none">{term.bannerFlag}</div>
-                      <div>
-                        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
-                          {term.outcomeLabel}
-                        </div>
-                        <h4 className="font-display text-2xl sm:text-4xl leading-tight mb-2">
-                          {term.outcome}
-                        </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {term.outcomeSub}
-                        </p>
+                  <div className="max-w-4xl mx-auto">
+                    {/* Header — minimal academic */}
+                    <header className="mb-10 sm:mb-14 pb-8 border-b border-border">
+                      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">
+                        {term.outcomeLabel}
                       </div>
-                    </div>
+                      <h4 className="font-display text-3xl sm:text-5xl leading-[1.1] tracking-tight mb-4 text-foreground">
+                        {term.outcome}
+                      </h4>
+                      <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                        {term.outcomeSub}
+                      </p>
+                    </header>
 
-                    {curriculumSections.length > 0 ? (
-                      <>
-                        <div className="grid md:grid-cols-2 gap-4">
-                          {curriculumSections.map((section) => (
-                            <div key={section.label} className="border border-border bg-secondary/20">
-                              <div className="border-b border-border px-4 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
-                                {section.label}
+                    {/* Tabs */}
+                    {tabs.length > 0 && (
+                      <div className="mb-10 border-b border-border">
+                        <div className="flex flex-wrap -mb-px">
+                          {tabs.map((tab) => {
+                            const isActive = activeTab === tab.id || (!tabs.find((t) => t.id === activeTab) && tab.id === tabs[0].id);
+                            return (
+                              <button
+                                key={tab.id}
+                                onClick={() => setActiveTab(tab.id)}
+                                className={`relative px-4 sm:px-5 py-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.25em] transition-colors ${
+                                  isActive
+                                    ? "text-foreground"
+                                    : "text-muted-foreground hover:text-foreground"
+                                }`}
+                              >
+                                {tab.label}
+                                {isActive && (
+                                  <span className="absolute left-0 right-0 -bottom-px h-px bg-foreground" />
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Tab Panels */}
+                    <div className="min-h-[300px]">
+                      {/* In Class */}
+                      {(activeTab === "in-class" || (!tabs.find((t) => t.id === activeTab) && tabs[0]?.id === "in-class")) && term.academic.items.length > 0 && (
+                        <div className="space-y-1">
+                          {term.academic.items.map((item, idx) => (
+                            <div
+                              key={`ac-${idx}`}
+                              className="grid grid-cols-[60px_1fr] sm:grid-cols-[100px_1fr] gap-4 sm:gap-8 py-5 border-b border-border/60 last:border-b-0"
+                            >
+                              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground pt-1">
+                                {item.code || item.num}
                               </div>
-                              <div className="divide-y divide-border">
-                                {section.items.map((item) => (
-                                  <div key={`${section.label}-${item.num}`} className="p-4">
-                                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                                      {item.code || item.num}
-                                    </div>
-                                    <div className="font-display text-base sm:text-lg leading-snug">
-                                      {item.title}
-                                    </div>
-                                  </div>
-                                ))}
+                              <div className="font-display text-lg sm:text-xl leading-snug tracking-tight">
+                                {item.title}
                               </div>
                             </div>
                           ))}
                         </div>
+                      )}
 
-                        {term.immersions && (
-                          <div className="border border-border bg-secondary/20">
-                            <div className="border-b border-border px-4 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
-                              Business Immersions
-                            </div>
-                            <div className="p-4 sm:p-5 space-y-4">
-                              <div>
-                                <h5 className="font-display text-base sm:text-lg leading-snug mb-1">
-                                  {term.immersions.header.title}
-                                </h5>
-                                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                                  {term.immersions.header.body}
-                                </p>
+                      {/* Out Class */}
+                      {activeTab === "out-class" && term.outclass.items.length > 0 && (
+                        <div className="space-y-1">
+                          {term.outclass.items.map((item, idx) => (
+                            <div
+                              key={`oc-${idx}`}
+                              className="grid grid-cols-[60px_1fr] sm:grid-cols-[100px_1fr] gap-4 sm:gap-8 py-5 border-b border-border/60 last:border-b-0"
+                            >
+                              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground pt-1">
+                                {item.code || item.num}
                               </div>
-                              {term.immersions.cards.length > 0 && (
-                                <div className="grid sm:grid-cols-2 gap-3">
-                                  {term.immersions.cards.map((card) => (
-                                    <div key={card.title} className="border border-border bg-background p-3">
-                                      <div className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground mb-1">
-                                        {card.cat}
-                                      </div>
-                                      <div className="font-display text-sm sm:text-base leading-snug mb-1">
-                                        {card.title}
-                                      </div>
-                                      <p className="text-xs text-muted-foreground leading-relaxed">
-                                        {card.desc}
-                                      </p>
-                                    </div>
-                                  ))}
-                                </div>
-                              )}
-                              {term.immersions.header.note && (
-                                <div className="border-l-2 border-primary pl-3">
-                                  <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-1">
-                                    {term.immersions.header.note.title}
+                              <div className="font-display text-lg sm:text-xl leading-snug tracking-tight">
+                                {item.title}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Business Immersions */}
+                      {activeTab === "business" && term.immersions && (
+                        <div>
+                          <div className="mb-8 pb-6 border-b border-border/60">
+                            <h5 className="font-display text-2xl sm:text-3xl leading-tight tracking-tight mb-3">
+                              {term.immersions.header.title}
+                            </h5>
+                            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
+                              {term.immersions.header.body}
+                            </p>
+                          </div>
+                          {term.immersions.cards.length > 0 && (
+                            <div className="space-y-1">
+                              {term.immersions.cards.map((card) => (
+                                <div
+                                  key={card.title}
+                                  className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-2 sm:gap-8 py-5 border-b border-border/60 last:border-b-0"
+                                >
+                                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground pt-1">
+                                    {card.cat}
                                   </div>
-                                  <p className="text-xs text-muted-foreground leading-relaxed">
-                                    {term.immersions.header.note.desc}
+                                  <div>
+                                    <div className="font-display text-lg sm:text-xl leading-snug tracking-tight mb-1">
+                                      {card.title}
+                                    </div>
+                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                      {card.desc}
+                                    </p>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          {term.immersions.header.note && (
+                            <div className="mt-8 pt-6 border-t border-border/60">
+                              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">
+                                {term.immersions.header.note.title}
+                              </div>
+                              <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                                {term.immersions.header.note.desc}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Cultural */}
+                      {activeTab === "cultural" && term.cultural && (
+                        <div>
+                          <div className="mb-8 pb-6 border-b border-border/60">
+                            <h5 className="font-display text-2xl sm:text-3xl leading-tight tracking-tight mb-3">
+                              {term.cultural.title}
+                            </h5>
+                            <p
+                              className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl"
+                              dangerouslySetInnerHTML={{ __html: term.cultural.body }}
+                            />
+                          </div>
+                          {term.cultural.cards.length > 0 && (
+                            <div className="space-y-1">
+                              {term.cultural.cards.map((card) => (
+                                <div
+                                  key={card.name}
+                                  className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-2 sm:gap-8 py-5 border-b border-border/60 last:border-b-0"
+                                >
+                                  <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
+                                    {card.name}
+                                  </div>
+                                  <p className="text-sm text-muted-foreground leading-relaxed">
+                                    {card.desc}
                                   </p>
                                 </div>
-                              )}
+                              ))}
                             </div>
-                          </div>
-                        )}
+                          )}
+                          {term.cultural.note && (
+                            <p className="mt-8 pt-6 border-t border-border/60 text-sm italic text-muted-foreground leading-relaxed">
+                              {term.cultural.note}
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </div>
 
-                        {term.cultural && (
-                          <div className="border border-border bg-secondary/20">
-                            <div className="border-b border-border px-4 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
-                              {term.cultural.chip || "Cultural Immersion"}
-                            </div>
-                            <div className="p-4 sm:p-5 space-y-4">
-                              <div>
-                                <h5 className="font-display text-base sm:text-lg leading-snug mb-1">
-                                  {term.cultural.title}
-                                </h5>
-                                <p
-                                  className="text-xs sm:text-sm text-muted-foreground leading-relaxed"
-                                  dangerouslySetInnerHTML={{ __html: term.cultural.body }}
-                                />
-                              </div>
-                              {term.cultural.cards.length > 0 && (
-                                <div className="grid sm:grid-cols-2 gap-3">
-                                  {term.cultural.cards.map((card) => (
-                                    <div key={card.name} className="border border-border bg-background p-3">
-                                      <div className="font-display text-sm sm:text-base leading-snug mb-1">
-                                        {card.name}
-                                      </div>
-                                      <p className="text-xs text-muted-foreground leading-relaxed">
-                                        {card.desc}
-                                      </p>
-                                    </div>
-                                  ))}
-                                </div>
-                              )}
-                              {term.cultural.note && (
-                                <p className="text-xs italic text-muted-foreground leading-relaxed">
-                                  {term.cultural.note}
-                                </p>
-                              )}
-                            </div>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="border border-border bg-secondary/20 p-5">
-                        <div className="tag-pill mb-4">Optional · 1 Week Immersion</div>
+                    {curriculumSections.length === 0 && !term.immersions && !term.cultural && (
+                      <div className="border border-border bg-secondary/20 p-8">
+                        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
+                          Optional · 1 Week Immersion
+                        </div>
                         <p className="text-muted-foreground leading-relaxed">
                           Experience a city built on speed and capital through DIFC, JAFZA, family offices and global operators.
                         </p>
                       </div>
                     )}
-                  </>
+                  </div>
                 )}
               </div>
             </article>
@@ -562,3 +606,4 @@ const Nations = () => {
 };
 
 export default Nations;
+
