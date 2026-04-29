@@ -255,13 +255,31 @@ const Nations = () => {
                   ))}
                 </div>
 
-                {/* Outcome strip */}
-                <div className="relative bg-primary text-primary-foreground p-5 sm:p-6 shadow-[6px_6px_0_0_hsl(var(--foreground))]">
-                  <div className="font-mono text-[10px] uppercase tracking-widest opacity-80 mb-2">
-                    You walk away able to →
-                  </div>
-                  <div className="font-display text-lg sm:text-xl md:text-2xl leading-snug">
-                    {n.outcome}
+                {/* Outcome strip — matches ApplyBento aesthetic */}
+                <div className="relative overflow-hidden border border-border bg-[hsl(0,0%,6%)] p-5 sm:p-6">
+                  <div
+                    className="absolute -top-24 -right-24 w-64 h-64 rounded-full opacity-25 blur-3xl pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(circle, #E38330 0%, #F7D544 40%, transparent 70%)",
+                    }}
+                  />
+                  <div
+                    className="absolute -bottom-24 -left-24 w-56 h-56 rounded-full opacity-20 blur-3xl pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(circle, #39B5D7 0%, transparent 70%)",
+                    }}
+                  />
+                  <div className="absolute inset-0 editorial-grid opacity-[0.07] pointer-events-none" />
+
+                  <div className="relative">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-2">
+                      ◉ You walk away able to →
+                    </div>
+                    <div className="font-display text-lg sm:text-xl md:text-2xl leading-snug text-foreground">
+                      {n.outcome}
+                    </div>
                   </div>
                 </div>
               </div>
