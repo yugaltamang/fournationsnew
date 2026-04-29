@@ -126,12 +126,10 @@ const CXO = () => {
                   } ${isActive ? "scale-105" : "scale-110 grayscale"}`}
                 />
 
-                {/* Dark overlay */}
+                {/* Dark overlay — flat tint only on collapsed panels */}
                 <div
                   className={`absolute inset-0 transition-opacity duration-700 ${
-                    isActive
-                      ? "bg-gradient-to-t from-background via-background/70 to-background/20"
-                      : "bg-background/80"
+                    isActive ? "bg-background/30" : "bg-background/80"
                   }`}
                 />
 
@@ -229,7 +227,7 @@ const CXO = () => {
                   p.fit === "contain" ? "object-contain p-6 bg-[hsl(0,0%,6%)]" : "object-cover"
                 }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
+              <div className="absolute inset-0 bg-background/40" />
 
               <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary px-2 py-1 border border-primary/40">
