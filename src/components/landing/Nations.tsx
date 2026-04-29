@@ -289,8 +289,6 @@ const Nations = () => {
                 </div>
               </div>
             </article>
-
-          </div>
           </div>
         </div>
       </div>
