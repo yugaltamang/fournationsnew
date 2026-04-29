@@ -294,11 +294,49 @@ const Nations = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* CTA: View Curriculum */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                  <button
+                    onClick={() => setCurriculumOpen(true)}
+                    className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 sm:px-8 py-4 font-bold uppercase tracking-wider text-xs sm:text-sm hover:shadow-bold transition-all"
+                  >
+                    View {n.country} Curriculum
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </button>
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground self-center">
+                    In Class · Out Class · Business · Cultural
+                  </span>
+                </div>
               </div>
             </article>
           </div>
         </div>
       </div>
+
+      {/* Curriculum dialog */}
+      <Dialog open={curriculumOpen} onOpenChange={setCurriculumOpen}>
+        <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] overflow-y-auto p-0 border-border bg-background">
+          <div className="sticky top-0 z-10 flex items-center justify-between gap-4 px-6 sm:px-10 py-4 border-b border-border bg-background/95 backdrop-blur">
+            <div className="min-w-0">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
+                Curriculum · {n.term}
+              </div>
+              <DialogTitle className="font-display text-xl sm:text-2xl truncate">
+                {n.country} — Full Curriculum
+              </DialogTitle>
+              <DialogDescription className="sr-only">
+                Detailed curriculum for {n.country}
+              </DialogDescription>
+            </div>
+          </div>
+          <div className="px-2 sm:px-6 pb-8">
+            {curriculumTerms[active] && (
+              <TermRow term={curriculumTerms[active]} index={active} />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
