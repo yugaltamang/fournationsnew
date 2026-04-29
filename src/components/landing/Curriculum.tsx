@@ -14,7 +14,7 @@ interface Term {
   isDubai?: boolean;
 }
 
-const terms: Term[] = [
+export const terms: Term[] = [
   /* ── INDIA ── */
   {
     id: 0, flag: "🇮🇳", label: "Term 1 · India",
@@ -291,7 +291,7 @@ const CulturalPanelView = ({ data }: { data: CulturalPanel }) => (
 );
 
 /* ─── Stacked Term Row ─── */
-const TermRow = ({ term, index }: { term: Term; index: number }) => {
+export const TermRow = ({ term, index }: { term: Term; index: number }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   if (term.isDubai) {
