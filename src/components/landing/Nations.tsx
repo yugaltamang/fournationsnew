@@ -329,12 +329,22 @@ const Nations = () => {
               </div>
             </article>
 
-            {/* Back face: curriculum */}
+            {/* Underneath page: curriculum (revealed as front peels) */}
             <article
-              className="absolute inset-0 border border-border bg-background [backface-visibility:hidden] overflow-y-auto"
-              style={{ transform: "rotateY(180deg)" }}
+              className={`absolute inset-0 border border-border bg-background overflow-y-auto z-10 transition-opacity duration-500 ${
+                flipped ? "opacity-100 delay-300 pointer-events-auto" : "opacity-0 pointer-events-none"
+              }`}
               aria-hidden={!flipped}
             >
+              {/* inner spine shading on the left edge of the back page */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-y-0 left-0 w-8"
+                style={{
+                  background:
+                    "linear-gradient(90deg, hsl(0 0% 0% / 0.35) 0%, transparent 100%)",
+                }}
+              />
               <div className="sticky top-0 z-10 flex items-center justify-between gap-4 px-5 sm:px-8 py-4 border-b border-border bg-background/95 backdrop-blur">
                 <div className="min-w-0">
                   <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
