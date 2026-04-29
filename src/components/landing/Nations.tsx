@@ -366,11 +366,16 @@ const Nations = () => {
 
             {/* Underneath page: curriculum (revealed after the page sweep) */}
             <article
-              className={`col-start-1 row-start-1 border border-border bg-background z-10 transition-[opacity,transform,max-height] duration-[800ms] ease-out ${
+              className={`col-start-1 row-start-1 border border-border bg-background z-10 ${
                 flipped
                   ? "opacity-100 translate-y-0 max-h-[6000px] pointer-events-auto delay-150"
                   : "opacity-0 translate-y-5 max-h-0 overflow-hidden pointer-events-none"
               }`}
+              style={{
+                transitionProperty: "opacity, transform, max-height",
+                transitionDuration: "800ms",
+                transitionTimingFunction: "ease-out",
+              }}
               aria-hidden={!flipped}
             >
               {/* inner spine shading on the left edge of the back page */}
