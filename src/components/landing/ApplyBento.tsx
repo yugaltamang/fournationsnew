@@ -42,11 +42,10 @@ const ApplyBento = () => (
               ◉ The Application
             </div>
             <h3 className="font-display text-[clamp(1.75rem,5vw,3.75rem)] leading-[0.95] text-balance mb-5 sm:mb-6">
-              Build the career your{" "}
+              Stop reading about the world.{" "}
               <em className="italic mu-hero-gradient-text not-italic">
-                next decade
-              </em>{" "}
-              deserves.
+                Go build in it.
+              </em>
             </h3>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
               60 builders. Four nations. One audacious year. Seats fill in the order applications arrive.
