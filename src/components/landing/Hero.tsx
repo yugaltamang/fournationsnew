@@ -5,10 +5,10 @@ const Hero = () => (
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
 
-    {/* Monuments — blended into the right side of the hero */}
+    {/* Monuments — blended into the right side of the hero (desktop only to avoid overlap on tablet) */}
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden md:block w-[58%] lg:w-[50%] xl:w-[46%]"
+      className="pointer-events-none absolute inset-y-0 right-0 hidden lg:block lg:w-[50%] xl:w-[46%]"
       style={{
         maskImage:
           "radial-gradient(ellipse 95% 80% at 60% 50%, black 55%, transparent 95%)",
@@ -143,7 +143,7 @@ const Hero = () => (
           <span className="tag-pill"><span className="w-1.5 h-1.5 bg-primary rounded-full" />Cohort 2026 · Applications Open</span>
         </div>
 
-        <h1 className="font-display text-[clamp(2.25rem,8vw,6rem)] leading-[0.95] font-medium text-balance">
+        <h1 className="font-display text-[clamp(2rem,8vw,6rem)] leading-[0.95] font-medium text-balance break-words">
           One <em className="italic mu-hero-gradient-text not-italic font-normal">degree.</em>
           <br />
           Four <span className="font-mono text-[0.4em] align-top text-muted-foreground">/04</span> cities.

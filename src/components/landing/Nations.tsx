@@ -110,7 +110,7 @@ const Nations = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-10 md:mb-14">
           <div>
             <div className="tag-pill mb-4 sm:mb-6">◉ The Journey</div>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-7xl leading-[0.95] max-w-3xl text-balance">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-balance">
               Four nations.<br />
               <em className="italic mu-hero-gradient-text not-italic">Four markets.</em><br />
               One global operator.
@@ -122,7 +122,7 @@ const Nations = () => {
         </div>
 
         {/* Itinerary rail */}
-        <div className="hidden md:flex items-center gap-3 mb-8 font-mono text-[11px] uppercase tracking-widest">
+        <div className="hidden md:flex flex-wrap items-center gap-x-3 gap-y-2 mb-8 font-mono text-[11px] uppercase tracking-widest">
           {nations.map((it, i) => (
             <div key={it.country} className="flex items-center gap-3">
               <button
@@ -134,7 +134,7 @@ const Nations = () => {
               {i < nations.length - 1 && <span className="text-muted-foreground/50">→</span>}
             </div>
           ))}
-          <span className="ml-auto text-muted-foreground/70">Click any stop to explore</span>
+          <span className="lg:ml-auto text-muted-foreground/70">Click any stop to explore</span>
         </div>
 
         {/* Main feature board */}
@@ -226,7 +226,7 @@ const Nations = () => {
                     <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mb-2">
                       {n.term} · {n.city}
                     </div>
-                    <h3 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
+                    <h3 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight break-words">
                       {n.country}
                     </h3>
                   </div>
