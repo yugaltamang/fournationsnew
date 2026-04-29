@@ -228,10 +228,13 @@ const Nations = () => {
             />
             <article
               key={n.country}
-              className={`col-start-1 row-start-1 relative border border-border bg-background z-30 origin-left transition-[transform,opacity,filter] duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`col-start-1 row-start-1 relative border border-border bg-background z-30 origin-left ${
                 flipped ? "pointer-events-none" : ""
               }`}
               style={{
+                transitionProperty: "transform, opacity, filter",
+                transitionDuration: "1000ms",
+                transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)",
                 transform: flipped
                   ? "translateX(-105%) rotateY(-34deg) rotateZ(-1.5deg) scale(0.96)"
                   : "translateX(0) rotateY(0deg) rotateZ(0deg) scale(1)",
@@ -363,11 +366,16 @@ const Nations = () => {
 
             {/* Underneath page: curriculum (revealed after the page sweep) */}
             <article
-              className={`col-start-1 row-start-1 border border-border bg-background z-10 transition-[opacity,transform,max-height] duration-[800ms] ease-out ${
+              className={`col-start-1 row-start-1 border border-border bg-background z-10 ${
                 flipped
                   ? "opacity-100 translate-y-0 max-h-[6000px] pointer-events-auto delay-150"
                   : "opacity-0 translate-y-5 max-h-0 overflow-hidden pointer-events-none"
               }`}
+              style={{
+                transitionProperty: "opacity, transform, max-height",
+                transitionDuration: "800ms",
+                transitionTimingFunction: "ease-out",
+              }}
               aria-hidden={!flipped}
             >
               {/* inner spine shading on the left edge of the back page */}
