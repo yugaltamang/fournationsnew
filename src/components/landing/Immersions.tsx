@@ -88,9 +88,9 @@ const Immersions = () => (
                 alt={p.name}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,6%)] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,6%)] via-transparent to-transparent opacity-60" />
               {/* Tag chip */}
               <div className="absolute top-4 left-4 sm:top-5 sm:left-5 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-widest">
                 {p.tag}
