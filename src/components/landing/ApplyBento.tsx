@@ -48,7 +48,7 @@ const ApplyBento = () => (
               </em>
             </h3>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
-              60 builders. Four nations. One audacious year.
+              Four nations. One audacious year.
             </p>
           </div>
 
