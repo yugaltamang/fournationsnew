@@ -199,8 +199,8 @@ const Nations = () => {
           </div>
 
           {/* Right: feature panel with magazine page-turn */}
-          <div className="lg:col-span-8 order-1 lg:order-2 [perspective:2600px]">
-            <div className="relative w-full">
+          <div className="lg:col-span-8 order-1 lg:order-2 order-1 lg:order-2" style={{ perspective: "2600px" }}>
+            <div className="relative w-full" style={{ transformStyle: "preserve-3d" }}>
             {/* Spine shadow on the left edge */}
             <div
               aria-hidden
@@ -212,7 +212,7 @@ const Nations = () => {
             />
             <article
               key={n.country}
-              className="relative border border-border bg-background animate-fade-up origin-left transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] [transform-style:preserve-3d] [backface-visibility:hidden] z-20"
+              className="relative border border-border bg-background animate-fade-up origin-left transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] z-20"
               style={{
                 transform: flipped ? "rotateY(-172deg)" : "rotateY(0deg)",
                 boxShadow: flipped
