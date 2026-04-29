@@ -198,11 +198,15 @@ const Nations = () => {
             })}
           </div>
 
-          {/* Right: feature panel */}
-          <div className="lg:col-span-8 order-1 lg:order-2">
+          {/* Right: feature panel with 3D flip */}
+          <div className="lg:col-span-8 order-1 lg:order-2 [perspective:2400px]">
+            <div
+              className="relative w-full transition-transform duration-700 [transform-style:preserve-3d]"
+              style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
+            >
             <article
               key={n.country}
-              className="relative border border-border bg-background animate-fade-up"
+              className="relative border border-border bg-background animate-fade-up [backface-visibility:hidden]"
             >
               {/* Hero image with country mark overlay */}
               <div className="relative overflow-hidden">
