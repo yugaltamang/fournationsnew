@@ -25,11 +25,10 @@ const Apply = () => (
           </a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border max-w-3xl mx-auto">
+        <div className="grid grid-cols-3 gap-px bg-border max-w-3xl mx-auto">
           {[
             { l: "Journey", v: "India → HK → London → Dubai" },
             { l: "Decision", v: "Within 14 days" },
-            { l: "Cohort size", v: "60 builders" },
             { l: "Start", v: "Aug 2026" },
           ].map((s) => (
             <div key={s.l} className="bg-background p-4 sm:p-5">
