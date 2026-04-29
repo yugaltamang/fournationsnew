@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight, Map, BookOpen, Sparkles, Trophy, FileText, Users } from "lucide-react";
+import { Menu, X, ArrowUpRight, Map, Sparkles, Trophy, FileText, ClipboardCheck, Users } from "lucide-react";
 
 const navItems = [
   { label: "Journey", href: "#nations", icon: Map },
-  { label: "Curriculum", href: "#curriculum", icon: BookOpen },
   { label: "Why This", href: "#faculty", icon: Sparkles },
   { label: "Outcomes", href: "#outcomes", icon: Trophy },
+  { label: "Admissions", href: "#admissions", icon: ClipboardCheck },
   { label: "FAQ", href: "#faq", icon: FileText },
   { label: "Apply", href: "#apply", icon: Users },
 ];
