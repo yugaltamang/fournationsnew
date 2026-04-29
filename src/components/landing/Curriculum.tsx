@@ -1,4 +1,8 @@
 import { useState } from "react";
+import indiaImg from "@/assets/nation-india.webp";
+import hkImg from "@/assets/nation-hongkong.webp";
+import londonImg from "@/assets/nation-london.webp";
+import dubaiImg from "@/assets/nation-dubai.webp";
 
 type TabKey = "inClass" | "outClass" | "immersions" | "cultural";
 
@@ -17,7 +21,12 @@ interface Geography {
   city: string;
   term: string;
   partner: string;
+  coords: string;
+  optional?: boolean;
+  image: string;
   intro: string;
+  headlineOutcome: string;
+  outcomeDesc: string;
   modules: Module[];
 }
 
@@ -29,8 +38,13 @@ const geographies: Geography[] = [
     city: "Delhi NCR · Gurugram",
     term: "Term 1 · Nov – Jan",
     partner: "Masters' Union Campus",
+    coords: "28.4°N · 77.0°E",
+    image: indiaImg,
     intro:
-      "Your operating base. Build the muscle of running a venture end-to-end — finance, product, GTM, ops & leadership — with India's top founders and operators in the room.",
+      "Term 1 builds your entrepreneurial foundation — moving you from idea to execution with speed, clarity and discipline. You read P&Ls, ship products, run GTM sprints and pitch to founders of Razorpay, Zomato, Nykaa & Lenskart, walking the floors of ITC, Dixon and NIVEA.",
+    headlineOutcome: "Be Entrepreneurship Ready.",
+    outcomeDesc:
+      "Build, launch and validate a real venture across Finance, Product, Marketing, Operations & Leadership.",
     modules: [
       {
         code: "FIFI",
@@ -246,8 +260,13 @@ const geographies: Geography[] = [
     city: "Central · Greater Bay Area",
     term: "Term 2 · Mar – May",
     partner: "CUHK Business School",
+    coords: "22.3°N · 114.1°E",
+    image: hkImg,
     intro:
-      "Asia's capital gateway. Decode how Asian capital, manufacturing and platforms actually move — from CUHK classrooms to HKEX trading floors and Shenzhen's hardware ecosystem.",
+      "Term 2 turns you outward to Asia's capital gateway. Sessions at CUHK Business School, trading floors at HKEX & HSBC, and a Greater Bay Area sprint into Shenzhen's hardware ecosystem — decoding how Asian capital, manufacturing and platforms actually move.",
+    headlineOutcome: "Read the East.",
+    outcomeDesc:
+      "Navigate Asian capital markets, supply chains and cross-border deals with confidence.",
     modules: [
       {
         code: "FIFI",
@@ -422,8 +441,13 @@ const geographies: Geography[] = [
     city: "London · Imperial College",
     term: "Term 3 · Jun – Jul",
     partner: "Imperial College London",
+    coords: "51.5°N · 0.12°W",
+    image: londonImg,
     intro:
-      "Command global capital. Imperial College London — innovation, deep tech and entrepreneurship at one of the world's top business schools. Decode PE/VC, M&A, luxury and creator playbooks shaping the West.",
+      "Term 3 takes you to Imperial College London — innovation, deep tech and entrepreneurship at one of the world's top business schools. Decode PE/VC, M&A, luxury brand strategy and the creator-economy playbooks shaping the West.",
+    headlineOutcome: "Command Global Capital.",
+    outcomeDesc:
+      "Pitch, raise and scale a venture at global capital standards across PE, VC and luxury markets.",
     modules: [
       {
         code: "FIFI",
@@ -598,8 +622,14 @@ const geographies: Geography[] = [
     city: "DIFC · UAE",
     term: "Optional · 1 Week",
     partner: "Optional Immersion",
+    coords: "25.2°N · 55.3°E",
+    optional: true,
+    image: dubaiImg,
     intro:
-      "Optional finale in the world's fastest-growing business hub. Inside DIFC, family offices, sovereign wealth and the founders building MENA's next wave — the bridge between Asian capital and Western markets.",
+      "An optional week-long finale in the world's fastest-growing business hub. Inside DIFC, family offices, sovereign wealth and the founders building MENA's next wave — the bridge between Asian capital and Western markets.",
+    headlineOutcome: "Operate at the Crossroads.",
+    outcomeDesc:
+      "Position yourself for MENA opportunities, family offices and global mobility.",
     modules: [
       {
         code: "FIFI",
@@ -737,195 +767,292 @@ const tabMeta: { key: TabKey; label: string; sub: string }[] = [
 
 const Curriculum = () => {
   const [geoIdx, setGeoIdx] = useState(0);
+  const [tab, setTab] = useState<TabKey>("inClass");
   const [open, setOpen] = useState(0);
-  const [activeTab, setActiveTab] = useState<Record<string, TabKey>>({});
 
   const geo = geographies[geoIdx];
 
   const handleGeoChange = (i: number) => {
     setGeoIdx(i);
+    setTab("inClass");
     setOpen(0);
   };
 
   return (
-    <section id="curriculum" className="py-16 sm:py-20 md:py-32 bg-secondary/20 border-y border-border">
-      <div className="container">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12">
-          <div className="lg:col-span-4 lg:sticky lg:top-24 self-start">
-            <div className="tag-pill mb-4 sm:mb-6">◉ The Curriculum</div>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95] mb-6 text-balance">
-              5 muscles.<br />
-              <em className="italic text-primary not-italic">Built</em> across <em className="italic">4 markets.</em>
+    <section
+      id="curriculum"
+      className="py-16 sm:py-20 md:py-32 bg-secondary/20 border-y border-border relative overflow-hidden"
+    >
+      {/* anchor for legacy "See the Journey" CTA */}
+      <span id="nations" className="absolute -top-24" aria-hidden />
+
+      {/* Ambient grid backdrop */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+      />
+
+      <div className="container relative">
+        {/* Section header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-10 md:mb-14">
+          <div>
+            <div className="tag-pill mb-4 sm:mb-6">◉ The Journey · The Curriculum</div>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-balance">
+              Four nations.<br />
+              <em className="italic mu-hero-gradient-text not-italic">Four classrooms.</em><br />
+              One global operator.
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Every module is taught where it matters most. Toggle a country to see exactly what you'll study, build and experience on the ground — in class and out.
-            </p>
-            <div className="grid grid-cols-2 gap-4 border-t border-border pt-6">
-              <div>
-                <div className="font-display text-4xl text-primary">5</div>
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mt-1">Concentrations</div>
+          </div>
+          <p className="md:max-w-sm text-sm sm:text-base text-muted-foreground">
+            Every term has its own home. In each country you experience all four layers of learning — <strong className="text-foreground">In Class</strong>, <strong className="text-foreground">Out Class</strong>, <strong className="text-foreground">Business Immersions</strong> and <strong className="text-foreground">Cultural Immersion</strong>.
+          </p>
+        </div>
+
+        {/* Country tabs */}
+        <div
+          role="tablist"
+          aria-label="Curriculum by country"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-6"
+        >
+          {geographies.map((g, i) => {
+            const isActive = i === geoIdx;
+            return (
+              <button
+                key={g.key}
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => handleGeoChange(i)}
+                className={`group relative border text-left p-3 sm:p-4 transition-all ${
+                  isActive
+                    ? "border-primary bg-primary text-primary-foreground shadow-[4px_4px_0_0_hsl(var(--foreground))]"
+                    : "border-border bg-background/40 hover:border-foreground/40 hover:bg-background/70"
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-xl leading-none">{g.flag}</span>
+                  <span className="font-display text-base sm:text-lg leading-tight truncate">
+                    {g.country}
+                  </span>
+                  {g.optional && (
+                    <span
+                      className={`ml-auto font-mono text-[9px] uppercase tracking-widest px-1.5 py-0.5 border ${
+                        isActive
+                          ? "border-primary-foreground/40"
+                          : "border-border text-muted-foreground"
+                      }`}
+                    >
+                      Opt
+                    </span>
+                  )}
+                </div>
+                <div
+                  className={`font-mono text-[9px] uppercase tracking-widest mt-1.5 leading-tight ${
+                    isActive ? "opacity-80" : "text-muted-foreground"
+                  }`}
+                >
+                  {g.term}
+                </div>
+                <div
+                  className={`font-mono text-[9px] uppercase tracking-widest mt-0.5 leading-tight truncate ${
+                    isActive ? "opacity-70" : "text-muted-foreground/70"
+                  }`}
+                >
+                  {g.partner}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Animated geography panel */}
+        <div key={geo.key} className="animate-fade-up">
+          {/* Term hero — image + text */}
+          <div className="grid lg:grid-cols-12 gap-4 lg:gap-6 mb-6">
+            {/* Image */}
+            <div className="lg:col-span-5 relative overflow-hidden border border-border bg-background min-h-[220px]">
+              <img
+                src={geo.image}
+                alt={`${geo.country} — ${geo.partner}`}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 w-full h-full object-cover grayscale-[0.3]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+              <div className="absolute top-0 inset-x-0 flex items-center justify-between gap-3 p-4">
+                <div className="bg-background/80 backdrop-blur px-2.5 py-1 font-mono text-[9px] uppercase tracking-widest border border-border">
+                  {String(geoIdx + 1).padStart(2, "0")} / 04 · {geo.coords}
+                </div>
+                {geo.optional && (
+                  <div className="bg-primary text-primary-foreground px-2.5 py-1 font-mono text-[9px] uppercase tracking-widest">
+                    Optional
+                  </div>
+                )}
               </div>
-              <div>
-                <div className="font-display text-4xl text-primary">4</div>
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mt-1">Nations</div>
+              <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                  {geo.city}
+                </div>
+                <div className="font-display text-3xl sm:text-4xl leading-none">{geo.country}</div>
+              </div>
+            </div>
+
+            {/* Outcome banner + intro */}
+            <div className="lg:col-span-7 flex flex-col gap-4">
+              <div
+                className="relative p-px"
+                style={{
+                  background:
+                    "linear-gradient(91deg, #39B5D7 -6.14%, #F7D544 47.02%, #E38330 99.71%)",
+                }}
+              >
+                <div className="relative overflow-hidden bg-[hsl(0,0%,5%)] p-5 sm:p-6">
+                  <div
+                    className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-30 blur-3xl pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(circle, #E38330 0%, #F7D544 40%, transparent 70%)",
+                    }}
+                  />
+                  <div className="relative">
+                    <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] mb-2 text-muted-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                      <span className="mu-hero-gradient-text font-bold">Learning Outcome</span>
+                    </div>
+                    <div className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-foreground mb-2">
+                      {geo.headlineOutcome}
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {geo.outcomeDesc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border border-border bg-background p-5 sm:p-6">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">
+                  {geo.term} · {geo.partner}
+                </div>
+                <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">
+                  {geo.intro}
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-8">
-            {/* Country toggle */}
-            <div
-              role="tablist"
-              aria-label="Curriculum by country"
-              className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6"
-            >
-              {geographies.map((g, i) => {
-                const isActive = i === geoIdx;
-                return (
-                  <button
-                    key={g.key}
-                    role="tab"
-                    aria-selected={isActive}
-                    onClick={() => handleGeoChange(i)}
-                    className={`group relative border text-left p-3 sm:p-4 transition-all ${
-                      isActive
-                        ? "border-primary bg-primary text-primary-foreground shadow-[4px_4px_0_0_hsl(var(--foreground))]"
-                        : "border-border bg-background/40 hover:border-foreground/40 hover:bg-background/70"
+          {/* Sub-tabs: In Class / Out Class / Business Immersions / Cultural */}
+          <div
+            role="tablist"
+            aria-label="Learning layers"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-4"
+          >
+            {tabMeta.map((t) => {
+              const active = tab === t.key;
+              return (
+                <button
+                  key={t.key}
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setTab(t.key)}
+                  className={`text-left p-3 border transition-colors ${
+                    active
+                      ? "border-foreground bg-foreground text-background"
+                      : "border-border bg-background/40 hover:border-foreground/40 text-foreground"
+                  }`}
+                >
+                  <div className="font-display text-sm sm:text-base leading-tight">{t.label}</div>
+                  <div
+                    className={`font-mono text-[9px] uppercase tracking-widest mt-1 leading-tight ${
+                      active ? "opacity-80" : "text-muted-foreground"
                     }`}
                   >
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl leading-none">{g.flag}</span>
-                      <span className="font-display text-base sm:text-lg leading-tight">{g.country}</span>
+                    {t.sub}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Modules list — each card shows the active sub-tab content */}
+          <div className="space-y-3">
+            {geo.modules.map((c, i) => {
+              const isOpen = open === i;
+              const tabContent = c.tabs[tab];
+              return (
+                <div
+                  key={`${geo.key}-${c.code}`}
+                  className={`border ${
+                    isOpen ? "border-primary bg-background" : "border-border bg-background/40"
+                  } transition-colors`}
+                >
+                  <button
+                    onClick={() => setOpen(isOpen ? -1 : i)}
+                    className="w-full flex items-center justify-between gap-4 sm:gap-6 p-4 sm:p-6 text-left"
+                  >
+                    <div className="flex items-center gap-4 sm:gap-6 min-w-0">
+                      <span className="font-mono text-xs text-primary shrink-0 hidden sm:inline">
+                        /{String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div className="min-w-0">
+                        <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                          {c.code} · {geo.country}
+                        </div>
+                        <h3 className="font-display text-xl sm:text-2xl md:text-3xl mt-0.5">
+                          {c.title}
+                        </h3>
+                      </div>
                     </div>
-                    <div
-                      className={`font-mono text-[9px] uppercase tracking-widest mt-1.5 leading-tight ${
-                        isActive ? "opacity-80" : "text-muted-foreground"
+                    <span
+                      className={`font-display text-2xl sm:text-3xl shrink-0 transition-transform ${
+                        isOpen ? "rotate-45 text-primary" : ""
                       }`}
                     >
-                      {g.term}
-                    </div>
+                      +
+                    </span>
                   </button>
-                );
-              })}
-            </div>
+                  {isOpen && (
+                    <div className="px-4 sm:px-6 pb-6 sm:pb-8 pt-2 animate-fade-up">
+                      <p className="font-display italic text-lg sm:text-xl text-primary mb-5">
+                        "{c.q}"
+                      </p>
 
-            {/* Geography intro */}
-            <div
-              key={geo.key}
-              className="border border-border bg-background p-5 sm:p-6 mb-6 animate-fade-up"
-            >
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">
-                <span>{geo.term}</span>
-                <span className="text-muted-foreground/40">·</span>
-                <span>{geo.city}</span>
-                <span className="text-muted-foreground/40">·</span>
-                <span className="text-primary">{geo.partner}</span>
-              </div>
-              <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">
-                {geo.intro}
-              </p>
-              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-4">
-                {geo.modules.length} concentrations · taught in {geo.country}
-              </div>
-            </div>
+                      <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">
+                        {tabContent.heading}
+                      </div>
+                      <ul className="space-y-2 mb-6">
+                        {tabContent.items.map((m) => (
+                          <li key={m} className="flex gap-3 text-foreground/80">
+                            <span className="text-primary font-mono text-xs mt-1.5">▸</span>
+                            <span>{m}</span>
+                          </li>
+                        ))}
+                      </ul>
 
-            {/* Modules accordion */}
-            <div className="space-y-3">
-              {geo.modules.map((c, i) => {
-                const isOpen = open === i;
-                const tabKey = `${geo.key}-${i}`;
-                const tab = activeTab[tabKey] ?? "inClass";
-                const tabContent = c.tabs[tab];
-                return (
-                  <div
-                    key={tabKey}
-                    className={`border ${isOpen ? "border-primary bg-background" : "border-border bg-background/40"} transition-colors`}
-                  >
-                    <button
-                      onClick={() => setOpen(isOpen ? -1 : i)}
-                      className="w-full flex items-center justify-between gap-4 sm:gap-6 p-4 sm:p-6 text-left"
-                    >
-                      <div className="flex items-center gap-4 sm:gap-6 min-w-0">
-                        <span className="font-mono text-xs text-primary shrink-0 hidden sm:inline">
-                          /{String(i + 1).padStart(2, "0")}
-                        </span>
-                        <div className="min-w-0">
-                          <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                            {c.code} · {geo.country}
+                      <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-border">
+                        <div>
+                          <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                            Taught In
                           </div>
-                          <h3 className="font-display text-xl sm:text-2xl md:text-3xl mt-0.5">{c.title}</h3>
+                          <div className="text-sm">
+                            {geo.flag} {geo.country} · {geo.partner}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                            Outcome
+                          </div>
+                          <div className="font-display text-base text-primary">{c.outcome}</div>
                         </div>
                       </div>
-                      <span
-                        className={`font-display text-2xl sm:text-3xl shrink-0 transition-transform ${
-                          isOpen ? "rotate-45 text-primary" : ""
-                        }`}
-                      >
-                        +
-                      </span>
-                    </button>
-                    {isOpen && (
-                      <div className="px-4 sm:px-6 pb-6 sm:pb-8 pt-2 animate-fade-up">
-                        <p className="font-display italic text-lg sm:text-xl text-primary mb-6">"{c.q}"</p>
-
-                        {/* Tabs */}
-                        <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-1 border-b border-border mb-6">
-                          {tabMeta.map((t) => {
-                            const active = tab === t.key;
-                            return (
-                              <button
-                                key={t.key}
-                                onClick={() =>
-                                  setActiveTab((prev) => ({ ...prev, [tabKey]: t.key }))
-                                }
-                                className={`relative px-2.5 sm:px-4 py-2.5 text-left transition-colors ${
-                                  active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                                }`}
-                              >
-                                <div className="font-display text-[13px] sm:text-base leading-tight">{t.label}</div>
-                                <div className="font-mono text-[9px] uppercase tracking-widest mt-0.5 opacity-70 leading-tight">
-                                  {t.sub}
-                                </div>
-                                {active && <span className="absolute left-0 right-0 -bottom-px h-0.5 bg-primary" />}
-                              </button>
-                            );
-                          })}
-                        </div>
-
-                        <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">
-                          {tabContent.heading}
-                        </div>
-                        <ul className="space-y-2 mb-6">
-                          {tabContent.items.map((m) => (
-                            <li key={m} className="flex gap-3 text-foreground/80">
-                              <span className="text-primary font-mono text-xs mt-1.5">▸</span>
-                              <span>{m}</span>
-                            </li>
-                          ))}
-                        </ul>
-
-                        <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-border">
-                          <div>
-                            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                              Taught In
-                            </div>
-                            <div className="text-sm">
-                              {geo.flag} {geo.country} · {geo.partner}
-                            </div>
-                          </div>
-                          <div>
-                            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                              Outcome
-                            </div>
-                            <div className="font-display text-base text-primary">{c.outcome}</div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
