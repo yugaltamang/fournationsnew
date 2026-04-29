@@ -386,9 +386,55 @@ const Nations = () => {
                   Back
                 </button>
               </div>
-              <div className="px-2 sm:px-4 py-4">
-                {curriculumTerms[active] && (
-                  <TermRow term={curriculumTerms[active]} index={active} />
+              <div className="px-5 sm:px-8 py-6 sm:py-8 space-y-6">
+                {term && (
+                  <>
+                    <div className="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-6 border-b border-border pb-6">
+                      <div className="text-5xl leading-none">{term.bannerFlag}</div>
+                      <div>
+                        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+                          {term.outcomeLabel}
+                        </div>
+                        <h4 className="font-display text-2xl sm:text-4xl leading-tight mb-2">
+                          {term.outcome}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {term.outcomeSub}
+                        </p>
+                      </div>
+                    </div>
+
+                    {curriculumSections.length > 0 ? (
+                      <div className="grid md:grid-cols-2 gap-4">
+                        {curriculumSections.map((section) => (
+                          <div key={section.label} className="border border-border bg-secondary/20">
+                            <div className="border-b border-border px-4 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
+                              {section.label}
+                            </div>
+                            <div className="divide-y divide-border">
+                              {section.items.map((item) => (
+                                <div key={`${section.label}-${item.num}`} className="p-4">
+                                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                                    {item.code || item.num}
+                                  </div>
+                                  <div className="font-display text-base sm:text-lg leading-snug">
+                                    {item.title}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="border border-border bg-secondary/20 p-5">
+                        <div className="tag-pill mb-4">Optional · 1 Week Immersion</div>
+                        <p className="text-muted-foreground leading-relaxed">
+                          Experience a city built on speed and capital through DIFC, JAFZA, family offices and global operators.
+                        </p>
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             </article>
