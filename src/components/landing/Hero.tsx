@@ -9,7 +9,7 @@ const Hero = () => (
     {/* Monument collage — blended into the right side of the hero */}
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden md:block md:w-[50%] lg:w-[45%] xl:w-[42%]"
+      className="pointer-events-none absolute inset-y-0 right-0 hidden md:block md:w-[60%] lg:w-[58%] xl:w-[55%]"
     >
       <div className="relative w-full h-full">
         {/* Warm glow behind */}
@@ -31,7 +31,7 @@ const Hero = () => (
         <img
           src={heroCollage}
           alt=""
-          className="absolute inset-y-8 right-0 h-[85%] w-full object-contain object-right mix-blend-screen"
+          className="absolute inset-y-8 right-12 lg:right-20 xl:right-28 h-[85%] w-full object-contain object-right mix-blend-screen"
           style={{
             maskImage:
               "linear-gradient(to right, transparent 0%, black 30%, black 100%)",
