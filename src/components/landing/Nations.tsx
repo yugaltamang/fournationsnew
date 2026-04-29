@@ -86,6 +86,12 @@ const Nations = () => {
   const [flipped, setFlipped] = useState(false);
   const n = nations[active];
   const term = curriculumTerms[active];
+  const curriculumSections = term
+    ? [
+        { label: term.academic.label || "In Class", items: term.academic.items },
+        { label: term.outclass.label || "Out Class", items: term.outclass.items },
+      ].filter((section) => section.items.length > 0)
+    : [];
 
   const handleSetActive = (i: number) => {
     setFlipped(false);
