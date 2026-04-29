@@ -31,7 +31,7 @@ const Nav = () => {
     <header className={`lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-transparent border-b border-transparent"}`}>
       <div className="container flex items-center justify-center h-16 md:h-20">
         <a href="#" className="flex items-center">
-          <img src={muLogo} alt="Masters' Union" className="h-12 md:h-14 w-auto invert" />
+          <img src={muLogo} alt="Masters' Union" className="h-9 md:h-10 w-auto invert" />
         </a>
       </div>
     </header>
