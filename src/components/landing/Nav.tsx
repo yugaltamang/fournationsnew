@@ -118,6 +118,7 @@ const Nav = () => {
         </div>
       )}
     </header>
+    </>
   );
 };
 
