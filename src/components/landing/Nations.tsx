@@ -289,30 +289,6 @@ const Nations = () => {
                 </div>
               </div>
             </article>
-
-            {/* Bottom timeline */}
-            <div className="mt-6 hidden lg:block">
-              <div className="relative h-12 border border-border bg-background/40">
-                <div className="absolute inset-y-0 left-0 grid grid-cols-4 w-full">
-                  {nations.map((it, i) => (
-                    <button
-                      key={it.country}
-                      onClick={() => setActive(i)}
-                      className={`relative border-r last:border-r-0 border-border flex items-center justify-between px-4 transition-colors ${
-                        i === active ? "bg-foreground text-background" : "hover:bg-secondary"
-                      }`}
-                    >
-                      <span className="font-mono text-[10px] uppercase tracking-widest">
-                        {it.term.split("·")[0].trim()}
-                      </span>
-                      <span className="font-mono text-[10px] uppercase tracking-widest opacity-70">
-                        {it.country}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
