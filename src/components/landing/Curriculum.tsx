@@ -290,20 +290,116 @@ const CulturalPanelView = ({ data }: { data: CulturalPanel }) => (
   </div>
 );
 
-/* ─── Main component ─── */
-const Curriculum = () => {
-  const [activeTerm, setActiveTerm] = useState(0);
-  const [activeSubTab, setActiveSubTab] = useState(0);
+/* ─── Stacked Term Row ─── */
+const TermRow = ({ term, index }: { term: Term; index: number }) => {
+  const [activeTab, setActiveTab] = useState(0);
 
-  const term = terms[activeTerm];
+  if (term.isDubai) {
+    return (
+      <div className="relative border-t border-border py-12 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-8 lg:gap-16">
+          {/* Left: term identity */}
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
+              Term 0{index + 1} · Optional
+            </div>
+            <div className="text-6xl mb-4">{term.bannerFlag}</div>
+            <h3 className="font-display text-4xl sm:text-5xl leading-[0.95] text-balance mb-4">
+              {term.label.replace(/^Term \d+ · /, "")}
+            </h3>
+            <div className="h-px w-12 bg-primary mb-4" />
+            <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">
+              {term.outcomeLabel}
+            </div>
+            <div className="font-display text-xl text-foreground leading-tight mb-2">
+              {term.outcome}
+            </div>
+            <div className="text-sm text-muted-foreground leading-relaxed">{term.outcomeSub}</div>
+          </div>
 
-  const subTabs = term.isDubai ? [] : [
-    term.academic.label,
-    term.outclass.label,
-    "Business Immersions",
-    "Cultural Immersion",
+          {/* Right: dubai content */}
+          <div className="min-w-0">
+            <div className="border border-border bg-[hsl(0,0%,6%)]">
+              <div className="h-0.5 w-full bg-primary" />
+              <div className="p-8 md:p-10">
+                <div className="tag-pill mb-5"><span className="w-1.5 h-1.5 bg-primary rounded-full" />Optional · 1 Week Immersion</div>
+                <h4 className="font-display text-2xl sm:text-3xl leading-[1.05] text-balance mb-6">
+                  The optional week <em className="italic not-italic text-primary">most people regret skipping.</em>
+                </h4>
+                <ul className="text-muted-foreground leading-relaxed flex flex-col gap-3">
+                  <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span><strong className="text-foreground">Meet the operators</strong> building at global scale — in person, not on a panel</span></li>
+                  <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span>See how <strong className="text-foreground">capital, real estate, and venture</strong> actually work in one ecosystem</span></li>
+                  <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span>A city built in <strong className="text-foreground">50 years</strong> the world is still catching up to</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const tabs = [
+    { label: term.academic.label, render: () => <AcademicPanel panel={term.academic} /> },
+    { label: term.outclass.label, render: () => <AcademicPanel panel={term.outclass} /> },
+    { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} /> },
+    { label: "Cultural Immersion", render: () => term.cultural && <CulturalPanelView data={term.cultural} /> },
   ];
 
+  return (
+    <div className="relative border-t border-border py-12 md:py-20">
+      <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-8 lg:gap-16">
+        {/* Left: term identity (sticky on desktop) */}
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
+            Term 0{index + 1}
+          </div>
+          <div className="text-6xl mb-4">{term.bannerFlag}</div>
+          <h3 className="font-display text-4xl sm:text-5xl leading-[0.95] text-balance mb-5">
+            {term.label.replace(/^Term \d+ · /, "")}
+          </h3>
+          <div className="h-px w-12 bg-primary mb-5" />
+          <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">
+            {term.outcomeLabel}
+          </div>
+          <div className="font-display text-xl text-foreground leading-tight mb-2">
+            {term.outcome}
+          </div>
+          <div className="text-sm text-muted-foreground leading-relaxed">{term.outcomeSub}</div>
+        </div>
+
+        {/* Right: 4 tabs as content grid */}
+        <div className="min-w-0">
+          {/* Compact tab strip */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-border border border-border mb-8">
+            {tabs.map((t, i) => {
+              const active = activeTab === i;
+              return (
+                <button
+                  key={i}
+                  onClick={() => setActiveTab(i)}
+                  className={`px-3 py-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-widest transition-all text-left ${
+                    active
+                      ? "bg-foreground text-background"
+                      : "bg-background text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <span className="block opacity-60 mb-0.5">0{i + 1}</span>
+                  {t.label}
+                </button>
+              );
+            })}
+          </div>
+
+          {tabs[activeTab].render()}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ─── Main component ─── */
+const Curriculum = () => {
   return (
     <section id="curriculum" className="py-16 sm:py-20 md:py-32 bg-secondary/20 border-y border-border">
       <div className="container">
@@ -315,114 +411,13 @@ const Curriculum = () => {
             <em className="italic text-primary not-italic">generation of global leaders.</em>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-5 max-w-2xl">
-            Four nations. Four distinct learning systems — In Class, Out Class, Business Immersion, Cultural Immersion. Pick a country, then explore how each layer is taught on the ground.
+            Four nations. Four distinct learning systems — In Class, Out Class, Business Immersion, Cultural Immersion. Scroll through each term below.
           </p>
         </div>
 
-        {/* Two-column layout: left term rail + right content */}
-        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8 lg:gap-12">
-          {/* LEFT: vertical term rail */}
-          <aside className="lg:sticky lg:top-24 lg:self-start">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-4 flex items-center gap-3">
-              <span className="w-6 h-px bg-primary" />
-              <span>Select Term</span>
-            </div>
-            <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible -mx-4 px-4 lg:mx-0 lg:px-0">
-              {terms.map((t, i) => {
-                const active = activeTerm === i;
-                return (
-                  <button
-                    key={t.id}
-                    onClick={() => { setActiveTerm(i); setActiveSubTab(0); }}
-                    className={`shrink-0 lg:w-full text-left flex items-center gap-3 px-4 py-3.5 border transition-all ${
-                      active
-                        ? "bg-foreground text-background border-foreground"
-                        : "bg-background/40 text-foreground border-border hover:border-foreground/40"
-                    }`}
-                  >
-                    <span className="text-lg shrink-0">{t.flag}</span>
-                    <div className="min-w-0">
-                      <div className={`font-mono text-[9px] uppercase tracking-widest mb-0.5 ${active ? "text-background/60" : "text-muted-foreground"}`}>
-                        Term 0{i + 1}{t.isDubai && " · Optional"}
-                      </div>
-                      <div className="font-display text-base leading-tight truncate">
-                        {t.label.replace(/^Term \d+ · /, "")}
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </aside>
-
-          {/* RIGHT: content */}
-          <div className="min-w-0">
-            {/* Outcome banner — flat editorial */}
-            <div className="mb-6 border border-border bg-background">
-              <div className="h-0.5 w-full bg-primary" />
-              <div className="p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-                <div className="text-5xl shrink-0">{term.bannerFlag}</div>
-                <div className="hidden sm:block w-px self-stretch bg-border" />
-                <div className="min-w-0">
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-1.5">{term.outcomeLabel}</div>
-                  <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
-                    {term.outcome}
-                  </div>
-                  <div className="text-sm text-muted-foreground mt-2 leading-relaxed max-w-2xl">{term.outcomeSub}</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Dubai special block */}
-            {term.isDubai && (
-              <div className="border border-border bg-background">
-                <div className="p-8 md:p-12 flex flex-col sm:flex-row items-start gap-6">
-                  <div className="text-6xl shrink-0">🇦🇪</div>
-                  <div>
-                    <div className="tag-pill mb-4"><span className="w-1.5 h-1.5 bg-primary rounded-full" />Optional · 1 Week</div>
-                    <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1.05] text-balance">
-                      Dubai — <em className="italic not-italic text-primary">1 Week Immersion.</em>
-                    </h3>
-                    <ul className="text-muted-foreground leading-relaxed max-w-2xl flex flex-col gap-2.5 mt-5">
-                      <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span><strong className="text-foreground">Meet the operators</strong> building at global scale — in person, not on a panel</span></li>
-                      <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span>See how <strong className="text-foreground">capital, real estate, and venture</strong> actually work in one ecosystem</span></li>
-                      <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span>A city built in <strong className="text-foreground">50 years</strong> the world is still catching up to</span></li>
-                      <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span>The optional week <strong className="text-foreground">most people regret skipping</strong></span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Sub-tabs */}
-            {!term.isDubai && (
-              <>
-                <div className="flex flex-wrap gap-px bg-border border border-border mb-8">
-                  {subTabs.map((label, i) => {
-                    const active = activeSubTab === i;
-                    return (
-                      <button
-                        key={i}
-                        onClick={() => setActiveSubTab(i)}
-                        className={`flex-1 min-w-[140px] px-4 py-3 font-mono text-[11px] uppercase tracking-widest transition-all ${
-                          active
-                            ? "bg-foreground text-background"
-                            : "bg-background text-muted-foreground hover:text-foreground"
-                        }`}
-                      >
-                        {label}
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {activeSubTab === 0 && <AcademicPanel panel={term.academic} />}
-                {activeSubTab === 1 && <AcademicPanel panel={term.outclass} />}
-                {activeSubTab === 2 && term.immersions && <ImmersionPanelView data={term.immersions} />}
-                {activeSubTab === 3 && term.cultural && <CulturalPanelView data={term.cultural} />}
-              </>
-            )}
-          </div>
+        {/* Stacked term sections */}
+        <div>
+          {terms.map((t, i) => <TermRow key={t.id} term={t} index={i} />)}
         </div>
       </div>
     </section>
