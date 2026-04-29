@@ -2,35 +2,30 @@ import globeImg from "@/assets/four-nations-globe.png";
 import cxoImg from "@/assets/cxo-masterclass.webp";
 import immersionImg from "@/assets/immersion-factory.webp";
 
-const pillars = [
-  {
-    tag: "Global Exposure",
-    image: globeImg,
-    title: "Four countries.",
-    titleEm: "One cohort.",
-    body: "Live and build across India, Hong Kong, London and Dubai — four of the world's most dynamic business ecosystems.",
-    points: [
-      "9 months across 4 countries spanning Asia, Europe & MENA",
-      "On-ground company visits, factory floors & real boardrooms",
-      "Imperial College London and CUHK Hong Kong certificates",
-    ],
-    pull: "Four passports stamped. One cohort forged.",
-    stat: { value: "4", label: "Nations" },
-    fit: "contain" as const,
-  },
+const hero = {
+  tag: "Global Exposure",
+  image: globeImg,
+  title: "Four countries.",
+  titleEm: "One cohort.",
+  body: "Live and build across India, Hong Kong, London and Dubai — four of the world's most dynamic business ecosystems. Nine months of momentum across Asia, Europe and MENA, with on-ground company visits, factory floors and real boardrooms.",
+  pull: "Four passports stamped. One cohort forged.",
+  points: [
+    "9 months across 4 countries",
+    "On-ground visits & boardrooms",
+    "Imperial & CUHK certificates",
+  ],
+  stat: { value: "4", label: "Nations" },
+  fit: "contain" as const,
+};
+
+const sidebars = [
   {
     tag: "CXO Sessions",
     image: cxoImg,
     title: "Leaders,",
     titleEm: "not lecturers.",
-    body: "The faculty isn't academic — it's the people actively running businesses. MDs, founders and senior executives lead live conversations.",
-    points: [
-      "Practising leaders from fintech, consumer, manufacturing & tech",
-      "Live conversations — unfiltered and experience-first",
-      "Lifelong access to the Masters' Union alumni network",
-    ],
-    pull: "Sixty rooms. Sixty unfiltered conversations.",
-    stat: { value: "60+", label: "CXO Sessions" },
+    body: "Faculty drawn from the people actually running businesses — MDs, founders and senior executives leading unfiltered, experience-first conversations.",
+    stat: { value: "60+", label: "Sessions" },
     fit: "cover" as const,
   },
   {
@@ -38,14 +33,8 @@ const pillars = [
     image: immersionImg,
     title: "Ventures,",
     titleEm: "not slide decks.",
-    body: "Every term ends with a real, working business output. You leave every country with something tangible.",
-    points: [
-      "Launch a live D2C brand — Delhi, India (Term 1)",
-      "Build a cross-border GBA venture — CUHK, Hong Kong (Term 2)",
-      "Creator Challenge — Imperial College London (Term 3)",
-    ],
-    pull: "Three terms. Three shipped ventures.",
-    stat: { value: "3", label: "Live Ventures" },
+    body: "Every term ends with a real, working business output — a D2C brand in Delhi, a GBA venture in Hong Kong, a Creator Challenge at Imperial.",
+    stat: { value: "3", label: "Ventures" },
     fit: "cover" as const,
   },
 ];
@@ -82,7 +71,7 @@ const CXO = () => {
             <span className="hidden sm:inline">·</span>
             <span className="hidden sm:inline">Vol. 04</span>
             <span>·</span>
-            <span>Issue 03</span>
+            <span>Feature</span>
           </div>
           <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-muted-foreground">
             03 Pillars
@@ -109,79 +98,129 @@ const CXO = () => {
           </div>
         </div>
 
-        {/* Magazine 3-column feature */}
-        <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
-          {pillars.map((p, i) => (
-            <article
-              key={i}
-              className="group relative bg-background flex flex-col"
-            >
-              {/* Image plate */}
-              <div className="relative aspect-[4/3] bg-[hsl(0,0%,6%)] overflow-hidden border-b border-border">
+        {/* Asymmetric magazine spread */}
+        <div className="grid md:grid-cols-12 gap-px bg-border border border-border">
+          {/* HERO pillar — left */}
+          <article className="md:col-span-7 bg-background relative group">
+            <div className="grid md:grid-rows-[auto_1fr] h-full">
+              {/* Hero image */}
+              <div className="relative aspect-[16/10] bg-[hsl(0,0%,6%)] overflow-hidden border-b border-border">
                 <img
-                  src={p.image}
-                  alt={p.tag}
+                  src={hero.image}
+                  alt={hero.tag}
                   loading="lazy"
                   decoding="async"
                   className={`w-full h-full transition-transform duration-700 group-hover:scale-105 ${
-                    p.fit === "contain" ? "object-contain p-4" : "object-cover"
+                    hero.fit === "contain" ? "object-contain p-6" : "object-cover"
                   }`}
                 />
-                {/* Folio numeral */}
-                <div className="absolute top-3 left-3 font-display text-4xl mu-hero-gradient-text leading-none">
-                  /0{i + 1}
+                {/* Folio */}
+                <div className="absolute top-4 left-4 font-display text-5xl sm:text-6xl mu-hero-gradient-text leading-none">
+                  /01
                 </div>
-                {/* Tag chip */}
-                <div className="absolute bottom-3 left-3 bg-foreground text-background px-2.5 py-1 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest">
-                  {p.tag}
+                {/* Tag */}
+                <div className="absolute bottom-4 left-4 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest">
+                  {hero.tag}
                 </div>
-                {/* Stat corner */}
-                <div className="absolute top-3 right-3 text-right">
-                  <div className="font-display text-2xl sm:text-3xl text-background mix-blend-difference leading-none">
-                    {p.stat.value}
+                {/* Stat */}
+                <div className="absolute top-4 right-4 text-right">
+                  <div className="font-display text-4xl sm:text-5xl text-background mix-blend-difference leading-none">
+                    {hero.stat.value}
                   </div>
-                  <div className="font-mono text-[8px] sm:text-[9px] uppercase tracking-widest text-background/80 mix-blend-difference mt-1">
-                    {p.stat.label}
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-background/80 mix-blend-difference mt-1">
+                    {hero.stat.label}
                   </div>
                 </div>
               </div>
 
-              {/* Editorial body */}
-              <div className="p-5 sm:p-6 flex-1 flex flex-col">
-                <h3 className="font-display text-2xl sm:text-3xl leading-[0.95] text-balance mb-3">
-                  {p.title}{" "}
+              {/* Hero body — broadsheet 2-col */}
+              <div className="p-5 sm:p-7 md:p-8 flex flex-col">
+                <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[0.95] text-balance mb-5">
+                  {hero.title}{" "}
                   <em className="italic mu-hero-gradient-text not-italic">
-                    {p.titleEm}
+                    {hero.titleEm}
                   </em>
                 </h3>
 
-                {/* Body with drop cap */}
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4 [&::first-letter]:font-display [&::first-letter]:text-4xl [&::first-letter]:float-left [&::first-letter]:leading-[0.9] [&::first-letter]:mr-2 [&::first-letter]:mt-1 [&::first-letter]:text-foreground">
-                  {p.body}
-                </p>
-
-                {/* Pull quote */}
-                <blockquote className="border-l-2 border-primary pl-3 my-3 font-display italic text-base sm:text-lg leading-snug text-foreground/90">
-                  "{p.pull}"
-                </blockquote>
-
-                {/* Bullet ledger */}
-                <ul className="mt-auto pt-4 border-t border-border space-y-1.5">
-                  {p.points.map((pt, j) => (
-                    <li
-                      key={j}
-                      className="flex items-baseline gap-2 text-[12px] sm:text-[13px] text-foreground/80 leading-snug"
-                    >
-                      <span className="font-mono text-[9px] text-primary shrink-0">
-                        §{i + 1}.{j + 1}
-                      </span>
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="grid sm:grid-cols-2 gap-x-6 gap-y-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed [&::first-letter]:font-display [&::first-letter]:text-5xl [&::first-letter]:float-left [&::first-letter]:leading-[0.85] [&::first-letter]:mr-2 [&::first-letter]:mt-1 [&::first-letter]:text-foreground">
+                    {hero.body}
+                  </p>
+                  <div className="flex flex-col justify-between gap-4">
+                    <blockquote className="border-l-2 border-primary pl-3 font-display italic text-lg sm:text-xl leading-snug text-foreground/90">
+                      "{hero.pull}"
+                    </blockquote>
+                    <ul className="pt-3 border-t border-border space-y-1.5">
+                      {hero.points.map((pt, j) => (
+                        <li
+                          key={j}
+                          className="flex items-baseline gap-2 text-[12px] sm:text-[13px] text-foreground/80 leading-snug"
+                        >
+                          <span className="font-mono text-[9px] text-primary shrink-0">
+                            §1.{j + 1}
+                          </span>
+                          <span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </article>
-          ))}
+            </div>
+          </article>
+
+          {/* SIDEBAR pillars — right, stacked */}
+          <div className="md:col-span-5 grid grid-rows-2 gap-px bg-border">
+            {sidebars.map((p, i) => (
+              <article
+                key={i}
+                className="bg-background relative group grid grid-cols-5 min-h-[260px]"
+              >
+                {/* Inline image */}
+                <div className="col-span-2 relative bg-[hsl(0,0%,6%)] overflow-hidden border-r border-border">
+                  <img
+                    src={p.image}
+                    alt={p.tag}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-2 left-2 font-display text-3xl mu-hero-gradient-text leading-none">
+                    /0{i + 2}
+                  </div>
+                  <div className="absolute bottom-2 left-2 bg-foreground text-background px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest">
+                    {p.tag}
+                  </div>
+                </div>
+
+                {/* Body */}
+                <div className="col-span-3 p-4 sm:p-5 flex flex-col">
+                  <h3 className="font-display text-xl sm:text-2xl leading-[0.95] text-balance mb-2">
+                    {p.title}{" "}
+                    <em className="italic mu-hero-gradient-text not-italic">
+                      {p.titleEm}
+                    </em>
+                  </h3>
+                  <p className="text-[12px] sm:text-[13px] text-muted-foreground leading-relaxed flex-1">
+                    {p.body}
+                  </p>
+                  <div className="flex items-baseline justify-between gap-3 pt-3 mt-3 border-t border-border">
+                    <div className="flex items-baseline gap-2">
+                      <span className="font-display text-2xl mu-hero-gradient-text leading-none">
+                        {p.stat.value}
+                      </span>
+                      <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
+                        {p.stat.label}
+                      </span>
+                    </div>
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
+                      /0{i + 2}
+                    </span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
 
         {/* Footer ribbon */}
