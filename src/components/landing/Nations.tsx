@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import india from "@/assets/nation-india.jpg";
 import hk from "@/assets/nation-hongkong.jpg";
 import london from "@/assets/nation-london.jpg";
@@ -269,14 +269,6 @@ const Nations = () => {
           </div>
         </div>
       </div>
-
-      {/* keyframes for the active progress bar */}
-      <style>{`
-        @keyframes journeyProgress {
-          from { transform: scaleX(0); }
-          to { transform: scaleX(1); }
-        }
-      `}</style>
     </section>
   );
 };
