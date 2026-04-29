@@ -471,7 +471,7 @@ const Nations = () => {
                                 <img
                                   src={term.academic.hero.img}
                                   alt={term.academic.hero.title}
-                                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                  loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
                                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
@@ -509,7 +509,7 @@ const Nations = () => {
                                 <img
                                   src={term.outclass.hero.img}
                                   alt={term.outclass.hero.title}
-                                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                  loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
                                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
@@ -562,7 +562,7 @@ const Nations = () => {
                                       <img
                                         src={card.img}
                                         alt={card.title}
-                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                       />
                                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                                       <div className="absolute top-3 left-3">
@@ -610,14 +610,14 @@ const Nations = () => {
                                   <img
                                     src={term.cultural.imgs[0]}
                                     alt=""
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                   />
                                 </div>
                                 <div className="relative overflow-hidden group">
                                   <img
                                     src={term.cultural.imgs[1]}
                                     alt=""
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                   />
                                 </div>
                               </div>
