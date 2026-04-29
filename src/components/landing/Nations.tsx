@@ -431,7 +431,7 @@ const Nations = () => {
               <div className="pb-12">
                 {term && (
                   <div>
-                    <div className="px-6 sm:px-12 lg:px-16 pt-8">
+                    <div className="px-4 sm:px-12 lg:px-16 pt-6 sm:pt-8">
 
                       {/* Tabs */}
                       {tabs.length > 0 && (
