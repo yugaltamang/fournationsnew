@@ -49,7 +49,7 @@ const ApplyBento = () => (
               deserves.
             </h3>
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl leading-relaxed">
-              60 builders. Four nations. One audacious year. Seats fill in the order applications arrive — and Cohort 04 is already moving fast.
+              60 builders. Four nations. One audacious year. Seats fill in the order applications arrive.
             </p>
           </div>
 
@@ -69,15 +69,15 @@ const ApplyBento = () => (
             <div className="grid grid-cols-2 gap-px bg-border">
               <div className="bg-[hsl(0,0%,6%)] p-4">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1.5">
-                  Closes In
+                  Apply By
                 </div>
-                <div className="font-display text-2xl">42d</div>
+                <div className="font-display text-2xl">June 30</div>
               </div>
               <div className="bg-[hsl(0,0%,6%)] p-4">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1.5">
-                  Decision
+                  Hear Back
                 </div>
-                <div className="font-display text-2xl">14d</div>
+                <div className="font-display text-2xl">2 Weeks</div>
               </div>
             </div>
           </div>
