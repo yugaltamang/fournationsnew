@@ -302,7 +302,7 @@ const Nations = () => {
 
 
                 {/* Country mark */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 md:p-10 flex items-end justify-between gap-4">
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8 md:p-10 flex items-end justify-between gap-3 sm:gap-4">
                   <div className="min-w-0">
                     <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mb-2">
                       {n.term} · {n.city}
