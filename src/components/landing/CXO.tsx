@@ -1,6 +1,6 @@
-import cxoImg from "@/assets/cxo-masterclass.jpg";
-import nationHk from "@/assets/nation-hongkong.jpg";
-import immersionImg from "@/assets/immersion-factory.jpg";
+import cxoImg from "@/assets/cxo-masterclass.webp";
+import nationHk from "@/assets/nation-hongkong.webp";
+import immersionImg from "@/assets/immersion-factory.webp";
 
 const pillars = [
   {

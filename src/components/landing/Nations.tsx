@@ -1,8 +1,8 @@
 import { useState } from "react";
-import india from "@/assets/nation-india.jpg";
-import hk from "@/assets/nation-hongkong.jpg";
-import london from "@/assets/nation-london.jpg";
-import dubai from "@/assets/nation-dubai.jpg";
+import india from "@/assets/nation-india.webp";
+import hk from "@/assets/nation-hongkong.webp";
+import london from "@/assets/nation-london.webp";
+import dubai from "@/assets/nation-dubai.webp";
 
 type Nation = {
   n: string;

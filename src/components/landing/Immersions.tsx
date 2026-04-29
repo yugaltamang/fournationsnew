@@ -1,4 +1,4 @@
-import factory from "@/assets/immersion-factory.jpg";
+import factory from "@/assets/immersion-factory.webp";
 
 const stats = [
   { n: "4", l: "Cultural Immersions" },
