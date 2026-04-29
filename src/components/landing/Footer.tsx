@@ -1,10 +1,11 @@
+import muLogo from "@/assets/mu-logo.svg";
+
 const Footer = () => (
   <footer className="border-t border-border py-10 sm:py-12">
     <div className="container flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-center md:text-left">
       <div className="w-full md:w-auto">
-        <div className="flex items-center justify-center md:justify-start gap-2 font-display text-lg sm:text-xl font-semibold tracking-tight mb-2">
-          <span className="inline-block w-2 h-2 bg-primary" />
-          Masters'Union
+        <div className="flex items-center justify-center md:justify-start mb-2">
+          <img src={muLogo} alt="Masters' Union" className="h-8 sm:h-10 w-auto" />
         </div>
         <p className="text-xs sm:text-sm text-muted-foreground">© 2026 Masters' Union. Learn by doing.</p>
       </div>
