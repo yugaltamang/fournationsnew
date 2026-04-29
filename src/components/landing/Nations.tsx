@@ -416,186 +416,270 @@ const Nations = () => {
                   Back
                 </button>
               </div>
-              <div className="px-6 sm:px-12 lg:px-16 py-8 sm:py-12">
+              <div className="pb-12">
                 {term && (
-                  <div className="max-w-4xl mx-auto">
-                    {/* Header — minimal academic */}
-                    <header className="mb-10 sm:mb-14 pb-8 border-b border-border">
-                      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">
-                        {term.outcomeLabel}
+                  <div>
+                    {/* Hero banner with nation image */}
+                    <div className="relative h-56 sm:h-72 overflow-hidden">
+                      <img
+                        src={n.img}
+                        alt={n.country}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
+                      <div className="absolute inset-x-0 bottom-0 px-6 sm:px-12 lg:px-16 pb-6">
+                        <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-2">
+                          {term.outcomeLabel}
+                        </div>
+                        <h4 className="font-display text-3xl sm:text-5xl leading-[1.05] tracking-tight text-foreground max-w-3xl">
+                          {term.outcome}
+                        </h4>
                       </div>
-                      <h4 className="font-display text-3xl sm:text-5xl leading-[1.1] tracking-tight mb-4 text-foreground">
-                        {term.outcome}
-                      </h4>
-                      <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                    </div>
+
+                    <div className="px-6 sm:px-12 lg:px-16 pt-8">
+                      <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-10">
                         {term.outcomeSub}
                       </p>
-                    </header>
 
-                    {/* Tabs */}
-                    {tabs.length > 0 && (
-                      <div className="mb-10 border-b border-border">
-                        <div className="flex flex-wrap -mb-px">
-                          {tabs.map((tab) => {
-                            const isActive = activeTab === tab.id || (!tabs.find((t) => t.id === activeTab) && tab.id === tabs[0].id);
-                            return (
-                              <button
-                                key={tab.id}
-                                onClick={() => setActiveTab(tab.id)}
-                                className={`relative px-4 sm:px-5 py-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.25em] transition-colors ${
-                                  isActive
-                                    ? "text-foreground"
-                                    : "text-muted-foreground hover:text-foreground"
-                                }`}
-                              >
-                                {tab.label}
-                                {isActive && (
-                                  <span className="absolute left-0 right-0 -bottom-px h-px bg-foreground" />
-                                )}
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Tab Panels */}
-                    <div className="min-h-[300px]">
-                      {/* In Class */}
-                      {(activeTab === "in-class" || (!tabs.find((t) => t.id === activeTab) && tabs[0]?.id === "in-class")) && term.academic.items.length > 0 && (
-                        <div className="space-y-1">
-                          {term.academic.items.map((item, idx) => (
-                            <div
-                              key={`ac-${idx}`}
-                              className="grid grid-cols-[60px_1fr] sm:grid-cols-[100px_1fr] gap-4 sm:gap-8 py-5 border-b border-border/60 last:border-b-0"
-                            >
-                              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground pt-1">
-                                {item.code || item.num}
-                              </div>
-                              <div className="font-display text-lg sm:text-xl leading-snug tracking-tight">
-                                {item.title}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      {/* Out Class */}
-                      {activeTab === "out-class" && term.outclass.items.length > 0 && (
-                        <div className="space-y-1">
-                          {term.outclass.items.map((item, idx) => (
-                            <div
-                              key={`oc-${idx}`}
-                              className="grid grid-cols-[60px_1fr] sm:grid-cols-[100px_1fr] gap-4 sm:gap-8 py-5 border-b border-border/60 last:border-b-0"
-                            >
-                              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground pt-1">
-                                {item.code || item.num}
-                              </div>
-                              <div className="font-display text-lg sm:text-xl leading-snug tracking-tight">
-                                {item.title}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      {/* Business Immersions */}
-                      {activeTab === "business" && term.immersions && (
-                        <div>
-                          <div className="mb-8 pb-6 border-b border-border/60">
-                            <h5 className="font-display text-2xl sm:text-3xl leading-tight tracking-tight mb-3">
-                              {term.immersions.header.title}
-                            </h5>
-                            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
-                              {term.immersions.header.body}
-                            </p>
-                          </div>
-                          {term.immersions.cards.length > 0 && (
-                            <div className="space-y-1">
-                              {term.immersions.cards.map((card) => (
-                                <div
-                                  key={card.title}
-                                  className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-2 sm:gap-8 py-5 border-b border-border/60 last:border-b-0"
+                      {/* Tabs */}
+                      {tabs.length > 0 && (
+                        <div className="mb-10 border-b border-border">
+                          <div className="flex flex-wrap -mb-px">
+                            {tabs.map((tab) => {
+                              const isActive = activeTab === tab.id || (!tabs.find((t) => t.id === activeTab) && tab.id === tabs[0].id);
+                              return (
+                                <button
+                                  key={tab.id}
+                                  onClick={() => setActiveTab(tab.id)}
+                                  className={`relative px-4 sm:px-5 py-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.25em] transition-colors ${
+                                    isActive
+                                      ? "text-foreground"
+                                      : "text-muted-foreground hover:text-foreground"
+                                  }`}
                                 >
-                                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground pt-1">
-                                    {card.cat}
+                                  {tab.label}
+                                  {isActive && (
+                                    <span className="absolute left-0 right-0 -bottom-px h-0.5 bg-primary" />
+                                  )}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Tab Panels */}
+                      <div className="min-h-[300px] animate-fade-in" key={activeTab}>
+                        {/* In Class */}
+                        {(activeTab === "in-class" || (!tabs.find((t) => t.id === activeTab) && tabs[0]?.id === "in-class")) && term.academic.items.length > 0 && (
+                          <div>
+                            {term.academic.hero && (
+                              <div className="relative aspect-[21/9] overflow-hidden mb-8 group">
+                                <img
+                                  src={term.academic.hero.img}
+                                  alt={term.academic.hero.title}
+                                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
+                                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                                  <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-2">
+                                    {term.academic.hero.chip}
                                   </div>
-                                  <div>
-                                    <div className="font-display text-lg sm:text-xl leading-snug tracking-tight mb-1">
-                                      {card.title}
+                                  <h5 className="font-display text-xl sm:text-2xl leading-tight text-foreground max-w-2xl"
+                                    dangerouslySetInnerHTML={{ __html: term.academic.hero.title }} />
+                                </div>
+                              </div>
+                            )}
+                            <div className="grid sm:grid-cols-2 gap-3">
+                              {term.academic.items.map((item, idx) => (
+                                <div
+                                  key={`ac-${idx}`}
+                                  className="group relative border border-border bg-secondary/20 p-5 hover:border-primary hover:bg-secondary/40 transition-all"
+                                >
+                                  <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-2">
+                                    {item.code || item.num}
+                                  </div>
+                                  <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
+                                    {item.title}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Out Class */}
+                        {activeTab === "out-class" && term.outclass.items.length > 0 && (
+                          <div>
+                            {term.outclass.hero && (
+                              <div className="relative aspect-[21/9] overflow-hidden mb-8 group">
+                                <img
+                                  src={term.outclass.hero.img}
+                                  alt={term.outclass.hero.title}
+                                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
+                                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                                  <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-2">
+                                    {term.outclass.hero.chip}
+                                  </div>
+                                  <h5 className="font-display text-xl sm:text-2xl leading-tight text-foreground max-w-2xl">
+                                    {term.outclass.hero.title}
+                                  </h5>
+                                </div>
+                              </div>
+                            )}
+                            <div className="grid sm:grid-cols-2 gap-3">
+                              {term.outclass.items.map((item, idx) => (
+                                <div
+                                  key={`oc-${idx}`}
+                                  className="group relative border border-border bg-secondary/20 p-5 hover:border-primary hover:bg-secondary/40 transition-all"
+                                >
+                                  <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-2">
+                                    {item.code || item.num}
+                                  </div>
+                                  <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
+                                    {item.title}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Business Immersions — image cards */}
+                        {activeTab === "business" && term.immersions && (
+                          <div>
+                            <div className="mb-8 max-w-2xl">
+                              <h5 className="font-display text-2xl sm:text-3xl leading-tight tracking-tight mb-3">
+                                {term.immersions.header.title}
+                              </h5>
+                              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                                {term.immersions.header.body}
+                              </p>
+                            </div>
+                            {term.immersions.cards.length > 0 && (
+                              <div className="grid sm:grid-cols-2 gap-4">
+                                {term.immersions.cards.map((card) => (
+                                  <div
+                                    key={card.title}
+                                    className="group relative overflow-hidden border border-border bg-background hover:border-primary transition-all"
+                                  >
+                                    <div className="relative aspect-[16/10] overflow-hidden">
+                                      <img
+                                        src={card.img}
+                                        alt={card.title}
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                      />
+                                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                                      <div className="absolute top-3 left-3">
+                                        <span className="inline-block bg-background/90 backdrop-blur px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-primary border border-border">
+                                          {card.cat}
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div className="p-5">
+                                      <div className="font-display text-lg leading-snug tracking-tight mb-2">
+                                        {card.title}
+                                      </div>
+                                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                                        {card.desc}
+                                      </p>
+                                      {card.logos && (
+                                        <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/80 pt-3 border-t border-border/60">
+                                          {card.logos}
+                                        </div>
+                                      )}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {term.immersions.header.note && (
+                              <div className="mt-8 p-5 border-l-2 border-primary bg-secondary/20">
+                                <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-2">
+                                  {term.immersions.header.note.title}
+                                </div>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                  {term.immersions.header.note.desc}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Cultural — magazine-style image collage */}
+                        {activeTab === "cultural" && term.cultural && (
+                          <div>
+                            {term.cultural.imgs && term.cultural.imgs.length >= 2 && (
+                              <div className="grid grid-cols-3 gap-3 mb-8 h-64 sm:h-80">
+                                <div className="col-span-2 relative overflow-hidden group">
+                                  <img
+                                    src={term.cultural.imgs[0]}
+                                    alt=""
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                  />
+                                </div>
+                                <div className="relative overflow-hidden group">
+                                  <img
+                                    src={term.cultural.imgs[1]}
+                                    alt=""
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                  />
+                                </div>
+                              </div>
+                            )}
+                            <div className="mb-8 max-w-2xl">
+                              <h5 className="font-display text-2xl sm:text-3xl leading-tight tracking-tight mb-3">
+                                {term.cultural.title}
+                              </h5>
+                              <p
+                                className="text-sm sm:text-base text-muted-foreground leading-relaxed"
+                                dangerouslySetInnerHTML={{ __html: term.cultural.body }}
+                              />
+                            </div>
+                            {term.cultural.cards.length > 0 && (
+                              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                {term.cultural.cards.map((card) => (
+                                  <div
+                                    key={card.name}
+                                    className="border border-border bg-secondary/20 p-5 hover:border-primary hover:bg-secondary/40 transition-all"
+                                  >
+                                    <div className="font-display text-base sm:text-lg leading-snug tracking-tight mb-2">
+                                      {card.name}
                                     </div>
                                     <p className="text-sm text-muted-foreground leading-relaxed">
                                       {card.desc}
                                     </p>
                                   </div>
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                          {term.immersions.header.note && (
-                            <div className="mt-8 pt-6 border-t border-border/60">
-                              <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">
-                                {term.immersions.header.note.title}
+                                ))}
                               </div>
-                              <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                                {term.immersions.header.note.desc}
+                            )}
+                            {term.cultural.note && (
+                              <p className="mt-8 pt-6 border-t border-border/60 text-sm italic text-muted-foreground leading-relaxed">
+                                {term.cultural.note}
                               </p>
-                            </div>
-                          )}
-                        </div>
-                      )}
-
-                      {/* Cultural */}
-                      {activeTab === "cultural" && term.cultural && (
-                        <div>
-                          <div className="mb-8 pb-6 border-b border-border/60">
-                            <h5 className="font-display text-2xl sm:text-3xl leading-tight tracking-tight mb-3">
-                              {term.cultural.title}
-                            </h5>
-                            <p
-                              className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl"
-                              dangerouslySetInnerHTML={{ __html: term.cultural.body }}
-                            />
+                            )}
                           </div>
-                          {term.cultural.cards.length > 0 && (
-                            <div className="space-y-1">
-                              {term.cultural.cards.map((card) => (
-                                <div
-                                  key={card.name}
-                                  className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-2 sm:gap-8 py-5 border-b border-border/60 last:border-b-0"
-                                >
-                                  <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
-                                    {card.name}
-                                  </div>
-                                  <p className="text-sm text-muted-foreground leading-relaxed">
-                                    {card.desc}
-                                  </p>
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                          {term.cultural.note && (
-                            <p className="mt-8 pt-6 border-t border-border/60 text-sm italic text-muted-foreground leading-relaxed">
-                              {term.cultural.note}
-                            </p>
-                          )}
+                        )}
+                      </div>
+
+                      {curriculumSections.length === 0 && !term.immersions && !term.cultural && (
+                        <div className="border border-border bg-secondary/20 p-8">
+                          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
+                            Optional · 1 Week Immersion
+                          </div>
+                          <p className="text-muted-foreground leading-relaxed">
+                            Experience a city built on speed and capital through DIFC, JAFZA, family offices and global operators.
+                          </p>
                         </div>
                       )}
                     </div>
-
-                    {curriculumSections.length === 0 && !term.immersions && !term.cultural && (
-                      <div className="border border-border bg-secondary/20 p-8">
-                        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-4">
-                          Optional · 1 Week Immersion
-                        </div>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Experience a city built on speed and capital through DIFC, JAFZA, family offices and global operators.
-                        </p>
-                      </div>
-                    )}
                   </div>
                 )}
               </div>
+
             </article>
             </div>
           </div>
