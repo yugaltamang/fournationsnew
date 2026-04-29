@@ -20,17 +20,11 @@ const Nav = () => {
 
   return (
     <>
-      {/* Mobile / tablet header — logo + Apply only */}
+      {/* Mobile / tablet header — logo only (Apply lives in bottom bar) */}
       <header className={`lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-background/40 backdrop-blur-sm border-b border-transparent"}`}>
-        <div className="container flex items-center justify-between h-14 sm:h-16">
+        <div className="container flex items-center justify-center h-14 sm:h-16">
           <a href="#" className="flex items-center gap-2 min-w-0">
             <img src={muLogo} alt="Masters' Union" className="h-7 sm:h-8 w-auto invert shrink-0" />
-          </a>
-          <a
-            href="#apply"
-            className="inline-flex items-center gap-1.5 px-3 py-2 font-bold uppercase tracking-wider text-[11px] bg-primary text-primary-foreground"
-          >
-            Apply <span aria-hidden>→</span>
           </a>
         </div>
       </header>
