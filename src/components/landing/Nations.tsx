@@ -373,17 +373,17 @@ const Nations = () => {
                   </div>
                 </div>
 
-                {/* CTA: simple text link to flip */}
+                {/* CTA: yellow pill matching top */}
                 <div className="pt-2 flex justify-end">
                   <button
                     onClick={openCurriculum}
-                    className="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-foreground hover:text-primary transition-colors"
+                    className="group inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest border border-primary transition-colors"
                   >
-                    <span className="w-8 h-px bg-foreground group-hover:bg-primary group-hover:w-12 transition-all" />
-                    View {n.country} Curriculum
-                    <span className="font-display text-lg group-hover:translate-x-1 transition-transform">→</span>
+                    View Curriculum
+                    <span className="font-display text-sm group-hover:translate-x-0.5 transition-transform">→</span>
                   </button>
                 </div>
+
 
               </div>
             </article>
