@@ -1,12 +1,12 @@
+import cxoImg from "@/assets/cxo-masterclass.webp";
 import nationHk from "@/assets/nation-hongkong.webp";
 import immersionImg from "@/assets/immersion-factory.webp";
 import { ArrowUpRight } from "lucide-react";
-import FourCitiesMap from "./FourCitiesMap";
 
 const pillars = [
   {
     tag: "Global Exposure",
-    image: null as string | null,
+    image: cxoImg,
     title: "Four countries.",
     titleEm: "One cohort.",
     body: "Live and build across India, Hong Kong, London and Dubai — four of the world's most dynamic business ecosystems.",
@@ -97,23 +97,17 @@ const CXO = () => (
               />
 
               <div className={`grid md:grid-cols-12 ${reversed ? "md:[&>*:first-child]:order-2" : ""}`}>
-                {/* Image / visual side */}
-                <div className="relative md:col-span-5 overflow-hidden bg-[hsl(0,0%,5%)] flex items-center justify-center min-h-[260px] sm:min-h-[340px] md:min-h-[460px]">
-                  {p.image ? (
-                    <img
-                      src={p.image}
-                      alt={p.tag}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                    />
-                  ) : (
-                    <div className="w-full h-full p-6 sm:p-8 flex items-center justify-center">
-                      <FourCitiesMap />
-                    </div>
-                  )}
+                {/* Image side */}
+                <div className="relative md:col-span-5 overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.tag}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full min-h-[260px] sm:min-h-[340px] md:min-h-[460px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  />
                   {/* Number badge */}
-                  <div className="absolute top-4 left-4 sm:top-5 sm:left-5 font-display text-5xl sm:text-6xl md:text-7xl text-foreground leading-none mix-blend-difference pointer-events-none">
+                  <div className="absolute top-4 left-4 sm:top-5 sm:left-5 font-display text-5xl sm:text-6xl md:text-7xl text-foreground leading-none mix-blend-difference">
                     /0{i + 1}
                   </div>
                   {/* Tag chip */}
