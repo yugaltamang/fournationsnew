@@ -426,7 +426,7 @@ const Nations = () => {
                 </div>
                 <button
                   onClick={() => setFlipped(false)}
-                  className="group inline-flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-muted-foreground hover:text-foreground transition-colors shrink-0"
+                  className="group inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-3 sm:px-4 py-2 sm:py-2.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] border border-primary shadow-[3px_3px_0_0_hsl(var(--foreground))] hover:shadow-[2px_2px_0_0_hsl(var(--foreground))] hover:translate-x-[1px] hover:translate-y-[1px] transition-all shrink-0 min-h-[40px]"
                 >
                   <span className="font-display text-lg group-hover:-translate-x-1 transition-transform">←</span>
                   Back
