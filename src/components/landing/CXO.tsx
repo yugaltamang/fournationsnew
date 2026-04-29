@@ -152,6 +152,22 @@ const CXO = () => {
                 </div>
 
                 {/* Expanded content */}
+                {/* Bottom fade for text legibility */}
+                <div
+                  aria-hidden
+                  className={`pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-background via-background/85 to-transparent transition-opacity duration-700 ${
+                    isActive ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+                {/* Top fade for tag + stat legibility */}
+                <div
+                  aria-hidden
+                  className={`pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/85 to-transparent transition-opacity duration-700 ${
+                    isActive ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+
+                {/* Expanded content */}
                 <div
                   className={`absolute inset-0 flex flex-col justify-end p-8 lg:p-12 transition-all duration-700 ${
                     isActive
@@ -159,17 +175,6 @@ const CXO = () => {
                       : "opacity-0 translate-y-6 pointer-events-none"
                   }`}
                 >
-                  {/* Bottom fade for text legibility */}
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-background via-background/85 to-transparent"
-                  />
-                  {/* Top fade for tag + stat legibility */}
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/85 to-transparent"
-                  />
-                  <div className="relative">
                   {/* Top meta */}
                   <div className="absolute top-6 left-8 lg:left-12 flex items-center gap-3">
                     <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary px-2 py-1 border border-primary/40">
