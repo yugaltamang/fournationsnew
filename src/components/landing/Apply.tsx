@@ -12,7 +12,7 @@ const Apply = () => (
         </h2>
         <div className="mu-hero-divider w-24 mx-auto mb-8 sm:mb-10" />
         <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 sm:mb-12">
-          Applications close in <strong className="text-primary font-mono">42 days</strong>. Cohorts are capped at 60 builders to protect the immersion experience.
+          Applications close in <strong className="text-primary font-mono">42 days</strong>. A focused cohort to protect the immersion experience.
         </p>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
