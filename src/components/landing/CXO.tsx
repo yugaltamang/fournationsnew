@@ -1,31 +1,37 @@
+import { useState } from "react";
 import globeImg from "@/assets/four-nations-globe.png";
 import cxoImg from "@/assets/cxo-masterclass.webp";
 import immersionImg from "@/assets/immersion-factory.webp";
 
-const hero = {
-  tag: "Global Exposure",
-  image: globeImg,
-  title: "Four countries.",
-  titleEm: "One cohort.",
-  body: "Live and build across India, Hong Kong, London and Dubai — four of the world's most dynamic business ecosystems. Nine months of momentum across Asia, Europe and MENA, with on-ground company visits, factory floors and real boardrooms.",
-  pull: "Four passports stamped. One cohort forged.",
-  points: [
-    "9 months across 4 countries",
-    "On-ground visits & boardrooms",
-    "Imperial & CUHK certificates",
-  ],
-  stat: { value: "4", label: "Nations" },
-  fit: "contain" as const,
-};
-
-const sidebars = [
+const pillars = [
+  {
+    tag: "Global Exposure",
+    image: globeImg,
+    title: "Four countries.",
+    titleEm: "One cohort.",
+    body: "Live and build across India, Hong Kong, London and Dubai — four of the world's most dynamic business ecosystems.",
+    points: [
+      "9 months across 4 countries spanning Asia, Europe & MENA",
+      "On-ground company visits, factory floors & real boardrooms",
+      "Imperial College London and CUHK Hong Kong certificates",
+    ],
+    stat: { value: "4", label: "Nations" },
+    meta: ["IND", "HKG", "GBR", "UAE"],
+    fit: "contain" as const,
+  },
   {
     tag: "CXO Sessions",
     image: cxoImg,
     title: "Leaders,",
     titleEm: "not lecturers.",
-    body: "Faculty drawn from the people actually running businesses — MDs, founders and senior executives leading unfiltered, experience-first conversations.",
+    body: "Faculty drawn from the people actually running businesses. MDs, founders and senior executives lead live, unfiltered conversations.",
+    points: [
+      "Practising leaders from fintech, consumer, manufacturing & tech",
+      "Live conversations — unfiltered and experience-first",
+      "Lifelong access to the Masters' Union alumni network",
+    ],
     stat: { value: "60+", label: "Sessions" },
+    meta: ["MD", "CEO", "FOUNDER", "OPERATOR"],
     fit: "cover" as const,
   },
   {
@@ -33,200 +39,164 @@ const sidebars = [
     image: immersionImg,
     title: "Ventures,",
     titleEm: "not slide decks.",
-    body: "Every term ends with a real, working business output — a D2C brand in Delhi, a GBA venture in Hong Kong, a Creator Challenge at Imperial.",
+    body: "Every term ends with a real, working business output. You leave every country with something tangible.",
+    points: [
+      "Launch a live D2C brand — Delhi, India (Term 1)",
+      "Build a cross-border GBA venture — CUHK, Hong Kong (Term 2)",
+      "Creator Challenge — Imperial College London (Term 3)",
+    ],
     stat: { value: "3", label: "Ventures" },
+    meta: ["D2C", "GBA", "CREATOR"],
     fit: "cover" as const,
   },
 ];
 
 const CXO = () => {
+  const [hover, setHover] = useState<number | null>(null);
+
   return (
     <section
       id="faculty"
-      className="relative bg-secondary/20 border-y border-border overflow-hidden"
+      className="relative bg-background border-y-2 border-foreground overflow-hidden"
     >
-      {/* Ambient backdrop */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
-          backgroundSize: "96px 96px",
-        }}
-      />
-      <div
-        className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full opacity-[0.07] blur-3xl pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, #F7D544 0%, #E38330 40%, transparent 70%)",
-        }}
-      />
+      {/* Full-bleed image overlay on hover */}
+      {pillars.map((p, i) => (
+        <div
+          key={i}
+          aria-hidden
+          className={`pointer-events-none absolute inset-0 transition-opacity duration-500 ${
+            hover === i ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <img
+            src={p.image}
+            alt=""
+            className={`w-full h-full ${
+              p.fit === "contain" ? "object-contain p-20" : "object-cover"
+            }`}
+          />
+          <div className="absolute inset-0 bg-background/85" />
+        </div>
+      ))}
 
       <div className="container relative py-14 sm:py-16 md:py-20">
-        {/* Masthead */}
-        <div className="flex items-end justify-between gap-6 pb-3 mb-6 border-b-2 border-foreground">
-          <div className="flex items-baseline gap-3 sm:gap-5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            <span className="text-foreground font-semibold">The Programme</span>
-            <span className="hidden sm:inline">·</span>
-            <span className="hidden sm:inline">Vol. 04</span>
-            <span>·</span>
-            <span>Feature</span>
+        {/* Brutalist masthead */}
+        <div className="flex items-end justify-between gap-6 pb-3 mb-10 md:mb-14 border-b-2 border-foreground">
+          <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em]">
+            <span className="text-foreground font-bold">§ Why This Programme</span>
           </div>
-          <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            03 Pillars
+          <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-foreground">
+            03 / Pillars
           </div>
         </div>
 
-        {/* Editorial headline row */}
-        <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-8 md:mb-10 pb-6 border-b border-border">
-          <div className="md:col-span-8">
-            <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-3">
-              Why This Programme
-            </div>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] text-balance">
-              Hands-on learning for{" "}
+        {/* Headline — oversized swiss */}
+        <div className="grid md:grid-cols-12 gap-6 md:gap-10 mb-12 md:mb-16">
+          <div className="md:col-span-9">
+            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[8rem] leading-[0.85] tracking-tight uppercase text-balance">
+              Hands-on
+              <br />
+              learning for{" "}
               <em className="italic mu-hero-gradient-text not-italic">
-                real business impact.
+                real
+                <br />
+                business impact.
               </em>
             </h2>
           </div>
-          <div className="md:col-span-4">
-            <p className="text-muted-foreground text-sm leading-relaxed border-l-2 border-primary pl-4">
-              Direct execution over passive learning. Every term, every country, every session is engineered to build real skills — not slide decks.
-            </p>
+          <div className="md:col-span-3 md:pt-6">
+            <div className="border-t-2 border-foreground pt-3">
+              <p className="font-mono text-xs uppercase tracking-wider leading-relaxed text-foreground">
+                Direct execution.
+                <br />
+                No slide decks.
+                <br />
+                Real outcomes.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Asymmetric magazine spread */}
-        <div className="grid md:grid-cols-12 gap-px bg-border border border-border">
-          {/* HERO pillar — left */}
-          <article className="md:col-span-7 bg-background relative group">
-            <div className="grid md:grid-rows-[auto_1fr] h-full">
-              {/* Hero image */}
-              <div className="relative aspect-[16/10] bg-[hsl(0,0%,6%)] overflow-hidden border-b border-border">
-                <img
-                  src={hero.image}
-                  alt={hero.tag}
-                  loading="lazy"
-                  decoding="async"
-                  className={`w-full h-full transition-transform duration-700 group-hover:scale-105 ${
-                    hero.fit === "contain" ? "object-contain p-6" : "object-cover"
-                  }`}
-                />
-                {/* Folio */}
-                <div className="absolute top-4 left-4 font-display text-5xl sm:text-6xl mu-hero-gradient-text leading-none">
-                  /01
+        {/* Three brutalist slabs */}
+        <div className="border-t-2 border-foreground">
+          {pillars.map((p, i) => (
+            <article
+              key={i}
+              onMouseEnter={() => setHover(i)}
+              onMouseLeave={() => setHover(null)}
+              className="group relative grid md:grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 border-b-2 border-foreground transition-colors duration-300 hover:bg-foreground hover:text-background cursor-default"
+            >
+              {/* Folio numeral */}
+              <div className="md:col-span-2">
+                <div className="font-display text-6xl md:text-8xl leading-[0.85] tracking-tight">
+                  /0{i + 1}
                 </div>
-                {/* Tag */}
-                <div className="absolute bottom-4 left-4 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest">
-                  {hero.tag}
-                </div>
-                {/* Stat */}
-                <div className="absolute top-4 right-4 text-right">
-                  <div className="font-display text-4xl sm:text-5xl text-background mix-blend-difference leading-none">
-                    {hero.stat.value}
-                  </div>
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-background/80 mix-blend-difference mt-1">
-                    {hero.stat.label}
-                  </div>
+                <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.3em] opacity-70">
+                  {p.tag}
                 </div>
               </div>
 
-              {/* Hero body — broadsheet 2-col */}
-              <div className="p-5 sm:p-7 md:p-8 flex flex-col">
-                <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[0.95] text-balance mb-5">
-                  {hero.title}{" "}
-                  <em className="italic mu-hero-gradient-text not-italic">
-                    {hero.titleEm}
+              {/* Title + body */}
+              <div className="md:col-span-6">
+                <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[0.95] uppercase tracking-tight text-balance mb-4">
+                  {p.title}{" "}
+                  <em className="italic mu-hero-gradient-text not-italic group-hover:[&_*]:bg-none group-hover:[&_*]:text-background">
+                    {p.titleEm}
                   </em>
                 </h3>
+                <p className="text-sm sm:text-base leading-relaxed opacity-80 max-w-lg">
+                  {p.body}
+                </p>
+                {/* Meta tags */}
+                <div className="flex flex-wrap gap-1 mt-4">
+                  {p.meta.map((m, k) => (
+                    <span
+                      key={k}
+                      className="font-mono text-[9px] uppercase tracking-widest border border-current px-2 py-1 opacity-70"
+                    >
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-                <div className="grid sm:grid-cols-2 gap-x-6 gap-y-4">
-                  <p className="text-sm text-muted-foreground leading-relaxed [&::first-letter]:font-display [&::first-letter]:text-5xl [&::first-letter]:float-left [&::first-letter]:leading-[0.85] [&::first-letter]:mr-2 [&::first-letter]:mt-1 [&::first-letter]:text-foreground">
-                    {hero.body}
-                  </p>
-                  <div className="flex flex-col justify-between gap-4">
-                    <blockquote className="border-l-2 border-primary pl-3 font-display italic text-lg sm:text-xl leading-snug text-foreground/90">
-                      "{hero.pull}"
-                    </blockquote>
-                    <ul className="pt-3 border-t border-border space-y-1.5">
-                      {hero.points.map((pt, j) => (
-                        <li
-                          key={j}
-                          className="flex items-baseline gap-2 text-[12px] sm:text-[13px] text-foreground/80 leading-snug"
-                        >
-                          <span className="font-mono text-[9px] text-primary shrink-0">
-                            §1.{j + 1}
-                          </span>
-                          <span>{pt}</span>
-                        </li>
-                      ))}
-                    </ul>
+              {/* Points + stat */}
+              <div className="md:col-span-4 flex flex-col justify-between gap-4">
+                <ul className="space-y-2 border-t border-current pt-3">
+                  {p.points.map((pt, j) => (
+                    <li
+                      key={j}
+                      className="flex items-baseline gap-2 text-[12px] sm:text-[13px] leading-snug opacity-90"
+                    >
+                      <span className="font-mono text-[9px] shrink-0 opacity-60">
+                        §{i + 1}.{j + 1}
+                      </span>
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex items-end justify-between border-t-2 border-current pt-3">
+                  <div className="font-display text-5xl md:text-6xl leading-none tracking-tight">
+                    {p.stat.value}
+                  </div>
+                  <div className="font-mono text-[10px] uppercase tracking-[0.3em] opacity-70 pb-1">
+                    {p.stat.label}
                   </div>
                 </div>
               </div>
-            </div>
-          </article>
 
-          {/* SIDEBAR pillars — right, stacked */}
-          <div className="md:col-span-5 grid grid-rows-2 gap-px bg-border">
-            {sidebars.map((p, i) => (
-              <article
-                key={i}
-                className="bg-background relative group grid grid-cols-5 min-h-[260px]"
-              >
-                {/* Inline image */}
-                <div className="col-span-2 relative bg-[hsl(0,0%,6%)] overflow-hidden border-r border-border">
-                  <img
-                    src={p.image}
-                    alt={p.tag}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-2 left-2 font-display text-3xl mu-hero-gradient-text leading-none">
-                    /0{i + 2}
-                  </div>
-                  <div className="absolute bottom-2 left-2 bg-foreground text-background px-2 py-0.5 font-mono text-[9px] uppercase tracking-widest">
-                    {p.tag}
-                  </div>
-                </div>
-
-                {/* Body */}
-                <div className="col-span-3 p-4 sm:p-5 flex flex-col">
-                  <h3 className="font-display text-xl sm:text-2xl leading-[0.95] text-balance mb-2">
-                    {p.title}{" "}
-                    <em className="italic mu-hero-gradient-text not-italic">
-                      {p.titleEm}
-                    </em>
-                  </h3>
-                  <p className="text-[12px] sm:text-[13px] text-muted-foreground leading-relaxed flex-1">
-                    {p.body}
-                  </p>
-                  <div className="flex items-baseline justify-between gap-3 pt-3 mt-3 border-t border-border">
-                    <div className="flex items-baseline gap-2">
-                      <span className="font-display text-2xl mu-hero-gradient-text leading-none">
-                        {p.stat.value}
-                      </span>
-                      <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
-                        {p.stat.label}
-                      </span>
-                    </div>
-                    <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
-                      /0{i + 2}
-                    </span>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+              {/* Hover indicator */}
+              <div className="absolute top-4 right-0 font-mono text-[10px] uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity">
+                ↳ Hover
+              </div>
+            </article>
+          ))}
         </div>
 
         {/* Footer ribbon */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 border-t-2 border-foreground font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-          <span>End of Feature</span>
-          <span className="text-foreground">Masters' Union · Four Nations MBA</span>
+        <div className="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground">
+          <span>End / Feature</span>
+          <span>Masters' Union · Four Nations MBA</span>
           <span>p. 03 / 03</span>
         </div>
       </div>
