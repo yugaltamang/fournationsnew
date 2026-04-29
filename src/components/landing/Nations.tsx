@@ -3,7 +3,7 @@ import india from "@/assets/nation-india.webp";
 import hk from "@/assets/nation-hongkong.webp";
 import london from "@/assets/nation-london.webp";
 import dubai from "@/assets/nation-dubai.webp";
-import { TermRow, terms as curriculumTerms } from "./Curriculum";
+import { terms as curriculumTerms } from "./Curriculum";
 
 type Nation = {
   n: string;
@@ -85,6 +85,7 @@ const Nations = () => {
   const [active, setActive] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const n = nations[active];
+  const term = curriculumTerms[active];
 
   const handleSetActive = (i: number) => {
     setFlipped(false);
