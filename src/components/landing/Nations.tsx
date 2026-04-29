@@ -303,91 +303,53 @@ const Nations = () => {
                   </div>
                 </div>
 
-                {/* CTA: View Curriculum — newspaper masthead */}
-                <button
-                  onClick={() => setCurriculumOpen(true)}
-                  className="group relative w-full text-left bg-[hsl(0,0%,97%)] text-[hsl(0,0%,8%)] border border-border hover:border-foreground transition-colors duration-300 overflow-hidden"
-                >
-                  {/* Top dateline rule */}
-                  <div className="flex items-center justify-between gap-3 px-5 sm:px-8 pt-4 pb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-[hsl(0,0%,30%)] border-b border-[hsl(0,0%,80%)]">
-                    <span>Vol. {n.n} · {n.term}</span>
-                    <span className="hidden sm:inline">{n.coords}</span>
-                    <span>The Curriculum Edition</span>
-                  </div>
-
-                  {/* Double rule */}
-                  <div className="h-px bg-[hsl(0,0%,15%)] mx-5 sm:mx-8 mt-1" />
-
-                  {/* Masthead */}
-                  <div className="px-5 sm:px-8 pt-4 pb-3 text-center">
-                    <h4
-                      className="font-display text-[clamp(2.5rem,8vw,5.5rem)] leading-[0.9] tracking-tight text-[hsl(0,0%,6%)]"
-                      style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
-                    >
-                      The {n.country} Times
-                    </h4>
-                  </div>
-
-                  <div className="h-px bg-[hsl(0,0%,15%)] mx-5 sm:mx-8" />
-                  <div className="h-[3px] bg-[hsl(0,0%,15%)] mx-5 sm:mx-8 mt-[2px]" />
-
-                  {/* Sub-headline grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 px-5 sm:px-8 py-5 divide-y sm:divide-y-0 sm:divide-x divide-[hsl(0,0%,80%)]">
-                    <div className="sm:pr-5 py-2 sm:py-0">
-                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-[hsl(0,0%,40%)] mb-1">Headline</div>
-                      <div className="font-display text-base leading-snug italic">"{n.title}"</div>
-                    </div>
-                    <div className="sm:px-5 py-2 sm:py-0">
-                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-[hsl(0,0%,40%)] mb-1">Sections</div>
-                      <div className="text-sm leading-snug">In Class · Out Class · Business · Cultural</div>
-                    </div>
-                    <div className="sm:pl-5 py-2 sm:py-0">
-                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-[hsl(0,0%,40%)] mb-1">Filed by</div>
-                      <div className="text-sm leading-snug">{n.partner}</div>
-                    </div>
-                  </div>
-
-                  {/* Read more bar */}
-                  <div className="flex items-center justify-between gap-4 px-5 sm:px-8 py-4 border-t border-[hsl(0,0%,15%)] bg-primary text-primary-foreground">
-                    <div className="flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
-                      Read the full edition
-                    </div>
-                    <div className="flex items-center gap-3 font-display text-base sm:text-lg italic">
-                      Continued inside
-                      <span className="font-display text-2xl not-italic group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                  </div>
-                </button>
+                {/* CTA: simple text link to flip */}
+                <div className="pt-2">
+                  <button
+                    onClick={() => setFlipped(true)}
+                    className="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-foreground hover:text-primary transition-colors"
+                  >
+                    <span className="w-8 h-px bg-foreground group-hover:bg-primary group-hover:w-12 transition-all" />
+                    View {n.country} Curriculum
+                    <span className="font-display text-lg group-hover:translate-x-1 transition-transform">→</span>
+                  </button>
+                </div>
               </div>
             </article>
+
+            {/* Back face: curriculum */}
+            <article
+              className="absolute inset-0 border border-border bg-background [backface-visibility:hidden] overflow-y-auto"
+              style={{ transform: "rotateY(180deg)" }}
+              aria-hidden={!flipped}
+            >
+              <div className="sticky top-0 z-10 flex items-center justify-between gap-4 px-5 sm:px-8 py-4 border-b border-border bg-background/95 backdrop-blur">
+                <div className="min-w-0">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
+                    Curriculum · {n.term}
+                  </div>
+                  <h3 className="font-display text-xl sm:text-2xl truncate">
+                    {n.country} — Full Curriculum
+                  </h3>
+                </div>
+                <button
+                  onClick={() => setFlipped(false)}
+                  className="group inline-flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-muted-foreground hover:text-foreground transition-colors shrink-0"
+                >
+                  <span className="font-display text-lg group-hover:-translate-x-1 transition-transform">←</span>
+                  Back
+                </button>
+              </div>
+              <div className="px-2 sm:px-4 py-4">
+                {curriculumTerms[active] && (
+                  <TermRow term={curriculumTerms[active]} index={active} />
+                )}
+              </div>
+            </article>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Curriculum dialog */}
-      <Dialog open={curriculumOpen} onOpenChange={setCurriculumOpen}>
-        <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] overflow-y-auto p-0 border-border bg-background">
-          <div className="sticky top-0 z-10 flex items-center justify-between gap-4 px-6 sm:px-10 py-4 border-b border-border bg-background/95 backdrop-blur">
-            <div className="min-w-0">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
-                Curriculum · {n.term}
-              </div>
-              <DialogTitle className="font-display text-xl sm:text-2xl truncate">
-                {n.country} — Full Curriculum
-              </DialogTitle>
-              <DialogDescription className="sr-only">
-                Detailed curriculum for {n.country}
-              </DialogDescription>
-            </div>
-          </div>
-          <div className="px-2 sm:px-6 pb-8">
-            {curriculumTerms[active] && (
-              <TermRow term={curriculumTerms[active]} index={active} />
-            )}
-          </div>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };
