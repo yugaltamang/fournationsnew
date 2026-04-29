@@ -212,7 +212,7 @@ const Nations = () => {
             />
             <article
               key={n.country}
-              className="relative border border-border bg-background animate-fade-up origin-left transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] [transform-style:preserve-3d] [backface-visibility:hidden] z-20"
+              className="relative border border-border bg-background animate-fade-up origin-left transition-transform duration-[1100ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] z-20"
               style={{
                 transform: flipped ? "rotateY(-172deg)" : "rotateY(0deg)",
                 boxShadow: flipped
