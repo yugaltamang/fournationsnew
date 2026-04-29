@@ -133,13 +133,7 @@ const CXO = () => {
                   }`}
                 />
 
-                {/* Accent bar — only active */}
-                <div
-                  className={`absolute left-0 top-0 h-full w-[3px] mu-hero-gradient transition-opacity duration-500 ${
-                    isActive ? "opacity-100" : "opacity-0"
-                  }`}
-                  style={{ marginLeft: SKEW * 8 }}
-                />
+                {/* Accent bar removed */}
 
                 {/* Folio numeral — always visible */}
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/80">
