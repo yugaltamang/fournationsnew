@@ -82,13 +82,13 @@ const Immersions = () => (
             />
 
             {/* Image */}
-            <div className="relative overflow-hidden aspect-[4/3]">
+            <div className="relative overflow-hidden aspect-[16/10]">
               <img
                 src={p.image}
                 alt={p.name}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-contain p-2 sm:p-3 group-hover:scale-105 transition-transform duration-700"
               />
               {/* Tag chip */}
               <div className="absolute top-4 left-4 sm:top-5 sm:left-5 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-widest z-10">
