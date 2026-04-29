@@ -228,10 +228,13 @@ const Nations = () => {
             />
             <article
               key={n.country}
-              className={`col-start-1 row-start-1 relative border border-border bg-background z-30 origin-left transition-[transform,opacity,filter] duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`col-start-1 row-start-1 relative border border-border bg-background z-30 origin-left ${
                 flipped ? "pointer-events-none" : ""
               }`}
               style={{
+                transitionProperty: "transform, opacity, filter",
+                transitionDuration: "1000ms",
+                transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)",
                 transform: flipped
                   ? "translateX(-105%) rotateY(-34deg) rotateZ(-1.5deg) scale(0.96)"
                   : "translateX(0) rotateY(0deg) rotateZ(0deg) scale(1)",
