@@ -14,25 +14,25 @@ const Admissions = () => (
   <section id="admissions" className="relative py-16 sm:py-20 md:py-28">
     <div className="container">
       <div
-        className="relative overflow-hidden border-2 border-primary/40 bg-[hsl(0,0%,6%)]"
+        className="relative overflow-hidden border border-border bg-[hsl(0,0%,6%)]"
         style={{
           boxShadow:
-            "0 30px 80px -20px hsl(40 84% 58% / 0.25), 0 0 0 1px hsl(40 84% 58% / 0.15)",
+            "0 30px 80px -20px hsl(0 0% 0% / 0.5)",
         }}
       >
-        {/* Gradient top bar */}
-        <div className="mu-hero-divider w-full" />
+        {/* Subtle top accent bar */}
+        <div className="h-px w-full bg-border" />
 
-        {/* Ambient gradient glows — boosted */}
+        {/* Ambient gradient glows — toned down */}
         <div
-          className="absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full opacity-50 blur-3xl pointer-events-none"
+          className="absolute -top-40 -left-40 w-[420px] h-[420px] rounded-full opacity-[0.12] blur-3xl pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle, #E38330 0%, #F7D544 40%, transparent 70%)",
+              "radial-gradient(circle, #F7D544 0%, transparent 70%)",
           }}
         />
         <div
-          className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full opacity-35 blur-3xl pointer-events-none"
+          className="absolute -bottom-40 -right-40 w-[420px] h-[420px] rounded-full opacity-[0.10] blur-3xl pointer-events-none"
           style={{
             background:
               "radial-gradient(circle, #39B5D7 0%, transparent 70%)",
@@ -40,12 +40,12 @@ const Admissions = () => (
         />
 
         {/* Editorial grid */}
-        <div className="absolute inset-0 editorial-grid opacity-[0.08] pointer-events-none" />
+        <div className="absolute inset-0 editorial-grid opacity-[0.05] pointer-events-none" />
 
         {/* Top meta strip */}
-        <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-primary/30 px-4 sm:px-10 py-3 bg-primary/5">
-          <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.25em] font-bold">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
+        <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-border px-4 sm:px-10 py-3 bg-secondary/30">
+          <div className="inline-flex items-center gap-2 border border-primary/40 text-primary px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.25em] font-bold">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             Round 01 · Now Open
           </div>
           <div className="hidden sm:flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground">
