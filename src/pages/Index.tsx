@@ -7,7 +7,7 @@ import ApplyBento from "@/components/landing/ApplyBento";
 import Immersions from "@/components/landing/Immersions";
 import CXO from "@/components/landing/CXO";
 import Outcomes from "@/components/landing/Outcomes";
-import AboutMU from "@/components/landing/AboutMU";
+import CareersEntrepreneurship from "@/components/landing/CareersEntrepreneurship";
 import FAQ from "@/components/landing/FAQ";
 import Admissions from "@/components/landing/Admissions";
 
@@ -27,7 +27,7 @@ const Index = () => (
     <Immersions />
     <CXO />
     <Outcomes />
-    <AboutMU />
+    <CareersEntrepreneurship />
     <Admissions />
     <FAQ />
     
