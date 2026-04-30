@@ -311,7 +311,7 @@ const Nations = () => {
                     <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mb-2">
                       {n.term} · {n.city}
                     </div>
-                    <h3 className="font-display text-[clamp(2.25rem,9vw,7rem)] leading-[0.9] tracking-tight break-words">
+                    <h3 className="font-display text-[clamp(1.85rem,8.5vw,7rem)] leading-[0.9] tracking-tight break-words hyphens-auto">
                       {n.country}
                     </h3>
                   </div>
