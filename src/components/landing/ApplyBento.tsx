@@ -24,7 +24,7 @@ const ApplyBento = () => (
         <div className="absolute inset-0 editorial-grid opacity-[0.07] pointer-events-none" />
 
         {/* Top meta strip */}
-        <div className="relative flex items-center justify-between border-b border-border/60 px-6 sm:px-10 py-3">
+        <div className="relative flex items-center justify-between border-b border-border/60 px-4 sm:px-10 py-3">
           <div className="flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             Cohort 04 · Now Accepting
