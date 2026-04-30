@@ -11,32 +11,9 @@ const roles = [
   "Business Analyst", "Consultant", "Brand Marketing", "Program Manager",
 ];
 
-import bainLogo from "@/assets/recruiters/bain.png";
-import bcgLogo from "@/assets/recruiters/bcg.png";
-import blinkitLogo from "@/assets/recruiters/blinkit.png";
-import careemLogo from "@/assets/recruiters/careem.png";
-import flipkartLogo from "@/assets/recruiters/flipkart.png";
-import googleLogo from "@/assets/recruiters/google.png";
-import makemytripLogo from "@/assets/recruiters/makemytrip.png";
-import mckinseyLogo from "@/assets/recruiters/mckinsey.png";
-import metaLogo from "@/assets/recruiters/meta.png";
-import microsoftLogo from "@/assets/recruiters/microsoft.png";
-import zeptoLogo from "@/assets/recruiters/zepto.png";
-import zomatoLogo from "@/assets/recruiters/zomato.png";
-
 const recruiters = [
-  { name: "Google", logo: googleLogo },
-  { name: "Microsoft", logo: microsoftLogo },
-  { name: "Meta", logo: metaLogo },
-  { name: "McKinsey", logo: mckinseyLogo },
-  { name: "BCG", logo: bcgLogo },
-  { name: "Bain", logo: bainLogo },
-  { name: "Flipkart", logo: flipkartLogo },
-  { name: "Zomato", logo: zomatoLogo },
-  { name: "Blinkit", logo: blinkitLogo },
-  { name: "Zepto", logo: zeptoLogo },
-  { name: "MakeMyTrip", logo: makemytripLogo },
-  { name: "Careem", logo: careemLogo },
+  "Google", "Microsoft", "Meta", "McKinsey & Co.", "BCG", "Bain & Co.",
+  "Flipkart", "Zomato", "Blinkit", "Zepto", "MakeMyTrip", "Careem",
 ];
 
 const ventureStats = [
