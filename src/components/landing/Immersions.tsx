@@ -1,6 +1,6 @@
 import imperialImg from "@/assets/imperial-london.png";
 import cuhkImg from "@/assets/cuhk-hongkong.png";
-import muLogo from "@/assets/mu-logo.svg";
+import muLogo from "@/assets/masters-union-delhi.png";
 
 
 const partners = [
