@@ -85,18 +85,9 @@ const CareersEntrepreneurship = () => (
           <span className="w-8 h-px bg-primary" />
           <span>Career Outcomes</span>
         </div>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-balance max-w-3xl">
-            Graduates don't just get jobs. <em className="italic text-primary not-italic">They get careers.</em>
-          </h3>
-          <a
-            href="#"
-            download
-            className="inline-flex items-center gap-2 self-start md:self-auto border border-primary bg-primary text-primary-foreground px-5 py-3 font-mono text-[10px] uppercase tracking-[0.25em] hover:bg-primary/90 transition-colors whitespace-nowrap"
-          >
-            ↓ Download Placement Report
-          </a>
-        </div>
+        <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-balance max-w-3xl mb-8">
+          Graduates don't just get jobs. <em className="italic text-primary not-italic">They get careers.</em>
+        </h3>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border mb-8 md:mb-10">
@@ -140,6 +131,16 @@ const CareersEntrepreneurship = () => (
             ))}
           </div>
         </div>
+
+        <div className="mt-8 md:mt-10 flex justify-start md:justify-end">
+          <a
+            href="#"
+            download
+            className="inline-flex items-center gap-2 border border-primary bg-primary text-primary-foreground px-5 py-3 font-mono text-[10px] uppercase tracking-[0.25em] hover:bg-primary/90 transition-colors whitespace-nowrap"
+          >
+            ↓ Download Placement Report
+          </a>
+        </div>
       </div>
 
       {/* ENTREPRENEURSHIP */}
@@ -148,18 +149,9 @@ const CareersEntrepreneurship = () => (
           <span className="w-8 h-px bg-primary" />
           <span>Entrepreneurship</span>
         </div>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-balance max-w-3xl">
-            Where founders are built, <em className="italic text-primary not-italic">not just funded.</em>
-          </h3>
-          <a
-            href="#"
-            download
-            className="inline-flex items-center gap-2 self-start md:self-auto border border-primary bg-primary text-primary-foreground px-5 py-3 font-mono text-[10px] uppercase tracking-[0.25em] hover:bg-primary/90 transition-colors whitespace-nowrap"
-          >
-            ↓ Download Entrepreneurship Report
-          </a>
-        </div>
+        <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-balance max-w-3xl mb-8">
+          Where founders are built, <em className="italic text-primary not-italic">not just funded.</em>
+        </h3>
 
         {/* Venture stats */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-border mb-8 md:mb-10">
