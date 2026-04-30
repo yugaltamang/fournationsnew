@@ -11,9 +11,32 @@ const roles = [
   "Business Analyst", "Consultant", "Brand Marketing", "Program Manager",
 ];
 
+import bainLogo from "@/assets/recruiters/bain.png";
+import bcgLogo from "@/assets/recruiters/bcg.png";
+import blinkitLogo from "@/assets/recruiters/blinkit.png";
+import careemLogo from "@/assets/recruiters/careem.png";
+import flipkartLogo from "@/assets/recruiters/flipkart.png";
+import googleLogo from "@/assets/recruiters/google.png";
+import makemytripLogo from "@/assets/recruiters/makemytrip.png";
+import mckinseyLogo from "@/assets/recruiters/mckinsey.png";
+import metaLogo from "@/assets/recruiters/meta.png";
+import microsoftLogo from "@/assets/recruiters/microsoft.png";
+import zeptoLogo from "@/assets/recruiters/zepto.png";
+import zomatoLogo from "@/assets/recruiters/zomato.png";
+
 const recruiters = [
-  "Google", "BCG", "Microsoft", "McKinsey", "Meta",
-  "Bain", "Zomato", "Blinkit", "Zepto",
+  { name: "Google", logo: googleLogo },
+  { name: "Microsoft", logo: microsoftLogo },
+  { name: "Meta", logo: metaLogo },
+  { name: "McKinsey", logo: mckinseyLogo },
+  { name: "BCG", logo: bcgLogo },
+  { name: "Bain", logo: bainLogo },
+  { name: "Flipkart", logo: flipkartLogo },
+  { name: "Zomato", logo: zomatoLogo },
+  { name: "Blinkit", logo: blinkitLogo },
+  { name: "Zepto", logo: zeptoLogo },
+  { name: "MakeMyTrip", logo: makemytripLogo },
+  { name: "Careem", logo: careemLogo },
 ];
 
 const ventureStats = [
@@ -91,11 +114,20 @@ const CareersEntrepreneurship = () => (
         {/* Recruiters */}
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3">145+ recruiting companies — including</p>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-px bg-border border border-border">
             {recruiters.map((r) => (
-              <span key={r} className="border border-border px-3 py-2 font-mono text-[11px] sm:text-xs uppercase tracking-widest text-foreground/80">
-                {r}
-              </span>
+              <div
+                key={r.name}
+                className="bg-background flex items-center justify-center p-4 sm:p-5 md:p-6 aspect-[3/2]"
+                title={r.name}
+              >
+                <img
+                  src={r.logo}
+                  alt={`${r.name} logo`}
+                  loading="lazy"
+                  className="max-h-10 sm:max-h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </div>
             ))}
           </div>
         </div>
