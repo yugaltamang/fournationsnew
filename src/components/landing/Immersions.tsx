@@ -5,7 +5,7 @@ import muLogo from "@/assets/masters-union-delhi.png";
 
 const partners = [
   {
-    tag: "Term 1 · Delhi",
+    tag: "Term 1 · Gurugram",
     name: "Masters' Union",
     image: muLogo,
     headline: "Built by practitioners.",
@@ -14,7 +14,6 @@ const partners = [
       { v: "2,000+", l: "Students" },
       { v: "200+", l: "Industry Mentors" },
       { v: "₹34 LPA", l: "Avg Package" },
-      { v: "<10%", l: "Acceptance" },
     ],
   },
   {
