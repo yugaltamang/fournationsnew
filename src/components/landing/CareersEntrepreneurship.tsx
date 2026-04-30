@@ -110,7 +110,7 @@ const CareersEntrepreneurship = () => (
           <a
             href="#"
             download
-            className="inline-flex items-center gap-2 border border-primary bg-primary text-primary-foreground px-5 py-3 font-mono text-[10px] uppercase tracking-[0.25em] hover:bg-primary/90 transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 border border-primary bg-primary text-primary-foreground px-5 py-3 font-display text-sm sm:text-base tracking-wide hover:bg-primary/90 transition-colors whitespace-nowrap"
           >
             ↓ Download Placement Report
           </a>
@@ -153,7 +153,7 @@ const CareersEntrepreneurship = () => (
           <a
             href="#"
             download
-            className="inline-flex items-center gap-2 border border-primary bg-primary text-primary-foreground px-5 py-3 font-mono text-[10px] uppercase tracking-[0.25em] hover:bg-primary/90 transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 border border-primary bg-primary text-primary-foreground px-5 py-3 font-display text-sm sm:text-base tracking-wide hover:bg-primary/90 transition-colors whitespace-nowrap"
           >
             ↓ Download Entrepreneurship Report
           </a>
