@@ -1,19 +1,20 @@
 import imperialImg from "@/assets/imperial-london.png";
 import cuhkImg from "@/assets/cuhk-hongkong.png";
+import muLogo from "@/assets/mu-logo.svg";
 
 
 const partners = [
   {
-    tag: "Term 3 · London",
-    name: "Imperial College London",
-    image: imperialImg,
-    headline: "Lead on the world stage.",
-    body: "Learn at one of the world's top-ranked institutions — and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch a creator brand from the heart of London.",
+    tag: "Term 1 · Delhi",
+    name: "Masters' Union",
+    image: muLogo,
+    headline: "Built by practitioners.",
+    body: "The home institution. A new-age business school where MDs, founders and operators teach — not career academics. In five years, one of India's most selective programmes, on a Top-10 global rank quest.",
     stats: [
-      { v: "#2", l: "QS World Rankings" },
-      { v: "Top 1%", l: "Business Schools" },
-      { v: "140+", l: "Nationalities" },
-      { v: "14", l: "Nobel Laureates" },
+      { v: "2,000+", l: "Students" },
+      { v: "200+", l: "Industry Mentors" },
+      { v: "₹34 LPA", l: "Avg Package" },
+      { v: "<10%", l: "Acceptance" },
     ],
   },
   {
@@ -27,6 +28,19 @@ const partners = [
       { v: "60+", l: "Years of Excellence" },
       { v: "60", l: "Contact Hours" },
       { v: "✓", l: "CUHK Certificate" },
+    ],
+  },
+  {
+    tag: "Term 3 · London",
+    name: "Imperial College London",
+    image: imperialImg,
+    headline: "Lead on the world stage.",
+    body: "Learn at one of the world's top-ranked institutions — and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch a creator brand from the heart of London.",
+    stats: [
+      { v: "#2", l: "QS World Rankings" },
+      { v: "Top 1%", l: "Business Schools" },
+      { v: "140+", l: "Nationalities" },
+      { v: "14", l: "Nobel Laureates" },
     ],
   },
 ];
@@ -58,15 +72,15 @@ const Immersions = () => (
         <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-6">
           <span className="w-8 h-px bg-primary" />
           <span>Academic Partnerships</span>
-          <span className="text-muted-foreground/50">/ 02 Institutions</span>
+          <span className="text-muted-foreground/50">/ 03 Institutions</span>
         </div>
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance mb-6">
-          Two of the world's{" "}
-          <em className="italic mu-hero-gradient-text not-italic">top universities.</em>{" "}
-          One cohort.
+          Three institutions.{" "}
+          <em className="italic mu-hero-gradient-text not-italic">One cohort.</em>{" "}
+          Three credentials.
         </h2>
         <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl">
-          You don't just visit Hong Kong and London — you study at their flagship institutions and leave with two globally recognised credentials.
+          Anchored at Masters' Union in Delhi, with terms at CUHK Hong Kong and Imperial College London — you graduate with credentials from all three.
         </p>
       </div>
 
