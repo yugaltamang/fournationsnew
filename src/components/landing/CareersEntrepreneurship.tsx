@@ -92,18 +92,15 @@ const CareersEntrepreneurship = () => (
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3">145+ recruiting companies — including</p>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-px bg-border border border-border">
-            {recruiters.map((r) => (
+            {recruiters.map((name) => (
               <div
-                key={r.name}
+                key={name}
                 className="bg-background flex items-center justify-center p-4 sm:p-5 md:p-6 aspect-[3/2]"
-                title={r.name}
+                title={name}
               >
-                <img
-                  src={r.logo}
-                  alt={`${r.name} logo`}
-                  loading="lazy"
-                  className="max-h-10 sm:max-h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
-                />
+                <span className="font-display text-base sm:text-lg md:text-xl text-foreground/85 hover:text-foreground transition-colors text-center leading-tight">
+                  {name}
+                </span>
               </div>
             ))}
           </div>
