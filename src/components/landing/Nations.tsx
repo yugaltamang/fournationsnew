@@ -141,7 +141,7 @@ const Nations = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-10 md:mb-14">
           <div>
-            <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-4 sm:mb-6">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4 sm:mb-6">
               <span className="w-8 h-px bg-primary" />
               <span>The Journey / Curriculum</span>
               <span className="text-muted-foreground/50">/ 04 Nations</span>
