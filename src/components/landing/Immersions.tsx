@@ -71,7 +71,7 @@ const Immersions = () => (
       <div className="max-w-4xl mb-14 md:mb-20">
         <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-6">
           <span className="w-8 h-px bg-primary" />
-          <span>Academic Partnerships</span>
+          <span>Pedigree</span>
           <span className="text-muted-foreground/50">/ 03 Institutions</span>
         </div>
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance mb-6">
