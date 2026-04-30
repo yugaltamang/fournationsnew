@@ -43,8 +43,8 @@ const Admissions = () => (
         <div className="absolute inset-0 editorial-grid opacity-[0.08] pointer-events-none" />
 
         {/* Top meta strip */}
-        <div className="relative flex items-center justify-between border-b border-primary/30 px-6 sm:px-10 py-3 bg-primary/5">
-          <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] font-bold">
+        <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-primary/30 px-4 sm:px-10 py-3 bg-primary/5">
+          <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.25em] font-bold">
             <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
             Round 01 · Now Open
           </div>
