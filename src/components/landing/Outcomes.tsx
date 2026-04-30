@@ -9,7 +9,7 @@ const Outcomes = () => (
   <section id="outcomes" className="py-16 sm:py-20 md:py-32">
     <div className="container">
       <div className="max-w-4xl mb-10 sm:mb-12 md:mb-16">
-        <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-4 sm:mb-6">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4 sm:mb-6">
           <span className="w-8 h-px bg-primary" />
           <span>Outcomes</span>
           <span className="text-muted-foreground/50">/ 04 Takeaways</span>

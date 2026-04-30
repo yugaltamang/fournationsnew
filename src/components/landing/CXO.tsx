@@ -73,7 +73,7 @@ const CXO = () => {
         {/* Header */}
         <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-10 md:mb-14 pb-6 border-b border-border">
           <div className="md:col-span-8">
-            <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-4">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4">
               <span className="w-8 h-px bg-primary" />
               <span>Why This Programme</span>
               <span className="text-muted-foreground/50">/ 03 Pillars</span>

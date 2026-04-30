@@ -24,7 +24,7 @@ const ApplyBento = () => (
         <div className="absolute inset-0 editorial-grid opacity-[0.07] pointer-events-none" />
 
         {/* Top meta strip */}
-        <div className="relative flex items-center justify-between border-b border-border/60 px-6 sm:px-10 py-3">
+        <div className="relative flex items-center justify-between border-b border-border/60 px-4 sm:px-10 py-3">
           <div className="flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             Cohort 04 · Now Accepting
@@ -35,7 +35,7 @@ const ApplyBento = () => (
         </div>
 
         {/* Main content */}
-        <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center px-6 sm:px-10 md:px-14 py-8 sm:py-10 md:py-12">
+        <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center px-4 sm:px-10 md:px-14 py-8 sm:py-10 md:py-12">
           {/* Left: editorial copy */}
           <div className="md:col-span-8">
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">

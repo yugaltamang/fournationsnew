@@ -43,8 +43,8 @@ const Admissions = () => (
         <div className="absolute inset-0 editorial-grid opacity-[0.08] pointer-events-none" />
 
         {/* Top meta strip */}
-        <div className="relative flex items-center justify-between border-b border-primary/30 px-6 sm:px-10 py-3 bg-primary/5">
-          <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] font-bold">
+        <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-primary/30 px-4 sm:px-10 py-3 bg-primary/5">
+          <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.25em] font-bold">
             <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
             Round 01 · Now Open
           </div>
@@ -55,8 +55,8 @@ const Admissions = () => (
         </div>
 
         {/* Header */}
-        <div className="relative px-6 sm:px-10 md:px-14 pt-10 sm:pt-12 md:pt-16 pb-6 md:pb-8">
-          <div className="flex items-center gap-3 font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-4">
+        <div className="relative px-4 sm:px-10 md:px-14 pt-10 sm:pt-12 md:pt-16 pb-6 md:pb-8">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4">
             <span className="w-8 h-px bg-primary" />
             <span className="font-bold">Admissions / Selection</span>
             <span className="text-muted-foreground/50">/ 03 Criteria</span>
@@ -73,7 +73,7 @@ const Admissions = () => (
         </div>
 
         {/* Criteria grid */}
-        <div className="relative px-6 sm:px-10 md:px-14 pb-8 md:pb-10">
+        <div className="relative px-4 sm:px-10 md:px-14 pb-8 md:pb-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
             {criteria.map((c) => (
               <div key={c.n} className="bg-[hsl(0,0%,6%)] p-5 sm:p-6">
@@ -87,7 +87,7 @@ const Admissions = () => (
 
         {/* Timeline strip */}
         <div className="relative border-y border-border/60 bg-background/20">
-          <div className="px-6 sm:px-10 md:px-14 py-5 flex items-center justify-between flex-wrap gap-4">
+          <div className="px-4 sm:px-10 md:px-14 py-5 flex items-center justify-between flex-wrap gap-4">
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
               Cohort 2026 · Timeline
             </div>
@@ -115,7 +115,7 @@ const Admissions = () => (
         </div>
 
         {/* Process steps */}
-        <div className="relative px-6 sm:px-10 md:px-14 py-8 md:py-10">
+        <div className="relative px-4 sm:px-10 md:px-14 py-8 md:py-10">
           <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-5">
             ◉ Process
           </div>
@@ -135,7 +135,7 @@ const Admissions = () => (
         </div>
 
         {/* Bottom CTA strip */}
-        <div className="relative border-t border-border/60 px-6 sm:px-10 md:px-14 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="relative border-t border-border/60 px-4 sm:px-10 md:px-14 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-xs sm:text-sm text-muted-foreground font-mono">
             Decision within 4 weeks of application deadline.
           </p>
