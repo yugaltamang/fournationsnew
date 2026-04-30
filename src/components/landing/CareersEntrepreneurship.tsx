@@ -106,7 +106,7 @@ const CareersEntrepreneurship = () => (
           </div>
         </div>
 
-        <div className="mt-8 md:mt-10 flex justify-start md:justify-end">
+        <div className="mt-8 md:mt-10 flex justify-start">
           <a
             href="#"
             download
@@ -149,7 +149,7 @@ const CareersEntrepreneurship = () => (
           ))}
         </div>
 
-        <div className="mt-8 md:mt-10 flex justify-start md:justify-end">
+        <div className="mt-8 md:mt-10 flex justify-start">
           <a
             href="#"
             download
