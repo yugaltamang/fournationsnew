@@ -174,6 +174,16 @@ const CareersEntrepreneurship = () => (
             </div>
           ))}
         </div>
+
+        <div className="mt-8 md:mt-10 flex justify-start md:justify-end">
+          <a
+            href="#"
+            download
+            className="inline-flex items-center gap-2 border border-primary bg-primary text-primary-foreground px-5 py-3 font-mono text-[10px] uppercase tracking-[0.25em] hover:bg-primary/90 transition-colors whitespace-nowrap"
+          >
+            ↓ Download Entrepreneurship Report
+          </a>
+        </div>
       </div>
     </div>
   </section>
