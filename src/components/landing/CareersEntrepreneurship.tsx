@@ -11,32 +11,9 @@ const roles = [
   "Business Analyst", "Consultant", "Brand Marketing", "Program Manager",
 ];
 
-import bainLogo from "@/assets/recruiters/bain.png";
-import bcgLogo from "@/assets/recruiters/bcg.png";
-import blinkitLogo from "@/assets/recruiters/blinkit.png";
-import careemLogo from "@/assets/recruiters/careem.png";
-import flipkartLogo from "@/assets/recruiters/flipkart.png";
-import googleLogo from "@/assets/recruiters/google.png";
-import makemytripLogo from "@/assets/recruiters/makemytrip.png";
-import mckinseyLogo from "@/assets/recruiters/mckinsey.png";
-import metaLogo from "@/assets/recruiters/meta.png";
-import microsoftLogo from "@/assets/recruiters/microsoft.png";
-import zeptoLogo from "@/assets/recruiters/zepto.png";
-import zomatoLogo from "@/assets/recruiters/zomato.png";
-
 const recruiters = [
-  { name: "Google", logo: googleLogo },
-  { name: "Microsoft", logo: microsoftLogo },
-  { name: "Meta", logo: metaLogo },
-  { name: "McKinsey", logo: mckinseyLogo },
-  { name: "BCG", logo: bcgLogo },
-  { name: "Bain", logo: bainLogo },
-  { name: "Flipkart", logo: flipkartLogo },
-  { name: "Zomato", logo: zomatoLogo },
-  { name: "Blinkit", logo: blinkitLogo },
-  { name: "Zepto", logo: zeptoLogo },
-  { name: "MakeMyTrip", logo: makemytripLogo },
-  { name: "Careem", logo: careemLogo },
+  "Google", "Microsoft", "Meta", "McKinsey & Co.", "BCG", "Bain & Co.",
+  "Flipkart", "Zomato", "Blinkit", "Zepto", "MakeMyTrip", "Careem",
 ];
 
 const ventureStats = [
@@ -115,18 +92,15 @@ const CareersEntrepreneurship = () => (
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3">145+ recruiting companies — including</p>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-px bg-border border border-border">
-            {recruiters.map((r) => (
+            {recruiters.map((name) => (
               <div
-                key={r.name}
+                key={name}
                 className="bg-background flex items-center justify-center p-4 sm:p-5 md:p-6 aspect-[3/2]"
-                title={r.name}
+                title={name}
               >
-                <img
-                  src={r.logo}
-                  alt={`${r.name} logo`}
-                  loading="lazy"
-                  className="max-h-10 sm:max-h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
-                />
+                <span className="font-display text-base sm:text-lg md:text-xl text-foreground/85 hover:text-foreground transition-colors text-center leading-tight">
+                  {name}
+                </span>
               </div>
             ))}
           </div>
