@@ -35,7 +35,7 @@ const ApplyBento = () => (
         </div>
 
         {/* Main content */}
-        <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center px-6 sm:px-10 md:px-14 py-8 sm:py-10 md:py-12">
+        <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center px-4 sm:px-10 md:px-14 py-8 sm:py-10 md:py-12">
           {/* Left: editorial copy */}
           <div className="md:col-span-8">
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
