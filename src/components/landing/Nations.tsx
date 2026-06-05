@@ -31,7 +31,7 @@ const nations: Nation[] = [
     partner: "Masters' Union Campus",
     img: india,
     title: "Build the foundation.",
-    desc: "Your operating base. Read P&Ls, ship products, run GTM sprints and pitch to founders of Razorpay, Zomato, Nykaa & Lenskart. Walk the floors of ITC, Dixon, NIVEA and Sonalika. You leave India having already done the work — not having only studied it.",
+    desc: "Your operating base. Read P&Ls, ship products, run GTM sprints and pitch to founders of Razorpay, Zomato, Nykaa & Lenskart. Walk the floors of ITC, Dixon, NIVEA and Sonalika. You leave India having already done the work - not having only studied it.",
     outcome: "Operate a venture end-to-end: finance, product, GTM, ops & leadership.",
     tags: ["Finance & FinTech", "Product & AI", "Sales & GTM", "Operations", "Leadership"],
     coords: "28.4°N · 77.0°E",
@@ -59,7 +59,7 @@ const nations: Nation[] = [
     partner: "Imperial College London",
     img: london,
     title: "Command global capital.",
-    desc: "Imperial College London — innovation, deep tech and entrepreneurship at one of the world's top business schools. Decode PE/VC, M&A, luxury brand strategy and the creator-economy playbooks shaping the West.",
+    desc: "Imperial College London - innovation, deep tech and entrepreneurship at one of the world's top business schools. Decode PE/VC, M&A, luxury brand strategy and the creator-economy playbooks shaping the West.",
     outcome: "Pitch, raise and scale a venture at global capital standards.",
     tags: ["Capital Markets", "Tech & Innovation", "Luxury & Brand", "Strategy"],
     coords: "51.5°N · 0.12°W",
@@ -340,7 +340,7 @@ const Nations = () => {
                   ))}
                 </div>
 
-                {/* Outcome strip — highlighted with gradient border + glow */}
+                {/* Outcome strip - highlighted with gradient border + glow */}
                 <div
                   className="relative p-px shadow-[0_20px_60px_-20px_rgba(247,213,68,0.35)]"
                   style={{
@@ -421,7 +421,7 @@ const Nations = () => {
                     Curriculum · {n.term}
                   </div>
                   <h3 className="font-display text-xl sm:text-2xl truncate">
-                    {n.country} — Full Curriculum
+                    {n.country} - Full Curriculum
                   </h3>
                 </div>
                 <button
@@ -543,7 +543,7 @@ const Nations = () => {
                           </div>
                         )}
 
-                        {/* Business Immersions — image cards */}
+                        {/* Business Immersions - image cards */}
                         {activeTab === "business" && term.immersions && (
                           <div>
                             <div className="mb-8 max-w-2xl">
@@ -604,7 +604,7 @@ const Nations = () => {
                           </div>
                         )}
 
-                        {/* Cultural — magazine-style image collage */}
+                        {/* Cultural - magazine-style image collage */}
                         {activeTab === "cultural" && term.cultural && (
                           <div>
                             {term.cultural.imgs && term.cultural.imgs.length >= 2 && (

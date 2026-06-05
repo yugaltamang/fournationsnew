@@ -9,7 +9,7 @@ const partners = [
     name: "Masters' Union",
     image: muLogo,
     headline: "Built by practitioners.",
-    body: "The home institution. A new-age business school where MDs, founders and operators teach — not career academics. In five years, one of India's most selective programmes, on a Top-10 global rank quest.",
+    body: "The home institution. A new-age business school where MDs, founders and operators teach - not career academics. In five years, one of India's most selective programmes, on a Top-10 global rank quest.",
     stats: [
       { v: "2,000+", l: "Students" },
       { v: "200+", l: "Industry Mentors" },
@@ -21,7 +21,7 @@ const partners = [
     name: "CUHK, Hong Kong",
     image: cuhkImg,
     headline: "Gateway to Greater China.",
-    body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong — and build a cross-border GBA venture.",
+    body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
     stats: [
       { v: "#32", l: "QS Ranking" },
       { v: "60+", l: "Years of Excellence" },
@@ -34,7 +34,7 @@ const partners = [
     name: "Imperial College London",
     image: imperialImg,
     headline: "Lead on the world stage.",
-    body: "Learn at one of the world's top-ranked institutions — and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch a creator brand from the heart of London.",
+    body: "Learn at one of the world's top-ranked institutions - and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch a creator brand from the heart of London.",
     stats: [
       { v: "#2", l: "QS World Rankings" },
       { v: "Top 1%", l: "Business Schools" },
@@ -79,11 +79,11 @@ const Immersions = () => (
           Three credentials.
         </h2>
         <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl">
-          Anchored at Masters' Union in Delhi, with terms at CUHK Hong Kong and Imperial College London — you graduate with credentials from all three.
+          Anchored at Masters' Union in Delhi, with terms at CUHK Hong Kong and Imperial College London - you graduate with credentials from all three.
         </p>
       </div>
 
-      {/* Partner cards — vertical editorial layout */}
+      {/* Partner cards - vertical editorial layout */}
       <div className="space-y-8 md:space-y-12">
         {partners.map((p, idx) => (
           <article

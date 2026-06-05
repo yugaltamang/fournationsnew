@@ -1,6 +1,6 @@
 const criteria = [
   { n: "01", t: "Academic Background", d: "Bachelor's degree from any recognised university. Any discipline welcome." },
-  { n: "02", t: "Leadership Potential", d: "Demonstrated drive — academics, sport, business or community. We look for builders." },
+  { n: "02", t: "Leadership Potential", d: "Demonstrated drive - academics, sport, business or community. We look for builders." },
   { n: "03", t: "Communication & Drive", d: "Clarity of thought, entrepreneurial ambition, and hunger to operate globally." },
 ];
 
@@ -23,7 +23,7 @@ const Admissions = () => (
         {/* Subtle top accent bar */}
         <div className="h-px w-full bg-border" />
 
-        {/* Ambient gradient glows — toned down */}
+        {/* Ambient gradient glows - toned down */}
         <div
           className="absolute -top-40 -left-40 w-[420px] h-[420px] rounded-full opacity-[0.12] blur-3xl pointer-events-none"
           style={{
