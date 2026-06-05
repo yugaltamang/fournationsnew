@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight, Map, Sparkles, Trophy, Briefcase, FileText, ClipboardCheck, Users } from "lucide-react";
+import { Menu, X, ArrowUpRight, Map, Sparkles, Trophy, FileText, ClipboardCheck, Users } from "lucide-react";
 
 const navItems = [
   { label: "Journey", href: "#nations", icon: Map },
