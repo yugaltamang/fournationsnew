@@ -46,7 +46,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "Inside India's most iconic companies.", body: "6 company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
+      header: { title: "Inside India's most iconic companies.", body: "3 company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
       cards: [
         { img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80&fit=crop", cat: "Manufacturing & FMCG", title: "India's Industrial Backbone", desc: "Visit world-class manufacturing and FMCG operations.", logos: "ITC · Nivia · Addverb · Blue Tokai" },
         { img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80&fit=crop", cat: "Startups & Unicorns", title: "India's New-Age Disruptors", desc: "Inside India's fastest-growing startups.", logos: "Shiprocket · PhonePe · Ola · Blue Tokai" },
