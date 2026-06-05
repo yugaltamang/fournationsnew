@@ -7,7 +7,7 @@ import ApplyBento from "@/components/landing/ApplyBento";
 import Immersions from "@/components/landing/Immersions";
 import CXO from "@/components/landing/CXO";
 import Outcomes from "@/components/landing/Outcomes";
-import CareersEntrepreneurship from "@/components/landing/CareersEntrepreneurship";
+
 import FAQ from "@/components/landing/FAQ";
 import Admissions from "@/components/landing/Admissions";
 
