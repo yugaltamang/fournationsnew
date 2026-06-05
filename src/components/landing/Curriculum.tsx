@@ -153,12 +153,12 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "Inside London's most iconic institutions.", body: "6 company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
+      header: { title: "Inside London's most iconic institutions.", body: "4 company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
       cards: [
-        { img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&fit=crop", cat: "Finance & Capital", title: "The City of London", desc: "Inside the world's oldest and most influential financial centre.", logos: "Bank of England · Lloyd's · HSBC · Barclays" },
-        { img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&fit=crop", cat: "Luxury & Retail", title: "Brands That Define Culture", desc: "How British luxury brands maintain global relevance.", logos: "Harrods · Burberry · Rolls-Royce · Dyson" },
-        { img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80&fit=crop", cat: "Media & Entertainment", title: "Content at Global Scale", desc: "Inside the UK's media and entertainment ecosystem.", logos: "BBC · Premier League · Warner Bros · ITV" },
-        { img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80&fit=crop", cat: "Tech & Innovation", title: "London's Tech Ecosystem", desc: "Europe's largest tech hub.", logos: "DeepMind · Revolut · Wise · ARM" },
+        { img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&fit=crop", cat: "Finance & Capital", title: "The City of London", desc: "Inside the world's oldest and most influential financial centre.", logos: "London Stock Exchange · City of London" },
+        { img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80&fit=crop", cat: "Banking & Fintech", title: "Digital Finance at Scale", desc: "How global banks and fintech disruptors are reshaping money and payments.", logos: "Citi · Revolut · Ripple" },
+        { img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&fit=crop", cat: "Venture Capital", title: "Europe's Venture Engine", desc: "Inside the firms building and backing the next generation of companies.", logos: "Blenheim Chalcot · Fabric Ventures" },
+        { img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80&fit=crop", cat: "Tech & Advisory", title: "Innovation & Strategy", desc: "Cross-border technology and strategic advisory at scale.", logos: "Transwap · Candesic" },
       ],
     },
     cultural: {
