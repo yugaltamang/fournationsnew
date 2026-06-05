@@ -15,9 +15,8 @@ const Nav = () => {
     { href: "#nations", label: "Journey", num: "01" },
     { href: "#faculty", label: "Why This", num: "02" },
     { href: "#outcomes", label: "Outcomes", num: "03" },
-    { href: "#careers", label: "Careers", num: "04" },
-    { href: "#admissions", label: "Admissions", num: "05" },
-    { href: "#faq", label: "FAQ", num: "06" },
+    { href: "#admissions", label: "Admissions", num: "04" },
+    { href: "#faq", label: "FAQ", num: "05" },
   ];
 
   return (
