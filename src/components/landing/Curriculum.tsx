@@ -20,10 +20,10 @@ export const terms: Term[] = [
     id: 0, flag: "🇮🇳", label: "Term 1 · India",
     bannerGrad: "linear-gradient(135deg,#ff9933 0%,#138808 100%)", bannerFlag: "🇮🇳",
     outcomeLabel: "Learning Outcome", outcome: "Be Entrepreneurship Ready.",
-    outcomeSub: "Build, launch and validate a real business — Finance, Product, Marketing, Operations & AI",
+    outcomeSub: "Build, launch and validate a real business - Finance, Product, Marketing, Operations & AI",
     academic: {
       label: "In Class",
-      hero: { chip: "November – January · India", title: "Term 1 — India", body: "Term 1 builds a <strong>strong entrepreneurial foundation</strong> — moving you from idea to execution with <strong>speed, clarity, and discipline</strong>, across finance, product, validation, and operations.", img: "https://images.mastersunion.link/uploads/26032026/v1/Hero1.webp" },
+      hero: { chip: "November – January · India", title: "Term 1 - India", body: "Term 1 builds a <strong>strong entrepreneurial foundation</strong> - moving you from idea to execution with <strong>speed, clarity, and discipline</strong>, across finance, product, validation, and operations.", img: "https://images.mastersunion.link/uploads/26032026/v1/Hero1.webp" },
       items: [
         { num: "FIFI", code: "Finance & Fintech", title: "How to read and analyse financial statements?", rows: ["How to read and analyse financial statements?"] },
         { num: "FIFI", code: "Finance & Fintech", title: "How to build financial models & value companies ?", rows: ["How to build financial models & value companies ?"] },
@@ -31,7 +31,7 @@ export const terms: Term[] = [
         { num: "SAMA", code: "Sales & Marketing", title: "How to position your brand using consumer psychology & behavior?", rows: ["How to position your brand using consumer psychology & behavior?"] },
         { num: "SAMA", code: "Sales & Marketing", title: "How to analyse markets & identify new business opportunities?", rows: ["How to analyse markets & identify new business opportunities?"] },
         { num: "SAMA", code: "Sales & Marketing", title: "How to craft a distinct brand story, voice & identity?", rows: ["How to craft a distinct brand story, voice & identity?"] },
-        { num: "SAMA", code: "Sales & Marketing", title: "How to Sell by Solving—Not Just Pitching?", rows: ["How to Sell by Solving—Not Just Pitching?"] },
+        { num: "SAMA", code: "Sales & Marketing", title: "How to Sell by Solving-Not Just Pitching?", rows: ["How to Sell by Solving-Not Just Pitching?"] },
         { num: "MAST", code: "Management & Strategy", title: "How to decode global economic signals & predict business shifts?", rows: ["How to decode global economic signals & predict business shifts?"] },
         { num: "MAST", code: "Management & Strategy", title: "How to think strategically about your business?", rows: ["How to think strategically about your business?"] },
         { num: "PRDT", code: "Product , AI & Tech", title: "How to build intelligent business dashboards using Excel and AI?", rows: ["How to build intelligent business dashboards using Excel and AI?"] },
@@ -39,15 +39,15 @@ export const terms: Term[] = [
     },
     outclass: {
       label: "Out Class",
-      hero: { chip: "Out Class · India", title: "Beyond the Classroom", body: "Out Class sessions take learning outside campus walls — into the field, the boardroom, and the street. Every session bridges <strong>theory and real-world practice</strong> through direct exposure.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "Out Class · India", title: "Beyond the Classroom", body: "Out Class sessions take learning outside campus walls - into the field, the boardroom, and the street. Every session bridges <strong>theory and real-world practice</strong> through direct exposure.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&fit=crop&crop=center" },
       items: [
-        { num: "01", title: "How do you identify and validate a high-potential D2C opportunity?", rows: ["Spotting white spaces in consumer markets — demand signals, category gaps, and unmet needs", "Frameworks for rapid opportunity validation before you invest time or capital", "Building a business case: TAM, competitive landscape, and entry timing"] },
-        { num: "02", title: "How do you select the right product and build profitable unit economics?", rows: ["Product selection criteria — margin, repeat purchase potential, and differentiation", "Sourcing strategies: domestic vs import, MOQs, and supplier evaluation", "Unit economics fundamentals — COGS, contribution margin, and CAC payback"] },
-        { num: "03", title: "How do you define a differentiated brand strategy that resonates with your audience?", rows: ["Brand strategy frameworks — positioning, archetype, and category narrative", "Defining your ICP and crafting a value proposition that converts", "Competitive positioning maps and differentiation levers in crowded categories"] },
-        { num: "04", title: "How do you create a compelling brand identity and packaging?", rows: ["Visual identity systems — logo, colour, typography, and tone of voice", "Packaging as a marketing tool — unboxing experience and shelf/screen standout", "Brand consistency across touchpoints — from product to social to paid ads"] },
-        { num: "05", title: "How do you build a high-converting D2C website on Shopify?", rows: ["Shopify store setup — theme selection, product pages, and conversion optimisation", "UX principles for e-commerce — reducing friction from landing to checkout", "Essential apps and integrations for inventory, reviews, and retention"] },
-        { num: "06", title: "How do you successfully launch and scale your brand on online marketplaces?", rows: ["Amazon, Flipkart, and Meesho — platform dynamics, ranking algorithms, and listing strategy", "Marketplace vs owned channel — when to use each and how to balance both", "Reviews, ratings, and the flywheel that drives marketplace growth"] },
-        { num: "07", title: "How do you acquire customers efficiently through performance marketing?", rows: ["Meta and Google Ads fundamentals — campaign structure, targeting, and creative strategy", "CAC optimisation — improving ROAS and reducing blended acquisition cost", "Attribution models and reading your performance dashboard"] },
+        { num: "01", title: "How do you identify and validate a high-potential D2C opportunity?", rows: ["Spotting white spaces in consumer markets - demand signals, category gaps, and unmet needs", "Frameworks for rapid opportunity validation before you invest time or capital", "Building a business case: TAM, competitive landscape, and entry timing"] },
+        { num: "02", title: "How do you select the right product and build profitable unit economics?", rows: ["Product selection criteria - margin, repeat purchase potential, and differentiation", "Sourcing strategies: domestic vs import, MOQs, and supplier evaluation", "Unit economics fundamentals - COGS, contribution margin, and CAC payback"] },
+        { num: "03", title: "How do you define a differentiated brand strategy that resonates with your audience?", rows: ["Brand strategy frameworks - positioning, archetype, and category narrative", "Defining your ICP and crafting a value proposition that converts", "Competitive positioning maps and differentiation levers in crowded categories"] },
+        { num: "04", title: "How do you create a compelling brand identity and packaging?", rows: ["Visual identity systems - logo, colour, typography, and tone of voice", "Packaging as a marketing tool - unboxing experience and shelf/screen standout", "Brand consistency across touchpoints - from product to social to paid ads"] },
+        { num: "05", title: "How do you build a high-converting D2C website on Shopify?", rows: ["Shopify store setup - theme selection, product pages, and conversion optimisation", "UX principles for e-commerce - reducing friction from landing to checkout", "Essential apps and integrations for inventory, reviews, and retention"] },
+        { num: "06", title: "How do you successfully launch and scale your brand on online marketplaces?", rows: ["Amazon, Flipkart, and Meesho - platform dynamics, ranking algorithms, and listing strategy", "Marketplace vs owned channel - when to use each and how to balance both", "Reviews, ratings, and the flywheel that drives marketplace growth"] },
+        { num: "07", title: "How do you acquire customers efficiently through performance marketing?", rows: ["Meta and Google Ads fundamentals - campaign structure, targeting, and creative strategy", "CAC optimisation - improving ROAS and reducing blended acquisition cost", "Attribution models and reading your performance dashboard"] },
       ],
     },
     immersions: {
@@ -64,7 +64,7 @@ export const terms: Term[] = [
       body: "Business isn't just built in boardrooms. Understanding India means standing in its corridors of power and walking its ancient markets.",
       cards: [
         { name: "Parliament of India", desc: "Visit the new Parliament Building. Understand India's public policy framework and how governance shapes business regulation." },
-        { name: "Heritage Business Districts", desc: "Explore how Mughal-era trade routes shaped India's commercial identity — from historic bazaars to modern business hubs." },
+        { name: "Heritage Business Districts", desc: "Explore how Mughal-era trade routes shaped India's commercial identity - from historic bazaars to modern business hubs." },
       ],
       note: "* Locations are indicative and may vary based on availability, permissions, and external factors.",
       imgs: ["https://images.unsplash.com/photo-1587474260584-136574528ed5?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=500&q=85&fit=crop"],
@@ -75,10 +75,10 @@ export const terms: Term[] = [
     id: 1, flag: "🇭🇰", label: "Term 2 · Hong Kong (CUHK)",
     bannerGrad: "linear-gradient(135deg,#de2910 0%,#f5c842 100%)", bannerFlag: "🇭🇰",
     outcomeLabel: "Learning Outcome", outcome: "Be Scale-Ready for Global Markets.",
-    outcomeSub: "Study in Hong Kong, Understand China — explore business, digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong.",
+    outcomeSub: "Study in Hong Kong, Understand China - explore business, digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong.",
     academic: {
       label: "In Class",
-      hero: { chip: "March – May · CUHK, Hong Kong", title: "Term 2 — Hong Kong", body: "Term 2 focuses on studying business at the intersection of <strong>finance, digital innovation, manufacturing, supply chains, and AI</strong> — across five concentrations delivered through the CUHK Hong Kong immersion curriculum. Learners also get a certificate from CUHK, Hong Kong.", img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "March – May · CUHK, Hong Kong", title: "Term 2 - Hong Kong", body: "Term 2 focuses on studying business at the intersection of <strong>finance, digital innovation, manufacturing, supply chains, and AI</strong> - across five concentrations delivered through the CUHK Hong Kong immersion curriculum. Learners also get a certificate from CUHK, Hong Kong.", img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop&crop=center" },
       items: [
         { num: "MAST", code: "Management & Strategy", title: "How does the state shape market opportunity?", rows: ["How does the state shape market opportunity?"] },
         { num: "PRDT", code: "Product , AI & Tech", title: "How did China leapfrog the West in digital business models?", rows: ["How did China leapfrog the West in digital business models?"] },
@@ -89,7 +89,7 @@ export const terms: Term[] = [
     },
     outclass: {
       label: "Out Class",
-      hero: { chip: "Out Class · Hong Kong", title: "Build Your GBA Venture", body: "The Hong Kong Out Class series is built around one outcome — <strong>building a cross-border digital ecosystem</strong>. Six sessions take you from the Greater Bay Area opportunity landscape to a viable business model.", img: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "Out Class · Hong Kong", title: "Build Your GBA Venture", body: "The Hong Kong Out Class series is built around one outcome - <strong>building a cross-border digital ecosystem</strong>. Six sessions take you from the Greater Bay Area opportunity landscape to a viable business model.", img: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80&fit=crop&crop=center" },
       items: [
         { num: "01", title: "How to Understand the GBA Opportunity Landscape", rows: ["Map the Greater Bay Area's business corridors, consumer markets, and policy advantages", "Identify where Hong Kong creates leverage for cross-border venture building"] },
         { num: "02", title: "How to Identify the Company and Define the Problem", rows: ["Select a business context and clarify the customer or operational problem", "Frame the venture opportunity with clear users, constraints, and success metrics"] },
@@ -125,10 +125,10 @@ export const terms: Term[] = [
     id: 2, flag: "🇬🇧", label: "Term 3 · London (Imperial)",
     bannerGrad: "linear-gradient(135deg,#012169 0%,#cf142b 100%)", bannerFlag: "🇬🇧",
     outcomeLabel: "Learning Outcome", outcome: "Be Global Leadership Ready.",
-    outcomeSub: "Lead with capital fluency, strategic sharpness, and the confidence to operate on the world stage — with a certificate from Imperial College London.",
+    outcomeSub: "Lead with capital fluency, strategic sharpness, and the confidence to operate on the world stage - with a certificate from Imperial College London.",
     academic: {
       label: "In Class",
-      hero: { chip: "June – July · London · Imperial College London", title: "Term 3 — London", body: "The final term at <strong>Imperial College London</strong> brings together five intensive concentrations — <strong>global capital, competitive strategy, luxury & branding, the experience economy, and leadership</strong> — delivered at one of the world's top campuses, with a <strong>certificate awarded by Imperial College London</strong>.", img: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "June – July · London · Imperial College London", title: "Term 3 - London", body: "The final term at <strong>Imperial College London</strong> brings together five intensive concentrations - <strong>global capital, competitive strategy, luxury & branding, the experience economy, and leadership</strong> - delivered at one of the world's top campuses, with a <strong>certificate awarded by Imperial College London</strong>.", img: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=800&q=80&fit=crop&crop=center" },
       items: [
         { num: "FIFI", code: "Finance & Fintech", title: "How Private Equity & VC Firms Work", rows: ["How Private Equity & VC Firms Work"] },
         { num: "PRDT", code: "Product , AI & Tech", title: "How to leverage big data and analytics to make smarter business decisions?", rows: ["How to leverage big data and analytics to make smarter business decisions?"] },
@@ -141,15 +141,15 @@ export const terms: Term[] = [
     },
     outclass: {
       label: "Out Class",
-      hero: { chip: "Out Class · London", title: "Build Your Personal Brand", body: "The London Out Class series is built around one outcome — <strong>launching and monetising your personal brand</strong> as a creator. Seven sessions take you from niche to content strategy to a fully monetised presence.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "Out Class · London", title: "Build Your Personal Brand", body: "The London Out Class series is built around one outcome - <strong>launching and monetising your personal brand</strong> as a creator. Seven sessions take you from niche to content strategy to a fully monetised presence.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
       items: [
-        { num: "01", title: "How to Find Your Niche and Position Yourself as a Creator", rows: ["Identifying your unique angle in a crowded creator landscape", "Positioning frameworks — who you are, who you're for, and what makes you distinct"] },
-        { num: "02", title: "How to Build a Winning Content Strategy", rows: ["Platform-specific strategy — Instagram, YouTube, LinkedIn, and podcasting", "Content pillars, publishing cadence, and building a consistent audience"] },
-        { num: "03", title: "How to Create Engaging Content Ideas and Scripts", rows: ["Ideation systems that never run dry — frameworks for generating content ideas", "Scriptwriting fundamentals for short-form and long-form formats"] },
+        { num: "01", title: "How to Find Your Niche and Position Yourself as a Creator", rows: ["Identifying your unique angle in a crowded creator landscape", "Positioning frameworks - who you are, who you're for, and what makes you distinct"] },
+        { num: "02", title: "How to Build a Winning Content Strategy", rows: ["Platform-specific strategy - Instagram, YouTube, LinkedIn, and podcasting", "Content pillars, publishing cadence, and building a consistent audience"] },
+        { num: "03", title: "How to Create Engaging Content Ideas and Scripts", rows: ["Ideation systems that never run dry - frameworks for generating content ideas", "Scriptwriting fundamentals for short-form and long-form formats"] },
         { num: "04", title: "How to Shoot, Edit, and Produce Professional-Quality Content", rows: ["Camera, lighting, and audio basics for solo creators", "Mobile-first editing workflows and tools"] },
-        { num: "05", title: "How to Grow and Engage Your Audience", rows: ["Growth levers — algorithms, collaborations, SEO, and community", "Engagement strategies that turn viewers into loyal followers"] },
-        { num: "06", title: "How to Monetise Your Creator Brand", rows: ["Revenue models — sponsorships, products, courses, memberships, and licensing", "Building a personal brand that generates inbound opportunities"] },
-        { num: "07", title: "How to Present and Defend Your Creator Brand", rows: ["Final creator pitch — present your brand strategy, content plan, and monetisation model", "Defend your brand positioning and growth strategy to a panel"] },
+        { num: "05", title: "How to Grow and Engage Your Audience", rows: ["Growth levers - algorithms, collaborations, SEO, and community", "Engagement strategies that turn viewers into loyal followers"] },
+        { num: "06", title: "How to Monetise Your Creator Brand", rows: ["Revenue models - sponsorships, products, courses, memberships, and licensing", "Building a personal brand that generates inbound opportunities"] },
+        { num: "07", title: "How to Present and Defend Your Creator Brand", rows: ["Final creator pitch - present your brand strategy, content plan, and monetisation model", "Defend your brand positioning and growth strategy to a panel"] },
       ],
     },
     immersions: {
@@ -165,10 +165,10 @@ export const terms: Term[] = [
       chip: "Cultural Immersion · London", title: "Experience London\nBeyond the Boardroom.",
       body: "London's history, architecture and cultural institutions are as much a business education as any classroom.",
       cards: [
-        { name: "Tower of London", desc: "Walk through a thousand years of power, trade, and empire — where England's commercial story began." },
-        { name: "West End Theatre", desc: "Experience the world's most famous theatre district — storytelling, branding, and the experience economy live." },
-        { name: "British Museum", desc: "How Britain collected, curated, and commercialised global culture — and what it means for modern branding." },
-        { name: "Premier League Experience", desc: "Inside the world's most valuable sports brand — marketing, media rights, and global fandom." },
+        { name: "Tower of London", desc: "Walk through a thousand years of power, trade, and empire - where England's commercial story began." },
+        { name: "West End Theatre", desc: "Experience the world's most famous theatre district - storytelling, branding, and the experience economy live." },
+        { name: "British Museum", desc: "How Britain collected, curated, and commercialised global culture - and what it means for modern branding." },
+        { name: "Premier League Experience", desc: "Inside the world's most valuable sports brand - marketing, media rights, and global fandom." },
       ],
       imgs: ["https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&q=85&fit=crop"],
     },
@@ -178,7 +178,7 @@ export const terms: Term[] = [
     id: 3, flag: "🇦🇪", label: "Term 4 · Dubai",
     bannerGrad: "linear-gradient(135deg,#f07020 0%,#e8a020 100%)", bannerFlag: "🇦🇪",
     outcomeLabel: "Learning Outcome · Optional", outcome: "Be Global Business Ready.",
-    outcomeSub: "Experience a city built on speed and capital — DIFC · JAFZA · Global operators",
+    outcomeSub: "Experience a city built on speed and capital - DIFC · JAFZA · Global operators",
     isDubai: true,
     academic: { label: "", hero: { chip: "", title: "", body: "", img: "" }, items: [] },
     outclass: { label: "", hero: { chip: "", title: "", body: "", img: "" }, items: [] },
@@ -334,7 +334,7 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
                   The optional week <em className="italic not-italic text-primary">most people regret skipping.</em>
                 </h4>
                 <ul className="text-muted-foreground leading-relaxed flex flex-col gap-3">
-                  <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span><strong className="text-foreground">Meet the operators</strong> building at global scale — in person, not on a panel</span></li>
+                  <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span><strong className="text-foreground">Meet the operators</strong> building at global scale - in person, not on a panel</span></li>
                   <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span>See how <strong className="text-foreground">capital, real estate, and venture</strong> actually work in one ecosystem</span></li>
                   <li className="flex items-start gap-3"><span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span><span>A city built in <strong className="text-foreground">50 years</strong> the world is still catching up to</span></li>
                 </ul>
@@ -418,7 +418,7 @@ const Curriculum = () => {
             <em className="italic text-primary not-italic">generation of global leaders.</em>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-5 max-w-2xl">
-            Four nations. Four distinct learning systems — In Class, Out Class, Business Immersion, Cultural Immersion. Scroll through each term below.
+            Four nations. Four distinct learning systems - In Class, Out Class, Business Immersion, Cultural Immersion. Scroll through each term below.
           </p>
         </div>
 

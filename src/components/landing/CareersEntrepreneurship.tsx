@@ -90,7 +90,7 @@ const CareersEntrepreneurship = () => (
 
         {/* Recruiters */}
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3">145+ recruiting companies — including</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3">145+ recruiting companies - including</p>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-px bg-border border border-border">
             {recruiters.map((name) => (
               <div

@@ -6,7 +6,7 @@ const Hero = () => (
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
 
-    {/* Monument collage — blended into the right side of the hero */}
+    {/* Monument collage - blended into the right side of the hero */}
     <div
       aria-hidden="true"
       className="pointer-events-none absolute inset-y-0 right-0 hidden lg:block lg:w-[58%] xl:w-[55%]"
@@ -27,7 +27,7 @@ const Hero = () => (
           Four Cities · One Cohort
         </div>
 
-        {/* Collage image — transparent PNG, blended into dark hero */}
+        {/* Collage image - transparent PNG, blended into dark hero */}
         <img
           src={heroCollage}
           alt=""
@@ -57,7 +57,7 @@ const Hero = () => (
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-          A Post Graduate program across <strong className="text-foreground">India</strong>, <strong className="text-foreground">Hong Kong</strong> (CUHK), <strong className="text-foreground">London</strong> (Imperial College) — with an optional <strong className="text-foreground">Dubai</strong> finale.
+          A Post Graduate program across <strong className="text-foreground">India</strong>, <strong className="text-foreground">Hong Kong</strong> (CUHK), <strong className="text-foreground">London</strong> (Imperial College) - with an optional <strong className="text-foreground">Dubai</strong> finale.
         </p>
 
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">

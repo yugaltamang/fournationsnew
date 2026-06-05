@@ -9,7 +9,7 @@ const pillars = [
     image: globeImg,
     title: "Four countries.",
     titleEm: "One cohort.",
-    body: "Live and build across India, Hong Kong, London and Dubai — four of the world's most dynamic business ecosystems.",
+    body: "Live and build across India, Hong Kong, London and Dubai - four of the world's most dynamic business ecosystems.",
     points: [
       "9 months across 4 countries",
       "On-ground visits & boardrooms",
@@ -23,7 +23,7 @@ const pillars = [
     image: cxoImg,
     title: "Leaders,",
     titleEm: "not lecturers.",
-    body: "Faculty drawn from people actively running businesses — MDs, founders and senior executives in unfiltered conversations.",
+    body: "Faculty drawn from people actively running businesses - MDs, founders and senior executives in unfiltered conversations.",
     points: [
       "Practising leaders, every sector",
       "Live conversations, not lectures",
@@ -39,9 +39,9 @@ const pillars = [
     titleEm: "not slide decks.",
     body: "Every term ends with a real, working business output. You leave each country with something tangible and shipped.",
     points: [
-      "D2C brand — Delhi (Term 1)",
-      "GBA venture — Hong Kong (Term 2)",
-      "Creator Challenge — London (Term 3)",
+      "D2C brand - Delhi (Term 1)",
+      "GBA venture - Hong Kong (Term 2)",
+      "Creator Challenge - London (Term 3)",
     ],
     stat: { value: "3", label: "Ventures" },
     fit: "cover" as const,
@@ -92,7 +92,7 @@ const CXO = () => {
           </div>
         </div>
 
-        {/* Diagonal split panels — desktop */}
+        {/* Diagonal split panels - desktop */}
         <div
           className="hidden md:flex relative w-full h-[640px] gap-2"
           onMouseLeave={() => setActive(1)}
@@ -126,7 +126,7 @@ const CXO = () => {
                   } ${isActive ? "scale-105" : "scale-110 grayscale"}`}
                 />
 
-                {/* Dark overlay — flat tint only on collapsed panels */}
+                {/* Dark overlay - flat tint only on collapsed panels */}
                 <div
                   className={`absolute inset-0 transition-opacity duration-700 ${
                     isActive ? "bg-background/30" : "bg-background/80"
@@ -135,12 +135,12 @@ const CXO = () => {
 
                 {/* Accent bar removed */}
 
-                {/* Folio numeral — always visible */}
+                {/* Folio numeral - always visible */}
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/80">
                   /0{i + 1}
                 </div>
 
-                {/* Collapsed state — vertical tag */}
+                {/* Collapsed state - vertical tag */}
                 <div
                   className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
                     isActive ? "opacity-0 pointer-events-none" : "opacity-100"
@@ -182,7 +182,7 @@ const CXO = () => {
                     </span>
                   </div>
 
-                  {/* Stat — top right */}
+                  {/* Stat - top right */}
                   <div className="absolute top-6 right-8 lg:right-16 flex items-baseline gap-2">
                     <span className="font-display text-5xl lg:text-6xl mu-hero-gradient-text leading-none">
                       {p.stat.value}
@@ -221,7 +221,7 @@ const CXO = () => {
           })}
         </div>
 
-        {/* Mobile — stacked panels */}
+        {/* Mobile - stacked panels */}
         <div className="md:hidden space-y-4">
           {pillars.map((p, i) => (
             <article
