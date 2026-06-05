@@ -27,7 +27,6 @@ const Index = () => (
     <Immersions />
     <CXO />
     <Outcomes />
-    <CareersEntrepreneurship />
     <Admissions />
     <FAQ />
     

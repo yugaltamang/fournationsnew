@@ -5,7 +5,6 @@ const navItems = [
   { label: "Journey", href: "#nations", icon: Map },
   { label: "Why This", href: "#faculty", icon: Sparkles },
   { label: "Outcomes", href: "#outcomes", icon: Trophy },
-  { label: "Careers", href: "#careers", icon: Briefcase },
   { label: "Admissions", href: "#admissions", icon: ClipboardCheck },
   { label: "FAQ", href: "#faq", icon: FileText },
   { label: "Apply", href: "#apply", icon: Users },
