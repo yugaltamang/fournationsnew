@@ -161,7 +161,8 @@ const groups: FaqGroup[] = [
 ];
 
 const FAQ = () => {
-  const [open, setOpen] = useState<string | null>("0-0");
+  const [open, setOpen] = useState<string | null>(null);
+  const [openGroup, setOpenGroup] = useState<number | null>(null);
 
   return (
     <section id="faq" className="py-16 sm:py-20 md:py-32 bg-secondary/20 border-y border-border">
@@ -172,49 +173,69 @@ const FAQ = () => {
           <p className="mt-4 text-sm sm:text-base text-muted-foreground">PGP – 4 Nations</p>
         </div>
 
-        <div className="space-y-10 sm:space-y-12">
-          {groups.map((group, gi) => (
-            <div key={gi}>
-              <div className="flex items-baseline gap-3 mb-4 sm:mb-6">
-                <span className="font-mono text-[10px] sm:text-xs text-primary tracking-[0.25em]">
-                  {String(gi + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-display text-xl sm:text-2xl md:text-3xl uppercase tracking-tight">
-                  {group.category}
-                </h3>
-              </div>
-              <div className="border-t border-border">
-                {group.items.map((f, i) => {
-                  const key = `${gi}-${i}`;
-                  const isOpen = open === key;
-                  return (
-                    <div key={key} className="border-b border-border">
-                      <button
-                        onClick={() => setOpen(isOpen ? null : key)}
-                        className="w-full flex items-start justify-between gap-4 sm:gap-6 py-4 sm:py-5 text-left"
-                      >
-                        <span className="font-display text-base sm:text-lg md:text-xl leading-snug">
-                          {f.q}
-                        </span>
-                        <span
-                          className={`font-display text-2xl sm:text-3xl text-primary transition-transform shrink-0 ${
-                            isOpen ? "rotate-45" : ""
-                          }`}
-                        >
-                          +
-                        </span>
-                      </button>
-                      {isOpen && (
-                        <div className="pb-5 pr-4 sm:pr-10 text-sm sm:text-base text-muted-foreground leading-relaxed animate-fade-up">
-                          {f.a}
+        <div className="space-y-4 sm:space-y-5">
+          {groups.map((group, gi) => {
+            const isGroupOpen = openGroup === gi;
+            return (
+              <div key={gi} className="border border-border rounded-lg overflow-hidden bg-background/40">
+                <button
+                  onClick={() => {
+                    setOpenGroup(isGroupOpen ? null : gi);
+                    setOpen(null);
+                  }}
+                  className="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-5 sm:py-6 text-left"
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-mono text-[10px] sm:text-xs text-primary tracking-[0.25em]">
+                      {String(gi + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-display text-xl sm:text-2xl md:text-3xl uppercase tracking-tight">
+                      {group.category}
+                    </h3>
+                  </div>
+                  <span
+                    className={`font-display text-2xl sm:text-3xl text-primary transition-transform shrink-0 ${
+                      isGroupOpen ? "rotate-45" : ""
+                    }`}
+                  >
+                    +
+                  </span>
+                </button>
+                {isGroupOpen && (
+                  <div className="px-5 sm:px-6 pb-2 border-t border-border animate-fade-up">
+                    {group.items.map((f, i) => {
+                      const key = `${gi}-${i}`;
+                      const isOpen = open === key;
+                      return (
+                        <div key={key} className="border-b border-border last:border-b-0">
+                          <button
+                            onClick={() => setOpen(isOpen ? null : key)}
+                            className="w-full flex items-start justify-between gap-4 sm:gap-6 py-4 sm:py-5 text-left"
+                          >
+                            <span className="font-display text-base sm:text-lg md:text-xl leading-snug">
+                              {f.q}
+                            </span>
+                            <span
+                              className={`font-display text-2xl sm:text-3xl text-primary transition-transform shrink-0 ${
+                                isOpen ? "rotate-45" : ""
+                              }`}
+                            >
+                              +
+                            </span>
+                          </button>
+                          {isOpen && (
+                            <div className="pb-5 pr-4 sm:pr-10 text-sm sm:text-base text-muted-foreground leading-relaxed animate-fade-up">
+                              {f.a}
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
-                  );
-                })}
+                      );
+                    })}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
