@@ -51,9 +51,9 @@ const Hero = () => (
         </div>
 
         <h1 className="font-display text-[clamp(2.25rem,9vw,6rem)] leading-[0.95] font-medium text-balance break-words">
-          One <em className="italic mu-hero-gradient-text not-italic font-normal">degree.</em>
+          Four <em className="italic mu-hero-gradient-text not-italic font-normal">Countries.</em>
           <br />
-          Four <span className="font-mono text-[0.4em] align-top text-muted-foreground">/04</span> countries.
+          One Transformative Journey.
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
