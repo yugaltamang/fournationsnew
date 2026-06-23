@@ -27,9 +27,9 @@ const Apply = () => (
 
         <div className="grid grid-cols-3 gap-px bg-border max-w-3xl mx-auto">
           {[
-            { l: "Journey", v: "India → HK → London → Dubai" },
+            { l: "Journey", v: "India → London → Hong Kong → Dubai" },
             { l: "Decision", v: "Within 14 days" },
-            { l: "Start", v: "Aug 2026" },
+            { l: "Start", v: "Feb 2027" },
           ].map((s) => (
             <div key={s.l} className="bg-background p-4 sm:p-5">
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">{s.l}</div>

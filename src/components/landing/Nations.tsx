@@ -27,7 +27,7 @@ const nations: Nation[] = [
     country: "India",
     flag: "🇮🇳",
     city: "Delhi NCR · Gurugram",
-    term: "Term 1 · Nov – Jan",
+    term: "Term 1 · Feb – May",
     partner: "Masters' Union Campus",
     img: india,
     title: "Build the foundation.",
@@ -38,24 +38,10 @@ const nations: Nation[] = [
   },
   {
     n: "02",
-    country: "Hong Kong",
-    flag: "🇭🇰",
-    city: "Central · Greater Bay Area",
-    term: "Term 2 · Mar – May",
-    partner: "CUHK Business School",
-    img: hk,
-    title: "Read the East.",
-    desc: "Asia's capital gateway. Sessions at CUHK Business School, trading floors at HKEX & HSBC, and a Greater Bay Area sprint into Shenzhen's hardware ecosystem. Decode how Asian capital, manufacturing and platforms actually move.",
-    outcome: "Navigate Asian capital markets, supply chains and cross-border deals.",
-    tags: ["Global Finance", "Asia Strategy", "Supply Chain", "FinTech"],
-    coords: "22.3°N · 114.1°E",
-  },
-  {
-    n: "03",
     country: "United Kingdom",
     flag: "🇬🇧",
     city: "London",
-    term: "Term 3 · Jun – Jul",
+    term: "Term 2 · Jun – Jul",
     partner: "Imperial College London",
     img: london,
     title: "Command global capital.",
@@ -63,6 +49,20 @@ const nations: Nation[] = [
     outcome: "Pitch, raise and scale a venture at global capital standards.",
     tags: ["Capital Markets", "Tech & Innovation", "Luxury & Brand", "Strategy"],
     coords: "51.5°N · 0.12°W",
+  },
+  {
+    n: "03",
+    country: "Hong Kong",
+    flag: "🇭🇰",
+    city: "Central · Greater Bay Area",
+    term: "Term 3 · Aug – Oct",
+    partner: "CUHK Business School",
+    img: hk,
+    title: "Read the East.",
+    desc: "Asia's capital gateway. Sessions at CUHK Business School, trading floors at HKEX & HSBC, and a Greater Bay Area sprint into Shenzhen's hardware ecosystem. Decode how Asian capital, manufacturing and platforms actually move.",
+    outcome: "Navigate Asian capital markets, supply chains and cross-border deals.",
+    tags: ["Global Finance", "Asia Strategy", "Supply Chain", "FinTech"],
+    coords: "22.3°N · 114.1°E",
   },
   {
     n: "04",
@@ -153,7 +153,7 @@ const Nations = () => {
             </h2>
           </div>
           <p className="md:max-w-sm text-sm sm:text-base text-muted-foreground">
-            The journey is sequential, not symbolic. Build in India. Read Asia from Hong Kong. Raise capital in London. Bridge the world from Dubai.
+            The journey is sequential, not symbolic. Build in India. Raise capital in London. Read Asia from Hong Kong. Bridge the world from Dubai.
           </p>
         </div>
 

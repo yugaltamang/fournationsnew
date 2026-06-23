@@ -9,7 +9,7 @@ const pillars = [
     image: globeImg,
     title: "Four countries.",
     titleEm: "One cohort.",
-    body: "Live and build across India, Hong Kong, London and Dubai - four of the world's most dynamic business ecosystems.",
+    body: "Live and build across India, London, Hong Kong and Dubai - four of the world's most dynamic business ecosystems.",
     points: [
       "9 months across 4 countries",
       "On-ground visits & boardrooms",
@@ -40,8 +40,8 @@ const pillars = [
     body: "Every term ends with a real, working business output. You leave each country with something tangible and shipped.",
     points: [
       "D2C brand - Delhi (Term 1)",
-      "GBA venture - Hong Kong (Term 2)",
-      "Creator Challenge - London (Term 3)",
+      "Creator Challenge - London (Term 2)",
+      "GBA venture - Hong Kong (Term 3)",
     ],
     stat: { value: "3", label: "Ventures" },
     fit: "cover" as const,

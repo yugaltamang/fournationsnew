@@ -30,7 +30,7 @@ const ApplyBento = () => (
             Cohort 04 · Now Accepting
           </div>
           <div className="hidden sm:block font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            Aug 2026 · Cohort 04
+            Feb 2027 · Cohort 04
           </div>
         </div>
 

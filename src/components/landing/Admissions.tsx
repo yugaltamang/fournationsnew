@@ -89,7 +89,7 @@ const Admissions = () => (
         <div className="relative border-y border-border/60 bg-background/20">
           <div className="px-4 sm:px-10 md:px-14 py-5 flex items-center justify-between flex-wrap gap-4">
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-              Cohort 2026 · Timeline
+              Cohort 2027 · Timeline
             </div>
             <div className="flex items-center gap-6 sm:gap-10 flex-wrap">
               <div>
