@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Check } from "lucide-react";
 import globeImg from "@/assets/four-nations-globe.png";
 import cxoImg from "@/assets/cxo-masterclass.webp";
 import immersionImg from "@/assets/immersion-factory.webp";
@@ -76,7 +77,6 @@ const CXO = () => {
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4">
               <span className="w-8 h-px bg-primary" />
               <span>Why This Programme</span>
-              <span className="text-muted-foreground/50">/ 03 Pillars</span>
             </div>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance">
               Hands-on learning for{" "}
@@ -206,11 +206,9 @@ const CXO = () => {
                     {p.points.map((pt, j) => (
                       <li
                         key={j}
-                        className="flex items-baseline gap-3 text-[12px] lg:text-sm text-foreground/85 leading-snug"
+                        className="flex items-start gap-3 text-[12px] lg:text-sm text-foreground/85 leading-snug"
                       >
-                        <span className="font-mono text-[10px] text-primary shrink-0">
-                          §{i + 1}.{j + 1}
-                        </span>
+                        <Check className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
                         <span>{pt}</span>
                       </li>
                     ))}
@@ -270,11 +268,9 @@ const CXO = () => {
                   {p.points.map((pt, j) => (
                     <li
                       key={j}
-                      className="flex items-baseline gap-2 text-[11px] text-foreground/85 leading-snug"
+                      className="flex items-start gap-2 text-[11px] text-foreground/85 leading-snug"
                     >
-                      <span className="font-mono text-[9px] text-primary shrink-0">
-                        §{i + 1}.{j + 1}
-                      </span>
+                      <Check className="w-3 h-3 text-primary mt-0.5 shrink-0" />
                       <span>{pt}</span>
                     </li>
                   ))}
