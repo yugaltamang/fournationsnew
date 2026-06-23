@@ -207,11 +207,9 @@ const CXO = () => {
                     {p.points.map((pt, j) => (
                       <li
                         key={j}
-                        className="flex items-baseline gap-3 text-[12px] lg:text-sm text-foreground/85 leading-snug"
+                        className="flex items-start gap-3 text-[12px] lg:text-sm text-foreground/85 leading-snug"
                       >
-                        <span className="font-mono text-[10px] text-primary shrink-0">
-                          §{i + 1}.{j + 1}
-                        </span>
+                        <Check className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
                         <span>{pt}</span>
                       </li>
                     ))}
