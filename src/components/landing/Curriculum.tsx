@@ -91,15 +91,15 @@ export const terms: Term[] = [
     },
     outclass: {
       label: "Out Class",
-      hero: { chip: "Out Class · London", title: "Build Your Personal Brand", body: "The London Out Class series is built around one outcome - <strong>launching and monetising your personal brand</strong> as a creator. Seven sessions take you from niche to content strategy to a fully monetised presence.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "Out Class · London", title: "Pitch Your Innovative Startup", body: "The London Out Class series is built around one outcome - <strong>crafting and delivering a compelling startup pitch</strong> that wins investors, customers and partners. Seven sessions take you from problem validation to a live pitch in front of a global panel.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
       items: [
-        { num: "01", title: "How to Find Your Niche and Position Yourself as a Creator", rows: ["Identifying your unique angle in a crowded creator landscape", "Positioning frameworks - who you are, who you're for, and what makes you distinct"] },
-        { num: "02", title: "How to Build a Winning Content Strategy", rows: ["Platform-specific strategy - Instagram, YouTube, LinkedIn, and podcasting", "Content pillars, publishing cadence, and building a consistent audience"] },
-        { num: "03", title: "How to Create Engaging Content Ideas and Scripts", rows: ["Ideation systems that never run dry - frameworks for generating content ideas", "Scriptwriting fundamentals for short-form and long-form formats"] },
-        { num: "04", title: "How to Shoot, Edit, and Produce Professional-Quality Content", rows: ["Camera, lighting, and audio basics for solo creators", "Mobile-first editing workflows and tools"] },
-        { num: "05", title: "How to Grow and Engage Your Audience", rows: ["Growth levers - algorithms, collaborations, SEO, and community", "Engagement strategies that turn viewers into loyal followers"] },
-        { num: "06", title: "How to Monetise Your Creator Brand", rows: ["Revenue models - sponsorships, products, courses, memberships, and licensing", "Building a personal brand that generates inbound opportunities"] },
-        { num: "07", title: "How to Present and Defend Your Creator Brand", rows: ["Final creator pitch - present your brand strategy, content plan, and monetisation model", "Defend your brand positioning and growth strategy to a panel"] },
+        { num: "01", title: "How to identify a real problem worth solving?", rows: ["Spotting high-impact problems through customer interviews and market observation", "Validation frameworks: hypothesis, experiment, learn - before building anything"] },
+        { num: "02", title: "How to design a differentiated solution and business model?", rows: ["From problem to value proposition: what you solve, for whom, and why now", "Business model patterns - revenue streams, unit economics and scalable delivery"] },
+        { num: "03", title: "How to size your market and map the competitive landscape?", rows: ["TAM / SAM / SOM sizing for new ventures", "Competitive positioning and moats that make your startup defensible"] },
+        { num: "04", title: "How to build a lean MVP and test with real users?", rows: ["MVP scoping - the smallest thing that proves value", "Experiment design, feedback loops and rapid iteration methods"] },
+        { num: "05", title: "How to create financial projections and a fundraising plan?", rows: ["Revenue, cost and cash-flow modelling for early-stage ventures", "Funding stages, investor types and what each stage expects to see"] },
+        { num: "06", title: "How to design a pitch deck that tells a compelling story?", rows: ["Story arc for investor decks - problem, solution, traction, market, team, ask", "Visual clarity, narrative flow and the metrics that matter most"] },
+        { num: "07", title: "How to pitch your startup and win investor confidence?", rows: ["Live pitch rehearsal in front of a panel of investors and operators", "Handling Q&A, objections and demonstrating command of your venture"] },
       ],
     },
     immersions: {
