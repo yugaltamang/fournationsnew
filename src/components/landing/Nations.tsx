@@ -282,10 +282,7 @@ const Nations = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent" />
 
                 {/* Top meta strip */}
-                <div className="absolute top-0 inset-x-0 flex items-start justify-between gap-2 p-3 sm:p-6">
-                  <div className="bg-background/80 backdrop-blur px-2.5 py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest border border-border max-w-[55%] truncate">
-                    {n.n} / 04 · {n.coords}
-                  </div>
+                <div className="absolute top-0 inset-x-0 flex items-start justify-end gap-2 p-3 sm:p-6">
                   <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 justify-end">
                     {n.optional && (
                       <div className="bg-primary text-primary-foreground px-2.5 py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest">
