@@ -30,7 +30,7 @@ const Index = () => (
     <Outcomes />
     <Admissions />
     <FAQ />
-    
+    <Contact />
     <Footer />
     <MobileBottomBar />
   </main>
