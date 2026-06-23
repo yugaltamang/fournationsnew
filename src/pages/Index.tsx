@@ -27,6 +27,7 @@ const Index = () => (
     
     <ApplyBento />
     <Immersions />
+    <Outclass />
     <CXO />
     <Outcomes />
     <Admissions />
