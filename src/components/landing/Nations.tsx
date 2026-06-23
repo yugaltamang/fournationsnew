@@ -45,7 +45,7 @@ const nations: Nation[] = [
     partner: "Imperial College London",
     img: london,
     title: "Command global capital.",
-    desc: "Imperial College London - innovation, deep tech and entrepreneurship at one of the world's top business schools. Decode PE/VC, M&A, luxury brand strategy and the creator-economy playbooks shaping the West.",
+    desc: "Imperial College London - innovation, deep tech and entrepreneurship at one of the world's top business schools. Decode PE/VC, M&A, luxury brand strategy and the startup pitch playbooks shaping the West.",
     outcome: "Pitch, raise and scale a venture at global capital standards.",
     tags: ["Capital Markets", "Tech & Innovation", "Luxury & Brand", "Strategy"],
     coords: "51.5°N · 0.12°W",
