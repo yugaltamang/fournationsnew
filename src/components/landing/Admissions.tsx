@@ -1,151 +1,125 @@
-const criteria = [
-  { n: "01", t: "Academic Background", d: "Bachelor's degree from any recognised university. Any discipline welcome." },
-  { n: "02", t: "Leadership Potential", d: "Demonstrated drive - academics, sport, business or community. We look for builders." },
-  { n: "03", t: "Communication & Drive", d: "Clarity of thought, entrepreneurial ambition, and hunger to operate globally." },
-];
+import { Sparkles, ArrowRight } from "lucide-react";
 
 const steps = [
-  { n: "01", t: "Complete the Application", d: "Online form with personal details, professional background, resume and a 2-min video or 200-word essay." },
-  { n: "02", t: "Online Interview", d: "Shortlisted applicants meet a panel of Masters from academia, industry and the core team." },
-  { n: "03", t: "Admission Decision", d: "Committee evaluates feedback and notifies applicants by email. Entire process: up to 4 weeks." },
+  "Submit application",
+  "Admissions interview",
+  "Offer letter",
+  "Fee confirmation",
 ];
 
 const Admissions = () => (
-  <section id="admissions" className="relative py-16 sm:py-20 md:py-28">
-    <div className="container">
-      <div
-        className="relative overflow-hidden border border-border bg-[hsl(0,0%,6%)]"
-        style={{
-          boxShadow:
-            "0 30px 80px -20px hsl(0 0% 0% / 0.5)",
-        }}
-      >
-        {/* Subtle top accent bar */}
-        <div className="h-px w-full bg-border" />
+  <section id="admissions" className="relative py-12 sm:py-16 border-t border-border bg-card/30 overflow-hidden">
+    <div className="absolute inset-0 editorial-grid opacity-[0.05] pointer-events-none" />
 
-        {/* Ambient gradient glows - toned down */}
-        <div
-          className="absolute -top-40 -left-40 w-[420px] h-[420px] rounded-full opacity-[0.12] blur-3xl pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, #F7D544 0%, transparent 70%)",
-          }}
-        />
-        <div
-          className="absolute -bottom-40 -right-40 w-[420px] h-[420px] rounded-full opacity-[0.10] blur-3xl pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, #39B5D7 0%, transparent 70%)",
-          }}
-        />
-
-        {/* Editorial grid */}
-        <div className="absolute inset-0 editorial-grid opacity-[0.05] pointer-events-none" />
-
-        {/* Top meta strip */}
-        <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-border px-4 sm:px-10 py-3 bg-secondary/30">
-          <div className="inline-flex items-center gap-2 border border-primary/40 text-primary px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.25em] font-bold">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Round 01 · Now Open
-          </div>
-          <div className="hidden sm:flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground">
-            <span className="text-muted-foreground">Deadline ·</span>
-            <span className="text-primary font-bold">20 Nov 2026</span>
-          </div>
+    <div className="container relative">
+      {/* Header */}
+      <div className="max-w-4xl mb-8">
+        <div className="inline-flex items-center gap-2 border border-primary/40 text-primary px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] font-bold">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+          Admissions & Fees
         </div>
-
-        {/* Header */}
-        <div className="relative px-4 sm:px-10 md:px-14 pt-10 sm:pt-12 md:pt-16 pb-6 md:pb-8">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4">
-            <span className="w-8 h-px bg-primary" />
-            <span className="font-bold">Admissions / Selection</span>
-          </div>
-          <h2 className="font-display text-[clamp(2.25rem,6vw,4rem)] leading-[0.95] text-balance mb-4 max-w-3xl">
-            What we look for in{" "}
-            <em className="italic mu-hero-gradient-text not-italic">
-              every applicant.
-            </em>
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
-            A rigorous selection process to ensure every participant is ready to build, lead and grow alongside a world-class cohort.
-          </p>
-        </div>
-
-        {/* Criteria grid */}
-        <div className="relative px-4 sm:px-10 md:px-14 pb-8 md:pb-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
-            {criteria.map((c) => (
-              <div key={c.n} className="bg-[hsl(0,0%,6%)] p-5 sm:p-6">
-                
-                <div className="font-display text-lg sm:text-xl mb-2">{c.t}</div>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4 max-w-2xl">
+          Limited cohort seats. Apply now.
+        </p>
+        <ol className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-3 text-sm">
+          {steps.map((step, i, arr) => (
+            <li key={step} className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full border border-primary/40 bg-primary/10 font-mono text-[11px] text-primary">
+                  {i + 1}
+                </span>
+                <span className="text-foreground whitespace-nowrap">{step}</span>
               </div>
-            ))}
-          </div>
-        </div>
+              {i < arr.length - 1 && (
+                <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/50 shrink-0" />
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
 
-        {/* Timeline strip */}
-        <div className="relative border-y border-border/60 bg-background/20">
-          <div className="px-4 sm:px-10 md:px-14 py-5 flex items-center justify-between flex-wrap gap-4">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-              Cohort 2027 · Timeline
+      {/* Fees */}
+      <div className="border border-border bg-background mb-6">
+        {/* India Fees */}
+        <div className="p-4 sm:p-5 border-b border-border">
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-4">India (in INR)</div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+            <div className="bg-background p-3 sm:p-4 text-center">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Application Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-foreground">₹500</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">One-time, non-refundable</div>
             </div>
-            <div className="flex items-center gap-6 sm:gap-10 flex-wrap">
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Deadline</div>
-                <div className="font-display text-base sm:text-lg">20 Nov 2026</div>
-              </div>
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Interviews</div>
-                <div className="font-display text-base sm:text-lg">Dec '26 – Feb '27</div>
-              </div>
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Fee</div>
-                <div className="font-display text-base sm:text-lg">INR 500</div>
-              </div>
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Status</div>
-                <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-primary">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" /> Active
-                </div>
-              </div>
+            <div className="bg-background p-3 sm:p-4 text-center">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Admissions Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-foreground">₹50,000</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">Payable on offer acceptance</div>
+            </div>
+            <div className="bg-background p-3 sm:p-4 text-center">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Tuition Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-foreground">₹30,00,000</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">Covers the full programme</div>
+            </div>
+            <div className="bg-background p-3 sm:p-4 text-center relative">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1.5">Total Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-primary">₹30,50,500</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">All inclusive</div>
             </div>
           </div>
         </div>
 
-        {/* Process steps */}
-        <div className="relative px-4 sm:px-10 md:px-14 py-8 md:py-10">
-          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-5">
-            ◉ Process
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {steps.map((s, i) => (
-              <div key={s.n} className="relative">
-                
-                <div className="h-px w-full bg-border mb-4" />
-                <div className="font-display text-lg sm:text-xl mb-2">{s.t}</div>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{s.d}</p>
-                {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-2 -right-4 font-mono text-primary">→</div>
-                )}
-              </div>
-            ))}
+        {/* International Fees */}
+        <div className="p-4 sm:p-5">
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-4">International (in USD)</div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+            <div className="bg-background p-3 sm:p-4 text-center">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Application Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-foreground">$50</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">One-time, non-refundable</div>
+            </div>
+            <div className="bg-background p-3 sm:p-4 text-center">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Admissions Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-foreground">$5,000</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">Payable on offer acceptance</div>
+            </div>
+            <div className="bg-background p-3 sm:p-4 text-center">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Tuition Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-foreground">$50,000</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">Covers the full programme</div>
+            </div>
+            <div className="bg-background p-3 sm:p-4 text-center relative">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1.5">Total Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-primary">$55,050</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">All inclusive</div>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom CTA strip */}
-        <div className="relative border-t border-border/60 px-4 sm:px-10 md:px-14 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-xs sm:text-sm text-muted-foreground font-mono">
-            Decision within 4 weeks of application deadline.
-          </p>
-          <a
-            href="#apply"
-            className="group inline-flex items-center justify-between gap-4 bg-primary text-primary-foreground px-6 py-4 font-bold uppercase tracking-wider text-sm hover:shadow-bold transition-all"
-          >
-            <span>Apply Now</span>
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </a>
+      {/* Scholarship + CTA */}
+      <div className="grid md:grid-cols-3 gap-px bg-border border border-primary/40">
+        <div className="md:col-span-2 bg-primary/5 p-6 sm:p-8 flex gap-4 items-start">
+          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/15 text-primary shrink-0">
+            <Sparkles className="w-4 h-4" />
+          </div>
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-2">Scholarships</div>
+            <p className="text-sm sm:text-base">
+              Merit-based and need-based scholarships available. Indicate interest when applying, assessed during the admissions interview.
+            </p>
+          </div>
         </div>
+        <a
+          href="#apply"
+          className="bg-primary text-primary-foreground p-6 sm:p-8 flex items-center justify-between gap-4 group hover:opacity-90 transition-opacity"
+        >
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] mb-2 opacity-80">Next step</div>
+            <div className="font-display text-xl sm:text-2xl leading-tight">Start your application</div>
+          </div>
+          <ArrowRight className="w-6 h-6 shrink-0 group-hover:translate-x-1 transition-transform" />
+        </a>
       </div>
     </div>
   </section>
