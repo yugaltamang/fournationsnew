@@ -380,15 +380,17 @@ const Nations = () => {
                 </div>
 
                 {/* CTA: yellow pill matching top */}
-                <div className="pt-2 flex justify-end">
-                  <button
-                    onClick={openCurriculum}
-                    className="group inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest border border-primary transition-colors"
-                  >
-                    View Curriculum
-                    <span className="font-display text-sm group-hover:translate-x-0.5 transition-transform">→</span>
-                  </button>
-                </div>
+                {n.country !== "Dubai" && (
+                  <div className="pt-2 flex justify-end">
+                    <button
+                      onClick={openCurriculum}
+                      className="group inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest border border-primary transition-colors"
+                    >
+                      View Curriculum
+                      <span className="font-display text-sm group-hover:translate-x-0.5 transition-transform">→</span>
+                    </button>
+                  </div>
+                )}
 
 
               </div>
