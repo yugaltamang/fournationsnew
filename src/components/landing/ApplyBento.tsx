@@ -70,13 +70,13 @@ const ApplyBento = () => (
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
                   Deadline
                 </div>
-                <div className="font-display text-base sm:text-lg">7 Aug 2026</div>
+                <div className="font-display text-base sm:text-lg">20 Nov 2026</div>
               </div>
               <div className="bg-[hsl(0,0%,6%)] p-3">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
                   Interviews
                 </div>
-                <div className="font-display text-base sm:text-lg">Jul – Sep 2026</div>
+                <div className="font-display text-base sm:text-lg">Dec '26 – Feb '27</div>
               </div>
               <div className="bg-[hsl(0,0%,6%)] p-3">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">

@@ -50,7 +50,7 @@ const Admissions = () => (
           </div>
           <div className="hidden sm:flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground">
             <span className="text-muted-foreground">Deadline ·</span>
-            <span className="text-primary font-bold">7 Aug 2026</span>
+            <span className="text-primary font-bold">20 Nov 2026</span>
           </div>
         </div>
 
@@ -94,11 +94,11 @@ const Admissions = () => (
             <div className="flex items-center gap-6 sm:gap-10 flex-wrap">
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Deadline</div>
-                <div className="font-display text-base sm:text-lg">7 Aug 2026</div>
+                <div className="font-display text-base sm:text-lg">20 Nov 2026</div>
               </div>
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Interviews</div>
-                <div className="font-display text-base sm:text-lg">Jul – Sep 2026</div>
+                <div className="font-display text-base sm:text-lg">Dec '26 – Feb '27</div>
               </div>
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Fee</div>
