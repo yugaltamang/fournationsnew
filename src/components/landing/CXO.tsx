@@ -25,11 +25,11 @@ const pillars = [
     titleEm: "not lecturers.",
     body: "Faculty drawn from people actively running businesses - MDs, founders and senior executives in unfiltered conversations.",
     points: [
-      "Practising leaders, every sector",
+      "10+ CXO masterclasses across the programme",
       "Live conversations, not lectures",
       "Lifelong alumni network access",
     ],
-    stat: { value: "60+", label: "Sessions" },
+    stat: { value: "10+", label: "CXO Sessions" },
     fit: "cover" as const,
   },
   {
@@ -40,7 +40,7 @@ const pillars = [
     body: "Every term ends with a real, working business output. You leave each country with something tangible and shipped.",
     points: [
       "D2C brand - Delhi (Term 1)",
-      "Creator Challenge - London (Term 2)",
+      "Startup Pitch - London (Term 2)",
       "GBA venture - Hong Kong (Term 3)",
     ],
     stat: { value: "3", label: "Ventures" },
