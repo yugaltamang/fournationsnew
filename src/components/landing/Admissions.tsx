@@ -1,69 +1,53 @@
 import { Sparkles, ArrowRight } from "lucide-react";
 
-const steps = [
-  "Submit application",
-  "Admissions interview",
-  "Offer letter",
-  "Fee confirmation",
-];
-
 const Admissions = () => (
   <section id="admissions" className="relative py-12 sm:py-16 border-t border-border bg-card/30 overflow-hidden">
     <div className="absolute inset-0 editorial-grid opacity-[0.05] pointer-events-none" />
 
     <div className="container relative">
       {/* Header */}
-      <div className="max-w-4xl mb-8">
-        <div className="inline-flex items-center gap-2 border border-primary/40 text-primary px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] font-bold">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          Admissions & Fees
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-2 border border-primary/40 text-primary px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] font-bold">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            Admissions & Fees
+          </div>
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4 max-w-2xl">
+            Limited cohort seats. Apply now.
+          </p>
         </div>
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4 max-w-2xl">
-          Limited cohort seats. Apply now.
-        </p>
-        <ol className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-3 text-sm">
-          {steps.map((step, i, arr) => (
-            <li key={step} className="flex items-center gap-3">
-              <div className="flex items-center gap-2">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full border border-primary/40 bg-primary/10 font-mono text-[11px] text-primary">
-                  {i + 1}
-                </span>
-                <span className="text-foreground whitespace-nowrap">{step}</span>
-              </div>
-              {i < arr.length - 1 && (
-                <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/50 shrink-0" />
-              )}
-            </li>
-          ))}
-        </ol>
+        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary border border-primary/40 px-3 py-1.5 self-start md:self-auto">
+          Cohort 1
+        </div>
       </div>
 
-      {/* Fees */}
+      {/* Single-line admissions strip */}
       <div className="border border-border bg-background mb-6">
-        <div className="p-4 sm:p-5">
-          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-4">India (in INR)</div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
-            <div className="bg-background p-3 sm:p-4 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Application Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-foreground">₹500</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">One-time, non-refundable</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border">
+          <div className="p-5 sm:p-6 md:p-8">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+              Deadline
             </div>
-            <div className="bg-background p-3 sm:p-4 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Admissions Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-foreground">₹50,000</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">Payable on offer acceptance</div>
+            <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
+              20 Nov 2026
             </div>
-            <div className="bg-background p-3 sm:p-4 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Tuition Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-foreground">₹30,00,000</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">Covers the full programme</div>
+          </div>
+          <div className="p-5 sm:p-6 md:p-8">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+              Interviews
             </div>
-            <div className="bg-background p-3 sm:p-4 text-center relative">
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1.5">Total Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-primary">₹30,50,500</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">All inclusive</div>
+            <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
+              Dec '26 – Feb '27
             </div>
+          </div>
+          <div className="p-5 sm:p-6 md:p-8">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
+              Fee
+            </div>
+            <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
+              INR 500
+            </div>
+            <div className="text-[11px] text-muted-foreground mt-1">Application fee only</div>
           </div>
         </div>
       </div>
