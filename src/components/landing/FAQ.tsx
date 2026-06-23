@@ -9,7 +9,7 @@ const groups: FaqGroup[] = [
     items: [
       {
         q: "Is the PGP – 4 Nations comparable to an Executive MBA in India?",
-        a: "The PGP – 4 Nations is not a traditional Executive MBA. It is a 9-month, full-time global program focused on hands-on learning across India, Hong Kong, and London, with an optional Dubai immersion. The program emphasizes learning by doing through live ventures, CXO interactions, and global exposure, rather than classroom-only instruction.",
+        a: "The PGP – 4 Nations is not a traditional Executive MBA. It is a 9-month, full-time global program focused on hands-on learning across India, London, and Hong Kong, with an optional Dubai immersion. The program emphasizes learning by doing through live ventures, CXO interactions, and global exposure, rather than classroom-only instruction.",
       },
       {
         q: "What is the expected cohort size?",
@@ -33,7 +33,7 @@ const groups: FaqGroup[] = [
             <p className="mb-2">The fee typically covers:</p>
             <ul className="list-disc pl-5 space-y-1">
               <li>Academic sessions and curriculum delivery</li>
-              <li>Access to global partner institutions (CUHK & Imperial)</li>
+              <li>Access to global partner institutions (Imperial & CUHK)</li>
               <li>CXO masterclasses and industry interactions</li>
               <li>Learning resources and program infrastructure</li>
             </ul>
@@ -119,7 +119,7 @@ const groups: FaqGroup[] = [
     items: [
       {
         q: "Can I continue working while pursuing the program?",
-        a: "No. This is a full-time program, and participants are not expected to continue working alongside it. The course involves weekday classes in India and international travel to Hong Kong and London, making full-time commitment essential.",
+        a: "No. This is a full-time program, and participants are not expected to continue working alongside it. The course involves weekday classes in India and international travel to London and Hong Kong, making full-time commitment essential.",
       },
       {
         q: "How is performance evaluated during the program?",
