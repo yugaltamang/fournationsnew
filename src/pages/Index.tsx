@@ -11,6 +11,7 @@ import Outcomes from "@/components/landing/Outcomes";
 import FAQ from "@/components/landing/FAQ";
 import Admissions from "@/components/landing/Admissions";
 
+import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
 import MobileBottomBar from "@/components/landing/MobileBottomBar";
 
@@ -29,7 +30,7 @@ const Index = () => (
     <Outcomes />
     <Admissions />
     <FAQ />
-    
+    <Contact />
     <Footer />
     <MobileBottomBar />
   </main>
