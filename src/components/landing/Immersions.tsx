@@ -13,7 +13,6 @@ const partners = [
     stats: [
       { v: "2,000+", l: "Students" },
       { v: "200+", l: "Industry Mentors" },
-      { v: "₹34 LPA", l: "Avg Package" },
     ],
   },
   {
