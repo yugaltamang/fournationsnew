@@ -77,7 +77,7 @@ const Admissions = () => (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
             {criteria.map((c) => (
               <div key={c.n} className="bg-[hsl(0,0%,6%)] p-5 sm:p-6">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-3">{c.n} / 03</div>
+                
                 <div className="font-display text-lg sm:text-xl mb-2">{c.t}</div>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{c.d}</p>
               </div>
@@ -122,7 +122,7 @@ const Admissions = () => (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {steps.map((s, i) => (
               <div key={s.n} className="relative">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">{s.n} / 03</div>
+                
                 <div className="h-px w-full bg-border mb-4" />
                 <div className="font-display text-lg sm:text-xl mb-2">{s.t}</div>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{s.d}</p>
