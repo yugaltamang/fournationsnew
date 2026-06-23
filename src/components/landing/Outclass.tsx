@@ -71,7 +71,6 @@ const Outclass = () => {
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4 sm:mb-6">
             <span className="w-8 h-px bg-primary" />
             <span>Out Class</span>
-            <span className="text-muted-foreground/50">/ 03 Challenges</span>
           </div>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95] text-balance">
             Learn it in class.{" "}

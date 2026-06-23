@@ -59,7 +59,6 @@ const Admissions = () => (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4">
             <span className="w-8 h-px bg-primary" />
             <span className="font-bold">Admissions / Selection</span>
-            <span className="text-muted-foreground/50">/ 03 Criteria</span>
           </div>
           <h2 className="font-display text-[clamp(2.25rem,6vw,4rem)] leading-[0.95] text-balance mb-4 max-w-3xl">
             What we look for in{" "}
