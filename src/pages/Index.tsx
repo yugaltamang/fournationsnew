@@ -5,6 +5,7 @@ import Nations from "@/components/landing/Nations";
 import Curriculum from "@/components/landing/Curriculum";
 import ApplyBento from "@/components/landing/ApplyBento";
 import Immersions from "@/components/landing/Immersions";
+import Outclass from "@/components/landing/Outclass";
 import CXO from "@/components/landing/CXO";
 import Outcomes from "@/components/landing/Outcomes";
 
@@ -26,6 +27,7 @@ const Index = () => (
     
     <ApplyBento />
     <Immersions />
+    <Outclass />
     <CXO />
     <Outcomes />
     <Admissions />
