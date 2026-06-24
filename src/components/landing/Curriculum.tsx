@@ -57,6 +57,7 @@ export const terms: Term[] = [
         { img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80&fit=crop", cat: "Startups & Unicorns", title: "India's New-Age Disruptors", desc: "Inside India's fastest-growing startups.", logos: "Shiprocket · PhonePe · Ola · Blue Tokai" },
         { img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&fit=crop", cat: "Finance & Consulting", title: "India's Capital Engine", desc: "How India's financial infrastructure powers growth.", logos: "Goldman Sachs · McKinsey · HDFC · NSE" },
         { img: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80&fit=crop", cat: "Tech & Digital", title: "India's Digital Revolution", desc: "Inside India's tech and digital commerce ecosystem.", logos: "Flipkart · Freshworks · Razorpay · Swiggy" },
+        { img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80&fit=crop", cat: "Delhi NCR & Jalandhar", title: "North India at Work", desc: "Company visits rooted in Delhi NCR and Jalandhar - from startup headquarters to manufacturing plants.", logos: "Nivia · Addverb · Blue Tokai · Shiprocket" },
       ],
     },
     cultural: {
