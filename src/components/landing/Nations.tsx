@@ -151,9 +151,8 @@ const Nations = () => {
               One global operator.
             </h2>
           </div>
-          <p className="md:max-w-sm text-sm sm:text-base text-muted-foreground">
-            The journey is sequential, not symbolic. Build in India. Raise capital in London. Read Asia from Hong Kong. Bridge the world from Dubai.
-          </p>
+          <div className="md:max-w-sm" />
+
         </div>
 
         {/* Itinerary rail */}
