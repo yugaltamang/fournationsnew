@@ -225,12 +225,11 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
       </div>
     </div>
     {panel.summary ? (
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4 max-w-3xl">
         {panel.summary.map((item, i) => (
-          <div key={i} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
-            <span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span>
-            <span>{item}</span>
-          </div>
+          <p key={i} className="text-sm sm:text-base text-foreground/90 leading-relaxed">
+            {item}
+          </p>
         ))}
       </div>
     ) : (
