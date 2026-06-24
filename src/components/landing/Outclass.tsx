@@ -190,7 +190,7 @@ export default function Outclass() {
                 />
               ))}
               <div className="absolute top-5 left-5 z-20">
-                <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white bg-black/60 px-3 py-1.5 backdrop-blur-sm">
+                <span className="tag-pill">
                   {active.label}
                 </span>
               </div>
