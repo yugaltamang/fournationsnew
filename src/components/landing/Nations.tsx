@@ -527,12 +527,11 @@ const Nations = () => {
                             {term.outclass.summary && term.outclass.summary.length > 0 ? (
                               <div className="max-w-3xl">
                                 <p className="text-muted-foreground leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: term.outclass.hero.body }} />
-                                <div className="flex flex-col gap-3">
+                                <div className="flex flex-col gap-4">
                                   {term.outclass.summary.map((s, i) => (
-                                    <div key={i} className="flex items-start gap-3 border border-border bg-secondary/20 p-4">
-                                      <span className="text-primary font-mono text-xs mt-1 shrink-0">0{i + 1}</span>
-                                      <span className="text-sm sm:text-base text-foreground/90 leading-relaxed">{s}</span>
-                                    </div>
+                                    <p key={i} className="text-sm sm:text-base text-foreground/90 leading-relaxed">
+                                      {s}
+                                    </p>
                                   ))}
                                 </div>
                               </div>
@@ -582,7 +581,7 @@ const Nations = () => {
                                       />
                                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                                       <div className="absolute top-3 left-3">
-                                        <span className="inline-block bg-background/90 backdrop-blur px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-primary border border-border">
+                                        <span className="tag-pill">
                                           {card.cat}
                                         </span>
                                       </div>
