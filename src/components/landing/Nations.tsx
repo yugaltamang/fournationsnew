@@ -284,9 +284,9 @@ const Nations = () => {
                 <div className="absolute top-0 inset-x-0 flex items-start justify-end gap-2 p-3 sm:p-6">
                   <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 justify-end">
                     {n.optional && (
-                      <div className="bg-primary text-primary-foreground px-2.5 py-1.5 font-mono text-[9px] sm:text-[10px] uppercase tracking-widest">
+                      <span className="tag-pill">
                         Optional
-                      </div>
+                      </span>
                     )}
                     {n.country !== "Dubai" && (
                       <button
