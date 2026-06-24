@@ -81,7 +81,7 @@ const CareersEntrepreneurship = () => (
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3">Roles graduates land</p>
           <div className="flex flex-wrap gap-2">
             {roles.map((r) => (
-              <span key={r} className="border border-border bg-secondary/30 px-3 py-1.5 text-xs sm:text-sm text-foreground/85">
+              <span key={r} className="tag-pill">
                 {r}
               </span>
             ))}
