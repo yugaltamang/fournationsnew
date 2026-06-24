@@ -25,12 +25,12 @@ const ApplyBento = () => (
 
         {/* Top meta strip */}
         <div className="relative flex items-center justify-between border-b border-border/60 px-4 sm:px-10 py-3">
-          <div className="flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground">
+        <div className="flex items-center gap-2 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Cohort 04 · Now Accepting
+            Cohort 01 · Now Accepting
           </div>
           <div className="hidden sm:block font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            Feb 2027 · Cohort 04
+            Feb 2027 · Cohort 01
           </div>
         </div>
 
