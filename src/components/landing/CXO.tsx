@@ -238,7 +238,7 @@ const CXO = () => {
               <div className="absolute inset-0 bg-background/40" />
 
               <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary px-2 py-1 border border-primary/40">
+                <span className="tag-pill">
                   {p.tag}
                 </span>
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/70">
