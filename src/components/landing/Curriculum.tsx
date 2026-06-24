@@ -99,6 +99,7 @@ export const terms: Term[] = [
         "Create a compelling pitch deck and present your startup to an investor panel.",
       ],
     },
+    immersions: {
       header: { title: "Inside London's most iconic institutions.", body: "4 company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
       cards: [
         { img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&fit=crop", cat: "Finance & Capital", title: "The City of London", desc: "Inside the world's oldest and most influential financial centre.", logos: "London Stock Exchange · City of London" },
