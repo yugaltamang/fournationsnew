@@ -224,9 +224,20 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
         <img src={panel.hero.img} alt={panel.hero.title} loading="lazy" className="w-full h-full object-cover" />
       </div>
     </div>
-    <div className="flex flex-col gap-3">
-      {panel.items.map((item, i) => <AccordionRow key={i} item={item} />)}
-    </div>
+    {panel.summary ? (
+      <div className="flex flex-col gap-3">
+        {panel.summary.map((item, i) => (
+          <div key={i} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
+            <span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div className="flex flex-col gap-3">
+        {panel.items.map((item, i) => <AccordionRow key={i} item={item} />)}
+      </div>
+    )}
   </div>
 );
 
