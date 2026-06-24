@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 /* ─── data types ─── */
 interface AccItem { num: string; code?: string; title: string; rows: string[]; topics?: string }
-interface SubPanel { label: string; hero: { chip: string; title: string; body: string; img: string }; items: AccItem[] }
+interface SubPanel { label: string; hero: { chip: string; title: string; body: string; img: string }; items: AccItem[]; summary?: string[] }
 interface CulturalPanel { chip: string; title: string; body: string; cards: { name: string; desc: string }[]; note?: string; imgs: [string, string] }
 interface ImmersionPanel { header: { title: string; body: string; note?: { title: string; desc: string } }; cards: { img: string; cat: string; title: string; desc: string; logos: string }[] }
 
@@ -90,16 +90,13 @@ export const terms: Term[] = [
       ],
     },
     outclass: {
-      label: "Out Class",
-      hero: { chip: "Out Class · London", title: "Pitch Your Innovative Startup", body: "The London Out Class series is built around one outcome - <strong>crafting and delivering a compelling startup pitch</strong> that wins investors, customers and partners. Seven sessions take you from problem validation to a live pitch in front of a global panel.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
-      items: [
-        { num: "01", title: "How to identify a real problem worth solving?", rows: ["Spotting high-impact problems through customer interviews and market observation", "Validation frameworks: hypothesis, experiment, learn - before building anything"] },
-        { num: "02", title: "How to design a differentiated solution and business model?", rows: ["From problem to value proposition: what you solve, for whom, and why now", "Business model patterns - revenue streams, unit economics and scalable delivery"] },
-        { num: "03", title: "How to size your market and map the competitive landscape?", rows: ["TAM / SAM / SOM sizing for new ventures", "Competitive positioning and moats that make your startup defensible"] },
-        { num: "04", title: "How to build a lean MVP and test with real users?", rows: ["MVP scoping - the smallest thing that proves value", "Experiment design, feedback loops and rapid iteration methods"] },
-        { num: "05", title: "How to create financial projections and a fundraising plan?", rows: ["Revenue, cost and cash-flow modelling for early-stage ventures", "Funding stages, investor types and what each stage expects to see"] },
-        { num: "06", title: "How to design a pitch deck that tells a compelling story?", rows: ["Story arc for investor decks - problem, solution, traction, market, team, ask", "Visual clarity, narrative flow and the metrics that matter most"] },
-        { num: "07", title: "How to pitch your startup and win investor confidence?", rows: ["Live pitch rehearsal in front of a panel of investors and operators", "Handling Q&A, objections and demonstrating command of your venture"] },
+      label: "Capstone",
+      hero: { chip: "Capstone · London", title: "Pitch Your Startup", body: "The London capstone is built around one outcome - <strong>crafting and delivering a compelling startup pitch</strong> that wins investors, customers, and partners.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
+      items: [],
+      summary: [
+        "Validate a real problem and design a differentiated venture model.",
+        "Build a lean MVP and test it with real users in the UK market.",
+        "Create a compelling pitch deck and present your startup to an investor panel.",
       ],
     },
     immersions: {
@@ -141,15 +138,13 @@ export const terms: Term[] = [
       ],
     },
     outclass: {
-      label: "Out Class",
-      hero: { chip: "Out Class · Hong Kong", title: "Build Your GBA Venture", body: "The Hong Kong Out Class series is built around one outcome - <strong>building a cross-border digital ecosystem</strong>. Six sessions take you from the Greater Bay Area opportunity landscape to a viable business model.", img: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80&fit=crop&crop=center" },
-      items: [
-        { num: "01", title: "How to Understand the GBA Opportunity Landscape", rows: ["Map the Greater Bay Area's business corridors, consumer markets, and policy advantages", "Identify where Hong Kong creates leverage for cross-border venture building"] },
-        { num: "02", title: "How to Identify the Company and Define the Problem", rows: ["Select a business context and clarify the customer or operational problem", "Frame the venture opportunity with clear users, constraints, and success metrics"] },
-        { num: "03", title: "How to Develop a Market Entry Strategy", rows: ["Design entry routes across Hong Kong, mainland China, and regional markets", "Assess channels, partnerships, regulatory complexity, and execution risks"] },
-        { num: "04", title: "How to Leverage GBA Synergies", rows: ["Use Hong Kong's finance, logistics, and talent advantages with mainland manufacturing and scale", "Identify complementary ecosystem partners for speed and defensibility"] },
-        { num: "05", title: "How to Design Digital & Logistics Models", rows: ["Build digital journeys, platform logic, and fulfilment flows for cross-border businesses", "Evaluate technology, operations, and customer experience trade-offs"] },
-        { num: "06", title: "How to Build a Business Model & Ensure Financial Viability", rows: ["Translate the venture into unit economics, pricing, and operating assumptions", "Present and defend the GBA venture model to a panel"] },
+      label: "Capstone",
+      hero: { chip: "Capstone · Hong Kong", title: "Build Your GBA Venture", body: "The Hong Kong capstone is built around one outcome - <strong>building a cross-border venture</strong> that leverages the Greater Bay Area's unique ecosystem.", img: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80&fit=crop&crop=center" },
+      items: [],
+      summary: [
+        "Map the Greater Bay Area opportunity and define a cross-border venture.",
+        "Design a market entry strategy that uses Hong Kong's capital, logistics, and talent advantages.",
+        "Build a financially viable business model and present it to a panel.",
       ],
     },
     immersions: {
@@ -229,9 +224,20 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
         <img src={panel.hero.img} alt={panel.hero.title} loading="lazy" className="w-full h-full object-cover" />
       </div>
     </div>
-    <div className="flex flex-col gap-3">
-      {panel.items.map((item, i) => <AccordionRow key={i} item={item} />)}
-    </div>
+    {panel.summary ? (
+      <div className="flex flex-col gap-3">
+        {panel.summary.map((item, i) => (
+          <div key={i} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
+            <span className="text-primary font-mono text-xs mt-1 shrink-0">▸</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div className="flex flex-col gap-3">
+        {panel.items.map((item, i) => <AccordionRow key={i} item={item} />)}
+      </div>
+    )}
   </div>
 );
 
