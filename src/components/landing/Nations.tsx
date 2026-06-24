@@ -594,7 +594,7 @@ const Nations = () => {
                                         {card.desc}
                                       </p>
                                       {card.logos && (
-                                        <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/80 pt-3 border-t border-border/60">
+                                        <div className="font-mono text-[10px] uppercase tracking-wider text-white pt-3 border-t border-border/60">
                                           {card.logos}
                                         </div>
                                       )}
