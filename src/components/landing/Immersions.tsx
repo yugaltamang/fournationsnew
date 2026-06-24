@@ -116,12 +116,12 @@ const Immersions = () => (
                   className="relative w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                 />
                 {/* Term tag */}
-                <div className="absolute top-4 left-4 sm:top-5 sm:left-5 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-widest z-10">
-                  {p.tag}
+                <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10">
+                  <span className="tag-pill">{p.tag}</span>
                 </div>
                 {/* Corner mark */}
-                <div className="absolute bottom-4 right-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70 z-10">
-                  Cert · Awarded
+                <div className="absolute bottom-4 right-4 z-10">
+                  <span className="tag-pill">Cert · Awarded</span>
                 </div>
               </div>
             </div>
