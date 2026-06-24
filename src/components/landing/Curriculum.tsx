@@ -90,19 +90,15 @@ export const terms: Term[] = [
       ],
     },
     outclass: {
-      label: "Out Class",
-      hero: { chip: "Out Class · London", title: "Pitch Your Innovative Startup", body: "The London Out Class series is built around one outcome - <strong>crafting and delivering a compelling startup pitch</strong> that wins investors, customers and partners. Seven sessions take you from problem validation to a live pitch in front of a global panel.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
-      items: [
-        { num: "01", title: "How to identify a real problem worth solving?", rows: ["Spotting high-impact problems through customer interviews and market observation", "Validation frameworks: hypothesis, experiment, learn - before building anything"] },
-        { num: "02", title: "How to design a differentiated solution and business model?", rows: ["From problem to value proposition: what you solve, for whom, and why now", "Business model patterns - revenue streams, unit economics and scalable delivery"] },
-        { num: "03", title: "How to size your market and map the competitive landscape?", rows: ["TAM / SAM / SOM sizing for new ventures", "Competitive positioning and moats that make your startup defensible"] },
-        { num: "04", title: "How to build a lean MVP and test with real users?", rows: ["MVP scoping - the smallest thing that proves value", "Experiment design, feedback loops and rapid iteration methods"] },
-        { num: "05", title: "How to create financial projections and a fundraising plan?", rows: ["Revenue, cost and cash-flow modelling for early-stage ventures", "Funding stages, investor types and what each stage expects to see"] },
-        { num: "06", title: "How to design a pitch deck that tells a compelling story?", rows: ["Story arc for investor decks - problem, solution, traction, market, team, ask", "Visual clarity, narrative flow and the metrics that matter most"] },
-        { num: "07", title: "How to pitch your startup and win investor confidence?", rows: ["Live pitch rehearsal in front of a panel of investors and operators", "Handling Q&A, objections and demonstrating command of your venture"] },
+      label: "Capstone",
+      hero: { chip: "Capstone · London", title: "Pitch Your Startup", body: "The London capstone is built around one outcome - <strong>crafting and delivering a compelling startup pitch</strong> that wins investors, customers, and partners.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
+      items: [],
+      summary: [
+        "Validate a real problem and design a differentiated venture model.",
+        "Build a lean MVP and test it with real users in the UK market.",
+        "Create a compelling pitch deck and present your startup to an investor panel.",
       ],
     },
-    immersions: {
       header: { title: "Inside London's most iconic institutions.", body: "4 company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
       cards: [
         { img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&fit=crop", cat: "Finance & Capital", title: "The City of London", desc: "Inside the world's oldest and most influential financial centre.", logos: "London Stock Exchange · City of London" },
