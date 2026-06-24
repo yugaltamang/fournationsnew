@@ -98,7 +98,7 @@ const Nations = () => {
   const tabs = term
     ? [
         term.academic.items.length > 0 && { id: "in-class", label: term.academic.label || "In Class" },
-        term.outclass.items.length > 0 && { id: "out-class", label: term.outclass.label || "Out Class" },
+        (term.outclass.items.length > 0 || (term.outclass.summary && term.outclass.summary.length > 0)) && { id: "out-class", label: term.outclass.label || "Out Class" },
         term.immersions && { id: "business", label: "Business Immersions" },
         term.cultural && { id: "cultural", label: term.cultural.chip || "Cultural Immersion" },
       ].filter(Boolean) as { id: string; label: string }[]
