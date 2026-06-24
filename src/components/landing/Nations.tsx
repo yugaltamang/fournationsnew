@@ -581,7 +581,7 @@ const Nations = () => {
                                       />
                                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                                       <div className="absolute top-3 left-3">
-                                        <span className="inline-block bg-background/90 backdrop-blur px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-primary border border-border">
+                                        <span className="tag-pill">
                                           {card.cat}
                                         </span>
                                       </div>
