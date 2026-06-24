@@ -140,7 +140,7 @@
   }
 
   .tag-pill {
-    @apply inline-flex items-center gap-2 px-3 py-1 border border-border/60 text-xs font-mono uppercase tracking-widest text-muted-foreground;
+    @apply inline-flex items-center gap-2 px-3 py-1.5 text-[9px] font-mono font-bold uppercase tracking-[0.25em] text-white bg-black/60 backdrop-blur-sm border border-white/10;
   }
 
   /* MU signature hero gradient - cyan → yellow → orange */
