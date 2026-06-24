@@ -235,39 +235,54 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
   </div>
 );
 
-const ImmersionPanelView = ({ data }: { data: ImmersionPanel }) => (
-  <div>
-    <div className="mb-8">
-      <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-balance">
-        {data.header.title.split("\n").map((l, i) => <span key={i}>{i > 0 && <br />}{l}</span>)}
-      </h3>
-      <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl">{data.header.body}</p>
-      {data.header.note && (
-        <div className="mt-5 flex items-start gap-3 border border-primary/30 bg-primary/[0.06] p-4 max-w-2xl">
-          <span className="text-primary text-base shrink-0">✦</span>
-          <div>
-            <div className="font-display text-base text-foreground mb-1">{data.header.note.title}</div>
-            <div className="text-sm text-muted-foreground leading-relaxed">{data.header.note.desc}</div>
-          </div>
-        </div>
-      )}
-    </div>
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {data.cards.map((card, i) => (
-        <div key={i} className="relative overflow-hidden aspect-[4/3] group border border-border">
-          <img src={card.img} alt={card.title} loading="lazy" className="w-full h-full object-cover brightness-[0.45] group-hover:scale-105 group-hover:brightness-[0.55] transition-all duration-500" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-5">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-1.5">{card.cat}</div>
-            <div className="font-display text-lg text-white mb-1">{card.title}</div>
-            <div className="text-sm text-white/70 leading-relaxed mb-2">{card.desc}</div>
-            <div className="font-mono text-[10px] tracking-wider text-white/50">{card.logos}</div>
-          </div>
-        </div>
+const ImmersionPanelView = ({ data }: { data: ImmersionPanel }) => {
+  const LogoChips = ({ logos }: { logos: string }) => (
+    <div className="flex flex-wrap gap-2">
+      {logos.split(" · ").map((logo, i) => (
+        <span
+          key={i}
+          className="inline-flex items-center bg-primary text-primary-foreground px-2.5 py-1 font-mono text-[10px] sm:text-xs uppercase tracking-wider border border-primary"
+        >
+          {logo}
+        </span>
       ))}
     </div>
-  </div>
-);
+  );
+
+  return (
+    <div>
+      <div className="mb-8">
+        <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-balance">
+          {data.header.title.split("\n").map((l, i) => <span key={i}>{i > 0 && <br />}{l}</span>)}
+        </h3>
+        <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl">{data.header.body}</p>
+        {data.header.note && (
+          <div className="mt-5 flex items-start gap-3 border border-primary/30 bg-primary/[0.06] p-4 max-w-2xl">
+            <span className="text-primary text-base shrink-0">✦</span>
+            <div>
+              <div className="font-display text-base text-foreground mb-1">{data.header.note.title}</div>
+              <div className="text-sm text-muted-foreground leading-relaxed">{data.header.note.desc}</div>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {data.cards.map((card, i) => (
+          <div key={i} className="relative overflow-hidden aspect-[4/3] group border border-border">
+            <img src={card.img} alt={card.title} loading="lazy" className="w-full h-full object-cover brightness-[0.45] group-hover:scale-105 group-hover:brightness-[0.55] transition-all duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-1.5">{card.cat}</div>
+              <div className="font-display text-lg text-white mb-1">{card.title}</div>
+              <div className="text-sm text-white/70 leading-relaxed mb-3">{card.desc}</div>
+              <LogoChips logos={card.logos} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const CulturalPanelView = ({ data }: { data: CulturalPanel }) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
