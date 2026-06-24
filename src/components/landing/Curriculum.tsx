@@ -241,7 +241,7 @@ const ImmersionPanelView = ({ data }: { data: ImmersionPanel }) => {
       {logos.split(" · ").map((logo, i) => (
         <span
           key={i}
-          className="inline-flex items-center bg-primary text-primary-foreground px-2.5 py-1 font-mono text-[10px] sm:text-xs uppercase tracking-wider border border-primary"
+          className="inline-flex items-center bg-white/95 text-black px-2.5 py-1 font-mono text-[10px] sm:text-xs uppercase tracking-wider"
         >
           {logo}
         </span>
