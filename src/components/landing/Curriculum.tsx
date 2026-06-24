@@ -312,7 +312,7 @@ const CulturalPanelView = ({ data }: { data: CulturalPanel }) => (
     <div className="relative">
       <img src={data.imgs[0]} alt="Cultural" loading="lazy" className="w-full aspect-[4/3] object-cover border border-border" />
       <img src={data.imgs[1]} alt="Cultural detail" loading="lazy" className="absolute -bottom-4 -right-4 w-[45%] aspect-square object-cover border-4 border-background shadow-xl" />
-      <div className="absolute top-3 right-3 bg-foreground text-background px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest">360° Cultural Lens</div>
+      <div className="absolute top-3 right-3 tag-pill">360° Cultural Lens</div>
     </div>
   </div>
 );
