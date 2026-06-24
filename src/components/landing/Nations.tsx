@@ -31,7 +31,7 @@ const nations: Nation[] = [
     partner: "Masters' Union Campus",
     img: india,
     title: "Build the foundation.",
-    desc: "Your operating base. Read P&Ls, ship products, run GTM sprints and pitch to founders of Razorpay, Zomato, Nykaa & Lenskart. Walk the floors of ITC, Dixon, NIVEA and Sonalika. You leave India having already done the work - not having only studied it.",
+    desc: "Your operating base. Read P&Ls, ship products, run GTM sprints and pitch to founders scaling across India. Walk the floors of world-class manufacturing, FMCG and digital-native operations. You leave India having already done the work - not having only studied it.",
     outcome: "Operate a venture end-to-end: finance, product, GTM, ops & leadership.",
     tags: ["Finance & FinTech", "Product & AI", "Sales & GTM", "Operations", "Leadership"],
     coords: "28.4°N · 77.0°E",
