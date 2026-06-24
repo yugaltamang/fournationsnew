@@ -56,7 +56,7 @@ export const terms: Term[] = [
         { img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80&fit=crop", cat: "Manufacturing & Industrial", title: "India's Industrial Powerhouses", desc: "Walk the floors of India's most scaled manufacturers and operators.", logos: "Addverb · ITC Limited · Sonalika Tractors · Honda" },
         { img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80&fit=crop", cat: "D2C", title: "Built in India, Drunk Globally", desc: "Inside a home-grown D2C brand that scaled coffee culture across the country.", logos: "Blue Tokai" },
         { img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&fit=crop", cat: "Logistics & Commerce", title: "India's Logistics Backbone", desc: "How modern shipping and fulfilment platforms power Indian commerce.", logos: "Shiprocket" },
-        { img: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80&fit=crop", cat: "Brand Positioning", title: "Brand Positioning at LPU Jalandhar", desc: "A brand positioning immersion at LPU, Jalandhar - decoding how home-grown brands compete globally.", logos: "Nivia Sports · LPU Jalandhar" },
+        { img: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80&fit=crop", cat: "Brand Positioning", title: "Brand Positioning Masterclass", desc: "Learn how home-grown brands compete globally through sharp positioning, messaging and market differentiation.", logos: "Nivia Sports · LPU Jalandhar" },
       ],
     },
     cultural: {
