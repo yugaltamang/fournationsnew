@@ -138,18 +138,15 @@ export const terms: Term[] = [
       ],
     },
     outclass: {
-      label: "Out Class",
-      hero: { chip: "Out Class · Hong Kong", title: "Build Your GBA Venture", body: "The Hong Kong Out Class series is built around one outcome - <strong>building a cross-border digital ecosystem</strong>. Six sessions take you from the Greater Bay Area opportunity landscape to a viable business model.", img: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80&fit=crop&crop=center" },
-      items: [
-        { num: "01", title: "How to Understand the GBA Opportunity Landscape", rows: ["Map the Greater Bay Area's business corridors, consumer markets, and policy advantages", "Identify where Hong Kong creates leverage for cross-border venture building"] },
-        { num: "02", title: "How to Identify the Company and Define the Problem", rows: ["Select a business context and clarify the customer or operational problem", "Frame the venture opportunity with clear users, constraints, and success metrics"] },
-        { num: "03", title: "How to Develop a Market Entry Strategy", rows: ["Design entry routes across Hong Kong, mainland China, and regional markets", "Assess channels, partnerships, regulatory complexity, and execution risks"] },
-        { num: "04", title: "How to Leverage GBA Synergies", rows: ["Use Hong Kong's finance, logistics, and talent advantages with mainland manufacturing and scale", "Identify complementary ecosystem partners for speed and defensibility"] },
-        { num: "05", title: "How to Design Digital & Logistics Models", rows: ["Build digital journeys, platform logic, and fulfilment flows for cross-border businesses", "Evaluate technology, operations, and customer experience trade-offs"] },
-        { num: "06", title: "How to Build a Business Model & Ensure Financial Viability", rows: ["Translate the venture into unit economics, pricing, and operating assumptions", "Present and defend the GBA venture model to a panel"] },
+      label: "Capstone",
+      hero: { chip: "Capstone · Hong Kong", title: "Build Your GBA Venture", body: "The Hong Kong capstone is built around one outcome - <strong>building a cross-border venture</strong> that leverages the Greater Bay Area's unique ecosystem.", img: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80&fit=crop&crop=center" },
+      items: [],
+      summary: [
+        "Map the Greater Bay Area opportunity and define a cross-border venture.",
+        "Design a market entry strategy that uses Hong Kong's capital, logistics, and talent advantages.",
+        "Build a financially viable business model and present it to a panel.",
       ],
     },
-    immersions: {
       header: { title: "Inside Hong Kong and China's most iconic companies.", body: "4 industry immersions will be selected from the list below, finalised closer to the date based on availability and programme design.", note: { title: "CUHK FinTech Seminars", desc: "Learners engage in 4-6 hours of seminars. Each seminar will showcase insights from industry leaders and experts, providing valuable perspectives on emerging trends and technologies." } },
       cards: [
         { img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop", cat: "Finance & Markets", title: "Hong Kong's Capital Engine", desc: "Inside the institutions connecting Asian capital to global markets.", logos: "Hong Kong Stock Exchange · HSBC" },
