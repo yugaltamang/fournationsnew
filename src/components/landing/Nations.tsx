@@ -504,7 +504,7 @@ const Nations = () => {
                         )}
 
                         {/* Out Class */}
-                        {activeTab === "out-class" && term.outclass.items.length > 0 && (
+                        {activeTab === "out-class" && (term.outclass.items.length > 0 || (term.outclass.summary && term.outclass.summary.length > 0)) && (
                           <div>
                             {term.outclass.hero && (
                               <div className="relative aspect-[21/9] overflow-hidden mb-8 group">
@@ -524,21 +524,35 @@ const Nations = () => {
                                 </div>
                               </div>
                             )}
-                            <div className="grid sm:grid-cols-2 gap-3">
-                              {term.outclass.items.map((item, idx) => (
-                                <div
-                                  key={`oc-${idx}`}
-                                  className="group relative border border-border bg-secondary/20 p-5 hover:border-primary hover:bg-secondary/40 transition-all"
-                                >
-                                  <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-2">
-                                    {item.code || item.num}
-                                  </div>
-                                  <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
-                                    {item.title}
-                                  </div>
+                            {term.outclass.summary && term.outclass.summary.length > 0 ? (
+                              <div className="max-w-3xl">
+                                <p className="text-muted-foreground leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: term.outclass.hero.body }} />
+                                <div className="flex flex-col gap-3">
+                                  {term.outclass.summary.map((s, i) => (
+                                    <div key={i} className="flex items-start gap-3 border border-border bg-secondary/20 p-4">
+                                      <span className="text-primary font-mono text-xs mt-1 shrink-0">0{i + 1}</span>
+                                      <span className="text-sm sm:text-base text-foreground/90 leading-relaxed">{s}</span>
+                                    </div>
+                                  ))}
                                 </div>
-                              ))}
-                            </div>
+                              </div>
+                            ) : (
+                              <div className="grid sm:grid-cols-2 gap-3">
+                                {term.outclass.items.map((item, idx) => (
+                                  <div
+                                    key={`oc-${idx}`}
+                                    className="group relative border border-border bg-secondary/20 p-5 hover:border-primary hover:bg-secondary/40 transition-all"
+                                  >
+                                    <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-2">
+                                      {item.code || item.num}
+                                    </div>
+                                    <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
+                                      {item.title}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         )}
 
