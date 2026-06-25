@@ -38,12 +38,13 @@ const pillars = [
     image: immersionImg,
     title: "Ventures,",
     titleEm: "not slide decks.",
-    body: "Every term ends with a real, working business output. You leave each country with something tangible and shipped.",
+    body: "Two Outclass activities — build a D2C brand and a creators challenge — plus capstone projects across countries. Every term ends with real, shipped work.",
     points: [
-      "D2C brand",
+      "Build a D2C brand",
       "Creators challenge",
+      "Capstone projects across countries",
     ],
-    stat: { value: "3", label: "Ventures" },
+    stat: { value: "3+", label: "Live Outputs" },
     fit: "cover" as const,
   },
 ];
