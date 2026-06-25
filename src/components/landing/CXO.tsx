@@ -40,9 +40,8 @@ const pillars = [
     titleEm: "not slide decks.",
     body: "Every term ends with a real, working business output. You leave each country with something tangible and shipped.",
     points: [
-      "D2C brand - Delhi (Term 1)",
-      "Startup Pitch - London (Term 2)",
-      "GBA venture - Hong Kong (Term 3)",
+      "D2C brand",
+      "Creators challenge",
     ],
     stat: { value: "3", label: "Ventures" },
     fit: "cover" as const,

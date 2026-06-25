@@ -40,8 +40,8 @@ const modules: Module[] = [
   {
     num: "1",
     label: "E-COMMERCE",
-    title: "Dropshipping Challenge",
-    desc: "A 75-day sprint from product discovery to running live D2C stores on Shopify, Amazon, and Flipkart. Real CAC, real ROAS, real revenue.",
+    title: "Build a D2C brand",
+    desc: "A 75-day sprint from product discovery to launching a live D2C brand on Shopify, Amazon, and Flipkart. Real CAC, real ROAS, real revenue.",
     icon: ShoppingCart,
     images: [drop6, drop7, drop1, drop2, drop3, drop4, drop5],
     stats: [
