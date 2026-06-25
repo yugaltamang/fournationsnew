@@ -39,15 +39,10 @@ export const terms: Term[] = [
     },
     outclass: {
       label: "Out Class",
-      hero: { chip: "Out Class · India", title: "Beyond the Classroom", body: "Out Class sessions take learning outside campus walls - into the field, the boardroom, and the street. Every session bridges <strong>theory and real-world practice</strong> through direct exposure.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "Out Class · India", title: "Two Real-World Challenges", body: "Out Class is built around two high-intensity outputs — <strong>build a live D2C brand</strong> and <strong>complete a creators challenge</strong> — where you prove the theory by shipping real work.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&fit=crop&crop=center" },
       items: [
-        { num: "01", title: "How do you identify and validate a high-potential D2C opportunity?", rows: ["Spotting white spaces in consumer markets - demand signals, category gaps, and unmet needs", "Frameworks for rapid opportunity validation before you invest time or capital", "Building a business case: TAM, competitive landscape, and entry timing"] },
-        { num: "02", title: "How do you select the right product and build profitable unit economics?", rows: ["Product selection criteria - margin, repeat purchase potential, and differentiation", "Sourcing strategies: domestic vs import, MOQs, and supplier evaluation", "Unit economics fundamentals - COGS, contribution margin, and CAC payback"] },
-        { num: "03", title: "How do you define a differentiated brand strategy that resonates with your audience?", rows: ["Brand strategy frameworks - positioning, archetype, and category narrative", "Defining your ICP and crafting a value proposition that converts", "Competitive positioning maps and differentiation levers in crowded categories"] },
-        { num: "04", title: "How do you create a compelling brand identity and packaging?", rows: ["Visual identity systems - logo, colour, typography, and tone of voice", "Packaging as a marketing tool - unboxing experience and shelf/screen standout", "Brand consistency across touchpoints - from product to social to paid ads"] },
-        { num: "05", title: "How do you build a high-converting D2C website on Shopify?", rows: ["Shopify store setup - theme selection, product pages, and conversion optimisation", "UX principles for e-commerce - reducing friction from landing to checkout", "Essential apps and integrations for inventory, reviews, and retention"] },
-        { num: "06", title: "How do you successfully launch and scale your brand on online marketplaces?", rows: ["Amazon, Flipkart, and Meesho - platform dynamics, ranking algorithms, and listing strategy", "Marketplace vs owned channel - when to use each and how to balance both", "Reviews, ratings, and the flywheel that drives marketplace growth"] },
-        { num: "07", title: "How do you acquire customers efficiently through performance marketing?", rows: ["Meta and Google Ads fundamentals - campaign structure, targeting, and creative strategy", "CAC optimisation - improving ROAS and reducing blended acquisition cost", "Attribution models and reading your performance dashboard"] },
+        { num: "01", title: "Build a D2C brand", rows: ["A 75-day sprint from product discovery to a live store on Shopify, Amazon, and Flipkart", "Real CAC, real ROAS, real revenue — not simulations"] },
+        { num: "02", title: "Creators challenge", rows: ["Build a personal brand across Instagram and YouTube", "Hooks, retention, and body of work that graduates you as a creator-preneur"] },
       ],
     },
     immersions: {
