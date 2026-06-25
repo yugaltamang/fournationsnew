@@ -61,8 +61,8 @@ const modules: Module[] = [
   {
     num: "2",
     label: "PERSONAL BRAND",
-    title: "Creator Challenge",
-    desc: "Build a personal brand across Instagram and YouTube. Hooks, retention, and body of work. Graduate as a creator-preneur with real reach.",
+    title: "Creators challenge - London",
+    desc: "Build a personal brand across Instagram and YouTube from London. Hooks, retention, and body of work. Graduate as a creator-preneur with real reach.",
     icon: Video,
     images: [creator1, creator2, creator3, creator4, creator5],
     pullquote: "From zero followers to creator-preneurs with real influence.",
