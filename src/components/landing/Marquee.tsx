@@ -1,5 +1,5 @@
 const items = [
-  "Imperial College London", "CUHK Business School", "DIFC Dubai",
+  "CUHK Business School", "Imperial College London", "DIFC Dubai",
   "ITC", "Razorpay", "Pine Labs", "Dixon", "Honda", "NIVEA",
   "Sonalika", "Mercedes-Benz", "Blue Tokai", "Mamaearth", "Boat",
   "Nykaa", "Lenskart", "Delhivery", "Flipkart", "Ola", "Swiggy", "Zomato",

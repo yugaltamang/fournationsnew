@@ -65,15 +65,63 @@ export const terms: Term[] = [
       imgs: ["https://images.unsplash.com/photo-1587474260584-136574528ed5?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=500&q=85&fit=crop"],
     },
   },
+  /* ── HONG KONG ── */
+  {
+    id: 1, flag: "🇭🇰", label: "Term 2 · Hong Kong (CUHK)",
+    bannerGrad: "linear-gradient(135deg,#de2910 0%,#f5c842 100%)", bannerFlag: "🇭🇰",
+    outcomeLabel: "Learning Outcome", outcome: "Be Scale-Ready for Global Markets.",
+    outcomeSub: "Study in Hong Kong, Understand China - explore business, digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong.",
+    academic: {
+      label: "In Class",
+      hero: { chip: "June – July · CUHK, Hong Kong", title: "Term 2 - Hong Kong", body: "Term 2 focuses on studying business at the intersection of <strong>finance, digital innovation, manufacturing, supply chains, and AI</strong> - across five concentrations delivered through the CUHK Hong Kong immersion curriculum. Learners also get a certificate from CUHK, Hong Kong.", img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop&crop=center" },
+      items: [
+        { num: "MAST", code: "Management & Strategy", title: "How does the state shape market opportunity?", rows: ["How does the state shape market opportunity?"] },
+        { num: "PRDT", code: "Product, AI & Tech", title: "How did China leapfrog the West in digital business models?", rows: ["How did China leapfrog the West in digital business models?"] },
+        { num: "PRDT", code: "Product, AI & Tech", title: "How did China transform from an agrarian economy into the world's most efficient industrial producer?", rows: ["How did China transform from an agrarian economy into the world's most efficient industrial producer?"] },
+        { num: "PRDT", code: "Product, AI & Tech", title: "How are China and Hong Kong SAR creating complementarity for the next wave of AI innovation?", rows: ["How are China and Hong Kong SAR creating complementarity for the next wave of AI innovation?"] },
+        { num: "MAST", code: "Management & Strategy", title: "How do you compete, partner, and lead in China?", rows: ["How do you compete, partner, and lead in China?"] },
+      ],
+    },
+    outclass: {
+      label: "Capstone",
+      hero: { chip: "Capstone · Hong Kong", title: "Build Your GBA Venture", body: "The Hong Kong capstone is built around one outcome - <strong>building a cross-border venture</strong> that leverages the Greater Bay Area's unique ecosystem.", img: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80&fit=crop&crop=center" },
+      items: [],
+      summary: [
+        "Map the Greater Bay Area opportunity and define a cross-border venture.",
+        "Design a market entry strategy that uses Hong Kong's capital, logistics, and talent advantages.",
+        "Build a financially viable business model and present it to a panel.",
+      ],
+    },
+    immersions: {
+      header: { title: "Inside Hong Kong and China's most iconic companies.", body: "4 industry immersions will be selected from the list below, finalised closer to the date based on availability and programme design.", note: { title: "CUHK FinTech Seminars", desc: "Learners engage in 4-6 hours of seminars. Each seminar will showcase insights from industry leaders and experts, providing valuable perspectives on emerging trends and technologies." } },
+      cards: [
+        { img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop", cat: "Finance & Markets", title: "Hong Kong's Capital Engine", desc: "Inside the institutions connecting Asian capital to global markets.", logos: "Hong Kong Stock Exchange · HSBC" },
+        { img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&fit=crop", cat: "Platform & Social Commerce", title: "Digital Giants at Scale", desc: "How platform companies build ecosystems across content, commerce, and payments.", logos: "Alibaba Group · ByteDance" },
+        { img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&fit=crop", cat: "Logistics & Trade", title: "How Hong Kong Moves the World", desc: "Commerce, sourcing, and cross-border logistics in one global trade hub.", logos: "Kerry Logistics · Li & Fung" },
+        { img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop", cat: "AI & Deep Tech", title: "Technology at the Frontier", desc: "Applied AI and deep-tech innovation across Hong Kong and China.", logos: "SenseTime · Tencent" },
+      ],
+    },
+    cultural: {
+      chip: "Cultural Immersion · Hong Kong", title: "Understand Hong Kong\nBeyond Business.",
+      body: "Culture shapes commerce across Hong Kong and the Greater Bay Area. 4 experiences will be selected from the list below, confirmed closer to the programme date.",
+      cards: [
+        { name: "Cultural & Heritage Walking Tour", desc: "Walk through Hong Kong's historic districts and understand how trade, migration, and finance shaped the city." },
+        { name: "Martial Arts / Tai Chi", desc: "Experience movement, discipline, and tradition as cultural lenses for leadership and focus." },
+        { name: "Chinese Calligraphy", desc: "Explore how language, symbolism, and craft carry cultural meaning across Chinese business contexts." },
+        { name: "Traditional Chinese Tea Ceremony", desc: "Understand ritual, patience, and relationship-building through one of the region's most enduring cultural practices." },
+      ],
+      imgs: ["https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=85&fit=crop"],
+    },
+  },
   /* ── LONDON ── */
   {
-    id: 1, flag: "🇬🇧", label: "Term 2 · London (Imperial)",
+    id: 2, flag: "🇬🇧", label: "Term 3 · London (Imperial)",
     bannerGrad: "linear-gradient(135deg,#012169 0%,#cf142b 100%)", bannerFlag: "🇬🇧",
     outcomeLabel: "Learning Outcome", outcome: "Be Global Leadership Ready.",
     outcomeSub: "Lead with capital fluency, strategic sharpness, and the confidence to operate on the world stage - with a certificate from Imperial College London.",
     academic: {
       label: "In Class",
-      hero: { chip: "June – July · London · Imperial College London", title: "Term 2 - London", body: "The second term at <strong>Imperial College London</strong> brings together five intensive concentrations - <strong>global capital, competitive strategy, luxury & branding, the experience economy, and leadership</strong> - delivered at one of the world's top campuses, with a <strong>certificate awarded by Imperial College London</strong>.", img: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "August – October · London · Imperial College London", title: "Term 3 - London", body: "The third term at <strong>Imperial College London</strong> brings together five intensive concentrations - <strong>global capital, competitive strategy, luxury & branding, the experience economy, and leadership</strong> - delivered at one of the world's top campuses, with a <strong>certificate awarded by Imperial College London</strong>.", img: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=800&q=80&fit=crop&crop=center" },
       items: [
         { num: "FIFI", code: "Finance & Fintech", title: "How Private Equity & VC Firms Work", rows: ["How Private Equity & VC Firms Work"] },
         { num: "PRDT", code: "Product, AI & Tech", title: "How to leverage big data and analytics to make smarter business decisions?", rows: ["How to leverage big data and analytics to make smarter business decisions?"] },
@@ -113,54 +161,6 @@ export const terms: Term[] = [
         { name: "Premier League Experience", desc: "Inside the world's most valuable sports brand - marketing, media rights, and global fandom." },
       ],
       imgs: ["https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&q=85&fit=crop"],
-    },
-  },
-  /* ── HONG KONG ── */
-  {
-    id: 2, flag: "🇭🇰", label: "Term 3 · Hong Kong (CUHK)",
-    bannerGrad: "linear-gradient(135deg,#de2910 0%,#f5c842 100%)", bannerFlag: "🇭🇰",
-    outcomeLabel: "Learning Outcome", outcome: "Be Scale-Ready for Global Markets.",
-    outcomeSub: "Study in Hong Kong, Understand China - explore business, digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong.",
-    academic: {
-      label: "In Class",
-      hero: { chip: "August – October · CUHK, Hong Kong", title: "Term 3 - Hong Kong", body: "Term 3 focuses on studying business at the intersection of <strong>finance, digital innovation, manufacturing, supply chains, and AI</strong> - across five concentrations delivered through the CUHK Hong Kong immersion curriculum. Learners also get a certificate from CUHK, Hong Kong.", img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop&crop=center" },
-      items: [
-        { num: "MAST", code: "Management & Strategy", title: "How does the state shape market opportunity?", rows: ["How does the state shape market opportunity?"] },
-        { num: "PRDT", code: "Product, AI & Tech", title: "How did China leapfrog the West in digital business models?", rows: ["How did China leapfrog the West in digital business models?"] },
-        { num: "PRDT", code: "Product, AI & Tech", title: "How did China transform from an agrarian economy into the world's most efficient industrial producer?", rows: ["How did China transform from an agrarian economy into the world's most efficient industrial producer?"] },
-        { num: "PRDT", code: "Product, AI & Tech", title: "How are China and Hong Kong SAR creating complementarity for the next wave of AI innovation?", rows: ["How are China and Hong Kong SAR creating complementarity for the next wave of AI innovation?"] },
-        { num: "MAST", code: "Management & Strategy", title: "How do you compete, partner, and lead in China?", rows: ["How do you compete, partner, and lead in China?"] },
-      ],
-    },
-    outclass: {
-      label: "Capstone",
-      hero: { chip: "Capstone · Hong Kong", title: "Build Your GBA Venture", body: "The Hong Kong capstone is built around one outcome - <strong>building a cross-border venture</strong> that leverages the Greater Bay Area's unique ecosystem.", img: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=800&q=80&fit=crop&crop=center" },
-      items: [],
-      summary: [
-        "Map the Greater Bay Area opportunity and define a cross-border venture.",
-        "Design a market entry strategy that uses Hong Kong's capital, logistics, and talent advantages.",
-        "Build a financially viable business model and present it to a panel.",
-      ],
-    },
-    immersions: {
-      header: { title: "Inside Hong Kong and China's most iconic companies.", body: "4 industry immersions will be selected from the list below, finalised closer to the date based on availability and programme design.", note: { title: "CUHK FinTech Seminars", desc: "Learners engage in 4-6 hours of seminars. Each seminar will showcase insights from industry leaders and experts, providing valuable perspectives on emerging trends and technologies." } },
-      cards: [
-        { img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop", cat: "Finance & Markets", title: "Hong Kong's Capital Engine", desc: "Inside the institutions connecting Asian capital to global markets.", logos: "Hong Kong Stock Exchange · HSBC" },
-        { img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&fit=crop", cat: "Platform & Social Commerce", title: "Digital Giants at Scale", desc: "How platform companies build ecosystems across content, commerce, and payments.", logos: "Alibaba Group · ByteDance" },
-        { img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&fit=crop", cat: "Logistics & Trade", title: "How Hong Kong Moves the World", desc: "Commerce, sourcing, and cross-border logistics in one global trade hub.", logos: "Kerry Logistics · Li & Fung" },
-        { img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop", cat: "AI & Deep Tech", title: "Technology at the Frontier", desc: "Applied AI and deep-tech innovation across Hong Kong and China.", logos: "SenseTime · Tencent" },
-      ],
-    },
-    cultural: {
-      chip: "Cultural Immersion · Hong Kong", title: "Understand Hong Kong\nBeyond Business.",
-      body: "Culture shapes commerce across Hong Kong and the Greater Bay Area. 4 experiences will be selected from the list below, confirmed closer to the programme date.",
-      cards: [
-        { name: "Cultural & Heritage Walking Tour", desc: "Walk through Hong Kong's historic districts and understand how trade, migration, and finance shaped the city." },
-        { name: "Martial Arts / Tai Chi", desc: "Experience movement, discipline, and tradition as cultural lenses for leadership and focus." },
-        { name: "Chinese Calligraphy", desc: "Explore how language, symbolism, and craft carry cultural meaning across Chinese business contexts." },
-        { name: "Traditional Chinese Tea Ceremony", desc: "Understand ritual, patience, and relationship-building through one of the region's most enduring cultural practices." },
-      ],
-      imgs: ["https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=85&fit=crop"],
     },
   },
   /* ── DUBAI ── */
