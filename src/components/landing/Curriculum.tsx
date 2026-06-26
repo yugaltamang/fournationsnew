@@ -150,6 +150,7 @@ export const terms: Term[] = [
         { img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80&fit=crop", cat: "Banking & Fintech", title: "Digital Finance at Scale", desc: "How global banks and fintech disruptors are reshaping money and payments.", logos: "Citi · Revolut · Ripple" },
         { img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&fit=crop", cat: "Venture Capital", title: "Europe's Venture Engine", desc: "Inside the firms building and backing the next generation of companies.", logos: "Blenheim Chalcot · Fabric Ventures" },
         { img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80&fit=crop", cat: "Tech & Advisory", title: "Innovation & Strategy", desc: "Cross-border technology and strategic advisory at scale.", logos: "Transwap · Candesic" },
+        { img: "https://images.unsplash.com/photo-1526304640152-d4619684e484?w=800&q=80&fit=crop", cat: "Financial Ecosystem", title: "The Full London Circuit", desc: "A cross-sector view of the institutions, disruptors and investors defining global capital.", logos: "London Stock Exchange · City of London · Revolut · Citi · Transwap · Blenheim Chalcot · Fabric Ventures · Candesic · Ripple" },
       ],
     },
     cultural: {
