@@ -27,7 +27,7 @@ const Apply = () => (
 
         <div className="grid grid-cols-3 gap-px bg-border max-w-3xl mx-auto">
           {[
-            { l: "Journey", v: "India → London → Hong Kong → Dubai" },
+            { l: "Journey", v: "India → Hong Kong → London → Dubai" },
             { l: "Decision", v: "Within 14 days" },
             { l: "Start", v: "Feb 2027" },
           ].map((s) => (

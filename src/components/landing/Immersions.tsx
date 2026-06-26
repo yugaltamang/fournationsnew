@@ -17,20 +17,7 @@ const partners = [
     ],
   },
   {
-    tag: "Term 2 · London",
-    name: "Imperial College London",
-    image: imperialImg,
-    headline: "Lead on the world stage.",
-    body: "Learn at one of the world's top-ranked institutions – and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch your innovative startup from the heart of London.",
-    stats: [
-      { v: "#2", l: "QS World Rankings" },
-      { v: "Top 1%", l: "Business Schools" },
-      { v: "140+", l: "Nationalities" },
-      { v: "14", l: "Nobel Laureates" },
-    ],
-  },
-  {
-    tag: "Term 3 · Hong Kong",
+    tag: "Term 2 · Hong Kong",
     name: "CUHK, Hong Kong",
     image: cuhkImg,
     headline: "Gateway to Greater China.",
@@ -40,6 +27,19 @@ const partners = [
       { v: "60+", l: "Years of Excellence" },
       { v: "60", l: "Contact Hours" },
       { v: "✓", l: "CUHK Certificate" },
+    ],
+  },
+  {
+    tag: "Term 3 · London",
+    name: "Imperial College London",
+    image: imperialImg,
+    headline: "Lead on the world stage.",
+    body: "Learn at one of the world's top-ranked institutions – and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch your innovative startup from the heart of London.",
+    stats: [
+      { v: "#2", l: "QS World Rankings" },
+      { v: "Top 1%", l: "Business Schools" },
+      { v: "140+", l: "Nationalities" },
+      { v: "14", l: "Nobel Laureates" },
     ],
   },
 ];
@@ -78,7 +78,7 @@ const Immersions = () => (
           Three credentials.
         </h2>
         <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl">
-          Anchored at Masters' Union in Delhi, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three.
+          Anchored at Masters' Union in Delhi, with terms at CUHK Hong Kong and Imperial College London - you graduate with credentials from all three.
         </p>
       </div>
 
