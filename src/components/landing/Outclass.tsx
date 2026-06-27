@@ -34,6 +34,8 @@ type Module = {
   moreCount?: string;
   pullquote?: string;
   competedAt?: string[];
+  topicsLabel?: string;
+  topics?: string[];
 };
 
 const modules: Module[] = [
@@ -57,15 +59,38 @@ const modules: Module[] = [
       { name: "Jugnu", rev: "₹16.5L" },
     ],
     moreCount: "+11 more",
+    topicsLabel: "10 Week Sprint",
+    topics: [
+      "Week 1 - How do you identify and validate a high-potential D2C opportunity in the market?",
+      "Week 2 - How do you select the right product, source it efficiently, and build profitable unit economics?",
+      "Week 3 - How do you define a differentiated brand strategy and positioning that resonates with your target audience?",
+      "Week 4 - How do you create a compelling brand identity and packaging that drives recall and conversion?",
+      "Week 5 - How do you build and launch a high-converting D2C website on Shopify?",
+      "Week 6 - How do you successfully launch and scale your brand on online marketplaces?",
+      "Week 7 - How do you drive demand and acquire customers efficiently through performance marketing?",
+      "Week 8 - How do you set up seamless operations, fulfilment, and deliver an excellent customer experience?",
+      "Week 9 - How do you scale your D2C brand sustainably using the right growth levers and metrics?",
+      "Week 10 - Final showcase",
+    ],
   },
   {
     num: "2",
     label: "PERSONAL BRAND",
-    title: "Creators challenge - London",
+    title: "Creators Challenge - London",
     desc: "Build a personal brand across Instagram and YouTube from London. Hooks, retention, and body of work. Graduate as a creator-preneur with real reach.",
     icon: Video,
     images: [creator1, creator2, creator3, creator4, creator5],
     pullquote: "From zero followers to creator-preneurs with real influence.",
+    topicsLabel: "7 Key Modules",
+    topics: [
+      "How to Find Your Niche and Position Yourself as a Creator",
+      "How to Build a Winning Content Strategy",
+      "How to Create Engaging Content Ideas and Scripts",
+      "How to Shoot Content with Confidence",
+      "How to Edit and Package High-Quality Content",
+      "How to Grow and Optimize Your Content",
+      "How to Monetize and Scale Your Personal Brand",
+    ],
   },
 ];
 
@@ -232,6 +257,22 @@ export default function Outclass() {
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 max-w-md">
                 {active.desc}
               </p>
+
+              {active.topics && (
+                <div className="mb-6">
+                  <span className="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">
+                    {active.topicsLabel || "Key modules"}
+                  </span>
+                  <ul className="space-y-2">
+                    {active.topics.map((topic, i) => (
+                      <li key={i} className="text-sm text-foreground/80 leading-relaxed flex gap-2">
+                        <span className="text-primary/60 shrink-0">-</span>
+                        <span>{topic}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {active.stats && (
                 <div className="grid grid-cols-3 gap-4 border-t border-border pt-5">

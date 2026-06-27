@@ -39,10 +39,9 @@ export const terms: Term[] = [
     },
     outclass: {
       label: "Out Class",
-      hero: { chip: "Out Class · India", title: "Two Real-World Challenges", body: "Out Class is built around two high-intensity outputs - build a live D2C brand and complete a creators challenge - where you prove the theory by shipping real work.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "Out Class · India", title: "Build a D2C Brand", body: "A 10-week, high-intensity sprint from product discovery to a live D2C brand on Shopify, Amazon, and Flipkart. Real CAC, real ROAS, real revenue.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&fit=crop&crop=center" },
       items: [
         { num: "01", title: "Build a D2C brand", rows: ["A 75-day sprint from product discovery to a live store on Shopify, Amazon, and Flipkart", "Real CAC, real ROAS, real revenue - not simulations"] },
-        { num: "02", title: "Creators challenge - London", rows: ["Build a personal brand across Instagram and YouTube from London", "Hooks, retention, and body of work that graduates you as a creator-preneur"] },
       ],
     },
     immersions: {
