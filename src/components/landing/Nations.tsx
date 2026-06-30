@@ -147,9 +147,9 @@ const Nations = () => {
               <span>The Journey / Curriculum</span>
             </div>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-balance">
-              Four nations.<br />
-              <em className="italic mu-hero-gradient-text not-italic">Four markets.</em><br />
-              One global operator.
+              One Curriculum.<br />
+              <em className="italic mu-hero-gradient-text not-italic">Four Countries.</em><br />
+              Global Business Leadership.
             </h2>
           </div>
           <div className="md:max-w-sm" />
