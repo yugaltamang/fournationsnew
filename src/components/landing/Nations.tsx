@@ -537,25 +537,18 @@ const Nations = () => {
                                 </div>
                               </div>
                             ) : (
-                              <div className="flex flex-col gap-6">
-                                {term.outclass.items.map((item, idx) => (
-                                  <div key={`oc-${idx}`} className="border border-border bg-secondary/20 p-5 sm:p-6">
-                                    <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-4">
-                                      {item.code || item.num}
+                              <div className="grid sm:grid-cols-2 gap-3">
+                                {term.outclass.items.flatMap((item) => item.rows).map((r, idx) => (
+                                  <div
+                                    key={`oc-${idx}`}
+                                    className="group relative border border-border bg-secondary/20 p-5 hover:border-primary hover:bg-secondary/40 transition-all"
+                                  >
+                                    <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-2">
+                                      {String(idx + 1).padStart(2, "0")}
                                     </div>
-                                    <h6 className="font-display text-lg sm:text-xl leading-snug tracking-tight mb-4">
-                                      {item.title}
-                                    </h6>
-                                    {item.rows.length > 0 && (
-                                      <div className="flex flex-col gap-3">
-                                        {item.rows.map((r, i) => (
-                                          <div key={i} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
-                                            <span className="text-primary font-mono text-xs mt-1 shrink-0">-</span>
-                                            <span>{r}</span>
-                                          </div>
-                                        ))}
-                                      </div>
-                                    )}
+                                    <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
+                                      {r}
+                                    </div>
                                   </div>
                                 ))}
                               </div>
