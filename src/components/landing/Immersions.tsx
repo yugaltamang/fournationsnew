@@ -119,6 +119,12 @@ const Immersions = () => (
                 <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10">
                   <span className="tag-pill">{p.tag}</span>
                 </div>
+                {/* QS Ranking badge */}
+                {(p.name === "Imperial College London" || p.name === "CUHK, Hong Kong") && (
+                  <div className="absolute top-4 right-4 sm:top-5 sm:right-5 z-10">
+                    <span className="tag-pill">QS Ranked</span>
+                  </div>
+                )}
                 {/* Corner mark */}
                 <div className="absolute bottom-4 right-4 z-10">
                   <span className="tag-pill">Cert · Awarded</span>
