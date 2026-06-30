@@ -1,10 +1,10 @@
 const items = [
   // India
   "Addverb", "ITC Limited", "Sonalika Tractors", "Honda", "Blue Tokai", "Shiprocket", "Nivia Sports", "LPU Jalandhar",
-  // Hong Kong
-  "Hong Kong Stock Exchange", "HSBC", "Alibaba Group", "ByteDance", "Kerry Logistics", "Li & Fung", "SenseTime", "Tencent",
   // London
   "Arctos", "Blenheim Chalcot", "Ripple", "Octopus Energy", "Deloitte", "Candesic", "Burberry", "Johnson & Johnson",
+  // Hong Kong
+  "Hong Kong Stock Exchange", "HSBC", "Alibaba Group", "ByteDance", "Kerry Logistics", "Li & Fung", "SenseTime", "Tencent",
 ];
 
 const Row = () => (

@@ -54,7 +54,7 @@ const Hero = () => (
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-          A Post Graduate program across <strong className="text-foreground">India</strong>, <strong className="text-foreground">Hong Kong</strong> (CUHK), <strong className="text-foreground">London</strong> (Imperial College) - with an optional <strong className="text-foreground">Dubai</strong> finale.
+          A Post Graduate program across <strong className="text-foreground">India</strong>, <strong className="text-foreground">London</strong> (Imperial College), <strong className="text-foreground">Hong Kong</strong> (CUHK) - with an optional <strong className="text-foreground">Dubai</strong> finale.
         </p>
 
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
