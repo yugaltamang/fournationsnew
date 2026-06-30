@@ -364,7 +364,7 @@ const CulturalPanelView = ({ data }: { data: CulturalPanel }) => (
   </div>
 );
 
-const FacultyPanelView = ({ data }: { data: Faculty[] }) => (
+const FacultyPanelView = ({ data, termId }: { data: Faculty[]; termId?: number }) => (
   <div>
     <div className="mb-8">
       <div className="tag-pill mb-4">Imperial College London · Faculty</div>
@@ -381,7 +381,7 @@ const FacultyPanelView = ({ data }: { data: Faculty[] }) => (
           <div className="relative mb-3">
             <div className="w-[96px] h-[96px] rounded-full p-[2px] bg-gradient-to-br from-primary to-primary/40 transition-all duration-300">
               <div className="w-full h-full rounded-full overflow-hidden bg-background">
-                <img src={f.photo} alt={f.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                <img src={f.photo} alt={f.name} loading="lazy" decoding="async" className={"w-full h-full object-cover " + (termId === 0 ? "object-[50%_10%] scale-105" : "object-center")} />
               </div>
             </div>
             <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-md bg-primary" />
@@ -447,7 +447,7 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
     { label: term.academic.label, render: () => <AcademicPanel panel={term.academic} /> },
     { label: term.outclass.label, render: () => <AcademicPanel panel={term.outclass} /> },
     { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} /> },
-    ...(term.faculty ? [{ label: "Faculty", render: () => <FacultyPanelView data={term.faculty!} /> }] : []),
+    ...(term.faculty ? [{ label: "Faculty", render: () => <FacultyPanelView data={term.faculty!} termId={term.id} /> }] : []),
     { label: "Cultural Immersion", render: () => term.cultural && <CulturalPanelView data={term.cultural} /> },
   ];
 
