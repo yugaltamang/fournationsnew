@@ -21,7 +21,7 @@ const partners = [
     tag: "Term 2 · London · 8 Weeks",
     name: "Imperial College London",
     image: imperialImg,
-    headline: "Lead on the world stage.",
+    logo: "https://logo.clearbit.com/imperial.ac.uk",
     body: "Learn at one of the world's top-ranked institutions – and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch your innovative startup from the heart of London.",
     stats: [
       { v: "#2", l: "QS World Rankings" },
