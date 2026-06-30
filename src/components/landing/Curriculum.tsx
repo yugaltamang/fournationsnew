@@ -1,18 +1,39 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import gillesPhoto from "@/assets/faculty-london/gilles.asset.json";
+import willPhoto from "@/assets/faculty-london/will.asset.json";
+import gaiaPhoto from "@/assets/faculty-london/gaia.asset.json";
+import markPhoto from "@/assets/faculty-london/mark.asset.json";
+import naveedPhoto from "@/assets/faculty-london/naveed.asset.json";
+import andreasPhoto from "@/assets/faculty-london/andreas.asset.json";
+import marcoPhoto from "@/assets/faculty-london/marco.asset.json";
+import ramanaPhoto from "@/assets/faculty-london/ramana.asset.json";
 
 /* ─── data types ─── */
 interface AccItem { num: string; code?: string; title: string; rows: string[]; topics?: string }
 interface SubPanel { label: string; hero: { chip: string; title: string; body: string; img: string }; items: AccItem[]; summary?: string[] }
 interface CulturalPanel { chip: string; title: string; body: string; cards: { name: string; desc: string }[]; note?: string; imgs: [string, string] }
 interface ImmersionPanel { header: { title: string; body: string; note?: { title: string; desc: string } }; cards: { img: string; cat: string; title: string; desc: string; logos: string }[] }
+interface Faculty { name: string; designation: string; photo: string }
 
 interface Term {
   id: number; flag: string; label: string; bannerGrad: string; bannerFlag: string;
   outcomeLabel: string; outcome: string; outcomeSub: string;
   academic: SubPanel; outclass: SubPanel; immersions?: ImmersionPanel; cultural?: CulturalPanel;
+  faculty?: Faculty[];
   isDubai?: boolean;
 }
+
+const londonFaculty: Faculty[] = [
+  { name: "Gilles Chemla", designation: "Professor of Finance, Imperial Business School · Co-director, Centre for Financial Technology", photo: gillesPhoto.url },
+  { name: "Will Knottenbelt", designation: "Professor of Applied Quantitative Analysis", photo: willPhoto.url },
+  { name: "Gaia Oganesian", designation: "MSc in Artificial Intelligence · PhD in Economics", photo: gaiaPhoto.url },
+  { name: "Mark Kitten", designation: "Visiting Professor · Partner, Candesic Strategy Consultants (London & New York)", photo: markPhoto.url },
+  { name: "Naveed Sultan", designation: "Professor of Practice, Imperial College Business School", photo: naveedPhoto.url },
+  { name: "Andreas Eisingerich", designation: "Professor of Marketing", photo: andreasPhoto.url },
+  { name: "Marco di Maggio", designation: "Professor of Finance", photo: marcoPhoto.url },
+  { name: "Ramana Nanda", designation: "Associate Dean for Enterprise, Imperial Business School", photo: ramanaPhoto.url },
+];
 
 export const terms: Term[] = [
   /* ── INDIA ── */
