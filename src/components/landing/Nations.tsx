@@ -449,7 +449,7 @@ const Nations = () => {
                                   onClick={() => setActiveTab(tab.id)}
                                   className={`relative flex-shrink-0 px-3 sm:px-5 py-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] transition-colors text-left leading-tight min-h-[44px] whitespace-nowrap ${
                                     isActive
-                                      ? "text-foreground"
+                                      ? "text-ink bg-paper"
                                       : "text-muted-foreground hover:text-foreground"
                                   }`}
                                 >
