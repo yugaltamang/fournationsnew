@@ -5,7 +5,7 @@ import muLogo from "@/assets/masters-union-delhi.png";
 
 const partners = [
   {
-    tag: "Term 1 · Gurugram",
+    tag: "Term 1 · Gurugram · 12 Weeks",
     name: "Masters' Union",
     image: muLogo,
     headline: "Built by practitioners.",
@@ -17,7 +17,7 @@ const partners = [
     ],
   },
   {
-    tag: "Term 2 · Hong Kong",
+    tag: "Term 2 · Hong Kong · 10 Weeks",
     name: "CUHK, Hong Kong",
     image: cuhkImg,
     headline: "Gateway to Greater China.",
@@ -30,7 +30,7 @@ const partners = [
     ],
   },
   {
-    tag: "Term 3 · London",
+    tag: "Term 3 · London · 8 Weeks",
     name: "Imperial College London",
     image: imperialImg,
     headline: "Lead on the world stage.",
