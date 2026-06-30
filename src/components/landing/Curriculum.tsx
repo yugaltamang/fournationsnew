@@ -350,6 +350,36 @@ const CulturalPanelView = ({ data }: { data: CulturalPanel }) => (
   </div>
 );
 
+const FacultyPanelView = ({ data }: { data: Faculty[] }) => (
+  <div>
+    <div className="mb-8">
+      <div className="tag-pill mb-4">Imperial College London · Faculty</div>
+      <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-balance">
+        Learn from <em className="italic not-italic text-primary">world-class faculty.</em>
+      </h3>
+      <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl">
+        Eight Imperial professors and practitioners - leaders in finance, AI, marketing, strategy and entrepreneurship - shaping how global business is taught.
+      </p>
+    </div>
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
+      {data.map((f, idx) => (
+        <div key={idx} className="flex flex-col items-center text-center group">
+          <div className="relative mb-3">
+            <div className="w-[96px] h-[96px] rounded-full p-[2px] bg-gradient-to-br from-primary to-primary/40 transition-all duration-300">
+              <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                <img src={f.photo} alt={f.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-md bg-primary" />
+          </div>
+          <p className="text-sm font-semibold text-foreground leading-tight">{f.name}</p>
+          <p className="text-[11px] text-muted-foreground leading-snug mt-1">{f.designation}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 /* ─── Stacked Term Row ─── */
 export const TermRow = ({ term, index }: { term: Term; index: number }) => {
   const [activeTab, setActiveTab] = useState(0);
