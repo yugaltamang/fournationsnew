@@ -637,12 +637,14 @@ const Nations = () => {
                         {activeTab === "faculty" && term.faculty && term.faculty.length > 0 && (
                           <div>
                             <div className="mb-8 max-w-2xl">
-                              <div className="tag-pill mb-4">{term.id === 2 ? "CUHK, Hong Kong · Faculty" : "Imperial College London · Faculty"}</div>
+                              <div className="tag-pill mb-4">{term.id === 0 ? "Masters' Union · Faculty" : term.id === 2 ? "CUHK, Hong Kong · Faculty" : "Imperial College London · Faculty"}</div>
                               <h5 className="font-display text-2xl sm:text-3xl leading-tight tracking-tight mb-3">
                                 Learn from <em className="italic not-italic text-primary">world-class faculty.</em>
                               </h5>
                               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                                {term.id === 2
+                                {term.id === 0
+                                  ? "Masters' Union faculty - practitioners and academics across finance, marketing, strategy, product and operations - building India's next generation of founders and leaders."
+                                  : term.id === 2
                                   ? "CUHK professors and practitioners - leaders in economics, innovation, analytics, decisions and technology - shaping how business is taught in Asia."
                                   : "Eight Imperial professors and practitioners - leaders in finance, AI, marketing, strategy and entrepreneurship - shaping how global business is taught."}
                               </p>
