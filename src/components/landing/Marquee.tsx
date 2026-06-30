@@ -1,9 +1,10 @@
 const items = [
-  "CUHK Business School", "Imperial College London", "DIFC Dubai",
-  "ITC", "Razorpay", "Pine Labs", "Dixon", "Honda", "NIVEA",
-  "Sonalika", "Mercedes-Benz", "Blue Tokai", "Mamaearth", "Boat",
-  "Nykaa", "Lenskart", "Delhivery", "Flipkart", "Ola", "Swiggy", "Zomato",
-  "HSBC", "HKEX", "LVMH",
+  // India
+  "Addverb", "ITC Limited", "Sonalika Tractors", "Honda", "Blue Tokai", "Shiprocket", "Nivia Sports", "LPU Jalandhar",
+  // Hong Kong
+  "Hong Kong Stock Exchange", "HSBC", "Alibaba Group", "ByteDance", "Kerry Logistics", "Li & Fung", "SenseTime", "Tencent",
+  // London
+  "Arctos", "Blenheim Chalcot", "Ripple", "Octopus Energy", "Deloitte", "Candesic", "Burberry", "Johnson & Johnson",
 ];
 
 const Row = () => (
