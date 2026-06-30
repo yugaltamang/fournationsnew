@@ -9,7 +9,7 @@ const partners = [
     tag: "Term 1 · Gurugram · 12 Weeks",
     name: "Masters' Union",
     image: muLogo,
-    headline: "Built by practitioners.",
+    logo: muSvgLogo,
     body: "The home institution. A new-age business school where MDs, founders and operators teach - not career academics. In five years, one of India's most selective programmes, on a Top-10 global rank quest.",
     stats: [
       { v: "2,000+", l: "Students" },
