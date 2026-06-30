@@ -17,20 +17,7 @@ const partners = [
     ],
   },
   {
-    tag: "Term 2 · Hong Kong · 10 Weeks",
-    name: "CUHK, Hong Kong",
-    image: cuhkImg,
-    headline: "Gateway to Greater China.",
-    body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
-    stats: [
-      { v: "#32", l: "QS Ranking" },
-      { v: "60+", l: "Years of Excellence" },
-      { v: "60", l: "Contact Hours" },
-      { v: "✓", l: "CUHK Certificate" },
-    ],
-  },
-  {
-    tag: "Term 3 · London · 8 Weeks",
+    tag: "Term 2 · London · 8 Weeks",
     name: "Imperial College London",
     image: imperialImg,
     headline: "Lead on the world stage.",
@@ -40,6 +27,19 @@ const partners = [
       { v: "Top 1%", l: "Business Schools" },
       { v: "140+", l: "Nationalities" },
       { v: "14", l: "Nobel Laureates" },
+    ],
+  },
+  {
+    tag: "Term 3 · Hong Kong · 10 Weeks",
+    name: "CUHK, Hong Kong",
+    image: cuhkImg,
+    headline: "Gateway to Greater China.",
+    body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
+    stats: [
+      { v: "#32", l: "QS Ranking" },
+      { v: "60+", l: "Years of Excellence" },
+      { v: "60", l: "Contact Hours" },
+      { v: "✓", l: "CUHK Certificate" },
     ],
   },
 ];
@@ -78,7 +78,7 @@ const Immersions = () => (
           Three credentials.
         </h2>
         <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl">
-          Anchored at Masters' Union in Delhi, with terms at CUHK Hong Kong and Imperial College London - you graduate with credentials from all three.
+          Anchored at Masters' Union in Delhi, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three.
         </p>
       </div>
 

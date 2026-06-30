@@ -1,6 +1,6 @@
 const outcomes = [
   { n: "01", t: "Operate across four markets", d: "Read Indian distribution, European brand, Asian capital and MENA family-office economics - and switch contexts without missing a beat." },
-  { n: "02", t: "A network in four cultures", d: "Peers, faculty and CXOs from CUHK, Imperial College London, Indian unicorns and DIFC. Warm intros that compound for life." },
+  { n: "02", t: "A network in four cultures", d: "Peers, faculty and CXOs from Imperial College London, CUHK, Indian unicorns and DIFC. Warm intros that compound for life." },
   { n: "03", t: "Cultural fluency as a moat", d: "Negotiate, hire, sell and lead across India, Europe, Asia and MENA. The skill nobody learns in a classroom - and everybody hires for." },
   { n: "04", t: "A global career, not a local job", d: "Walk out positioned for cross-border roles, founder paths, family-office mandates or global P&L responsibility - wherever the opportunity is." },
 ];

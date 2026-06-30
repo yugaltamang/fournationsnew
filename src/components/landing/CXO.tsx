@@ -10,11 +10,11 @@ const pillars = [
     image: globeImg,
     title: "Four countries.",
     titleEm: "One cohort.",
-    body: "Live and build across India, Hong Kong, London and Dubai - four of the world's most dynamic business ecosystems.",
+    body: "Live and build across India, London, Hong Kong and Dubai - four of the world's most dynamic business ecosystems.",
     points: [
       "9 months across 4 countries",
       "On-ground visits & boardrooms",
-      "CUHK & Imperial certificates",
+      "Imperial & CUHK certificates",
     ],
     stat: { value: "4", label: "Nations" },
     fit: "contain" as const,
