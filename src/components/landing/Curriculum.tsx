@@ -48,6 +48,18 @@ const hkFaculty: Faculty[] = [
   { name: "Dr. Gilbert Cheung", designation: "Honorary Institute Fellow", photo: gilbertPhoto.url },
 ];
 
+const indiaFaculty: Faculty[] = [
+  { name: "Dr. Garima Chaklader", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/16042026/v1/DrGarimaChaklader.webp" },
+  { name: "Dr. Bhupesh Manoharan", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/10042026/v1/Dr.BhupeshManoharan1.webp" },
+  { name: "Dr. Nandini Seth", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/10042026/v1/Dr.NandiniSeth2.webp" },
+  { name: "Dr. Rajita Chaudhari", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/14042026/v1/Dr.RajitaChaudhari.webp" },
+  { name: "Ankur Kulshrestha", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/10042026/v1/AnkurKulshrestha.webp" },
+  { name: "Rajat Mathur", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/14042026/v1/RajatMathur.webp" },
+  { name: "Rashmi Malik", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/14042026/v1/RashmiMalik.webp" },
+  { name: "Mayank Nagpal", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/10042026/v1/MayankNagpal.webp" },
+  { name: "Saurabh Sengupta", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/16042026/v1/SaurabhSengupta.webp" },
+];
+
 export const terms: Term[] = [
   /* ── INDIA ── */
   {
