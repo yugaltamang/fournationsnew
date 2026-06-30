@@ -44,6 +44,12 @@ const groups = [
 
 const Logo = ({ name, domain }: { name: string; domain: string }) => {
   const [error, setError] = useState(false);
+  const [src, setSrc] = useState(`https://logo.clearbit.com/${domain}`);
+
+  useEffect(() => {
+    setError(false);
+    setSrc(`https://logo.clearbit.com/${domain}`);
+  }, [domain]);
 
   if (error) {
     return (
@@ -55,12 +61,18 @@ const Logo = ({ name, domain }: { name: string; domain: string }) => {
 
   return (
     <img
-      src={`https://logo.clearbit.com/${domain}`}
+      src={src}
       alt={name}
       loading="lazy"
       decoding="async"
       className="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-      onError={() => setError(true)}
+      onError={() => {
+        if (src.includes("clearbit.com")) {
+          setSrc(`https://www.google.com/s2/favicons?domain=${domain}&sz=128`);
+        } else {
+          setError(true);
+        }
+      }}
     />
   );
 };
