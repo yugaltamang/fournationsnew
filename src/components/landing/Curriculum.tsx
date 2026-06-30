@@ -25,14 +25,14 @@ interface Term {
 }
 
 const londonFaculty: Faculty[] = [
-  { name: "Gilles Chemla", designation: "Professor of Finance, Imperial Business School · Co-director, Centre for Financial Technology", photo: gillesPhoto.url },
+  { name: "Gilles Chemla", designation: "Professor of Finance · Co-director, Centre for Financial Technology", photo: gillesPhoto.url },
   { name: "Will Knottenbelt", designation: "Professor of Applied Quantitative Analysis", photo: willPhoto.url },
   { name: "Gaia Oganesian", designation: "MSc in Artificial Intelligence · PhD in Economics", photo: gaiaPhoto.url },
   { name: "Mark Kitten", designation: "Visiting Professor · Partner, Candesic Strategy Consultants (London & New York)", photo: markPhoto.url },
-  { name: "Naveed Sultan", designation: "Professor of Practice, Imperial College Business School", photo: naveedPhoto.url },
+  { name: "Naveed Sultan", designation: "Professor of Practice", photo: naveedPhoto.url },
   { name: "Andreas Eisingerich", designation: "Professor of Marketing", photo: andreasPhoto.url },
   { name: "Marco di Maggio", designation: "Professor of Finance", photo: marcoPhoto.url },
-  { name: "Ramana Nanda", designation: "Associate Dean for Enterprise, Imperial Business School", photo: ramanaPhoto.url },
+  { name: "Ramana Nanda", designation: "Associate Dean for Enterprise", photo: ramanaPhoto.url },
 ];
 
 export const terms: Term[] = [
