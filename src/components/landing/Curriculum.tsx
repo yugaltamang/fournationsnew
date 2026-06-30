@@ -200,6 +200,7 @@ export const terms: Term[] = [
       ],
       imgs: ["https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=85&fit=crop"],
     },
+    faculty: hkFaculty,
   },
   /* ── DUBAI ── */
   {
