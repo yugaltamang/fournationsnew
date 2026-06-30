@@ -3,7 +3,6 @@ import Hero from "@/components/landing/Hero";
 import Marquee from "@/components/landing/Marquee";
 import Nations from "@/components/landing/Nations";
 import Curriculum from "@/components/landing/Curriculum";
-import ApplyBento from "@/components/landing/ApplyBento";
 import Immersions from "@/components/landing/Immersions";
 import Outclass from "@/components/landing/Outclass";
 import CXO from "@/components/landing/CXO";
@@ -25,7 +24,6 @@ const Index = () => (
       <Nations />
     </section>
     
-    <ApplyBento />
     <Immersions />
     <Outclass />
     <CXO />
