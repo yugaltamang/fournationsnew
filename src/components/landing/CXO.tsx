@@ -14,7 +14,7 @@ const pillars = [
     points: [
       "9 months across 4 countries",
       "On-ground visits & boardrooms",
-      "CUHK & Imperial certificates",
+      "Imperial & CUHK certificates",
     ],
     stat: { value: "4", label: "Nations" },
     fit: "contain" as const,
