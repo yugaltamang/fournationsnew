@@ -40,6 +40,14 @@ const londonFaculty: Faculty[] = [
   { name: "Ramana Nanda", designation: "Associate Dean for Enterprise", photo: ramanaPhoto.url },
 ];
 
+const hkFaculty: Faculty[] = [
+  { name: "Prof. Terence Chong", designation: "Associate Professor, Department of Economics", photo: terencePhoto.url },
+  { name: "Prof. Toa Charm", designation: "Associate Professor of Practice in Innovation and Technology", photo: toaPhoto.url },
+  { name: "Prof. Jeff Yeung", designation: "Adjunct Associate Professor, Department of Decisions", photo: jeffPhoto.url },
+  { name: "Prof. Liao Ming", designation: "Professor of Practice in Business Analytics", photo: liaoPhoto.url },
+  { name: "Dr. Gilbert Cheung", designation: "Honorary Institute Fellow", photo: gilbertPhoto.url },
+];
+
 export const terms: Term[] = [
   /* ── INDIA ── */
   {
