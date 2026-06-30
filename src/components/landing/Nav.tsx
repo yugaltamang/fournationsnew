@@ -41,10 +41,6 @@ const Nav = () => {
               alt="Masters' Union"
               className="h-5 md:h-7 w-auto invert shrink-0"
             />
-            <span className="hidden sm:flex flex-col leading-none border-l border-border pl-3">
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">PG · Global Business</span>
-              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-primary mt-1">4 Nations</span>
-            </span>
           </a>
 
           <nav className="flex items-center gap-1 text-sm font-medium border border-border/60 px-2 py-1.5 backdrop-blur">
