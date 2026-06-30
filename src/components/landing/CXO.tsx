@@ -20,17 +20,17 @@ const pillars = [
     fit: "contain" as const,
   },
   {
-    tag: "CXO Sessions",
+    tag: "Business Immersions",
     image: cxoImg,
     title: "Leaders,",
     titleEm: "not lecturers.",
     body: "Faculty drawn from people actively running businesses - MDs, founders and senior executives in unfiltered conversations.",
     points: [
-      "10+ CXO masterclasses across the programme",
+      "15+ business immersions across the programme",
       "Live conversations, not lectures",
       "Lifelong alumni network access",
     ],
-    stat: { value: "10+", label: "CXO Sessions" },
+    stat: { value: "15+", label: "Business Immersions" },
     fit: "cover" as const,
   },
   {
