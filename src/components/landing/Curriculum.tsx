@@ -120,15 +120,13 @@ export const terms: Term[] = [
       label: "Out Class",
       hero: { chip: "Out Class · London", title: "Creators Challenge - London", body: "Build a personal brand across Instagram and YouTube from London. Hooks, retention, and body of work. Graduate as a creator-preneur with real reach.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
       items: [
-        { num: "01", title: "Creators Challenge - London", rows: [
-          "How to Find Your Niche and Position Yourself as a Creator",
-          "How to Build a Winning Content Strategy",
-          "How to Create Engaging Content Ideas and Scripts",
-          "How to Shoot Content with Confidence",
-          "How to Edit and Package High-Quality Content",
-          "How to Grow and Optimize Your Content",
-          "How to Monetize and Scale Your Personal Brand",
-        ] },
+        { num: "01", title: "How to Find Your Niche and Position Yourself as a Creator", rows: ["How to Find Your Niche and Position Yourself as a Creator"] },
+        { num: "02", title: "How to Build a Winning Content Strategy", rows: ["How to Build a Winning Content Strategy"] },
+        { num: "03", title: "How to Create Engaging Content Ideas and Scripts", rows: ["How to Create Engaging Content Ideas and Scripts"] },
+        { num: "04", title: "How to Shoot Content with Confidence", rows: ["How to Shoot Content with Confidence"] },
+        { num: "05", title: "How to Edit and Package High-Quality Content", rows: ["How to Edit and Package High-Quality Content"] },
+        { num: "06", title: "How to Grow and Optimize Your Content", rows: ["How to Grow and Optimize Your Content"] },
+        { num: "07", title: "How to Monetize and Scale Your Personal Brand", rows: ["How to Monetize and Scale Your Personal Brand"] },
       ],
     },
     immersions: {

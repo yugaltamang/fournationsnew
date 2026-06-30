@@ -538,19 +538,35 @@ const Nations = () => {
                               </div>
                             ) : (
                               <div className="grid sm:grid-cols-2 gap-3">
-                                {term.outclass.items.flatMap((item) => item.rows).map((r, idx) => (
-                                  <div
-                                    key={`oc-${idx}`}
-                                    className="group relative border border-border bg-secondary/20 p-5 hover:border-primary hover:bg-secondary/40 transition-all"
-                                  >
-                                    <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-2">
-                                      {String(idx + 1).padStart(2, "0")}
+                                {term.outclass.items.length === 1 ? (
+                                  term.outclass.items[0].rows.map((r, idx) => (
+                                    <div
+                                      key={`oc-${idx}`}
+                                      className="group relative border border-border bg-secondary/20 p-5 hover:border-primary hover:bg-secondary/40 transition-all"
+                                    >
+                                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-2">
+                                        {String(idx + 1).padStart(2, "0")}
+                                      </div>
+                                      <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
+                                        {r}
+                                      </div>
                                     </div>
-                                    <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
-                                      {r}
+                                  ))
+                                ) : (
+                                  term.outclass.items.map((item, idx) => (
+                                    <div
+                                      key={`oc-${idx}`}
+                                      className="group relative border border-border bg-secondary/20 p-5 hover:border-primary hover:bg-secondary/40 transition-all"
+                                    >
+                                      <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-2">
+                                        {item.num}
+                                      </div>
+                                      <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
+                                        {item.title}
+                                      </div>
                                     </div>
-                                  </div>
-                                ))}
+                                  ))
+                                )}
                               </div>
                             )}
                           </div>
