@@ -1,81 +1,29 @@
-import { useEffect, useState } from "react";
-
-const groups = [
-  {
-    label: "India",
-    companies: [
-      { name: "Addverb", domain: "addverb.com" },
-      { name: "ITC Limited", domain: "itcportal.com" },
-      { name: "Sonalika Tractors", domain: "sonalika.com" },
-      { name: "Honda", domain: "honda.com" },
-      { name: "Blue Tokai", domain: "bluetokaicoffee.com" },
-      { name: "Shiprocket", domain: "shiprocket.in" },
-      { name: "Nivia Sports", domain: "niviasports.com" },
-      { name: "LPU Jalandhar", domain: "lpu.in" },
-    ],
-  },
-  {
-    label: "London",
-    companies: [
-      { name: "Arctos", domain: "arctos.com" },
-      { name: "Blenheim Chalcot", domain: "blenheimchalcot.com" },
-      { name: "Ripple", domain: "ripple.com" },
-      { name: "Octopus Energy", domain: "octopus.energy" },
-      { name: "Deloitte", domain: "deloitte.com" },
-      { name: "Candesic", domain: "candesic.com" },
-      { name: "Burberry", domain: "burberry.com" },
-      { name: "Johnson & Johnson", domain: "jnj.com" },
-    ],
-  },
-  {
-    label: "Hong Kong",
-    companies: [
-      { name: "Hong Kong Stock Exchange", domain: "hkex.com.hk" },
-      { name: "HSBC", domain: "hsbc.com" },
-      { name: "Alibaba Group", domain: "alibabagroup.com" },
-      { name: "ByteDance", domain: "bytedance.com" },
-      { name: "Kerry Logistics", domain: "kerrylogistics.com" },
-      { name: "Li & Fung", domain: "lifung.com" },
-      { name: "SenseTime", domain: "sensetime.com" },
-      { name: "Tencent", domain: "tencent.com" },
-    ],
-  },
+const companies = [
+  "Addverb",
+  "ITC Limited",
+  "Sonalika Tractors",
+  "Honda",
+  "Blue Tokai",
+  "Shiprocket",
+  "Nivia Sports",
+  "LPU Jalandhar",
+  "Arctos",
+  "Blenheim Chalcot",
+  "Ripple",
+  "Octopus Energy",
+  "Deloitte",
+  "Candesic",
+  "Burberry",
+  "Johnson & Johnson",
+  "Hong Kong Stock Exchange",
+  "HSBC",
+  "Alibaba Group",
+  "ByteDance",
+  "Kerry Logistics",
+  "Li & Fung",
+  "SenseTime",
+  "Tencent",
 ];
-
-const Logo = ({ name, domain }: { name: string; domain: string }) => {
-  const [error, setError] = useState(false);
-  const [src, setSrc] = useState(`https://logo.clearbit.com/${domain}`);
-
-  useEffect(() => {
-    setError(false);
-    setSrc(`https://logo.clearbit.com/${domain}`);
-  }, [domain]);
-
-  if (error) {
-    return (
-      <span className="font-display text-sm sm:text-base text-center leading-tight text-foreground/90">
-        {name}
-      </span>
-    );
-  }
-
-  return (
-    <img
-      src={src}
-      alt={name}
-      loading="lazy"
-      decoding="async"
-      className="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-      onError={() => {
-        if (src.includes("clearbit.com")) {
-          setSrc(`https://www.google.com/s2/favicons?domain=${domain}&sz=128`);
-        } else {
-          setError(true);
-        }
-      }}
-    />
-  );
-};
 
 const Marquee = () => (
   <section className="border-y border-border bg-secondary/30 py-14 sm:py-20">
@@ -89,28 +37,18 @@ const Marquee = () => (
           Inside the companies that shape <em className="italic mu-hero-gradient-text not-italic">global business.</em>
         </h2>
       </div>
+    </div>
 
-      <div className="space-y-10 md:space-y-14">
-        {groups.map((g) => (
-          <div key={g.label}>
-            <div className="flex items-center gap-3 mb-5">
-              <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                {g.label}
-              </span>
-              <span className="h-px flex-1 bg-border" />
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-px bg-border border border-border">
-              {g.companies.map((co) => (
-                <div
-                  key={co.name}
-                  className="bg-background flex items-center justify-center p-6 sm:p-8 md:p-10 aspect-[16/10] hover:bg-secondary/40 transition-colors"
-                  title={co.name}
-                >
-                  <Logo name={co.name} domain={co.domain} />
-                </div>
-              ))}
-            </div>
-          </div>
+    {/* Ticker */}
+    <div className="relative overflow-hidden marquee-mask py-4 sm:py-5">
+      <div className="ticker flex whitespace-nowrap">
+        {[...companies, ...companies].map((co, i) => (
+          <span key={i} className="inline-flex items-center gap-6 sm:gap-8 px-3 sm:px-4">
+            <span className="font-display text-xl sm:text-2xl md:text-3xl text-foreground/90 uppercase tracking-tight">
+              {co}
+            </span>
+            <span className="text-primary/60">✦</span>
+          </span>
         ))}
       </div>
     </div>
