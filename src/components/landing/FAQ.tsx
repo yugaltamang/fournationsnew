@@ -30,14 +30,12 @@ const groups: FaqGroup[] = [
         q: "What does the program fee include?",
         a: (
           <>
-            <p className="mb-2">The fee typically covers:</p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Academic sessions and curriculum delivery</li>
-              <li>Access to global partner institutions (Imperial & CUHK)</li>
-              <li>CXO masterclasses and industry interactions</li>
-              <li>Learning resources and program infrastructure</li>
-            </ul>
-            <p className="mt-2 text-xs italic">(Travel and accommodation may be separate, depending on the structure.)</p>
+            <p className="mb-2">
+              The programme fee covers academic sessions, access to partner institutions, business immersions, CXO interactions, learning resources and outclass projects.
+            </p>
+            <p className="text-xs italic">
+              Flights, accommodation, visas and local logistics are not included. See the full breakdown above.
+            </p>
           </>
         ),
       },

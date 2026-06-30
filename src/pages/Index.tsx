@@ -7,13 +7,14 @@ import Immersions from "@/components/landing/Immersions";
 import Outclass from "@/components/landing/Outclass";
 import CXO from "@/components/landing/CXO";
 import Outcomes from "@/components/landing/Outcomes";
-
+import WhatsIncluded from "@/components/landing/WhatsIncluded";
 import FAQ from "@/components/landing/FAQ";
 import Admissions from "@/components/landing/Admissions";
 
 import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
 import MobileBottomBar from "@/components/landing/MobileBottomBar";
+
 
 const Index = () => (
   <main className="min-h-screen bg-background text-foreground">
@@ -29,7 +30,9 @@ const Index = () => (
     <CXO />
     <Outcomes />
     <Admissions />
+    <WhatsIncluded />
     <FAQ />
+
     <Contact />
     <Footer />
     <MobileBottomBar />
