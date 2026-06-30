@@ -258,6 +258,21 @@ export default function Outclass() {
                 {active.desc}
               </p>
 
+              {active.topics && active.topics.length > 0 && (
+                <div className="border-t border-border pt-5 mb-5">
+                  <span className="text-[10px] uppercase tracking-widest text-primary font-bold mb-3 block">
+                    {active.topicsLabel}
+                  </span>
+                  <div className="flex flex-col gap-2.5">
+                    {active.topics.map((t, i) => (
+                      <div key={i} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
+                        <span className="text-primary font-mono text-xs mt-1 shrink-0">-</span>
+                        <span>{t.replace(/^Week \d+ -\s*/, "")}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {active.stats && (
                 <div className="grid grid-cols-3 gap-4 border-t border-border pt-5">
