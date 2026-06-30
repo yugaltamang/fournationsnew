@@ -8,6 +8,11 @@ import naveedPhoto from "@/assets/faculty-london/naveed.asset.json";
 import andreasPhoto from "@/assets/faculty-london/andreas.asset.json";
 import marcoPhoto from "@/assets/faculty-london/marco.asset.json";
 import ramanaPhoto from "@/assets/faculty-london/ramana.asset.json";
+import terencePhoto from "@/assets/faculty-hk/terence.asset.json";
+import toaPhoto from "@/assets/faculty-hk/toa.asset.json";
+import jeffPhoto from "@/assets/faculty-hk/jeff.asset.json";
+import liaoPhoto from "@/assets/faculty-hk/liao.asset.json";
+import gilbertPhoto from "@/assets/faculty-hk/gilbert.asset.json";
 
 /* ─── data types ─── */
 interface AccItem { num: string; code?: string; title: string; rows: string[]; topics?: string }
@@ -33,6 +38,14 @@ const londonFaculty: Faculty[] = [
   { name: "Andreas Eisingerich", designation: "Professor of Marketing", photo: andreasPhoto.url },
   { name: "Marco di Maggio", designation: "Professor of Finance", photo: marcoPhoto.url },
   { name: "Ramana Nanda", designation: "Associate Dean for Enterprise", photo: ramanaPhoto.url },
+];
+
+const hkFaculty: Faculty[] = [
+  { name: "Prof. Terence Chong", designation: "Associate Professor, Department of Economics", photo: terencePhoto.url },
+  { name: "Prof. Toa Charm", designation: "Associate Professor of Practice in Innovation and Technology", photo: toaPhoto.url },
+  { name: "Prof. Jeff Yeung", designation: "Adjunct Associate Professor, Department of Decisions", photo: jeffPhoto.url },
+  { name: "Prof. Liao Ming", designation: "Professor of Practice in Business Analytics", photo: liaoPhoto.url },
+  { name: "Dr. Gilbert Cheung", designation: "Honorary Institute Fellow", photo: gilbertPhoto.url },
 ];
 
 export const terms: Term[] = [
@@ -187,6 +200,7 @@ export const terms: Term[] = [
       ],
       imgs: ["https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=85&fit=crop"],
     },
+    faculty: hkFaculty,
   },
   /* ── DUBAI ── */
   {
