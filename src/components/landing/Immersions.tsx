@@ -1,6 +1,7 @@
 import imperialImg from "@/assets/imperial-london.png";
 import cuhkImg from "@/assets/cuhk-hongkong.png";
 import muLogo from "@/assets/masters-union-delhi.png";
+import muSvgLogo from "@/assets/mu-logo.svg";
 
 
 const partners = [
@@ -8,6 +9,7 @@ const partners = [
     tag: "Term 1 · Gurugram · 12 Weeks",
     name: "Masters' Union",
     image: muLogo,
+    logo: muSvgLogo,
     headline: "Built by practitioners.",
     body: "The home institution. A new-age business school where MDs, founders and operators teach - not career academics. In five years, one of India's most selective programmes, on a Top-10 global rank quest.",
     stats: [
@@ -20,6 +22,7 @@ const partners = [
     tag: "Term 2 · London · 8 Weeks",
     name: "Imperial College London",
     image: imperialImg,
+    logo: "https://logo.clearbit.com/imperial.ac.uk",
     headline: "Lead on the world stage.",
     body: "Learn at one of the world's top-ranked institutions – and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch your innovative startup from the heart of London.",
     stats: [
@@ -33,6 +36,7 @@ const partners = [
     tag: "Term 3 · Hong Kong · 10 Weeks",
     name: "CUHK, Hong Kong",
     image: cuhkImg,
+    logo: "https://logo.clearbit.com/cuhk.edu.hk",
     headline: "Gateway to Greater China.",
     body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
     stats: [
@@ -113,8 +117,20 @@ const Immersions = () => (
                   alt={p.name}
                   loading="lazy"
                   decoding="async"
-                  className="relative w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                  className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
+                {/* Logo overlay */}
+                <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                  <div className="bg-black/60 backdrop-blur-sm border border-white/10 px-6 py-5 sm:px-8 sm:py-6">
+                    <img
+                      src={p.logo}
+                      alt={`${p.name} logo`}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-12 sm:h-14 md:h-16 w-auto object-contain max-w-[180px] sm:max-w-[220px]"
+                    />
+                  </div>
+                </div>
                 {/* Term tag */}
                 <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10">
                   <span className="tag-pill">{p.tag}</span>
