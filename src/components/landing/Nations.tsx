@@ -655,7 +655,7 @@ const Nations = () => {
                                   <div className="relative mb-3">
                                     <div className="w-[96px] h-[96px] rounded-full p-[2px] bg-gradient-to-br from-primary to-primary/40 transition-all duration-300">
                                       <div className="w-full h-full rounded-full overflow-hidden bg-background">
-                                        <img src={f.photo} alt={f.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                                        <img src={f.photo} alt={f.name} loading="lazy" decoding="async" className={"w-full h-full object-cover " + (term.id === 0 ? "object-[50%_10%] scale-105" : "object-center")} />
                                       </div>
                                     </div>
                                     <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-md bg-primary" />
