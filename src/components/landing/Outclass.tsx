@@ -258,21 +258,6 @@ export default function Outclass() {
                 {active.desc}
               </p>
 
-              {active.topics && (
-                <div className="mb-6">
-                  <span className="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">
-                    {active.topicsLabel || "Key modules"}
-                  </span>
-                  <ul className="space-y-2">
-                    {active.topics.map((topic, i) => (
-                      <li key={i} className="text-sm text-foreground/80 leading-relaxed flex gap-2">
-                        <span className="text-primary/60 shrink-0">-</span>
-                        <span>{topic}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
 
               {active.stats && (
                 <div className="grid grid-cols-3 gap-4 border-t border-border pt-5">
