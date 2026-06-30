@@ -151,6 +151,7 @@ export const terms: Term[] = [
       ],
       imgs: ["https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&q=85&fit=crop"],
     },
+    faculty: londonFaculty,
   },
   /* ── HONG KONG ── */
   {
