@@ -49,15 +49,15 @@ const hkFaculty: Faculty[] = [
 ];
 
 const indiaFaculty: Faculty[] = [
-  { name: "Dr. Garima Chaklader", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/16042026/v1/DrGarimaChaklader.webp" },
-  { name: "Dr. Bhupesh Manoharan", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/10042026/v1/Dr.BhupeshManoharan1.webp" },
-  { name: "Dr. Nandini Seth", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/10042026/v1/Dr.NandiniSeth2.webp" },
-  { name: "Dr. Rajita Chaudhari", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/14042026/v1/Dr.RajitaChaudhari.webp" },
-  { name: "Ankur Kulshrestha", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/10042026/v1/AnkurKulshrestha.webp" },
-  { name: "Rajat Mathur", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/14042026/v1/RajatMathur.webp" },
-  { name: "Rashmi Malik", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/14042026/v1/RashmiMalik.webp" },
-  { name: "Mayank Nagpal", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/10042026/v1/MayankNagpal.webp" },
-  { name: "Saurabh Sengupta", designation: "Faculty, Masters' Union", photo: "https://images.mastersunion.link/uploads/16042026/v1/SaurabhSengupta.webp" },
+  { name: "Dr. Garima Chaklader", designation: "Assistant Professor, Economics & Data Analysis", photo: "https://images.mastersunion.link/uploads/16042026/v1/DrGarimaChaklader.webp" },
+  { name: "Dr. Bhupesh Manoharan", designation: "Dean · Associate Professor, Marketing", photo: "https://images.mastersunion.link/uploads/10042026/v1/Dr.BhupeshManoharan1.webp" },
+  { name: "Dr. Nandini Seth", designation: "Faculty, Quantitative Methods", photo: "https://images.mastersunion.link/uploads/10042026/v1/Dr.NandiniSeth2.webp" },
+  { name: "Dr. Rajita Chaudhuri", designation: "Visiting Faculty, Marketing & Brand Strategy", photo: "https://images.mastersunion.link/uploads/14042026/v1/Dr.RajitaChaudhari.webp" },
+  { name: "Ankur Kulshrestha", designation: "Visiting Faculty, Capital Markets & Valuations", photo: "https://images.mastersunion.link/uploads/10042026/v1/AnkurKulshrestha.webp" },
+  { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/14042026/v1/RajatMathur.webp" },
+  { name: "Rashmi Malik", designation: "Visiting Faculty, Design & GenAI", photo: "https://images.mastersunion.link/uploads/14042026/v1/RashmiMalik.webp" },
+  { name: "Mayank Nagpal", designation: "Visiting Faculty, AI & No-Code · Founder, EPYC", photo: "https://images.mastersunion.link/uploads/10042026/v1/MayankNagpal.webp" },
+  { name: "Saurabh Sengupta", designation: "Teaching Master, Modern Selling", photo: "https://images.mastersunion.link/uploads/16042026/v1/SaurabhSengupta.webp" },
 ];
 
 export const terms: Term[] = [
