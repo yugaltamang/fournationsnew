@@ -192,8 +192,8 @@ export const terms: Term[] = [
 ];
 
 /* ─── Accordion item ─── */
-const AccordionRow = ({ item }: { item: AccItem }) => {
-  const [open, setOpen] = useState(false);
+const AccordionRow = ({ item, defaultOpen = false }: { item: AccItem; defaultOpen?: boolean }) => {
+  const [open, setOpen] = useState(defaultOpen);
   return (
     <div className={`border ${open ? "border-primary bg-background" : "border-border bg-background/40"} transition-colors`}>
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between gap-4 px-4 sm:px-5 py-4 text-left">
@@ -245,7 +245,7 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
       </div>
     ) : (
       <div className="flex flex-col gap-3">
-        {panel.items.map((item, i) => <AccordionRow key={i} item={item} />)}
+        {panel.items.map((item, i) => <AccordionRow key={i} item={item} defaultOpen={panel.items.length === 1} />)}
       </div>
     )}
   </div>
