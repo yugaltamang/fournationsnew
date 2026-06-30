@@ -109,6 +109,7 @@ export const terms: Term[] = [
       note: "* Locations are indicative and may vary based on availability, permissions, and external factors.",
       imgs: ["https://images.unsplash.com/photo-1587474260584-136574528ed5?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=500&q=85&fit=crop"],
     },
+    faculty: indiaFaculty,
   },
   /* ── LONDON ── */
   {
