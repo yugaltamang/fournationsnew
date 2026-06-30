@@ -178,8 +178,7 @@ export const terms: Term[] = [
           "How to Monetize and Scale Your Personal Brand",
         ] },
       ],
-    faculty: londonFaculty,
-  },
+    },
     immersions: {
       header: { title: "Inside London's most iconic companies.", body: "4 company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
       cards: [
@@ -200,6 +199,7 @@ export const terms: Term[] = [
       ],
       imgs: ["https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&q=85&fit=crop"],
     },
+    faculty: londonFaculty,
   },
   /* ── DUBAI ── */
   {
