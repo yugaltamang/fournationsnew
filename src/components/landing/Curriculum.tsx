@@ -143,13 +143,12 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "Inside London's most iconic institutions.", body: "4 company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
+      header: { title: "Inside London's most iconic companies.", body: "4 company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
       cards: [
-        { img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&fit=crop", cat: "Finance & Capital", title: "The City of London", desc: "Inside the world's oldest and most influential financial centre.", logos: "London Stock Exchange · City of London" },
-        { img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80&fit=crop", cat: "Banking & Fintech", title: "Digital Finance at Scale", desc: "How global banks and fintech disruptors are reshaping money and payments.", logos: "Citi · Revolut · Ripple" },
-        { img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&fit=crop", cat: "Venture Capital", title: "Europe's Venture Engine", desc: "Inside the firms building and backing the next generation of companies.", logos: "Blenheim Chalcot · Fabric Ventures" },
-        { img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80&fit=crop", cat: "Tech & Advisory", title: "Innovation & Strategy", desc: "Cross-border technology and strategic advisory at scale.", logos: "Transwap · Candesic" },
-        { img: "https://images.unsplash.com/photo-1526304640152-d4619684e484?w=800&q=80&fit=crop", cat: "Financial Ecosystem", title: "The Full London Circuit", desc: "A cross-sector view of the institutions, disruptors and investors defining global capital.", logos: "London Stock Exchange · City of London · Revolut · Citi · Transwap · Blenheim Chalcot · Fabric Ventures · Candesic · Ripple" },
+        { img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&fit=crop", cat: "Finance & Venture", title: "Capital and Company Builders", desc: "How private equity and venture builders fund, scale and shape global businesses.", logos: "Arctos · Blenheim Chalcot" },
+        { img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80&fit=crop", cat: "Fintech & Energy", title: "Technology Disruptors", desc: "How fintech and clean-energy platforms are reimagining money, markets and sustainability.", logos: "Ripple · Octopus Energy" },
+        { img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&fit=crop", cat: "Advisory & Strategy", title: "Global Advisory at Scale", desc: "Inside the firms advising the world's largest companies on strategy, transformation and growth.", logos: "Deloitte · Candesic" },
+        { img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80&fit=crop", cat: "Luxury & Consumer", title: "Icons of Brand and Health", desc: "How heritage brands and healthcare giants build desire, trust and global scale.", logos: "Burberry · Johnson & Johnson" },
       ],
     },
     cultural: {
