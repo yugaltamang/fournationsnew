@@ -144,13 +144,18 @@ export const terms: Term[] = [
       ],
     },
     outclass: {
-      label: "Capstone",
-      hero: { chip: "Capstone · London", title: "Pitch Your Startup", body: "The London capstone is built around one outcome - <strong>crafting and delivering a compelling startup pitch</strong> that wins investors, customers, and partners.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
-      items: [],
-      summary: [
-        "Validate a real problem and design a differentiated venture model.",
-        "Build a lean MVP and test it with real users in the UK market.",
-        "Create a compelling pitch deck and present your startup to an investor panel.",
+      label: "Out Class",
+      hero: { chip: "Out Class · London", title: "Creators Challenge - London", body: "Build a personal brand across Instagram and YouTube from London. Hooks, retention, and body of work. Graduate as a creator-preneur with real reach.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
+      items: [
+        { num: "01", title: "Creators Challenge - London", rows: [
+          "How to Find Your Niche and Position Yourself as a Creator",
+          "How to Build a Winning Content Strategy",
+          "How to Create Engaging Content Ideas and Scripts",
+          "How to Shoot Content with Confidence",
+          "How to Edit and Package High-Quality Content",
+          "How to Grow and Optimize Your Content",
+          "How to Monetize and Scale Your Personal Brand",
+        ] },
       ],
     },
     immersions: {
