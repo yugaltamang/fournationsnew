@@ -73,7 +73,7 @@ const CXO = () => {
       <div className="container relative py-14 sm:py-16 md:py-20">
         {/* Header */}
         <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-10 md:mb-14 pb-6 border-b border-border">
-          <div className="md:col-span-8">
+          <div className="md:col-span-12">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4">
               <span className="w-8 h-px bg-primary" />
               <span>Why This Programme</span>
@@ -84,11 +84,6 @@ const CXO = () => {
                 real business impact.
               </em>
             </h2>
-          </div>
-          <div className="md:col-span-4">
-            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              Hover a panel to expand it. Three pillars, one cohort, zero filler.
-            </p>
           </div>
         </div>
 
