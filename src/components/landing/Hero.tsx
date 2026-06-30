@@ -1,6 +1,33 @@
 // Hero showcases iconic monuments for the 4 cohort cities
 import heroCollage from "@/assets/hero-collage.png";
 
+const companies = [
+  "Addverb",
+  "ITC Limited",
+  "Sonalika Tractors",
+  "Honda",
+  "Blue Tokai",
+  "Shiprocket",
+  "Nivia Sports",
+  "LPU Jalandhar",
+  "Arctos",
+  "Blenheim Chalcot",
+  "Ripple",
+  "Octopus Energy",
+  "Deloitte",
+  "Candesic",
+  "Burberry",
+  "Johnson & Johnson",
+  "Hong Kong Stock Exchange",
+  "HSBC",
+  "Alibaba Group",
+  "ByteDance",
+  "Kerry Logistics",
+  "Li & Fung",
+  "SenseTime",
+  "Tencent",
+];
+
 const Hero = () => (
   <section className="relative pt-24 sm:pt-32 pb-14 sm:pb-20 overflow-hidden">
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
@@ -84,6 +111,25 @@ const Hero = () => (
       </div>
 
       <div className="hidden lg:block lg:col-span-5" />
+    </div>
+
+    <div className="container mt-14 sm:mt-16 pt-8 sm:pt-10 border-t border-border relative z-10">
+      <div className="flex items-center gap-3 mb-5 sm:mb-6 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+        <span className="w-6 h-px bg-muted-foreground" />
+        <span>University &amp; Industry Partners</span>
+      </div>
+      <div className="relative overflow-hidden marquee-mask py-3 sm:py-4">
+        <div className="ticker flex whitespace-nowrap">
+          {[...companies, ...companies].map((co, i) => (
+            <span key={i} className="inline-flex items-center gap-6 sm:gap-8 px-3 sm:px-4">
+              <span className="font-display text-lg sm:text-xl md:text-2xl text-foreground/80 uppercase tracking-tight">
+                {co}
+              </span>
+              <span className="text-primary/60">✦</span>
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 );
