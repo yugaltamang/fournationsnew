@@ -30,7 +30,9 @@ const Index = () => (
     <CXO />
     <Outcomes />
     <Admissions />
+    <WhatsIncluded />
     <FAQ />
+
     <Contact />
     <Footer />
     <MobileBottomBar />
