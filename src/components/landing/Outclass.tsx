@@ -59,19 +59,6 @@ const modules: Module[] = [
       { name: "Jugnu", rev: "₹16.5L" },
     ],
     moreCount: "+11 more",
-    topicsLabel: "10 Week Sprint",
-    topics: [
-      "Week 1 - How do you identify and validate a high-potential D2C opportunity in the market?",
-      "Week 2 - How do you select the right product, source it efficiently, and build profitable unit economics?",
-      "Week 3 - How do you define a differentiated brand strategy and positioning that resonates with your target audience?",
-      "Week 4 - How do you create a compelling brand identity and packaging that drives recall and conversion?",
-      "Week 5 - How do you build and launch a high-converting D2C website on Shopify?",
-      "Week 6 - How do you successfully launch and scale your brand on online marketplaces?",
-      "Week 7 - How do you drive demand and acquire customers efficiently through performance marketing?",
-      "Week 8 - How do you set up seamless operations, fulfilment, and deliver an excellent customer experience?",
-      "Week 9 - How do you scale your D2C brand sustainably using the right growth levers and metrics?",
-      "Week 10 - Final showcase",
-    ],
   },
   {
     num: "2",
@@ -258,21 +245,6 @@ export default function Outclass() {
                 {active.desc}
               </p>
 
-              {active.topics && active.topics.length > 0 && (
-                <div className="border-t border-border pt-5 mb-5">
-                  <span className="text-[10px] uppercase tracking-widest text-primary font-bold mb-3 block">
-                    {active.topicsLabel}
-                  </span>
-                  <div className="flex flex-col gap-2.5">
-                    {active.topics.map((t, i) => (
-                      <div key={i} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
-                        <span className="text-primary font-mono text-xs mt-1 shrink-0">-</span>
-                        <span>{t.replace(/^Week \d+ -\s*/, "")}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
 
               {active.stats && (
                 <div className="grid grid-cols-3 gap-4 border-t border-border pt-5">
