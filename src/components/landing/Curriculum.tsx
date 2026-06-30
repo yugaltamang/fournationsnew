@@ -141,8 +141,8 @@ export const terms: Term[] = [
       ],
     },
     cultural: {
-      chip: "Cultural Immersion · Hong Kong", title: "Understand Hong Kong\nBeyond Business.",
-      body: "Culture shapes commerce across Hong Kong and the Greater Bay Area. 4 experiences will be selected from the list below, confirmed closer to the programme date.",
+      chip: "Cultural Immersion · London", title: "Experience London\nBeyond the Boardroom.",
+      body: "London's history, architecture and cultural institutions are as much a business education as any classroom.",
       cards: [
         { name: "Tower of London", desc: "Walk through a thousand years of power, trade, and empire - where England's commercial story began." },
         { name: "West End Theatre", desc: "Experience the world's most famous theatre district - storytelling, branding, and the experience economy live." },
