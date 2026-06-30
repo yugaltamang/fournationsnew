@@ -170,7 +170,7 @@ const FAQ = () => {
         <div className="text-center mb-12 md:mb-16">
           <div className="tag-pill mb-4 sm:mb-6">◉ FAQ</div>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95]">Questions, answered.</h2>
-          <p className="mt-4 text-sm sm:text-base text-muted-foreground">PGP – 4 Nations</p>
+          
         </div>
 
         <div className="space-y-4 sm:space-y-5">
