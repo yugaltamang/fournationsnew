@@ -1,18 +1,39 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import gillesPhoto from "@/assets/faculty-london/gilles.asset.json";
+import willPhoto from "@/assets/faculty-london/will.asset.json";
+import gaiaPhoto from "@/assets/faculty-london/gaia.asset.json";
+import markPhoto from "@/assets/faculty-london/mark.asset.json";
+import naveedPhoto from "@/assets/faculty-london/naveed.asset.json";
+import andreasPhoto from "@/assets/faculty-london/andreas.asset.json";
+import marcoPhoto from "@/assets/faculty-london/marco.asset.json";
+import ramanaPhoto from "@/assets/faculty-london/ramana.asset.json";
 
 /* ─── data types ─── */
 interface AccItem { num: string; code?: string; title: string; rows: string[]; topics?: string }
 interface SubPanel { label: string; hero: { chip: string; title: string; body: string; img: string }; items: AccItem[]; summary?: string[] }
 interface CulturalPanel { chip: string; title: string; body: string; cards: { name: string; desc: string }[]; note?: string; imgs: [string, string] }
 interface ImmersionPanel { header: { title: string; body: string; note?: { title: string; desc: string } }; cards: { img: string; cat: string; title: string; desc: string; logos: string }[] }
+interface Faculty { name: string; designation: string; photo: string }
 
 interface Term {
   id: number; flag: string; label: string; bannerGrad: string; bannerFlag: string;
   outcomeLabel: string; outcome: string; outcomeSub: string;
   academic: SubPanel; outclass: SubPanel; immersions?: ImmersionPanel; cultural?: CulturalPanel;
+  faculty?: Faculty[];
   isDubai?: boolean;
 }
+
+const londonFaculty: Faculty[] = [
+  { name: "Gilles Chemla", designation: "Professor of Finance, Imperial Business School · Co-director, Centre for Financial Technology", photo: gillesPhoto.url },
+  { name: "Will Knottenbelt", designation: "Professor of Applied Quantitative Analysis", photo: willPhoto.url },
+  { name: "Gaia Oganesian", designation: "MSc in Artificial Intelligence · PhD in Economics", photo: gaiaPhoto.url },
+  { name: "Mark Kitten", designation: "Visiting Professor · Partner, Candesic Strategy Consultants (London & New York)", photo: markPhoto.url },
+  { name: "Naveed Sultan", designation: "Professor of Practice, Imperial College Business School", photo: naveedPhoto.url },
+  { name: "Andreas Eisingerich", designation: "Professor of Marketing", photo: andreasPhoto.url },
+  { name: "Marco di Maggio", designation: "Professor of Finance", photo: marcoPhoto.url },
+  { name: "Ramana Nanda", designation: "Associate Dean for Enterprise, Imperial Business School", photo: ramanaPhoto.url },
+];
 
 export const terms: Term[] = [
   /* ── INDIA ── */
@@ -178,6 +199,7 @@ export const terms: Term[] = [
       ],
       imgs: ["https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&q=85&fit=crop"],
     },
+    faculty: londonFaculty,
   },
   /* ── DUBAI ── */
   {
@@ -328,6 +350,36 @@ const CulturalPanelView = ({ data }: { data: CulturalPanel }) => (
   </div>
 );
 
+const FacultyPanelView = ({ data }: { data: Faculty[] }) => (
+  <div>
+    <div className="mb-8">
+      <div className="tag-pill mb-4">Imperial College London · Faculty</div>
+      <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-balance">
+        Learn from <em className="italic not-italic text-primary">world-class faculty.</em>
+      </h3>
+      <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl">
+        Eight Imperial professors and practitioners - leaders in finance, AI, marketing, strategy and entrepreneurship - shaping how global business is taught.
+      </p>
+    </div>
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
+      {data.map((f, idx) => (
+        <div key={idx} className="flex flex-col items-center text-center group">
+          <div className="relative mb-3">
+            <div className="w-[96px] h-[96px] rounded-full p-[2px] bg-gradient-to-br from-primary to-primary/40 transition-all duration-300">
+              <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                <img src={f.photo} alt={f.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-md bg-primary" />
+          </div>
+          <p className="text-sm font-semibold text-foreground leading-tight">{f.name}</p>
+          <p className="text-[11px] text-muted-foreground leading-snug mt-1">{f.designation}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 /* ─── Stacked Term Row ─── */
 export const TermRow = ({ term, index }: { term: Term; index: number }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -381,6 +433,7 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
     { label: term.academic.label, render: () => <AcademicPanel panel={term.academic} /> },
     { label: term.outclass.label, render: () => <AcademicPanel panel={term.outclass} /> },
     { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} /> },
+    ...(term.faculty ? [{ label: "Faculty", render: () => <FacultyPanelView data={term.faculty!} /> }] : []),
     { label: "Cultural Immersion", render: () => term.cultural && <CulturalPanelView data={term.cultural} /> },
   ];
 
@@ -409,7 +462,7 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
         {/* Right: 4 tabs as content grid */}
         <div className="min-w-0">
           {/* Compact tab strip */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-border border border-border mb-8">
+          <div className={`grid grid-cols-2 ${tabs.length === 5 ? "sm:grid-cols-5" : "sm:grid-cols-4"} gap-px bg-border border border-border mb-8`}>
             {tabs.map((t, i) => {
               const active = activeTab === i;
               return (
