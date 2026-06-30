@@ -34,7 +34,7 @@ const partners = [
     tag: "Term 3 · Hong Kong · 10 Weeks",
     name: "CUHK, Hong Kong",
     image: cuhkImg,
-    headline: "Gateway to Greater China.",
+    logo: "https://logo.clearbit.com/cuhk.edu.hk",
     body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
     stats: [
       { v: "#32", l: "QS Ranking" },
