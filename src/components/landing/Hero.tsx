@@ -73,7 +73,7 @@ const Hero = () => (
             { n: "1", l: "Week · Optional Dubai" },
             { n: "4", l: "Nations · Cultures · Markets" },
             { n: "2", l: "Global University Partners" },
-            { n: "10+", l: "CXO Masterclasses" },
+            { n: "15+", l: "Business Immersions" },
           ].map((s) => (
             <div key={s.l} className="min-w-0">
               <div className="font-display text-3xl sm:text-4xl md:text-5xl font-medium leading-none">{s.n}</div>
