@@ -1,6 +1,33 @@
 // Hero showcases iconic monuments for the 4 cohort cities
 import heroCollage from "@/assets/hero-collage.png";
 
+const companies = [
+  "Addverb",
+  "ITC Limited",
+  "Sonalika Tractors",
+  "Honda",
+  "Blue Tokai",
+  "Shiprocket",
+  "Nivia Sports",
+  "LPU Jalandhar",
+  "Arctos",
+  "Blenheim Chalcot",
+  "Ripple",
+  "Octopus Energy",
+  "Deloitte",
+  "Candesic",
+  "Burberry",
+  "Johnson & Johnson",
+  "Hong Kong Stock Exchange",
+  "HSBC",
+  "Alibaba Group",
+  "ByteDance",
+  "Kerry Logistics",
+  "Li & Fung",
+  "SenseTime",
+  "Tencent",
+];
+
 const Hero = () => (
   <section className="relative pt-24 sm:pt-32 pb-14 sm:pb-20 overflow-hidden">
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
