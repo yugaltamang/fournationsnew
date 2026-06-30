@@ -169,7 +169,7 @@ const Nations = () => {
               {i < nations.length - 1 && <span className="text-muted-foreground/50">→</span>}
             </div>
           ))}
-          <span className="lg:ml-auto text-muted-foreground/70">Click any stop to explore</span>
+          
         </div>
 
         {/* Main feature board */}
