@@ -245,7 +245,7 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
       </div>
     ) : (
       <div className="flex flex-col gap-3">
-        {panel.items.map((item, i) => <AccordionRow key={i} item={item} />)}
+        {panel.items.map((item, i) => <AccordionRow key={i} item={item} defaultOpen={panel.items.length === 1} />)}
       </div>
     )}
   </div>
