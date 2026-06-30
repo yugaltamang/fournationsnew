@@ -37,6 +37,7 @@ const partners = [
     name: "CUHK, Hong Kong",
     image: cuhkImg,
     logo: "https://logo.clearbit.com/cuhk.edu.hk",
+    headline: "Gateway to Greater China.",
     body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
     stats: [
       { v: "#32", l: "QS Ranking" },
