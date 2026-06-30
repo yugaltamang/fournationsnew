@@ -8,6 +8,11 @@ import naveedPhoto from "@/assets/faculty-london/naveed.asset.json";
 import andreasPhoto from "@/assets/faculty-london/andreas.asset.json";
 import marcoPhoto from "@/assets/faculty-london/marco.asset.json";
 import ramanaPhoto from "@/assets/faculty-london/ramana.asset.json";
+import terencePhoto from "@/assets/faculty-hk/terence.asset.json";
+import toaPhoto from "@/assets/faculty-hk/toa.asset.json";
+import jeffPhoto from "@/assets/faculty-hk/jeff.asset.json";
+import liaoPhoto from "@/assets/faculty-hk/liao.asset.json";
+import gilbertPhoto from "@/assets/faculty-hk/gilbert.asset.json";
 
 /* ─── data types ─── */
 interface AccItem { num: string; code?: string; title: string; rows: string[]; topics?: string }
