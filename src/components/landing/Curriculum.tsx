@@ -41,7 +41,18 @@ export const terms: Term[] = [
       label: "Out Class",
       hero: { chip: "Out Class · India", title: "Build a D2C Brand", body: "A 10-week, high-intensity sprint from product discovery to a live D2C brand on Shopify, Amazon, and Flipkart. Real CAC, real ROAS, real revenue.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&fit=crop&crop=center" },
       items: [
-        { num: "01", title: "Build a D2C brand", rows: ["A 75-day sprint from product discovery to a live store on Shopify, Amazon, and Flipkart", "Real CAC, real ROAS, real revenue - not simulations"] },
+        { num: "01", title: "Build a D2C brand", rows: [
+          "Week 1 - How do you identify and validate a high-potential D2C opportunity in the market?",
+          "Week 2 - How do you select the right product, source it efficiently, and build profitable unit economics?",
+          "Week 3 - How do you define a differentiated brand strategy and positioning that resonates with your target audience?",
+          "Week 4 - How do you create a compelling brand identity and packaging that drives recall and conversion?",
+          "Week 5 - How do you build and launch a high-converting D2C website on Shopify?",
+          "Week 6 - How do you successfully launch and scale your brand on online marketplaces?",
+          "Week 7 - How do you drive demand and acquire customers efficiently through performance marketing?",
+          "Week 8 - How do you set up seamless operations, fulfilment, and deliver an excellent customer experience?",
+          "Week 9 - How do you scale your D2C brand sustainably using the right growth levers and metrics?",
+          "Week 10 - Final showcase",
+        ] },
       ],
     },
     immersions: {
