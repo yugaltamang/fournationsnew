@@ -16,6 +16,7 @@ const Nav = () => {
     { href: "#faculty", label: "Why This" },
     { href: "#outcomes", label: "Outcomes" },
     { href: "#admissions", label: "Admissions" },
+    { href: "#whats-included", label: "Fee Covers" },
     { href: "#faq", label: "FAQ" },
   ];
 
