@@ -1,12 +1,12 @@
 import { Check, X } from "lucide-react";
 
 const included = [
+  "Certificate from all 3 institutions: Masters' Union, Imperial College London, and CUHK",
   "Academic sessions and curriculum delivery across all locations",
   "Access to global partner institutions - Imperial College London and CUHK",
   "Business immersions and CXO interactions",
   "Outclass projects and capstone mentorship",
   "Learning resources, course materials and program infrastructure",
-  "Alumni network access after graduation",
 ];
 
 const notIncluded = [
