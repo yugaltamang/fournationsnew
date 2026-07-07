@@ -168,10 +168,9 @@ export const terms: Term[] = [
       chip: "Cultural Immersion · London", title: "Experience London\nBeyond the Boardroom.",
       body: "London's history, architecture and cultural institutions are as much a business education as any classroom.",
       cards: [
-        { name: "Tower of London", desc: "Walk through a thousand years of power, trade, and empire - where England's commercial story began." },
-        { name: "West End Theatre", desc: "Experience the world's most famous theatre district - storytelling, branding, and the experience economy live." },
-        { name: "British Museum", desc: "How Britain collected, curated, and commercialised global culture - and what it means for modern branding." },
-        { name: "Premier League Experience", desc: "Inside the world's most valuable sports brand - marketing, media rights, and global fandom." },
+        { name: "Riverboat Cruise on the Thames", desc: "See the city's iconic skyline from the water - a journey through London's history, commerce, and architecture." },
+        { name: "Private Tour of the Royal Albert Hall", desc: "Go behind the scenes of one of the world's most famous venues - a masterclass in heritage, brand, and the experience economy." },
+        { name: "Tour of the City of London", desc: "Walk through the Square Mile where global finance was born - from historic institutions to modern financial powerhouses." },
       ],
       imgs: ["https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&q=85&fit=crop"],
     },
