@@ -70,7 +70,7 @@ const Admissions = () => (
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1.5">Total Fee</div>
               <div className="font-display text-xl sm:text-2xl text-primary">₹6,399,999</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">All inclusive</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">*All inclusive</div>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ const Admissions = () => (
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1.5">Total Fee</div>
               <div className="font-display text-xl sm:text-2xl text-primary">$70,000</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">All inclusive</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">*All inclusive</div>
             </div>
           </div>
         </div>
