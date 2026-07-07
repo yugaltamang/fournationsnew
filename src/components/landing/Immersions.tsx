@@ -119,18 +119,6 @@ const Immersions = () => (
                   decoding="async"
                   className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                {/* Logo overlay */}
-                <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                  <div className="bg-black/60 backdrop-blur-sm border border-white/10 px-6 py-5 sm:px-8 sm:py-6">
-                    <img
-                      src={p.logo}
-                      alt={`${p.name} logo`}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-12 sm:h-14 md:h-16 w-auto object-contain max-w-[180px] sm:max-w-[220px]"
-                    />
-                  </div>
-                </div>
                 {/* Term tag */}
                 <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10">
                   <span className="tag-pill">{p.tag}</span>
