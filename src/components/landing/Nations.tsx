@@ -146,8 +146,7 @@ const Nations = () => {
             <SectionEyebrow className="mb-4 sm:mb-6">The Journey / Curriculum</SectionEyebrow>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-balance">
               One Curriculum.<br />
-              <em className="italic mu-hero-gradient-text not-italic">Four Countries.</em><br />
-              Global Business Leadership.
+              <em className="italic mu-hero-gradient-text not-italic">Leadership Without Borders.</em>
             </h2>
           </div>
           <div className="md:max-w-sm" />
