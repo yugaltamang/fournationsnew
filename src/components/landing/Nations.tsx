@@ -311,10 +311,6 @@ const Nations = () => {
                     </h3>
                   </div>
                   <div className="hidden sm:block text-right shrink-0">
-                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Partner</div>
-                    <div className="font-display text-base md:text-lg text-primary mt-1 max-w-[180px] leading-tight">
-                      {n.partner}
-                    </div>
                   </div>
                 </div>
               </div>
