@@ -20,16 +20,15 @@ const contactCards = [
   },
 ];
 
+import SectionEyebrow from "./SectionEyebrow";
+
 const Contact = () => (
   <section id="contact" className="py-16 sm:py-20 md:py-32 border-t border-border">
     <div className="container">
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
         {/* Left: heading */}
         <div>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4 sm:mb-6">
-            <span className="w-8 h-px bg-primary" />
-            <span>Admissions Office</span>
-          </div>
+          <SectionEyebrow className="mb-4 sm:mb-6">Admissions Office</SectionEyebrow>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance mb-6">
             Get in{" "}
             <em className="italic text-primary not-italic">Touch</em>

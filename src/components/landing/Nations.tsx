@@ -142,10 +142,7 @@ const Nations = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-10 md:mb-14">
           <div>
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4 sm:mb-6">
-              <span className="w-8 h-px bg-primary" />
-              <span>The Journey / Curriculum</span>
-            </div>
+            <SectionEyebrow className="mb-4 sm:mb-6">The Journey / Curriculum</SectionEyebrow>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-balance">
               One Curriculum.<br />
               <em className="italic mu-hero-gradient-text not-italic">Four Countries.</em><br />

@@ -17,14 +17,13 @@ const notIncluded = [
   "Personal expenses and meals not organised by the programme",
 ];
 
+import SectionEyebrow from "./SectionEyebrow";
+
 const WhatsIncluded = () => (
   <section id="whats-included" className="py-16 sm:py-20 md:py-32 border-y border-border bg-secondary/20">
     <div className="container">
       <div className="max-w-4xl mb-10 sm:mb-12 md:mb-16">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4 sm:mb-6">
-          <span className="w-8 h-px bg-primary" />
-          <span>What's Included</span>
-        </div>
+        <SectionEyebrow className="mb-4 sm:mb-6">What's Included</SectionEyebrow>
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95] text-balance">
           What the fee covers. <br className="hidden sm:block" />
           <em className="italic text-muted-foreground not-italic">And what it does not.</em>
