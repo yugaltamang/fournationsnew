@@ -18,8 +18,6 @@ const notIncluded = [
   "Personal expenses and meals not organised by the programme",
 ];
 
-import SectionEyebrow from "./SectionEyebrow";
-
 const WhatsIncluded = () => (
   <section id="whats-included" className="py-16 sm:py-20 md:py-32 border-y border-border bg-secondary/20">
     <div className="container">
