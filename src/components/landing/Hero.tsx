@@ -48,11 +48,6 @@ const Hero = () => (
           }}
         />
 
-        {/* Top chrome */}
-        <div className="absolute top-28 right-8 z-20 font-mono text-[10px] uppercase tracking-[0.25em] text-primary text-right flex items-center justify-end gap-1.5">
-          <span className="inline-block w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-          Four Cities · One Cohort
-        </div>
 
         {/* Collage image - transparent PNG, blended into dark hero */}
         <img
