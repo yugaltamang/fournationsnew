@@ -102,7 +102,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "Inside India's most iconic companies.", body: "4 industry immersions, a visit to Jalandhar factories, and 3 days at partner universities. Company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
+      header: { title: "Inside India's most iconic companies.", body: "Company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
       cards: [
         { img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80&fit=crop", cat: "Manufacturing & Industrial", title: "India's Industrial Powerhouses", desc: "Walk the floors of India's most scaled manufacturers and operators.", logos: "Addverb · ITC Limited · Sonalika Tractors · Honda" },
         { img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80&fit=crop", cat: "D2C", title: "Built in India, Drunk Globally", desc: "Inside a home-grown D2C brand that scaled coffee culture across the country.", logos: "Blue Tokai" },
@@ -156,7 +156,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "Inside London's most iconic companies.", body: "8 business immersions will be selected from the list below, finalised closer to the date based on availability and programme design." },
+      header: { title: "Inside London's most iconic companies.", body: "4 company visits will be selected from the list below, finalised closer to the date based on availability and programme design." },
       cards: [
         { img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&fit=crop", cat: "Finance & Venture", title: "Capital and Company Builders", desc: "How private equity and venture builders fund, scale and shape global businesses.", logos: "Arctos · Blenheim Chalcot" },
         { img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80&fit=crop", cat: "Fintech & Energy", title: "Technology Disruptors", desc: "How fintech and clean-energy platforms are reimagining money, markets and sustainability.", logos: "Ripple · Octopus Energy" },
@@ -204,7 +204,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "Inside Hong Kong and China's most iconic companies.", body: "4 business immersions will be selected from the list below, finalised closer to the date based on availability and programme design.", note: { title: "CUHK FinTech Seminars", desc: "Learners engage in 4-6 hours of seminars. Each seminar will showcase insights from industry leaders and experts, providing valuable perspectives on emerging trends and technologies." } },
+      header: { title: "Inside Hong Kong and China's most iconic companies.", body: "4 industry immersions will be selected from the list below, finalised closer to the date based on availability and programme design.", note: { title: "CUHK FinTech Seminars", desc: "Learners engage in 4-6 hours of seminars. Each seminar will showcase insights from industry leaders and experts, providing valuable perspectives on emerging trends and technologies." } },
       cards: [
         { img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop", cat: "Finance & Markets", title: "Hong Kong's Capital Engine", desc: "Inside the institutions connecting Asian capital to global markets.", logos: "Hong Kong Stock Exchange · HSBC" },
         { img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&fit=crop", cat: "Platform & Social Commerce", title: "Digital Giants at Scale", desc: "How platform companies build ecosystems across content, commerce, and payments.", logos: "Alibaba Group · ByteDance" },
