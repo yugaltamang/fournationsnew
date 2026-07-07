@@ -2,6 +2,7 @@ import imperialImg from "@/assets/imperial-london.png";
 import cuhkImg from "@/assets/cuhk-hongkong.png";
 import muLogo from "@/assets/masters-union-delhi.png";
 import muSvgLogo from "@/assets/mu-logo.svg";
+import SectionEyebrow from "./SectionEyebrow";
 
 
 const partners = [
@@ -72,10 +73,7 @@ const Immersions = () => (
     <div className="container relative">
       {/* Editorial Header */}
       <div className="max-w-4xl mb-14 md:mb-20">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-6">
-            <span className="w-8 h-px bg-primary" />
-            <span>The Pedigree</span>
-          </div>
+          <SectionEyebrow className="mb-6">The Pedigree</SectionEyebrow>
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance mb-6">
           Three institutions.{" "}
           <em className="italic mu-hero-gradient-text not-italic">One cohort.</em>{" "}

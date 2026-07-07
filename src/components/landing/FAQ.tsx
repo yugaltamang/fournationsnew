@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SectionEyebrow from "./SectionEyebrow";
 
 type FaqItem = { q: string; a: React.ReactNode };
 type FaqGroup = { category: string; items: FaqItem[] };
@@ -166,7 +167,7 @@ const FAQ = () => {
     <section id="faq" className="py-16 sm:py-20 md:py-32 bg-secondary/20 border-y border-border">
       <div className="container max-w-4xl">
         <div className="text-center mb-12 md:mb-16">
-          <div className="tag-pill mb-4 sm:mb-6">◉ FAQ</div>
+          <SectionEyebrow className="mb-4 sm:mb-6">FAQ</SectionEyebrow>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95]">Questions, answered.</h2>
           
         </div>

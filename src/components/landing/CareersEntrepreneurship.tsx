@@ -1,3 +1,5 @@
+import SectionEyebrow from "./SectionEyebrow";
+
 const careerStats = [
   { v: "₹33.39L", l: "Average CTC" },
   { v: "₹1.28 Cr", l: "Highest CTC" },
@@ -39,11 +41,7 @@ const CareersEntrepreneurship = () => (
       {/* Header */}
       <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-12 md:mb-16 pb-6 border-b border-border">
         <div className="md:col-span-8">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4 sm:mb-6">
-            <span className="w-8 h-px bg-primary" />
-            <span>Careers &amp; Entrepreneurship</span>
-            <span className="text-muted-foreground/50">/ Two Paths, One Cohort</span>
-          </div>
+          <SectionEyebrow className="mb-4 sm:mb-6">Careers &amp; Entrepreneurship / Two Paths, One Cohort</SectionEyebrow>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance">
             Get hired. Or get funded.{" "}
             <em className="italic text-primary not-italic">Often both.</em>
@@ -58,10 +56,7 @@ const CareersEntrepreneurship = () => (
 
       {/* CAREERS */}
       <div className="mb-16 md:mb-20">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-6">
-          <span className="w-8 h-px bg-primary" />
-          <span>Career Outcomes</span>
-        </div>
+        <SectionEyebrow className="mb-6">Career Outcomes</SectionEyebrow>
         <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-balance max-w-3xl mb-8">
           Graduates don't just get jobs. <em className="italic text-primary not-italic">They get careers.</em>
         </h3>
@@ -119,10 +114,7 @@ const CareersEntrepreneurship = () => (
 
       {/* ENTREPRENEURSHIP */}
       <div>
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-6">
-          <span className="w-8 h-px bg-primary" />
-          <span>Entrepreneurship</span>
-        </div>
+        <SectionEyebrow className="mb-6">Entrepreneurship</SectionEyebrow>
         <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-balance max-w-3xl mb-8">
           Where founders are built, <em className="italic text-primary not-italic">not just funded.</em>
         </h3>

@@ -1,3 +1,5 @@
+import SectionEyebrow from "./SectionEyebrow";
+
 const outcomes = [
   { n: "01", t: "Operate across four markets", d: "Read Indian distribution, European brand, Asian capital and MENA family-office economics and switch contexts without missing a beat." },
   { n: "02", t: "A network in four cultures", d: "Peers, faculty and CXOs from Imperial College London, CUHK, Indian unicorns and DIFC. Warm intros that compound for life." },
@@ -9,10 +11,7 @@ const Outcomes = () => (
   <section id="outcomes" className="py-16 sm:py-20 md:py-32">
     <div className="container">
       <div className="max-w-4xl mb-10 sm:mb-12 md:mb-16">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-4 sm:mb-6">
-          <span className="w-8 h-px bg-primary" />
-          <span>Outcomes</span>
-        </div>
+        <SectionEyebrow className="mb-4 sm:mb-6">Outcomes</SectionEyebrow>
         <h2 className="font-display text-4xl sm:text-5xl md:text-7xl leading-[0.95] text-balance">
           What you walk away with.<br />
           <em className="italic text-primary not-italic">(A passport that does work.)</em>

@@ -1,4 +1,5 @@
 import { Sparkles, ArrowRight } from "lucide-react";
+import SectionEyebrow from "./SectionEyebrow";
 
 const Admissions = () => (
   <section id="admissions" className="relative py-12 sm:py-16 border-t border-border bg-card/30 overflow-hidden">
@@ -8,10 +9,7 @@ const Admissions = () => (
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 border border-primary/40 text-primary px-3 py-1.5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] font-bold">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Admissions & Fees
-          </div>
+          <SectionEyebrow className="mb-4">Admissions &amp; Fees</SectionEyebrow>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4 max-w-2xl">
             Limited cohort seats. Apply now.
           </p>
