@@ -123,10 +123,17 @@ const Immersions = () => (
                 <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10">
                   <span className="tag-pill">{p.tag}</span>
                 </div>
-                {/* QS Ranking badge */}
+                {/* TopUniversities / QS logo badge */}
                 {(p.name === "Imperial College London" || p.name === "CUHK, Hong Kong") && (
                   <div className="absolute top-4 right-4 sm:top-5 sm:right-5 z-10">
-                    <span className="tag-pill">QS Ranked</span>
+                    <div className="bg-white/95 backdrop-blur-sm rounded-full px-2.5 py-1.5 shadow-lg">
+                      <img
+                        src="https://www.topuniversities.com/themes/custom/tu_d8/tu-new-logo.svg"
+                        alt="QS Top Universities"
+                        className="h-4 sm:h-5 w-auto"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 )}
                 {/* Corner mark */}
