@@ -45,7 +45,7 @@ const Admissions = () => (
               Fee
             </div>
             <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
-              INR 500
+              INR 5,000
             </div>
             <div className="text-[11px] text-muted-foreground mt-1">Application fee only</div>
           </div>
@@ -57,26 +57,46 @@ const Admissions = () => (
         {/* India Fees */}
         <div className="p-4 sm:p-5">
           <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-4">India (in INR)</div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+          <div className="grid grid-cols-3 gap-px bg-border">
             <div className="bg-background p-3 sm:p-4 text-center">
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Application Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-foreground">₹500</div>
+              <div className="font-display text-xl sm:text-2xl text-foreground">₹5,000.00</div>
               <div className="text-[11px] text-muted-foreground mt-0.5">One-time, non-refundable</div>
             </div>
             <div className="bg-background p-3 sm:p-4 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Admissions Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-foreground">₹50,000</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Admission Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-foreground">₹100,000.00</div>
               <div className="text-[11px] text-muted-foreground mt-0.5">Payable on offer acceptance</div>
-            </div>
-            <div className="bg-background p-3 sm:p-4 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Tuition Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-foreground">₹32,50,000</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">Covers the full programme</div>
             </div>
             <div className="bg-background p-3 sm:p-4 text-center relative">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1.5">Total Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-primary">₹33,00,000</div>
+              <div className="font-display text-xl sm:text-2xl text-primary">₹6,399,999.00</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">All inclusive</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="h-px bg-border" />
+
+        {/* International Fees */}
+        <div className="p-4 sm:p-5">
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-4">International (in USD)</div>
+          <div className="grid grid-cols-3 gap-px bg-border">
+            <div className="bg-background p-3 sm:p-4 text-center">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Application Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-foreground">$50.00</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">One-time, non-refundable</div>
+            </div>
+            <div className="bg-background p-3 sm:p-4 text-center">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Admission Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-foreground">$1,000.00</div>
+              <div className="text-[11px] text-muted-foreground mt-0.5">Payable on offer acceptance</div>
+            </div>
+            <div className="bg-background p-3 sm:p-4 text-center relative">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1.5">Total Fee</div>
+              <div className="font-display text-xl sm:text-2xl text-primary">$70,000.00</div>
               <div className="text-[11px] text-muted-foreground mt-0.5">All inclusive</div>
             </div>
           </div>
