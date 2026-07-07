@@ -12,7 +12,7 @@ const partners = [
     image: muLogo,
     logo: muSvgLogo,
     headline: "Built by practitioners.",
-    body: "Term 1 includes 4 industry immersions and a 3-day immersion visiting Jalandhar factories and universities. The home institution — a new-age business school where MDs, founders and operators teach, not career academics. In five years, one of India's most selective programmes, on a Top-10 global rank quest.",
+    body: "The home institution. A new-age business school where MDs, founders and operators teach - not career academics. In five years, one of India's most selective programmes, on a Top-10 global rank quest.",
     stats: [
       { v: "2,000+", l: "Students" },
       { v: "200+", l: "Industry Mentors" },
@@ -25,7 +25,7 @@ const partners = [
     image: imperialImg,
     logo: "https://logo.clearbit.com/imperial.ac.uk",
     headline: "Lead on the world stage.",
-    body: "Term 2 is 8 weeks of business immersions in London. Learn at one of the world's top-ranked institutions – and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch your innovative startup from the heart of London.",
+    body: "Learn at one of the world's top-ranked institutions – and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch your innovative startup from the heart of London.",
     stats: [
       { v: "#2", l: "QS World Rankings" },
       { v: "Top 1%", l: "Business Schools" },
@@ -39,7 +39,7 @@ const partners = [
     image: cuhkImg,
     logo: "https://logo.clearbit.com/cuhk.edu.hk",
     headline: "Gateway to Greater China.",
-    body: "Term 3 includes business immersions in Hong Kong. Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
+    body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
     stats: [
       { v: "#32", l: "QS Ranking" },
       { v: "60+", l: "Years of Excellence" },
