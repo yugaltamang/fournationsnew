@@ -1,4 +1,5 @@
 import { Mail, Phone, Clock } from "lucide-react";
+import SectionEyebrow from "./SectionEyebrow";
 
 const contactCards = [
   {
@@ -19,8 +20,6 @@ const contactCards = [
     value: "Mon - Sat\n9:00 am - 9:00 pm IST",
   },
 ];
-
-import SectionEyebrow from "./SectionEyebrow";
 
 const Contact = () => (
   <section id="contact" className="py-16 sm:py-20 md:py-32 border-t border-border">

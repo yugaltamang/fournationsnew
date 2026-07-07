@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import globeImg from "@/assets/four-nations-globe.png";
 import cxoImg from "@/assets/cxo-masterclass.webp";
 import immersionImg from "@/assets/immersion-factory.webp";
+import SectionEyebrow from "./SectionEyebrow";
 
 const pillars = [
   {

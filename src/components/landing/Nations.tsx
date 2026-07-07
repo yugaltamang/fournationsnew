@@ -4,6 +4,7 @@ import hk from "@/assets/nation-hongkong.webp";
 import london from "@/assets/nation-london.webp";
 import dubai from "@/assets/nation-dubai.webp";
 import { terms as curriculumTerms } from "./Curriculum";
+import SectionEyebrow from "./SectionEyebrow";
 
 type Nation = {
   n: string;

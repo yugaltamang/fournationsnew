@@ -1,4 +1,5 @@
 import { Check, X } from "lucide-react";
+import SectionEyebrow from "./SectionEyebrow";
 
 const included = [
   "Certificate from all 3 institutions: Masters' Union, Imperial College London, and CUHK",
