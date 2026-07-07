@@ -1,3 +1,5 @@
+import SectionEyebrow from "./SectionEyebrow";
+
 const careerStats = [
   { v: "₹33.39L", l: "Average CTC" },
   { v: "₹1.28 Cr", l: "Highest CTC" },
