@@ -168,7 +168,7 @@ const FAQ = () => {
       <div className="container max-w-4xl">
         <div className="text-center mb-12 md:mb-16">
           <SectionEyebrow className="mb-4 sm:mb-6">FAQ</SectionEyebrow>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95]">Questions, answered.</h2>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95]">Questions, answered.</h2>
           
         </div>
 

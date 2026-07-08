@@ -134,7 +134,7 @@ export default function Outclass() {
         {/* Header */}
         <div data-outclass-header className="max-w-4xl mb-10 sm:mb-14">
           <SectionEyebrow>OUT CLASS</SectionEyebrow>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[0.95] font-medium text-balance">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[0.95] font-medium text-balance">
             Learn it in class. <em className="italic font-normal">Prove it</em> outside.
           </h2>
           <p className="mt-5 text-muted-foreground text-base sm:text-lg max-w-2xl">
@@ -238,7 +238,7 @@ export default function Outclass() {
                 <div className="h-px flex-1 bg-border" />
               </div>
 
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[0.95] mb-3">
+              <h3 className="font-display text-xl sm:text-2xl md:text-3xl leading-[0.95] mb-3">
                 {active.title}
               </h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 max-w-md">
