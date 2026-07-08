@@ -407,6 +407,19 @@ const Nations = () => {
                   ))}
                 </div>
 
+                {n.country === "Dubai" && (
+                  <div className="border border-border bg-secondary/20 p-4">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
+                      Business Immersions at Dubai
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <BrandLogoTile name="DIFC" />
+                      <BrandLogoTile name="JAFZA" />
+                    </div>
+                  </div>
+                )}
+
+
                 {/* Outcome strip - highlighted with gradient border + glow */}
                 <div
                   className="relative p-px shadow-[0_20px_60px_-20px_rgba(247,213,68,0.35)]"
