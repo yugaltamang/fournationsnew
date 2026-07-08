@@ -45,14 +45,17 @@ const Nav = () => {
             />
           </a>
 
-          <nav className="flex items-center gap-1 text-sm font-medium border border-border/60 px-2 py-1.5 backdrop-blur">
+          <nav className="flex items-center gap-1 text-sm font-medium">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="group relative flex items-center gap-2 px-4 py-2 whitespace-nowrap transition-colors hover:bg-secondary"
+                className="group relative flex items-center gap-2 px-4 py-2 whitespace-nowrap transition-colors text-muted-foreground hover:text-foreground"
               >
-                <span className="group-hover:text-foreground transition-colors">{l.label}</span>
+                <span className="relative">
+                  {l.label}
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-primary transition-all duration-300 group-hover:w-full" />
+                </span>
               </a>
             ))}
           </nav>
