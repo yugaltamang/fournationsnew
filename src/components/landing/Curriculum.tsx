@@ -325,9 +325,9 @@ const BrandChip = ({ name }: { name: string }) => {
     return (
       <span
         title={name}
-        className="inline-flex items-center justify-center bg-white/10 border border-white/15 backdrop-blur-sm px-2.5 py-1.5 h-8"
+        className="inline-flex h-8 w-16 shrink-0 items-center justify-center border border-white/25 bg-black/80 p-1.5 shadow-[0_0_0_1px_rgba(255,255,255,0.08)]"
       >
-        <img src={logo} alt={name} loading="lazy" className="h-4 sm:h-5 w-auto object-contain" />
+        <img src={logo} alt={name} loading="lazy" className="max-h-5 max-w-12 object-contain drop-shadow-[0_0_3px_rgba(255,255,255,0.55)]" />
       </span>
     );
   }
@@ -356,16 +356,9 @@ const ImmersionPanelView = ({ data, location }: { data: ImmersionPanel; location
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
               Business Immersions at {location}
             </div>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+            <div className="flex flex-wrap items-center gap-2">
               {previewBrands.map((name) => (
-                <img
-                  key={name}
-                  src={LOGO_MAP[name]}
-                  alt={name}
-                  title={name}
-                  loading="lazy"
-                  className="h-7 sm:h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-                />
+                <BrandChip key={name} name={name} />
               ))}
             </div>
           </div>
