@@ -512,7 +512,7 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
   const tabs = [
     { label: term.academic.label, render: () => <AcademicPanel panel={term.academic} /> },
     { label: term.outclass.label, render: () => <AcademicPanel panel={term.outclass} /> },
-    { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} /> },
+    { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} location={term.label.replace(/^Term \d+ · /, "").replace(/\s*\(.*\)$/, "")} /> },
     ...(term.faculty ? [{ label: "Faculty", render: () => <FacultyPanelView data={term.faculty!} termId={term.id} /> }] : []),
     { label: "Cultural Immersion", render: () => term.cultural && <CulturalPanelView data={term.cultural} /> },
   ];
