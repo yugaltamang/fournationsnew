@@ -101,53 +101,38 @@ const Admissions = () => {
         </div>
       </div>
 
+      {/* Region toggle */}
+      <div className="flex items-center justify-between gap-3 mb-3">
+        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+          Programme fees
+        </div>
+        <div className="inline-flex rounded-md border border-border bg-background overflow-hidden">
+          {(["IN", "INTL"] as Region[]).map((r) => (
+            <button
+              key={r}
+              type="button"
+              onClick={() => setRegion(r)}
+              className={`px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.2em] transition-colors ${region === r ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+            >
+              {r === "IN" ? "India · INR" : "International · USD"}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Fees, prominent card with fine print */}
       <div className="border border-border bg-background mb-6">
-        {/* India Fees */}
         <div className="p-4 sm:p-5">
-          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-4">India (in INR)</div>
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-4">{fees.label}</div>
           <div className="grid grid-cols-3 gap-px bg-border">
-            <div className="bg-background p-3 sm:p-4 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Application Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-foreground">₹5,000</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">One-time, non-refundable</div>
-            </div>
-            <div className="bg-background p-3 sm:p-4 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Admission Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-foreground">₹100,000</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">Payable on offer acceptance</div>
-            </div>
-            <div className="bg-background p-3 sm:p-4 text-center relative">
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1.5">Total Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-primary">₹6,399,999</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">*All inclusive</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="h-px bg-border" />
-
-        {/* International Fees */}
-        <div className="p-4 sm:p-5">
-          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-4">International (in USD)</div>
-          <div className="grid grid-cols-3 gap-px bg-border">
-            <div className="bg-background p-3 sm:p-4 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Application Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-foreground">$50</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">One-time, non-refundable</div>
-            </div>
-            <div className="bg-background p-3 sm:p-4 text-center">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1.5">Admission Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-foreground">$1,000</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">Payable on offer acceptance</div>
-            </div>
-            <div className="bg-background p-3 sm:p-4 text-center relative">
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1.5">Total Fee</div>
-              <div className="font-display text-xl sm:text-2xl text-primary">$70,000</div>
-              <div className="text-[11px] text-muted-foreground mt-0.5">*All inclusive</div>
-            </div>
+            {fees.items.map((f) => (
+              <div key={f.l} className="bg-background p-3 sm:p-4 text-center relative">
+                {f.primary && <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-primary/50" />}
+                <div className={`font-mono text-[10px] uppercase tracking-[0.25em] mb-1.5 ${f.primary ? "text-primary" : "text-muted-foreground"}`}>{f.l}</div>
+                <div className={`font-display text-xl sm:text-2xl ${f.primary ? "text-primary" : "text-foreground"}`}>{f.v}</div>
+                <div className="text-[11px] text-muted-foreground mt-0.5">{f.s}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
