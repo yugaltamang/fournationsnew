@@ -11,21 +11,6 @@ import shiprocketLogo from "@/assets/immersion-logos/shiprocket.png.asset.json";
 import niviaLogo from "@/assets/immersion-logos/nivia.png.asset.json";
 import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
 import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
-import blenheimLogo from "@/assets/immersion-logos/blenheim.png.asset.json";
-import rippleLogo from "@/assets/immersion-logos/ripple.png.asset.json";
-import octopusLogo from "@/assets/immersion-logos/octopus.png.asset.json";
-import deloitteLogo from "@/assets/immersion-logos/deloitte.png.asset.json";
-import candesicLogo from "@/assets/immersion-logos/candesic.png.asset.json";
-import burberryLogo from "@/assets/immersion-logos/burberry.png.asset.json";
-import jnjLogo from "@/assets/immersion-logos/jnj.png.asset.json";
-import hkexLogo from "@/assets/immersion-logos/hkex.png.asset.json";
-import hsbcLogo from "@/assets/immersion-logos/hsbc.png.asset.json";
-import alibabaLogo from "@/assets/immersion-logos/alibaba.png.asset.json";
-import bytedanceLogo from "@/assets/immersion-logos/bytedance.png.asset.json";
-import kerryLogo from "@/assets/immersion-logos/kerry.png.asset.json";
-import lifungLogo from "@/assets/immersion-logos/lifung.png.asset.json";
-import sensetimeLogo from "@/assets/immersion-logos/sensetime.png.asset.json";
-import tencentLogo from "@/assets/immersion-logos/tencent.png.asset.json";
 
 const LOGO_MAP: Record<string, string> = {
   Addverb: addverbLogo.url,
@@ -37,22 +22,9 @@ const LOGO_MAP: Record<string, string> = {
   "Nivia Sports": niviaLogo.url,
   "LPU Jalandhar": lpuLogo.url,
   Arctos: arctosLogo.url,
-  "Blenheim Chalcot": blenheimLogo.url,
-  Ripple: rippleLogo.url,
-  "Octopus Energy": octopusLogo.url,
-  Deloitte: deloitteLogo.url,
-  Candesic: candesicLogo.url,
-  Burberry: burberryLogo.url,
-  "Johnson & Johnson": jnjLogo.url,
-  "Hong Kong Stock Exchange": hkexLogo.url,
-  HSBC: hsbcLogo.url,
-  "Alibaba Group": alibabaLogo.url,
-  ByteDance: bytedanceLogo.url,
-  "Kerry Logistics": kerryLogo.url,
-  "Li & Fung": lifungLogo.url,
-  SenseTime: sensetimeLogo.url,
-  Tencent: tencentLogo.url,
 };
+
+const SMALL_LOGOS = new Set(["Shiprocket", "Nivia Sports"]);
 
 const companies = [
   "Addverb",
@@ -64,21 +36,6 @@ const companies = [
   "Nivia Sports",
   "LPU Jalandhar",
   "Arctos",
-  "Blenheim Chalcot",
-  "Ripple",
-  "Octopus Energy",
-  "Deloitte",
-  "Candesic",
-  "Burberry",
-  "Johnson & Johnson",
-  "Hong Kong Stock Exchange",
-  "HSBC",
-  "Alibaba Group",
-  "ByteDance",
-  "Kerry Logistics",
-  "Li & Fung",
-  "SenseTime",
-  "Tencent",
 ];
 
 const Hero = () => (
@@ -174,7 +131,11 @@ const Hero = () => (
                 alt={co}
                 loading="lazy"
                 decoding="async"
-                className="max-h-8 sm:max-h-10 max-w-[120px] sm:max-w-[152px] object-contain"
+                className={`object-contain ${
+                  SMALL_LOGOS.has(co)
+                    ? "max-h-5 sm:max-h-6 max-w-[80px] sm:max-w-[100px]"
+                    : "max-h-8 sm:max-h-10 max-w-[120px] sm:max-w-[152px]"
+                }`}
               />
             </span>
             <span className="text-primary/60">✦</span>
