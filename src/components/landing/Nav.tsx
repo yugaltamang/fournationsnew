@@ -60,10 +60,7 @@ const Nav = () => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
-            <a href="#" className="inline-flex font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
-              Brochure ↓
-            </a>
+          <div className="flex items-center">
             <ApplyWidget>
               <button
                 type="button"
