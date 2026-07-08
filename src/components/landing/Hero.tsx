@@ -24,7 +24,7 @@ const LOGO_MAP: Record<string, string> = {
   Arctos: arctosLogo.url,
 };
 
-const SMALL_LOGOS = new Set(["Shiprocket", "Nivia Sports"]);
+const SMALL_LOGOS = new Set(["Shiprocket", "Nivia Sports", "Arctos", "Addverb"]);
 
 const companies = [
   "Addverb",
