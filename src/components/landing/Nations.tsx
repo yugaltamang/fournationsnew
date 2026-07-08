@@ -673,23 +673,6 @@ const Nations = () => {
                                 {term.immersions.header.body}
                               </p>
                             </div>
-                            {(() => {
-                              const previewBrands = Array.from(
-                                new Set(term.immersions.cards.flatMap((card) => splitBrands(card.logos)))
-                              );
-                              return previewBrands.length > 0 ? (
-                                <div className="mb-6 border border-border bg-secondary/20 p-4">
-                                  <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
-                                    Business Immersions at {n.country}
-                                  </div>
-                                  <div className="flex flex-wrap gap-2">
-                                    {previewBrands.map((brand) => (
-                                      <BrandLogoTile key={brand} name={brand} />
-                                    ))}
-                                  </div>
-                                </div>
-                              ) : null;
-                            })()}
                             {term.immersions.cards.length > 0 && (
                               <div className="grid sm:grid-cols-2 gap-4">
                                 {term.immersions.cards.map((card) => (
