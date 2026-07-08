@@ -12,7 +12,7 @@ const Outcomes = () => (
     <div className="container">
       <div className="max-w-4xl mb-10 sm:mb-12 md:mb-16">
         <SectionEyebrow className="mb-4 sm:mb-6">Outcomes</SectionEyebrow>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-balance">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] text-balance">
           What you walk away with.<br />
           <em className="italic text-primary not-italic">(A passport that does work.)</em>
         </h2>
@@ -22,10 +22,10 @@ const Outcomes = () => (
         {outcomes.map((o) => (
           <div key={o.n} className="bg-background p-5 sm:p-8 md:p-10 group hover:bg-secondary/40 transition-colors">
             <div className="flex items-start gap-4 sm:gap-6">
-              <span className="font-display text-4xl sm:text-5xl md:text-6xl text-primary leading-none shrink-0">{o.n}</span>
+              <span className="font-display text-3xl sm:text-4xl md:text-5xl text-primary leading-none shrink-0">{o.n}</span>
               <div className="min-w-0">
-                <h3 className="font-display text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3 text-balance">{o.t}</h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{o.d}</p>
+                <h3 className="font-display text-base sm:text-lg md:text-xl mb-2 sm:mb-3 text-balance">{o.t}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">{o.d}</p>
               </div>
             </div>
           </div>
