@@ -13,6 +13,14 @@ import bluetokaiLogo from "@/assets/immersion-logos/bluetokai.png.asset.json";
 import shiprocketLogo from "@/assets/immersion-logos/shiprocket.png.asset.json";
 import niviaLogo from "@/assets/immersion-logos/nivia.png.asset.json";
 import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
+import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
+import blenheimLogo from "@/assets/immersion-logos/blenheim.png.asset.json";
+import rippleLogo from "@/assets/immersion-logos/ripple.png.asset.json";
+import octopusLogo from "@/assets/immersion-logos/octopus.png.asset.json";
+import deloitteLogo from "@/assets/immersion-logos/deloitte.png.asset.json";
+import candesicLogo from "@/assets/immersion-logos/candesic.png.asset.json";
+import burberryLogo from "@/assets/immersion-logos/burberry.png.asset.json";
+import jnjLogo from "@/assets/immersion-logos/jnj.png.asset.json";
 
 const LOGO_MAP: Record<string, string> = {
   Addverb: addverbLogo.url,
@@ -23,6 +31,14 @@ const LOGO_MAP: Record<string, string> = {
   Shiprocket: shiprocketLogo.url,
   "Nivia Sports": niviaLogo.url,
   "LPU Jalandhar": lpuLogo.url,
+  Arctos: arctosLogo.url,
+  "Blenheim Chalcot": blenheimLogo.url,
+  Ripple: rippleLogo.url,
+  "Octopus Energy": octopusLogo.url,
+  Deloitte: deloitteLogo.url,
+  Candesic: candesicLogo.url,
+  Burberry: burberryLogo.url,
+  "Johnson & Johnson": jnjLogo.url,
 };
 
 const splitBrands = (logos: string) => logos.split(" · ").map((brand) => brand.trim()).filter(Boolean);
