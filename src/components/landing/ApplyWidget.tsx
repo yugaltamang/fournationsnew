@@ -2,6 +2,24 @@ import { useState, useCallback, useEffect } from "react";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { Loader2, CheckCircle2, ArrowLeft } from "lucide-react";
 import { COUNTRIES } from "@/lib/countries";
+import { supabase } from "@/integrations/supabase/client";
+
+function readUtm() {
+  if (typeof window === "undefined") return {};
+  const p = new URLSearchParams(window.location.search);
+  return {
+    source: p.get("source") || p.get("utm_source") || undefined,
+    medium: p.get("medium") || p.get("utm_medium") || undefined,
+    campaign: p.get("campaign") || p.get("utm_campaign") || undefined,
+    leadOrigin: p.get("lead_origin") || undefined,
+  };
+}
+
+async function callMu(action: string, payload: Record<string, unknown>) {
+  const { data, error } = await supabase.functions.invoke("mu-apply", { body: { action, ...payload } });
+  if (error) return { ok: false as const, error: "Something went wrong. Please try again." };
+  return data as { ok: boolean; error?: string; exists?: boolean; formLink?: string | null };
+}
 
 type Status = "idle" | "submitting" | "success" | "error";
 type View = "apply" | "login" | "login-otp-sent";
@@ -68,8 +86,19 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
     if (cleanedMobile.length < 8 || cleanedMobile.length > 15) return setErrorMsg("Please enter a valid mobile number (8–15 digits).");
 
     setStatus("submitting");
-    // TODO: wire up API. For now, simulate success.
-    await new Promise((r) => setTimeout(r, 800));
+    const r = await callMu("apply", {
+      name: trimmedName,
+      email: trimmedEmail,
+      mobile: cleanedMobile,
+      isoCode: selected.iso,
+      dialCode: String(selected.dial),
+      ...readUtm(),
+    });
+    if (!r.ok) {
+      if (r.exists) { setStatus("idle"); setView("login"); setLoginError("Account already exists. Please log in."); return; }
+      setStatus("error"); setErrorMsg(r.error || "Something went wrong. Please try again."); return;
+    }
+    if (r.formLink && r.formLink.startsWith("https://")) { window.location.assign(r.formLink); return; }
     setStatus("success");
   };
 
@@ -80,7 +109,9 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return setLoginError("Please enter a valid email.");
     if (loginPassword.length === 0) return setLoginError("Password is required.");
     setLoginStatus("submitting");
-    await new Promise((r) => setTimeout(r, 600));
+    const r = await callMu("login-email", { email: em, password: loginPassword });
+    if (!r.ok) { setLoginStatus("error"); setLoginError(r.error || "Something went wrong."); return; }
+    if (r.formLink && r.formLink.startsWith("https://")) { window.location.assign(r.formLink); return; }
     setLoginStatus("success");
   };
 
@@ -90,7 +121,8 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
     const cleaned = loginPhone.replace(/\D/g, "");
     if (cleaned.length < 8 || cleaned.length > 15) return setLoginError("Please enter a valid mobile number (8–15 digits).");
     setLoginStatus("submitting");
-    await new Promise((r) => setTimeout(r, 500));
+    const r = await callMu("send-otp", { phone: cleaned, isoCode: loginSelected.iso });
+    if (!r.ok) { setLoginStatus("error"); setLoginError(r.error || "Something went wrong."); return; }
     setLoginStatus("idle");
     setView("login-otp-sent");
   };
@@ -98,10 +130,13 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
   const handleVerifyOtp = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoginError("");
+    const cleanedPhone = loginPhone.replace(/\D/g, "");
     const otp = loginOtp.replace(/\D/g, "");
     if (otp.length < 4) return setLoginError("Please enter the OTP.");
     setLoginStatus("submitting");
-    await new Promise((r) => setTimeout(r, 500));
+    const r = await callMu("verify-otp", { phone: cleanedPhone, isoCode: loginSelected.iso, otp });
+    if (!r.ok) { setLoginStatus("error"); setLoginError(r.error || "Something went wrong."); return; }
+    if (r.formLink && r.formLink.startsWith("https://")) { window.location.assign(r.formLink); return; }
     setLoginStatus("success");
   };
 
