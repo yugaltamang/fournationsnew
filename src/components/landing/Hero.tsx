@@ -14,18 +14,6 @@ import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
 import blenheimLogo from "@/assets/immersion-logos/blenheim.png.asset.json";
 import rippleLogo from "@/assets/immersion-logos/ripple.png.asset.json";
 import octopusLogo from "@/assets/immersion-logos/octopus.png.asset.json";
-import deloitteLogo from "@/assets/immersion-logos/deloitte.png.asset.json";
-import candesicLogo from "@/assets/immersion-logos/candesic.png.asset.json";
-import burberryLogo from "@/assets/immersion-logos/burberry.png.asset.json";
-import jnjLogo from "@/assets/immersion-logos/jnj.png.asset.json";
-import hkexLogo from "@/assets/immersion-logos/hkex.png.asset.json";
-import hsbcLogo from "@/assets/immersion-logos/hsbc.png.asset.json";
-import alibabaLogo from "@/assets/immersion-logos/alibaba.png.asset.json";
-import bytedanceLogo from "@/assets/immersion-logos/bytedance.png.asset.json";
-import kerryLogo from "@/assets/immersion-logos/kerry.png.asset.json";
-import lifungLogo from "@/assets/immersion-logos/lifung.png.asset.json";
-import sensetimeLogo from "@/assets/immersion-logos/sensetime.png.asset.json";
-import tencentLogo from "@/assets/immersion-logos/tencent.png.asset.json";
 
 const LOGO_MAP: Record<string, string> = {
   Addverb: addverbLogo.url,
