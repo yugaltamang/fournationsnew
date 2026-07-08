@@ -1,5 +1,7 @@
 // Hero showcases iconic monuments for the 4 cohort cities
 import heroCollage from "@/assets/hero-collage.png";
+import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
+import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
 import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
 import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
@@ -160,6 +162,29 @@ const Hero = () => (
     </div>
 
     <div className="container mt-14 sm:mt-16 pt-8 sm:pt-10 border-t border-border relative z-10">
+      <div className="flex items-center gap-3 mb-5 sm:mb-6 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+        <span className="w-6 h-px bg-muted-foreground" />
+        <span>In Partnership With</span>
+      </div>
+      <div className="flex flex-wrap items-center gap-6 sm:gap-10 mb-10 sm:mb-14">
+        {[
+          { name: "Imperial College London", url: imperialLogo.url },
+          { name: "The Chinese University of Hong Kong", url: cuhkLogo.url },
+        ].map((u) => (
+          <div key={u.name} className="inline-flex items-center gap-4">
+            <img
+              src={u.url}
+              alt={u.name}
+              loading="lazy"
+              decoding="async"
+              className="h-14 sm:h-16 w-auto object-contain"
+            />
+            <span className="font-display text-sm sm:text-base text-foreground/85 leading-tight max-w-[10rem]">
+              {u.name}
+            </span>
+          </div>
+        ))}
+      </div>
       <div className="flex items-center gap-3 mb-5 sm:mb-6 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
         <span className="w-6 h-px bg-muted-foreground" />
         <span>University &amp; Industry Partners</span>
