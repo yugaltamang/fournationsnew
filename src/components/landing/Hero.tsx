@@ -86,39 +86,6 @@ const Hero = () => (
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
 
-    {/* Monument collage - blended into the right side of the hero */}
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden lg:block lg:w-[58%] xl:w-[55%]"
-    >
-      <div className="relative w-full h-full">
-        {/* Warm glow behind to lift the collage off the dark bg */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 65% 55% at 60% 50%, hsl(40 84% 58% / 0.22), transparent 75%)",
-          }}
-        />
-
-
-        {/* Collage image - transparent PNG, blended into dark hero */}
-        <img
-          src={heroCollage}
-          alt=""
-          className="absolute inset-y-8 right-8 lg:right-16 xl:right-24 h-[88%] w-full object-contain object-right"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent 0%, black 18%, black 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 18%, black 100%)",
-            filter:
-              "saturate(1.15) contrast(1.05) drop-shadow(0 18px 40px hsl(40 84% 58% / 0.25))",
-          }}
-        />
-      </div>
-    </div>
-
     <div className="container relative grid lg:grid-cols-12 gap-10 items-end">
         <div className="lg:col-span-7 animate-fade-up">
 
