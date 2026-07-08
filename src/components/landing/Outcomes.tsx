@@ -12,7 +12,7 @@ const Outcomes = () => (
     <div className="container">
       <div className="max-w-4xl mb-10 sm:mb-12 md:mb-16">
         <SectionEyebrow className="mb-4 sm:mb-6">Outcomes</SectionEyebrow>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-balance">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] text-balance">
           What you walk away with.<br />
           <em className="italic text-primary not-italic">(A passport that does work.)</em>
         </h2>
