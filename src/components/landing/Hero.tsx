@@ -25,21 +25,6 @@ const LOGO_MAP: Record<string, string> = {
   "Nivia Sports": niviaLogo.url,
   "LPU Jalandhar": lpuLogo.url,
   Arctos: arctosLogo.url,
-  "Blenheim Chalcot": blenheimLogo.url,
-  Ripple: rippleLogo.url,
-  "Octopus Energy": octopusLogo.url,
-  Deloitte: deloitteLogo.url,
-  Candesic: candesicLogo.url,
-  Burberry: burberryLogo.url,
-  "Johnson & Johnson": jnjLogo.url,
-  "Hong Kong Stock Exchange": hkexLogo.url,
-  HSBC: hsbcLogo.url,
-  "Alibaba Group": alibabaLogo.url,
-  ByteDance: bytedanceLogo.url,
-  "Kerry Logistics": kerryLogo.url,
-  "Li & Fung": lifungLogo.url,
-  SenseTime: sensetimeLogo.url,
-  Tencent: tencentLogo.url,
 };
 
 const SMALL_LOGOS = new Set(["Shiprocket", "Nivia Sports"]);
