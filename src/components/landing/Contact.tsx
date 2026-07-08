@@ -28,7 +28,7 @@ const Contact = () => (
         {/* Left: heading */}
         <div>
           <SectionEyebrow className="mb-4 sm:mb-6">Admissions Office</SectionEyebrow>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-balance mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] text-balance mb-6">
             Get in{" "}
             <em className="italic text-primary not-italic">Touch</em>
           </h2>
@@ -50,7 +50,7 @@ const Contact = () => (
                     {card.label}
                   </span>
                 </div>
-                <div className="font-display text-lg sm:text-xl text-foreground whitespace-pre-line">
+                <div className="font-display text-base sm:text-lg md:text-xl text-foreground whitespace-pre-line">
                   {card.value}
                 </div>
               </>

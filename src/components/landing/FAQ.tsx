@@ -168,7 +168,7 @@ const FAQ = () => {
       <div className="container max-w-4xl">
         <div className="text-center mb-12 md:mb-16">
           <SectionEyebrow className="mb-4 sm:mb-6">FAQ</SectionEyebrow>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95]">Questions, answered.</h2>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1]">Questions, answered.</h2>
           
         </div>
 
@@ -223,7 +223,7 @@ const FAQ = () => {
                             </span>
                           </button>
                           {isOpen && (
-                            <div className="pb-5 pr-4 sm:pr-10 text-sm sm:text-base text-muted-foreground leading-relaxed animate-fade-up">
+                            <div className="pb-5 pr-4 sm:pr-10 text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed animate-fade-up">
                               {f.a}
                             </div>
                           )}

@@ -7,23 +7,23 @@ const Apply = () => (
     <div className="container relative">
       <div className="max-w-5xl mx-auto text-center">
         
-        <h2 className="font-display text-[clamp(1.75rem,6vw,6rem)] leading-[0.9] mb-6 sm:mb-10 text-balance break-words">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] mb-6 sm:mb-10 text-balance break-words">
           Four nations are <em className="italic mu-hero-gradient-text not-italic">waiting.</em><br />
           Step into the journey.
         </h2>
         <div className="mu-hero-divider w-24 mx-auto mb-8 sm:mb-10" />
-        <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 sm:mb-12">
+        <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto mb-10 sm:mb-12">
           Applications close in <strong className="text-primary font-mono">42 days</strong>. A focused cohort to protect the immersion experience.
         </p>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
           <ApplyWidget>
-            <button type="button" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 sm:px-10 py-5 sm:py-6 font-bold uppercase tracking-wider text-sm sm:text-base hover:shadow-bold transition-all">
+            <button type="button" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 sm:px-10 py-5 sm:py-6 font-bold uppercase tracking-wider text-xs sm:text-sm hover:shadow-bold transition-all">
               Apply Now
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </button>
           </ApplyWidget>
-          <a href="#" className="inline-flex items-center justify-center gap-3 border border-border px-8 sm:px-10 py-5 sm:py-6 font-bold uppercase tracking-wider text-sm sm:text-base hover:border-primary hover:text-primary transition-colors">
+          <a href="#" className="inline-flex items-center justify-center gap-3 border border-border px-8 sm:px-10 py-5 sm:py-6 font-bold uppercase tracking-wider text-xs sm:text-sm hover:border-primary hover:text-primary transition-colors">
             Talk to Admissions
           </a>
         </div>

@@ -74,12 +74,12 @@ const Immersions = () => (
       {/* Editorial Header */}
       <div className="max-w-4xl mb-14 md:mb-20">
           <SectionEyebrow className="mb-6">The Pedigree</SectionEyebrow>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-balance mb-6">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] text-balance mb-6">
           Three institutions.{" "}
           <em className="italic mu-hero-gradient-text not-italic">One cohort.</em>{" "}
           Three credentials.
         </h2>
-        <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl">
+        <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-2xl">
           Anchored at Masters' Union in Delhi, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three.
         </p>
       </div>
@@ -134,7 +134,7 @@ const Immersions = () => (
                 <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-primary mb-3">
                   {p.name}
                 </div>
-                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1.05] text-balance">
+                <h3 className="font-display text-base sm:text-lg md:text-xl text-balance">
                   {p.headline}
                 </h3>
               </div>
@@ -147,7 +147,7 @@ const Immersions = () => (
               <div className={`grid grid-cols-2 ${p.stats.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-4"} gap-px bg-border border border-border`}>
                 {p.stats.map((s) => (
                   <div key={s.l} className="bg-background p-3 sm:p-4 min-w-0">
-                    <div className="font-display text-xl sm:text-2xl md:text-3xl mu-hero-gradient-text leading-none break-words">
+                    <div className="font-display text-3xl sm:text-4xl md:text-5xl mu-hero-gradient-text leading-none break-words">
                       {s.v}
                     </div>
                     <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mt-2 leading-tight">

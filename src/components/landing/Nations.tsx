@@ -220,7 +220,7 @@ const Nations = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-10 md:mb-14">
           <div>
             <SectionEyebrow className="mb-4 sm:mb-6">The Journey / Curriculum</SectionEyebrow>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] max-w-3xl text-balance">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] max-w-3xl text-balance">
               One Curriculum.<br />
               <em className="italic mu-hero-gradient-text not-italic">Leadership Without Borders.</em>
             </h2>
@@ -439,7 +439,7 @@ const Nations = () => {
                         <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                         <span className="mu-hero-gradient-text font-bold">You walk away able to →</span>
                       </div>
-                      <div className="font-display text-lg sm:text-xl md:text-2xl leading-snug text-foreground">
+                      <div className="font-display text-base sm:text-lg md:text-xl leading-snug text-foreground">
                         {n.outcome}
                       </div>
                     </div>
@@ -667,7 +667,7 @@ const Nations = () => {
                         {activeTab === "business" && term.immersions && (
                           <div>
                             <div className="mb-8 max-w-2xl">
-                              <h5 className="font-display text-2xl sm:text-3xl leading-tight tracking-tight mb-3">
+                              <h5 className="font-display text-base sm:text-lg md:text-xl leading-snug text-balance mb-3">
                                 {term.immersions.header.title}
                               </h5>
                               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -731,7 +731,7 @@ const Nations = () => {
                           <div>
                             <div className="mb-8 max-w-2xl">
                               <div className="tag-pill mb-4">{term.id === 0 ? "Masters' Union · Faculty" : term.id === 2 ? "CUHK, Hong Kong · Faculty" : "Imperial College London · Faculty"}</div>
-                              <h5 className="font-display text-2xl sm:text-3xl leading-tight tracking-tight mb-3">
+                              <h5 className="font-display text-base sm:text-lg md:text-xl leading-snug text-balance mb-3">
                                 Learn from <em className="italic not-italic text-primary">world-class faculty.</em>
                               </h5>
                               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -783,7 +783,7 @@ const Nations = () => {
                               </div>
                             )}
                             <div className="mb-8 max-w-2xl">
-                              <h5 className="font-display text-2xl sm:text-3xl leading-tight tracking-tight mb-3">
+                              <h5 className="font-display text-base sm:text-lg md:text-xl leading-snug text-balance mb-3">
                                 {term.cultural.title}
                               </h5>
                               <p

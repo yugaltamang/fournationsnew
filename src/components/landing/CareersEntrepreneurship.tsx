@@ -57,7 +57,7 @@ const CareersEntrepreneurship = () => (
       {/* CAREERS */}
       <div className="mb-16 md:mb-20">
         <SectionEyebrow className="mb-6">Career Outcomes</SectionEyebrow>
-        <h3 className="font-display text-xl sm:text-2xl md:text-3xl leading-tight text-balance max-w-3xl mb-8">
+        <h3 className="font-display text-base sm:text-lg md:text-xl leading-tight text-balance max-w-3xl mb-8">
           Graduates don't just get jobs. <em className="italic text-primary not-italic">They get careers.</em>
         </h3>
 
@@ -105,7 +105,7 @@ const CareersEntrepreneurship = () => (
           <a
             href="#"
             download
-            className="inline-flex items-center gap-2 border border-primary bg-primary text-primary-foreground px-5 py-3 font-display text-sm sm:text-base tracking-wide hover:bg-primary/90 transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 border border-primary bg-primary text-primary-foreground px-5 py-3 font-bold uppercase tracking-wider text-xs sm:text-sm hover:bg-primary/90 transition-colors whitespace-nowrap"
           >
             ↓ Download Placement Report
           </a>
@@ -115,7 +115,7 @@ const CareersEntrepreneurship = () => (
       {/* ENTREPRENEURSHIP */}
       <div>
         <SectionEyebrow className="mb-6">Entrepreneurship</SectionEyebrow>
-        <h3 className="font-display text-xl sm:text-2xl md:text-3xl leading-tight text-balance max-w-3xl mb-8">
+        <h3 className="font-display text-base sm:text-lg md:text-xl leading-tight text-balance max-w-3xl mb-8">
           Where founders are built, <em className="italic text-primary not-italic">not just funded.</em>
         </h3>
 
@@ -123,7 +123,7 @@ const CareersEntrepreneurship = () => (
         <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-border mb-8 md:mb-10">
           {ventureStats.map((s) => (
             <div key={s.l} className="bg-background p-5 sm:p-6">
-              <div className="font-display text-2xl sm:text-3xl md:text-4xl mu-hero-gradient-text leading-none mb-2">{s.v}</div>
+              <div className="font-display text-3xl sm:text-4xl md:text-5xl mu-hero-gradient-text leading-none mb-2">{s.v}</div>
               <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground leading-tight">{s.l}</div>
             </div>
           ))}
@@ -135,7 +135,7 @@ const CareersEntrepreneurship = () => (
           {featuredVentures.map((v) => (
             <div key={v.name} className="bg-background p-5 sm:p-6 group hover:bg-secondary/40 transition-colors">
               <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-2">{v.tag}</div>
-              <h4 className="font-display text-xl sm:text-2xl mb-2 text-balance">{v.name}</h4>
+              <h4 className="font-display text-base sm:text-lg md:text-xl mb-2 text-balance">{v.name}</h4>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
             </div>
           ))}
@@ -145,7 +145,7 @@ const CareersEntrepreneurship = () => (
           <a
             href="#"
             download
-            className="inline-flex items-center gap-2 border border-primary bg-primary text-primary-foreground px-5 py-3 font-display text-sm sm:text-base tracking-wide hover:bg-primary/90 transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 border border-primary bg-primary text-primary-foreground px-5 py-3 font-bold uppercase tracking-wider text-xs sm:text-sm hover:bg-primary/90 transition-colors whitespace-nowrap"
           >
             ↓ Download Entrepreneurship Report
           </a>
