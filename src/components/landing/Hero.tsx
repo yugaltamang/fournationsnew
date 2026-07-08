@@ -99,6 +99,32 @@ const Hero = () => (
           Study across three world-class institutions: Masters' Union, Imperial College London, and CUHK, with an optional Dubai finale to conclude your journey.
         </p>
 
+        <div className="mt-6 sm:mt-8">
+          <div className="flex items-center gap-2 mb-3 sm:mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+            <span className="w-6 h-px bg-muted-foreground" />
+            <span>In Partnership With</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            {[
+              { name: "Imperial College London", url: imperialLogo.url },
+              { name: "The Chinese University of Hong Kong", url: cuhkLogo.url },
+            ].map((u) => (
+              <div key={u.name} className="inline-flex items-center gap-3">
+                <img
+                  src={u.url}
+                  alt={u.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-10 sm:h-12 w-auto object-contain"
+                />
+                <span className="font-display text-xs sm:text-sm text-foreground/85 leading-tight max-w-[9rem]">
+                  {u.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
           <ApplyWidget>
             <button type="button" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 sm:px-8 py-4 sm:py-5 font-bold uppercase tracking-wider text-sm hover:shadow-bold transition-all">
