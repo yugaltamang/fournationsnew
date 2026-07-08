@@ -1,5 +1,7 @@
 // Hero showcases iconic monuments for the 4 cohort cities
 import heroCollage from "@/assets/hero-collage.png";
+import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
+import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
 import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
 import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
