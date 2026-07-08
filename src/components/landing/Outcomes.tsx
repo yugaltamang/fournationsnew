@@ -14,7 +14,7 @@ const Outcomes = () => (
         <SectionEyebrow className="mb-4 sm:mb-6">Outcomes</SectionEyebrow>
         <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] text-balance">
           What you walk away with.<br />
-          <em className="italic text-primary not-italic">(A passport that does work.)</em>
+          <em className="italic text-primary not-italic">(A passport to global opportunities.)</em>
         </h2>
       </div>
 
