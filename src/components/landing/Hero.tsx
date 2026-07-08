@@ -46,13 +46,13 @@ const Hero = () => (
     <div className="container relative grid lg:grid-cols-12 gap-10 items-end">
         <div className="lg:col-span-7 animate-fade-up">
 
-        <h1 className="font-display text-[clamp(2rem,7vw,5rem)] leading-[0.95] font-medium text-balance break-words text-center">
+        <h1 className="font-display text-[clamp(2rem,7vw,5rem)] leading-[0.95] font-medium text-balance break-words">
           Four <em className="italic mu-hero-gradient-text not-italic font-normal">Countries.</em>
           <br />
           One Transformative Journey.
         </h1>
 
-        <p className="mt-8 sm:mt-10 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed text-center mx-auto">
+        <p className="mt-8 sm:mt-10 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed">
           Three world-class institutions - Imperial College London, CUHK and Masters' Union - across four global hubs. Earn three credentials, build real ventures, and join a lifelong network of founders, CEOs and investors.
         </p>
 
