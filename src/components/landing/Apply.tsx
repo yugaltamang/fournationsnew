@@ -1,3 +1,4 @@
+import { ApplyWidget } from "./ApplyWidget";
 const Apply = () => (
   <section id="apply" className="py-16 sm:py-20 md:py-32 relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
@@ -16,10 +17,12 @@ const Apply = () => (
         </p>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
-          <a href="#" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 sm:px-10 py-5 sm:py-6 font-bold uppercase tracking-wider text-sm sm:text-base hover:shadow-bold transition-all">
-            Apply Now
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </a>
+          <ApplyWidget>
+            <button type="button" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 sm:px-10 py-5 sm:py-6 font-bold uppercase tracking-wider text-sm sm:text-base hover:shadow-bold transition-all">
+              Apply Now
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </ApplyWidget>
           <a href="#" className="inline-flex items-center justify-center gap-3 border border-border px-8 sm:px-10 py-5 sm:py-6 font-bold uppercase tracking-wider text-sm sm:text-base hover:border-primary hover:text-primary transition-colors">
             Talk to Admissions
           </a>

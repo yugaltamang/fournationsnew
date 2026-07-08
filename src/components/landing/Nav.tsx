@@ -1,3 +1,4 @@
+import { ApplyWidget } from "./ApplyWidget";
 import { useEffect, useState } from "react";
 import muLogo from "@/assets/mu-logo.svg";
 
@@ -60,13 +61,15 @@ const Nav = () => {
             <a href="#" className="inline-flex font-mono text-[11px] uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
               Brochure ↓
             </a>
-            <a
-              href="#apply"
-              className="group relative inline-flex items-center gap-2 px-5 py-3 font-bold uppercase tracking-wider text-xs overflow-hidden border border-primary bg-primary hover:bg-primary/90 transition-colors"
-            >
-              <span className="relative z-10 text-primary-foreground">Apply Now</span>
-              <span className="relative z-10 text-primary-foreground group-hover:translate-x-1 transition-transform">→</span>
-            </a>
+            <ApplyWidget>
+              <button
+                type="button"
+                className="group relative inline-flex items-center gap-2 px-5 py-3 font-bold uppercase tracking-wider text-xs overflow-hidden border border-primary bg-primary hover:bg-primary/90 transition-colors"
+              >
+                <span className="relative z-10 text-primary-foreground">Apply Now</span>
+                <span className="relative z-10 text-primary-foreground group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+            </ApplyWidget>
           </div>
         </div>
       </header>
