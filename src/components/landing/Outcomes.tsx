@@ -22,10 +22,10 @@ const Outcomes = () => (
         {outcomes.map((o) => (
           <div key={o.n} className="bg-background p-5 sm:p-8 md:p-10 group hover:bg-secondary/40 transition-colors">
             <div className="flex items-start gap-4 sm:gap-6">
-              <span className="font-display text-4xl sm:text-5xl md:text-6xl text-primary leading-none shrink-0">{o.n}</span>
+              <span className="font-display text-3xl sm:text-4xl md:text-5xl text-primary leading-none shrink-0">{o.n}</span>
               <div className="min-w-0">
-                <h3 className="font-display text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3 text-balance">{o.t}</h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{o.d}</p>
+                <h3 className="font-display text-base sm:text-lg md:text-xl mb-2 sm:mb-3 text-balance">{o.t}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">{o.d}</p>
               </div>
             </div>
           </div>
