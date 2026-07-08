@@ -41,7 +41,7 @@ const Nav = () => {
             <img
               src={muLogo}
               alt="Masters' Union"
-              className="h-8 md:h-10 w-auto invert shrink-0"
+              className="h-10 md:h-12 w-auto invert shrink-0"
             />
           </a>
 
