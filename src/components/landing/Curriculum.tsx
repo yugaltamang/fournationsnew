@@ -133,7 +133,7 @@ export const terms: Term[] = [
       ],
     },
     cultural: {
-      chip: "Cultural Immersion · India", title: "Where Real Business\nMeets Real India.",
+      chip: "Cultural Immersion", title: "Where Real Business\nMeets Real India.",
       body: "Business isn't just built in boardrooms. Understanding India means standing in its corridors of power and walking its ancient markets.",
       cards: [
         { name: "Parliament of India", desc: "Visit the new Parliament Building. Understand India's public policy framework and how governance shapes business regulation." },
@@ -187,7 +187,7 @@ export const terms: Term[] = [
       ],
     },
     cultural: {
-      chip: "Cultural Immersion · London", title: "Experience London\nBeyond the Boardroom.",
+      chip: "Cultural Immersion", title: "Experience London\nBeyond the Boardroom.",
       body: "London's history, architecture and cultural institutions are as much a business education as any classroom.",
       cards: [
         { name: "Riverboat Cruise on the Thames", desc: "See the city's iconic skyline from the water - a journey through London's history, commerce, and architecture." },
@@ -235,7 +235,7 @@ export const terms: Term[] = [
       ],
     },
     cultural: {
-      chip: "Cultural Immersion · Hong Kong", title: "Understand Hong Kong\nBeyond Business.",
+      chip: "Cultural Immersion", title: "Understand Hong Kong\nBeyond Business.",
       body: "Culture shapes commerce across Hong Kong and the Greater Bay Area. 4 experiences will be selected from the list below, confirmed closer to the programme date.",
       cards: [
         { name: "Cultural & Heritage Walking Tour", desc: "Walk through Hong Kong's historic districts and understand how trade, migration, and finance shaped the city." },
