@@ -147,12 +147,19 @@ const Immersions = () => (
               <div className={`grid grid-cols-2 ${p.stats.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-4"} gap-px bg-border border border-border`}>
                 {p.stats.map((s) => (
                   <div key={s.l} className="bg-background p-3 sm:p-4 min-w-0">
-                    <div className="font-display text-3xl sm:text-4xl md:text-5xl mu-hero-gradient-text leading-none break-words">
-                      {s.v}
+                    <div className={`font-display text-3xl sm:text-4xl md:text-5xl mu-hero-gradient-text leading-none break-words ${s.v === "Top 1%" && s.l === "Business Schools" ? "flex flex-wrap items-baseline gap-2" : ""}`}>
+                      <span>{s.v}</span>
+                      {s.v === "Top 1%" && s.l === "Business Schools" && (
+                        <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground leading-tight">
+                          {s.l}
+                        </span>
+                      )}
                     </div>
-                    <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mt-2 leading-tight">
-                      {s.l}
-                    </div>
+                    {!(s.v === "Top 1%" && s.l === "Business Schools") && (
+                      <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mt-2 leading-tight">
+                        {s.l}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
