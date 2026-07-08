@@ -167,6 +167,7 @@ const Admissions = () => {
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Admissions;
