@@ -53,7 +53,7 @@ const Hero = () => (
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-          Study across three world-class institutions: Masters' Union, Imperial College London, and CUHK, with an optional Dubai finale to conclude your journey.
+          Study across three world-class institutions: Imperial (#2 QS World Rankings, Top 1% business schools, 14 Nobel laureates), CUHK (#32 QS Ranking, 60+ years of excellence, CUHK certificate), and Masters' Union, with an optional Dubai finale to conclude your journey.
         </p>
 
         <div className="mt-6 sm:mt-8">
