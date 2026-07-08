@@ -1,6 +1,5 @@
 import { ApplyWidget } from "./ApplyWidget";
 // Hero showcases iconic monuments for the 4 cohort cities
-import heroCollage from "@/assets/hero-collage.png";
 import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
@@ -87,39 +86,6 @@ const Hero = () => (
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
 
-    {/* Monument collage - blended into the right side of the hero */}
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-y-0 right-0 hidden lg:block lg:w-[58%] xl:w-[55%]"
-    >
-      <div className="relative w-full h-full">
-        {/* Warm glow behind to lift the collage off the dark bg */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 65% 55% at 60% 50%, hsl(40 84% 58% / 0.22), transparent 75%)",
-          }}
-        />
-
-
-        {/* Collage image - transparent PNG, blended into dark hero */}
-        <img
-          src={heroCollage}
-          alt=""
-          className="absolute inset-y-8 right-8 lg:right-16 xl:right-24 h-[88%] w-full object-contain object-right"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent 0%, black 18%, black 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 18%, black 100%)",
-            filter:
-              "saturate(1.15) contrast(1.05) drop-shadow(0 18px 40px hsl(40 84% 58% / 0.25))",
-          }}
-        />
-      </div>
-    </div>
-
     <div className="container relative grid lg:grid-cols-12 gap-10 items-end">
         <div className="lg:col-span-7 animate-fade-up">
 
@@ -132,6 +98,32 @@ const Hero = () => (
         <p className="mt-8 sm:mt-10 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
           Study across three world-class institutions: Masters' Union, Imperial College London, and CUHK, with an optional Dubai finale to conclude your journey.
         </p>
+
+        <div className="mt-6 sm:mt-8">
+          <div className="flex items-center gap-2 mb-3 sm:mb-4 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+            <span className="w-6 h-px bg-muted-foreground" />
+            <span>In Partnership With</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            {[
+              { name: "Imperial College London", url: imperialLogo.url },
+              { name: "The Chinese University of Hong Kong", url: cuhkLogo.url },
+            ].map((u) => (
+              <div key={u.name} className="inline-flex items-center gap-3">
+                <img
+                  src={u.url}
+                  alt={u.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-10 sm:h-12 w-auto object-contain"
+                />
+                <span className="font-display text-xs sm:text-sm text-foreground/85 leading-tight max-w-[9rem]">
+                  {u.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
           <ApplyWidget>
@@ -165,29 +157,6 @@ const Hero = () => (
     </div>
 
     <div className="container mt-14 sm:mt-16 pt-8 sm:pt-10 border-t border-border relative z-10">
-      <div className="flex items-center gap-3 mb-5 sm:mb-6 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-        <span className="w-6 h-px bg-muted-foreground" />
-        <span>In Partnership With</span>
-      </div>
-      <div className="flex flex-wrap items-center gap-6 sm:gap-10 mb-10 sm:mb-14">
-        {[
-          { name: "Imperial College London", url: imperialLogo.url },
-          { name: "The Chinese University of Hong Kong", url: cuhkLogo.url },
-        ].map((u) => (
-          <div key={u.name} className="inline-flex items-center gap-4">
-            <img
-              src={u.url}
-              alt={u.name}
-              loading="lazy"
-              decoding="async"
-              className="h-14 sm:h-16 w-auto object-contain"
-            />
-            <span className="font-display text-sm sm:text-base text-foreground/85 leading-tight max-w-[10rem]">
-              {u.name}
-            </span>
-          </div>
-        ))}
-      </div>
       <div className="flex items-center gap-3 mb-5 sm:mb-6 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
         <span className="w-6 h-px bg-muted-foreground" />
         <span>University &amp; Industry Partners</span>
