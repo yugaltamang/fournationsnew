@@ -1,5 +1,56 @@
 // Hero showcases iconic monuments for the 4 cohort cities
 import heroCollage from "@/assets/hero-collage.png";
+import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
+import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
+import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
+import hondaLogo from "@/assets/immersion-logos/honda.png.asset.json";
+import bluetokaiLogo from "@/assets/immersion-logos/bluetokai.png.asset.json";
+import shiprocketLogo from "@/assets/immersion-logos/shiprocket.png.asset.json";
+import niviaLogo from "@/assets/immersion-logos/nivia.png.asset.json";
+import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
+import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
+import blenheimLogo from "@/assets/immersion-logos/blenheim.png.asset.json";
+import rippleLogo from "@/assets/immersion-logos/ripple.png.asset.json";
+import octopusLogo from "@/assets/immersion-logos/octopus.png.asset.json";
+import deloitteLogo from "@/assets/immersion-logos/deloitte.png.asset.json";
+import candesicLogo from "@/assets/immersion-logos/candesic.png.asset.json";
+import burberryLogo from "@/assets/immersion-logos/burberry.png.asset.json";
+import jnjLogo from "@/assets/immersion-logos/jnj.png.asset.json";
+import hkexLogo from "@/assets/immersion-logos/hkex.png.asset.json";
+import hsbcLogo from "@/assets/immersion-logos/hsbc.png.asset.json";
+import alibabaLogo from "@/assets/immersion-logos/alibaba.png.asset.json";
+import bytedanceLogo from "@/assets/immersion-logos/bytedance.png.asset.json";
+import kerryLogo from "@/assets/immersion-logos/kerry.png.asset.json";
+import lifungLogo from "@/assets/immersion-logos/lifung.png.asset.json";
+import sensetimeLogo from "@/assets/immersion-logos/sensetime.png.asset.json";
+import tencentLogo from "@/assets/immersion-logos/tencent.png.asset.json";
+
+const LOGO_MAP: Record<string, string> = {
+  Addverb: addverbLogo.url,
+  "ITC Limited": itcLogo.url,
+  "Sonalika Tractors": sonalikaLogo.url,
+  Honda: hondaLogo.url,
+  "Blue Tokai": bluetokaiLogo.url,
+  Shiprocket: shiprocketLogo.url,
+  "Nivia Sports": niviaLogo.url,
+  "LPU Jalandhar": lpuLogo.url,
+  Arctos: arctosLogo.url,
+  "Blenheim Chalcot": blenheimLogo.url,
+  Ripple: rippleLogo.url,
+  "Octopus Energy": octopusLogo.url,
+  Deloitte: deloitteLogo.url,
+  Candesic: candesicLogo.url,
+  Burberry: burberryLogo.url,
+  "Johnson & Johnson": jnjLogo.url,
+  "Hong Kong Stock Exchange": hkexLogo.url,
+  HSBC: hsbcLogo.url,
+  "Alibaba Group": alibabaLogo.url,
+  ByteDance: bytedanceLogo.url,
+  "Kerry Logistics": kerryLogo.url,
+  "Li & Fung": lifungLogo.url,
+  SenseTime: sensetimeLogo.url,
+  Tencent: tencentLogo.url,
+};
 
 const companies = [
   "Addverb",
@@ -117,8 +168,17 @@ const Hero = () => (
         <div className="ticker flex whitespace-nowrap">
           {[...companies, ...companies].map((co, i) => (
             <span key={i} className="inline-flex items-center gap-6 sm:gap-8 px-3 sm:px-4">
-              <span className="font-display text-lg sm:text-xl md:text-2xl text-foreground/80 uppercase tracking-tight">
-                {co}
+              <span
+                title={co}
+                className="inline-flex h-10 sm:h-12 items-center justify-center border border-border bg-background px-3 sm:px-4"
+              >
+                <img
+                  src={LOGO_MAP[co]}
+                  alt={co}
+                  loading="lazy"
+                  decoding="async"
+                  className="max-h-6 sm:max-h-7 max-w-[100px] sm:max-w-[128px] object-contain"
+                />
               </span>
               <span className="text-primary/60">✦</span>
             </span>
