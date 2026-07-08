@@ -446,6 +446,26 @@ const Nations = () => {
                   </div>
                 </div>
 
+                {(() => {
+                  const brands = n.country === "Dubai"
+                    ? ["DIFC", "JAFZA"]
+                    : term?.immersions
+                      ? Array.from(new Set(term.immersions.cards.flatMap((c) => splitBrands(c.logos))))
+                      : [];
+                  return brands.length > 0 ? (
+                    <div className="border border-border bg-secondary/20 p-4">
+                      <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
+                        Business Immersions at {n.country}
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {brands.map((brand) => (
+                          <BrandLogoTile key={brand} name={brand} />
+                        ))}
+                      </div>
+                    </div>
+                  ) : null;
+                })()}
+
                 {/* CTA: yellow pill matching top */}
                 {n.country !== "Dubai" && (
                   <div className="pt-2 flex justify-end">
