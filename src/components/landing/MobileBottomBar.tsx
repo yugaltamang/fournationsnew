@@ -87,14 +87,16 @@ const MobileBottomBar = () => {
             </span>
           </button>
 
-          <a
-            href="#apply"
-            onClick={() => setIsOpen(false)}
-            className="inline-flex items-center gap-1.5 px-4 sm:px-5 h-9 rounded-lg bg-primary text-primary-foreground text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-primary/90 active:scale-95 transition-all"
-          >
-            Apply Now
-            <ArrowUpRight size={13} />
-          </a>
+          <ApplyWidget>
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="inline-flex items-center gap-1.5 px-4 sm:px-5 h-9 rounded-lg bg-primary text-primary-foreground text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-primary/90 active:scale-95 transition-all"
+            >
+              Apply Now
+              <ArrowUpRight size={13} />
+            </button>
+          </ApplyWidget>
         </div>
       </div>
     </div>

@@ -133,10 +133,12 @@ const Hero = () => (
         </p>
 
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <a href="#apply" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 sm:px-8 py-4 sm:py-5 font-bold uppercase tracking-wider text-sm hover:shadow-bold transition-all">
-            Apply Now
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </a>
+          <ApplyWidget>
+            <button type="button" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 sm:px-8 py-4 sm:py-5 font-bold uppercase tracking-wider text-sm hover:shadow-bold transition-all">
+              Apply Now
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </ApplyWidget>
           <a href="#nations" className="inline-flex items-center justify-center gap-3 border border-border px-6 sm:px-8 py-4 sm:py-5 font-bold uppercase tracking-wider text-sm hover:border-primary hover:text-primary transition-colors">
             See the Journey
           </a>
