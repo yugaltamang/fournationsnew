@@ -54,6 +54,8 @@ const LOGO_MAP: Record<string, string> = {
   Tencent: tencentLogo.url,
 };
 
+const SMALL_LOGOS = new Set(["Shiprocket", "Nivia Sports"]);
+
 const companies = [
   "Addverb",
   "ITC Limited",
@@ -64,21 +66,6 @@ const companies = [
   "Nivia Sports",
   "LPU Jalandhar",
   "Arctos",
-  "Blenheim Chalcot",
-  "Ripple",
-  "Octopus Energy",
-  "Deloitte",
-  "Candesic",
-  "Burberry",
-  "Johnson & Johnson",
-  "Hong Kong Stock Exchange",
-  "HSBC",
-  "Alibaba Group",
-  "ByteDance",
-  "Kerry Logistics",
-  "Li & Fung",
-  "SenseTime",
-  "Tencent",
 ];
 
 const Hero = () => (
