@@ -7,7 +7,7 @@ const Apply = () => (
     <div className="container relative">
       <div className="max-w-5xl mx-auto text-center">
         
-        <h2 className="font-display text-[clamp(2rem,8vw,8rem)] leading-[0.9] mb-6 sm:mb-10 text-balance break-words">
+        <h2 className="font-display text-[clamp(1.75rem,6vw,6rem)] leading-[0.9] mb-6 sm:mb-10 text-balance break-words">
           Four nations are <em className="italic mu-hero-gradient-text not-italic">waiting.</em><br />
           Step into the journey.
         </h2>

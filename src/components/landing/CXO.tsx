@@ -76,7 +76,7 @@ const CXO = () => {
         <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-10 md:mb-14 pb-6 border-b border-border">
           <div className="md:col-span-12">
             <SectionEyebrow className="mb-4">Why This Programme</SectionEyebrow>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-balance">
               Hands-on learning for{" "}
               <em className="italic mu-hero-gradient-text not-italic">
                 real business impact.
@@ -185,7 +185,7 @@ const CXO = () => {
                     </span>
                   </div>
 
-                  <h3 className="font-display text-3xl lg:text-5xl leading-[0.95] text-balance mb-4 max-w-xl">
+                  <h3 className="font-display text-2xl lg:text-4xl leading-[0.95] text-balance mb-4 max-w-xl">
                     {p.title}{" "}
                     <em className="italic mu-hero-gradient-text not-italic">
                       {p.titleEm}
@@ -248,7 +248,7 @@ const CXO = () => {
                     {p.stat.label}
                   </span>
                 </div>
-                <h3 className="font-display text-2xl leading-[0.95] text-balance mb-2">
+                <h3 className="font-display text-xl leading-[0.95] text-balance mb-2">
                   {p.title}{" "}
                   <em className="italic mu-hero-gradient-text not-italic">
                     {p.titleEm}
