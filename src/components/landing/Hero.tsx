@@ -53,7 +53,7 @@ const Hero = () => (
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Study across four global business hubs through three world-class institutions: Masters' Union, Imperial College London, and CUHK Business School. Earn three credentials, build real ventures, and gain access to a lifelong network of founders, CEOs, and investors.
+          Study across four global business hubs with Masters' Union, Imperial College London, and CUHK Business School. Earn three credentials and a lifelong global network.
         </p>
 
         <div className="mt-6 sm:mt-8">
