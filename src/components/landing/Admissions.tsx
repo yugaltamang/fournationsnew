@@ -101,22 +101,10 @@ const Admissions = () => {
         </div>
       </div>
 
-      {/* Region toggle */}
-      <div className="flex items-center justify-between gap-3 mb-3">
+      {/* Programme fees label */}
+      <div className="flex items-center gap-3 mb-3">
         <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
           Programme fees
-        </div>
-        <div className="inline-flex rounded-md border border-border bg-background overflow-hidden">
-          {(["IN", "INTL"] as Region[]).map((r) => (
-            <button
-              key={r}
-              type="button"
-              onClick={() => setRegion(r)}
-              className={`px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.2em] transition-colors ${region === r ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
-            >
-              {r === "IN" ? "India · INR" : "International · USD"}
-            </button>
-          ))}
         </div>
       </div>
 
