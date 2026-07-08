@@ -188,7 +188,7 @@ const FAQ = () => {
                     <span className="font-mono text-[10px] sm:text-xs text-primary tracking-[0.25em]">
                       {String(gi + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="font-display text-lg sm:text-xl md:text-2xl uppercase tracking-tight">
+                    <h3 className="font-display text-base sm:text-lg md:text-xl uppercase tracking-tight">
                       {group.category}
                     </h3>
                   </div>
