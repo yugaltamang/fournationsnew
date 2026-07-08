@@ -28,7 +28,7 @@ const Contact = () => (
         {/* Left: heading */}
         <div>
           <SectionEyebrow className="mb-4 sm:mb-6">Admissions Office</SectionEyebrow>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-balance mb-6">
             Get in{" "}
             <em className="italic text-primary not-italic">Touch</em>
           </h2>

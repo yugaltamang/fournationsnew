@@ -220,7 +220,7 @@ const Nations = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10 mb-10 md:mb-14">
           <div>
             <SectionEyebrow className="mb-4 sm:mb-6">The Journey / Curriculum</SectionEyebrow>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-balance">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] max-w-3xl text-balance">
               One Curriculum.<br />
               <em className="italic mu-hero-gradient-text not-italic">Leadership Without Borders.</em>
             </h2>
@@ -382,7 +382,7 @@ const Nations = () => {
                     <div className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mb-2">
                       {n.term} · {n.city}
                     </div>
-                    <h3 className="font-display text-[clamp(1.85rem,8.5vw,7rem)] leading-[0.9] tracking-tight break-words hyphens-auto">
+                    <h3 className="font-display text-[clamp(1.5rem,6vw,5rem)] leading-[0.9] tracking-tight break-words hyphens-auto">
                       {n.country}
                     </h3>
                   </div>
@@ -393,7 +393,7 @@ const Nations = () => {
 
               {/* Body */}
               <div className="p-4 sm:p-8 md:p-10 space-y-5 sm:space-y-6">
-                <p className="font-display text-2xl sm:text-3xl md:text-4xl italic text-foreground/90 leading-snug">
+                <p className="font-display text-xl sm:text-2xl md:text-3xl italic text-foreground/90 leading-snug">
                   "{n.title}"
                 </p>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">

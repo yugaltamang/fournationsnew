@@ -74,7 +74,7 @@ const Immersions = () => (
       {/* Editorial Header */}
       <div className="max-w-4xl mb-14 md:mb-20">
           <SectionEyebrow className="mb-6">The Pedigree</SectionEyebrow>
-        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-balance mb-6">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-balance mb-6">
           Three institutions.{" "}
           <em className="italic mu-hero-gradient-text not-italic">One cohort.</em>{" "}
           Three credentials.
@@ -147,7 +147,7 @@ const Immersions = () => (
                 <div className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-primary mb-3">
                   {p.name}
                 </div>
-                <h3 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-balance">
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1.05] text-balance">
                   {p.headline}
                 </h3>
               </div>
