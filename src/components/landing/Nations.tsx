@@ -29,6 +29,8 @@ import kerryLogo from "@/assets/immersion-logos/kerry.png.asset.json";
 import lifungLogo from "@/assets/immersion-logos/lifung.png.asset.json";
 import sensetimeLogo from "@/assets/immersion-logos/sensetime.png.asset.json";
 import tencentLogo from "@/assets/immersion-logos/tencent.png.asset.json";
+import difcLogo from "@/assets/immersion-logos/difc.png.asset.json";
+import jafzaLogo from "@/assets/immersion-logos/jafza.png.asset.json";
 
 const LOGO_MAP: Record<string, string> = {
   Addverb: addverbLogo.url,
