@@ -13,6 +13,28 @@ import toaPhoto from "@/assets/faculty-hk/toa.asset.json";
 import jeffPhoto from "@/assets/faculty-hk/jeff.asset.json";
 import liaoPhoto from "@/assets/faculty-hk/liao.asset.json";
 import gilbertPhoto from "@/assets/faculty-hk/gilbert.asset.json";
+import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
+import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
+import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
+import hondaLogo from "@/assets/immersion-logos/honda.png.asset.json";
+import bluetokaiLogo from "@/assets/immersion-logos/bluetokai.png.asset.json";
+import shiprocketLogo from "@/assets/immersion-logos/shiprocket.png.asset.json";
+import niviaLogo from "@/assets/immersion-logos/nivia.png.asset.json";
+import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
+
+/* Brand → white logo URL. Only mapped brands render as an image chip; others fall back to a text chip. */
+const LOGO_MAP: Record<string, string> = {
+  "Addverb": addverbLogo.url,
+  "ITC Limited": itcLogo.url,
+  "Sonalika Tractors": sonalikaLogo.url,
+  "Honda": hondaLogo.url,
+  "Blue Tokai": bluetokaiLogo.url,
+  "Shiprocket": shiprocketLogo.url,
+  "Nivia Sports": niviaLogo.url,
+  "LPU Jalandhar": lpuLogo.url,
+};
+
+
 
 /* ─── data types ─── */
 interface AccItem { num: string; code?: string; title: string; rows: string[]; topics?: string }
@@ -297,19 +319,30 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
   </div>
 );
 
-const ImmersionPanelView = ({ data }: { data: ImmersionPanel }) => {
-  const LogoChips = ({ logos }: { logos: string }) => (
-    <div className="flex flex-wrap gap-2">
-      {logos.split(" · ").map((logo, i) => (
-        <span
-          key={i}
-          className="inline-flex items-center bg-white text-black px-2.5 py-1 font-mono text-[10px] sm:text-xs uppercase tracking-wider shadow-[0_0_12px_rgba(255,255,255,0.35)]"
-        >
-          {logo}
-        </span>
-      ))}
-    </div>
+const BrandChip = ({ name }: { name: string }) => {
+  const logo = LOGO_MAP[name];
+  if (logo) {
+    return (
+      <span
+        title={name}
+        className="inline-flex items-center justify-center bg-white/10 border border-white/15 backdrop-blur-sm px-2.5 py-1.5 h-8"
+      >
+        <img src={logo} alt={name} loading="lazy" className="h-4 sm:h-5 w-auto object-contain" />
+      </span>
+    );
+  }
+  return (
+    <span className="inline-flex items-center bg-white text-black px-2.5 py-1 font-mono text-[10px] sm:text-xs uppercase tracking-wider shadow-[0_0_12px_rgba(255,255,255,0.35)]">
+      {name}
+    </span>
   );
+};
+
+const ImmersionPanelView = ({ data, location }: { data: ImmersionPanel; location: string }) => {
+  const allBrands = Array.from(
+    new Set(data.cards.flatMap((c) => c.logos.split(" · ").map((n) => n.trim())).filter(Boolean))
+  );
+  const previewBrands = allBrands.filter((b) => LOGO_MAP[b]);
 
   return (
     <div>
@@ -318,6 +351,25 @@ const ImmersionPanelView = ({ data }: { data: ImmersionPanel }) => {
           {data.header.title.split("\n").map((l, i) => <span key={i}>{i > 0 && <br />}{l}</span>)}
         </h3>
         <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl">{data.header.body}</p>
+        {previewBrands.length > 0 && (
+          <div className="mt-6 border border-border bg-[hsl(0,0%,6%)] p-4 sm:p-5">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
+              Business Immersions at {location}
+            </div>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+              {previewBrands.map((name) => (
+                <img
+                  key={name}
+                  src={LOGO_MAP[name]}
+                  alt={name}
+                  title={name}
+                  loading="lazy"
+                  className="h-7 sm:h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                />
+              ))}
+            </div>
+          </div>
+        )}
         {data.header.note && (
           <div className="mt-5 flex items-start gap-3 border border-primary/30 bg-primary/[0.06] p-4 max-w-2xl">
             <span className="text-primary text-base shrink-0">✦</span>
@@ -337,7 +389,11 @@ const ImmersionPanelView = ({ data }: { data: ImmersionPanel }) => {
               <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-1.5">{card.cat}</div>
               <div className="font-display text-lg text-white mb-1">{card.title}</div>
               <div className="text-sm text-white/70 leading-relaxed mb-3">{card.desc}</div>
-              <LogoChips logos={card.logos} />
+              <div className="flex flex-wrap gap-2">
+                {card.logos.split(" · ").map((brand, j) => (
+                  <BrandChip key={j} name={brand.trim()} />
+                ))}
+              </div>
             </div>
           </div>
         ))}
@@ -456,7 +512,7 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
   const tabs = [
     { label: term.academic.label, render: () => <AcademicPanel panel={term.academic} /> },
     { label: term.outclass.label, render: () => <AcademicPanel panel={term.outclass} /> },
-    { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} /> },
+    { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} location={term.label.replace(/^Term \d+ · /, "").replace(/\s*\(.*\)$/, "")} /> },
     ...(term.faculty ? [{ label: "Faculty", render: () => <FacultyPanelView data={term.faculty!} termId={term.id} /> }] : []),
     { label: "Cultural Immersion", render: () => term.cultural && <CulturalPanelView data={term.cultural} /> },
   ];
