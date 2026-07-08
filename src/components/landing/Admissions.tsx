@@ -1,7 +1,7 @@
 import { ApplyWidget } from "./ApplyWidget";
 import { Sparkles, ArrowRight } from "lucide-react";
 import SectionEyebrow from "./SectionEyebrow";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Region = "IN" | "INTL";
 
