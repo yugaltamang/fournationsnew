@@ -165,19 +165,19 @@ const Hero = () => (
         <div className="ticker flex whitespace-nowrap">
           {[...companies, ...companies].map((co, i) => (
             <span key={i} className="inline-flex items-center gap-6 sm:gap-8 px-3 sm:px-4">
-              <span
-                title={co}
-                className="inline-flex h-10 sm:h-12 items-center justify-center border border-border bg-background px-3 sm:px-4"
-              >
-                <img
-                  src={LOGO_MAP[co]}
-                  alt={co}
-                  loading="lazy"
-                  decoding="async"
-                  className="max-h-6 sm:max-h-7 max-w-[100px] sm:max-w-[128px] object-contain"
-                />
-              </span>
-              <span className="text-primary/60">✦</span>
+            <span
+              title={co}
+              className="inline-flex h-12 sm:h-14 items-center justify-center border border-border bg-background px-4 sm:px-5"
+            >
+              <img
+                src={LOGO_MAP[co]}
+                alt={co}
+                loading="lazy"
+                decoding="async"
+                className="max-h-8 sm:max-h-10 max-w-[120px] sm:max-w-[152px] object-contain"
+              />
+            </span>
+            <span className="text-primary/60">✦</span>
             </span>
           ))}
         </div>
