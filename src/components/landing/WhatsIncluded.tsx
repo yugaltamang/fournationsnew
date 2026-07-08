@@ -23,7 +23,7 @@ const WhatsIncluded = () => (
     <div className="container">
       <div className="max-w-4xl mb-10 sm:mb-12 md:mb-16">
         <SectionEyebrow className="mb-4 sm:mb-6">What's Included</SectionEyebrow>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-balance">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] text-balance">
           What the fee covers. <br className="hidden sm:block" />
           <em className="italic text-muted-foreground not-italic">And what it does not.</em>
         </h2>
@@ -38,7 +38,7 @@ const WhatsIncluded = () => (
           </div>
           <ul className="space-y-4">
             {included.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm sm:text-base leading-relaxed">
+              <li key={i} className="flex items-start gap-3 text-xs sm:text-sm md:text-base leading-relaxed">
                 <span className="flex items-center justify-center w-5 h-5 rounded-full bg-primary/15 text-primary shrink-0 mt-0.5">
                   <Check className="w-3 h-3" />
                 </span>
@@ -56,7 +56,7 @@ const WhatsIncluded = () => (
           </div>
           <ul className="space-y-4">
             {notIncluded.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <li key={i} className="flex items-start gap-3 text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                 <span className="flex items-center justify-center w-5 h-5 rounded-full bg-muted text-muted-foreground shrink-0 mt-0.5">
                   <X className="w-3 h-3" />
                 </span>

@@ -177,7 +177,7 @@ const CXO = () => {
 
                   {/* Stat - top right */}
                   <div className="absolute top-6 right-8 lg:right-16 flex items-baseline gap-2">
-                    <span className="font-display text-5xl lg:text-6xl mu-hero-gradient-text leading-none">
+                    <span className="font-display text-3xl sm:text-4xl md:text-5xl mu-hero-gradient-text leading-none">
                       {p.stat.value}
                     </span>
                     <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
@@ -185,13 +185,13 @@ const CXO = () => {
                     </span>
                   </div>
 
-                  <h3 className="font-display text-2xl lg:text-4xl leading-[0.95] text-balance mb-4 max-w-xl">
+                  <h3 className="font-display text-base sm:text-lg md:text-xl text-balance mb-4 max-w-xl">
                     {p.title}{" "}
                     <em className="italic mu-hero-gradient-text not-italic">
                       {p.titleEm}
                     </em>
                   </h3>
-                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed max-w-md mb-6">
+                  <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed max-w-md mb-6">
                     {p.body}
                   </p>
 
@@ -199,7 +199,7 @@ const CXO = () => {
                     {p.points.map((pt, j) => (
                       <li
                         key={j}
-                        className="flex items-start gap-3 text-[12px] lg:text-sm text-foreground/85 leading-snug"
+                        className="flex items-start gap-3 text-xs sm:text-sm text-foreground/85 leading-snug"
                       >
                         <Check className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
                         <span>{pt}</span>
@@ -241,27 +241,27 @@ const CXO = () => {
 
               <div className="absolute inset-0 flex flex-col justify-end p-6">
                 <div className="flex items-baseline gap-2 mb-3">
-                  <span className="font-display text-4xl mu-hero-gradient-text leading-none">
+                  <span className="font-display text-3xl sm:text-4xl md:text-5xl mu-hero-gradient-text leading-none">
                     {p.stat.value}
                   </span>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                     {p.stat.label}
                   </span>
                 </div>
-                <h3 className="font-display text-xl leading-[0.95] text-balance mb-2">
+                <h3 className="font-display text-base sm:text-lg md:text-xl text-balance mb-2">
                   {p.title}{" "}
                   <em className="italic mu-hero-gradient-text not-italic">
                     {p.titleEm}
                   </em>
                 </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed mb-3">
                   {p.body}
                 </p>
                 <ul className="space-y-1.5 border-t border-border/60 pt-3">
                   {p.points.map((pt, j) => (
                     <li
                       key={j}
-                      className="flex items-start gap-2 text-[11px] text-foreground/85 leading-snug"
+                      className="flex items-start gap-2 text-xs sm:text-sm text-foreground/85 leading-snug"
                     >
                       <Check className="w-3 h-3 text-primary mt-0.5 shrink-0" />
                       <span>{pt}</span>

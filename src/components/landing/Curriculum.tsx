@@ -296,7 +296,7 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 items-center">
       <div>
         <div className="tag-pill mb-4">{panel.hero.chip}</div>
-        <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1.05] text-balance">{panel.hero.title}</h3>
+        <h3 className="font-display text-base sm:text-lg md:text-xl text-balance">{panel.hero.title}</h3>
         <p className="text-muted-foreground leading-relaxed mt-4 max-w-xl" dangerouslySetInnerHTML={{ __html: panel.hero.body }} />
       </div>
       <div className="aspect-[4/3] overflow-hidden border border-border bg-[hsl(0,0%,6%)]">
@@ -347,7 +347,7 @@ const ImmersionPanelView = ({ data, location }: { data: ImmersionPanel; location
   return (
     <div>
       <div className="mb-8">
-        <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1.05] text-balance">
+        <h3 className="font-display text-base sm:text-lg md:text-xl text-balance">
           {data.header.title.split("\n").map((l, i) => <span key={i}>{i > 0 && <br />}{l}</span>)}
         </h3>
         <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl">{data.header.body}</p>
@@ -399,7 +399,7 @@ const CulturalPanelView = ({ data }: { data: CulturalPanel }) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
     <div>
       <div className="tag-pill mb-4">{data.chip}</div>
-      <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1.05] text-balance">
+      <h3 className="font-display text-base sm:text-lg md:text-xl text-balance">
         {data.title.split("\n").map((l, i) => (
           <span key={i}>{i > 0 && <br />}{l}</span>
         ))}
@@ -427,7 +427,7 @@ const FacultyPanelView = ({ data, termId }: { data: Faculty[]; termId?: number }
   <div>
     <div className="mb-8">
       <div className="tag-pill mb-4">Imperial College London · Faculty</div>
-      <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1.05] text-balance">
+      <h3 className="font-display text-base sm:text-lg md:text-xl text-balance">
         Learn from <em className="italic not-italic text-primary">world-class faculty.</em>
       </h3>
       <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl">
@@ -467,7 +467,7 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
               Term 0{index + 1} · Optional
             </div>
             <div className="text-6xl mb-4">{term.bannerFlag}</div>
-            <h3 className="font-display text-3xl sm:text-4xl leading-[0.95] text-balance mb-4">
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1] text-balance mb-4">
               {term.label.replace(/^Term \d+ · /, "")}
             </h3>
             <div className="h-px w-12 bg-primary mb-4" />
@@ -486,7 +486,7 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
               <div className="h-0.5 w-full bg-primary" />
               <div className="p-8 md:p-10">
                 <div className="tag-pill mb-5"><span className="w-1.5 h-1.5 bg-primary rounded-full" />Optional · 1 Week Immersion</div>
-                <h4 className="font-display text-xl sm:text-2xl leading-[1.05] text-balance mb-6">
+                <h4 className="font-display text-base sm:text-lg md:text-xl text-balance mb-6">
                   The optional week <em className="italic not-italic text-primary">most people regret skipping.</em>
                 </h4>
                 <ul className="text-muted-foreground leading-relaxed flex flex-col gap-3">
@@ -519,7 +519,7 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
             Term 0{index + 1}
           </div>
           <div className="text-6xl mb-4">{term.bannerFlag}</div>
-          <h3 className="font-display text-3xl sm:text-4xl leading-[0.95] text-balance mb-5">
+          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[1] text-balance mb-5">
             {term.label.replace(/^Term \d+ · /, "")}
           </h3>
           <div className="h-px w-12 bg-primary mb-5" />
@@ -574,7 +574,7 @@ const Curriculum = () => {
             A curriculum crafted for the next<br />
             <em className="italic text-primary not-italic">generation of global leaders.</em>
           </h2>
-          <p className="text-muted-foreground leading-relaxed mt-5 max-w-2xl">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-5 max-w-2xl">
             Four nations. Four distinct learning systems - In Class, Out Class, Business Immersion, Cultural Immersion. Scroll through each term below.
           </p>
         </div>

@@ -134,10 +134,10 @@ export default function Outclass() {
         {/* Header */}
         <div data-outclass-header className="max-w-4xl mb-10 sm:mb-14">
           <SectionEyebrow>OUT CLASS</SectionEyebrow>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl leading-[0.95] font-medium text-balance">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] font-medium text-balance">
             Learn it in class. <em className="italic font-normal">Prove it</em> outside.
           </h2>
-          <p className="mt-5 text-muted-foreground text-base sm:text-lg max-w-2xl">
+          <p className="mt-5 text-muted-foreground text-sm sm:text-base max-w-2xl">
             Real-world challenges that push students to build, sell, create, and compete, turning theory into tangible outcomes before they graduate.
           </p>
         </div>
@@ -238,10 +238,10 @@ export default function Outclass() {
                 <div className="h-px flex-1 bg-border" />
               </div>
 
-              <h3 className="font-display text-xl sm:text-2xl md:text-3xl leading-[0.95] mb-3">
+              <h3 className="font-display text-base sm:text-lg md:text-xl leading-snug mb-3">
                 {active.title}
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 max-w-md">
+              <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed mb-6 max-w-md">
                 {active.desc}
               </p>
 
@@ -250,7 +250,7 @@ export default function Outclass() {
                 <div className="grid grid-cols-3 gap-4 border-t border-border pt-5">
                   {active.stats.map((s) => (
                     <div key={s.label}>
-                      <span className="block font-display text-xl sm:text-2xl font-medium tabular-nums leading-none">
+                      <span className="block font-display text-2xl sm:text-3xl md:text-4xl font-medium tabular-nums leading-none">
                         {s.value}
                       </span>
                       <span className="block text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mt-1.5 font-mono">
@@ -282,7 +282,7 @@ export default function Outclass() {
 
               {active.pullquote && (
                 <div className="border-t border-border pt-5">
-                  <p className="font-display text-lg sm:text-xl leading-snug max-w-sm">
+                  <p className="font-display text-base sm:text-lg md:text-xl leading-snug max-w-sm">
                     From zero followers to <span className="text-primary">creator-preneurs</span> with real influence.
                   </p>
                 </div>
