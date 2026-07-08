@@ -1,3 +1,4 @@
+import { ApplyWidget } from "./ApplyWidget";
 // Hero showcases iconic monuments for the 4 cohort cities
 import heroCollage from "@/assets/hero-collage.png";
 import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";

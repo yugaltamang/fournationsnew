@@ -1,3 +1,4 @@
+import { ApplyWidget } from "./ApplyWidget";
 import { useEffect, useState } from "react";
 import muLogo from "@/assets/mu-logo.svg";
 

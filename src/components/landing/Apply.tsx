@@ -1,3 +1,4 @@
+import { ApplyWidget } from "./ApplyWidget";
 const Apply = () => (
   <section id="apply" className="py-16 sm:py-20 md:py-32 relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />

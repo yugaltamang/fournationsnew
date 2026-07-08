@@ -1,3 +1,4 @@
+import { ApplyWidget } from "./ApplyWidget";
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight, Map, Sparkles, Trophy, FileText, ClipboardCheck, Users } from "lucide-react";
 

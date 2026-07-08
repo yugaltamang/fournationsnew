@@ -1,3 +1,4 @@
+import { ApplyWidget } from "./ApplyWidget";
 import { Sparkles, ArrowRight } from "lucide-react";
 import SectionEyebrow from "./SectionEyebrow";
 
