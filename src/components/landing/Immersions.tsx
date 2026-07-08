@@ -1,4 +1,5 @@
 import imperialImg from "@/assets/imperial-london.png";
+import cuhkImg from "@/assets/cuhk-hongkong.png";
 import muLogo from "@/assets/masters-union-delhi.png";
 import muSvgLogo from "@/assets/mu-logo.svg";
 import SectionEyebrow from "./SectionEyebrow";
