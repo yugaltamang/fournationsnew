@@ -161,7 +161,11 @@ const Hero = () => (
                 alt={co}
                 loading="lazy"
                 decoding="async"
-                className="max-h-8 sm:max-h-10 max-w-[120px] sm:max-w-[152px] object-contain"
+                className={`object-contain ${
+                  SMALL_LOGOS.has(co)
+                    ? "max-h-5 sm:max-h-6 max-w-[80px] sm:max-w-[100px]"
+                    : "max-h-8 sm:max-h-10 max-w-[120px] sm:max-w-[152px]"
+                }`}
               />
             </span>
             <span className="text-primary/60">✦</span>
