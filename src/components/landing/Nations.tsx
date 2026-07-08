@@ -29,6 +29,8 @@ import kerryLogo from "@/assets/immersion-logos/kerry.png.asset.json";
 import lifungLogo from "@/assets/immersion-logos/lifung.png.asset.json";
 import sensetimeLogo from "@/assets/immersion-logos/sensetime.png.asset.json";
 import tencentLogo from "@/assets/immersion-logos/tencent.png.asset.json";
+import difcLogo from "@/assets/immersion-logos/difc.png.asset.json";
+import jafzaLogo from "@/assets/immersion-logos/jafza.png.asset.json";
 
 const LOGO_MAP: Record<string, string> = {
   Addverb: addverbLogo.url,
@@ -55,6 +57,8 @@ const LOGO_MAP: Record<string, string> = {
   "Li & Fung": lifungLogo.url,
   SenseTime: sensetimeLogo.url,
   Tencent: tencentLogo.url,
+  DIFC: difcLogo.url,
+  JAFZA: jafzaLogo.url,
 };
 
 
@@ -402,6 +406,19 @@ const Nations = () => {
                     <span key={t} className="tag-pill">{t}</span>
                   ))}
                 </div>
+
+                {n.country === "Dubai" && (
+                  <div className="border border-border bg-secondary/20 p-4">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-3">
+                      Business Immersions at Dubai
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <BrandLogoTile name="DIFC" />
+                      <BrandLogoTile name="JAFZA" />
+                    </div>
+                  </div>
+                )}
+
 
                 {/* Outcome strip - highlighted with gradient border + glow */}
                 <div
