@@ -1,8 +1,58 @@
 import { ApplyWidget } from "./ApplyWidget";
 import { Sparkles, ArrowRight } from "lucide-react";
 import SectionEyebrow from "./SectionEyebrow";
+import { useEffect, useState } from "react";
 
-const Admissions = () => (
+type Region = "IN" | "INTL";
+
+function fallbackRegion(): Region {
+  if (typeof window === "undefined") return "INTL";
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+    const lang = navigator.language || "";
+    if (tz.includes("Kolkata") || tz.includes("Calcutta") || lang.toLowerCase().includes("in")) return "IN";
+  } catch {}
+  return "INTL";
+}
+
+const FEES: Record<Region, { label: string; items: { l: string; v: string; s: string; primary?: boolean }[] }> = {
+  IN: {
+    label: "India (in INR)",
+    items: [
+      { l: "Application Fee", v: "₹5,000", s: "One-time, non-refundable" },
+      { l: "Admission Fee", v: "₹100,000", s: "Payable on offer acceptance" },
+      { l: "Total Fee", v: "₹6,399,999", s: "*All inclusive", primary: true },
+    ],
+  },
+  INTL: {
+    label: "International (in USD)",
+    items: [
+      { l: "Application Fee", v: "$50", s: "One-time, non-refundable" },
+      { l: "Admission Fee", v: "$1,000", s: "Payable on offer acceptance" },
+      { l: "Total Fee", v: "$70,000", s: "*All inclusive", primary: true },
+    ],
+  },
+};
+
+const Admissions = () => {
+  const [region, setRegion] = useState<Region>(fallbackRegion());
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("https://ipwho.is/?fields=country_code,success");
+        const data = await res.json();
+        if (cancelled || !data?.success || !data.country_code) return;
+        setRegion(String(data.country_code).toUpperCase() === "IN" ? "IN" : "INTL");
+      } catch {}
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
+  const fees = FEES[region];
+
+  return (
   <section id="admissions" className="relative py-12 sm:py-16 border-t border-border bg-card/30 overflow-hidden">
     <div className="absolute inset-0 editorial-grid opacity-[0.05] pointer-events-none" />
 
