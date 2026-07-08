@@ -1,25 +1,4 @@
-import { Mail, Phone, Clock } from "lucide-react";
 import SectionEyebrow from "./SectionEyebrow";
-
-const contactCards = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "executive.admissions@mastersunion.org",
-    href: "mailto:executive.admissions@mastersunion.org",
-  },
-  {
-    icon: Phone,
-    label: "Mobile",
-    value: "+91 9899-741-741",
-    href: "tel:+919899741741",
-  },
-  {
-    icon: Clock,
-    label: "Hours",
-    value: "Mon - Sat\n9:00 am - 9:00 pm IST",
-  },
-];
 
 const Contact = () => (
   <section id="contact" className="py-16 sm:py-20 md:py-32 border-t border-border">
