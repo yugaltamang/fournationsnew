@@ -57,6 +57,8 @@ const LOGO_MAP: Record<string, string> = {
   "Li & Fung": lifungLogo.url,
   SenseTime: sensetimeLogo.url,
   Tencent: tencentLogo.url,
+  DIFC: difcLogo.url,
+  JAFZA: jafzaLogo.url,
 };
 
 
