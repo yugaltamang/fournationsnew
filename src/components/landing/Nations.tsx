@@ -5,6 +5,45 @@ import london from "@/assets/nation-london.webp";
 import dubai from "@/assets/nation-dubai.webp";
 import { terms as curriculumTerms } from "./Curriculum";
 import SectionEyebrow from "./SectionEyebrow";
+import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
+import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
+import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
+import hondaLogo from "@/assets/immersion-logos/honda.png.asset.json";
+import bluetokaiLogo from "@/assets/immersion-logos/bluetokai.png.asset.json";
+import shiprocketLogo from "@/assets/immersion-logos/shiprocket.png.asset.json";
+import niviaLogo from "@/assets/immersion-logos/nivia.png.asset.json";
+import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
+
+const LOGO_MAP: Record<string, string> = {
+  Addverb: addverbLogo.url,
+  "ITC Limited": itcLogo.url,
+  "Sonalika Tractors": sonalikaLogo.url,
+  Honda: hondaLogo.url,
+  "Blue Tokai": bluetokaiLogo.url,
+  Shiprocket: shiprocketLogo.url,
+  "Nivia Sports": niviaLogo.url,
+  "LPU Jalandhar": lpuLogo.url,
+};
+
+const splitBrands = (logos: string) => logos.split(" · ").map((brand) => brand.trim()).filter(Boolean);
+
+const BrandLogoTile = ({ name }: { name: string }) => {
+  const logo = LOGO_MAP[name];
+
+  if (!logo) {
+    return (
+      <span className="inline-flex h-8 items-center justify-center border border-border bg-secondary/40 px-2.5 font-mono text-[9px] uppercase tracking-wider text-foreground">
+        {name}
+      </span>
+    );
+  }
+
+  return (
+    <span title={name} className="inline-flex h-8 w-16 shrink-0 items-center justify-center border border-border bg-background p-1.5">
+      <img src={logo} alt={name} loading="lazy" decoding="async" className="max-h-5 max-w-12 object-contain" />
+    </span>
+  );
+};
 
 type Nation = {
   n: string;
