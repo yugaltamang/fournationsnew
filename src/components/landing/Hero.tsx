@@ -11,9 +11,6 @@ import shiprocketLogo from "@/assets/immersion-logos/shiprocket.png.asset.json";
 import niviaLogo from "@/assets/immersion-logos/nivia.png.asset.json";
 import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
 import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
-import blenheimLogo from "@/assets/immersion-logos/blenheim.png.asset.json";
-import rippleLogo from "@/assets/immersion-logos/ripple.png.asset.json";
-import octopusLogo from "@/assets/immersion-logos/octopus.png.asset.json";
 
 const LOGO_MAP: Record<string, string> = {
   Addverb: addverbLogo.url,
