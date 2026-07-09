@@ -24,8 +24,7 @@ const WhatsIncluded = () => (
       <div className="max-w-4xl mb-10 sm:mb-12 md:mb-16">
         <SectionEyebrow className="mb-4 sm:mb-6">What's Included</SectionEyebrow>
         <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] text-balance">
-          What the fee covers. <br className="hidden sm:block" />
-          <em className="italic text-muted-foreground not-italic">And what it does not.</em>
+          Programme Fee Inclusions and Exclusions
         </h2>
       </div>
 
