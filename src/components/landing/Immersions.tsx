@@ -28,7 +28,6 @@ const partners = [
     body: "Learn at one of the world's top-ranked institutions – and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch your innovative startup from the heart of London.",
     stats: [
       { v: "#2", l: "QS World Rankings" },
-      { v: "Top 1%", l: "Business Schools" },
       { v: "140+", l: "Nationalities" },
       { v: "14", l: "Nobel Laureates" },
     ],
@@ -44,7 +43,6 @@ const partners = [
       { v: "#32", l: "QS Ranking" },
       { v: "60+", l: "Years of Excellence" },
       { v: "60", l: "Contact Hours" },
-      { v: "✓", l: "CUHK Certificate" },
     ],
   },
 ];
@@ -147,19 +145,12 @@ const Immersions = () => (
               <div className={`grid grid-cols-2 ${p.stats.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-4"} gap-px bg-border border border-border`}>
                 {p.stats.map((s) => (
                   <div key={s.l} className="bg-background p-3 sm:p-4 min-w-0">
-                    <div className={`font-display text-3xl sm:text-4xl md:text-5xl mu-hero-gradient-text leading-none break-words ${s.v === "Top 1%" && s.l === "Business Schools" ? "flex flex-wrap items-baseline gap-2" : ""}`}>
+                    <div className="font-display text-3xl sm:text-4xl md:text-5xl mu-hero-gradient-text leading-none break-words">
                       <span>{s.v}</span>
-                      {s.v === "Top 1%" && s.l === "Business Schools" && (
-                        <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground leading-tight">
-                          {s.l}
-                        </span>
-                      )}
                     </div>
-                    {!(s.v === "Top 1%" && s.l === "Business Schools") && (
-                      <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mt-2 leading-tight">
-                        {s.l}
-                      </div>
-                    )}
+                    <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mt-2 leading-tight">
+                      {s.l}
+                    </div>
                   </div>
                 ))}
               </div>
