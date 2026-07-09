@@ -135,7 +135,7 @@ const nations: Nation[] = [
     term: "Term 3 · Aug – Oct",
     partner: "CUHK Business School",
     img: hk,
-    title: "Read the East.",
+    title: "Scale Global Growth",
     desc: "Asia's capital gateway. Sessions at CUHK Business School, trading floors at HKEX & HSBC, and a Greater Bay Area sprint into Shenzhen's hardware ecosystem. Decode how Asian capital, manufacturing and platforms actually move.",
     outcome: "Navigate Asian capital markets, supply chains and cross-border deals.",
     tags: ["Global Finance", "Asia Strategy", "Supply Chain", "FinTech"],
