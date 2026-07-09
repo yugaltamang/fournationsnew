@@ -437,7 +437,7 @@ const Nations = () => {
                     <div className="relative">
                       <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] mb-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                        <span className="mu-hero-gradient-text font-bold">You walk away able to →</span>
+                        <span className="mu-hero-gradient-text font-bold">What You'll Be Able To:</span>
                       </div>
                       <div className="font-display text-base sm:text-lg md:text-xl leading-snug text-foreground">
                         {n.outcome}
