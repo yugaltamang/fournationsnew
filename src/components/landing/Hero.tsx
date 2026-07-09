@@ -96,13 +96,11 @@ const Hero = () => (
           </a>
         </div>
 
-        <div className="mt-10 sm:mt-14 grid grid-cols-2 md:grid-cols-5 gap-x-4 gap-y-5 sm:gap-6 max-w-3xl border-t border-border pt-6 sm:pt-8">
+        <div className="mt-10 sm:mt-14 grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-5 sm:gap-6 max-w-3xl border-t border-border pt-6 sm:pt-8">
           {[
             { n: "9", l: "Months · Core Program" },
-            { n: "1", l: "Week · Optional Dubai" },
             { n: "4", l: "Nations · Cultures · Markets" },
             { n: "2", l: "Global University Partners" },
-            { n: "15+", l: "Business Immersions" },
           ].map((s) => (
             <div key={s.l} className="min-w-0">
               <div className="font-display text-3xl sm:text-4xl md:text-5xl font-medium leading-none">{s.n}</div>
