@@ -43,7 +43,6 @@ const partners = [
       { v: "#32", l: "QS Ranking" },
       { v: "60+", l: "Years of Excellence" },
       { v: "60", l: "Contact Hours" },
-      { v: "✓", l: "CUHK Certificate" },
     ],
   },
 ];
