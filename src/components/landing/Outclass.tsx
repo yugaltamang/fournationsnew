@@ -67,6 +67,8 @@ const modules: Module[] = [
     desc: "Learn how to command the room, influence every conversation, and lead with clarity under pressure through immersive simulations, executive coaching, and real-world leadership challenges.",
     icon: Video,
     images: [creator1, creator2, creator3, creator4, creator5],
+    pullquote: "From professionals to leaders who shape the future.",
+
 
     topicsLabel: "4 Key Modules",
     topics: [
@@ -281,7 +283,7 @@ export default function Outclass() {
               {active.pullquote && (
                 <div className="border-t border-border pt-5">
                   <p className="font-display text-base sm:text-lg md:text-xl leading-snug max-w-sm">
-                    From zero followers to <span className="text-primary">creator-preneurs</span> with real influence.
+                    {active.pullquote}
                   </p>
                 </div>
               )}
