@@ -283,7 +283,7 @@ export default function Outclass() {
               {active.pullquote && (
                 <div className="border-t border-border pt-5">
                   <p className="font-display text-base sm:text-lg md:text-xl leading-snug max-w-sm">
-                    From zero followers to <span className="text-primary">creator-preneurs</span> with real influence.
+                    {active.pullquote}
                   </p>
                 </div>
               )}
