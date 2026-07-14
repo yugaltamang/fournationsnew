@@ -64,10 +64,10 @@ const modules: Module[] = [
     num: "2",
     label: "LEADERSHIP",
     title: "Leadership Lab - London",
-    desc: "Sharpen presence, persuasion, and poise. A hands-on lab in London where you learn to command the room, tell sharper stories, and lead through pressure.",
+    desc: "Learn how to command the room, influence every conversation, and lead with clarity under pressure through immersive simulations, executive coaching, and real-world leadership challenges.",
     icon: Video,
     images: [creator1, creator2, creator3, creator4, creator5],
-    pullquote: "From zero followers to creator-preneurs with real influence.",
+
     topicsLabel: "4 Key Modules",
     topics: [
       "How to Command Attention Before You Speak",
