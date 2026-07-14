@@ -166,15 +166,12 @@ export const terms: Term[] = [
     },
     outclass: {
       label: "Out Class",
-      hero: { chip: "Out Class · London", title: "Creators Challenge - London", body: "Build a personal brand across Instagram and YouTube from London. Hooks, retention, and body of work. Graduate as a creator-preneur with real reach.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "Out Class · London", title: "Leadership Lab - London", body: "Sharpen presence, persuasion, and poise. A hands-on lab in London where you learn to command the room, tell sharper stories, and lead through pressure.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
       items: [
-        { num: "01", title: "How to Find Your Niche and Position Yourself as a Creator", rows: ["How to Find Your Niche and Position Yourself as a Creator"] },
-        { num: "02", title: "How to Build a Winning Content Strategy", rows: ["How to Build a Winning Content Strategy"] },
-        { num: "03", title: "How to Create Engaging Content Ideas and Scripts", rows: ["How to Create Engaging Content Ideas and Scripts"] },
-        { num: "04", title: "How to Shoot Content with Confidence", rows: ["How to Shoot Content with Confidence"] },
-        { num: "05", title: "How to Edit and Package High-Quality Content", rows: ["How to Edit and Package High-Quality Content"] },
-        { num: "06", title: "How to Grow and Optimize Your Content", rows: ["How to Grow and Optimize Your Content"] },
-        { num: "07", title: "How to Monetize and Scale Your Personal Brand", rows: ["How to Monetize and Scale Your Personal Brand"] },
+        { num: "01", title: "How to Command Attention Before You Speak", rows: ["How to Command Attention Before You Speak"] },
+        { num: "02", title: "How to Turn Data into Stories That Drive Action", rows: ["How to Turn Data into Stories That Drive Action"] },
+        { num: "03", title: "How to Win High-Stakes Conversations", rows: ["How to Win High-Stakes Conversations"] },
+        { num: "04", title: "How to Stay Composed When the Pressure Is On", rows: ["How to Stay Composed When the Pressure Is On"] },
       ],
     },
     immersions: {
