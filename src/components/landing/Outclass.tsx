@@ -62,23 +62,21 @@ const modules: Module[] = [
   },
   {
     num: "2",
-    label: "PERSONAL BRAND",
-    title: "Creators Challenge - London",
-    desc: "Build a personal brand across Instagram and YouTube from London. Hooks, retention, and body of work. Graduate as a creator-preneur with real reach.",
+    label: "LEADERSHIP",
+    title: "Leadership Lab - London",
+    desc: "Sharpen presence, persuasion, and poise. A hands-on lab in London where you learn to command the room, tell sharper stories, and lead through pressure.",
     icon: Video,
     images: [creator1, creator2, creator3, creator4, creator5],
     pullquote: "From zero followers to creator-preneurs with real influence.",
-    topicsLabel: "7 Key Modules",
+    topicsLabel: "4 Key Modules",
     topics: [
-      "How to Find Your Niche and Position Yourself as a Creator",
-      "How to Build a Winning Content Strategy",
-      "How to Create Engaging Content Ideas and Scripts",
-      "How to Shoot Content with Confidence",
-      "How to Edit and Package High-Quality Content",
-      "How to Grow and Optimize Your Content",
-      "How to Monetize and Scale Your Personal Brand",
+      "How to Command Attention Before You Speak",
+      "How to Turn Data into Stories That Drive Action",
+      "How to Win High-Stakes Conversations",
+      "How to Stay Composed When the Pressure Is On",
     ],
   },
+
 ];
 
 export default function Outclass() {
