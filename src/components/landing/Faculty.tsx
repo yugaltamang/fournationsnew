@@ -14,6 +14,7 @@ import toaPhoto from "@/assets/faculty-hk/toa.asset.json";
 import jeffPhoto from "@/assets/faculty-hk/jeff.asset.json";
 import liaoPhoto from "@/assets/faculty-hk/liao.asset.json";
 import gilbertPhoto from "@/assets/faculty-hk/gilbert.asset.json";
+import rajitaPhoto from "@/assets/faculty-india/rajita.asset.json";
 
 type Faculty = { name: string; designation: string; photo: string };
 
