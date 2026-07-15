@@ -71,19 +71,18 @@ const GOLD = "#C5A059";
 
 const Faculty = () => {
   const [activeId, setActiveId] = useState(groups[0].id);
-  const group = groups.find((g) => g.id === activeId) ?? groups[0];
-  const [featured, ...rest] = group.faculty;
+  const activeIndex = groups.findIndex((g) => g.id === activeId);
+  const group = groups[activeIndex >= 0 ? activeIndex : 0];
 
   return (
     <section
       id="faculty-section"
-      className="border-t border-border py-20 md:py-28 lg:py-32"
+      className="border-t border-border py-14 md:py-20"
       style={{ background: "#080808", color: "#F5F5F0" }}
     >
       <div className="container max-w-7xl">
-        {/* Header */}
-        <div className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8 pb-10 md:pb-12 border-b" style={{ borderColor: `${GOLD}33` }}>
-          <div className="space-y-4 md:space-y-5">
+        <div className="mb-10 md:mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-6 md:pb-8 border-b" style={{ borderColor: `${GOLD}33` }}>
+          <div className="space-y-3">
             <span
               className="block text-[10px] uppercase tracking-[0.3em]"
               style={{ fontFamily: "'IBM Plex Mono', monospace", color: GOLD }}
@@ -91,18 +90,16 @@ const Faculty = () => {
               Global Academic Council
             </span>
             <h2
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light italic leading-[1.05] text-balance"
+              className="text-3xl sm:text-4xl md:text-5xl font-light italic leading-[1.05] text-balance"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              World-class minds,
-              <br />
+              World-class minds,{" "}
               <span className="not-italic font-medium">zero borders.</span>
             </h2>
           </div>
 
-          {/* Institution switcher (no flags) */}
           <nav
-            className="flex flex-wrap gap-x-6 gap-y-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em]"
+            className="flex flex-wrap gap-x-5 gap-y-2 text-[10px] uppercase tracking-[0.2em]"
             style={{ fontFamily: "'IBM Plex Mono', monospace" }}
             aria-label="Institution selector"
           >
@@ -125,67 +122,22 @@ const Faculty = () => {
           </nav>
         </div>
 
-        {/* Active institution chapter */}
-        <div className="mb-16 md:mb-20">
-          <div className="flex items-center gap-4 mb-10 md:mb-12">
-            <div className="h-px w-12" style={{ background: GOLD }} />
+        <div className="mb-10 md:mb-12">
+          <div className="flex items-center gap-4 mb-6 md:mb-8">
+            <div className="h-px w-10" style={{ background: GOLD }} />
             <h3
-              className="text-[11px] tracking-[0.4em] uppercase opacity-70"
+              className="text-[10px] tracking-[0.35em] uppercase opacity-70"
               style={{ fontFamily: "'IBM Plex Mono', monospace" }}
             >
               {group.name} · {group.city}
             </h3>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 sm:gap-x-6 gap-y-10 md:gap-y-16">
-            {/* Featured card */}
-            {featured && (
-              <div className="group col-span-2 relative overflow-hidden">
-                <div className="aspect-[16/10] md:aspect-[16/9] w-full" style={{ background: "#111" }}>
-                  <img
-                    src={featured.photo}
-                    alt={featured.name}
-                    loading="lazy"
-                    decoding="async"
-                    className={
-                      "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-[1.03] " +
-                      (featured.focusClass ?? "object-[center_20%]")
-                    }
-                  />
-                </div>
-                <div
-                  className="absolute inset-0 flex flex-col justify-end p-5 sm:p-7 md:p-8"
-                  style={{
-                    background: "linear-gradient(to top, #080808 0%, rgba(8,8,8,0.55) 35%, transparent 65%)",
-                  }}
-                >
-                  <p
-                    className="text-[10px] uppercase mb-2 tracking-[0.2em]"
-                    style={{ fontFamily: "'IBM Plex Mono', monospace", color: GOLD }}
-                  >
-                    {group.tagline}
-                  </p>
-                  <h4
-                    className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                  >
-                    {featured.name}
-                  </h4>
-                  <p
-                    className="text-[11px] opacity-60 mt-1 uppercase tracking-tight max-w-xl"
-                    style={{ fontFamily: "'IBM Plex Mono', monospace" }}
-                  >
-                    {featured.designation}
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* Standard cards */}
-            {rest.map((f) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-8">
+            {group.faculty.map((f) => (
               <div key={f.name} className="group">
                 <div
-                  className="aspect-[4/5] overflow-hidden mb-4 sm:mb-5 border transition-colors duration-500"
+                  className="aspect-[3/4] overflow-hidden mb-3 border transition-colors duration-500"
                   style={{ background: "#111", borderColor: `${GOLD}1A` }}
                 >
                   <img
@@ -199,20 +151,14 @@ const Faculty = () => {
                     }
                   />
                 </div>
-                <p
-                  className="text-[9px] sm:text-[10px] uppercase mb-1 tracking-[0.15em]"
-                  style={{ fontFamily: "'IBM Plex Mono', monospace", color: GOLD }}
-                >
-                  {group.tagline}
-                </p>
                 <h4
-                  className="text-lg sm:text-xl font-medium leading-snug"
+                  className="text-[15px] sm:text-base font-medium leading-snug"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   {f.name}
                 </h4>
                 <p
-                  className="text-[10px] opacity-50 leading-relaxed uppercase mt-1.5 tracking-tight"
+                  className="text-[9px] opacity-50 leading-relaxed uppercase mt-1 tracking-tight"
                   style={{ fontFamily: "'IBM Plex Mono', monospace" }}
                 >
                   {f.designation}
@@ -222,12 +168,11 @@ const Faculty = () => {
           </div>
         </div>
 
-        {/* Footer summary — the other two institutions */}
         <div
-          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 pt-8 border-t"
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-6 border-t"
           style={{ borderColor: `${GOLD}1A` }}
         >
-          <div className="flex flex-wrap gap-8 sm:gap-12">
+          <div className="flex flex-wrap gap-6 sm:gap-10">
             {groups
               .filter((g) => g.id !== activeId)
               .map((g) => (
@@ -237,13 +182,13 @@ const Faculty = () => {
                   className="text-left group"
                 >
                   <p
-                    className="text-[9px] uppercase tracking-[0.25em] mb-1 transition-opacity group-hover:opacity-100"
+                    className="text-[9px] uppercase tracking-[0.25em] mb-0.5"
                     style={{ fontFamily: "'IBM Plex Mono', monospace", color: GOLD }}
                   >
                     {g.name}
                   </p>
                   <p
-                    className="text-base sm:text-lg italic transition-colors"
+                    className="text-sm italic"
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
                   >
                     {g.faculty.length} Faculty Members →
@@ -252,7 +197,7 @@ const Faculty = () => {
               ))}
           </div>
           <p
-            className="text-[10px] uppercase opacity-30 tracking-[0.2em]"
+            className="text-[9px] uppercase opacity-30 tracking-[0.2em]"
             style={{ fontFamily: "'IBM Plex Mono', monospace" }}
           >
             Select an institution to explore
