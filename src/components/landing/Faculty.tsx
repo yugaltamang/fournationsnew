@@ -125,7 +125,7 @@ const Faculty = () => {
                         alt={f.name}
                         loading="lazy"
                         decoding="async"
-                        className={"w-full h-full object-cover " + (group.id === "india" ? "object-[50%_10%] scale-105" : "object-center")}
+                        className={"w-full h-full object-cover " + (f.name === "Dr. Rajita Chaudhuri" ? "object-[45%_20%] scale-[1.8]" : group.id === "india" ? "object-[50%_10%] scale-105" : "object-center")}
                       />
                     </div>
                   </div>
