@@ -113,29 +113,29 @@ const Faculty = () => {
               {group.sub} · {group.faculty.length} Faculty
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-border border border-border">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
             {group.faculty.map((f) => (
-              <div key={f.name} className="bg-background group">
-                <div className="aspect-[3/4] overflow-hidden bg-secondary/40">
-                  <img
-                    src={f.photo}
-                    alt={f.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
-                  />
+              <div key={f.name} className="flex flex-col items-center text-center group">
+                <div className="relative mb-3">
+                  <div className="w-[96px] h-[96px] rounded-full p-[2px] bg-gradient-to-br from-primary to-primary/40 transition-all duration-300">
+                    <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                      <img
+                        src={f.photo}
+                        alt={f.name}
+                        loading="lazy"
+                        decoding="async"
+                        className={"w-full h-full object-cover " + (group.id === "india" ? "object-[50%_10%] scale-105" : "object-center")}
+                      />
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-md bg-primary" />
                 </div>
-                <div className="p-4 sm:p-5">
-                  <h4 className="font-display text-sm sm:text-base leading-tight text-balance mb-1.5">
-                    {f.name}
-                  </h4>
-                  <p className="text-[11px] sm:text-xs text-muted-foreground leading-snug">
-                    {f.designation}
-                  </p>
-                </div>
+                <p className="text-sm font-semibold text-foreground leading-tight">{f.name}</p>
+                <p className="text-[11px] text-muted-foreground leading-snug mt-1">{f.designation}</p>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
