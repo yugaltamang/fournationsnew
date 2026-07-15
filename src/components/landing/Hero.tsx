@@ -47,7 +47,13 @@ const companies = [
   "Arctos",
 ];
 
-const Hero = () => (
+const Hero = () => {
+  const [slide, setSlide] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setSlide((s) => (s + 1) % UNIVERSITY_SLIDES.length), 4000);
+    return () => clearInterval(t);
+  }, []);
+  return (
   <section className="relative pt-24 sm:pt-32 pb-14 sm:pb-20 overflow-hidden">
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
@@ -58,13 +64,13 @@ const Hero = () => (
         <h1 className="font-display text-[clamp(2rem,7vw,5rem)] leading-[0.95] font-medium text-balance break-words">
           Four Countries.
           <br />
-          <em className="italic mu-hero-gradient-text not-italic font-normal">Three Credentials.</em>
+          <em className="italic mu-hero-gradient-text not-italic font-normal">Three Top-Ranked Universities.</em>
           <br />
           One Global Career.
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Study across four global business hubs with Masters' Union, Imperial College London, and CUHK Business School, culminating in a Dubai finale. Earn three credentials and a lifelong global network.
+          Study across four global business hubs with Masters' Union, Imperial College London (#2 QS World University Rankings 2025), and CUHK Business School (Top 50 Global MBA, Financial Times) — culminating in a Dubai finale. Earn three credentials and a lifelong global network.
         </p>
 
         <div className="mt-6 sm:mt-8">
