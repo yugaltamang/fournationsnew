@@ -2,7 +2,7 @@ import { ApplyWidget } from "./ApplyWidget";
 // Hero showcases iconic monuments for the 4 cohort cities
 import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
-import threeUniversitiesImage from "@/assets/hero/three-universities.jpg";
+import fourCountriesImage from "@/assets/hero/four-countries.png";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
 import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
 import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
@@ -112,23 +112,14 @@ const Hero = () => (
       </div>
 
       <div className="hidden lg:block lg:col-span-5">
-        <div className="relative">
-          <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 blur-2xl pointer-events-none" />
-          <div className="relative overflow-hidden border border-border shadow-bold">
-            <img
-              src={threeUniversitiesImage}
-              alt="Imperial College London, CUHK Hong Kong, and India Gate New Delhi — three university cities"
-              width={912}
-              height={1200}
-              className="w-full h-[620px] object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 p-5 flex flex-col gap-1.5 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/85">
-              <div className="flex items-center gap-2"><span className="w-4 h-px bg-primary" />London · Imperial College</div>
-              <div className="flex items-center gap-2"><span className="w-4 h-px bg-primary" />Hong Kong · CUHK</div>
-              <div className="flex items-center gap-2"><span className="w-4 h-px bg-primary" />New Delhi · Masters' Union</div>
-            </div>
-          </div>
+        <div className="relative max-w-[420px] mx-auto">
+          <img
+            src={fourCountriesImage}
+            alt="India Gate Delhi, London Eye and Big Ben, Hong Kong skyline, and Burj Khalifa Dubai — four countries collage"
+            width={840}
+            height={1120}
+            className="w-full h-auto object-contain"
+          />
         </div>
       </div>
     </div>
