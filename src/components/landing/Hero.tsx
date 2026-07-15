@@ -14,6 +14,8 @@ import shiprocketLogo from "@/assets/immersion-logos/shiprocket.png.asset.json";
 import niviaLogo from "@/assets/immersion-logos/nivia.png.asset.json";
 import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
 import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
+import iflytekLogo from "@/assets/immersion-logos/iflytek.png.asset.json";
+import airportHkLogo from "@/assets/immersion-logos/airport-authority-hk.png.asset.json";
 
 const UNIVERSITY_SLIDES = [
   { src: uniMastersUnion, name: "Masters' Union", location: "Gurugram, India" },
@@ -31,6 +33,8 @@ const LOGO_MAP: Record<string, string> = {
   "Nivia Sports": niviaLogo.url,
   "LPU Jalandhar": lpuLogo.url,
   Arctos: arctosLogo.url,
+  iFlytek: iflytekLogo.url,
+  "Airport Authority Hong Kong": airportHkLogo.url,
 };
 
 const SMALL_LOGOS = new Set(["Shiprocket", "Nivia Sports", "Arctos", "Addverb"]);
@@ -45,6 +49,8 @@ const companies = [
   "Nivia Sports",
   "LPU Jalandhar",
   "Arctos",
+  "iFlytek",
+  "Airport Authority Hong Kong",
 ];
 
 const Hero = () => {
