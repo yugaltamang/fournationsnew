@@ -118,8 +118,8 @@ const Hero = () => {
             { n: "2", l: "Global University Partners" },
           ].map((s) => (
             <div key={s.l} className="min-w-0">
-              <div className="font-display text-3xl sm:text-4xl md:text-5xl font-medium leading-none">{s.n}</div>
-              <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mt-2 leading-tight">{s.l}</div>
+              <div className="font-display text-2xl sm:text-4xl md:text-5xl font-medium leading-none">{s.n}</div>
+              <div className="text-[9px] sm:text-xs uppercase tracking-widest text-muted-foreground mt-2 leading-tight">{s.l}</div>
             </div>
           ))}
         </div>
