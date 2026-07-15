@@ -4,6 +4,7 @@ import Nations from "@/components/landing/Nations";
 import Curriculum from "@/components/landing/Curriculum";
 import Immersions from "@/components/landing/Immersions";
 import Outclass from "@/components/landing/Outclass";
+import Faculty from "@/components/landing/Faculty";
 import CXO from "@/components/landing/CXO";
 import Outcomes from "@/components/landing/Outcomes";
 import WhatsIncluded from "@/components/landing/WhatsIncluded";
