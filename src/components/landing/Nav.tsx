@@ -48,12 +48,12 @@ const Nav = () => {
             />
           </a>
 
-          <nav className="flex items-center gap-1 text-sm font-medium">
+          <nav className="flex items-center gap-0 text-xs font-medium">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="group relative flex items-center gap-2 px-4 py-2 whitespace-nowrap transition-colors text-muted-foreground hover:text-foreground"
+                className="group relative flex items-center gap-2 px-2.5 xl:px-3 py-2 whitespace-nowrap transition-colors text-muted-foreground hover:text-foreground"
               >
                 <span className="relative">
                   {l.label}
