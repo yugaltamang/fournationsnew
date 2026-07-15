@@ -58,7 +58,7 @@ const Hero = () => {
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
 
-    <div className="container relative grid lg:grid-cols-12 gap-10 items-end">
+    <div className="container relative grid lg:grid-cols-12 gap-10 items-start">
         <div className="lg:col-span-7 animate-fade-up">
 
         <h1 className="font-display text-[clamp(1.6rem,5.2vw,3.75rem)] leading-[0.98] font-medium text-balance break-words">
