@@ -17,8 +17,8 @@ import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
 
 const UNIVERSITY_SLIDES = [
   { src: uniMastersUnion, name: "Masters' Union", location: "Gurugram, India" },
-  { src: uniImperial, name: "Imperial College London", location: "London, UK · #2 QS World 2025" },
-  { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong · Top 50 Global MBA (FT)" },
+  { src: uniImperial, name: "Imperial College London", location: "London, United Kingdom" },
+  { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong SAR" },
 ];
 
 const LOGO_MAP: Record<string, string> = {
