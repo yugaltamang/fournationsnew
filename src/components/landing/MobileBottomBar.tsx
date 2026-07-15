@@ -7,7 +7,7 @@ const navItems = [
   { label: "Pedigree", href: "#pedigree", icon: Landmark },
   { label: "Outclass", href: "#outclass", icon: GraduationCap },
   { label: "Faculty", href: "#faculty-section", icon: Users },
-  { label: "CXO", href: "#faculty", icon: Briefcase },
+  
   { label: "Outcomes", href: "#outcomes", icon: Trophy },
   { label: "Admissions", href: "#admissions", icon: ClipboardCheck },
   { label: "Fees", href: "#whats-included", icon: Wallet },
