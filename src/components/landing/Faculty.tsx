@@ -71,8 +71,8 @@ const GOLD = "#C5A059";
 
 const Faculty = () => {
   const [activeId, setActiveId] = useState(groups[0].id);
-  const group = groups.find((g) => g.id === activeId) ?? groups[0];
-  const [featured, ...rest] = group.faculty;
+  const activeIndex = groups.findIndex((g) => g.id === activeId);
+  const group = groups[activeIndex >= 0 ? activeIndex : 0];
 
   return (
     <section
