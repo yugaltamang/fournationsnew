@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
 import { ApplyWidget } from "./ApplyWidget";
-// Hero showcases iconic monuments for the 4 cohort cities
 import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
-import fourCountriesImage from "@/assets/hero/four-countries.png";
+import uniMastersUnion from "@/assets/hero/uni-masters-union.jpg";
+import uniImperial from "@/assets/hero/uni-imperial.jpg";
+import uniCuhk from "@/assets/hero/uni-cuhk.jpg";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
 import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
 import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
@@ -12,6 +14,12 @@ import shiprocketLogo from "@/assets/immersion-logos/shiprocket.png.asset.json";
 import niviaLogo from "@/assets/immersion-logos/nivia.png.asset.json";
 import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
 import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
+
+const UNIVERSITY_SLIDES = [
+  { src: uniMastersUnion, name: "Masters' Union", location: "Gurugram, India" },
+  { src: uniImperial, name: "Imperial College London", location: "London, UK · #2 QS World 2025" },
+  { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong · Top 50 Global MBA (FT)" },
+];
 
 const LOGO_MAP: Record<string, string> = {
   Addverb: addverbLogo.url,
@@ -39,7 +47,13 @@ const companies = [
   "Arctos",
 ];
 
-const Hero = () => (
+const Hero = () => {
+  const [slide, setSlide] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setSlide((s) => (s + 1) % UNIVERSITY_SLIDES.length), 4000);
+    return () => clearInterval(t);
+  }, []);
+  return (
   <section className="relative pt-24 sm:pt-32 pb-14 sm:pb-20 overflow-hidden">
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
@@ -50,13 +64,13 @@ const Hero = () => (
         <h1 className="font-display text-[clamp(2rem,7vw,5rem)] leading-[0.95] font-medium text-balance break-words">
           Four Countries.
           <br />
-          <em className="italic mu-hero-gradient-text not-italic font-normal">Three Credentials.</em>
+          <em className="italic mu-hero-gradient-text not-italic font-normal">Three Top-Ranked Universities.</em>
           <br />
           One Global Career.
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Study across four global business hubs with Masters' Union, Imperial College London, and CUHK Business School, culminating in a Dubai finale. Earn three credentials and a lifelong global network.
+          Study across four global business hubs with Masters' Union, Imperial College London (#2 QS World University Rankings 2025), and CUHK Business School (Top 50 Global MBA, Financial Times) — culminating in a Dubai finale. Earn three credentials and a lifelong global network.
         </p>
 
         <div className="mt-6 sm:mt-8">
@@ -112,16 +126,37 @@ const Hero = () => (
       </div>
 
       <div className="hidden lg:block lg:col-span-5">
-        <div className="relative">
-          <img
-            src={fourCountriesImage}
-            alt="Delhi, London, Hong Kong, and Dubai skylines — four countries of the programme"
-            width={900}
-            height={1200}
-            className="w-full h-[640px] object-cover"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+        <div className="relative h-[640px] overflow-hidden">
+          {UNIVERSITY_SLIDES.map((s, i) => (
+            <img
+              key={s.name}
+              src={s.src}
+              alt={`${s.name} — ${s.location}`}
+              width={900}
+              height={1200}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === slide ? "opacity-100" : "opacity-0"}`}
+            />
+          ))}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background/40" />
+
+          <div className="absolute left-5 right-5 bottom-5 flex items-end justify-between gap-4">
+            <div className="min-w-0">
+              <div className="font-display text-lg text-foreground leading-tight truncate">{UNIVERSITY_SLIDES[slide].name}</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1 truncate">{UNIVERSITY_SLIDES[slide].location}</div>
+            </div>
+            <div className="flex gap-1.5 shrink-0">
+              {UNIVERSITY_SLIDES.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Show university ${i + 1}`}
+                  onClick={() => setSlide(i)}
+                  className={`h-1.5 rounded-full transition-all ${i === slide ? "w-6 bg-primary" : "w-1.5 bg-muted-foreground/40 hover:bg-muted-foreground/70"}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -158,6 +193,7 @@ const Hero = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Hero;
