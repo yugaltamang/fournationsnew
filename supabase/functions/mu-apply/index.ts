@@ -9,10 +9,12 @@ const SEND_OTP_ENDPOINT = "https://api-v2.mastersunion.org/api/v2/org/student-au
 const VERIFY_OTP_ENDPOINT = "https://api-v2.mastersunion.org/api/v2/org/student-auth/verify-otp-pgp";
 const APPLICATION_LOGIN_URL = "https://ai-first-operator.mastersunion.org/by-pass-student-login/";
 
-// 4 Nations MBA form IDs (India + International share this until an INTL FormID is provided)
+// 4 Nations MBA form IDs and program IDs (India vs International)
 const INDIA_FORM_UUID = "ecc2e087-399c-4668-b57e-f0e3c656797a";
-const INTL_FORM_UUID = "ecc2e087-399c-4668-b57e-f0e3c656797a";
-const PROGRAM_ID = 56;
+const INTL_FORM_UUID = "7d157338-e441-4a3d-96de-23894aa5f997";
+const INDIA_PROGRAM_ID = 56;
+const INTL_PROGRAM_ID = 78;
+const programIdFor = (iso: string) => (String(iso || "IN").toUpperCase() === "IN" ? INDIA_PROGRAM_ID : INTL_PROGRAM_ID);
 
 const GENERIC_ERR = "Something went wrong. Please try again.";
 
