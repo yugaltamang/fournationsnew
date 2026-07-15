@@ -21,6 +21,8 @@ import bluetokaiLogo from "@/assets/immersion-logos/bluetokai.png.asset.json";
 import shiprocketLogo from "@/assets/immersion-logos/shiprocket.png.asset.json";
 import niviaLogo from "@/assets/immersion-logos/nivia.png.asset.json";
 import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
+import iflytekLogo from "@/assets/immersion-logos/iflytek.png.asset.json";
+import airportHkLogo from "@/assets/immersion-logos/airport-authority-hk.png.asset.json";
 
 /* Brand → white logo URL. Only mapped brands render as an image chip; others fall back to a text chip. */
 const LOGO_MAP: Record<string, string> = {
@@ -32,6 +34,8 @@ const LOGO_MAP: Record<string, string> = {
   "Shiprocket": shiprocketLogo.url,
   "Nivia Sports": niviaLogo.url,
   "LPU Jalandhar": lpuLogo.url,
+  "iFlytek": iflytekLogo.url,
+  "Airport Authority Hong Kong": airportHkLogo.url,
 };
 
 
