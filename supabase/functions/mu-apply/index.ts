@@ -130,7 +130,7 @@ Deno.serve(async (req) => {
       if (typeof phone !== "string" || !/^\d{6,15}$/.test(phone)) return json({ ok: false, error: "Please enter a valid mobile number." });
       const res = await fetch(SEND_OTP_ENDPOINT, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone, countryIsoCode: String(isoCode || "IN").toUpperCase(), programId: PROGRAM_ID }),
+        body: JSON.stringify({ phone, countryIsoCode: String(isoCode || "IN").toUpperCase(), programId: programIdFor(String(isoCode || "IN")) }),
       });
       if (!res.ok) {
         const txt = await res.text().catch(() => "");
@@ -149,7 +149,7 @@ Deno.serve(async (req) => {
       if (typeof otp !== "string" || !/^\d{4,8}$/.test(otp)) return json({ ok: false, error: "Please enter the OTP." });
       const res = await fetch(VERIFY_OTP_ENDPOINT, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone, countryIsoCode: String(isoCode || "IN").toUpperCase(), otp, programId: PROGRAM_ID }),
+        body: JSON.stringify({ phone, countryIsoCode: String(isoCode || "IN").toUpperCase(), otp, programId: programIdFor(String(isoCode || "IN")) }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
