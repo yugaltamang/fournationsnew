@@ -61,7 +61,7 @@ const Hero = () => {
     <div className="container relative grid lg:grid-cols-12 gap-10 items-end">
         <div className="lg:col-span-7 animate-fade-up">
 
-        <h1 className="font-display text-[clamp(2rem,7vw,5rem)] leading-[0.95] font-medium text-balance break-words">
+        <h1 className="font-display text-[clamp(1.6rem,5.2vw,3.75rem)] leading-[0.98] font-medium text-balance break-words">
           Four Countries.
           <br />
           <em className="italic mu-hero-gradient-text not-italic font-normal">Three World-Class Campuses.</em>
