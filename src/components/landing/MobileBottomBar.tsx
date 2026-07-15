@@ -1,14 +1,18 @@
 import { ApplyWidget } from "./ApplyWidget";
 import { useEffect, useState } from "react";
-import { Menu, X, ArrowUpRight, Map, Sparkles, Trophy, FileText, ClipboardCheck, Users } from "lucide-react";
+import { Menu, X, ArrowUpRight, Map, Landmark, GraduationCap, Users, Briefcase, Trophy, ClipboardCheck, Wallet, HelpCircle, Mail } from "lucide-react";
 
 const navItems = [
   { label: "Journey", href: "#nations", icon: Map },
-  { label: "Why This", href: "#faculty", icon: Sparkles },
+  { label: "Pedigree", href: "#pedigree", icon: Landmark },
+  { label: "Outclass", href: "#outclass", icon: GraduationCap },
+  { label: "Faculty", href: "#faculty-section", icon: Users },
+  { label: "CXO", href: "#faculty", icon: Briefcase },
   { label: "Outcomes", href: "#outcomes", icon: Trophy },
   { label: "Admissions", href: "#admissions", icon: ClipboardCheck },
-  { label: "FAQ", href: "#faq", icon: FileText },
-  { label: "Apply", href: "#apply", icon: Users },
+  { label: "Fees", href: "#whats-included", icon: Wallet },
+  { label: "FAQ", href: "#faq", icon: HelpCircle },
+  { label: "Contact", href: "#contact", icon: Mail },
 ];
 
 const MobileBottomBar = () => {
