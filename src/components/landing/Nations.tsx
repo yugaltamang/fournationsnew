@@ -177,7 +177,7 @@ const Nations = () => {
         term.academic.items.length > 0 && { id: "in-class", label: term.academic.label || "In Class" },
         (term.outclass.items.length > 0 || (term.outclass.summary && term.outclass.summary.length > 0)) && { id: "out-class", label: term.outclass.label || "Out Class" },
         term.immersions && { id: "business", label: "Business Immersions" },
-        term.faculty && term.faculty.length > 0 && { id: "faculty", label: "Faculty" },
+        
         term.cultural && { id: "cultural", label: term.cultural.chip || "Cultural Immersion" },
       ].filter(Boolean) as { id: string; label: string }[]
     : [];
