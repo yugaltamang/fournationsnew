@@ -130,12 +130,8 @@ const Faculty = () => {
                   </div>
                   <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-md bg-primary" />
                 </div>
-                {group.id !== "india" && (
-                  <>
-                    <p className="text-sm font-semibold text-foreground leading-tight">{f.name}</p>
-                    <p className="text-[11px] text-muted-foreground leading-snug mt-1">{f.designation}</p>
-                  </>
-                )}
+                <p className="text-sm font-semibold text-foreground leading-tight">{f.name}</p>
+                <p className="text-[11px] text-muted-foreground leading-snug mt-1">{f.designation}</p>
               </div>
             ))}
           </div>
