@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import globeImg from "@/assets/four-nations-globe.png";
 import cxoImg from "@/assets/cxo-masterclass.webp";
-import immersionImg from "@/assets/immersion-factory.webp";
+import immersionImg from "@/assets/ventures-live.jpg";
 import SectionEyebrow from "./SectionEyebrow";
 
 const pillars = [
