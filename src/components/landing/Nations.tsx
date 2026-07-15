@@ -248,7 +248,7 @@ const Nations = () => {
         {/* Main feature board */}
         <div className="grid lg:grid-cols-12 gap-4 lg:gap-6">
           {/* Left: tabs as boarding-pass cards */}
-          <div className="lg:col-span-4 space-y-3 order-2 lg:order-1">
+          <div className="lg:col-span-4 space-y-3 order-2 lg:order-1 min-w-0">
             {nations.map((it, i) => {
               const isActive = i === active;
               return (
@@ -300,8 +300,8 @@ const Nations = () => {
           </div>
 
           {/* Right: feature panel with book-style page sweep */}
-          <div ref={panelRef} className="lg:col-span-8 order-1 lg:order-2 scroll-mt-24">
-            <div className="relative grid w-full">
+          <div ref={panelRef} className="lg:col-span-8 order-1 lg:order-2 scroll-mt-24 min-w-0">
+            <div className="relative grid w-full min-w-0">
             <article
               key={n.country}
               className={`col-start-1 row-start-1 relative border border-border bg-background z-30 transition-opacity duration-300 ${
