@@ -62,11 +62,11 @@ const Hero = () => {
         <div className="lg:col-span-7 animate-fade-up">
 
         <h1 className="font-display text-[clamp(1.6rem,5.2vw,3.75rem)] leading-[0.98] font-medium text-balance break-words">
-          Four Countries.
+          Four Nations.
           <br />
-          <em className="italic mu-hero-gradient-text not-italic font-normal">Three World-Class Campuses.</em>
+          <em className="italic mu-hero-gradient-text not-italic font-normal">Three Campuses.</em>
           <br />
-          One Borderless Career.
+          One Career Without Borders.
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed">
