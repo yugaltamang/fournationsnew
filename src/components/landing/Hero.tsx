@@ -17,8 +17,8 @@ import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
 
 const UNIVERSITY_SLIDES = [
   { src: uniMastersUnion, name: "Masters' Union", location: "Gurugram, India" },
-  { src: uniImperial, name: "Imperial College London", location: "London, UK · #2 QS World 2025" },
-  { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong · Top 50 Global MBA (FT)" },
+  { src: uniImperial, name: "Imperial College London", location: "London, United Kingdom" },
+  { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong SAR" },
 ];
 
 const LOGO_MAP: Record<string, string> = {
@@ -62,15 +62,15 @@ const Hero = () => {
         <div className="lg:col-span-7 animate-fade-up">
 
         <h1 className="font-display text-[clamp(2rem,7vw,5rem)] leading-[0.95] font-medium text-balance break-words">
-          Four Countries.
+          Learn Where the
           <br />
-          <em className="italic mu-hero-gradient-text not-italic font-normal">Three Top-Ranked Universities.</em>
+          <em className="italic mu-hero-gradient-text not-italic font-normal">World's Best Learn.</em>
           <br />
-          One Global Career.
+          Lead Anywhere.
         </h1>
 
         <p className="mt-8 sm:mt-10 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-          Study across four global business hubs with Masters' Union, Imperial College London (#2 QS World University Rankings 2025), and CUHK Business School (Top 50 Global MBA, Financial Times) — culminating in a Dubai finale. Earn three credentials and a lifelong global network.
+          Study across four global business hubs alongside three of the world's top-ranked institutions — Masters' Union, Imperial College London, and CUHK Business School — culminating in a Dubai finale. Earn three credentials and a lifelong global network.
         </p>
 
         <div className="mt-6 sm:mt-8">
