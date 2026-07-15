@@ -12,11 +12,7 @@ import drop4 from "@/assets/outclass/drop4.webp";
 import drop5 from "@/assets/outclass/drop5.webp";
 import drop6 from "@/assets/outclass/drop6.webp";
 import drop7 from "@/assets/outclass/drop7.webp";
-import creator1 from "@/assets/outclass/creator1.webp";
-import creator2 from "@/assets/outclass/creator2.webp";
-import creator3 from "@/assets/outclass/creator3.webp";
-import creator4 from "@/assets/outclass/creator4.webp";
-import creator5 from "@/assets/outclass/creator5.webp";
+import leadershipLondon from "@/assets/outclass/leadership-london.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +62,7 @@ const modules: Module[] = [
     title: "Leadership Lab - London",
     desc: "Learn how to command the room, influence every conversation, and lead with clarity under pressure through immersive simulations, executive coaching, and real-world leadership challenges.",
     icon: Video,
-    images: [creator1, creator2, creator3, creator4, creator5],
+    images: [leadershipLondon],
     pullquote: "From professionals to leaders who shape the future.",
 
 
