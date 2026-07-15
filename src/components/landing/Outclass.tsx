@@ -62,7 +62,7 @@ const modules: Module[] = [
     title: "Leadership Lab - London",
     desc: "Learn how to command the room, influence every conversation, and lead with clarity under pressure through immersive simulations, executive coaching, and real-world leadership challenges.",
     icon: Video,
-    images: [creator1, creator2, creator3, creator4, creator5],
+    images: [leadershipLondon],
     pullquote: "From professionals to leaders who shape the future.",
 
 
