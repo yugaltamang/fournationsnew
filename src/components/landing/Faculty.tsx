@@ -18,15 +18,15 @@ import gilbertPhoto from "@/assets/faculty-hk/gilbert.asset.json";
 type Faculty = { name: string; designation: string; photo: string };
 
 const indiaFaculty: Faculty[] = [
-  { name: "Dr. Bhupesh Manoharan", designation: "Dean, Masters' Union", photo: "https://images.mastersunion.link/uploads/10042026/v1/Dr.BhupeshManoharan1.webp" },
-  { name: "Dr. Garima Chaklader", designation: "Assistant Professor, Economics & Data Analysis", photo: "https://images.mastersunion.link/uploads/16042026/v1/DrGarimaChaklader.webp" },
-  { name: "Dr. Nandini Seth", designation: "Faculty, Quantitative Methods", photo: "https://images.mastersunion.link/uploads/10042026/v1/Dr.NandiniSeth2.webp" },
+  { name: "Dr. Bhupesh Manoharan", designation: "Dean, Masters' Union", photo: "https://images.mastersunion.link/uploads/17042026/v1/master1.webp" },
+  { name: "Dr. Garima Chaklader", designation: "Assistant Professor, Economics & Data Analysis", photo: "https://images.mastersunion.link/uploads/17042026/v2/master5.webp" },
+  { name: "Dr. Nandini Seth", designation: "Faculty, Quantitative Methods", photo: "https://images.mastersunion.link/uploads/17042026/v2/master2.webp" },
   { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: "https://images.mastersunion.link/uploads/14042026/v1/Dr.RajitaChaudhari.webp" },
-  { name: "Ankur Kulshrestha", designation: "Visiting Faculty, Capital Markets & Valuations", photo: "https://images.mastersunion.link/uploads/10042026/v1/AnkurKulshrestha.webp" },
-  { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/14042026/v1/RajatMathur.webp" },
-  { name: "Rashmi Malik", designation: "Visiting Faculty, Design & GenAI", photo: "https://images.mastersunion.link/uploads/14042026/v1/RashmiMalik.webp" },
-  { name: "Mayank Nagpal", designation: "Visiting Faculty, AI & No-Code · Founder, EPYC", photo: "https://images.mastersunion.link/uploads/10042026/v1/MayankNagpal.webp" },
-  { name: "Saurabh Sengupta", designation: "Teaching Master, Modern Selling", photo: "https://images.mastersunion.link/uploads/16042026/v1/SaurabhSengupta.webp" },
+  { name: "Ankur Kulshrestha", designation: "Visiting Faculty, Capital Markets & Valuations", photo: "https://images.mastersunion.link/uploads/17042026/v1/card14.webp" },
+  { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
+  { name: "Rashmi Malik", designation: "Visiting Faculty, Design & GenAI", photo: "https://images.mastersunion.link/uploads/17042026/v1/card137.webp" },
+  { name: "Mayank Nagpal", designation: "Visiting Faculty, AI & No-Code · Founder, EPYC", photo: "https://images.mastersunion.link/uploads/17042026/v1/card74.webp" },
+  { name: "Saurabh Sengupta", designation: "Teaching Master, Modern Selling", photo: "https://images.mastersunion.link/uploads/17042026/v1/card146.webp" },
 ];
 
 const londonFaculty: Faculty[] = [
