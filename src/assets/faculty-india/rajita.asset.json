@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "255baf4c-0ebf-40bb-a8f3-4347c032fe34",
+  "asset_id": "a83406ea-ab4b-4ad4-b53a-13f2cfd1114d",
   "project_id": "5c1c9e91-cd3c-4e9d-9ed8-db0ecd67ae21",
-  "url": "/__l5e/assets-v1/255baf4c-0ebf-40bb-a8f3-4347c032fe34/rajita.jpg",
-  "r2_key": "a/v1/5c1c9e91-cd3c-4e9d-9ed8-db0ecd67ae21/255baf4c-0ebf-40bb-a8f3-4347c032fe34/rajita.jpg",
-  "original_filename": "rajita.jpg",
-  "size": 397060,
-  "content_type": "image/jpeg",
-  "created_at": "2026-07-15T07:23:20Z"
+  "url": "/__l5e/assets-v1/a83406ea-ab4b-4ad4-b53a-13f2cfd1114d/rajita.png",
+  "r2_key": "a/v1/5c1c9e91-cd3c-4e9d-9ed8-db0ecd67ae21/a83406ea-ab4b-4ad4-b53a-13f2cfd1114d/rajita.png",
+  "original_filename": "rajita.png",
+  "size": 1521756,
+  "content_type": "image/png",
+  "created_at": "2026-07-15T07:47:18Z"
 }
