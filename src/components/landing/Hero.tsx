@@ -126,16 +126,37 @@ const Hero = () => {
       </div>
 
       <div className="hidden lg:block lg:col-span-5">
-        <div className="relative">
-          <img
-            src={fourCountriesImage}
-            alt="Delhi, London, Hong Kong, and Dubai skylines — four countries of the programme"
-            width={900}
-            height={1200}
-            className="w-full h-[640px] object-cover"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+        <div className="relative h-[640px] overflow-hidden">
+          {UNIVERSITY_SLIDES.map((s, i) => (
+            <img
+              key={s.name}
+              src={s.src}
+              alt={`${s.name} — ${s.location}`}
+              width={900}
+              height={1200}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === slide ? "opacity-100" : "opacity-0"}`}
+            />
+          ))}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background/40" />
+
+          <div className="absolute left-5 right-5 bottom-5 flex items-end justify-between gap-4">
+            <div className="min-w-0">
+              <div className="font-display text-lg text-foreground leading-tight truncate">{UNIVERSITY_SLIDES[slide].name}</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1 truncate">{UNIVERSITY_SLIDES[slide].location}</div>
+            </div>
+            <div className="flex gap-1.5 shrink-0">
+              {UNIVERSITY_SLIDES.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Show university ${i + 1}`}
+                  onClick={() => setSlide(i)}
+                  className={`h-1.5 rounded-full transition-all ${i === slide ? "w-6 bg-primary" : "w-1.5 bg-muted-foreground/40 hover:bg-muted-foreground/70"}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -172,6 +193,7 @@ const Hero = () => {
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Hero;
