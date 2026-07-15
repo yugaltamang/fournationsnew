@@ -9,8 +9,7 @@ const navItems = [
   { label: "Faculty", href: "#faculty-section", icon: Users },
   
   { label: "Outcomes", href: "#outcomes", icon: Trophy },
-  { label: "Admissions", href: "#admissions", icon: ClipboardCheck },
-  { label: "Fees", href: "#whats-included", icon: Wallet },
+  { label: "Admissions & Fees", href: "#admissions", icon: ClipboardCheck },
   { label: "FAQ", href: "#faq", icon: HelpCircle },
   { label: "Contact", href: "#contact", icon: Mail },
 ];
