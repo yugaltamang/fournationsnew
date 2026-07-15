@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
 import { ApplyWidget } from "./ApplyWidget";
-// Hero showcases iconic monuments for the 4 cohort cities
 import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
-import fourCountriesImage from "@/assets/hero/four-countries.png";
+import uniMastersUnion from "@/assets/hero/uni-masters-union.jpg";
+import uniImperial from "@/assets/hero/uni-imperial.jpg";
+import uniCuhk from "@/assets/hero/uni-cuhk.jpg";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
 import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
 import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
@@ -12,6 +14,12 @@ import shiprocketLogo from "@/assets/immersion-logos/shiprocket.png.asset.json";
 import niviaLogo from "@/assets/immersion-logos/nivia.png.asset.json";
 import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
 import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
+
+const UNIVERSITY_SLIDES = [
+  { src: uniMastersUnion, name: "Masters' Union", location: "Gurugram, India" },
+  { src: uniImperial, name: "Imperial College London", location: "London, UK · #2 QS World 2025" },
+  { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong · Top 50 Global MBA (FT)" },
+];
 
 const LOGO_MAP: Record<string, string> = {
   Addverb: addverbLogo.url,
