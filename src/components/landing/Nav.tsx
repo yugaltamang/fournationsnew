@@ -14,10 +14,13 @@ const Nav = () => {
 
   const links = [
     { href: "#nations", label: "Journey" },
-    { href: "#faculty", label: "Why This" },
+    { href: "#pedigree", label: "Pedigree" },
+    { href: "#outclass", label: "Outclass" },
+    { href: "#faculty-section", label: "Faculty" },
+    { href: "#faculty", label: "CXO" },
     { href: "#outcomes", label: "Outcomes" },
     { href: "#admissions", label: "Admissions" },
-    { href: "#whats-included", label: "Fee Covers" },
+    { href: "#whats-included", label: "Fees" },
     { href: "#faq", label: "FAQ" },
   ];
 
