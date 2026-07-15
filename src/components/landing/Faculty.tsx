@@ -62,7 +62,7 @@ type Group = {
 };
 
 const groups: Group[] = [
-  { id: "india", name: "Masters' Union", city: "New Delhi · India Campus", tagline: "Practitioner Faculty", faculty: indiaFaculty },
+  { id: "india", name: "Masters' Union", city: "GURUGRAM · INDIA CAMPUS", tagline: "Practitioner Faculty", faculty: indiaFaculty },
   { id: "london", name: "Imperial College London", city: "London · United Kingdom", tagline: "Research & Enterprise", faculty: londonFaculty },
   { id: "hk", name: "CUHK Business School", city: "Hong Kong SAR", tagline: "Asian Markets & Innovation", faculty: hkFaculty },
 ];
