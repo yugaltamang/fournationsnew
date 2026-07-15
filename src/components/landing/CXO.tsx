@@ -217,53 +217,54 @@ const CXO = () => {
           {pillars.map((p, i) => (
             <article
               key={i}
-              className="relative overflow-hidden border border-border h-[420px]"
+              className="relative overflow-hidden border border-border bg-background flex flex-col"
             >
-              <img
-                src={p.image}
-                alt={p.tag}
-                loading="lazy"
-                decoding="async"
-                className={`absolute inset-0 w-full h-full ${
-                  p.fit === "contain" ? "object-contain p-6 bg-[hsl(0,0%,6%)]" : "object-cover"
-                }`}
-              />
-              <div className="absolute inset-0 bg-background/40" />
-
-              <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                <span className="tag-pill">
-                  {p.tag}
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/70">
-                  /0{i + 1}
-                </span>
+              {/* Image block */}
+              <div className="relative h-48 w-full overflow-hidden">
+                <img
+                  src={p.image}
+                  alt={p.tag}
+                  loading="lazy"
+                  decoding="async"
+                  className={`absolute inset-0 w-full h-full ${
+                    p.fit === "contain" ? "object-contain p-6 bg-[hsl(0,0%,6%)]" : "object-cover"
+                  }`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                  <span className="tag-pill">{p.tag}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+                    /0{i + 1}
+                  </span>
+                </div>
               </div>
 
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
+              {/* Content block */}
+              <div className="relative p-5 bg-background">
                 <div className="flex items-baseline gap-2 mb-3">
-                  <span className="font-display text-3xl sm:text-4xl md:text-5xl mu-hero-gradient-text leading-none">
+                  <span className="font-display text-3xl mu-hero-gradient-text leading-none">
                     {p.stat.value}
                   </span>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                     {p.stat.label}
                   </span>
                 </div>
-                <h3 className="font-display text-base sm:text-lg md:text-xl text-balance mb-2">
+                <h3 className="font-display text-lg text-balance mb-2">
                   {p.title}{" "}
                   <em className="italic mu-hero-gradient-text not-italic">
                     {p.titleEm}
                   </em>
                 </h3>
-                <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed mb-3">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                   {p.body}
                 </p>
                 <ul className="space-y-1.5 border-t border-border/60 pt-3">
                   {p.points.map((pt, j) => (
                     <li
                       key={j}
-                      className="flex items-start gap-2 text-xs sm:text-sm text-foreground/85 leading-snug"
+                      className="flex items-start gap-2 text-sm text-foreground/85 leading-snug"
                     >
-                      <Check className="w-3 h-3 text-primary mt-0.5 shrink-0" />
+                      <Check className="w-3.5 h-3.5 text-primary mt-0.5 shrink-0" />
                       <span>{pt}</span>
                     </li>
                   ))}
