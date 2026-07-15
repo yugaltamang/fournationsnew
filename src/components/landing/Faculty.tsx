@@ -193,7 +193,7 @@ const Faculty = () => {
                     className="text-sm italic"
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
                   >
-                    {g.faculty.length} Faculty Members →
+                    Faculty Members →
                   </p>
                 </button>
               ))}
