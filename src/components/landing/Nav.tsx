@@ -17,7 +17,7 @@ const Nav = () => {
     { href: "#pedigree", label: "Pedigree" },
     { href: "#outclass", label: "Outclass" },
     { href: "#faculty-section", label: "Faculty" },
-    { href: "#faculty", label: "CXO" },
+    
     { href: "#outcomes", label: "Outcomes" },
     { href: "#admissions", label: "Admissions" },
     { href: "#whats-included", label: "Fees" },
