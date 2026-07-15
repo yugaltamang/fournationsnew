@@ -77,7 +77,7 @@ const Faculty = () => {
   return (
     <section
       id="faculty-section"
-      className="border-t border-border py-20 md:py-28 lg:py-32"
+      className="border-t border-border py-14 md:py-20"
       style={{ background: "#080808", color: "#F5F5F0" }}
     >
       <div className="container max-w-7xl">
