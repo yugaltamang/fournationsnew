@@ -111,7 +111,26 @@ const Hero = () => (
         </div>
       </div>
 
-      <div className="hidden lg:block lg:col-span-5" />
+      <div className="hidden lg:block lg:col-span-5">
+        <div className="relative">
+          <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 blur-2xl pointer-events-none" />
+          <div className="relative overflow-hidden border border-border shadow-bold">
+            <img
+              src={threeUniversitiesImage}
+              alt="Imperial College London, CUHK Hong Kong, and India Gate New Delhi — three university cities"
+              width={912}
+              height={1200}
+              className="w-full h-[620px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 p-5 flex flex-col gap-1.5 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/85">
+              <div className="flex items-center gap-2"><span className="w-4 h-px bg-primary" />London · Imperial College</div>
+              <div className="flex items-center gap-2"><span className="w-4 h-px bg-primary" />Hong Kong · CUHK</div>
+              <div className="flex items-center gap-2"><span className="w-4 h-px bg-primary" />New Delhi · Masters' Union</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div className="container mt-14 sm:mt-16 pt-8 sm:pt-10 border-t border-border relative z-10">
