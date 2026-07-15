@@ -301,48 +301,16 @@ const Nations = () => {
 
           {/* Right: feature panel with book-style page sweep */}
           <div ref={panelRef} className="lg:col-span-8 order-1 lg:order-2 scroll-mt-24">
-            <div
-              className="relative grid w-full overflow-visible [perspective:2200px]"
-              style={{ transformStyle: "preserve-3d" }}
-            >
-            {/* Spine shadow on the left edge */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-y-0 left-0 w-6 z-40"
-              style={{
-                background:
-                  "linear-gradient(90deg, hsl(var(--foreground) / 0.22) 0%, hsl(var(--foreground) / 0.08) 42%, transparent 100%)",
-              }}
-            />
+            <div className="relative grid w-full">
             <article
               key={n.country}
-              className={`col-start-1 row-start-1 relative border border-border bg-background z-30 origin-left ${
-                flipped ? "pointer-events-none" : ""
+              className={`col-start-1 row-start-1 relative border border-border bg-background z-30 transition-opacity duration-300 ${
+                flipped ? "opacity-0 pointer-events-none hidden" : "opacity-100"
               }`}
               style={{
-                transitionProperty: "transform, opacity, filter",
-                transitionDuration: "2500ms",
-                transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)",
-                transform: flipped
-                  ? "translateX(-105%) rotateY(-34deg) rotateZ(-1.5deg) scale(0.96)"
-                  : "translateX(0) rotateY(0deg) rotateZ(0deg) scale(1)",
-                transformOrigin: "left center",
-                transformStyle: "preserve-3d",
-                willChange: "transform",
-                opacity: flipped ? 0 : 1,
-                filter: flipped ? "blur(0.4px)" : "blur(0px)",
                 boxShadow: "0 10px 30px -10px hsl(var(--foreground) / 0.28)",
               }}
             >
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 z-40 transition-opacity duration-500"
-                style={{
-                  opacity: flipped ? 1 : 0,
-                  background:
-                    "linear-gradient(90deg, hsl(var(--background) / 0.88) 0%, transparent 34%, hsl(var(--foreground) / 0.16) 78%, hsl(var(--background) / 0.72) 100%)",
-                }}
-              />
               {/* Hero image with country mark overlay */}
               <div className="relative overflow-hidden">
                 <img
@@ -353,6 +321,7 @@ const Nations = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent" />
+
 
                 {/* Top meta strip */}
                 <div className="absolute top-0 inset-x-0 flex items-start justify-end gap-2 p-3 sm:p-6">
@@ -485,27 +454,13 @@ const Nations = () => {
 
             {/* Underneath page: curriculum (revealed after the page sweep) */}
             <article
-              className={`col-start-1 row-start-1 border border-border bg-background z-10 ${
+              className={`col-start-1 row-start-1 border border-border bg-background z-10 transition-opacity duration-300 ${
                 flipped
-                  ? "opacity-100 translate-y-0 max-h-[6000px] pointer-events-auto delay-150"
-                  : "opacity-0 translate-y-5 max-h-0 overflow-hidden pointer-events-none"
+                  ? "opacity-100 pointer-events-auto"
+                  : "opacity-0 max-h-0 overflow-hidden pointer-events-none hidden"
               }`}
-              style={{
-                transitionProperty: "opacity, transform, max-height",
-                transitionDuration: "2000ms",
-                transitionTimingFunction: "ease-out",
-              }}
               aria-hidden={!flipped}
             >
-              {/* inner spine shading on the left edge of the back page */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-y-0 left-0 w-8"
-                style={{
-                  background:
-                    "linear-gradient(90deg, hsl(0 0% 0% / 0.35) 0%, transparent 100%)",
-                }}
-              />
               <div className="sticky top-0 z-10 flex items-center justify-between gap-3 px-4 sm:px-8 py-3 sm:py-4 border-b border-border bg-background/95 backdrop-blur">
                 <div className="min-w-0">
                   <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
