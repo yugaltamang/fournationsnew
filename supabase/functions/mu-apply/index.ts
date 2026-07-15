@@ -97,14 +97,24 @@ Deno.serve(async (req) => {
     }
 
     if (action === "login-email") {
-      const { email, password } = body;
+      const { email, password, isoCode } = body;
       if (typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({ ok: false, error: "Please enter a valid email." });
       if (typeof password !== "string" || !password) return json({ ok: false, error: "Password is required." });
-      const res = await fetch(LOGIN_EMAIL_ENDPOINT, {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, programId: PROGRAM_ID }),
-      });
-      const data = await res.json().catch(() => ({}));
+      const tryLogin = async (pid: number) => {
+        const r = await fetch(LOGIN_EMAIL_ENDPOINT, {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password, programId: pid }),
+        });
+        return { r, d: await r.json().catch(() => ({})) };
+      };
+      const primary = programIdFor(String(isoCode || ""));
+      let { r: res, d: data } = await tryLogin(primary);
+      // If no isoCode was provided and the primary program didn't match, try the other.
+      if (!res.ok && !isoCode) {
+        const other = primary === INDIA_PROGRAM_ID ? INTL_PROGRAM_ID : INDIA_PROGRAM_ID;
+        const alt = await tryLogin(other);
+        if (alt.r.ok) { res = alt.r; data = alt.d; }
+      }
       if (!res.ok) {
         const msg = pickMsg(data).toLowerCase();
         if (res.status === 401 || /invalid|incorrect|wrong|password|credential/.test(msg)) return json({ ok: false, error: "Incorrect email or password." });
@@ -113,6 +123,7 @@ Deno.serve(async (req) => {
       }
       return json({ ok: true, formLink: extractFormLink(data) });
     }
+
 
     if (action === "send-otp") {
       const { phone, isoCode } = body;
