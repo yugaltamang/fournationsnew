@@ -48,7 +48,7 @@ const partners = [
 ];
 
 const Immersions = () => (
-  <section className="py-14 sm:py-20 md:py-28 relative overflow-hidden">
+  <section id="pedigree" className="py-14 sm:py-20 md:py-28 relative overflow-hidden">
     {/* Ambient backdrop */}
     <div
       aria-hidden
