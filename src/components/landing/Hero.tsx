@@ -125,7 +125,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hidden lg:block lg:col-span-5">
+      <div className="hidden lg:block lg:col-span-5 lg:-mt-10">
         <div className="relative h-[640px] overflow-hidden">
           {UNIVERSITY_SLIDES.map((s, i) => (
             <img
