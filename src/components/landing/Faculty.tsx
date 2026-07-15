@@ -133,7 +133,7 @@ const Faculty = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-4 gap-y-7">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-4 gap-y-7">
             {group.faculty.map((f) => (
               <div key={f.name} className="group flex flex-col items-center text-center">
                 <div

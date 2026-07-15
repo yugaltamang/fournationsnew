@@ -58,8 +58,8 @@ const Hero = () => {
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
 
-    <div className="container relative grid lg:grid-cols-12 gap-10 items-start">
-        <div className="lg:col-span-7 animate-fade-up">
+    <div className="container relative grid md:grid-cols-12 gap-10 items-start">
+        <div className="md:col-span-7 animate-fade-up">
 
         <h1 className="font-display text-[clamp(1.6rem,5.2vw,3.75rem)] leading-[0.98] font-medium text-balance break-words">
           Four Nations.
@@ -111,22 +111,22 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="mt-10 sm:mt-14 grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-5 sm:gap-6 max-w-3xl border-t border-border pt-6 sm:pt-8">
+        <div className="mt-10 sm:mt-14 grid grid-cols-3 gap-x-3 sm:gap-6 max-w-3xl border-t border-border pt-6 sm:pt-8">
           {[
             { n: "9", l: "Months · Core Program" },
             { n: "4", l: "Nations · Cultures · Markets" },
             { n: "2", l: "Global University Partners" },
           ].map((s) => (
             <div key={s.l} className="min-w-0">
-              <div className="font-display text-3xl sm:text-4xl md:text-5xl font-medium leading-none">{s.n}</div>
-              <div className="text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground mt-2 leading-tight">{s.l}</div>
+              <div className="font-display text-2xl sm:text-4xl md:text-5xl font-medium leading-none">{s.n}</div>
+              <div className="text-[9px] sm:text-xs uppercase tracking-widest text-muted-foreground mt-2 leading-tight">{s.l}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="hidden lg:block lg:col-span-5 lg:-mt-10">
-        <div className="relative h-[640px] overflow-hidden">
+      <div className="hidden md:block md:col-span-5 md:-mt-6 lg:-mt-10">
+        <div className="relative h-[480px] lg:h-[640px] overflow-hidden">
           {UNIVERSITY_SLIDES.map((s, i) => (
             <img
               key={s.name}
