@@ -454,27 +454,13 @@ const Nations = () => {
 
             {/* Underneath page: curriculum (revealed after the page sweep) */}
             <article
-              className={`col-start-1 row-start-1 border border-border bg-background z-10 ${
+              className={`col-start-1 row-start-1 border border-border bg-background z-10 transition-opacity duration-300 ${
                 flipped
-                  ? "opacity-100 translate-y-0 max-h-[6000px] pointer-events-auto delay-150"
-                  : "opacity-0 translate-y-5 max-h-0 overflow-hidden pointer-events-none"
+                  ? "opacity-100 pointer-events-auto"
+                  : "opacity-0 max-h-0 overflow-hidden pointer-events-none hidden"
               }`}
-              style={{
-                transitionProperty: "opacity, transform, max-height",
-                transitionDuration: "2000ms",
-                transitionTimingFunction: "ease-out",
-              }}
               aria-hidden={!flipped}
             >
-              {/* inner spine shading on the left edge of the back page */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-y-0 left-0 w-8"
-                style={{
-                  background:
-                    "linear-gradient(90deg, hsl(0 0% 0% / 0.35) 0%, transparent 100%)",
-                }}
-              />
               <div className="sticky top-0 z-10 flex items-center justify-between gap-3 px-4 sm:px-8 py-3 sm:py-4 border-b border-border bg-background/95 backdrop-blur">
                 <div className="min-w-0">
                   <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
