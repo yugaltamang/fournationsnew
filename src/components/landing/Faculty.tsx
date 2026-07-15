@@ -1,5 +1,4 @@
 import { useState } from "react";
-import SectionEyebrow from "./SectionEyebrow";
 
 import gillesPhoto from "@/assets/faculty-london/gilles.asset.json";
 import willPhoto from "@/assets/faculty-london/will.asset.json";
@@ -16,13 +15,18 @@ import liaoPhoto from "@/assets/faculty-hk/liao.asset.json";
 import gilbertPhoto from "@/assets/faculty-hk/gilbert.asset.json";
 import rajitaPhoto from "@/assets/faculty-india/rajita.asset.json";
 
-type Faculty = { name: string; designation: string; photo: string };
+type Faculty = {
+  name: string;
+  designation: string;
+  photo: string;
+  focusClass?: string;
+};
 
 const indiaFaculty: Faculty[] = [
   { name: "Dr. Bhupesh Manoharan", designation: "Dean, Masters' Union", photo: "https://images.mastersunion.link/uploads/17042026/v1/master1.webp" },
   { name: "Dr. Garima Chaklader", designation: "Assistant Professor, Economics & Data Analysis", photo: "https://images.mastersunion.link/uploads/17042026/v2/master5.webp" },
   { name: "Dr. Nandini Seth", designation: "Faculty, Quantitative Methods", photo: "https://images.mastersunion.link/uploads/17042026/v2/master2.webp" },
-  { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url },
+  { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url, focusClass: "object-[45%_20%] scale-[1.4]" },
   { name: "Ankur Kulshrestha", designation: "Visiting Faculty, Capital Markets & Valuations", photo: "https://images.mastersunion.link/uploads/17042026/v1/card14.webp" },
   { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
   { name: "Rashmi Malik", designation: "Visiting Faculty, Design & GenAI", photo: "https://images.mastersunion.link/uploads/17042026/v1/card137.webp" },
@@ -49,94 +53,210 @@ const hkFaculty: Faculty[] = [
   { name: "Dr. Gilbert Cheung", designation: "Honorary Institute Fellow", photo: gilbertPhoto.url },
 ];
 
-const groups = [
-  { id: "india", flag: "🇮🇳", label: "India", sub: "Masters' Union", faculty: indiaFaculty },
-  { id: "london", flag: "🇬🇧", label: "London", sub: "Imperial College London", faculty: londonFaculty },
-  { id: "hk", flag: "🇭🇰", label: "Hong Kong", sub: "CUHK Business School", faculty: hkFaculty },
+type Group = {
+  id: string;
+  name: string;
+  city: string;
+  tagline: string;
+  faculty: Faculty[];
+};
+
+const groups: Group[] = [
+  { id: "india", name: "Masters' Union", city: "New Delhi · India Campus", tagline: "Practitioner Faculty", faculty: indiaFaculty },
+  { id: "london", name: "Imperial College London", city: "London · United Kingdom", tagline: "Research & Enterprise", faculty: londonFaculty },
+  { id: "hk", name: "CUHK Business School", city: "Hong Kong SAR", tagline: "Asian Markets & Innovation", faculty: hkFaculty },
 ];
 
+const GOLD = "#C5A059";
+
 const Faculty = () => {
-  const [active, setActive] = useState(0);
-  const group = groups[active];
+  const [activeId, setActiveId] = useState(groups[0].id);
+  const group = groups.find((g) => g.id === activeId) ?? groups[0];
+  const [featured, ...rest] = group.faculty;
 
   return (
-    <section id="faculty-section" className="py-16 sm:py-20 md:py-28 border-t border-border">
-      <div className="container">
+    <section
+      id="faculty-section"
+      className="border-t border-border py-20 md:py-28 lg:py-32"
+      style={{ background: "#080808", color: "#F5F5F0" }}
+    >
+      <div className="container max-w-7xl">
         {/* Header */}
-        <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-10 md:mb-14 pb-6 border-b border-border">
-          <div className="md:col-span-8">
-            <SectionEyebrow className="mb-4 sm:mb-6">Faculty / Taught by Practitioners</SectionEyebrow>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[0.95] text-balance">
-              World-class faculty.{" "}
-              <em className="italic text-primary not-italic">Three continents.</em>
+        <div className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8 pb-10 md:pb-12 border-b" style={{ borderColor: `${GOLD}33` }}>
+          <div className="space-y-4 md:space-y-5">
+            <span
+              className="block text-[10px] uppercase tracking-[0.3em]"
+              style={{ fontFamily: "'IBM Plex Mono', monospace", color: GOLD }}
+            >
+              Global Academic Council
+            </span>
+            <h2
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light italic leading-[1.05] text-balance"
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            >
+              World-class minds,
+              <br />
+              <span className="not-italic font-medium">zero borders.</span>
             </h2>
           </div>
-          <div className="md:col-span-4">
-            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-              Learn from professors, practitioners and industry veterans across Masters' Union, Imperial College London and CUHK Business School.
-            </p>
-          </div>
-        </div>
 
-        {/* Country tabs */}
-        <div className="flex border border-border overflow-x-auto scrollbar-hide mb-8">
-          {groups.map((g, i) => {
-            const isActive = active === i;
-            return (
-              <button
-                key={g.id}
-                onClick={() => setActive(i)}
-                className="flex-1 min-w-[120px] py-4 sm:py-5 px-3 sm:px-4 text-center transition-all duration-300 border-b-2"
-                style={{
-                  borderBottomColor: isActive ? "hsl(var(--primary))" : "transparent",
-                  background: isActive ? "hsl(var(--card))" : "transparent",
-                }}
-              >
-                <div className="text-xl sm:text-2xl mb-1">{g.flag}</div>
-                <div
-                  className="text-xs sm:text-sm font-semibold tracking-tight"
-                  style={{ color: isActive ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))" }}
+          {/* Institution switcher (no flags) */}
+          <nav
+            className="flex flex-wrap gap-x-6 gap-y-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em]"
+            style={{ fontFamily: "'IBM Plex Mono', monospace" }}
+            aria-label="Institution selector"
+          >
+            {groups.map((g) => {
+              const isActive = g.id === activeId;
+              return (
+                <button
+                  key={g.id}
+                  onClick={() => setActiveId(g.id)}
+                  className="pb-1 border-b transition-colors duration-300 whitespace-nowrap"
+                  style={{
+                    color: isActive ? GOLD : "rgba(245,245,240,0.4)",
+                    borderColor: isActive ? GOLD : "transparent",
+                  }}
                 >
-                  {g.label}
-                </div>
-                <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mt-1 hidden sm:block">
-                  {g.sub}
-                </div>
-              </button>
-            );
-          })}
+                  {g.name}
+                </button>
+              );
+            })}
+          </nav>
         </div>
 
-        {/* Faculty grid */}
-        <div>
-          <div className="flex items-baseline justify-between mb-5">
-            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-              {group.sub} · {group.faculty.length} Faculty
-            </p>
+        {/* Active institution chapter */}
+        <div className="mb-16 md:mb-20">
+          <div className="flex items-center gap-4 mb-10 md:mb-12">
+            <div className="h-px w-12" style={{ background: GOLD }} />
+            <h3
+              className="text-[11px] tracking-[0.4em] uppercase opacity-70"
+              style={{ fontFamily: "'IBM Plex Mono', monospace" }}
+            >
+              {group.name} · {group.city}
+            </h3>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
-            {group.faculty.map((f) => (
-              <div key={f.name} className="flex flex-col items-center text-center group">
-                <div className="relative mb-3">
-                  <div className="w-[96px] h-[96px] rounded-full p-[2px] bg-gradient-to-br from-primary to-primary/40 transition-all duration-300">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-background">
-                      <img
-                        src={f.photo}
-                        alt={f.name}
-                        loading="lazy"
-                        decoding="async"
-                        className={"w-full h-full object-cover " + (f.name === "Dr. Rajita Chaudhuri" ? "object-[45%_20%] scale-[1.8]" : group.id === "india" ? "object-[50%_10%] scale-105" : "object-center")}
-                      />
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-300 blur-md bg-primary" />
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 sm:gap-x-6 gap-y-10 md:gap-y-16">
+            {/* Featured card */}
+            {featured && (
+              <div className="group col-span-2 relative overflow-hidden">
+                <div className="aspect-[16/10] md:aspect-[16/9] w-full" style={{ background: "#111" }}>
+                  <img
+                    src={featured.photo}
+                    alt={featured.name}
+                    loading="lazy"
+                    decoding="async"
+                    className={
+                      "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-[1.03] " +
+                      (featured.focusClass ?? "object-[center_20%]")
+                    }
+                  />
                 </div>
-                <p className="text-sm font-semibold text-foreground leading-tight">{f.name}</p>
-                <p className="text-[11px] text-muted-foreground leading-snug mt-1">{f.designation}</p>
+                <div
+                  className="absolute inset-0 flex flex-col justify-end p-5 sm:p-7 md:p-8"
+                  style={{
+                    background: "linear-gradient(to top, #080808 0%, rgba(8,8,8,0.55) 35%, transparent 65%)",
+                  }}
+                >
+                  <p
+                    className="text-[10px] uppercase mb-2 tracking-[0.2em]"
+                    style={{ fontFamily: "'IBM Plex Mono', monospace", color: GOLD }}
+                  >
+                    {group.tagline}
+                  </p>
+                  <h4
+                    className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight"
+                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  >
+                    {featured.name}
+                  </h4>
+                  <p
+                    className="text-[11px] opacity-60 mt-1 uppercase tracking-tight max-w-xl"
+                    style={{ fontFamily: "'IBM Plex Mono', monospace" }}
+                  >
+                    {featured.designation}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Standard cards */}
+            {rest.map((f) => (
+              <div key={f.name} className="group">
+                <div
+                  className="aspect-[4/5] overflow-hidden mb-4 sm:mb-5 border transition-colors duration-500"
+                  style={{ background: "#111", borderColor: `${GOLD}1A` }}
+                >
+                  <img
+                    src={f.photo}
+                    alt={f.name}
+                    loading="lazy"
+                    decoding="async"
+                    className={
+                      "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03] " +
+                      (f.focusClass ?? "object-[center_20%]")
+                    }
+                  />
+                </div>
+                <p
+                  className="text-[9px] sm:text-[10px] uppercase mb-1 tracking-[0.15em]"
+                  style={{ fontFamily: "'IBM Plex Mono', monospace", color: GOLD }}
+                >
+                  {group.tagline}
+                </p>
+                <h4
+                  className="text-lg sm:text-xl font-medium leading-snug"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                >
+                  {f.name}
+                </h4>
+                <p
+                  className="text-[10px] opacity-50 leading-relaxed uppercase mt-1.5 tracking-tight"
+                  style={{ fontFamily: "'IBM Plex Mono', monospace" }}
+                >
+                  {f.designation}
+                </p>
               </div>
             ))}
           </div>
+        </div>
 
+        {/* Footer summary — the other two institutions */}
+        <div
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 pt-8 border-t"
+          style={{ borderColor: `${GOLD}1A` }}
+        >
+          <div className="flex flex-wrap gap-8 sm:gap-12">
+            {groups
+              .filter((g) => g.id !== activeId)
+              .map((g) => (
+                <button
+                  key={g.id}
+                  onClick={() => setActiveId(g.id)}
+                  className="text-left group"
+                >
+                  <p
+                    className="text-[9px] uppercase tracking-[0.25em] mb-1 transition-opacity group-hover:opacity-100"
+                    style={{ fontFamily: "'IBM Plex Mono', monospace", color: GOLD }}
+                  >
+                    {g.name}
+                  </p>
+                  <p
+                    className="text-base sm:text-lg italic transition-colors"
+                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  >
+                    {g.faculty.length} Faculty Members →
+                  </p>
+                </button>
+              ))}
+          </div>
+          <p
+            className="text-[10px] uppercase opacity-30 tracking-[0.2em]"
+            style={{ fontFamily: "'IBM Plex Mono', monospace" }}
+          >
+            Select an institution to explore
+          </p>
         </div>
       </div>
     </section>
