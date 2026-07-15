@@ -133,32 +133,34 @@ const Faculty = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-8">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-4 gap-y-7">
             {group.faculty.map((f) => (
-              <div key={f.name} className="group">
+              <div key={f.name} className="group flex flex-col items-center text-center">
                 <div
-                  className="aspect-[3/4] overflow-hidden mb-3 border transition-colors duration-500"
-                  style={{ background: "#111", borderColor: `${GOLD}1A` }}
+                  className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-[1.5px] mb-3 transition-all duration-500"
+                  style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD}33)` }}
                 >
-                  <img
-                    src={f.photo}
-                    alt={f.name}
-                    loading="lazy"
-                    decoding="async"
-                    className={
-                      "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03] " +
-                      (f.focusClass ?? "object-[center_20%]")
-                    }
-                  />
+                  <div className="w-full h-full rounded-full overflow-hidden" style={{ background: "#111" }}>
+                    <img
+                      src={f.photo}
+                      alt={f.name}
+                      loading="lazy"
+                      decoding="async"
+                      className={
+                        "w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 " +
+                        (f.focusClass ?? "object-[center_15%]")
+                      }
+                    />
+                  </div>
                 </div>
                 <h4
-                  className="text-[15px] sm:text-base font-medium leading-snug"
+                  className="text-[13px] sm:text-sm font-medium leading-tight"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   {f.name}
                 </h4>
                 <p
-                  className="text-[9px] opacity-50 leading-relaxed uppercase mt-1 tracking-tight"
+                  className="text-[9px] opacity-50 leading-snug uppercase mt-1 tracking-tight px-1"
                   style={{ fontFamily: "'IBM Plex Mono', monospace" }}
                 >
                   {f.designation}
