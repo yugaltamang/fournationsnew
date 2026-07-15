@@ -26,6 +26,7 @@ const Index = () => (
     
     <Immersions />
     <Outclass />
+    <Faculty />
     <CXO />
     <Outcomes />
     <Admissions />
