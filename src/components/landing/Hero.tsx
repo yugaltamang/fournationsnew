@@ -112,14 +112,16 @@ const Hero = () => (
       </div>
 
       <div className="hidden lg:block lg:col-span-5">
-        <div className="relative max-w-[420px] mx-auto">
+        <div className="relative">
           <img
             src={fourCountriesImage}
-            alt="India Gate Delhi, London Eye and Big Ben, Hong Kong skyline, and Burj Khalifa Dubai — four countries collage"
-            width={840}
-            height={1120}
-            className="w-full h-auto object-contain"
+            alt="Delhi, London, Hong Kong, and Dubai skylines — four countries of the programme"
+            width={900}
+            height={1200}
+            className="w-full h-[640px] object-cover"
           />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background/40" />
         </div>
       </div>
     </div>
