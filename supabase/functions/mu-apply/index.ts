@@ -9,10 +9,12 @@ const SEND_OTP_ENDPOINT = "https://api-v2.mastersunion.org/api/v2/org/student-au
 const VERIFY_OTP_ENDPOINT = "https://api-v2.mastersunion.org/api/v2/org/student-auth/verify-otp-pgp";
 const APPLICATION_LOGIN_URL = "https://ai-first-operator.mastersunion.org/by-pass-student-login/";
 
-// 4 Nations MBA form IDs (India + International share this until an INTL FormID is provided)
+// 4 Nations MBA form IDs and program IDs (India vs International)
 const INDIA_FORM_UUID = "ecc2e087-399c-4668-b57e-f0e3c656797a";
-const INTL_FORM_UUID = "ecc2e087-399c-4668-b57e-f0e3c656797a";
-const PROGRAM_ID = 56;
+const INTL_FORM_UUID = "7d157338-e441-4a3d-96de-23894aa5f997";
+const INDIA_PROGRAM_ID = 56;
+const INTL_PROGRAM_ID = 78;
+const programIdFor = (iso: string) => (String(iso || "IN").toUpperCase() === "IN" ? INDIA_PROGRAM_ID : INTL_PROGRAM_ID);
 
 const GENERIC_ERR = "Something went wrong. Please try again.";
 
@@ -95,14 +97,24 @@ Deno.serve(async (req) => {
     }
 
     if (action === "login-email") {
-      const { email, password } = body;
+      const { email, password, isoCode } = body;
       if (typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({ ok: false, error: "Please enter a valid email." });
       if (typeof password !== "string" || !password) return json({ ok: false, error: "Password is required." });
-      const res = await fetch(LOGIN_EMAIL_ENDPOINT, {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, programId: PROGRAM_ID }),
-      });
-      const data = await res.json().catch(() => ({}));
+      const tryLogin = async (pid: number) => {
+        const r = await fetch(LOGIN_EMAIL_ENDPOINT, {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password, programId: pid }),
+        });
+        return { r, d: await r.json().catch(() => ({})) };
+      };
+      const primary = programIdFor(String(isoCode || ""));
+      let { r: res, d: data } = await tryLogin(primary);
+      // If no isoCode was provided and the primary program didn't match, try the other.
+      if (!res.ok && !isoCode) {
+        const other = primary === INDIA_PROGRAM_ID ? INTL_PROGRAM_ID : INDIA_PROGRAM_ID;
+        const alt = await tryLogin(other);
+        if (alt.r.ok) { res = alt.r; data = alt.d; }
+      }
       if (!res.ok) {
         const msg = pickMsg(data).toLowerCase();
         if (res.status === 401 || /invalid|incorrect|wrong|password|credential/.test(msg)) return json({ ok: false, error: "Incorrect email or password." });
@@ -112,12 +124,13 @@ Deno.serve(async (req) => {
       return json({ ok: true, formLink: extractFormLink(data) });
     }
 
+
     if (action === "send-otp") {
       const { phone, isoCode } = body;
       if (typeof phone !== "string" || !/^\d{6,15}$/.test(phone)) return json({ ok: false, error: "Please enter a valid mobile number." });
       const res = await fetch(SEND_OTP_ENDPOINT, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone, countryIsoCode: String(isoCode || "IN").toUpperCase(), programId: PROGRAM_ID }),
+        body: JSON.stringify({ phone, countryIsoCode: String(isoCode || "IN").toUpperCase(), programId: programIdFor(String(isoCode || "IN")) }),
       });
       if (!res.ok) {
         const txt = await res.text().catch(() => "");
@@ -136,7 +149,7 @@ Deno.serve(async (req) => {
       if (typeof otp !== "string" || !/^\d{4,8}$/.test(otp)) return json({ ok: false, error: "Please enter the OTP." });
       const res = await fetch(VERIFY_OTP_ENDPOINT, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone, countryIsoCode: String(isoCode || "IN").toUpperCase(), otp, programId: PROGRAM_ID }),
+        body: JSON.stringify({ phone, countryIsoCode: String(isoCode || "IN").toUpperCase(), otp, programId: programIdFor(String(isoCode || "IN")) }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
