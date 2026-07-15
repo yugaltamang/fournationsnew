@@ -26,7 +26,7 @@ const indiaFaculty: Faculty[] = [
   { name: "Dr. Bhupesh Manoharan", designation: "Dean, Masters' Union", photo: "https://images.mastersunion.link/uploads/17042026/v1/master1.webp" },
   { name: "Dr. Garima Chaklader", designation: "Assistant Professor, Economics & Data Analysis", photo: "https://images.mastersunion.link/uploads/17042026/v2/master5.webp" },
   { name: "Dr. Nandini Seth", designation: "Faculty, Quantitative Methods", photo: "https://images.mastersunion.link/uploads/17042026/v2/master2.webp" },
-  { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url, focusClass: "object-[45%_20%] scale-[1.4]" },
+  { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url, focusClass: "object-[50%_5%]" },
   { name: "Ankur Kulshrestha", designation: "Visiting Faculty, Capital Markets & Valuations", photo: "https://images.mastersunion.link/uploads/17042026/v1/card14.webp" },
   { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
   { name: "Rashmi Malik", designation: "Visiting Faculty, Design & GenAI", photo: "https://images.mastersunion.link/uploads/17042026/v1/card137.webp" },
