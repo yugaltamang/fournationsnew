@@ -1,4 +1,21 @@
 import SectionEyebrow from "./SectionEyebrow";
+import imperialCert from "@/assets/certificates/imperial-certificate.webp.asset.json";
+import cuhkCert from "@/assets/certificates/cuhk-certificate.webp.asset.json";
+
+const certificates = [
+  {
+    src: imperialCert.url,
+    inst: "Imperial College London",
+    label: "Certificate of Completion",
+    note: "Issued by Imperial College London, signed by the Vice Provost and Academic Registrar.",
+  },
+  {
+    src: cuhkCert.url,
+    inst: "CUHK Business School",
+    label: "Certificate of Completion",
+    note: "Issued by the Asia-Pacific Institute of Business, The Chinese University of Hong Kong.",
+  },
+];
 
 const outcomes = [
   { n: "01", t: "Operate across four markets", d: "Read Indian distribution, European brand, Asian capital and MENA family-office economics and switch contexts without missing a beat." },
