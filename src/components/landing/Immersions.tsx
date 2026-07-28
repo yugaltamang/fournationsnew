@@ -78,7 +78,7 @@ const Immersions = () => (
           Four Global Hubs.
         </h2>
         <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-2xl">
-          Anchored at Masters' Union in Delhi, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three.
+          Anchored at Masters' Union in Gurugram, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three.
         </p>
       </div>
 
