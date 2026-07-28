@@ -389,8 +389,6 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
     )}
   </div>
 );
-  </div>
-);
 
 const BrandChip = ({ name }: { name: string }) => {
   const logo = LOGO_MAP[name];
