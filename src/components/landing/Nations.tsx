@@ -417,7 +417,7 @@ const Nations = () => {
 
                 {(() => {
                   const brands = n.country === "Dubai"
-                    ? ["DIFC", "JAFZA"]
+                    ? []
                     : term?.immersions
                       ? Array.from(new Set(term.immersions.cards.flatMap((c) => splitBrands(c.logos))))
                       : [];
