@@ -58,7 +58,9 @@ const LOGO_MAP: Record<string, string> = {
 
 /* ─── data types ─── */
 interface AccItem { num: string; code?: string; title: string; rows: string[]; topics?: string }
-interface SubPanel { label: string; hero: { chip: string; title: string; body: string; img: string }; items: AccItem[]; summary?: string[] }
+interface Drop { w?: string; title: string; desc?: string }
+export interface Phase { code: string; weeks: string; title: string; tagline: string; drops: Drop[] }
+interface SubPanel { label: string; hero: { chip: string; title: string; body: string; img: string }; items: AccItem[]; summary?: string[]; phases?: Phase[] }
 interface CulturalPanel { chip: string; title: string; body: string; cards: { name: string; desc: string }[]; note?: string; img: string }
 interface ImmersionPanel { header: { title: string; body: string; note?: { title: string; desc: string } }; cards: { img: string; cat: string; title: string; desc: string; logos: string }[] }
 interface Faculty { name: string; designation: string; photo: string }
