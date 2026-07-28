@@ -50,40 +50,38 @@ const Outcomes = () => (
       </div>
 
       {/* Credentials */}
-      <div className="mt-12 md:mt-20 pt-10 md:pt-14 border-t border-border">
-        <SectionEyebrow className="mb-4 sm:mb-6">The Credentials</SectionEyebrow>
-        <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-8 md:mb-10">
-          <h3 className="md:col-span-7 font-display text-xl sm:text-2xl md:text-3xl leading-tight text-balance">
-            Real certificates. <em className="italic text-primary not-italic">Real institutions.</em>
-          </h3>
-          <p className="md:col-span-5 text-sm text-muted-foreground leading-relaxed">
-            On completion you receive credentials issued directly by Imperial College London and CUHK Business School, alongside your Masters' Union certificate. Samples shown below.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-px bg-border border border-border">
-          {certificates.map((c) => (
-            <div key={c.inst} className="bg-background p-5 sm:p-8">
-              <div className="bg-secondary/40 border border-border p-3 sm:p-5">
+      <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-border">
+        <div className="grid md:grid-cols-12 gap-5 md:gap-8 items-center">
+          <div className="md:col-span-4">
+            <SectionEyebrow className="mb-3">The Credentials</SectionEyebrow>
+            <h3 className="font-display text-lg sm:text-xl md:text-2xl leading-tight text-balance mb-2">
+              Real certificates. <em className="italic text-primary not-italic">Real institutions.</em>
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              Credentials issued directly by Imperial College London and CUHK Business School, alongside your Masters' Union certificate.
+            </p>
+          </div>
+          <div className="md:col-span-8 grid grid-cols-2 gap-3 sm:gap-4">
+            {certificates.map((c) => (
+              <figure key={c.inst} className="bg-secondary/40 border border-border p-2 sm:p-3">
                 <img
                   src={c.src}
                   alt={`${c.label} sample issued by ${c.inst}`}
                   loading="lazy"
-                  className="w-full h-auto object-contain shadow-sm"
+                  className="w-full h-auto object-contain"
                 />
-              </div>
-              <div className="mt-4 sm:mt-5">
-                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-2">{c.label}</div>
-                <h4 className="font-display text-base sm:text-lg mb-2">{c.inst}</h4>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{c.note}</p>
-              </div>
-            </div>
-          ))}
+                <figcaption className="mt-2 font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                  {c.inst}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
-        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-          Sample certificates shown for illustration. Names, course titles and dates are indicative.
+        <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">
+          Sample certificates shown for illustration.
         </p>
       </div>
+
     </div>
 
   </section>
