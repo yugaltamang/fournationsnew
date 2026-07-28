@@ -130,19 +130,38 @@ export const terms: Term[] = [
     outclass: {
       label: "Out Class",
       hero: { chip: "Out Class · India", title: "Build a D2C Brand", body: "A 10-week, high-intensity sprint from product discovery to a live D2C brand on Shopify, Amazon, and Flipkart. Real CAC, real ROAS, real revenue.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&fit=crop&crop=center" },
-      items: [
-        { num: "01", title: "Build a D2C brand", rows: [
-          "How do you identify and validate a high-potential D2C opportunity in the market?",
-          "How do you select the right product, source it efficiently, and build profitable unit economics?",
-          "How do you define a differentiated brand strategy and positioning that resonates with your target audience?",
-          "How do you create a compelling brand identity and packaging that drives recall and conversion?",
-          "How do you build and launch a high-converting D2C website on Shopify?",
-          "How do you successfully launch and scale your brand on online marketplaces?",
-          "How do you drive demand and acquire customers efficiently through performance marketing?",
-          "How do you set up seamless operations, fulfilment, and deliver an excellent customer experience?",
-          "How do you scale your D2C brand sustainably using the right growth levers and metrics?",
-          "Final showcase",
-        ]},
+      items: [],
+      phases: [
+        {
+          code: "P01", weeks: "Week 01 - 04", title: "Build.", tagline: "Find the wedge. Engineer the product.",
+          drops: [
+            { w: "W01", title: "Validated idea", desc: "Identify and validate a high-potential D2C opportunity." },
+            { w: "W02", title: "Product & sourcing", desc: "Select product, finalize sourcing, and understand supply chain basics." },
+            { w: "W03", title: "Brand & store", desc: "Define brand positioning and build a live Shopify store." },
+            { w: "W04", title: "Operations & unit economics", desc: "Set up logistics, fulfillment, and build strong unit economics." },
+          ],
+        },
+        {
+          code: "P02", weeks: "Week 05 - 06", title: "Launch.", tagline: "Go live. Take real money.",
+          drops: [
+            { w: "W05", title: "Performance marketing", desc: "Set up Meta ads and launch initial campaigns." },
+            { w: "W06", title: "Marketplace strategy", desc: "Start and scale on Amazon and Flipkart." },
+          ],
+        },
+        {
+          code: "P03", weeks: "Week 07 - 09", title: "Scale.", tagline: "Drive demand. Move units.",
+          drops: [
+            { w: "W07", title: "Marketing scale-up", desc: "Optimize ads, leverage influencers, and scale campaigns." },
+            { w: "W08", title: "Retention & growth", desc: "Improve CAC, LTV, and build retention through CRM channels." },
+            { w: "W09", title: "Investor readiness", desc: "Build pitch deck and prepare for investor conversations." },
+          ],
+        },
+        {
+          code: "P04", weeks: "Week 10", title: "Pitch Day.", tagline: "Prove the model. Own the room.",
+          drops: [
+            { w: "W10", title: "Pitch your brand", desc: "Pitch your brand to founders & operators." },
+          ],
+        },
       ],
     },
     immersions: {
