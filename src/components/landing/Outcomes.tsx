@@ -1,4 +1,21 @@
 import SectionEyebrow from "./SectionEyebrow";
+import imperialCert from "@/assets/certificates/imperial-certificate.webp.asset.json";
+import cuhkCert from "@/assets/certificates/cuhk-certificate.webp.asset.json";
+
+const certificates = [
+  {
+    src: imperialCert.url,
+    inst: "Imperial College London",
+    label: "Certificate of Completion",
+    note: "Issued by Imperial College London, signed by the Vice Provost and Academic Registrar.",
+  },
+  {
+    src: cuhkCert.url,
+    inst: "CUHK Business School",
+    label: "Certificate of Completion",
+    note: "Issued by the Asia-Pacific Institute of Business, The Chinese University of Hong Kong.",
+  },
+];
 
 const outcomes = [
   { n: "01", t: "Operate across four markets", d: "Read Indian distribution, European brand, Asian capital and MENA family-office economics and switch contexts without missing a beat." },
@@ -31,7 +48,44 @@ const Outcomes = () => (
           </div>
         ))}
       </div>
+
+      {/* Credentials */}
+      <div className="mt-12 md:mt-20 pt-10 md:pt-14 border-t border-border">
+        <SectionEyebrow className="mb-4 sm:mb-6">The Credentials</SectionEyebrow>
+        <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-end mb-8 md:mb-10">
+          <h3 className="md:col-span-7 font-display text-xl sm:text-2xl md:text-3xl leading-tight text-balance">
+            Real certificates. <em className="italic text-primary not-italic">Real institutions.</em>
+          </h3>
+          <p className="md:col-span-5 text-sm text-muted-foreground leading-relaxed">
+            On completion you receive credentials issued directly by Imperial College London and CUHK Business School, alongside your Masters' Union certificate. Samples shown below.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-px bg-border border border-border">
+          {certificates.map((c) => (
+            <div key={c.inst} className="bg-background p-5 sm:p-8">
+              <div className="bg-secondary/40 border border-border p-3 sm:p-5">
+                <img
+                  src={c.src}
+                  alt={`${c.label} sample issued by ${c.inst}`}
+                  loading="lazy"
+                  className="w-full h-auto object-contain shadow-sm"
+                />
+              </div>
+              <div className="mt-4 sm:mt-5">
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-2">{c.label}</div>
+                <h4 className="font-display text-base sm:text-lg mb-2">{c.inst}</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{c.note}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+          Sample certificates shown for illustration. Names, course titles and dates are indicative.
+        </p>
+      </div>
     </div>
+
   </section>
 );
 
