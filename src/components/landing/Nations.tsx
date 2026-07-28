@@ -3,7 +3,7 @@ import india from "@/assets/nation-india.webp";
 import hk from "@/assets/nation-hongkong.webp";
 import london from "@/assets/nation-london.webp";
 import dubai from "@/assets/nation-dubai.webp";
-import { terms as curriculumTerms } from "./Curriculum";
+import { terms as curriculumTerms, OutclassPhases } from "./Curriculum";
 import SectionEyebrow from "./SectionEyebrow";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
 import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
