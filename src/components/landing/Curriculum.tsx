@@ -210,10 +210,10 @@ export const terms: Term[] = [
       label: "Out Class",
       hero: { chip: "Out Class · London", title: "Leadership Lab - London", body: "Sharpen presence, persuasion, and poise. A hands-on lab in London where you learn to command the room, tell sharper stories, and lead through pressure.", img: leadershipLondonImg },
       items: [
-        { num: "01", title: "How to Command Attention Before You Speak", rows: ["How to Command Attention Before You Speak"] },
-        { num: "02", title: "How to Turn Data into Stories That Drive Action", rows: ["How to Turn Data into Stories That Drive Action"] },
-        { num: "03", title: "How to Win High-Stakes Conversations", rows: ["How to Win High-Stakes Conversations"] },
-        { num: "04", title: "How to Stay Composed When the Pressure Is On", rows: ["How to Stay Composed When the Pressure Is On"] },
+        { num: "01", code: "Module 1", title: "Executive Presence & Vocal Mastery", rows: ["Executive Presence & Voice Control: Master tone, pitch, pacing, projection, and resonance to communicate with confidence and authority.", "Clear & Impactful Communication: Eliminate filler words, use strategic pauses, and deliver messages with clarity and executive presence."] },
+        { num: "02", code: "Module 2", title: "Strategic Storytelling & Audience Engagement", rows: ["Storytelling for Influence: Transform data and business insights into compelling narratives with clear structure and persuasive calls to action.", "Audience-Centric Communication: Tailor messages to different stakeholders and use concise storytelling to drive alignment and action."] },
+        { num: "03", code: "Module 3", title: "Active Listening & Executive Influence", rows: ["Listening Beyond Words: Develop advanced listening skills to uncover stakeholder concerns, hidden agendas, and non-verbal cues.", "Managing High-Stakes Conversations: Build trust, navigate difficult discussions, and respond to challenging questions with confidence and diplomacy."] },
+        { num: "04", code: "Module 4", title: "Crisis Communication & Composure Under Pressure", rows: ["Staying Composed Under Pressure: Understand stress responses and apply rapid techniques to maintain clarity, confidence, and executive presence.", "Handling Difficult Situations: Manage unexpected questions, control non-verbal reactions, and communicate strategically during crises."] },
       ],
     },
     immersions: {
