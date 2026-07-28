@@ -719,22 +719,13 @@ const Nations = () => {
                         {/* Cultural - magazine-style image collage */}
                         {activeTab === "cultural" && term.cultural && (
                           <div>
-                            {term.cultural.imgs && term.cultural.imgs.length >= 2 && (
-                              <div className="grid grid-cols-3 gap-3 mb-8 h-64 sm:h-80">
-                                <div className="col-span-2 relative overflow-hidden group">
-                                  <img
-                                    src={term.cultural.imgs[0]}
-                                    alt=""
-                                    loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                  />
-                                </div>
-                                <div className="relative overflow-hidden group">
-                                  <img
-                                    src={term.cultural.imgs[1]}
-                                    alt=""
-                                    loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                  />
-                                </div>
+                            {term.cultural.img && (
+                              <div className="mb-8 h-64 sm:h-80 relative overflow-hidden group">
+                                <img
+                                  src={term.cultural.img}
+                                  alt="Cultural immersion"
+                                  loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
                               </div>
                             )}
                             <div className="mb-8 max-w-2xl">
