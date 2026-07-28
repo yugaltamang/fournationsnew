@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import leadershipLondonImg from "@/assets/outclass/leadership-london.jpg";
+import indiaCultural from "@/assets/cultural/india-cultural.jpg";
+import londonCultural from "@/assets/cultural/london-cultural.jpg";
+import hkCultural from "@/assets/cultural/hk-cultural.jpg";
 import gillesPhoto from "@/assets/faculty-london/gilles.asset.json";
 import willPhoto from "@/assets/faculty-london/will.asset.json";
 import gaiaPhoto from "@/assets/faculty-london/gaia.asset.json";
