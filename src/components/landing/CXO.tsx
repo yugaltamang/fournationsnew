@@ -29,7 +29,7 @@ const pillars = [
     points: [
       "15+ business immersions across the programme",
       "Live conversations, not lectures",
-      "Lifelong alumni network access",
+      "Lifelong Masters' Union alumni network access",
     ],
     stat: { value: "15+", label: "Business Immersions" },
     fit: "cover" as const,
