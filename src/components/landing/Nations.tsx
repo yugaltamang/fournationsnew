@@ -175,7 +175,7 @@ const Nations = () => {
   const tabs = term
     ? [
         term.academic.items.length > 0 && { id: "in-class", label: term.academic.label || "In Class" },
-        (term.outclass.items.length > 0 || (term.outclass.summary && term.outclass.summary.length > 0)) && { id: "out-class", label: term.outclass.label || "Out Class" },
+        (term.outclass.items.length > 0 || (term.outclass.phases && term.outclass.phases.length > 0) || (term.outclass.summary && term.outclass.summary.length > 0)) && { id: "out-class", label: term.outclass.label || "Out Class" },
         term.immersions && { id: "business", label: "Business Immersions" },
         
         term.cultural && { id: "cultural", label: term.cultural.chip || "Cultural Immersion" },
@@ -551,7 +551,7 @@ const Nations = () => {
                         )}
 
                         {/* Out Class */}
-                        {activeTab === "out-class" && (term.outclass.items.length > 0 || (term.outclass.summary && term.outclass.summary.length > 0)) && (
+                        {activeTab === "out-class" && (term.outclass.items.length > 0 || (term.outclass.phases && term.outclass.phases.length > 0) || (term.outclass.summary && term.outclass.summary.length > 0)) && (
                           <div>
                             {term.outclass.hero && (
                               <div className="relative aspect-[21/9] overflow-hidden mb-8 group">
@@ -571,7 +571,12 @@ const Nations = () => {
                                 </div>
                               </div>
                             )}
-                            {term.outclass.summary && term.outclass.summary.length > 0 ? (
+                            {term.outclass.phases && term.outclass.phases.length > 0 ? (
+                              <div>
+                                <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl">{term.outclass.hero.body}</p>
+                                <OutclassPhases phases={term.outclass.phases} />
+                              </div>
+                            ) : term.outclass.summary && term.outclass.summary.length > 0 ? (
                               <div className="max-w-3xl">
                                 <p className="text-muted-foreground leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: term.outclass.hero.body }} />
                                 <div className="flex flex-col gap-4">
