@@ -12,7 +12,7 @@ import drop4 from "@/assets/outclass/drop4.webp";
 import drop5 from "@/assets/outclass/drop5.webp";
 import drop6 from "@/assets/outclass/drop6.webp";
 import drop7 from "@/assets/outclass/drop7.webp";
-import leadershipLondon from "@/assets/outclass/leadership-london.jpg";
+import leadershipLondon from "@/assets/outclass/leadership-london.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
