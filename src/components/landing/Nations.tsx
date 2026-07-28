@@ -610,13 +610,24 @@ const Nations = () => {
                                       className="group relative border border-border bg-secondary/20 p-5 hover:border-primary hover:bg-secondary/40 transition-all"
                                     >
                                       <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary mb-2">
-                                        {item.num}
+                                        {item.code ? `${item.code} · ${item.num}` : item.num}
                                       </div>
                                       <div className="font-display text-base sm:text-lg leading-snug tracking-tight">
                                         {item.title}
                                       </div>
+                                      {item.rows.length > 0 && (
+                                        <ul className="mt-3 space-y-2 border-t border-border pt-3">
+                                          {item.rows.map((r, i) => (
+                                            <li key={i} className="flex items-start gap-2.5 text-sm text-foreground/75 leading-relaxed">
+                                              <span className="text-primary font-mono text-[10px] mt-1 shrink-0">▸</span>
+                                              <span>{r}</span>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      )}
                                     </div>
                                   ))
+
                                 )}
                               </div>
                             )}
