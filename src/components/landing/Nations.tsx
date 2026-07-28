@@ -467,7 +467,7 @@ const Nations = () => {
                     Curriculum · {n.term}
                   </div>
                   <h3 className="font-display text-xl sm:text-2xl truncate">
-                    {n.country} - Full Curriculum
+                    {n.country} - Curriculum
                   </h3>
                 </div>
                 <button
