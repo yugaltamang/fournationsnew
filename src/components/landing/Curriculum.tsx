@@ -13,6 +13,7 @@ import immHkPlatform from "@/assets/immersions/hk-platform.webp";
 import immHkLogistics from "@/assets/immersions/hk-logistics.webp";
 import immHkAi from "@/assets/immersions/hk-ai.webp";
 import leadershipLondonImg from "@/assets/outclass/leadership-london.webp";
+import d2cImg from "@/assets/outclass/drop6.webp";
 import indiaCultural from "@/assets/cultural/india-cultural.webp";
 import londonCultural from "@/assets/cultural/london-cultural.webp";
 import hkCultural from "@/assets/cultural/hk-cultural.webp";
@@ -129,7 +130,7 @@ export const terms: Term[] = [
     },
     outclass: {
       label: "Out Class",
-      hero: { chip: "Out Class · India", title: "Build a D2C Brand", body: "A 10-week, high-intensity sprint from product discovery to a live D2C brand on Shopify, Amazon, and Flipkart. Real CAC, real ROAS, real revenue.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "Out Class · India", title: "Build a D2C Brand", body: "A 10-week, high-intensity sprint from product discovery to a live D2C brand on Shopify, Amazon, and Flipkart. Real CAC, real ROAS, real revenue.", img: d2cImg },
       items: [],
       phases: [
         {
