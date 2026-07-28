@@ -58,7 +58,9 @@ const LOGO_MAP: Record<string, string> = {
 
 /* ─── data types ─── */
 interface AccItem { num: string; code?: string; title: string; rows: string[]; topics?: string }
-interface SubPanel { label: string; hero: { chip: string; title: string; body: string; img: string }; items: AccItem[]; summary?: string[] }
+interface Drop { w?: string; title: string; desc?: string }
+export interface Phase { code: string; weeks: string; title: string; tagline: string; drops: Drop[] }
+interface SubPanel { label: string; hero: { chip: string; title: string; body: string; img: string }; items: AccItem[]; summary?: string[]; phases?: Phase[] }
 interface CulturalPanel { chip: string; title: string; body: string; cards: { name: string; desc: string }[]; note?: string; img: string }
 interface ImmersionPanel { header: { title: string; body: string; note?: { title: string; desc: string } }; cards: { img: string; cat: string; title: string; desc: string; logos: string }[] }
 interface Faculty { name: string; designation: string; photo: string }
@@ -128,19 +130,38 @@ export const terms: Term[] = [
     outclass: {
       label: "Out Class",
       hero: { chip: "Out Class · India", title: "Build a D2C Brand", body: "A 10-week, high-intensity sprint from product discovery to a live D2C brand on Shopify, Amazon, and Flipkart. Real CAC, real ROAS, real revenue.", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80&fit=crop&crop=center" },
-      items: [
-        { num: "01", title: "Build a D2C brand", rows: [
-          "How do you identify and validate a high-potential D2C opportunity in the market?",
-          "How do you select the right product, source it efficiently, and build profitable unit economics?",
-          "How do you define a differentiated brand strategy and positioning that resonates with your target audience?",
-          "How do you create a compelling brand identity and packaging that drives recall and conversion?",
-          "How do you build and launch a high-converting D2C website on Shopify?",
-          "How do you successfully launch and scale your brand on online marketplaces?",
-          "How do you drive demand and acquire customers efficiently through performance marketing?",
-          "How do you set up seamless operations, fulfilment, and deliver an excellent customer experience?",
-          "How do you scale your D2C brand sustainably using the right growth levers and metrics?",
-          "Final showcase",
-        ]},
+      items: [],
+      phases: [
+        {
+          code: "P01", weeks: "Week 01 - 04", title: "Build.", tagline: "Find the wedge. Engineer the product.",
+          drops: [
+            { w: "W01", title: "Validated idea", desc: "Identify and validate a high-potential D2C opportunity." },
+            { w: "W02", title: "Product & sourcing", desc: "Select product, finalize sourcing, and understand supply chain basics." },
+            { w: "W03", title: "Brand & store", desc: "Define brand positioning and build a live Shopify store." },
+            { w: "W04", title: "Operations & unit economics", desc: "Set up logistics, fulfillment, and build strong unit economics." },
+          ],
+        },
+        {
+          code: "P02", weeks: "Week 05 - 06", title: "Launch.", tagline: "Go live. Take real money.",
+          drops: [
+            { w: "W05", title: "Performance marketing", desc: "Set up Meta ads and launch initial campaigns." },
+            { w: "W06", title: "Marketplace strategy", desc: "Start and scale on Amazon and Flipkart." },
+          ],
+        },
+        {
+          code: "P03", weeks: "Week 07 - 09", title: "Scale.", tagline: "Drive demand. Move units.",
+          drops: [
+            { w: "W07", title: "Marketing scale-up", desc: "Optimize ads, leverage influencers, and scale campaigns." },
+            { w: "W08", title: "Retention & growth", desc: "Improve CAC, LTV, and build retention through CRM channels." },
+            { w: "W09", title: "Investor readiness", desc: "Build pitch deck and prepare for investor conversations." },
+          ],
+        },
+        {
+          code: "P04", weeks: "Week 10", title: "Pitch Day.", tagline: "Prove the model. Own the room.",
+          drops: [
+            { w: "W10", title: "Pitch your brand", desc: "Pitch your brand to founders & operators." },
+          ],
+        },
       ],
     },
     immersions: {
@@ -307,6 +328,37 @@ const AccordionRow = ({ item, defaultOpen = false }: { item: AccItem; defaultOpe
   );
 };
 
+/* ─── Phase timeline (Out Class sprints) ─── */
+export const OutclassPhases = ({ phases }: { phases: Phase[] }) => (
+  <div className="flex flex-col gap-4">
+    {phases.map((p) => (
+      <div key={p.code} className="relative border border-border bg-secondary/20 p-5 sm:p-6 hover:border-primary/60 transition-colors">
+        <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-4">
+          <span className="font-mono text-[10px] font-bold tracking-[0.25em] uppercase text-primary border border-primary/40 px-2 py-1 w-fit">
+            {p.code}
+          </span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">{p.weeks}</span>
+        </div>
+        <h6 className="font-display text-xl sm:text-2xl leading-none tracking-tight text-foreground">{p.title}</h6>
+        <p className="text-sm text-muted-foreground mt-1.5">{p.tagline}</p>
+
+        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mt-5 mb-3">Drops</div>
+        <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+          {p.drops.map((d, i) => (
+            <div key={i} className="border-l border-border pl-3">
+              <div className="flex items-baseline gap-2">
+                {d.w && <span className="font-mono text-[10px] tracking-widest text-primary">{d.w}</span>}
+                <span className="font-display text-sm sm:text-base leading-snug text-foreground">{d.title}</span>
+              </div>
+              {d.desc && <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-1">{d.desc}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
 /* ─── Sub-panel renderers ─── */
 const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
   <div>
@@ -320,7 +372,9 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
         <img src={panel.hero.img} alt={panel.hero.title} loading="lazy" className="w-full h-full object-cover" />
       </div>
     </div>
-    {panel.summary ? (
+    {panel.phases ? (
+      <OutclassPhases phases={panel.phases} />
+    ) : panel.summary ? (
       <div className="flex flex-col gap-4 max-w-3xl">
         {panel.summary.map((item, i) => (
           <p key={i} className="text-sm sm:text-base text-foreground/90 leading-relaxed">
