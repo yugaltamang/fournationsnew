@@ -39,10 +39,10 @@ const pillars = [
     image: immersionImg,
     title: "Ventures,",
     titleEm: "not slide decks.",
-    body: "Two Outclass activities, a D2C brand sprint and a creators challenge, plus capstone projects across countries. Every term ends with real, shipped work.",
+    body: "Two Outclass activities, a D2C brand sprint and the Leadership Lab in London, plus capstone projects across countries. Every term ends with real, shipped work.",
     points: [
       "Build a D2C brand",
-      "Creators challenge - London",
+      "Leadership Lab - London",
       "Capstone projects across countries",
     ],
     stat: { value: "3+", label: "Live Outputs" },
