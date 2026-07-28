@@ -40,7 +40,7 @@ const partners = [
     headline: "Gateway to Greater China.",
     body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
     stats: [
-      { v: "#32", l: "QS Ranking" },
+      { v: "#18", l: "QS Ranking" },
       { v: "60+", l: "Years of Excellence" },
       { v: "60", l: "Contact Hours" },
     ],
