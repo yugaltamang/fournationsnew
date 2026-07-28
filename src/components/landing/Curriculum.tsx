@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import leadershipLondonImg from "@/assets/outclass/leadership-london.jpg";
+import indiaCultural from "@/assets/cultural/india-cultural.jpg";
+import londonCultural from "@/assets/cultural/london-cultural.jpg";
+import hkCultural from "@/assets/cultural/hk-cultural.jpg";
 import gillesPhoto from "@/assets/faculty-london/gilles.asset.json";
 import willPhoto from "@/assets/faculty-london/will.asset.json";
 import gaiaPhoto from "@/assets/faculty-london/gaia.asset.json";
@@ -43,7 +47,7 @@ const LOGO_MAP: Record<string, string> = {
 /* ─── data types ─── */
 interface AccItem { num: string; code?: string; title: string; rows: string[]; topics?: string }
 interface SubPanel { label: string; hero: { chip: string; title: string; body: string; img: string }; items: AccItem[]; summary?: string[] }
-interface CulturalPanel { chip: string; title: string; body: string; cards: { name: string; desc: string }[]; note?: string; imgs: [string, string] }
+interface CulturalPanel { chip: string; title: string; body: string; cards: { name: string; desc: string }[]; note?: string; img: string }
 interface ImmersionPanel { header: { title: string; body: string; note?: { title: string; desc: string } }; cards: { img: string; cat: string; title: string; desc: string; logos: string }[] }
 interface Faculty { name: string; designation: string; photo: string }
 
@@ -144,7 +148,7 @@ export const terms: Term[] = [
         { name: "Heritage Business Districts", desc: "Explore how Mughal-era trade routes shaped India's commercial identity - from historic bazaars to modern business hubs." },
       ],
       note: "* Locations are indicative and may vary based on availability, permissions, and external factors.",
-      imgs: ["https://images.unsplash.com/photo-1587474260584-136574528ed5?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=500&q=85&fit=crop"],
+      img: indiaCultural,
     },
     faculty: indiaFaculty,
   },
@@ -170,7 +174,7 @@ export const terms: Term[] = [
     },
     outclass: {
       label: "Out Class",
-      hero: { chip: "Out Class · London", title: "Leadership Lab - London", body: "Sharpen presence, persuasion, and poise. A hands-on lab in London where you learn to command the room, tell sharper stories, and lead through pressure.", img: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "Out Class · London", title: "Leadership Lab - London", body: "Sharpen presence, persuasion, and poise. A hands-on lab in London where you learn to command the room, tell sharper stories, and lead through pressure.", img: leadershipLondonImg },
       items: [
         { num: "01", title: "How to Command Attention Before You Speak", rows: ["How to Command Attention Before You Speak"] },
         { num: "02", title: "How to Turn Data into Stories That Drive Action", rows: ["How to Turn Data into Stories That Drive Action"] },
@@ -195,7 +199,7 @@ export const terms: Term[] = [
         { name: "Private Tour of the Royal Albert Hall", desc: "Go behind the scenes of one of the world's most famous venues - a masterclass in heritage, brand, and the experience economy." },
         { name: "Tour of the City of London", desc: "Walk through the Square Mile where global finance was born - from historic institutions to modern financial powerhouses." },
       ],
-      imgs: ["https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&q=85&fit=crop"],
+      img: londonCultural,
     },
     faculty: londonFaculty,
   },
@@ -244,7 +248,7 @@ export const terms: Term[] = [
         { name: "Chinese Calligraphy", desc: "Explore how language, symbolism, and craft carry cultural meaning across Chinese business contexts." },
         { name: "Traditional Chinese Tea Ceremony", desc: "Understand ritual, patience, and relationship-building through one of the region's most enduring cultural practices." },
       ],
-      imgs: ["https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=700&q=85&fit=crop", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=85&fit=crop"],
+      img: hkCultural,
     },
     faculty: hkFaculty,
   },
@@ -417,8 +421,7 @@ const CulturalPanelView = ({ data }: { data: CulturalPanel }) => (
       {data.note && <p className="font-mono text-[11px] text-muted-foreground/60 mt-4">{data.note}</p>}
     </div>
     <div className="relative">
-      <img src={data.imgs[0]} alt="Cultural" loading="lazy" className="w-full aspect-[4/3] object-cover border border-border" />
-      <img src={data.imgs[1]} alt="Cultural detail" loading="lazy" className="absolute -bottom-4 -right-4 w-[45%] aspect-square object-cover border-4 border-background shadow-xl" />
+      <img src={data.img} alt="Cultural immersion" loading="lazy" className="w-full aspect-[4/3] object-cover border border-border" />
       <div className="absolute top-3 right-3 tag-pill">360° Cultural Lens</div>
     </div>
   </div>
