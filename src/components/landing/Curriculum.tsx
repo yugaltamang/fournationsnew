@@ -328,6 +328,37 @@ const AccordionRow = ({ item, defaultOpen = false }: { item: AccItem; defaultOpe
   );
 };
 
+/* ─── Phase timeline (Out Class sprints) ─── */
+export const OutclassPhases = ({ phases }: { phases: Phase[] }) => (
+  <div className="flex flex-col gap-4">
+    {phases.map((p) => (
+      <div key={p.code} className="relative border border-border bg-secondary/20 p-5 sm:p-6 hover:border-primary/60 transition-colors">
+        <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-4">
+          <span className="font-mono text-[10px] font-bold tracking-[0.25em] uppercase text-primary border border-primary/40 px-2 py-1 w-fit">
+            {p.code}
+          </span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">{p.weeks}</span>
+        </div>
+        <h6 className="font-display text-xl sm:text-2xl leading-none tracking-tight text-foreground">{p.title}</h6>
+        <p className="text-sm text-muted-foreground mt-1.5">{p.tagline}</p>
+
+        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mt-5 mb-3">Drops</div>
+        <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+          {p.drops.map((d, i) => (
+            <div key={i} className="border-l border-border pl-3">
+              <div className="flex items-baseline gap-2">
+                {d.w && <span className="font-mono text-[10px] tracking-widest text-primary">{d.w}</span>}
+                <span className="font-display text-sm sm:text-base leading-snug text-foreground">{d.title}</span>
+              </div>
+              {d.desc && <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-1">{d.desc}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
 /* ─── Sub-panel renderers ─── */
 const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
   <div>
@@ -341,7 +372,9 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
         <img src={panel.hero.img} alt={panel.hero.title} loading="lazy" className="w-full h-full object-cover" />
       </div>
     </div>
-    {panel.summary ? (
+    {panel.phases ? (
+      <OutclassPhases phases={panel.phases} />
+    ) : panel.summary ? (
       <div className="flex flex-col gap-4 max-w-3xl">
         {panel.summary.map((item, i) => (
           <p key={i} className="text-sm sm:text-base text-foreground/90 leading-relaxed">
@@ -354,6 +387,8 @@ const AcademicPanel = ({ panel }: { panel: SubPanel }) => (
         {panel.items.map((item, i) => <AccordionRow key={i} item={item} defaultOpen={panel.items.length === 1} />)}
       </div>
     )}
+  </div>
+);
   </div>
 );
 
