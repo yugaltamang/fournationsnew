@@ -34,7 +34,7 @@ const partners = [
   },
   {
     tag: "Term 3 · Hong Kong · 10 Weeks",
-    name: "CUHK, Hong Kong",
+    name: "The Chinese University of Hong Kong (CUHK)",
     image: cuhkImg,
     logo: "https://logo.clearbit.com/cuhk.edu.hk",
     headline: "Gateway to Greater China.",
