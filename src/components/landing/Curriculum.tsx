@@ -1,5 +1,17 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import immIndiaMfg from "@/assets/immersions/india-manufacturing.jpg";
+import immIndiaD2C from "@/assets/immersions/india-d2c.jpg";
+import immIndiaLog from "@/assets/immersions/india-logistics.jpg";
+import immIndiaBrand from "@/assets/immersions/india-brand.jpg";
+import immLdnFinance from "@/assets/immersions/london-finance.jpg";
+import immLdnFintech from "@/assets/immersions/london-fintech.jpg";
+import immLdnAdvisory from "@/assets/immersions/london-advisory.jpg";
+import immLdnLuxury from "@/assets/immersions/london-luxury.jpg";
+import immHkFinance from "@/assets/immersions/hk-finance.jpg";
+import immHkPlatform from "@/assets/immersions/hk-platform.jpg";
+import immHkLogistics from "@/assets/immersions/hk-logistics.jpg";
+import immHkAi from "@/assets/immersions/hk-ai.jpg";
 import leadershipLondonImg from "@/assets/outclass/leadership-london.jpg";
 import indiaCultural from "@/assets/cultural/india-cultural.jpg";
 import londonCultural from "@/assets/cultural/london-cultural.jpg";
@@ -134,10 +146,10 @@ export const terms: Term[] = [
     immersions: {
       header: { title: "4 industry immersions + a Jalandhar deep-dive.", body: "4 company visits across Delhi NCR, followed by a 3-day trip to Jalandhar factories and universities. Locations are selected from the list below and finalised closer to the date based on availability and programme design." },
       cards: [
-        { img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80&fit=crop", cat: "Manufacturing & Industrial", title: "India's Industrial Powerhouses", desc: "Walk the floors of India's most scaled manufacturers and operators.", logos: "Addverb · ITC Limited · Sonalika Tractors · Honda" },
-        { img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80&fit=crop", cat: "D2C", title: "Indian Craft. Global Cup.", desc: "Inside a home-grown D2C brand that scaled coffee culture across the country.", logos: "Blue Tokai" },
-        { img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&fit=crop", cat: "Logistics & Commerce", title: "India's Logistics Backbone", desc: "How modern shipping and fulfilment platforms power Indian commerce.", logos: "Shiprocket" },
-        { img: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80&fit=crop", cat: "Brand Positioning", title: "Brand Positioning Masterclass", desc: "Learn how home-grown brands compete globally through sharp positioning, messaging and market differentiation.", logos: "Nivia Sports · LPU Jalandhar" },
+        { img: immIndiaMfg, cat: "Manufacturing & Industrial", title: "India's Industrial Powerhouses", desc: "Walk the floors of India's most scaled manufacturers and operators.", logos: "Addverb · ITC Limited · Sonalika Tractors · Honda" },
+        { img: immIndiaD2C, cat: "D2C", title: "Indian Craft. Global Cup.", desc: "Inside a home-grown D2C brand that scaled coffee culture across the country.", logos: "Blue Tokai" },
+        { img: immIndiaLog, cat: "Logistics & Commerce", title: "India's Logistics Backbone", desc: "How modern shipping and fulfilment platforms power Indian commerce.", logos: "Shiprocket" },
+        { img: immIndiaBrand, cat: "Brand Positioning", title: "Brand Positioning Masterclass", desc: "Learn how home-grown brands compete globally through sharp positioning, messaging and market differentiation.", logos: "Nivia Sports · LPU Jalandhar" },
       ],
     },
     cultural: {
@@ -185,10 +197,10 @@ export const terms: Term[] = [
     immersions: {
       header: { title: "8 business immersions in London.", body: "8 company visits across London's finance, venture, fintech, energy, advisory, luxury and consumer businesses. Visits are finalised closer to the date based on availability and programme design." },
       cards: [
-        { img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&fit=crop", cat: "Finance & Venture", title: "Capital and Company Builders", desc: "How private equity and venture builders fund, scale and shape global businesses.", logos: "Arctos · Blenheim Chalcot" },
-        { img: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80&fit=crop", cat: "Fintech & Energy", title: "Technology Disruptors", desc: "How fintech and clean-energy platforms are reimagining money, markets and sustainability.", logos: "Ripple · Octopus Energy" },
-        { img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&fit=crop", cat: "Advisory & Strategy", title: "Global Advisory at Scale", desc: "Inside the firms advising the world's largest companies on strategy, transformation and growth.", logos: "Deloitte · Candesic" },
-        { img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80&fit=crop", cat: "Luxury & Consumer", title: "Icons of Brand and Health", desc: "How heritage brands and healthcare giants build desire, trust and global scale.", logos: "Burberry · Johnson & Johnson" },
+        { img: immLdnFinance, cat: "Finance & Venture", title: "Capital and Company Builders", desc: "How private equity and venture builders fund, scale and shape global businesses.", logos: "Arctos · Blenheim Chalcot" },
+        { img: immLdnFintech, cat: "Fintech & Energy", title: "Technology Disruptors", desc: "How fintech and clean-energy platforms are reimagining money, markets and sustainability.", logos: "Ripple · Octopus Energy" },
+        { img: immLdnAdvisory, cat: "Advisory & Strategy", title: "Global Advisory at Scale", desc: "Inside the firms advising the world's largest companies on strategy, transformation and growth.", logos: "Deloitte · Candesic" },
+        { img: immLdnLuxury, cat: "Luxury & Consumer", title: "Icons of Brand and Health", desc: "How heritage brands and healthcare giants build desire, trust and global scale.", logos: "Burberry · Johnson & Johnson" },
       ],
     },
     cultural: {
@@ -233,10 +245,10 @@ export const terms: Term[] = [
     immersions: {
       header: { title: "Business immersions in Hong Kong.", body: "Business immersions across Hong Kong and the Greater Bay Area. Company visits are selected from the list below and finalised closer to the date based on availability and programme design.", note: { title: "CUHK FinTech Seminars", desc: "Learners engage in 4-6 hours of seminars. Each seminar will showcase insights from industry leaders and experts, providing valuable perspectives on emerging trends and technologies." } },
       cards: [
-        { img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop", cat: "Finance & Markets", title: "Hong Kong's Capital Engine", desc: "Inside the institutions connecting Asian capital to global markets.", logos: "Hong Kong Stock Exchange · HSBC" },
-        { img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&fit=crop", cat: "Platform & Social Commerce", title: "Digital Giants at Scale", desc: "How platform companies build ecosystems across content, commerce, and payments.", logos: "Alibaba Group · ByteDance" },
-        { img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&fit=crop", cat: "Logistics & Trade", title: "How Hong Kong Moves the World", desc: "Commerce, sourcing, and cross-border logistics in one global trade hub.", logos: "Kerry Logistics · Li & Fung · Airport Authority Hong Kong" },
-        { img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop", cat: "AI & Deep Tech", title: "Technology at the Frontier", desc: "Applied AI and deep-tech innovation across Hong Kong and China.", logos: "SenseTime · Tencent · iFlytek" },
+        { img: immHkFinance, cat: "Finance & Markets", title: "Hong Kong's Capital Engine", desc: "Inside the institutions connecting Asian capital to global markets.", logos: "Hong Kong Stock Exchange · HSBC" },
+        { img: immHkPlatform, cat: "Platform & Social Commerce", title: "Digital Giants at Scale", desc: "How platform companies build ecosystems across content, commerce, and payments.", logos: "Alibaba Group · ByteDance" },
+        { img: immHkLogistics, cat: "Logistics & Trade", title: "How Hong Kong Moves the World", desc: "Commerce, sourcing, and cross-border logistics in one global trade hub.", logos: "Kerry Logistics · Li & Fung · Airport Authority Hong Kong" },
+        { img: immHkAi, cat: "AI & Deep Tech", title: "Technology at the Frontier", desc: "Applied AI and deep-tech innovation across Hong Kong and China.", logos: "SenseTime · Tencent · iFlytek" },
       ],
     },
     cultural: {
