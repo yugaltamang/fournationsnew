@@ -21,7 +21,7 @@ const FEES: Record<Region, { label: string; items: { l: string; v: string; s: st
     items: [
       { l: "Application Fee", v: "₹5,000", s: "One-time, non-refundable" },
       { l: "Admission Fee", v: "₹100,000", s: "Payable on offer acceptance" },
-      { l: "Total Fee", v: "₹6,399,999", s: "*All inclusive", primary: true },
+      { l: "Tuition Fee", v: "₹6,399,999", s: "*All inclusive", primary: true },
     ],
   },
   INTL: {
@@ -29,7 +29,7 @@ const FEES: Record<Region, { label: string; items: { l: string; v: string; s: st
     items: [
       { l: "Application Fee", v: "$50", s: "One-time, non-refundable" },
       { l: "Admission Fee", v: "$1,000", s: "Payable on offer acceptance" },
-      { l: "Total Fee", v: "$70,000", s: "*All inclusive", primary: true },
+      { l: "Tuition Fee", v: "$70,000", s: "*All inclusive", primary: true },
     ],
   },
 };
