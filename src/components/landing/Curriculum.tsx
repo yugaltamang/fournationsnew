@@ -437,6 +437,11 @@ const ImmersionPanelView = ({ data, location }: { data: ImmersionPanel; location
             </div>
           </div>
         )}
+        {data.header.footnote && (
+          <p className="mt-4 text-xs text-muted-foreground/80 leading-relaxed max-w-2xl">
+            <span className="text-primary">*</span> {data.header.footnote}
+          </p>
+        )}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {data.cards.map((card, i) => (
