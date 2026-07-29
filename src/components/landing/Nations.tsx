@@ -694,6 +694,11 @@ const Nations = () => {
                                 </p>
                               </div>
                             )}
+                            {term.immersions.header.footnote && (
+                              <p className="mt-6 text-xs text-muted-foreground/80 leading-relaxed max-w-2xl">
+                                <span className="text-primary">*</span> {term.immersions.header.footnote}
+                              </p>
+                            )}
                           </div>
                         )}
 

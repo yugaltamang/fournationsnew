@@ -63,7 +63,7 @@ interface Drop { w?: string; title: string; desc?: string }
 export interface Phase { code: string; weeks: string; title: string; tagline: string; drops: Drop[] }
 interface SubPanel { label: string; hero: { chip: string; title: string; body: string; img: string }; items: AccItem[]; summary?: string[]; phases?: Phase[] }
 interface CulturalPanel { chip: string; title: string; body: string; cards: { name: string; desc: string }[]; note?: string; img: string }
-interface ImmersionPanel { header: { title: string; body: string; note?: { title: string; desc: string } }; cards: { img: string; cat: string; title: string; desc: string; logos: string }[] }
+interface ImmersionPanel { header: { title: string; body: string; footnote?: string; note?: { title: string; desc: string } }; cards: { img: string; cat: string; title: string; desc: string; logos: string }[] }
 interface Faculty { name: string; designation: string; photo: string }
 
 interface Term {
@@ -166,7 +166,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "4 industry immersions + a Jalandhar deep-dive.", body: "4 company visits across Delhi NCR, followed by a 3-day trip to Jalandhar factories and universities. Locations are selected from the list below and finalised closer to the date based on availability and programme design." },
+      header: { title: "4 industry immersions + a Jalandhar deep-dive.", body: "4 company visits across Delhi NCR, followed by a 3-day trip to Jalandhar factories and universities. Locations are selected from the list below.", footnote: "Visits are finalised closer to the date based on availability and programme design." },
       cards: [
         { img: immIndiaMfg, cat: "Manufacturing & Industrial", title: "India's Industrial Powerhouses", desc: "Walk the floors of India's most scaled manufacturers and operators.", logos: "Addverb · ITC Limited · Sonalika Tractors · Honda" },
         { img: immIndiaD2C, cat: "D2C", title: "Indian Craft. Global Cup.", desc: "Inside a home-grown D2C brand that scaled coffee culture across the country.", logos: "Blue Tokai" },
@@ -217,7 +217,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "8 business immersions in London.", body: "8 company visits across London's finance, venture, fintech, energy, advisory, luxury and consumer businesses. Visits are finalised closer to the date based on availability and programme design." },
+      header: { title: "8 business immersions in London.", body: "8 company visits across London's finance, venture, fintech, energy, advisory, luxury and consumer businesses.", footnote: "Visits are finalised closer to the date based on availability and programme design." },
       cards: [
         { img: immLdnFinance, cat: "Finance & Venture", title: "Capital and Company Builders", desc: "How private equity and venture builders fund, scale and shape global businesses.", logos: "Arctos · Blenheim Chalcot" },
         { img: immLdnFintech, cat: "Fintech & Energy", title: "Technology Disruptors", desc: "How fintech and clean-energy platforms are reimagining money, markets and sustainability.", logos: "Ripple · Octopus Energy" },
@@ -265,7 +265,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "Business immersions in Hong Kong.", body: "Business immersions across Hong Kong and the Greater Bay Area. Company visits are selected from the list below and finalised closer to the date based on availability and programme design.", note: { title: "CUHK FinTech Seminars", desc: "Learners engage in 4-6 hours of seminars. Each seminar will showcase insights from industry leaders and experts, providing valuable perspectives on emerging trends and technologies." } },
+      header: { title: "Business immersions in Hong Kong.", body: "Business immersions across Hong Kong and the Greater Bay Area. Company visits are selected from the list below.", footnote: "Visits are finalised closer to the date based on availability and programme design.", note: { title: "CUHK FinTech Seminars", desc: "Learners engage in 4-6 hours of seminars. Each seminar will showcase insights from industry leaders and experts, providing valuable perspectives on emerging trends and technologies." } },
       cards: [
         { img: immHkFinance, cat: "Finance & Markets", title: "Hong Kong's Capital Engine", desc: "Inside the institutions connecting Asian capital to global markets.", logos: "Hong Kong Stock Exchange · HSBC" },
         { img: immHkPlatform, cat: "Platform & Social Commerce", title: "Digital Giants at Scale", desc: "How platform companies build ecosystems across content, commerce, and payments.", logos: "Alibaba Group · ByteDance" },
@@ -436,6 +436,11 @@ const ImmersionPanelView = ({ data, location }: { data: ImmersionPanel; location
               <div className="text-sm text-muted-foreground leading-relaxed">{data.header.note.desc}</div>
             </div>
           </div>
+        )}
+        {data.header.footnote && (
+          <p className="mt-4 text-xs text-muted-foreground/80 leading-relaxed max-w-2xl">
+            <span className="text-primary">*</span> {data.header.footnote}
+          </p>
         )}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
