@@ -166,7 +166,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "4 industry immersions + a Jalandhar deep-dive.", body: "4 company visits across Delhi NCR, followed by a 3-day trip to Jalandhar factories and universities. Locations are selected from the list below.", footnote: "Visits are finalised closer to the date based on availability and programme design." },
+      header: { title: "2 industry immersions + a Jalandhar deep-dive.", body: "4 company visits across Delhi NCR, followed by a 3-day trip to Jalandhar factories and universities. Locations are selected from the list below.", footnote: "Visits are finalised closer to the date based on availability and programme design." },
       cards: [
         { img: immIndiaMfg, cat: "Manufacturing & Industrial", title: "India's Industrial Powerhouses", desc: "Walk the floors of India's most scaled manufacturers and operators.", logos: "Addverb · ITC Limited · Sonalika Tractors · Honda" },
         { img: immIndiaD2C, cat: "D2C", title: "Indian Craft. Global Cup.", desc: "Inside a home-grown D2C brand that scaled coffee culture across the country.", logos: "Blue Tokai" },
