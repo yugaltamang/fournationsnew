@@ -29,7 +29,12 @@ const indiaFaculty: Faculty[] = [
   { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
   { name: "Saurabh Sengupta", designation: "Teaching Master, Modern Selling", photo: "https://images.mastersunion.link/uploads/17042026/v1/card146.webp" },
+  { name: "Dr. Aarti Sharma", designation: "Master in Residence, Finance", photo: "/placeholder.svg" },
+  { name: "Dr. Rinku Mahendru", designation: "Master in Residence, HR", photo: "/placeholder.svg" },
+  { name: "Saksham Kotiya", designation: "Head of Investments, Masters' Union", photo: "/placeholder.svg" },
+  { name: "Sumit Shukla", designation: "Master in Residence, AI", photo: "/placeholder.svg" },
 ];
+
 
 const londonFaculty: Faculty[] = [
   { name: "Gilles Chemla", designation: "Professor of Finance · Co-director, Centre for Financial Technology", photo: gillesPhoto.url },
