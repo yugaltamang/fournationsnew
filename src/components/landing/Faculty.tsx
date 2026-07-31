@@ -32,10 +32,10 @@ const indiaFaculty: Faculty[] = [
   { name: "Dr. Nandini Seth", designation: "Faculty, Quantitative Methods", photo: "https://images.mastersunion.link/uploads/17042026/v2/master2.webp" },
   { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
-  { name: "Saurabh Sengupta", designation: "Teaching Master, Modern Selling", photo: "https://images.mastersunion.link/uploads/17042026/v1/card146.webp" },
-  { name: "Dr. Aarti Sharma", designation: "Master in Residence, Finance", photo: "/placeholder.svg" },
-  { name: "Dr. Rinku Mahendru", designation: "Master in Residence, HR", photo: "/placeholder.svg" },
-  { name: "Saksham Kotiya", designation: "Head of Investments, Masters' Union", photo: "/placeholder.svg" },
+  { name: "Saurabh Sengupta", designation: "Teaching Master, Modern Selling", photo: saurabhPhoto.url, focusClass: "object-[50%_20%]" },
+  { name: "Dr. Aarti Sharma", designation: "Master in Residence, Finance", photo: aartiPhoto.url, focusClass: "object-[50%_20%]" },
+  { name: "Dr. Rinku Mahendru", designation: "Master in Residence, HR", photo: rinkuPhoto.url, focusClass: "object-[50%_25%]" },
+  { name: "Saksham Kotiya", designation: "Head of Investments, Masters' Union", photo: sakshamPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Sumit Shukla", designation: "Master in Residence, AI", photo: "/placeholder.svg" },
 ];
 
