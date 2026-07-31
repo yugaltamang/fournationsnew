@@ -14,6 +14,10 @@ import jeffPhoto from "@/assets/faculty-hk/jeff.asset.json";
 import liaoPhoto from "@/assets/faculty-hk/liao.asset.json";
 import gilbertPhoto from "@/assets/faculty-hk/gilbert.asset.json";
 import rajitaPhoto from "@/assets/faculty-india/rajita.asset.json";
+import sakshamPhoto from "@/assets/faculty-india/saksham.asset.json";
+import saurabhPhoto from "@/assets/faculty-india/saurabh.asset.json";
+import rinkuPhoto from "@/assets/faculty-india/rinku.asset.json";
+import aartiPhoto from "@/assets/faculty-india/aarti.asset.json";
 
 type Faculty = {
   name: string;
