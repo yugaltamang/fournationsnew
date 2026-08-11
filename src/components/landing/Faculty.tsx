@@ -176,6 +176,16 @@ const Faculty = () => {
           </div>
         </div>
 
+        {group.id === "london" && (
+          <p
+            className="mt-8 text-[10px] sm:text-[11px] leading-relaxed opacity-40 max-w-2xl"
+            style={{ fontFamily: "'IBM Plex Mono', monospace" }}
+          >
+            PS — The Imperial faculty listed on this page are provisional and provided for indicative purposes only. Teaching staff are subject to change and will be confirmed closer to the programme start date.
+          </p>
+        )}
+
+
         <div
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-6 border-t"
           style={{ borderColor: `${GOLD}1A` }}
