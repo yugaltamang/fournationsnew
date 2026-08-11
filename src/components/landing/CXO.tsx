@@ -33,6 +33,8 @@ const pillars = [
     ],
     stat: { value: "15+", label: "Business Immersions" },
     fit: "cover" as const,
+    footnote:
+      "Any company visits listed are provisional and subject to availability, scheduling, and confirmation by the host organisation. Visits may change and final arrangements will be confirmed closer to the programme start date.",
   },
   {
     tag: "Live Ventures",
