@@ -118,7 +118,7 @@ const nations: Nation[] = [
     country: "United Kingdom",
     flag: "🇬🇧",
     city: "London",
-    term: "Term 2 · Jun – Jul",
+    term: "Term 2 · Jul – Aug",
     partner: "Imperial College London",
     img: london,
     title: "Command global capital.",
