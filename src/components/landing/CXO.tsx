@@ -33,6 +33,8 @@ const pillars = [
     ],
     stat: { value: "15+", label: "Business Immersions" },
     fit: "cover" as const,
+    footnote:
+      "Any company visits listed are provisional and subject to availability, scheduling, and confirmation by the host organisation. Visits may change and final arrangements will be confirmed closer to the programme start date.",
   },
   {
     tag: "Live Ventures",
@@ -206,6 +208,11 @@ const CXO = () => {
                       </li>
                     ))}
                   </ul>
+                  {p.footnote && (
+                    <p className="mt-4 text-[10px] text-muted-foreground/70 leading-relaxed max-w-md">
+                      * {p.footnote}
+                    </p>
+                  )}
                 </div>
               </div>
             );
@@ -269,18 +276,16 @@ const CXO = () => {
                     </li>
                   ))}
                 </ul>
+                {p.footnote && (
+                  <p className="mt-3 text-[10px] text-muted-foreground/70 leading-relaxed">
+                    * {p.footnote}
+                  </p>
+                )}
               </div>
             </article>
           ))}
         </div>
 
-        {/* Footnote */}
-        <p className="mt-8 text-[11px] text-muted-foreground/70 leading-relaxed max-w-3xl">
-          * Any company visits listed are provisional and subject to availability,
-          scheduling, and confirmation by the host organisation. Visits may
-          change and final arrangements will be confirmed closer to the
-          programme start date.
-        </p>
       </div>
     </section>
   );
