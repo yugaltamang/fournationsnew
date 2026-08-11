@@ -208,6 +208,11 @@ const CXO = () => {
                       </li>
                     ))}
                   </ul>
+                  {p.footnote && (
+                    <p className="mt-4 text-[10px] text-muted-foreground/70 leading-relaxed max-w-md">
+                      * {p.footnote}
+                    </p>
+                  )}
                 </div>
               </div>
             );
