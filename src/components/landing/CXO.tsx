@@ -273,6 +273,14 @@ const CXO = () => {
             </article>
           ))}
         </div>
+
+        {/* Footnote */}
+        <p className="mt-8 text-[11px] text-muted-foreground/70 leading-relaxed max-w-3xl">
+          * Any company visits listed are provisional and subject to availability,
+          scheduling, and confirmation by the host organisation. Visits may
+          change and final arrangements will be confirmed closer to the
+          programme start date.
+        </p>
       </div>
     </section>
   );
