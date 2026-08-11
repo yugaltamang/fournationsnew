@@ -166,7 +166,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "2 industry immersions + a Jalandhar deep-dive.", body: "4 company visits across Delhi NCR, followed by a 3-day trip to Jalandhar factories and universities. Locations are selected from the list below.", footnote: "Visits are finalised closer to the date based on availability and programme design." },
+      header: { title: "2 industry immersions + a Jalandhar deep-dive.", body: "4 company visits across Delhi NCR, followed by a 3-day trip to Jalandhar factories and universities. Locations are selected from the list below.", footnote: "Any company visits listed are provisional and subject to availability, scheduling, and confirmation by the host organisation. Visits may change and final arrangements will be confirmed closer to the programme start date." },
       cards: [
         { img: immIndiaMfg, cat: "Manufacturing & Industrial", title: "India's Industrial Powerhouses", desc: "Walk the floors of India's most scaled manufacturers and operators.", logos: "Addverb · ITC Limited · Sonalika Tractors · Honda" },
         { img: immIndiaD2C, cat: "D2C", title: "Indian Craft. Global Cup.", desc: "Inside a home-grown D2C brand that scaled coffee culture across the country.", logos: "Blue Tokai" },
@@ -217,7 +217,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "8 business immersions in London.", body: "8 company visits across London's finance, venture, fintech, energy, advisory, luxury and consumer businesses.", footnote: "Visits are finalised closer to the date based on availability and programme design." },
+      header: { title: "8 business immersions in London.", body: "8 company visits across London's finance, venture, fintech, energy, advisory, luxury and consumer businesses.", footnote: "Any company visits listed are provisional and subject to availability, scheduling, and confirmation by the host organisation. Visits may change and final arrangements will be confirmed closer to the programme start date." },
       cards: [
         { img: immLdnFinance, cat: "Finance & Venture", title: "Capital and Company Builders", desc: "How private equity and venture builders fund, scale and shape global businesses.", logos: "Arctos · Blenheim Chalcot" },
         { img: immLdnFintech, cat: "Fintech & Energy", title: "Technology Disruptors", desc: "How fintech and clean-energy platforms are reimagining money, markets and sustainability.", logos: "Ripple · Octopus Energy" },
@@ -265,7 +265,7 @@ export const terms: Term[] = [
       ],
     },
     immersions: {
-      header: { title: "Business immersions in Hong Kong.", body: "Business immersions across Hong Kong and the Greater Bay Area. Company visits are selected from the list below.", footnote: "Visits are finalised closer to the date based on availability and programme design.", note: { title: "CUHK FinTech Seminars", desc: "Learners engage in 4-6 hours of seminars. Each seminar will showcase insights from industry leaders and experts, providing valuable perspectives on emerging trends and technologies." } },
+      header: { title: "Business immersions in Hong Kong.", body: "Business immersions across Hong Kong and the Greater Bay Area. Company visits are selected from the list below.", footnote: "Any company visits listed are provisional and subject to availability, scheduling, and confirmation by the host organisation. Visits may change and final arrangements will be confirmed closer to the programme start date.", note: { title: "CUHK FinTech Seminars", desc: "Learners engage in 4-6 hours of seminars. Each seminar will showcase insights from industry leaders and experts, providing valuable perspectives on emerging trends and technologies." } },
       cards: [
         { img: immHkFinance, cat: "Finance & Markets", title: "Hong Kong's Capital Engine", desc: "Inside the institutions connecting Asian capital to global markets.", logos: "Hong Kong Stock Exchange · HSBC" },
         { img: immHkPlatform, cat: "Platform & Social Commerce", title: "Digital Giants at Scale", desc: "How platform companies build ecosystems across content, commerce, and payments.", logos: "Alibaba Group · ByteDance" },
