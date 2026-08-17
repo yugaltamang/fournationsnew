@@ -62,7 +62,7 @@ const Admissions = () => {
         <div className="max-w-2xl">
           <SectionEyebrow className="mb-4">Admissions &amp; Fees</SectionEyebrow>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-4 max-w-2xl">
-            Limited to 65 participants only.
+            Limited to 65 participants only. Apply Now
           </p>
         </div>
         <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary border border-primary/40 px-3 py-1.5 self-start md:self-auto">
