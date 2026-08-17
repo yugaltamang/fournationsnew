@@ -243,10 +243,10 @@ export default function Outclass() {
 
 
               {active.stats && (
-                <div className="grid grid-cols-3 gap-4 border-t border-border pt-5">
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 border-t border-border pt-5">
                   {active.stats.map((s) => (
-                    <div key={s.label}>
-                      <span className="block font-display text-2xl sm:text-3xl md:text-4xl font-medium tabular-nums leading-none">
+                    <div key={s.label} className="min-w-0">
+                      <span className="block font-display text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-medium tabular-nums leading-none whitespace-nowrap">
                         {s.value}
                       </span>
                       <span className="block text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mt-1.5 font-mono">
