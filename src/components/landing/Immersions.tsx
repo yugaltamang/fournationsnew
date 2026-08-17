@@ -148,7 +148,7 @@ const Immersions = () => (
                     <div className="font-display text-2xl sm:text-3xl md:text-xl lg:text-3xl xl:text-4xl mu-hero-gradient-text leading-none whitespace-nowrap">
                       <span>{s.v}</span>
                     </div>
-                    <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.12em] lg:tracking-widest text-muted-foreground mt-2 leading-tight">
+                    <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.08em] md:tracking-[0.02em] lg:tracking-widest text-muted-foreground mt-2 leading-tight">
                       {s.l}
                     </div>
                   </div>
