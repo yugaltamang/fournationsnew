@@ -37,7 +37,7 @@ const LOGO_MAP: Record<string, string> = {
   "Airport Authority Hong Kong": airportHkLogo.url,
 };
 
-const SMALL_LOGOS = new Set(["Shiprocket", "Nivia Sports", "Arctos", "Addverb"]);
+
 
 const companies = [
   "Addverb",
@@ -188,11 +188,7 @@ const Hero = () => {
                 alt={co}
                 loading="lazy"
                 decoding="async"
-                className={`object-contain ${
-                  SMALL_LOGOS.has(co)
-                    ? "max-h-5 sm:max-h-6 max-w-[80px] sm:max-w-[100px]"
-                    : "max-h-8 sm:max-h-10 max-w-[120px] sm:max-w-[152px]"
-                }`}
+                className="object-contain max-h-7 sm:max-h-8 max-w-[110px] sm:max-w-[140px]"
               />
             </span>
             <span className="text-primary/60">✦</span>
