@@ -129,6 +129,9 @@ const Hero = () => {
             </div>
           ))}
         </div>
+        <p className="mt-4 text-xs sm:text-sm text-muted-foreground max-w-3xl">
+          Limited to 65 participants only.
+        </p>
       </div>
 
       <div className="hidden md:block md:col-span-5 md:-mt-6 lg:-mt-10">

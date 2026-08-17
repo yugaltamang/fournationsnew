@@ -16,6 +16,7 @@ const pillars = [
       "9 months across 4 countries",
       "On-ground visits & boardrooms",
       "Imperial & CUHK certificates",
+      "Limited to 65 participants only",
     ],
     stat: { value: "4", label: "Nations" },
     fit: "contain" as const,
