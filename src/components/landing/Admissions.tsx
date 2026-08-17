@@ -146,10 +146,10 @@ const Admissions = () => {
             className="bg-primary text-primary-foreground p-6 sm:p-8 flex items-center justify-between gap-4 group hover:opacity-90 transition-opacity text-left w-full"
           >
             <div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] mb-2 opacity-80">Next step</div>
-              <div className="font-display text-xl sm:text-2xl leading-tight">Start your application</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] mb-2 opacity-80">Limited to 65 participants only</div>
+              <div className="font-display text-2xl sm:text-3xl leading-tight">Apply Now</div>
             </div>
-            <ArrowRight className="w-6 h-6 shrink-0 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-7 h-7 shrink-0 group-hover:translate-x-1 transition-transform" />
           </button>
         </ApplyWidget>
       </div>
