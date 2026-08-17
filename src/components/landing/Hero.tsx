@@ -37,7 +37,11 @@ const LOGO_MAP: Record<string, string> = {
   "Airport Authority Hong Kong": airportHkLogo.url,
 };
 
-
+const LOGO_SIZE_CLASSES: Record<string, string> = {
+  Shiprocket: "max-h-5 sm:max-h-6 max-w-[80px] sm:max-w-[100px]",
+  Arctos: "max-h-5 sm:max-h-6 max-w-[80px] sm:max-w-[100px]",
+  "Blue Tokai": "max-h-9 sm:max-h-10 max-w-[130px] sm:max-w-[160px]",
+};
 
 const companies = [
   "Addverb",
@@ -188,7 +192,7 @@ const Hero = () => {
                 alt={co}
                 loading="lazy"
                 decoding="async"
-                className="object-contain max-h-7 sm:max-h-8 max-w-[110px] sm:max-w-[140px]"
+                className={`object-contain ${LOGO_SIZE_CLASSES[co] ?? "max-h-7 sm:max-h-8 max-w-[110px] sm:max-w-[140px]"}`}
               />
             </span>
             <span className="text-primary/60">✦</span>
