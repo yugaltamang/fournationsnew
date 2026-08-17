@@ -145,10 +145,10 @@ const Immersions = () => (
               <div className={`grid grid-cols-2 ${p.stats.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-4"} gap-px bg-border border border-border`}>
                 {p.stats.map((s) => (
                   <div key={s.l} className="bg-background p-3 sm:p-4 min-w-0">
-                    <div className="font-display text-3xl sm:text-4xl md:text-5xl mu-hero-gradient-text leading-none break-words">
+                    <div className="font-display text-2xl sm:text-3xl md:text-xl lg:text-3xl xl:text-4xl mu-hero-gradient-text leading-none whitespace-nowrap">
                       <span>{s.v}</span>
                     </div>
-                    <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-foreground mt-2 leading-tight">
+                    <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.08em] md:tracking-[0.02em] lg:tracking-widest text-muted-foreground mt-2 leading-tight">
                       {s.l}
                     </div>
                   </div>

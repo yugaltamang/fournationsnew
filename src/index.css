@@ -140,7 +140,7 @@
   }
 
   .tag-pill {
-    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/25 bg-primary/[0.06] backdrop-blur-sm font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-primary shadow-[0_0_24px_-8px_hsl(var(--primary)/0.5)];
+    @apply inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full border border-primary/25 bg-primary/[0.06] backdrop-blur-sm font-mono text-[9px] sm:text-[10px] lg:text-[11px] uppercase tracking-[0.16em] sm:tracking-[0.2em] lg:tracking-[0.28em] text-primary shadow-[0_0_24px_-8px_hsl(var(--primary)/0.5)] whitespace-nowrap max-w-full;
   }
 
   /* MU signature hero gradient - cyan → yellow → orange */
