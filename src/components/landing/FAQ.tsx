@@ -14,7 +14,7 @@ const groups: FaqGroup[] = [
       },
       {
         q: "What is the expected cohort size?",
-        a: "The program maintains a highly selective cohort with limited seats, ensuring strong peer learning, meaningful collaboration, and access to faculty and industry leaders.",
+        a: "The program is limited to 65 participants only, ensuring a highly selective cohort, strong peer learning, meaningful collaboration, and access to faculty and industry leaders.",
       },
       {
         q: "What are the advantages of the 9-month format?",
