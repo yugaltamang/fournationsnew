@@ -90,7 +90,7 @@ const CXO = () => {
 
         {/* Diagonal split panels - desktop */}
         <div
-          className="hidden md:flex relative w-full h-[640px] gap-2"
+          className="hidden lg:flex relative w-full h-[640px] gap-2"
           onMouseLeave={() => setActive(1)}
         >
           {pillars.map((p, i) => {
@@ -221,7 +221,7 @@ const CXO = () => {
         </div>
 
         {/* Mobile - stacked panels */}
-        <div className="md:hidden space-y-4">
+        <div className="lg:hidden space-y-4">
           {pillars.map((p, i) => (
             <article
               key={i}
