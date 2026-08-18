@@ -124,6 +124,13 @@ const Admissions = () => {
               </div>
             ))}
           </div>
+          <div className="mt-4 pt-4 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-1">{fees.total.l}</div>
+              <div className="text-[11px] text-muted-foreground">{fees.total.s}</div>
+            </div>
+            <div className="font-display text-2xl sm:text-3xl text-primary">{fees.total.v}</div>
+          </div>
         </div>
       </div>
 
