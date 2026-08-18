@@ -36,7 +36,6 @@ const indiaFaculty: Faculty[] = [
   { name: "Dr. Aarti Sharma", designation: "Master in Residence, Finance", photo: aartiPhoto.url, focusClass: "object-[50%_20%]" },
   { name: "Dr. Rinku Mahendru", designation: "Master in Residence, HR", photo: rinkuPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Saksham Kotiya", designation: "Head of Investments, Masters' Union", photo: sakshamPhoto.url, focusClass: "object-[50%_25%]" },
-  { name: "Sumit Shukla", designation: "Master in Residence, AI", photo: "/placeholder.svg" },
 ];
 
 
