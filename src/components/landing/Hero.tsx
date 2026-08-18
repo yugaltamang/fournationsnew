@@ -126,6 +126,10 @@ const Hero = () => {
           </a>
         </div>
 
+        <p className="mt-4 text-xs sm:text-sm text-muted-foreground max-w-3xl">
+          Limited to 65 participants only.
+        </p>
+
         <div className="mt-10 sm:mt-14 grid grid-cols-3 gap-x-3 sm:gap-6 max-w-3xl border-t border-border pt-6 sm:pt-8">
           {[
             { n: "9", l: "Months · Core Program" },
@@ -138,9 +142,6 @@ const Hero = () => {
             </div>
           ))}
         </div>
-        <p className="mt-4 text-xs sm:text-sm text-muted-foreground max-w-3xl">
-          Limited to 65 participants only.
-        </p>
       </div>
 
       <div className="hidden md:block md:col-span-5 md:-mt-6 lg:-mt-10">
