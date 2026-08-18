@@ -15,7 +15,7 @@ function fallbackRegion(): Region {
   return "INTL";
 }
 
-const FEES: Record<Region, { label: string; items: { l: string; v: string; s: string; primary?: boolean }[] }> = {
+const FEES: Record<Region, { label: string; items: { l: string; v: string; s: string; primary?: boolean; total?: boolean }[]; total: { l: string; v: string; s: string } }> = {
   IN: {
     label: "India (in INR)",
     items: [
@@ -23,6 +23,7 @@ const FEES: Record<Region, { label: string; items: { l: string; v: string; s: st
       { l: "Admission Fee", v: "₹100,000", s: "Payable on offer acceptance" },
       { l: "Tuition Fee", v: "₹6,399,999", s: "*All inclusive", primary: true },
     ],
+    total: { l: "Total Programme Fee", v: "₹6,504,999", s: "Application + Admission + Tuition" },
   },
   INTL: {
     label: "International (in USD)",
@@ -31,6 +32,7 @@ const FEES: Record<Region, { label: string; items: { l: string; v: string; s: st
       { l: "Admission Fee", v: "$1,000", s: "Payable on offer acceptance" },
       { l: "Tuition Fee", v: "$70,000", s: "*All inclusive", primary: true },
     ],
+    total: { l: "Total Programme Fee", v: "$71,050", s: "Application + Admission + Tuition" },
   },
 };
 
