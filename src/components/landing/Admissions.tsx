@@ -86,7 +86,7 @@ const Admissions = () => {
               Interviews
             </div>
             <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
-              Dec '26 – Feb '27
+              Dec '26 – Mar '27
             </div>
           </div>
           <div className="p-5 sm:p-6 md:p-8">

@@ -32,7 +32,7 @@ const Apply = () => (
           {[
             { l: "Journey", v: "India → London → Hong Kong → Dubai" },
             { l: "Decision", v: "Within 14 days" },
-            { l: "Start", v: "Feb 2027" },
+            { l: "Start", v: "Mar 2027" },
           ].map((s) => (
             <div key={s.l} className="bg-background p-4 sm:p-5">
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">{s.l}</div>
