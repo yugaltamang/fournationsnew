@@ -114,7 +114,7 @@ export const terms: Term[] = [
     outcomeSub: "Build, launch and validate a real business - Finance, Product, Marketing, Operations & AI",
     academic: {
       label: "In Class",
-      hero: { chip: "February – May · India", title: "Term 1 - India", body: "Term 1 builds a <strong>strong entrepreneurial foundation</strong> - moving you from idea to execution with <strong>speed, clarity, and discipline</strong>, across finance, product, validation, and operations.", img: "https://images.mastersunion.link/uploads/26032026/v1/Hero1.webp" },
+      hero: { chip: "March – June · India", title: "Term 1 - India", body: "Term 1 builds a <strong>strong entrepreneurial foundation</strong> - moving you from idea to execution with <strong>speed, clarity, and discipline</strong>, across finance, product, validation, and operations.", img: "https://images.mastersunion.link/uploads/26032026/v1/Hero1.webp" },
       items: [
         { num: "FIFI", code: "Finance & Fintech", title: "How to read and analyse financial statements?", rows: ["How to read and analyse financial statements?"] },
         { num: "FIFI", code: "Finance & Fintech", title: "How to build financial models & value companies?", rows: ["How to build financial models & value companies?"] },
@@ -245,7 +245,7 @@ export const terms: Term[] = [
     outcomeSub: "Study in Hong Kong, Understand China - explore business, digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong.",
     academic: {
       label: "In Class",
-      hero: { chip: "August – October · CUHK, Hong Kong", title: "Term 3 - Hong Kong", body: "Term 3 focuses on studying business at the intersection of <strong>finance, digital innovation, manufacturing, supply chains, and AI</strong> - across five concentrations delivered through the CUHK Hong Kong immersion curriculum. Learners also get a certificate from CUHK, Hong Kong.", img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop&crop=center" },
+      hero: { chip: "September – November · CUHK, Hong Kong", title: "Term 3 - Hong Kong", body: "Term 3 focuses on studying business at the intersection of <strong>finance, digital innovation, manufacturing, supply chains, and AI</strong> - across five concentrations delivered through the CUHK Hong Kong immersion curriculum. Learners also get a certificate from CUHK, Hong Kong.", img: "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80&fit=crop&crop=center" },
       items: [
         { num: "MAST", code: "Management & Strategy", title: "How does the state shape market opportunity?", rows: ["How does the state shape market opportunity?"] },
         { num: "PRDT", code: "Product, AI & Tech", title: "How did China leapfrog the West in digital business models?", rows: ["How did China leapfrog the West in digital business models?"] },
