@@ -18,6 +18,7 @@ import sakshamPhoto from "@/assets/faculty-india/saksham.asset.json";
 import saurabhPhoto from "@/assets/faculty-india/saurabh.asset.json";
 import rinkuPhoto from "@/assets/faculty-india/rinku.asset.json";
 import aartiPhoto from "@/assets/faculty-india/aarti.asset.json";
+import poornimaPhoto from "@/assets/faculty-india/poornima.asset.json";
 
 type Faculty = {
   name: string;
@@ -36,6 +37,7 @@ const indiaFaculty: Faculty[] = [
   { name: "Dr. Aarti Sharma", designation: "Master in Residence, Finance", photo: aartiPhoto.url, focusClass: "object-[50%_20%]" },
   { name: "Dr. Rinku Mahendru", designation: "Master in Residence, HR", photo: rinkuPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Saksham Kotiya", designation: "Head of Investments, Masters' Union", photo: sakshamPhoto.url, focusClass: "object-[50%_25%]" },
+  { name: "Poornima Rai", designation: "Master in Residence, Digital Marketing", photo: poornimaPhoto.url, focusClass: "object-[50%_25%]" },
 ];
 
 
