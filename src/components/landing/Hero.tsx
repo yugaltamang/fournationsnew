@@ -73,7 +73,7 @@ const Hero = () => {
 
         <div className="inline-flex items-center gap-2 mb-4 sm:mb-5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-muted-foreground">
           <span className="w-5 h-px bg-primary" />
-          <span>Global Business Programme</span>
+          <span>Four Nations Global Business Programme</span>
         </div>
 
         <h1 className="font-display text-[clamp(1.6rem,5.2vw,3.75rem)] leading-[0.98] font-medium text-balance break-words">
