@@ -98,6 +98,7 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
       if (r.exists) { setStatus("idle"); setView("login"); setLoginError("Account already exists. Please log in."); return; }
       setStatus("error"); setErrorMsg(r.error || "Something went wrong. Please try again."); return;
     }
+    pushRegistrationSuccess({ iso: selected.iso, dialCode: String(selected.dial) });
     if (r.formLink && r.formLink.startsWith("https://")) { window.location.assign(r.formLink); return; }
     setStatus("success");
   };
