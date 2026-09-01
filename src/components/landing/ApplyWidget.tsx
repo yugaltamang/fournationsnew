@@ -81,6 +81,24 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
     setLoginIso("IN"); setLoginStatus("idle"); setLoginError("");
   }, []);
 
+  // If the user is sent to the external application form and then comes back
+  // (back button / bfcache restore), clear any stuck "submitting" spinners.
+  useEffect(() => {
+    const clearStuck = () => {
+      setStatus((s) => (s === "submitting" ? "idle" : s));
+      setLoginStatus((s) => (s === "submitting" ? "idle" : s));
+    };
+    const onPageShow = () => clearStuck();
+    const onVisibility = () => { if (document.visibilityState === "visible") clearStuck(); };
+    window.addEventListener("pageshow", onPageShow);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      window.removeEventListener("pageshow", onPageShow);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
+  }, []);
+
+
   const selected = COUNTRIES.find((c) => c.iso === iso) ?? COUNTRIES[0];
   const loginSelected = COUNTRIES.find((c) => c.iso === loginIso) ?? COUNTRIES[0];
 
