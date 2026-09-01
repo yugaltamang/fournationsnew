@@ -81,22 +81,26 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
     setLoginIso("IN"); setLoginStatus("idle"); setLoginError("");
   }, []);
 
-  // If the user is sent to the external application form and then comes back
-  // (back button / bfcache restore), clear any stuck "submitting" spinners.
+  // If the user is redirected to the external application form and then comes back
+  // (back button / bfcache restore), the dialog may still be open with a stuck spinner.
+  // Close and reset it so they land cleanly on the page.
   useEffect(() => {
-    const clearStuck = () => {
-      setStatus((s) => (s === "submitting" ? "idle" : s));
-      setLoginStatus((s) => (s === "submitting" ? "idle" : s));
+    const closeStuckForm = (event?: PageTransitionEvent) => {
+      const wasSubmitting = status === "submitting" || loginStatus === "submitting";
+      if (wasSubmitting || (event && event.persisted)) {
+        setOpen(false);
+        reset();
+      }
     };
-    const onPageShow = () => clearStuck();
-    const onVisibility = () => { if (document.visibilityState === "visible") clearStuck(); };
-    window.addEventListener("pageshow", onPageShow);
+    const onPageShow = (e: PageTransitionEvent) => closeStuckForm(e);
+    const onVisibility = () => { if (document.visibilityState === "visible") closeStuckForm(); };
+    window.addEventListener("pageshow", onPageShow as EventListener);
     document.addEventListener("visibilitychange", onVisibility);
     return () => {
-      window.removeEventListener("pageshow", onPageShow);
+      window.removeEventListener("pageshow", onPageShow as EventListener);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, []);
+  }, [reset, status, loginStatus]);
 
 
   const selected = COUNTRIES.find((c) => c.iso === iso) ?? COUNTRIES[0];
