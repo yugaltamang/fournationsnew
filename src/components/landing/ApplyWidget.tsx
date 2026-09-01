@@ -21,6 +21,15 @@ async function callMu(action: string, payload: Record<string, unknown>) {
   return data as { ok: boolean; error?: string; exists?: boolean; formLink?: string | null };
 }
 
+// Fire a GTM dataLayer event only on a successful registration
+function pushRegistrationSuccess(detail: Record<string, unknown>) {
+  const w = window as unknown as { dataLayer?: unknown[] };
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({ event: "registration_success", form_name: "four_nations_apply", ...detail, ...readUtm() });
+}
+
+
+
 type Status = "idle" | "submitting" | "success" | "error";
 type View = "apply" | "login" | "login-otp-sent";
 type LoginMode = "email" | "phone";
@@ -98,6 +107,7 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
       if (r.exists) { setStatus("idle"); setView("login"); setLoginError("Account already exists. Please log in."); return; }
       setStatus("error"); setErrorMsg(r.error || "Something went wrong. Please try again."); return;
     }
+    pushRegistrationSuccess({ iso: selected.iso, dialCode: String(selected.dial) });
     if (r.formLink && r.formLink.startsWith("https://")) { window.location.assign(r.formLink); return; }
     setStatus("success");
   };
