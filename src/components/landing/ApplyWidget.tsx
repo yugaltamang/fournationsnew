@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Loader2, CheckCircle2, ArrowLeft } from "lucide-react";
 import { COUNTRIES } from "@/lib/countries";
 import { supabase } from "@/integrations/supabase/client";
@@ -81,6 +81,24 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
     setLoginIso("IN"); setLoginStatus("idle"); setLoginError("");
   }, []);
 
+  // If the user is sent to the external application form and then comes back
+  // (back button / bfcache restore), clear any stuck "submitting" spinners.
+  useEffect(() => {
+    const clearStuck = () => {
+      setStatus((s) => (s === "submitting" ? "idle" : s));
+      setLoginStatus((s) => (s === "submitting" ? "idle" : s));
+    };
+    const onPageShow = () => clearStuck();
+    const onVisibility = () => { if (document.visibilityState === "visible") clearStuck(); };
+    window.addEventListener("pageshow", onPageShow);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      window.removeEventListener("pageshow", onPageShow);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
+  }, []);
+
+
   const selected = COUNTRIES.find((c) => c.iso === iso) ?? COUNTRIES[0];
   const loginSelected = COUNTRIES.find((c) => c.iso === loginIso) ?? COUNTRIES[0];
 
@@ -157,6 +175,9 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
         <DialogTitle className="text-base font-semibold">
           {view === "apply" ? "Apply to the Four Nations Programme" : "Login"}
         </DialogTitle>
+        <DialogDescription className="sr-only">
+          {view === "apply" ? "Submit your details to apply to the programme." : "Log in to continue your application."}
+        </DialogDescription>
         {view === "apply" && status === "success" ? (
           <div className="flex flex-col items-center gap-3 py-6 text-center">
             <CheckCircle2 className="h-12 w-12 text-primary" />
