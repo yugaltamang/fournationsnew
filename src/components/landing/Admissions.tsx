@@ -81,6 +81,9 @@ const Admissions = () => {
             </div>
             <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
               27 September 2026
+              <span className="block font-sans text-[11px] text-muted-foreground mt-1">
+                Applications close at 11:59 PM IST
+              </span>
             </div>
           </div>
           <div className="p-5 sm:p-6 md:p-8">
