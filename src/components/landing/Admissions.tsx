@@ -77,18 +77,18 @@ const Admissions = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border">
           <div className="p-5 sm:p-6 md:p-8">
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
-              Deadline
+              Round 1 Deadline
             </div>
             <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
-              20 Nov 2026
+              27 September 2026
             </div>
           </div>
           <div className="p-5 sm:p-6 md:p-8">
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
               Interviews
             </div>
-            <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
-              Dec '26 – Mar '27
+            <div className="font-display text-xl sm:text-2xl text-foreground leading-tight">
+              Within 7 days of application submission
             </div>
           </div>
           <div className="p-5 sm:p-6 md:p-8">
