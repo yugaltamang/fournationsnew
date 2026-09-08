@@ -88,7 +88,10 @@ const Admissions = () => {
               Interviews
             </div>
             <div className="font-display text-xl sm:text-2xl text-foreground leading-tight">
-              Within 7 days of application submission
+              Within 7 days
+              <span className="block font-sans text-[11px] text-muted-foreground mt-1">
+                of application submission
+              </span>
             </div>
           </div>
           <div className="p-5 sm:p-6 md:p-8">
