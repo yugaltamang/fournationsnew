@@ -15,6 +15,9 @@ import liaoPhoto from "@/assets/faculty-hk/liao.asset.json";
 import gilbertPhoto from "@/assets/faculty-hk/gilbert.asset.json";
 import rajitaPhoto from "@/assets/faculty-india/rajita.asset.json";
 import saurabhPhoto from "@/assets/faculty-india/saurabh.asset.json";
+import manojPhoto from "@/assets/faculty-india/manoj-kohli.asset.json";
+import rajivPhoto from "@/assets/faculty-india/rajiv-gupta.asset.json";
+import sanjeevPhoto from "@/assets/faculty-india/sanjeev-bhasin.asset.json";
 
 type Faculty = {
   name: string;
@@ -30,6 +33,9 @@ const indiaFaculty: Faculty[] = [
   { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
   { name: "Saurabh Sengupta", designation: "Teaching Master, Modern Selling", photo: saurabhPhoto.url, focusClass: "object-[50%_20%]" },
+  { name: "Manoj Kohli", designation: "Former CEO, Airtel", photo: manojPhoto.url, focusClass: "object-[50%_25%]" },
+  { name: "Rajiv Gupta", designation: "Ex Vice President Sales and Marketing, Honda", photo: rajivPhoto.url, focusClass: "object-[50%_25%]" },
+  { name: "Sanjeev Bhasin", designation: "Former Director, IIFL", photo: sanjeevPhoto.url, focusClass: "object-[50%_25%]" },
 ];
 
 
