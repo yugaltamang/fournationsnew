@@ -14,11 +14,7 @@ import jeffPhoto from "@/assets/faculty-hk/jeff.asset.json";
 import liaoPhoto from "@/assets/faculty-hk/liao.asset.json";
 import gilbertPhoto from "@/assets/faculty-hk/gilbert.asset.json";
 import rajitaPhoto from "@/assets/faculty-india/rajita.asset.json";
-import sakshamPhoto from "@/assets/faculty-india/saksham.asset.json";
 import saurabhPhoto from "@/assets/faculty-india/saurabh.asset.json";
-import rinkuPhoto from "@/assets/faculty-india/rinku.asset.json";
-import aartiPhoto from "@/assets/faculty-india/aarti.asset.json";
-import poornimaPhoto from "@/assets/faculty-india/poornima.asset.json";
 
 type Faculty = {
   name: string;
@@ -34,10 +30,6 @@ const indiaFaculty: Faculty[] = [
   { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
   { name: "Saurabh Sengupta", designation: "Teaching Master, Modern Selling", photo: saurabhPhoto.url, focusClass: "object-[50%_20%]" },
-  { name: "Dr. Aarti Sharma", designation: "Master in Residence, Finance", photo: aartiPhoto.url, focusClass: "object-[50%_20%]" },
-  { name: "Dr. Rinku Mahendru", designation: "Master in Residence, HR", photo: rinkuPhoto.url, focusClass: "object-[50%_25%]" },
-  { name: "Saksham Kotiya", designation: "Head of Investments, Masters' Union", photo: sakshamPhoto.url, focusClass: "object-[50%_25%]" },
-  { name: "Poornima Rai", designation: "Master in Residence, Digital Marketing", photo: poornimaPhoto.url, focusClass: "object-[50%_25%]" },
 ];
 
 
