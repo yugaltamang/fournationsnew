@@ -27,15 +27,14 @@ type Faculty = {
 };
 
 const indiaFaculty: Faculty[] = [
-  { name: "Dr. Bhupesh Manoharan", designation: "Dean, Masters' Union", photo: "https://images.mastersunion.link/uploads/17042026/v1/master1.webp" },
-  { name: "Dr. Garima Chaklader", designation: "Assistant Professor, Economics & Data Analysis", photo: "https://images.mastersunion.link/uploads/17042026/v2/master5.webp" },
-  { name: "Dr. Nandini Seth", designation: "Faculty, Quantitative Methods", photo: "https://images.mastersunion.link/uploads/17042026/v2/master2.webp" },
-  { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url, focusClass: "object-[50%_25%]" },
-  { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
-  { name: "Saurabh Sengupta", designation: "Teaching Master, Modern Selling", photo: saurabhPhoto.url, focusClass: "object-[50%_20%]" },
   { name: "Manoj Kohli", designation: "Former CEO, Airtel", photo: manojPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Rajiv Gupta", designation: "Ex Vice President Sales and Marketing, Honda", photo: rajivPhoto.url, focusClass: "object-[50%_25%]" },
+  { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
   { name: "Sanjeev Bhasin", designation: "Former Director, IIFL", photo: sanjeevPhoto.url, focusClass: "object-[50%_25%]" },
+  { name: "Dr. Bhupesh Manoharan", designation: "Dean, Masters' Union", photo: "https://images.mastersunion.link/uploads/17042026/v1/master1.webp" },
+  { name: "Dr. Nandini Seth", designation: "Faculty, Quantitative Methods", photo: "https://images.mastersunion.link/uploads/17042026/v2/master2.webp" },
+  { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url, focusClass: "object-[50%_25%]" },
+  { name: "Saurabh Sengupta", designation: "Teaching Master, Modern Selling", photo: saurabhPhoto.url, focusClass: "object-[50%_20%]" },
 ];
 
 
