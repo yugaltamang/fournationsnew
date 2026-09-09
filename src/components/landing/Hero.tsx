@@ -79,7 +79,7 @@ const Hero = () => {
         <h1 className="font-display text-[clamp(1.6rem,5.2vw,3.75rem)] leading-[0.98] font-medium text-balance break-words">
           Four Nations.
           <br />
-          <em className="italic mu-hero-gradient-text not-italic font-normal">Three Campuses.</em>
+          <em className="italic mu-hero-gradient-text not-italic font-normal">Four Campuses.</em>
           <br />
           One Career Without Borders.
         </h1>
@@ -134,7 +134,7 @@ const Hero = () => {
           {[
             { n: "9", l: "Months · Core Program" },
             { n: "4", l: "Nations · Cultures · Markets" },
-            { n: "2", l: "Global University Partners" },
+            { n: "3", l: "Global University Partners" },
           ].map((s) => (
             <div key={s.l} className="min-w-0">
               <div className="font-display text-2xl sm:text-4xl md:text-5xl font-medium leading-none">{s.n}</div>
