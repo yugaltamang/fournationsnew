@@ -73,7 +73,7 @@ const Immersions = () => (
       <div className="max-w-4xl mb-14 md:mb-20">
           <SectionEyebrow className="mb-6">The Pedigree</SectionEyebrow>
         <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] text-balance mb-6">
-          Three Institutions.{" "}
+          Four Institutions.{" "}
           <em className="italic mu-hero-gradient-text not-italic">One Cohort.</em>{" "}
           Four Global Hubs.
         </h2>
