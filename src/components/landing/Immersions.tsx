@@ -47,6 +47,19 @@ const partners = [
       { v: "60", l: "Contact Hours" },
     ],
   },
+  {
+    tag: "Term 4 · Dubai · Optional",
+    name: "TETR College of Business",
+    image: tetrImg.url,
+    logo: tetrLogo.url,
+    headline: "Finish in Dubai.",
+    body: "The optional finale, hosted at TETR Base Camp in the world's fastest-growing business hub. Inside DIFC - family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets. Available at an additional cost.",
+    stats: [
+      { v: "DIFC", l: "Dubai's Financial Centre" },
+      { v: "MENA", l: "Gateway Market" },
+      { v: "TETR", l: "Base Camp Experience" },
+    ],
+  },
 ];
 
 const Immersions = () => (
