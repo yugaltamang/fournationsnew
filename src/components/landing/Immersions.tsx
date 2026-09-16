@@ -137,7 +137,7 @@ const Immersions = () => (
                 {/* Corner mark */}
                 <div className="absolute bottom-4 right-4 z-10">
                   <span className="tag-pill">
-                    {p.name.includes("TETR") ? "Optional · Add-on cost" : "Cert · Awarded"}
+                    "Cert · Awarded"
                   </span>
                 </div>
               </div>
