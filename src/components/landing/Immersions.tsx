@@ -55,9 +55,9 @@ const partners = [
     headline: "Finish in Dubai.",
     body: "The optional finale, hosted at TETR Base Camp in the world's fastest-growing business hub. Inside DIFC - family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets. Available at an additional cost.",
     stats: [
-      { v: "DIFC", l: "Dubai's Financial Centre" },
-      { v: "MENA", l: "Gateway Market" },
-      { v: "TETR", l: "Base Camp Experience" },
+      { v: "QS Gold", l: "Winner · Most Innovative Business School of 2025" },
+      { v: "1 Week", l: "Dubai Immersion" },
+      { v: "MENA", l: "Gateway to Asian & Western Markets" },
     ],
   },
 ];
