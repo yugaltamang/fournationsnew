@@ -100,7 +100,7 @@ const Hero = () => {
             {[
               { name: "Imperial College London", url: imperialLogo.url },
               { name: "The Chinese University of Hong Kong", url: cuhkLogo.url },
-              { name: "Tetr College of Business", url: tetrLogo.url },
+              { name: "TETR Base Camp", url: tetrLogo.url },
             ].map((u) => (
               <div key={u.name} className="inline-flex items-center gap-3">
                 <img

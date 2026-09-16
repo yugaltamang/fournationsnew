@@ -49,7 +49,7 @@ const partners = [
   },
   {
     tag: "Term 4 · Dubai · Optional",
-    name: "TETR College of Business",
+    name: "TETR Base Camp",
     image: tetrImg.url,
     logo: tetrLogo.url,
     headline: "Finish in Dubai.",
