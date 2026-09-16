@@ -2,6 +2,8 @@ import imperialImg from "@/assets/imperial-london.webp";
 import cuhkImg from "@/assets/cuhk-hongkong.webp";
 import muLogo from "@/assets/masters-union-delhi.webp";
 import muSvgLogo from "@/assets/mu-logo.svg";
+import tetrImg from "@/assets/hero/tetr-base-camp-dubai.jpg.asset.json";
+import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import SectionEyebrow from "./SectionEyebrow";
 
 
