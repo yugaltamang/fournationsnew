@@ -5,6 +5,7 @@ import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
 import uniMastersUnion from "@/assets/hero/uni-masters-union.webp";
 import uniImperial from "@/assets/hero/uni-imperial.webp";
 import uniCuhk from "@/assets/hero/uni-cuhk.webp";
+import uniTetrDubai from "@/assets/hero/tetr-dubai.png.asset.json";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
 import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
 import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
@@ -21,6 +22,7 @@ const UNIVERSITY_SLIDES = [
   { src: uniMastersUnion, name: "Masters' Union", location: "Gurugram, India" },
   { src: uniImperial, name: "Imperial College London", location: "London, United Kingdom" },
   { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong SAR" },
+  { src: uniTetrDubai.url, name: "Tetr College", location: "Dubai, UAE" },
 ];
 
 const LOGO_MAP: Record<string, string> = {
