@@ -5,6 +5,7 @@ import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
 import uniMastersUnion from "@/assets/hero/uni-masters-union.webp";
 import uniImperial from "@/assets/hero/uni-imperial.webp";
 import uniCuhk from "@/assets/hero/uni-cuhk.webp";
+import uniTetrDubai from "@/assets/hero/tetr-dubai.png.asset.json";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
 import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
 import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
