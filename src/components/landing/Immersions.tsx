@@ -57,7 +57,7 @@ const partners = [
     stats: [
       { v: "QS Gold", l: "Winner · Most Innovative Business School of 2025" },
       { v: "1 Week", l: "Dubai Immersion" },
-      { v: "MENA", l: "Gateway to Asian & Western Markets" },
+      { v: "5", l: "Business Immersions" },
     ],
   },
 ];
