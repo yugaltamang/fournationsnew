@@ -22,6 +22,7 @@ const UNIVERSITY_SLIDES = [
   { src: uniMastersUnion, name: "Masters' Union", location: "Gurugram, India" },
   { src: uniImperial, name: "Imperial College London", location: "London, United Kingdom" },
   { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong SAR" },
+  { src: uniTetrDubai.url, name: "Tetr College", location: "Dubai, UAE" },
 ];
 
 const LOGO_MAP: Record<string, string> = {
