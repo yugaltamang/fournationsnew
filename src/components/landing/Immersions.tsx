@@ -2,7 +2,7 @@ import imperialImg from "@/assets/imperial-london.webp";
 import cuhkImg from "@/assets/cuhk-hongkong.webp";
 import muLogo from "@/assets/masters-union-delhi.webp";
 import muSvgLogo from "@/assets/mu-logo.svg";
-import tetrImg from "@/assets/hero/tetr-base-camp-dubai.jpg.asset.json";
+import tetrImg from "@/assets/tetr-dubai.webp";
 import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import SectionEyebrow from "./SectionEyebrow";
 
@@ -50,7 +50,7 @@ const partners = [
   {
     tag: "Term 4 · Dubai · Optional",
     name: "TETR Base Camp",
-    image: tetrImg.url,
+    image: tetrImg,
     logo: tetrLogo.url,
     headline: "Finish in Dubai.",
     body: "The optional finale, hosted at TETR Base Camp in the world's fastest-growing business hub. Inside DIFC - family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets. Available at an additional cost.",
