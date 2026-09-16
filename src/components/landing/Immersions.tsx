@@ -2,6 +2,8 @@ import imperialImg from "@/assets/imperial-london.webp";
 import cuhkImg from "@/assets/cuhk-hongkong.webp";
 import muLogo from "@/assets/masters-union-delhi.webp";
 import muSvgLogo from "@/assets/mu-logo.svg";
+import tetrImg from "@/assets/hero/tetr-base-camp-dubai.jpg.asset.json";
+import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import SectionEyebrow from "./SectionEyebrow";
 
 
@@ -45,6 +47,19 @@ const partners = [
       { v: "60", l: "Contact Hours" },
     ],
   },
+  {
+    tag: "Term 4 · Dubai · Optional",
+    name: "TETR College of Business",
+    image: tetrImg.url,
+    logo: tetrLogo.url,
+    headline: "Finish in Dubai.",
+    body: "The optional finale, hosted at TETR Base Camp in the world's fastest-growing business hub. Inside DIFC - family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets. Available at an additional cost.",
+    stats: [
+      { v: "DIFC", l: "Dubai's Financial Centre" },
+      { v: "MENA", l: "Gateway Market" },
+      { v: "TETR", l: "Base Camp Experience" },
+    ],
+  },
 ];
 
 const Immersions = () => (
@@ -78,7 +93,7 @@ const Immersions = () => (
           Four Global Hubs.
         </h2>
         <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-2xl">
-          Anchored at Masters' Union in Delhi, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three.
+          Anchored at Masters' Union in Delhi, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three, capped by an optional finale at TETR Base Camp, Dubai.
         </p>
       </div>
 
@@ -121,7 +136,9 @@ const Immersions = () => (
                 </div>
                 {/* Corner mark */}
                 <div className="absolute bottom-4 right-4 z-10">
-                  <span className="tag-pill">Cert · Awarded</span>
+                  <span className="tag-pill">
+                    {p.name.includes("TETR") ? "Optional · Add-on cost" : "Cert · Awarded"}
+                  </span>
                 </div>
               </div>
             </div>
