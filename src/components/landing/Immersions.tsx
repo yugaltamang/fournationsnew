@@ -50,7 +50,7 @@ const partners = [
   {
     tag: "Term 4 · Dubai · Optional",
     name: "TETR Base Camp",
-    image: tetrImg.url,
+    image: tetrImg,
     logo: tetrLogo.url,
     headline: "Finish in Dubai.",
     body: "The optional finale, hosted at TETR Base Camp in the world's fastest-growing business hub. Inside DIFC - family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets. Available at an additional cost.",
