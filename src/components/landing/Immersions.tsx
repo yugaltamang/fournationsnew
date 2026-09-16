@@ -93,7 +93,7 @@ const Immersions = () => (
           Four Global Hubs.
         </h2>
         <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-2xl">
-          Anchored at Masters' Union in Delhi, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three.
+          Anchored at Masters' Union in Delhi, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three, capped by an optional finale at TETR Base Camp, Dubai.
         </p>
       </div>
 
@@ -136,7 +136,9 @@ const Immersions = () => (
                 </div>
                 {/* Corner mark */}
                 <div className="absolute bottom-4 right-4 z-10">
-                  <span className="tag-pill">Cert · Awarded</span>
+                  <span className="tag-pill">
+                    {p.name.includes("TETR") ? "Optional · Add-on cost" : "Cert · Awarded"}
+                  </span>
                 </div>
               </div>
             </div>
