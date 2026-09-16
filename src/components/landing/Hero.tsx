@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ApplyWidget } from "./ApplyWidget";
 import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
+import tetrLogo from "@/assets/university-logos/tetr-college-logo.png.asset.json";
 import uniMastersUnion from "@/assets/hero/uni-masters-union.webp";
 import uniImperial from "@/assets/hero/uni-imperial.webp";
 import uniCuhk from "@/assets/hero/uni-cuhk.webp";
@@ -99,6 +100,7 @@ const Hero = () => {
             {[
               { name: "Imperial College London", url: imperialLogo.url },
               { name: "The Chinese University of Hong Kong", url: cuhkLogo.url },
+              { name: "Tetr College of Business", url: tetrLogo.url },
             ].map((u) => (
               <div key={u.name} className="inline-flex items-center gap-3">
                 <img
