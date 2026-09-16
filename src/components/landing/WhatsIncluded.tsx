@@ -2,7 +2,7 @@ import { Check, X } from "lucide-react";
 import SectionEyebrow from "./SectionEyebrow";
 
 const included = [
-  "Certificate from all 3 institutions: Masters' Union, Imperial College London, and CUHK",
+  "Certificates from Masters' Union, Imperial College London & CUHK. Optional TETR Base Camp experience and certificate available at an additional cost.",
   "Academic sessions and curriculum delivery across all locations",
   "Access to global partner institutions - Imperial College London and CUHK",
   "Business immersions and CXO interactions",
