@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ApplyWidget } from "./ApplyWidget";
 import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
-import tetrLogo from "@/assets/university-logos/tetr-college-logo.png.asset.json";
+import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import uniMastersUnion from "@/assets/hero/uni-masters-union.webp";
 import uniImperial from "@/assets/hero/uni-imperial.webp";
 import uniCuhk from "@/assets/hero/uni-cuhk.webp";
