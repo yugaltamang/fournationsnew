@@ -49,11 +49,11 @@ const partners = [
   },
   {
     tag: "Term 4 · Dubai · Optional",
-    name: "TETR Base Camp",
+    name: "TETR College of Business",
     image: tetrImg,
     logo: tetrLogo.url,
     headline: "Finish in Dubai.",
-    body: "The optional finale, hosted at TETR Base Camp in the world's fastest-growing business hub. Inside DIFC - family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets. Available at an additional cost.",
+    body: "The optional finale, hosted at TETR College of Business in the world's fastest-growing business hub. Inside DIFC - family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets. Available at an additional cost.",
     stats: [
       { v: "QS Gold", l: "Winner · Most Innovative Business School of 2025" },
       { v: "1 Week", l: "Dubai Immersion" },
@@ -93,7 +93,7 @@ const Immersions = () => (
           Four Global Hubs.
         </h2>
         <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-2xl">
-          Anchored at Masters' Union in Delhi, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three, capped by an optional finale at TETR Base Camp, Dubai.
+          Anchored at Masters' Union in Delhi, with terms at Imperial College London and CUHK Hong Kong - you graduate with credentials from all three, capped by an optional finale at TETR College of Business, Dubai.
         </p>
       </div>
 

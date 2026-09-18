@@ -23,7 +23,7 @@ const UNIVERSITY_SLIDES = [
   { src: uniMastersUnion, name: "Masters' Union", location: "Gurugram, India" },
   { src: uniImperial, name: "Imperial College London", location: "London, United Kingdom" },
   { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong SAR" },
-  { src: uniTetrDubai.url, name: "Tetr Base Camp", location: "Dubai, UAE" },
+  { src: uniTetrDubai.url, name: "TETR College of Business", location: "Dubai, UAE" },
 ];
 
 const LOGO_MAP: Record<string, string> = {
@@ -100,7 +100,7 @@ const Hero = () => {
             {[
               { name: "Imperial College London", url: imperialLogo.url },
               { name: "The Chinese University of Hong Kong", url: cuhkLogo.url },
-              { name: "TETR Base Camp", url: tetrLogo.url },
+              { name: "TETR College of Business", url: tetrLogo.url },
             ].map((u) => (
               <div key={u.name} className="inline-flex items-center gap-3">
                 <img
