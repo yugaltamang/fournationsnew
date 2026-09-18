@@ -147,7 +147,7 @@ const nations: Nation[] = [
     flag: "🇦🇪",
     city: "DIFC · UAE",
     term: "Optional · 1 Week",
-    partner: "Tetr Base camp",
+    partner: "TETR College of Business",
     img: dubai,
     title: "Operate at the crossroads.",
     desc: "Optional finale at TETR Base Camp, in the world's fastest-growing business hub. Inside DIFC, family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets.",

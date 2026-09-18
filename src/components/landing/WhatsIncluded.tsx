@@ -11,7 +11,7 @@ const included = [
 ];
 
 const notIncluded = [
-  "Dubai finale at TETR Base Camp — its cost is separate and not included in the programme fee. Optional experience and certificate, available at an additional cost",
+  "Dubai finale at TETR College of Business — its cost is separate and not included in the programme fee. Optional experience and certificate, available at an additional cost",
   "International and domestic flights",
   "Visa fees and travel insurance",
   "Accommodation and living expenses",
