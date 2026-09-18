@@ -150,7 +150,7 @@ const nations: Nation[] = [
     partner: "TETR College of Business",
     img: dubai,
     title: "Operate at the crossroads.",
-    desc: "Optional finale at TETR Base Camp, in the world's fastest-growing business hub. Inside DIFC, family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets.",
+    desc: "Optional finale at TETR College of Business, in the world's fastest-growing business hub. Inside DIFC, family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets.",
     outcome: "Position yourself for MENA opportunities, family offices & global mobility.",
     tags: ["MENA Markets", "Family Office", "Free Zones", "Global Mobility"],
     optional: true,
