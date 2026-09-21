@@ -1,6 +1,7 @@
 import SectionEyebrow from "./SectionEyebrow";
 import imperialCert from "@/assets/certificates/imperial-certificate.webp.asset.json";
 import cuhkCert from "@/assets/certificates/cuhk-certificate.webp.asset.json";
+import tetrCert from "@/assets/certificates/tetr-certificate.webp.asset.json";
 
 const certificates = [
   {
@@ -14,6 +15,12 @@ const certificates = [
     inst: "CUHK Business School",
     label: "Certificate of Completion",
     note: "Issued by the Asia-Pacific Institute of Business, The Chinese University of Hong Kong.",
+  },
+  {
+    src: tetrCert.url,
+    inst: "TETR College of Business",
+    label: "Certificate of Participation",
+    note: "Innovation & Entrepreneurship Program, conducted by TETR College of Business in collaboration with Masters' Union.",
   },
 ];
 
