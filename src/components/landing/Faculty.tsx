@@ -32,6 +32,7 @@ const indiaFaculty: Faculty[] = [
   { name: "Rajiv Gupta", designation: "Ex Vice President Sales and Marketing, Honda", photo: rajivPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
   { name: "Sanjeev Bhasin", designation: "Former Director, IIFL", photo: sanjeevPhoto.url, focusClass: "object-[50%_25%]" },
+  { name: "Captain Raghuraman", designation: "Former President, Reliance Industries Limited", photo: raghuramanPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Dr. Bhupesh Manoharan", designation: "Dean, Masters' Union", photo: "https://images.mastersunion.link/uploads/17042026/v1/master1.webp" },
   { name: "Dr. Nandini Seth", designation: "Faculty, Quantitative Methods", photo: "https://images.mastersunion.link/uploads/17042026/v2/master2.webp" },
   { name: "Dr. Rajita Chaudhuri", designation: "Professor of Practise, Communication", photo: rajitaPhoto.url, focusClass: "object-[50%_25%]" },
