@@ -18,6 +18,7 @@ import saurabhPhoto from "@/assets/faculty-india/saurabh.asset.json";
 import manojPhoto from "@/assets/faculty-india/manoj-kohli.asset.json";
 import rajivPhoto from "@/assets/faculty-india/rajiv-gupta.asset.json";
 import sanjeevPhoto from "@/assets/faculty-india/sanjeev-bhasin.asset.json";
+import raghuramanPhoto from "@/assets/faculty-india/raghuraman.asset.json";
 
 type Faculty = {
   name: string;
