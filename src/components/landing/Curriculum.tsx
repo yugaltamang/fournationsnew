@@ -14,7 +14,7 @@ import immHkLogistics from "@/assets/immersions/hk-logistics.webp";
 import immHkAi from "@/assets/immersions/hk-ai.webp";
 import leadershipLondonImg from "@/assets/outclass/leadership-london.webp";
 import d2cImg from "@/assets/outclass/drop6.webp";
-import indiaCultural from "@/assets/cultural/india-cultural.webp";
+import indiaCultural from "@/assets/cultural/india-cultural-parliament.jpg.asset.json";
 import londonCultural from "@/assets/cultural/london-cultural.webp";
 import hkCultural from "@/assets/cultural/hk-cultural.webp";
 import gillesPhoto from "@/assets/faculty-london/gilles.asset.json";
