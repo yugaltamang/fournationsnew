@@ -6,7 +6,7 @@ import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asse
 import uniMastersUnion from "@/assets/hero/uni-masters-union.webp";
 import uniImperial from "@/assets/hero/uni-imperial.webp";
 import uniCuhk from "@/assets/hero/uni-cuhk.webp";
-import uniTetrDubai from "@/assets/hero/tetr-difc.png.asset.json";
+import uniTetrDubai from "@/assets/hero/tetr-building.jpg.asset.json";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
 import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
 import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
