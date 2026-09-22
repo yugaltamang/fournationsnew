@@ -56,7 +56,7 @@ const pillars = [
 const SKEW = 8; // degrees
 
 const CXO = () => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
 
   return (
     <section
@@ -91,7 +91,7 @@ const CXO = () => {
         {/* Diagonal split panels - desktop */}
         <div
           className="hidden lg:flex relative w-full h-[640px] gap-2"
-          onMouseLeave={() => setActive(1)}
+          onMouseLeave={() => setActive(0)}
         >
           {pillars.map((p, i) => {
             const isActive = active === i;
