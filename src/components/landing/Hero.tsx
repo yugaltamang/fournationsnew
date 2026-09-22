@@ -202,7 +202,7 @@ const Hero = () => {
                 alt={co}
                 loading="lazy"
                 decoding="async"
-                className={`object-contain ${LOGO_SIZE_CLASSES[co] ?? "max-h-7 sm:max-h-8 max-w-[110px] sm:max-w-[140px]"}`}
+                className={`ticker-logo object-contain ${LOGO_SIZE_CLASSES[co] ?? "max-h-7 sm:max-h-8 max-w-[110px] sm:max-w-[140px]"}`}
               />
             </span>
             <span className="text-primary/60">✦</span>

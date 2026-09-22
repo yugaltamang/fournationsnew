@@ -127,6 +127,11 @@
     animation: ticker 40s linear infinite;
   }
 
+  /* Brighter, crisper partner logos on the dark marquee */
+  .ticker-logo {
+    filter: brightness(1.3) contrast(1.08);
+  }
+
   .marquee-mask {
     mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
   }
