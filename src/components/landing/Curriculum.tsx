@@ -76,9 +76,9 @@ interface Term {
 
 const londonFaculty: Faculty[] = [
   { name: "Gilles Chemla", designation: "Professor of Finance · Co-director, Centre for Financial Technology", photo: gillesPhoto.url },
-  { name: "Will Knottenbelt", designation: "Professor of Applied Quantitative Analysis", photo: willPhoto.url },
+  { name: "William Knottenbelt", designation: "Professor of Applied Quantitative Analysis", photo: willPhoto.url },
   { name: "Gaia Oganesian", designation: "MSc in Artificial Intelligence · PhD in Economics", photo: gaiaPhoto.url },
-  { name: "Mark Kitten", designation: "Visiting Professor · Partner, Candesic Strategy Consultants (London & New York)", photo: markPhoto.url },
+  { name: "Marc Kitten", designation: "Visiting Professor · Partner, Candesic Strategy Consultants (London & New York)", photo: markPhoto.url },
   { name: "Naveed Sultan", designation: "Professor of Practice", photo: naveedPhoto.url },
   { name: "Andreas Eisingerich", designation: "Professor of Marketing", photo: andreasPhoto.url },
   { name: "Marco di Maggio", designation: "Professor of Finance", photo: marcoPhoto.url },
