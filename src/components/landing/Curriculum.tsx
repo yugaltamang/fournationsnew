@@ -182,7 +182,7 @@ export const terms: Term[] = [
         { name: "Heritage Business Districts", desc: "Explore how Mughal-era trade routes shaped India's commercial identity - from historic bazaars to modern business hubs." },
       ],
       note: "* Locations are indicative and may vary based on availability, permissions, and external factors.",
-      img: indiaCultural,
+      img: indiaCultural.url,
     },
     faculty: indiaFaculty,
   },
