@@ -31,7 +31,7 @@ const indiaFaculty: Faculty[] = [
   { name: "Manoj Kohli", designation: "Former CEO, Airtel", photo: manojPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Rajiv Gupta", designation: "Ex Vice President Sales and Marketing, Honda", photo: rajivPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Rajat Mathur", designation: "Visiting Faculty · Senior Advisor, Morgan Stanley", photo: "https://images.mastersunion.link/uploads/17042026/v1/master7.webp" },
-  { name: "Sanjeev Bhasin", designation: "Former Director, IIFL", photo: sanjeevPhoto.url, focusClass: "object-[50%_25%]" },
+  { name: "Sanjiv Bhasin", designation: "Former Director, IIFL", photo: sanjeevPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Captain Raghuraman", designation: "Former President, Reliance Industries Limited", photo: raghuramanPhoto.url, focusClass: "object-[50%_25%]" },
   { name: "Dr. Bhupesh Manoharan", designation: "Dean, Masters' Union", photo: "https://images.mastersunion.link/uploads/17042026/v1/master1.webp" },
   { name: "Dr. Nandini Seth", designation: "Faculty, Quantitative Methods", photo: "https://images.mastersunion.link/uploads/17042026/v2/master2.webp" },
@@ -42,9 +42,9 @@ const indiaFaculty: Faculty[] = [
 
 const londonFaculty: Faculty[] = [
   { name: "Gilles Chemla", designation: "Professor of Finance · Co-director, Centre for Financial Technology", photo: gillesPhoto.url },
-  { name: "Will Knottenbelt", designation: "Professor of Applied Quantitative Analysis", photo: willPhoto.url },
+  { name: "William Knottenbelt", designation: "Professor of Applied Quantitative Analysis", photo: willPhoto.url },
   { name: "Gaia Oganesian", designation: "MSc in Artificial Intelligence · PhD in Economics", photo: gaiaPhoto.url },
-  { name: "Mark Kitten", designation: "Visiting Professor · Partner, Candesic Strategy Consultants", photo: markPhoto.url },
+  { name: "Marc Kitten", designation: "Visiting Professor · Partner, Candesic Strategy Consultants", photo: markPhoto.url },
   { name: "Naveed Sultan", designation: "Professor of Practice", photo: naveedPhoto.url },
   { name: "Andreas Eisingerich", designation: "Professor of Marketing", photo: andreasPhoto.url },
   { name: "Marco di Maggio", designation: "Professor of Finance", photo: marcoPhoto.url },
