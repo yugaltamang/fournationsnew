@@ -17,7 +17,7 @@ const contactCards = [
   {
     icon: Clock,
     label: "Hours",
-    value: "Mon - Sat 9:00 am - 9:00 pm IST",
+    value: "Mon - Sat 9:00 am - 9:00 pm IST / 3:30 am - 3:30 pm GMT",
   },
 ];
 
