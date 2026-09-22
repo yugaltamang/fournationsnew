@@ -137,7 +137,7 @@ const Immersions = () => (
                 {/* Corner mark */}
                 <div className="absolute bottom-4 right-4 z-10">
                   <span className="tag-pill">
-                    "Cert · Awarded"
+                    "Full Certificate Awarded"
                   </span>
                 </div>
               </div>
