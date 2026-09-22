@@ -1,7 +1,7 @@
 import imperialImg from "@/assets/imperial-london.webp";
 import cuhkImg from "@/assets/cuhk-hongkong.webp";
 import muLogo from "@/assets/masters-union-delhi.webp";
-import muSvgLogo from "@/assets/mu-logo.svg";
+import muBrandLogo from "@/assets/mu-logo-light.png.asset.json";
 import tetrImg from "@/assets/tetr-dubai.webp";
 import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import SectionEyebrow from "./SectionEyebrow";
@@ -12,7 +12,7 @@ const partners = [
     tag: "Term 1 · Gurugram · 12 Weeks",
     name: "Masters' Union",
     image: muLogo,
-    logo: muSvgLogo,
+    logo: muBrandLogo.url,
     headline: "Built by practitioners.",
     body: "The home institution. A new-age business school where MDs, founders and operators teach - not career academics. In five years, one of India's most selective programmes, on a Top-10 global rank quest.",
     stats: [
