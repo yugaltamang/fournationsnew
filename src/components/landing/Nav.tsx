@@ -1,6 +1,6 @@
 import { ApplyWidget } from "./ApplyWidget";
 import { useEffect, useState } from "react";
-import muLogo from "@/assets/mu-logo.svg";
+import muLogo from "@/assets/mu-logo-light.png.asset.json";
 
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -29,7 +29,7 @@ const Nav = () => {
       <header className={`lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl bg-background/90 border-b border-border/60" : "bg-background/40 backdrop-blur-sm border-b border-transparent"}`}>
         <div className="container flex items-center justify-center h-14 sm:h-16">
           <a href="#" className="flex items-center gap-2 min-w-0">
-            <img src={muLogo} alt="Masters' Union" className="h-10 sm:h-11 w-auto invert shrink-0" />
+            <img src={muLogo.url} alt="Masters' Union" className="h-8 sm:h-9 w-auto shrink-0" />
           </a>
         </div>
       </header>
@@ -41,9 +41,9 @@ const Nav = () => {
         <div className="container flex items-center justify-between h-16 md:h-20">
           <a href="#" className="group flex items-center gap-3 min-w-0">
             <img
-              src={muLogo}
+              src={muLogo.url}
               alt="Masters' Union"
-              className="h-10 md:h-12 w-auto invert shrink-0"
+              className="h-8 md:h-10 w-auto shrink-0"
             />
           </a>
 
