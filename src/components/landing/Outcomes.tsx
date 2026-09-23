@@ -72,10 +72,10 @@ const Outcomes = () => (
               Real certificates. <em className="italic text-primary not-italic">Real institutions.</em>
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Credentials issued directly by Imperial College London, CUHK Business School and TETR College of Business, alongside your Masters' Union certificate.
+              Credentials issued directly by Masters' Union, Imperial College London, CUHK Business School and TETR College of Business.
             </p>
           </div>
-          <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+          <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {certificates.map((c) => (
               <figure key={c.inst} className="bg-secondary/40 border border-border p-2 sm:p-3">
                 <img
