@@ -1,9 +1,16 @@
 import SectionEyebrow from "./SectionEyebrow";
+import muCert from "@/assets/certificates/mu-certificate.webp.asset.json";
 import imperialCert from "@/assets/certificates/imperial-certificate.webp.asset.json";
 import cuhkCert from "@/assets/certificates/cuhk-certificate.webp.asset.json";
 import tetrCert from "@/assets/certificates/tetr-certificate.webp.asset.json";
 
 const certificates = [
+  {
+    src: muCert.url,
+    inst: "Masters' Union",
+    label: "Certificate of Completion",
+    note: "Issued by Masters' Union for the Four Nations Global Business Programme.",
+  },
   {
     src: imperialCert.url,
     inst: "Imperial College London",
