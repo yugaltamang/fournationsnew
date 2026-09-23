@@ -1,9 +1,16 @@
 import SectionEyebrow from "./SectionEyebrow";
+import muCert from "@/assets/certificates/mu-certificate.webp.asset.json";
 import imperialCert from "@/assets/certificates/imperial-certificate.webp.asset.json";
 import cuhkCert from "@/assets/certificates/cuhk-certificate.webp.asset.json";
 import tetrCert from "@/assets/certificates/tetr-certificate.webp.asset.json";
 
 const certificates = [
+  {
+    src: muCert.url,
+    inst: "Masters' Union",
+    label: "Certificate of Completion",
+    note: "Issued by Masters' Union for the Four Nations Global Business Programme.",
+  },
   {
     src: imperialCert.url,
     inst: "Imperial College London",
@@ -65,10 +72,10 @@ const Outcomes = () => (
               Real certificates. <em className="italic text-primary not-italic">Real institutions.</em>
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Credentials issued directly by Imperial College London, CUHK Business School and TETR College of Business, alongside your Masters' Union certificate.
+              Credentials issued directly by Masters' Union, Imperial College London, CUHK Business School and TETR College of Business.
             </p>
           </div>
-          <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+          <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {certificates.map((c) => (
               <figure key={c.inst} className="bg-secondary/40 border border-border p-2 sm:p-3">
                 <img
