@@ -38,7 +38,6 @@ const FEES: Record<Region, { label: string; items: { l: string; v: string; s: st
 
 const Admissions = () => {
   const [region, setRegion] = useState<Region>(fallbackRegion());
-  const [round, setRound] = useState<"r2" | "r1">("r2");
 
   useEffect(() => {
     let cancelled = false;
