@@ -94,23 +94,14 @@ const Admissions = () => {
               ))}
             </div>
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
-              {round === "r1" ? "Round 1 Deadline" : "Round 2 Deadline"}
+              Round 2 Deadline
             </div>
-            {round === "r1" ? (
-              <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
-                27 September 2026
-                <span className="block font-sans text-[11px] text-muted-foreground mt-1">
-                  Applications closed at 11:59 PM IST
-                </span>
-              </div>
-            ) : (
-              <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
-                18 October 2026
-                <span className="block font-sans text-[11px] text-muted-foreground mt-1">
-                  Applications close at 11:59 PM IST
-                </span>
-              </div>
-            )}
+            <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
+              18 October 2026
+              <span className="block font-sans text-[11px] text-muted-foreground mt-1">
+                Applications close at 11:59 PM IST
+              </span>
+            </div>
           </div>
           <div className="p-5 sm:p-6 md:p-8">
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
