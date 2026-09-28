@@ -38,6 +38,7 @@ const FEES: Record<Region, { label: string; items: { l: string; v: string; s: st
 
 const Admissions = () => {
   const [region, setRegion] = useState<Region>(fallbackRegion());
+  const [round, setRound] = useState<"r2" | "r1">("r2");
 
   useEffect(() => {
     let cancelled = false;
@@ -76,15 +77,43 @@ const Admissions = () => {
       <div className="border border-border bg-background mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border">
           <div className="p-5 sm:p-6 md:p-8">
+            <div className="flex items-center gap-1 mb-3">
+              {([
+                { id: "r1", label: "Round 1" },
+                { id: "r2", label: "Round 2" },
+              ] as const).map((r) => (
+                <button
+                  key={r.id}
+                  type="button"
+                  onClick={() => setRound(r.id)}
+                  className={`font-mono text-[10px] uppercase tracking-[0.25em] px-2.5 py-1 border transition-colors ${
+                    round === r.id
+                      ? "border-primary text-primary bg-primary/10"
+                      : "border-border text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {r.label}
+                </button>
+              ))}
+            </div>
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
-              Round 1 Deadline
+              {round === "r1" ? "Round 1 Deadline" : "Round 2 Deadline"}
             </div>
-            <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
-              27 September 2026
-              <span className="block font-sans text-[11px] text-muted-foreground mt-1">
-                Applications close at 11:59 PM IST
-              </span>
-            </div>
+            {round === "r1" ? (
+              <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
+                27 September 2026
+                <span className="block font-sans text-[11px] text-muted-foreground mt-1">
+                  Applications closed at 11:59 PM IST
+                </span>
+              </div>
+            ) : (
+              <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
+                18 October 2026
+                <span className="block font-sans text-[11px] text-muted-foreground mt-1">
+                  Applications close at 11:59 PM IST
+                </span>
+              </div>
+            )}
           </div>
           <div className="p-5 sm:p-6 md:p-8">
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
