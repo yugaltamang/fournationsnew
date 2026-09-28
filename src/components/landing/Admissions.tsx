@@ -79,21 +79,19 @@ const Admissions = () => {
           <div className="p-5 sm:p-6 md:p-8">
             <div className="flex items-center gap-1 mb-3">
               {([
-                { id: "r1", label: "Round 1" },
-                { id: "r2", label: "Round 2" },
+                { id: "r1", label: "Round 1", active: false },
+                { id: "r2", label: "Round 2", active: true },
               ] as const).map((r) => (
-                <button
+                <span
                   key={r.id}
-                  type="button"
-                  onClick={() => setRound(r.id)}
-                  className={`font-mono text-[10px] uppercase tracking-[0.25em] px-2.5 py-1 border transition-colors ${
-                    round === r.id
+                  className={`font-mono text-[10px] uppercase tracking-[0.25em] px-2.5 py-1 border ${
+                    r.active
                       ? "border-primary text-primary bg-primary/10"
-                      : "border-border text-muted-foreground hover:text-foreground"
+                      : "border-border text-muted-foreground/60"
                   }`}
                 >
                   {r.label}
-                </button>
+                </span>
               ))}
             </div>
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
