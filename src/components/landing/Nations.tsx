@@ -136,7 +136,7 @@ const nations: Nation[] = [
     partner: "CUHK Business School",
     img: hk,
     title: "Scale Global Growth",
-    desc: "Asia's capital gateway. Sessions at CUHK Business School, trading floors at HKEX & HSBC, and a Greater Bay Area sprint into Shenzhen's hardware ecosystem. Decode how Asian capital, manufacturing and platforms actually move.",
+    desc: "Asia's capital gateway. Sessions at CUHK Business School, immersions across Asia's leading financial institutions, and a Greater Bay Area sprint into Shenzhen's hardware ecosystem. Decode how Asian capital, manufacturing and platforms actually move.",
     outcome: "Navigate Asian capital markets, supply chains and cross-border deals.",
     tags: ["Global Finance", "Asia Strategy", "Supply Chain", "FinTech"],
     coords: "22.3°N · 114.1°E",
