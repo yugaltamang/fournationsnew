@@ -10,7 +10,7 @@ import SectionEyebrow from "./SectionEyebrow";
 const partners = [
   {
     tag: "Term 1 · Gurugram · 12 Weeks",
-    name: "Masters' Union",
+    name: "Masters' Union University",
     image: muLogo,
     logo: muBrandLogo.url,
     headline: "Built by practitioners.",
@@ -93,7 +93,7 @@ const Immersions = () => (
           Four Global Hubs.
         </h2>
         <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-2xl">
-          Anchored at Masters' Union in Delhi, with terms at Imperial College London, CUHK Hong Kong, TETR College of Business - you graduate with credentials from all three, capped by an optional finale at TETR College of Business, Dubai.
+          Anchored at Masters' Union University in Delhi, with terms at Imperial College London, CUHK Hong Kong, TETR College of Business - you graduate with credentials from all three, capped by an optional finale at TETR College of Business, Dubai.
         </p>
       </div>
 
