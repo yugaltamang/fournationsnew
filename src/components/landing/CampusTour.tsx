@@ -58,7 +58,7 @@ export default function CampusTour() {
           </Button>
         </div>
 
-        <div role="tablist" aria-label="Campus locations" className="flex overflow-x-auto border border-border bg-secondary/40 rounded-lg mb-5 p-1 gap-1">
+        <div role="tablist" aria-label="Campus locations" className="flex overflow-x-auto border border-border rounded-lg bg-secondary/20 mb-4 sm:mb-5 p-1 gap-1">
           {tours.map((tour, index) => (
             <Button
               key={tour.id}
@@ -81,7 +81,12 @@ export default function CampusTour() {
                 selectTour(next);
                 tabRefs.current[next]?.focus();
               }}
-              className={cn("flex-1 shrink-0 h-11 px-4 text-xs hover:bg-muted hover:text-foreground", active === index ? "text-primary" : "text-muted-foreground")}
+              className={cn(
+                "flex-1 shrink-0 h-11 px-4 font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] whitespace-nowrap rounded-md transition-colors",
+                active === index
+                  ? "bg-primary/10 text-primary border border-primary/25"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary/60",
+              )}
             >
               {tour.label}
             </Button>
@@ -95,11 +100,11 @@ export default function CampusTour() {
             role="tabpanel"
             aria-labelledby={`campus-tab-${tour.id}`}
             hidden={active !== index}
-            className="relative h-[400px] w-full overflow-hidden rounded-lg border border-border bg-card text-foreground"
+            className="relative h-[400px] w-full overflow-hidden rounded-lg border border-border bg-secondary/20 text-foreground"
           >
             {!loaded.includes(index) && !failed.includes(index) && (
-              <div role="status" className="absolute inset-0 flex items-center justify-center gap-3 text-sm text-muted-foreground">
-                <Loader2 className="size-5 animate-spin motion-reduce:animate-none" aria-hidden="true" />
+              <div role="status" className="absolute inset-0 flex items-center justify-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                <Loader2 className="size-4 animate-spin motion-reduce:animate-none" aria-hidden="true" />
                 Loading 360° tour…
               </div>
             )}
