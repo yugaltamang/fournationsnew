@@ -5,8 +5,8 @@ const contactCards = [
   {
     icon: Mail,
     label: "Email",
-    value: "executive.admissions@mastersunion.org",
-    href: "mailto:executive.admissions@mastersunion.org",
+    value: "admissions.fournations@mastersunion.org",
+    href: "mailto:admissions.fournations@mastersunion.org",
   },
   {
     icon: Phone,
