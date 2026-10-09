@@ -40,20 +40,20 @@ export default function CampusTour() {
   };
 
   return (
-    <section ref={sectionRef} id="campus-tour" className="bg-paper text-ink py-12 sm:py-16 md:py-20 scroll-mt-24">
+    <section ref={sectionRef} id="campus-tour" className="bg-background text-foreground py-12 sm:py-16 md:py-20 border-t border-border scroll-mt-24">
       <div className="container">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 mb-7">
-          <h2 className="font-sans text-xl sm:text-2xl font-semibold leading-snug">
+          <h2 className="font-sans text-xl sm:text-2xl font-semibold leading-snug text-foreground">
             World-class Campus in the Heart of Gurugram
           </h2>
-          <Button asChild className="self-start sm:self-auto rounded-full bg-ink text-paper hover:bg-ink/90 px-6">
+          <Button asChild className="self-start sm:self-auto rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6">
             <a href="https://mastersunion.org/book-a-campus-tour" target="_blank" rel="noopener noreferrer">
               Book a Visit <ArrowUpRight aria-hidden="true" />
             </a>
           </Button>
         </div>
 
-        <div role="tablist" aria-label="Campus locations" className="flex overflow-x-auto bg-secondary rounded-lg mb-5 p-1 gap-1">
+        <div role="tablist" aria-label="Campus locations" className="flex overflow-x-auto border border-border bg-secondary/40 rounded-lg mb-5 p-1 gap-1">
           {tours.map((tour, index) => (
             <Button
               key={tour.id}
@@ -90,7 +90,7 @@ export default function CampusTour() {
             role="tabpanel"
             aria-labelledby={`campus-tab-${tour.id}`}
             hidden={active !== index}
-            className="relative h-[400px] w-full overflow-hidden rounded-lg bg-background text-foreground"
+            className="relative h-[400px] w-full overflow-hidden rounded-lg border border-border bg-card text-foreground"
           >
             {!loaded.includes(index) && !failed.includes(index) && (
               <div role="status" className="absolute inset-0 flex items-center justify-center gap-3 text-sm text-muted-foreground">
@@ -110,7 +110,7 @@ export default function CampusTour() {
               />
             )}
             {failed.includes(index) && (
-              <div role="alert" className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-background p-6 text-center">
+              <div role="alert" className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-card p-6 text-center">
                 <p className="text-sm text-muted-foreground">The campus tour could not load.</p>
                 <Button asChild variant="outline">
                   <a href={tour.url} target="_blank" rel="noopener noreferrer">Open tour <ArrowUpRight aria-hidden="true" /></a>
