@@ -120,7 +120,7 @@ export default function CampusTour() {
               />
             )}
             {failed.includes(index) && (
-              <div role="alert" className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-card p-6 text-center">
+              <div role="alert" className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-secondary/20 p-6 text-center">
                 <p className="text-sm text-muted-foreground">The campus tour could not load.</p>
                 <Button asChild variant="outline">
                   <a href={tour.url} target="_blank" rel="noopener noreferrer">Open tour <ArrowUpRight aria-hidden="true" /></a>
