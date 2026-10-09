@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import SectionEyebrow from "./SectionEyebrow";
 
 const tours = [
   { id: "cds", label: "CDS Tower", url: "https://my.matterport.com/show/?m=H94FKdNQbTi&play=1&brand=1" },
@@ -40,13 +41,17 @@ export default function CampusTour() {
   };
 
   return (
-    <section ref={sectionRef} id="campus-tour" className="bg-background text-foreground py-12 sm:py-16 md:py-20 border-t border-border scroll-mt-24">
+    <section ref={sectionRef} id="campus-tour" className="py-16 sm:py-20 md:py-32 border-t border-border scroll-mt-24">
       <div className="container">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 mb-7">
-          <h2 className="font-sans text-xl sm:text-2xl font-semibold leading-snug text-foreground">
-            World-class Campus in the Heart of Gurugram
-          </h2>
-          <Button asChild className="self-start sm:self-auto rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-10 sm:mb-12 md:mb-16">
+          <div className="max-w-3xl">
+            <SectionEyebrow className="mb-4 sm:mb-6">Campus</SectionEyebrow>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1] text-balance">
+              World-class Campus{" "}
+              <em className="italic text-primary not-italic">in the Heart of Gurugram.</em>
+            </h2>
+          </div>
+          <Button asChild variant="outline" className="self-start sm:self-auto rounded-full px-6 shrink-0">
             <a href="https://mastersunion.org/book-a-campus-tour" target="_blank" rel="noopener noreferrer">
               Book a Visit <ArrowUpRight aria-hidden="true" />
             </a>
