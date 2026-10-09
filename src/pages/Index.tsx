@@ -9,6 +9,7 @@ import CXO from "@/components/landing/CXO";
 import Outcomes from "@/components/landing/Outcomes";
 import WhatsIncluded from "@/components/landing/WhatsIncluded";
 import FAQ from "@/components/landing/FAQ";
+import CampusTour from "@/components/landing/CampusTour";
 import Admissions from "@/components/landing/Admissions";
 
 import Contact from "@/components/landing/Contact";
@@ -31,6 +32,7 @@ const Index = () => (
     <Outcomes />
     <Admissions />
     <WhatsIncluded />
+    <CampusTour />
     <FAQ />
 
     <Contact />
