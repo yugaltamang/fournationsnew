@@ -74,9 +74,9 @@ const Hero = () => {
     <div className="container relative grid md:grid-cols-12 gap-10 items-start">
         <div className="md:col-span-7 animate-fade-up">
 
-        <div className="inline-flex items-center gap-2 mb-4 sm:mb-5 font-mono text-[10px] sm:text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          <span className="w-5 h-px bg-primary" />
-          <span>Four Nations Global Business Programme</span>
+        <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 mb-4 sm:mb-5 font-mono text-[clamp(6.4px,2vw,9px)] md:text-[clamp(7.5px,1.1vw,8.5px)] lg:text-[clamp(9px,0.95vw,11px)] tracking-[0.12em] text-muted-foreground whitespace-nowrap">
+          <span className="w-4 sm:w-5 h-px bg-primary shrink-0" />
+          <span>PG DIPLOMA IN FOUR NATIONS GLOBAL BUSINESS PROGRAMME</span>
         </div>
 
         <h1 className="font-display text-[clamp(1.6rem,5.2vw,3.75rem)] leading-[0.98] font-medium text-balance break-words">
