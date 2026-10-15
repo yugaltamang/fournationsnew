@@ -592,13 +592,20 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
     );
   }
 
-  const tabs = [
-    { label: term.academic.label, render: () => <AcademicPanel panel={term.academic} /> },
-    { label: term.outclass.label, render: () => <AcademicPanel panel={term.outclass} /> },
-    { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} location={term.label.replace(/^Term \d+ · /, "").replace(/\s*\(.*\)$/, "")} /> },
-    
-    { label: "Cultural Immersion", render: () => term.cultural && <CulturalPanelView data={term.cultural} /> },
-  ];
+  const tabs = ([
+    term.academic.items.length > 0
+      ? { label: term.academic.label, render: () => <AcademicPanel panel={term.academic} /> }
+      : null,
+    (term.outclass.items.length > 0 || term.outclass.phases?.length || term.outclass.summary?.length)
+      ? { label: term.outclass.label, render: () => <AcademicPanel panel={term.outclass} /> }
+      : null,
+    term.immersions
+      ? { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} location={term.label.replace(/^Term \d+ · /, "").replace(/\s*\(.*\)$/, "")} /> }
+      : null,
+    term.cultural
+      ? { label: "Cultural Immersion", render: () => term.cultural && <CulturalPanelView data={term.cultural} /> }
+      : null,
+  ].filter(Boolean) as { label: string; render: () => ReactNode }[]);
 
   return (
     <div className="relative border-t border-border py-12 md:py-20">
