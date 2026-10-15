@@ -156,6 +156,20 @@ const nations: Nation[] = [
     optional: true,
     coords: "25.2°N · 55.3°E",
   },
+  {
+    n: "05",
+    country: "India",
+    flag: "🇮🇳",
+    city: "Online",
+    term: "Term 5 · Online · 3 Months",
+    partner: "Online · India",
+    img: india,
+    title: "Lead from anywhere.",
+    desc: "A three-month online term delivered from India. Concentrations across Leadership & Self Development, Capital Markets & Trading, Family Business, Management & Strategy, and Product, AI & Tech — closing the programme with the skills to lead people, capital and transformation.",
+    outcome: "Lead people decisions, capital allocation and digital transformation.",
+    tags: ["Leadership & Self Development", "Capital Markets & Trading", "Family Business", "Management & Strategy", "Product, AI & Tech"],
+    coords: "Online",
+  },
 ];
 
 const Nations = () => {
@@ -232,7 +246,7 @@ const Nations = () => {
         {/* Itinerary rail */}
         <div className="hidden md:flex flex-wrap items-center gap-x-3 gap-y-2 mb-8 font-mono text-[11px] uppercase tracking-widest">
           {nations.map((it, i) => (
-            <div key={it.country} className="flex items-center gap-3">
+            <div key={it.n} className="flex items-center gap-3">
               <button
                 onClick={() => handleSetActive(i)}
                 className={`transition-colors ${i === active ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
@@ -253,7 +267,7 @@ const Nations = () => {
               const isActive = i === active;
               return (
                 <button
-                  key={it.country}
+                  key={it.n}
                   onClick={() => handleSetActive(i)}
                   className={`group relative w-full text-left border transition-all duration-500 ${
                     isActive
@@ -303,7 +317,7 @@ const Nations = () => {
           <div ref={panelRef} className="lg:col-span-8 order-1 lg:order-2 scroll-mt-24 min-w-0">
             <div className="relative grid w-full min-w-0">
             <article
-              key={n.country}
+              key={n.n}
               className={`col-start-1 row-start-1 relative border border-border bg-background z-30 min-w-0 transition-opacity duration-300 ${
                 flipped ? "opacity-0 pointer-events-none hidden" : "opacity-100"
               }`}
