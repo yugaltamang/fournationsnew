@@ -296,6 +296,27 @@ export const terms: Term[] = [
     academic: { label: "", hero: { chip: "", title: "", body: "", img: "" }, items: [] },
     outclass: { label: "", hero: { chip: "", title: "", body: "", img: "" }, items: [] },
   },
+  /* ── INDIA ONLINE (TERM 5) ── */
+  {
+    id: 4, flag: "🇮🇳", label: "Term 5 · India (Online)",
+    bannerGrad: "linear-gradient(135deg,#ff9933 0%,#138808 100%)", bannerFlag: "🇮🇳",
+    outcomeLabel: "Learning Outcome", outcome: "Be Leadership Ready.",
+    outcomeSub: "A three-month online term delivered from India - concentrations across leadership & self development, capital markets & trading, family business, strategy and digital transformation.",
+    academic: {
+      label: "In Class",
+      hero: { chip: "India · Online · 3 Months", title: "Term 5 - India (Online)", body: "The final term is delivered <strong>online over three months</strong> from India, with concentrations spanning <strong>Leadership & Self Development, Capital Markets & Trading, Family Business, Management & Strategy, and Product, AI & Tech</strong>.", img: "https://images.mastersunion.link/uploads/26032026/v1/Hero1.webp" },
+      items: [
+        { num: "LESD", code: "Leadership & Self Development", title: "How to Make People Decisions that Drive Organizational Success?", rows: ["How to Make People Decisions that Drive Organizational Success?"] },
+        { num: "LESD", code: "Leadership & Self Development", title: "How to Architect Organisations That Thrive in Any Business Climate", rows: ["How to Architect Organisations That Thrive in Any Business Climate"] },
+        { num: "LESD", code: "Leadership & Self Development", title: "How to Influence, Align and Close High-Stakes Deals", rows: ["How to Influence, Align and Close High-Stakes Deals"] },
+        { num: "CMT", code: "Capital Markets & Trading", title: "How to analyse stocks and spot winning investment opportunities?", rows: ["How to analyse stocks and spot winning investment opportunities?"] },
+        { num: "FAMB", code: "Family Business", title: "How Do Family Businesses Grow Without Growing Apart?", rows: ["How Do Family Businesses Grow Without Growing Apart?"] },
+        { num: "MAST", code: "Management & Strategy", title: "How to apply design thinking to solve real-world business challenges?", rows: ["How to apply design thinking to solve real-world business challenges?"] },
+        { num: "PRDT", code: "Product, AI & Tech", title: "How to Lead Transformation in a Digital-First World", rows: ["How to Lead Transformation in a Digital-First World"] },
+      ],
+    },
+    outclass: { label: "", hero: { chip: "", title: "", body: "", img: "" }, items: [] },
+  },
 ];
 
 /* ─── Accordion item ─── */
