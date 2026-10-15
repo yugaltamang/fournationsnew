@@ -634,6 +634,7 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
           {tabs.length === 1 ? (
             tabs[0].render()
           ) : (
+            <>
             <div className={`grid grid-cols-2 ${tabs.length === 5 ? "sm:grid-cols-5" : "sm:grid-cols-4"} gap-px bg-border border border-border mb-8`}>
             {tabs.map((t, i) => {
               const active = activeTab === i;
