@@ -631,8 +631,10 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
 
         {/* Right: 4 tabs as content grid */}
         <div className="min-w-0">
-          {/* Compact tab strip */}
-          <div className={`grid grid-cols-2 ${tabs.length === 5 ? "sm:grid-cols-5" : "sm:grid-cols-4"} gap-px bg-border border border-border mb-8`}>
+          {tabs.length === 1 ? (
+            tabs[0].render()
+          ) : (
+            <div className={`grid grid-cols-2 ${tabs.length === 5 ? "sm:grid-cols-5" : "sm:grid-cols-4"} gap-px bg-border border border-border mb-8`}>
             {tabs.map((t, i) => {
               const active = activeTab === i;
               return (
