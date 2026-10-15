@@ -136,7 +136,7 @@ const Hero = () => {
 
         <div className="mt-10 sm:mt-14 grid grid-cols-3 gap-x-3 sm:gap-6 max-w-3xl border-t border-border pt-6 sm:pt-8">
           {[
-            { n: "9", l: "Months · Core Program" },
+            { n: "12", l: "Months · Core Program" },
             { n: "4", l: "Nations · Cultures · Markets" },
             { n: "3", l: "Global University Partners" },
           ].map((s) => (
