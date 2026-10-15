@@ -310,7 +310,7 @@ export const terms: Term[] = [
         { num: "LESD", code: "Leadership & Self Development", title: "How to architect organisations that thrive in any business climate", rows: ["How to architect organisations that thrive in any business climate"] },
         { num: "LESD", code: "Leadership & Self Development", title: "How to influence, align and close high-stakes deals", rows: ["How to influence, align and close high-stakes deals"] },
         { num: "CMT", code: "Capital Markets & Trading", title: "How to analyse stocks and spot winning investment opportunities?", rows: ["How to analyse stocks and spot winning investment opportunities?"] },
-        { num: "FAMB", code: "Family Business", title: "How do Family Businesses grow without growing apart?", rows: ["How do Family Businesses grow without growing apart?"] },
+        { num: "FAMB", code: "Family Business", title: "How do family businesses grow without growing apart?", rows: ["How do family businesses grow without growing apart?"] },
         { num: "MAST", code: "Management & Strategy", title: "How to apply design thinking to solve real-world business challenges?", rows: ["How to apply design thinking to solve real-world business challenges?"] },
         { num: "PRDT", code: "Product, AI & Tech", title: "How to lead transformation in a digital-first world", rows: ["How to lead transformation in a digital-first world"] },
       ],
