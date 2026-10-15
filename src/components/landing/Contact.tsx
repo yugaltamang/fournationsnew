@@ -65,6 +65,10 @@ const Contact = () => (
           })}
         </div>
       </div>
+
+      <p className="mt-8 sm:mt-10 max-w-3xl text-[9px] sm:text-[10px] leading-snug text-muted-foreground/70">
+        The award of the degree/diploma is subject to applicable academic requirements and regulatory norms.
+      </p>
     </div>
   </section>
 );
