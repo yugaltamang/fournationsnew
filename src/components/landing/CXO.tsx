@@ -13,7 +13,7 @@ const pillars = [
     titleEm: "One cohort.",
     body: "Live and build across India, London, Hong Kong and Dubai - four of the world's most dynamic business ecosystems.",
     points: [
-      "9 months across 4 countries",
+      "12 months across 4 countries",
       "On-ground visits & boardrooms",
       "Imperial & CUHK certificates",
       "Limited to 65 participants only",

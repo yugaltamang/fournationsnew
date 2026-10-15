@@ -10,14 +10,14 @@ const groups: FaqGroup[] = [
     items: [
       {
         q: "Is the PGP – 4 Nations comparable to an Executive MBA in India?",
-        a: "The PGP – 4 Nations is not a traditional Executive MBA. It is a 9-month, full-time global program focused on hands-on learning across India, London, and Hong Kong, with an optional Dubai immersion. The program emphasizes learning by doing through live ventures, CXO interactions, and global exposure, rather than classroom-only instruction.",
+        a: "The PGP – 4 Nations is not a traditional Executive MBA. It is a 12-month, full-time global program focused on hands-on learning across India, London, and Hong Kong, with an optional Dubai immersion. The program emphasizes learning by doing through live ventures, CXO interactions, and global exposure, rather than classroom-only instruction.",
       },
       {
         q: "What is the expected cohort size?",
         a: "The program is limited to 65 participants only, ensuring a highly selective cohort, strong peer learning, meaningful collaboration, and access to faculty and industry leaders.",
       },
       {
-        q: "What are the advantages of the 9-month format?",
+        q: "What are the advantages of the 12-month format?",
         a: (
           <ul className="list-disc pl-5 space-y-1">
             <li>Faster career acceleration</li>
