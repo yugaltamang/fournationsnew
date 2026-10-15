@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ChevronDown } from "lucide-react";
 import immIndiaMfg from "@/assets/immersions/india-manufacturing.webp";
 import immIndiaD2C from "@/assets/immersions/india-d2c.webp";
