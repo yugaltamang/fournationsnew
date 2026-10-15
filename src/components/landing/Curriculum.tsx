@@ -653,8 +653,9 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
               );
             })}
           </div>
-
-          {tabs[activeTab].render()}
+            {tabs[activeTab].render()}
+          </>
+          )}
         </div>
       </div>
     </div>
