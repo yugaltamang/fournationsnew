@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ChevronDown } from "lucide-react";
 import immIndiaMfg from "@/assets/immersions/india-manufacturing.webp";
 import immIndiaD2C from "@/assets/immersions/india-d2c.webp";
@@ -296,6 +296,27 @@ export const terms: Term[] = [
     academic: { label: "", hero: { chip: "", title: "", body: "", img: "" }, items: [] },
     outclass: { label: "", hero: { chip: "", title: "", body: "", img: "" }, items: [] },
   },
+  /* ── INDIA ONLINE (TERM 5) ── */
+  {
+    id: 4, flag: "🇮🇳", label: "Term 5 · India (Online)",
+    bannerGrad: "linear-gradient(135deg,#ff9933 0%,#138808 100%)", bannerFlag: "🇮🇳",
+    outcomeLabel: "Learning Outcome", outcome: "Be Leadership Ready.",
+    outcomeSub: "A three-month online term delivered from India - concentrations across leadership & self development, capital markets & trading, family business, strategy and digital transformation.",
+    academic: {
+      label: "In Class",
+      hero: { chip: "India · Online · 3 Months", title: "Term 5 - India (Online)", body: "The final term is delivered <strong>online over three months</strong> from India, with concentrations spanning <strong>Leadership & Self Development, Capital Markets & Trading, Family Business, Management & Strategy, and Product, AI & Tech</strong>.", img: "https://images.mastersunion.link/uploads/26032026/v1/Hero1.webp" },
+      items: [
+        { num: "LESD", code: "Leadership & Self Development", title: "How to Make People Decisions that Drive Organizational Success?", rows: ["How to Make People Decisions that Drive Organizational Success?"] },
+        { num: "LESD", code: "Leadership & Self Development", title: "How to Architect Organisations That Thrive in Any Business Climate", rows: ["How to Architect Organisations That Thrive in Any Business Climate"] },
+        { num: "LESD", code: "Leadership & Self Development", title: "How to Influence, Align and Close High-Stakes Deals", rows: ["How to Influence, Align and Close High-Stakes Deals"] },
+        { num: "CMT", code: "Capital Markets & Trading", title: "How to analyse stocks and spot winning investment opportunities?", rows: ["How to analyse stocks and spot winning investment opportunities?"] },
+        { num: "FAMB", code: "Family Business", title: "How Do Family Businesses Grow Without Growing Apart?", rows: ["How Do Family Businesses Grow Without Growing Apart?"] },
+        { num: "MAST", code: "Management & Strategy", title: "How to apply design thinking to solve real-world business challenges?", rows: ["How to apply design thinking to solve real-world business challenges?"] },
+        { num: "PRDT", code: "Product, AI & Tech", title: "How to Lead Transformation in a Digital-First World", rows: ["How to Lead Transformation in a Digital-First World"] },
+      ],
+    },
+    outclass: { label: "", hero: { chip: "", title: "", body: "", img: "" }, items: [] },
+  },
 ];
 
 /* ─── Accordion item ─── */
@@ -571,13 +592,20 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
     );
   }
 
-  const tabs = [
-    { label: term.academic.label, render: () => <AcademicPanel panel={term.academic} /> },
-    { label: term.outclass.label, render: () => <AcademicPanel panel={term.outclass} /> },
-    { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} location={term.label.replace(/^Term \d+ · /, "").replace(/\s*\(.*\)$/, "")} /> },
-    
-    { label: "Cultural Immersion", render: () => term.cultural && <CulturalPanelView data={term.cultural} /> },
-  ];
+  const tabs = ([
+    term.academic.items.length > 0
+      ? { label: term.academic.label, render: () => <AcademicPanel panel={term.academic} /> }
+      : null,
+    (term.outclass.items.length > 0 || term.outclass.phases?.length || term.outclass.summary?.length)
+      ? { label: term.outclass.label, render: () => <AcademicPanel panel={term.outclass} /> }
+      : null,
+    term.immersions
+      ? { label: "Business Immersions", render: () => term.immersions && <ImmersionPanelView data={term.immersions} location={term.label.replace(/^Term \d+ · /, "").replace(/\s*\(.*\)$/, "")} /> }
+      : null,
+    term.cultural
+      ? { label: "Cultural Immersion", render: () => term.cultural && <CulturalPanelView data={term.cultural} /> }
+      : null,
+  ].filter(Boolean) as { label: string; render: () => ReactNode }[]);
 
   return (
     <div className="relative border-t border-border py-12 md:py-20">
@@ -603,8 +631,11 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
 
         {/* Right: 4 tabs as content grid */}
         <div className="min-w-0">
-          {/* Compact tab strip */}
-          <div className={`grid grid-cols-2 ${tabs.length === 5 ? "sm:grid-cols-5" : "sm:grid-cols-4"} gap-px bg-border border border-border mb-8`}>
+          {tabs.length === 1 ? (
+            tabs[0].render()
+          ) : (
+            <>
+            <div className={`grid grid-cols-2 ${tabs.length === 5 ? "sm:grid-cols-5" : "sm:grid-cols-4"} gap-px bg-border border border-border mb-8`}>
             {tabs.map((t, i) => {
               const active = activeTab === i;
               return (
@@ -623,8 +654,9 @@ export const TermRow = ({ term, index }: { term: Term; index: number }) => {
               );
             })}
           </div>
-
-          {tabs[activeTab].render()}
+            {tabs[activeTab].render()}
+          </>
+          )}
         </div>
       </div>
     </div>
