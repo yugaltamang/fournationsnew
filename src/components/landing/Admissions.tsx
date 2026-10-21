@@ -98,7 +98,7 @@ const Admissions = () => {
               Round 3 Deadline
             </div>
             <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
-              15 November, 2026
+              5 December, 2026
               <span className="block font-sans text-[11px] text-muted-foreground mt-1">
                 Applications close at 11:59 PM IST
               </span>
