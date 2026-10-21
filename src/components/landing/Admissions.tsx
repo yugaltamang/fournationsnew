@@ -79,7 +79,8 @@ const Admissions = () => {
             <div className="flex items-center gap-1 mb-3">
               {([
                 { id: "r1", label: "Round 1", active: false },
-                { id: "r2", label: "Round 2", active: true },
+                { id: "r2", label: "Round 2", active: false },
+                { id: "r3", label: "Round 3", active: true },
               ] as const).map((r) => (
                 <span
                   key={r.id}
@@ -94,10 +95,10 @@ const Admissions = () => {
               ))}
             </div>
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">
-              Round 2 Deadline
+              Round 3 Deadline
             </div>
             <div className="font-display text-2xl sm:text-3xl text-foreground leading-tight">
-              18 October 2026
+              15 November 2026
               <span className="block font-sans text-[11px] text-muted-foreground mt-1">
                 Applications close at 11:59 PM IST
               </span>
