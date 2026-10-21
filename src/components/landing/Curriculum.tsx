@@ -298,13 +298,13 @@ export const terms: Term[] = [
   },
   /* ── INDIA ONLINE (TERM 5) ── */
   {
-    id: 4, flag: "🇮🇳", label: "Term 5 · India (Online)",
+    id: 4, flag: "🇮🇳", label: "Term 5 · India (Online, weekends only)",
     bannerGrad: "linear-gradient(135deg,#ff9933 0%,#138808 100%)", bannerFlag: "🇮🇳",
     outcomeLabel: "Learning Outcome", outcome: "Be Leadership Ready.",
     outcomeSub: "A three-month online term delivered from India - concentrations across leadership & self development, capital markets & trading, family business, strategy and digital transformation.",
     academic: {
       label: "In Class",
-      hero: { chip: "India · Online · 3 Months", title: "Term 5 - India (Online)", body: "The final term is delivered <strong>online over three months</strong> from India, with concentrations spanning <strong>Leadership & Self Development, Capital Markets & Trading, Family Business, Management & Strategy, and Product, AI & Tech</strong>.", img: "https://images.mastersunion.link/uploads/26032026/v1/Hero1.webp" },
+      hero: { chip: "India · Online · Weekends Only · 3 Months", title: "Term 5 - India (Online, weekends only)", body: "The final term is delivered <strong>online over three months, weekends only</strong> from India, with concentrations spanning <strong>Leadership & Self Development, Capital Markets & Trading, Family Business, Management & Strategy, and Product, AI & Tech</strong>.", img: "https://images.mastersunion.link/uploads/26032026/v1/Hero1.webp" },
       items: [
         { num: "LESD", code: "Leadership & Self Development", title: "How to make people decisions that drive organizational success?", rows: ["How to make people decisions that drive organizational success?"] },
         { num: "LESD", code: "Leadership & Self Development", title: "How to architect organisations that thrive in any business climate", rows: ["How to architect organisations that thrive in any business climate"] },
