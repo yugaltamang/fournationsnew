@@ -1,10 +1,13 @@
 import { useRef, useState } from "react";
 import imperialImg from "@/assets/imperial-london.webp";
+import imperialVideo from "@/assets/imperial-webpage-video.mp4.asset.json";
 import cuhkImg from "@/assets/cuhk-hongkong.webp";
 import cuhkVideo from "@/assets/cuhk-webpage-video.mp4.asset.json";
 import muLogo from "@/assets/masters-union-delhi.webp";
+import muVideo from "@/assets/masters-union-webpage-video.mp4.asset.json";
 import muBrandLogo from "@/assets/mu-logo-light.png.asset.json";
 import tetrImg from "@/assets/tetr-dubai.webp";
+import tetrVideo from "@/assets/tetr-webpage-video.mp4.asset.json";
 import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import SectionEyebrow from "./SectionEyebrow";
 
@@ -24,6 +27,7 @@ const partners: Partner[] = [
     tag: "Term 1 · Gurugram · 12 Weeks",
     name: "Masters' Union University",
     image: muLogo,
+    video: muVideo.url,
     logo: muBrandLogo.url,
     headline: "Built by practitioners.",
     body: "The home institution. A new-age business school where MDs, founders and operators teach - not career academics. In five years, one of India's most selective programmes, on a Top-10 global rank quest.",
@@ -37,6 +41,7 @@ const partners: Partner[] = [
     tag: "Term 2 · London · 8 Weeks",
     name: "Imperial College London",
     image: imperialImg,
+    video: imperialVideo.url,
     logo: "https://logo.clearbit.com/imperial.ac.uk",
     headline: "Lead on the world stage.",
     body: "Learn at one of the world's top-ranked institutions – and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch your innovative startup from the heart of London.",
@@ -64,6 +69,7 @@ const partners: Partner[] = [
     tag: "Term 4 · Dubai · Optional",
     name: "TETR College of Business",
     image: tetrImg,
+    video: tetrVideo.url,
     logo: tetrLogo.url,
     headline: "Finish in Dubai.",
     body: "The optional finale, hosted at TETR College of Business in the world's fastest-growing business hub. Inside Dubai International Financial Centre (DIFC) - family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets. Available at an additional cost.",
