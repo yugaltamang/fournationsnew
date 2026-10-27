@@ -86,10 +86,22 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
   const [playing, setPlaying] = useState(false);
 
   const start = () => {
-    setPlaying(true);
-    window.setTimeout(() => {
-      videoRef.current?.play().catch(() => setPlaying(false));
-    }, 0);
+    const v = videoRef.current;
+    if (!v) return;
+    // Play synchronously inside the tap/click handler - browsers block
+    // playback started from a deferred callback outside the user gesture.
+    v.play()
+      .then(() => setPlaying(true))
+      .catch(() => setPlaying(false));
+  };
+
+  const stop = () => {
+    const v = videoRef.current;
+    if (v) {
+      v.pause();
+      v.currentTime = 0;
+    }
+    setPlaying(false);
   };
 
   return (
