@@ -113,7 +113,7 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
           src={p.video}
           poster={p.image}
           playsInline
-          preload="auto"
+          preload="none"
           onEnded={() => setPlaying(false)}
           onError={() => setPlaying(false)}
           aria-label={`${p.name} film`}
