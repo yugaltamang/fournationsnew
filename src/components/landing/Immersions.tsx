@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import imperialImg from "@/assets/imperial-london.webp";
 import cuhkImg from "@/assets/cuhk-hongkong.webp";
 import cuhkVideo from "@/assets/cuhk-webpage-video.mp4.asset.json";
@@ -74,6 +75,80 @@ const partners: Partner[] = [
   },
 ];
 
+const PartnerMedia = ({ p }: { p: Partner }) => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const start = () => {
+    setPlaying(true);
+    window.setTimeout(() => {
+      videoRef.current?.play().catch(() => setPlaying(false));
+    }, 0);
+  };
+
+  return (
+    <div className="relative aspect-square bg-[hsl(0,0%,6%)] border border-border overflow-hidden group-hover:border-primary/40 transition-colors duration-500">
+      {/* Hover glow */}
+      <div
+        className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full opacity-0 group-hover:opacity-30 blur-3xl pointer-events-none transition-opacity duration-700"
+        style={{
+          background:
+            "radial-gradient(circle, #F7D544 0%, #E38330 50%, transparent 70%)",
+        }}
+      />
+      {/* Still image - always the base layer */}
+      <img
+        src={p.image}
+        alt={p.name}
+        loading="lazy"
+        decoding="async"
+        className={`relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${
+          playing ? "opacity-0" : "opacity-100"
+        }`}
+      />
+      {/* Film - only mounted once the visitor presses play */}
+      {p.video && playing && (
+        <video
+          ref={videoRef}
+          src={p.video}
+          poster={p.image}
+          playsInline
+          preload="auto"
+          onEnded={() => setPlaying(false)}
+          onError={() => setPlaying(false)}
+          aria-label={`${p.name} film`}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      )}
+      {/* Play control */}
+      {p.video && !playing && (
+        <button
+          type="button"
+          onClick={start}
+          aria-label={`Play the ${p.name} film`}
+          className="absolute inset-0 z-20 grid place-items-center cursor-pointer"
+        >
+          <span className="grid h-16 w-16 sm:h-20 sm:w-20 place-items-center rounded-full border border-primary/70 bg-black/55 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-110">
+            <svg viewBox="0 0 24 24" aria-hidden className="h-6 w-6 sm:h-7 sm:w-7 translate-x-[2px] fill-primary">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        </button>
+      )}
+      {/* Term tag */}
+      <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-30">
+        <span className="tag-pill on-image">{p.tag}</span>
+      </div>
+      {/* Corner mark */}
+      <div className="absolute bottom-4 right-4 z-30">
+        <span className="tag-pill on-image">
+          "Full Certificate Awarded"
+        </span>
+      </div>
+    </div>
+  );
+};
+
 const Immersions = () => (
   <section id="pedigree" className="py-14 sm:py-20 md:py-28 relative overflow-hidden">
     {/* Ambient backdrop */}
@@ -126,47 +201,7 @@ const Immersions = () => (
 
             {/* Image panel */}
             <div className={`md:col-span-5 ${idx % 2 === 1 ? "md:order-3" : ""}`}>
-              <div className="relative aspect-square bg-[hsl(0,0%,6%)] border border-border overflow-hidden group-hover:border-primary/40 transition-colors duration-500">
-                {/* Hover glow */}
-                <div
-                  className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full opacity-0 group-hover:opacity-30 blur-3xl pointer-events-none transition-opacity duration-700"
-                  style={{
-                    background:
-                      "radial-gradient(circle, #F7D544 0%, #E38330 50%, transparent 70%)",
-                  }}
-                />
-                {p.video ? (
-                  <video
-                    src={p.video}
-                    poster={p.image}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    aria-label={`${p.name} campus film`}
-                    className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                ) : (
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                )}
-                {/* Term tag */}
-                <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10">
-                  <span className="tag-pill on-image">{p.tag}</span>
-                </div>
-                {/* Corner mark */}
-                <div className="absolute bottom-4 right-4 z-10">
-                  <span className="tag-pill on-image">
-                    "Full Certificate Awarded"
-                  </span>
-                </div>
-              </div>
+              <PartnerMedia p={p} />
             </div>
 
             {/* Content panel */}
