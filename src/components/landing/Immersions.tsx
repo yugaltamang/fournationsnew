@@ -86,10 +86,22 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
   const [playing, setPlaying] = useState(false);
 
   const start = () => {
-    setPlaying(true);
-    window.setTimeout(() => {
-      videoRef.current?.play().catch(() => setPlaying(false));
-    }, 0);
+    const v = videoRef.current;
+    if (!v) return;
+    // Play synchronously inside the tap/click handler - browsers block
+    // playback started from a deferred callback outside the user gesture.
+    v.play()
+      .then(() => setPlaying(true))
+      .catch(() => setPlaying(false));
+  };
+
+  const stop = () => {
+    const v = videoRef.current;
+    if (v) {
+      v.pause();
+      v.currentTime = 0;
+    }
+    setPlaying(false);
   };
 
   return (
@@ -112,18 +124,22 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
           playing ? "opacity-0" : "opacity-100"
         }`}
       />
-      {/* Film - only mounted once the visitor presses play */}
-      {p.video && playing && (
+      {/* Film - always mounted so play() can fire inside the tap gesture;
+          preload="none" keeps it from downloading until the visitor presses play */}
+      {p.video && (
         <video
           ref={videoRef}
           src={p.video}
           poster={p.image}
           playsInline
           preload="none"
-          onEnded={() => setPlaying(false)}
+          controls={playing}
+          onEnded={stop}
           onError={() => setPlaying(false)}
           aria-label={`${p.name} film`}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+            playing ? "opacity-100 z-10" : "opacity-0 pointer-events-none"
+          }`}
         />
       )}
       {/* Play control */}
