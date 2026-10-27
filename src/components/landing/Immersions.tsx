@@ -1,13 +1,24 @@
 import imperialImg from "@/assets/imperial-london.webp";
 import cuhkImg from "@/assets/cuhk-hongkong.webp";
+import cuhkVideo from "@/assets/cuhk-webpage-video.mp4.asset.json";
 import muLogo from "@/assets/masters-union-delhi.webp";
 import muBrandLogo from "@/assets/mu-logo-light.png.asset.json";
 import tetrImg from "@/assets/tetr-dubai.webp";
 import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import SectionEyebrow from "./SectionEyebrow";
 
+type Partner = {
+  tag: string;
+  name: string;
+  image: string;
+  video?: string;
+  logo: string;
+  headline: string;
+  body: string;
+  stats: { v: string; l: string }[];
+};
 
-const partners = [
+const partners: Partner[] = [
   {
     tag: "Term 1 · Gurugram · 12 Weeks",
     name: "Masters' Union University",
@@ -38,6 +49,7 @@ const partners = [
     tag: "Term 3 · Hong Kong · 10 Weeks",
     name: "The Chinese University of Hong Kong (CUHK)",
     image: cuhkImg,
+    video: cuhkVideo.url,
     logo: "https://logo.clearbit.com/cuhk.edu.hk",
     headline: "Gateway to Greater China.",
     body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
@@ -123,13 +135,27 @@ const Immersions = () => (
                       "radial-gradient(circle, #F7D544 0%, #E38330 50%, transparent 70%)",
                   }}
                 />
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
+                {p.video ? (
+                  <video
+                    src={p.video}
+                    poster={p.image}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label={`${p.name} campus film`}
+                    className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                ) : (
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                )}
                 {/* Term tag */}
                 <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10">
                   <span className="tag-pill on-image">{p.tag}</span>
