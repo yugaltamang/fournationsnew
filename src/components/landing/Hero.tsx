@@ -134,10 +134,6 @@ const Hero = () => {
           Limited to 65 participants only.
         </p>
 
-        <p className="mt-3 text-[11px] sm:text-xs text-muted-foreground max-w-3xl leading-relaxed">
-          <span className="text-primary">*</span> The award of the degree/diploma is subject to applicable academic requirements and regulatory norms.
-        </p>
-
         <div className="mt-10 sm:mt-14 grid grid-cols-3 gap-x-3 sm:gap-6 max-w-3xl border-t border-border pt-6 sm:pt-8">
           {[
             { n: "12", l: "Months · Core Program" },
