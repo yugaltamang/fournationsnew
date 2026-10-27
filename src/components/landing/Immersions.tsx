@@ -1,13 +1,17 @@
 import { useRef, useState } from "react";
 import imperialImg from "@/assets/imperial-london.webp";
 import imperialVideo from "@/assets/imperial-webpage-video.mp4.asset.json";
+import imperialVideoWebm from "@/assets/imperial-webpage-video.webm.asset.json";
 import cuhkImg from "@/assets/cuhk-hongkong.webp";
 import cuhkVideo from "@/assets/cuhk-webpage-video.mp4.asset.json";
+import cuhkVideoWebm from "@/assets/cuhk-webpage-video.webm.asset.json";
 import muLogo from "@/assets/masters-union-delhi.webp";
 import muVideo from "@/assets/masters-union-webpage-video.mp4.asset.json";
+import muVideoWebm from "@/assets/masters-union-webpage-video.webm.asset.json";
 import muBrandLogo from "@/assets/mu-logo-light.png.asset.json";
 import tetrImg from "@/assets/tetr-dubai.webp";
 import tetrVideo from "@/assets/tetr-webpage-video.mp4.asset.json";
+import tetrVideoWebm from "@/assets/tetr-webpage-video.webm.asset.json";
 import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import SectionEyebrow from "./SectionEyebrow";
 
@@ -16,6 +20,7 @@ type Partner = {
   name: string;
   image: string;
   video?: string;
+  videoWebm?: string;
   logo: string;
   headline: string;
   body: string;
@@ -28,6 +33,7 @@ const partners: Partner[] = [
     name: "Masters' Union University",
     image: muLogo,
     video: muVideo.url,
+    videoWebm: muVideoWebm.url,
     logo: muBrandLogo.url,
     headline: "Built by practitioners.",
     body: "The home institution. A new-age business school where MDs, founders and operators teach - not career academics. In five years, one of India's most selective programmes, on a Top-10 global rank quest.",
@@ -42,6 +48,7 @@ const partners: Partner[] = [
     name: "Imperial College London",
     image: imperialImg,
     video: imperialVideo.url,
+    videoWebm: imperialVideoWebm.url,
     logo: "https://logo.clearbit.com/imperial.ac.uk",
     headline: "Lead on the world stage.",
     body: "Learn at one of the world's top-ranked institutions – and graduate with an Imperial credential. Master capital strategy, global leadership, and pitch your innovative startup from the heart of London.",
@@ -56,6 +63,7 @@ const partners: Partner[] = [
     name: "The Chinese University of Hong Kong (CUHK)",
     image: cuhkImg,
     video: cuhkVideo.url,
+    videoWebm: cuhkVideoWebm.url,
     logo: "https://logo.clearbit.com/cuhk.edu.hk",
     headline: "Gateway to Greater China.",
     body: "Study in Hong Kong, understand China. Explore digital platforms, supply chains, AI innovation, and cross-cultural leadership at The Chinese University of Hong Kong - and build a cross-border GBA venture.",
@@ -70,6 +78,7 @@ const partners: Partner[] = [
     name: "TETR College of Business",
     image: tetrImg,
     video: tetrVideo.url,
+    videoWebm: tetrVideoWebm.url,
     logo: tetrLogo.url,
     headline: "Finish in Dubai.",
     body: "The optional finale, hosted at TETR College of Business in the world's fastest-growing business hub. Inside Dubai International Financial Centre (DIFC) - family offices, sovereign wealth and the founders building MENA's next wave. The bridge between Asian capital and Western markets. Available at an additional cost.",
@@ -129,7 +138,6 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
       {p.video && (
         <video
           ref={videoRef}
-          src={p.video}
           poster={p.image}
           playsInline
           preload="none"
@@ -140,7 +148,11 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
             playing ? "opacity-100 z-10" : "opacity-0 pointer-events-none"
           }`}
-        />
+        >
+          {/* WebM first for browsers without H.264, MP4 as the universal fallback */}
+          {p.videoWebm && <source src={p.videoWebm} type="video/webm" />}
+          <source src={p.video} type="video/mp4" />
+        </video>
       )}
       {/* Play control */}
       {p.video && !playing && (
@@ -164,7 +176,7 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
       {/* Corner mark */}
       <div className="absolute bottom-4 right-4 z-30">
         <span className="tag-pill on-image">
-          "Full Certificate Awarded"
+          Full Certificate Awarded
         </span>
       </div>
     </div>
