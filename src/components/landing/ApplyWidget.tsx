@@ -3,17 +3,7 @@ import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } 
 import { Loader2, CheckCircle2, ArrowLeft } from "lucide-react";
 import { COUNTRIES } from "@/lib/countries";
 import { supabase } from "@/integrations/supabase/client";
-
-function readUtm() {
-  if (typeof window === "undefined") return {};
-  const p = new URLSearchParams(window.location.search);
-  return {
-    source: p.get("source") || p.get("utm_source") || undefined,
-    medium: p.get("medium") || p.get("utm_medium") || undefined,
-    campaign: p.get("campaign") || p.get("utm_campaign") || undefined,
-    leadOrigin: p.get("lead_origin") || undefined,
-  };
-}
+import { readUtm } from "@/lib/utm";
 
 async function callMu(action: string, payload: Record<string, unknown>) {
   const { data, error } = await supabase.functions.invoke("mu-apply", { body: { action, ...payload } });
