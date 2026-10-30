@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 import imperialImg from "@/assets/imperial-london.webp";
 import imperialVideo from "@/assets/imperial-webpage-video.mp4.asset.json";
 import imperialVideoWebm from "@/assets/imperial-webpage-video.webm.asset.json";
@@ -94,6 +95,22 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    // Muted inline playback is required for autoplay on mobile browsers.
+    video.muted = true;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry?.isIntersecting) {
+        void video.play().catch(() => setPlaying(false));
+      } else {
+        video.pause();
+      }
+    }, { threshold: 0.15 });
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   const start = () => {
     const v = videoRef.current;
     if (!v) return;
@@ -102,15 +119,6 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
     v.play()
       .then(() => setPlaying(true))
       .catch(() => setPlaying(false));
-  };
-
-  const stop = () => {
-    const v = videoRef.current;
-    if (v) {
-      v.pause();
-      v.currentTime = 0;
-    }
-    setPlaying(false);
   };
 
   return (
@@ -133,16 +141,18 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
           playing ? "opacity-0" : "opacity-100"
         }`}
       />
-      {/* Film - always mounted so play() can fire inside the tap gesture;
-          preload="none" keeps it from downloading until the visitor presses play */}
+      {/* Muted inline autoplay, with both formats for browser compatibility. */}
       {p.video && (
         <video
           ref={videoRef}
           poster={p.image}
+          autoPlay
+          muted
+          loop
           playsInline
-          preload="none"
+          preload="metadata"
           controls={playing}
-          onEnded={stop}
+          onPlaying={() => setPlaying(true)}
           onError={() => setPlaying(false)}
           aria-label={`${p.name} film`}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
@@ -156,18 +166,19 @@ const PartnerMedia = ({ p }: { p: Partner }) => {
       )}
       {/* Play control */}
       {p.video && !playing && (
-        <button
+        <Button
+          variant="ghost"
           type="button"
           onClick={start}
           aria-label={`Play the ${p.name} film`}
-          className="absolute inset-0 z-20 grid place-items-center cursor-pointer"
+          className="absolute inset-0 z-20 h-full w-full rounded-none p-0 grid place-items-center cursor-pointer hover:bg-transparent"
         >
           <span className="grid h-16 w-16 sm:h-20 sm:w-20 place-items-center rounded-full border border-primary/70 bg-black/55 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-110">
             <svg viewBox="0 0 24 24" aria-hidden className="h-6 w-6 sm:h-7 sm:w-7 translate-x-[2px] fill-primary">
               <path d="M8 5v14l11-7z" />
             </svg>
           </span>
-        </button>
+        </Button>
       )}
       {/* Term tag */}
       <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-30">
