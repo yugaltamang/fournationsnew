@@ -120,7 +120,7 @@ export function LeadMatrixDialog({ widgetId, title, eyebrow = "Enquire", onClose
         <div className="flex items-start justify-between gap-4 border-b border-black/10 px-5 py-4">
           <div className="min-w-0">
             <p className="font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-black/45">{eyebrow}</p>
-            <h3 className="mt-1 truncate text-[15px] font-semibold tracking-[-0.005em] text-[#1a1a1a]">{title}</h3>
+            <h3 className="mt-1 text-[15px] font-semibold leading-snug tracking-[-0.005em] text-[#1a1a1a]">{title}</h3>
           </div>
           <button
             type="button"
