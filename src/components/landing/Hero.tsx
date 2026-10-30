@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
+import { Download } from "lucide-react";
 import { ApplyWidget } from "./ApplyWidget";
+import { LeadMatrixDialog } from "./LeadMatrixDialog";
+import { useVisitorCountry } from "@/hooks/use-visitor-country";
+import { isIndia } from "@/lib/visitor-country";
 import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
 import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
@@ -60,8 +64,13 @@ const companies = [
   "Airport Authority Hong Kong",
 ];
 
+const BROCHURE_WIDGET_ID = "c0fe7323-8c79-42a6-9e43-2006380caa54";
+
 const Hero = () => {
   const [slide, setSlide] = useState(0);
+  const [brochureOpen, setBrochureOpen] = useState(false);
+  const visitorCountry = useVisitorCountry();
+  const showBrochureCta = isIndia(visitorCountry);
   useEffect(() => {
     const t = setInterval(() => setSlide((s) => (s + 1) % UNIVERSITY_SLIDES.length), 4000);
     return () => clearInterval(t);
@@ -125,9 +134,20 @@ const Hero = () => {
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </button>
           </ApplyWidget>
-          <a href="#nations" className="inline-flex w-full sm:w-auto items-center justify-center gap-3 whitespace-nowrap border border-border px-6 sm:px-8 py-4 sm:py-5 font-bold uppercase tracking-wider text-xs sm:text-sm hover:border-primary hover:text-primary transition-colors">
-            See the Journey
-          </a>
+          {showBrochureCta ? (
+            <button
+              type="button"
+              onClick={() => setBrochureOpen(true)}
+              className="inline-flex w-full sm:w-auto sm:min-w-[17rem] items-center justify-center gap-3 whitespace-nowrap border border-border px-6 sm:px-8 py-4 sm:py-5 font-bold uppercase tracking-wider text-xs sm:text-sm hover:border-primary hover:text-primary transition-colors"
+            >
+              <Download className="h-4 w-4 shrink-0" aria-hidden="true" />
+              Download the Brochure
+            </button>
+          ) : (
+            <a href="#nations" className="inline-flex w-full sm:w-auto sm:min-w-[17rem] items-center justify-center gap-3 whitespace-nowrap border border-border px-6 sm:px-8 py-4 sm:py-5 font-bold uppercase tracking-wider text-xs sm:text-sm hover:border-primary hover:text-primary transition-colors">
+              See the Journey
+            </a>
+          )}
         </div>
 
         <p className="mt-4 text-xs sm:text-sm text-muted-foreground max-w-3xl">
@@ -211,6 +231,13 @@ const Hero = () => {
         </div>
       </div>
     </div>
+
+    <LeadMatrixDialog
+      widgetId={brochureOpen ? BROCHURE_WIDGET_ID : null}
+      title="Four Nations Global Business Programme"
+      eyebrow="Download the Brochure"
+      onClose={() => setBrochureOpen(false)}
+    />
   </section>
   );
 };
