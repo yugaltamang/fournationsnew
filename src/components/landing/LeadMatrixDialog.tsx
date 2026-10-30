@@ -53,6 +53,12 @@ type Props = {
 export function LeadMatrixDialog({ widgetId, title, eyebrow = "Enquire", onClose }: Props) {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  // The parent re-renders on its own (hero carousel) and recreates onClose on
+  // every tick, so hold it in a ref: the widget must mount once, not reload.
+  const onCloseRef = useRef(onClose);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
 
   useEffect(() => {
     if (!widgetId) return;
@@ -76,7 +82,7 @@ export function LeadMatrixDialog({ widgetId, title, eyebrow = "Enquire", onClose
     });
 
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") onCloseRef.current();
     };
     document.addEventListener("keydown", onKey);
     const prevOverflow = document.body.style.overflow;
@@ -92,7 +98,7 @@ export function LeadMatrixDialog({ widgetId, title, eyebrow = "Enquire", onClose
         /* already gone */
       }
     };
-  }, [widgetId, onClose]);
+  }, [widgetId]);
 
   if (!widgetId || typeof document === "undefined") return null;
 
