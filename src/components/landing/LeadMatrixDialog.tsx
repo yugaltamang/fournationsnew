@@ -53,6 +53,7 @@ type Props = {
 export function LeadMatrixDialog({ widgetId, title, eyebrow = "Enquire", onClose }: Props) {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [reloadKey, setReloadKey] = useState(0);
   // The parent re-renders on its own (hero carousel) and recreates onClose on
   // every tick, so hold it in a ref: the widget must mount once, not reload.
   const onCloseRef = useRef(onClose);
@@ -98,7 +99,7 @@ export function LeadMatrixDialog({ widgetId, title, eyebrow = "Enquire", onClose
         /* already gone */
       }
     };
-  }, [widgetId]);
+  }, [widgetId, reloadKey]);
 
   if (!widgetId || typeof document === "undefined") return null;
 
@@ -131,14 +132,17 @@ export function LeadMatrixDialog({ widgetId, title, eyebrow = "Enquire", onClose
           </button>
         </div>
         <div className="relative min-h-0 flex-1 overflow-y-auto overscroll-contain p-2 sm:p-4">
+          {/* Always laid out so the widget can measure its own height; the
+              loading and error states sit on top of it. */}
+          <div ref={mountRef} className="min-h-[min(420px,65dvh)]" />
           {status === "loading" && (
-            <div className="flex min-h-[min(420px,65dvh)] flex-col items-center justify-center gap-3 text-black/50">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white text-black/50">
               <span className="size-7 animate-spin rounded-full border-2 border-black/15 border-t-black/60" />
               <span className="text-xs">Loading…</span>
             </div>
           )}
           {status === "error" && (
-            <div className="flex min-h-[min(320px,55dvh)] flex-col items-center justify-center gap-3 px-6 text-center">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white px-6 text-center">
               <p className="text-sm font-medium text-black">We couldn't open this form.</p>
               <p className="text-xs text-black/55">
                 Please try again, or write to{" "}
@@ -152,14 +156,16 @@ export function LeadMatrixDialog({ widgetId, title, eyebrow = "Enquire", onClose
               </p>
               <button
                 type="button"
-                onClick={() => setStatus("loading")}
+                onClick={() => {
+                  setStatus("loading");
+                  setReloadKey((k) => k + 1);
+                }}
                 className="mt-1 rounded-lg border border-black/15 px-4 py-2 text-xs font-semibold uppercase tracking-wider hover:bg-black/5"
               >
                 Try again
               </button>
             </div>
           )}
-          <div ref={mountRef} className={status === "ready" ? "min-h-[min(420px,65dvh)]" : "hidden"} />
         </div>
       </div>
     </div>,
