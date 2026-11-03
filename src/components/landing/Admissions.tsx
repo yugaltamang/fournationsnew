@@ -68,7 +68,7 @@ const Admissions = () => {
           </p>
         </div>
         <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary border border-primary/40 px-3 py-1.5 self-start md:self-auto">
-          Cohort 1
+          Cohort 1 · Starts April 2027
         </div>
       </div>
 
