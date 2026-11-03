@@ -8,7 +8,7 @@ import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
 import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import uniMastersUnion from "@/assets/hero/uni-masters-union.webp";
-import uniImperial from "@/assets/hero/uni-imperial.webp";
+import uniImperial from "@/assets/hero/uni-imperial.webp.asset.json";
 import uniCuhk from "@/assets/hero/uni-cuhk.webp";
 import uniTetrDubai from "@/assets/hero/tetr-building.jpg.asset.json";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
@@ -25,7 +25,7 @@ import airportHkLogo from "@/assets/immersion-logos/airport-authority-hk.png.ass
 
 const UNIVERSITY_SLIDES = [
   { src: uniMastersUnion, name: "Masters' Union", location: "Gurugram, India" },
-  { src: uniImperial, name: "Imperial College London", location: "London, United Kingdom" },
+  { src: uniImperial.url, name: "Imperial College London", location: "London, United Kingdom" },
   { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong SAR" },
   { src: uniTetrDubai.url, name: "TETR College of Business", location: "Dubai, UAE" },
 ];
