@@ -4,7 +4,7 @@ import { ApplyWidget } from "./ApplyWidget";
 import { LeadMatrixDialog } from "./LeadMatrixDialog";
 import { useVisitorCountry } from "@/hooks/use-visitor-country";
 import { isIndia } from "@/lib/visitor-country";
-import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
+import imperialLogo from "@/assets/university-logos/imperial-lifelong-learning-white.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
 import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import uniMastersUnion from "@/assets/hero/uni-masters-union.webp";
