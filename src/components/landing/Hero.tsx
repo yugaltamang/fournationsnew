@@ -4,7 +4,7 @@ import { ApplyWidget } from "./ApplyWidget";
 import { LeadMatrixDialog } from "./LeadMatrixDialog";
 import { useVisitorCountry } from "@/hooks/use-visitor-country";
 import { isIndia } from "@/lib/visitor-country";
-import imperialLogo from "@/assets/university-logos/imperial.png.asset.json";
+import imperialLogo from "@/assets/university-logos/imperial-lifelong-learning-white.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
 import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
 import uniMastersUnion from "@/assets/hero/uni-masters-union.webp";
@@ -107,17 +107,17 @@ const Hero = () => {
           </div>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             {[
-              { name: "Imperial College London", url: imperialLogo.url },
-              { name: "The Chinese University of Hong Kong", url: cuhkLogo.url },
-              { name: "TETR College of Business", url: tetrLogo.url },
+              { name: "Imperial College London", url: imperialLogo.url, imgClass: "h-8 sm:h-10", alt: "Imperial College London Lifelong Learning" },
+              { name: "The Chinese University of Hong Kong", url: cuhkLogo.url, imgClass: "h-10 sm:h-12", alt: "The Chinese University of Hong Kong" },
+              { name: "TETR College of Business", url: tetrLogo.url, imgClass: "h-10 sm:h-12", alt: "TETR College of Business" },
             ].map((u) => (
               <div key={u.name} className="inline-flex items-center gap-3">
                 <img
                   src={u.url}
-                  alt={u.name}
+                  alt={u.alt ?? u.name}
                   loading="lazy"
                   decoding="async"
-                  className="h-10 sm:h-12 w-auto object-contain"
+                  className={`w-auto object-contain ${u.imgClass}`}
                 />
                 <span className="font-display text-xs sm:text-sm text-foreground/85 leading-tight max-w-[9rem]">
                   {u.name}
