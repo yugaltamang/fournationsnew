@@ -107,9 +107,9 @@ const Hero = () => {
           </div>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             {[
-              { name: "Imperial College London", url: imperialLogo.url, imgClass: "h-8", alt: "Imperial College London Lifelong Learning" },
-              { name: "The Chinese University of Hong Kong", url: cuhkLogo.url, imgClass: "h-10 sm:h-12", alt: "The Chinese University of Hong Kong" },
-              { name: "TETR College of Business", url: tetrLogo.url, imgClass: "h-10 sm:h-12", alt: "TETR College of Business" },
+              { name: "Imperial College London", url: imperialLogo.url, imgClass: "h-8", alt: "Imperial College London Lifelong Learning", showLabel: false },
+              { name: "The Chinese University of Hong Kong", url: cuhkLogo.url, imgClass: "h-10 sm:h-12", alt: "The Chinese University of Hong Kong", showLabel: true },
+              { name: "TETR College of Business", url: tetrLogo.url, imgClass: "h-10 sm:h-12", alt: "TETR College of Business", showLabel: true },
             ].map((u) => (
               <div key={u.name} className="inline-flex items-center gap-3">
                 <img
