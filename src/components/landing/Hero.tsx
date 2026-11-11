@@ -119,9 +119,11 @@ const Hero = () => {
                   decoding="async"
                   className={`w-auto object-contain ${u.imgClass}`}
                 />
-                <span className="font-display text-xs sm:text-sm text-foreground/85 leading-tight max-w-[9rem]">
-                  {u.name}
-                </span>
+                {u.showLabel && (
+                  <span className="font-display text-xs sm:text-sm text-foreground/85 leading-tight max-w-[9rem]">
+                    {u.name}
+                  </span>
+                )}
               </div>
             ))}
           </div>
