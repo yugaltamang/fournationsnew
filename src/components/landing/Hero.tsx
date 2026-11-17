@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Download } from "lucide-react";
+import { useRef, useState } from "react";
+import { Download, Volume2, VolumeX } from "lucide-react";
 import { ApplyWidget } from "./ApplyWidget";
 import { LeadMatrixDialog } from "./LeadMatrixDialog";
 import { useVisitorCountry } from "@/hooks/use-visitor-country";
@@ -7,10 +7,9 @@ import { isIndia } from "@/lib/visitor-country";
 import imperialLogo from "@/assets/university-logos/imperial-lifelong-learning-white.png.asset.json";
 import cuhkLogo from "@/assets/university-logos/cuhk.png.asset.json";
 import tetrLogo from "@/assets/university-logos/tetr-college-logo-white.png.asset.json";
-import uniMastersUnion from "@/assets/hero/uni-masters-union.webp";
-import uniImperial from "@/assets/hero/uni-imperial.webp.asset.json";
-import uniCuhk from "@/assets/hero/uni-cuhk.webp";
-import uniTetrDubai from "@/assets/hero/tetr-building.jpg.asset.json";
+import story1080 from "@/assets/hero/four-nations-story-1080.mp4.asset.json";
+import story540 from "@/assets/hero/four-nations-story-540.mp4.asset.json";
+import storyPoster from "@/assets/hero/four-nations-story-poster.webp.asset.json";
 import addverbLogo from "@/assets/immersion-logos/addverb.png.asset.json";
 import itcLogo from "@/assets/immersion-logos/itc.png.asset.json";
 import sonalikaLogo from "@/assets/immersion-logos/sonalika.png.asset.json";
@@ -22,13 +21,6 @@ import lpuLogo from "@/assets/immersion-logos/lpu.png.asset.json";
 import arctosLogo from "@/assets/immersion-logos/arctos.png.asset.json";
 import iflytekLogo from "@/assets/immersion-logos/iflytek.png.asset.json";
 import airportHkLogo from "@/assets/immersion-logos/airport-authority-hk.png.asset.json";
-
-const UNIVERSITY_SLIDES = [
-  { src: uniMastersUnion, name: "Masters' Union", location: "Gurugram, India" },
-  { src: uniImperial.url, name: "Imperial College London", location: "London, United Kingdom" },
-  { src: uniCuhk, name: "CUHK Business School", location: "Hong Kong SAR" },
-  { src: uniTetrDubai.url, name: "TETR College of Business", location: "Dubai, UAE" },
-];
 
 const LOGO_MAP: Record<string, string> = {
   Addverb: addverbLogo.url,
@@ -67,14 +59,19 @@ const companies = [
 const BROCHURE_WIDGET_ID = "c0fe7323-8c79-42a6-9e43-2006380caa54";
 
 const Hero = () => {
-  const [slide, setSlide] = useState(0);
+  const [muted, setMuted] = useState(true);
   const [brochureOpen, setBrochureOpen] = useState(false);
   const visitorCountry = useVisitorCountry();
   const showBrochureCta = isIndia(visitorCountry);
-  useEffect(() => {
-    const t = setInterval(() => setSlide((s) => (s + 1) % UNIVERSITY_SLIDES.length), 4000);
-    return () => clearInterval(t);
-  }, []);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleSound = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !muted;
+    setMuted(!muted);
+    if (muted) void v.play();
+  };
   return (
   <section className="relative pt-24 sm:pt-32 pb-14 sm:pb-20 overflow-hidden">
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
@@ -170,38 +167,40 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hidden md:block md:col-span-5 md:-mt-6 lg:-mt-10">
-        <div className="relative h-[480px] lg:h-[640px] overflow-hidden">
-          {UNIVERSITY_SLIDES.map((s, i) => (
-            <img
-              key={s.name}
-              src={s.src}
-              alt={`${s.name} — ${s.location}`}
-              width={900}
-              height={1200}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === slide ? "opacity-100" : "opacity-0"}`}
-            />
-          ))}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background/40" />
+      <div className="md:col-span-5 md:-mt-6 lg:-mt-10 animate-fade-up">
+        <div className="relative aspect-video w-full overflow-hidden border border-border bg-card">
+          <video
+            ref={videoRef}
+            className="absolute inset-0 h-full w-full object-cover"
+            poster={storyPoster.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="The Four Nations Global Business Programme story"
+          >
+            <source media="(max-width: 767px)" src={story540.url} type="video/mp4" />
+            <source src={story1080.url} type="video/mp4" />
+          </video>
 
-          <div className="absolute left-5 right-5 bottom-5 flex items-end justify-between gap-4">
-            <div className="min-w-0">
-              <div className="font-display text-lg text-foreground leading-tight truncate">{UNIVERSITY_SLIDES[slide].name}</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1 truncate">{UNIVERSITY_SLIDES[slide].location}</div>
-            </div>
-            <div className="flex gap-1.5 shrink-0">
-              {UNIVERSITY_SLIDES.map((_, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  aria-label={`Show university ${i + 1}`}
-                  onClick={() => setSlide(i)}
-                  className={`h-1.5 rounded-full transition-all ${i === slide ? "w-6 bg-primary" : "w-1.5 bg-muted-foreground/40 hover:bg-muted-foreground/70"}`}
-                />
-              ))}
-            </div>
-          </div>
+          <button
+            type="button"
+            onClick={toggleSound}
+            aria-label={muted ? "Turn sound on" : "Turn sound off"}
+            className="absolute right-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center border border-border/60 bg-background/70 text-foreground/80 backdrop-blur-sm transition-colors hover:border-primary hover:text-primary"
+          >
+            {muted ? (
+              <VolumeX className="h-4 w-4" aria-hidden="true" />
+            ) : (
+              <Volume2 className="h-4 w-4" aria-hidden="true" />
+            )}
+          </button>
+        </div>
+
+        <div className="mt-3 flex items-center justify-between gap-3 font-mono text-[9px] uppercase tracking-[0.12em] text-muted-foreground sm:text-[10px] sm:tracking-[0.2em] md:hidden lg:flex">
+          <span className="min-w-0 truncate">India · London · Hong Kong · Dubai</span>
+          <span className="shrink-0">0:48</span>
         </div>
       </div>
     </div>
