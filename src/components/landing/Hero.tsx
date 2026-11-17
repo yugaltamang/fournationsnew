@@ -66,9 +66,12 @@ const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const copyRef = useRef<HTMLParagraphElement>(null);
+  const videoColRef = useRef<HTMLDivElement>(null);
   const [videoOffset, setVideoOffset] = useState(0);
+  const [videoMax, setVideoMax] = useState(0);
 
-  // Keep the film's top edge level with the "Study across…" paragraph.
+  // Keep the film's top edge level with the "Study across…" paragraph, and cap
+  // how tall it may grow so narrow columns never over-crop the frame.
   useEffect(() => {
     const sync = () => {
       const grid = gridRef.current;
@@ -76,6 +79,11 @@ const Hero = () => {
       if (!grid || !copy) return;
       const offset = copy.getBoundingClientRect().top - grid.getBoundingClientRect().top;
       setVideoOffset(Math.max(0, Math.round(offset)));
+      const col = videoColRef.current;
+      if (col) {
+        const w = col.getBoundingClientRect().width;
+        setVideoMax(Math.round(w * 1.45));
+      }
     };
     sync();
     const observer = new ResizeObserver(sync);
@@ -113,8 +121,8 @@ const Hero = () => {
 
     <div
       ref={gridRef}
-      className="container relative grid md:grid-cols-12 gap-10 items-start"
-      style={{ "--video-offset": `${videoOffset}px` } as CSSProperties}
+      className="container relative grid md:grid-cols-12 gap-10 md:items-stretch"
+      style={{ "--video-offset": `${videoOffset}px`, "--video-max": `${videoMax}px` } as CSSProperties}
     >
         <div className="md:col-span-7 animate-fade-up">
 
@@ -205,8 +213,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="md:col-span-5 md:mt-[var(--video-offset)] animate-fade-up">
-        <div className="relative aspect-video w-full overflow-hidden border border-border bg-card">
+      <div ref={videoColRef} className="md:col-span-5 md:mt-[var(--video-offset)] md:flex md:flex-col animate-fade-up">
+        <div className="relative aspect-video w-full overflow-hidden border border-border bg-card md:aspect-auto md:min-h-0 md:max-h-[var(--video-max)] md:flex-1">
           <video
             ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover"
@@ -236,7 +244,7 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="mt-3 flex items-center justify-between gap-3 font-mono text-[9px] uppercase tracking-[0.12em] text-muted-foreground sm:text-[10px] sm:tracking-[0.2em] md:hidden lg:flex">
+        <div className="mt-3 flex shrink-0 items-center justify-between gap-3 font-mono text-[9px] uppercase tracking-[0.12em] text-muted-foreground sm:text-[10px] sm:tracking-[0.2em] md:hidden lg:flex">
           <span className="min-w-0 truncate">India · London · Hong Kong · Dubai</span>
           <span className="shrink-0">0:48</span>
         </div>
