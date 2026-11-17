@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Download, Volume2, VolumeX } from "lucide-react";
 import { ApplyWidget } from "./ApplyWidget";
 import { LeadMatrixDialog } from "./LeadMatrixDialog";
@@ -64,6 +64,40 @@ const Hero = () => {
   const visitorCountry = useVisitorCountry();
   const showBrochureCta = isIndia(visitorCountry);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const copyRef = useRef<HTMLParagraphElement>(null);
+  const [videoOffset, setVideoOffset] = useState(0);
+
+  // Keep the film's top edge level with the "Study across…" paragraph.
+  useEffect(() => {
+    const sync = () => {
+      const grid = gridRef.current;
+      const copy = copyRef.current;
+      if (!grid || !copy) return;
+      const offset = copy.getBoundingClientRect().top - grid.getBoundingClientRect().top;
+      setVideoOffset(Math.max(0, Math.round(offset)));
+    };
+    sync();
+    const observer = new ResizeObserver(sync);
+    if (gridRef.current) observer.observe(gridRef.current);
+    window.addEventListener("resize", sync);
+    document.fonts?.ready.then(sync).catch(() => {});
+    // The display face can arrive seconds after first paint and reflow the
+    // headline; keep tracking the paragraph until font loading settles.
+    let ticks = 0;
+    const poll = window.setInterval(() => {
+      sync();
+      ticks += 1;
+      if ((document.fonts?.status === "loaded" && ticks > 4) || ticks > 40) {
+        window.clearInterval(poll);
+      }
+    }, 100);
+    return () => {
+      observer.disconnect();
+      window.clearInterval(poll);
+      window.removeEventListener("resize", sync);
+    };
+  }, []);
 
   const toggleSound = () => {
     const v = videoRef.current;
@@ -77,7 +111,11 @@ const Hero = () => {
     <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
     <div className="absolute inset-0 editorial-grid opacity-30 pointer-events-none" />
 
-    <div className="container relative grid md:grid-cols-12 gap-10 items-start">
+    <div
+      ref={gridRef}
+      className="container relative grid md:grid-cols-12 gap-10 items-start"
+      style={{ "--video-offset": `${videoOffset}px` } as CSSProperties}
+    >
         <div className="md:col-span-7 animate-fade-up">
 
         <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 mb-4 sm:mb-5 font-mono text-[clamp(6.4px,2vw,9px)] md:text-[clamp(7.5px,1.1vw,8.5px)] lg:text-[clamp(9px,0.95vw,11px)] tracking-[0.12em] text-muted-foreground whitespace-nowrap">
@@ -93,7 +131,7 @@ const Hero = () => {
           One Career Without Borders.
         </h1>
 
-        <p className="mt-8 sm:mt-10 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed">
+        <p ref={copyRef} className="mt-8 sm:mt-10 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed">
           Study across four global business hubs alongside three of the world's top-ranked institutions — Masters' Union, Imperial College London, and CUHK Business School — culminating in a Dubai finale at TETR College of Business. Earn four credentials and a lifelong global network.
         </p>
 
@@ -167,7 +205,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="md:col-span-5 md:-mt-6 lg:-mt-10 animate-fade-up">
+      <div className="md:col-span-5 md:mt-[var(--video-offset)] animate-fade-up">
         <div className="relative aspect-video w-full overflow-hidden border border-border bg-card">
           <video
             ref={videoRef}
