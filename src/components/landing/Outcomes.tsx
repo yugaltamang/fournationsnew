@@ -9,7 +9,7 @@ const certificates = [
     src: muCert.url,
     inst: "Masters' Union",
     label: "Certificate of Completion",
-    note: "Issued by Masters' Union for the Four Nations Global Business Programme.",
+    note: "Issued by Masters' Union for the PG Diploma - Four Nations.",
   },
   {
     src: imperialCert.url,

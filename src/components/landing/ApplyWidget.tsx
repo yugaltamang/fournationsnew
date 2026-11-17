@@ -167,7 +167,7 @@ export function ApplyWidget({ children }: { children: React.ReactNode }) {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[460px] bg-background border border-white/10">
         <DialogTitle className="text-base font-semibold">
-          {view === "apply" ? "Apply to the Four Nations Programme" : "Login"}
+          {view === "apply" ? "Apply to PG Diploma - Four Nations" : "Login"}
         </DialogTitle>
         <DialogDescription className="sr-only">
           {view === "apply" ? "Submit your details to apply to the programme." : "Log in to continue your application."}
