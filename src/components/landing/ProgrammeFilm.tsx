@@ -68,8 +68,8 @@ const ProgrammeFilm = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="programme-film" aria-label="PG Diploma - Four Nations film" className="relative w-full overflow-hidden bg-background py-8 sm:py-12">
-      <div ref={frameRef} className="programme-film-frame relative mx-auto w-full max-w-[1600px] overflow-hidden bg-surface-deep">
+    <section ref={sectionRef} id="programme-film" aria-label="PG Diploma - Four Nations film" className="relative w-full overflow-hidden bg-background">
+      <div ref={frameRef} className="programme-film-frame relative w-full overflow-hidden bg-surface-deep">
         <video
           ref={videoRef}
           src={nearby ? film.url : undefined}
