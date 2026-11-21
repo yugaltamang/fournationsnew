@@ -133,6 +133,18 @@
     filter: brightness(1.3) contrast(1.08);
   }
 
+  .programme-film-frame {
+    aspect-ratio: 16 / 9;
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .programme-film-frame {
+      will-change: auto;
+    }
+  }
+
   .marquee-mask {
     mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
   }
