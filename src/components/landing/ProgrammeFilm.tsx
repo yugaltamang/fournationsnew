@@ -27,15 +27,13 @@ const ProgrammeFilm = () => {
     media.add("(prefers-reduced-motion: no-preference)", () => {
       const initialScale = 0.45;
       gsap.fromTo(frame, { scale: initialScale, borderRadius: "24px" }, {
-        keyframes: [
-          { scale: 1, borderRadius: "0px", duration: 1 },
-          { scale: initialScale, borderRadius: "24px", duration: 1 },
-        ],
+        scale: 1,
+        borderRadius: "0px",
         ease: "sine.inOut",
         scrollTrigger: {
           trigger: section,
           start: "top bottom",
-          end: "bottom top",
+          end: "top 20%",
           scrub: 0.6,
           invalidateOnRefresh: true,
         },
