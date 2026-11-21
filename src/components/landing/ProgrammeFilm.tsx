@@ -25,7 +25,7 @@ const ProgrammeFilm = () => {
 
     const media = gsap.matchMedia();
     media.add("(prefers-reduced-motion: no-preference)", () => {
-      const initialScale = window.innerWidth < 640 ? 0.82 : 0.68;
+      const initialScale = 0.45;
       gsap.fromTo(frame, { scale: initialScale, borderRadius: "24px" }, {
         keyframes: [
           { scale: 1, borderRadius: "0px", duration: 1 },
